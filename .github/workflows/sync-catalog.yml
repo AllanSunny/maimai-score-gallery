@@ -33,6 +33,43 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Complete maimaidx.jp certificate chain
+        run: |
+          set -euo pipefail
+          leaf_certificate="$RUNNER_TEMP/maimaidx-leaf.pem"
+          issuer_certificate="$RUNNER_TEMP/maimaidx-issuer.cer"
+          issuer_pem="$RUNNER_TEMP/maimaidx-issuer.pem"
+          ca_bundle="$RUNNER_TEMP/maimai-ca-bundle.pem"
+
+          openssl s_client \
+            -showcerts \
+            -connect maimaidx.jp:443 \
+            -servername maimaidx.jp </dev/null 2>/dev/null \
+            | awk '/BEGIN CERTIFICATE/{copy=1} copy{print} /END CERTIFICATE/{exit}' \
+            > "$leaf_certificate"
+
+          issuer_url="$(openssl x509 -in "$leaf_certificate" -noout -text \
+            | sed -n 's/.*CA Issuers - URI:\(.*\)/\1/p' \
+            | head -n 1)"
+
+          if [ -z "$issuer_url" ]; then
+            echo "The jacket server certificate did not provide an issuer URL."
+            exit 1
+          fi
+
+          curl --fail --location --silent --show-error \
+            "$issuer_url" \
+            --output "$issuer_certificate"
+
+          openssl x509 \
+            -inform DER \
+            -in "$issuer_certificate" \
+            -out "$issuer_pem"
+
+          cat /etc/ssl/certs/ca-certificates.crt "$issuer_pem" > "$ca_bundle"
+          echo "CURL_CA_BUNDLE=$ca_bundle" >> "$GITHUB_ENV"
+          echo "NODE_EXTRA_CA_CERTS=$ca_bundle" >> "$GITHUB_ENV"
+
       - name: Sync metadata for new songs
         run: npm run catalog:sync
         env:
@@ -40,7 +77,6 @@ jobs:
           R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
           R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
           R2_BUCKET_NAME: ${{ vars.R2_BUCKET_NAME }}
-          R2_PUBLIC_URL: ${{ vars.R2_PUBLIC_URL }}
 
       - name: Commit generated catalog
         run: |

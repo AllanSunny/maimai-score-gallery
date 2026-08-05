@@ -121,7 +121,7 @@ function contentExtension(contentType, sourceUrl) {
 }
 
 async function uploadJacket(songId, sourceUrl) {
-  const required = ["R2_ACCOUNT_ID", "R2_ACCESS_KEY_ID", "R2_SECRET_ACCESS_KEY", "R2_BUCKET_NAME", "R2_PUBLIC_URL"];
+  const required = ["R2_ACCOUNT_ID", "R2_ACCESS_KEY_ID", "R2_SECRET_ACCESS_KEY", "R2_BUCKET_NAME"];
   const missing = required.filter((name) => !process.env[name]);
   if (missing.length) {
     if (dryRun) {
@@ -168,7 +168,7 @@ async function uploadJacket(songId, sourceUrl) {
     console.log(`Already stored ${key}`);
   }
 
-  return `${process.env.R2_PUBLIC_URL.replace(/\/$/, "")}/${key}`;
+  return key;
 }
 
 async function main() {
@@ -212,12 +212,12 @@ async function main() {
     const override = overrides[official.title] ?? {};
     const id = override.id ?? fallbackId(official.title);
     const sourceJacketUrl = new URL(official.image_url, SEGA_JACKET_BASE_URL).toString();
-    const uploadedJacketUrl = await uploadJacket(id, sourceJacketUrl);
+    const jacketKey = await uploadJacket(id, sourceJacketUrl);
     songs.push({
       id,
       title: official.title,
       alternateTitles: unique(override.alternateTitles ?? []),
-      jacketUrl: uploadedJacketUrl,
+      jacketKey,
       charts: extractCharts(official, override),
     });
 

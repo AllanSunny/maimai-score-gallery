@@ -1,7 +1,14 @@
 import generatedCatalog from "./data/generated-catalog.json";
 import type { CatalogSong } from "./types";
 
-export const catalogSongs = generatedCatalog.songs as CatalogSong[];
+const jacketBaseUrl = import.meta.env.VITE_JACKET_BASE_URL?.replace(/\/$/, "");
+
+export const catalogSongs = generatedCatalog.songs.map((song) => ({
+  ...song,
+  jacketUrl: jacketBaseUrl && song.jacketKey
+    ? `${jacketBaseUrl}/${song.jacketKey}`
+    : null,
+})) as CatalogSong[];
 
 function normalizeTitle(value: string) {
   return value.normalize("NFKC").replace(/\s+/g, " ").trim().toLocaleLowerCase();

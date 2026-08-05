@@ -39,8 +39,8 @@ R2, and merges `catalog/overrides.json`.
 
 In Cloudflare, create an R2 API token with **Object Read & Write** access scoped
 only to the jacket bucket. Copy `.env.r2.example` to `.env.r2` and provide the
-account ID, R2 access-key pair, bucket name, public bucket URL, and public Apps
-Script score-feed URL. `.env.r2` is ignored by Git.
+account ID, R2 access-key pair, bucket name, and public Apps Script score-feed
+URL. `.env.r2` is ignored by Git.
 
 ```bash
 npm install
@@ -78,6 +78,10 @@ Under **Actions → Variables**, add:
 - `R2_BUCKET_NAME`
 - `R2_PUBLIC_URL`
 - `SCORES_API_URL`
+
+Generated catalog metadata stores only each jacket's R2 object key. The public
+R2 base URL is supplied to Vite at deployment time through `R2_PUBLIC_URL`;
+R2 credentials are available only to the metadata workflow.
 
 Run **Archive spreadsheet scores** from the Actions tab for a real-data test.
 It runs every Sunday at midnight Eastern time and automatically starts **Sync
