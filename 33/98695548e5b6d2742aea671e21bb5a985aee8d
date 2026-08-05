@@ -1,0 +1,65 @@
+src/types.ts
+  s_6d06bd4898dc7f::t_ce40a57359a3db 2-17,32
+src/data/generated-catalog.json
+  s_6d06bd4898dc7f::t_3867db4588bad7 1-14
+  s_6d06bd4898dc7f::t_dc5866afce0f06 15-17
+  h_278fafc5c28027 18-45
+src/demo-data.ts
+  h_278fafc5c28027 6
+.env.r2.example
+  s_6d06bd4898dc7f::t_3867db4588bad7 1-13
+src/pages/ScoreListPage.tsx
+  s_6d06bd4898dc7f::t_ce40a57359a3db 3,11,21-22,24-26,41-43,47-48,59
+  s_6d06bd4898dc7f::t_357962dd7cbedb 23,27-30
+scripts/sync-catalog.mjs
+  s_6d06bd4898dc7f::t_3867db4588bad7 1,3-5,7,10-47,66-69,71-120,124-204
+  s_6d06bd4898dc7f::t_ce8b8d0b02e331 2,6,8-9,48-65,70,121-123
+.github/workflows/sync-catalog.yml
+  s_6d06bd4898dc7f::t_ce40a57359a3db 34,45-51
+  s_6d06bd4898dc7f::t_3867db4588bad7 1-33,35-44,52-63
+.gitignore
+  s_6d06bd4898dc7f::t_3867db4588bad7 5
+src/components/song/SongInfo.tsx
+  s_6d06bd4898dc7f::t_ce40a57359a3db 1,5,14,26,29-36
+README.md
+  s_6d06bd4898dc7f::t_9c48368c6eaf7a 29-75
+.tool-versions
+  s_6d06bd4898dc7f::t_ffecfcd2bbb2e3 1
+.github/workflows/deploy-pages.yml
+  s_6d06bd4898dc7f::t_3867db4588bad7 1-43
+src/pages/ChartDetailPage.tsx
+  s_6d06bd4898dc7f::t_ce40a57359a3db 4,8
+src/catalog.ts
+  s_6d06bd4898dc7f::t_ce40a57359a3db 1-20
+catalog/overrides.json
+  s_6d06bd4898dc7f::t_3867db4588bad7 1-9
+src/App.tsx
+  s_6d06bd4898dc7f::t_ce40a57359a3db 8,36
+package.json
+  s_6d06bd4898dc7f::t_3867db4588bad7 13,26
+  s_6d06bd4898dc7f::t_763be80614c49f 14-15
+  s_6d06bd4898dc7f::t_ffecfcd2bbb2e3 5-7
+package-lock.json
+  h_278fafc5c28027 19,30-358,1110-1196,2183-2189,3740-3746
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.20",
+  "base_commit_sha": "3398695548e5b6d2742aea671e21bb5a985aee8d",
+  "prompts": {},
+  "humans": {
+    "h_278fafc5c28027": {
+      "author": "Allan Sun <allansun@live.com>"
+    }
+  },
+  "sessions": {
+    "s_6d06bd4898dc7f": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019faca2-0a30-75f3-8a51-06f8e9067195",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Allan Sun <allansun@live.com>"
+    }
+  }
+}
