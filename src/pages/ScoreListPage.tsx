@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { fetchScores } from "../api";
+import { findCatalogSong } from "../catalog";
 import { SongInfo, type SongChartSummary } from "../components/song/SongInfo";
 import { PageHeading } from "../components/ui/PageHeading";
 import type { Difficulty, Score } from "../types";
@@ -7,6 +8,7 @@ import type { Difficulty, Score } from "../types";
 interface SongSummary {
   name: string;
   alternateTitles: string[];
+  jacketUrl?: string | null;
   charts: SongChartSummary[];
 }
 
@@ -16,10 +18,16 @@ function groupScoresBySong(scores: Score[]): SongSummary[] {
   const songs = new Map<string, SongSummary>();
 
   scores.forEach((score) => {
-    const song = songs.get(score.songTitle) ?? {
-      name: score.songTitle,
-      alternateTitles: [],
-      charts: [],
+    const metadata = findCatalogSong(score.songTitle);
+    const canonicalTitle = metadata?.title ?? score.songTitle;
+    const song: SongSummary = songs.get(canonicalTitle) ?? {
+      name: canonicalTitle,
+      alternateTitles: [...(metadata?.alternateTitles ?? [])],
+      jacketUrl: metadata?.jacketUrl,
+      charts: (metadata?.charts ?? []).map((chart): SongChartSummary => ({
+        ...chart,
+        chartConstant: chart.chartConstant ?? undefined,
+      })),
     };
     score.alternateTitles?.forEach((title) => {
       const normalizedTitle = title.trim();
@@ -30,11 +38,14 @@ function groupScoresBySong(scores: Score[]): SongSummary[] {
     const chartIndex = song.charts.findIndex(
       (chart) => chart.difficulty === score.difficulty && chart.chartType === score.chartType,
     );
+    const metadataChart = metadata?.charts.find(
+      (chart) => chart.difficulty === score.difficulty && chart.chartType === score.chartType,
+    );
     const chart: SongChartSummary = {
       difficulty: score.difficulty,
       chartType: score.chartType,
-      level: score.level,
-      chartConstant: score.chartConstant,
+      level: metadataChart?.level ?? score.level,
+      chartConstant: metadataChart?.chartConstant ?? score.chartConstant,
       achievement: score.achievement,
     };
 
@@ -45,7 +56,7 @@ function groupScoresBySong(scores: Score[]): SongSummary[] {
     }
 
     song.charts.sort((a, b) => difficultyOrder.indexOf(a.difficulty) - difficultyOrder.indexOf(b.difficulty));
-    songs.set(score.songTitle, song);
+    songs.set(canonicalTitle, song);
   });
 
   return [...songs.values()].sort((a, b) => a.name.localeCompare(b.name));

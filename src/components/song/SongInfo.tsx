@@ -1,8 +1,8 @@
-import type { Difficulty } from "../../types";
+import type { ChartType, Difficulty } from "../../types";
 
 export interface SongChartSummary {
   difficulty: Difficulty;
-  chartType: "DX" | "Standard";
+  chartType: ChartType;
   level: string;
   chartConstant?: number;
   achievement?: number;
@@ -11,6 +11,7 @@ export interface SongChartSummary {
 interface SongInfoProps {
   name: string;
   alternateTitles?: string[];
+  jacketUrl?: string | null;
   charts: SongChartSummary[];
 }
 
@@ -22,14 +23,17 @@ const difficultyStyles: Record<Difficulty, string> = {
   "Re:MASTER": "border-l-fuchsia-400",
 };
 
-export function SongInfo({ name, alternateTitles = [], charts }: SongInfoProps) {
+export function SongInfo({ name, alternateTitles = [], jacketUrl, charts }: SongInfoProps) {
   return (
     <article className="overflow-hidden rounded-2xl border border-line bg-white/60">
-      <header className="border-b border-line px-5 py-5 sm:px-6">
-        <h2 className="text-lg font-semibold tracking-tight">{name}</h2>
-        {alternateTitles.length > 0 && (
-          <p className="mt-1 text-sm text-muted">{alternateTitles.join(" · ")}</p>
-        )}
+      <header className="flex items-center gap-4 border-b border-line px-5 py-5 sm:px-6">
+        {jacketUrl && <img src={jacketUrl} alt="" width="64" height="64" loading="lazy" decoding="async" referrerPolicy="no-referrer" className="size-16 rounded-lg object-cover" />}
+        <div>
+          <h2 className="text-lg font-semibold tracking-tight">{name}</h2>
+          {alternateTitles.length > 0 && (
+            <p className="mt-1 text-sm text-muted">{alternateTitles.join(" · ")}</p>
+          )}
+        </div>
       </header>
 
       <div className="divide-y divide-line">

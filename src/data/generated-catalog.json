@@ -1,0 +1,45 @@
+{
+  "generatedAt": "2026-08-05T07:24:18.868Z",
+  "songs": [
+    {
+      "id": "tsunagite",
+      "title": "系ぎて",
+      "alternateTitles": [
+        "Tsunagite"
+      ],
+      "jacketUrl": "https://pub-e2dcd1e817ed4532be1ffc2c1d936d61.r2.dev/jackets/tsunagite-0f15deab27d9.png",
+      "charts": [
+        {
+          "chartType": "DX",
+          "difficulty": "BASIC",
+          "level": "7",
+          "chartConstant": null
+        },
+        {
+          "chartType": "DX",
+          "difficulty": "ADVANCED",
+          "level": "10",
+          "chartConstant": null
+        },
+        {
+          "chartType": "DX",
+          "difficulty": "EXPERT",
+          "level": "13+",
+          "chartConstant": null
+        },
+        {
+          "chartType": "DX",
+          "difficulty": "MASTER",
+          "level": "14+",
+          "chartConstant": null
+        },
+        {
+          "chartType": "DX",
+          "difficulty": "Re:MASTER",
+          "level": "15",
+          "chartConstant": null
+        }
+      ]
+    }
+  ]
+}

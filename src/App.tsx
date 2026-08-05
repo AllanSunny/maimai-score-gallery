@@ -5,7 +5,7 @@ import { ChartDetailPage } from "./pages/ChartDetailPage";
 import { ProfilePage } from "./pages/ProfilePage";
 import { ScoreListPage } from "./pages/ScoreListPage";
 import { Top50Page } from "./pages/Top50Page";
-import type { Difficulty } from "./types";
+import type { ChartType, Difficulty } from "./types";
 
 type Route = "/" | "/profile" | "/top-50" | "/scores" | `/songs/${string}`;
 
@@ -33,7 +33,7 @@ function App() {
   const chartMatch = route.match(/^\/songs\/([^/]+)\/([^/]+)\/([^/]+)$/);
   const chartRoute = chartMatch ? {
     songName: decodeURIComponent(chartMatch[1]),
-    chartType: decodeURIComponent(chartMatch[2]) as "DX" | "Standard",
+    chartType: decodeURIComponent(chartMatch[2]) as ChartType,
     difficulty: decodeURIComponent(chartMatch[3]) as Difficulty,
   } : null;
 

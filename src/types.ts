@@ -1,4 +1,20 @@
 export type Difficulty = "BASIC" | "ADVANCED" | "EXPERT" | "MASTER" | "Re:MASTER";
+export type ChartType = "DX" | "STD";
+
+export interface CatalogChart {
+  chartType: ChartType;
+  difficulty: Difficulty;
+  level: string;
+  chartConstant: number | null;
+}
+
+export interface CatalogSong {
+  id: string;
+  title: string;
+  alternateTitles: string[];
+  jacketUrl: string | null;
+  charts: CatalogChart[];
+}
 
 export interface JudgmentSet {
   criticalPerfect: number;
@@ -13,7 +29,7 @@ export interface Score {
   playedAt: string;
   songTitle: string;
   alternateTitles?: string[];
-  chartType: "DX" | "STD";
+  chartType: ChartType;
   difficulty: Difficulty;
   level: string;
   chartConstant?: number;

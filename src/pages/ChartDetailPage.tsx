@@ -1,11 +1,11 @@
 import { useEffect, useMemo, useState } from "react";
 import { fetchScores } from "../api";
 import { PageHeading } from "../components/ui/PageHeading";
-import type { Difficulty, Score } from "../types";
+import type { ChartType, Difficulty, Score } from "../types";
 
 interface ChartDetailPageProps {
   songName: string;
-  chartType: "DX" | "Standard";
+  chartType: ChartType;
   difficulty: Difficulty;
 }
 

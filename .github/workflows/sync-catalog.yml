@@ -1,0 +1,63 @@
+name: Sync song catalog
+
+on:
+  workflow_dispatch:
+    inputs:
+      sample:
+        description: "Use the Tsunagite sample instead of the score feed"
+        required: false
+        type: boolean
+        default: false
+  schedule:
+    - cron: "0 8 * * 1"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: catalog-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install
+
+      - name: Sync recorded songs
+        if: ${{ github.event_name == 'schedule' || inputs.sample != true }}
+        run: npm run catalog:sync
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET_NAME: ${{ vars.R2_BUCKET_NAME }}
+          R2_PUBLIC_URL: ${{ vars.R2_PUBLIC_URL }}
+          SCORES_API_URL: ${{ vars.SCORES_API_URL }}
+
+      - name: Sync Tsunagite sample
+        if: ${{ github.event_name == 'workflow_dispatch' && inputs.sample == true }}
+        run: npm run catalog:sample
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET_NAME: ${{ vars.R2_BUCKET_NAME }}
+          R2_PUBLIC_URL: ${{ vars.R2_PUBLIC_URL }}
+          SCORES_API_URL: ${{ vars.SCORES_API_URL }}
+
+      - name: Commit generated catalog
+        run: |
+          if git diff --quiet -- src/data/generated-catalog.json; then
+            echo "Catalog is already current."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/data/generated-catalog.json
+          git commit -m "Update generated song catalog"
+          git push
