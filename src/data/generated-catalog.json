@@ -1,6 +1,210 @@
 {
-  "generatedAt": "2026-08-05T07:24:18.868Z",
+  "generatedAt": "2026-08-05T09:13:42.842Z",
   "songs": [
+    {
+      "id": "song-5e2b531bd3e7",
+      "title": "Altale",
+      "alternateTitles": [],
+      "jacketKey": "jackets/song-5e2b531bd3e7-49acaa463591.png",
+      "charts": [
+        {
+          "chartType": "STD",
+          "difficulty": "BASIC",
+          "level": "4",
+          "chartConstant": null
+        },
+        {
+          "chartType": "STD",
+          "difficulty": "ADVANCED",
+          "level": "8",
+          "chartConstant": null
+        },
+        {
+          "chartType": "STD",
+          "difficulty": "EXPERT",
+          "level": "12",
+          "chartConstant": null
+        },
+        {
+          "chartType": "STD",
+          "difficulty": "MASTER",
+          "level": "13+",
+          "chartConstant": null
+        }
+      ]
+    },
+    {
+      "id": "song-a7a461d9d280",
+      "title": "M@GICAL☆CURE! LOVE ♥ SHOT!",
+      "alternateTitles": [],
+      "jacketKey": "jackets/song-a7a461d9d280-28fe15352109.png",
+      "charts": [
+        {
+          "chartType": "DX",
+          "difficulty": "BASIC",
+          "level": "4",
+          "chartConstant": null
+        },
+        {
+          "chartType": "DX",
+          "difficulty": "ADVANCED",
+          "level": "7+",
+          "chartConstant": null
+        },
+        {
+          "chartType": "DX",
+          "difficulty": "EXPERT",
+          "level": "11",
+          "chartConstant": null
+        },
+        {
+          "chartType": "DX",
+          "difficulty": "MASTER",
+          "level": "13+",
+          "chartConstant": null
+        }
+      ]
+    },
+    {
+      "id": "song-4f39f6af9e43",
+      "title": "エゴロック",
+      "alternateTitles": [],
+      "jacketKey": "jackets/song-4f39f6af9e43-3aaaaee27f49.png",
+      "charts": [
+        {
+          "chartType": "DX",
+          "difficulty": "BASIC",
+          "level": "5",
+          "chartConstant": null
+        },
+        {
+          "chartType": "DX",
+          "difficulty": "ADVANCED",
+          "level": "7+",
+          "chartConstant": null
+        },
+        {
+          "chartType": "DX",
+          "difficulty": "EXPERT",
+          "level": "10",
+          "chartConstant": null
+        },
+        {
+          "chartType": "DX",
+          "difficulty": "MASTER",
+          "level": "13+",
+          "chartConstant": null
+        }
+      ]
+    },
+    {
+      "id": "song-638e826988e6",
+      "title": "おくすり飲んで寝よう",
+      "alternateTitles": [],
+      "jacketKey": "jackets/song-638e826988e6-18eff5f64dd4.png",
+      "charts": [
+        {
+          "chartType": "DX",
+          "difficulty": "BASIC",
+          "level": "3",
+          "chartConstant": null
+        },
+        {
+          "chartType": "DX",
+          "difficulty": "ADVANCED",
+          "level": "6",
+          "chartConstant": null
+        },
+        {
+          "chartType": "DX",
+          "difficulty": "EXPERT",
+          "level": "9+",
+          "chartConstant": null
+        },
+        {
+          "chartType": "DX",
+          "difficulty": "MASTER",
+          "level": "12+",
+          "chartConstant": null
+        }
+      ]
+    },
+    {
+      "id": "song-08f22014494d",
+      "title": "メズマライザー",
+      "alternateTitles": [],
+      "jacketKey": "jackets/song-08f22014494d-e314571b9b94.png",
+      "charts": [
+        {
+          "chartType": "DX",
+          "difficulty": "BASIC",
+          "level": "3",
+          "chartConstant": null
+        },
+        {
+          "chartType": "DX",
+          "difficulty": "ADVANCED",
+          "level": "7",
+          "chartConstant": null
+        },
+        {
+          "chartType": "DX",
+          "difficulty": "EXPERT",
+          "level": "10",
+          "chartConstant": null
+        },
+        {
+          "chartType": "DX",
+          "difficulty": "MASTER",
+          "level": "11+",
+          "chartConstant": null
+        },
+        {
+          "chartType": "DX",
+          "difficulty": "Re:MASTER",
+          "level": "13+",
+          "chartConstant": null
+        }
+      ]
+    },
+    {
+      "id": "song-067df9d0eb73",
+      "title": "愛♡スクリ～ム！",
+      "alternateTitles": [],
+      "jacketKey": "jackets/song-067df9d0eb73-3f760e2a0fbb.png",
+      "charts": [
+        {
+          "chartType": "DX",
+          "difficulty": "BASIC",
+          "level": "2",
+          "chartConstant": null
+        },
+        {
+          "chartType": "DX",
+          "difficulty": "ADVANCED",
+          "level": "6",
+          "chartConstant": null
+        },
+        {
+          "chartType": "DX",
+          "difficulty": "EXPERT",
+          "level": "9",
+          "chartConstant": null
+        },
+        {
+          "chartType": "DX",
+          "difficulty": "MASTER",
+          "level": "11",
+          "chartConstant": null
+        },
+        {
+          "chartType": "DX",
+          "difficulty": "Re:MASTER",
+          "level": "13",
+          "chartConstant": null
+        }
+      ]
+    },
     {
       "id": "tsunagite",
       "title": "系ぎて",
