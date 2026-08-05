@@ -1,4 +1,189 @@
 {
-  "updatedAt": "1970-01-01T00:00:00.000Z",
-  "scores": []
+  "updatedAt": "2026-08-05T08:12:57.682Z",
+  "scores": [
+    {
+      "playedAt": "2025-11-10T02:30:43.000Z",
+      "songTitle": "メズマライザー",
+      "chartType": "DX",
+      "difficulty": "EXPERT",
+      "level": "10",
+      "achievement": 97.837,
+      "rank": "S",
+      "combo": "Clear",
+      "sync": "None",
+      "rating": 205,
+      "ratingChange": 205,
+      "judgments": {
+        "criticalPerfect": 14,
+        "perfect": 450,
+        "great": 40,
+        "good": 13,
+        "miss": 7
+      },
+      "fast": 7,
+      "slow": 46,
+      "id": "47LEGoRlAcY-3iqOMJ66TIyUu332sHgWDAIM1BxRyCU"
+    },
+    {
+      "playedAt": "2026-03-28T05:44:15.000Z",
+      "songTitle": "Altale",
+      "chartType": "STD",
+      "difficulty": "MASTER",
+      "level": "13+",
+      "achievement": 100.6194,
+      "rank": "SSS+",
+      "combo": "FC",
+      "sync": "None",
+      "rating": 14711,
+      "ratingChange": 11,
+      "judgments": {
+        "criticalPerfect": 346,
+        "perfect": 134,
+        "great": 6,
+        "good": 1,
+        "miss": 0
+      },
+      "fast": 5,
+      "slow": 11,
+      "id": "ECGiI9ejf6d7kZ893Crie9ImWyjidB1P5VJlPSrD4iw"
+    },
+    {
+      "playedAt": "2026-05-12T02:38:24.000Z",
+      "songTitle": "M@GICAL☆CURE! LOVE ♥ SHOT!",
+      "chartType": "DX",
+      "difficulty": "MASTER",
+      "level": "13+",
+      "achievement": 100.5531,
+      "rank": "SSS+",
+      "combo": "Clear",
+      "sync": "None",
+      "rating": 14946,
+      "ratingChange": 11,
+      "judgments": {
+        "criticalPerfect": 643,
+        "perfect": 286,
+        "great": 13,
+        "good": 3,
+        "miss": 2
+      },
+      "fast": 11,
+      "slow": 5,
+      "id": "NevUgNc6HvKGnEipHhk2iS02yf58KGfv8BvcQjSw-6g"
+    },
+    {
+      "playedAt": "2026-06-25T00:05:40.000Z",
+      "songTitle": "メズマライザー",
+      "chartType": "DX",
+      "difficulty": "EXPERT",
+      "level": "10",
+      "achievement": 101,
+      "rank": "SSS+",
+      "combo": "AP+",
+      "sync": "None",
+      "rating": 15075,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 392,
+        "perfect": 132,
+        "great": 0,
+        "good": 0,
+        "miss": 0
+      },
+      "fast": 0,
+      "slow": 0,
+      "id": "hLrTZQRyVgFqakt97igYp3rZOFtGIRRD7vIxlkds5mk"
+    },
+    {
+      "playedAt": "2026-07-03T03:02:37.000Z",
+      "songTitle": "エゴロック",
+      "chartType": "DX",
+      "difficulty": "MASTER",
+      "level": "13+",
+      "achievement": 100.683,
+      "rank": "SSS+",
+      "combo": "FC",
+      "sync": "FS",
+      "rating": 15116,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 511,
+        "perfect": 165,
+        "great": 13,
+        "good": 1,
+        "miss": 0
+      },
+      "fast": 27,
+      "slow": 6,
+      "id": "-0JWEcs-f0PYKpFV4Fnii3-fWo3PprQbwjM9LyJ4SoA"
+    },
+    {
+      "playedAt": "2026-07-20T03:40:19.000Z",
+      "songTitle": "おくすり飲んで寝よう",
+      "chartType": "DX",
+      "difficulty": "EXPERT",
+      "level": "9+",
+      "achievement": 101,
+      "rank": "SSS+",
+      "combo": "AP+",
+      "sync": "FDX+",
+      "rating": 15133,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 339,
+        "perfect": 98,
+        "great": 0,
+        "good": 0,
+        "miss": 0
+      },
+      "fast": 0,
+      "slow": 0,
+      "id": "Y2WuOucwOXI38xNLCS1KubFqrQy_SRVGfut3HShzLHw"
+    },
+    {
+      "playedAt": "2026-07-25T05:34:16.000Z",
+      "songTitle": "愛♡スクリ～ム！",
+      "chartType": "DX",
+      "difficulty": "MASTER",
+      "level": "11",
+      "achievement": 100.97669999999998,
+      "rank": "SSS+",
+      "combo": "AP",
+      "sync": "None",
+      "rating": 15138,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 458,
+        "perfect": 82,
+        "great": 0,
+        "good": 0,
+        "miss": 0
+      },
+      "fast": 2,
+      "slow": 2,
+      "id": "CFKkE9E13pNq9Lw8uwA9CzX8R58CJSvAcJd41Yg0XY0"
+    },
+    {
+      "playedAt": "2026-07-28T02:00:07.000Z",
+      "songTitle": "系ぎて",
+      "chartType": "DX",
+      "difficulty": "EXPERT",
+      "level": "13+",
+      "achievement": 100.5079,
+      "rank": "SSS+",
+      "combo": "FC",
+      "sync": "None",
+      "rating": 15149,
+      "ratingChange": 11,
+      "judgments": {
+        "criticalPerfect": 512,
+        "perfect": 212,
+        "great": 14,
+        "good": 4,
+        "miss": 0
+      },
+      "fast": 21,
+      "slow": 5,
+      "id": "EgvB410utrDx7wJAo1Bl3WThDAKzVTUryT-b6sFpidQ"
+    }
+  ]
 }
