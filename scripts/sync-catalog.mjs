@@ -10,6 +10,7 @@ const execFileAsync = promisify(execFile);
 const ROOT = process.cwd();
 const OVERRIDES_PATH = path.join(ROOT, "catalog", "overrides.json");
 const GENERATED_PATH = path.join(ROOT, "src", "data", "generated-catalog.json");
+const SCORES_PATH = path.join(ROOT, "src", "data", "generated-scores.json");
 const SEGA_CATALOG_URL = process.env.SEGA_CATALOG_URL ?? "https://maimai.sega.jp/data/maimai_songs.json";
 const SEGA_JACKET_BASE_URL = process.env.SEGA_JACKET_BASE_URL ?? "https://maimaidx.jp/maimai-mobile/img/Music/";
 
@@ -76,10 +77,22 @@ async function requestedTitles() {
     return ["系ぎて"];
   }
 
-  if (!process.env.SCORES_API_URL) throw new Error("SCORES_API_URL is required when --sample is not used.");
-  const response = await fetchJson(process.env.SCORES_API_URL, "score feed");
-  if (!Array.isArray(response.scores)) throw new Error("Score feed must return an object containing a scores array.");
-  return unique(response.scores.map((score) => score.songTitle));
+  const archive = await readJson(SCORES_PATH);
+  if (!Array.isArray(archive.scores)) throw new Error("Score archive must contain a scores array.");
+  return unique(archive.scores.map((score) => score.songTitle));
+}
+
+function isAlreadyCataloged(title, songs) {
+  const target = normalizeTitle(title);
+  return songs.some((song) => [song.title, ...(song.alternateTitles ?? [])]
+    .some((name) => normalizeTitle(name) === target));
+}
+
+function hasMatchingOverride(title, overrides) {
+  const target = normalizeTitle(title);
+  return Object.entries(overrides).some(([officialTitle, override]) =>
+    [officialTitle, ...(override.alternateTitles ?? [])]
+      .some((name) => normalizeTitle(name) === target));
 }
 
 function findOfficialSong(title, officialSongs, overrides) {
@@ -159,33 +172,52 @@ async function uploadJacket(songId, sourceUrl) {
 }
 
 async function main() {
-  const [overrides, previous, titles, officialSongs] = await Promise.all([
+  const [overrides, previous, titles] = await Promise.all([
     readJson(OVERRIDES_PATH),
     readJson(GENERATED_PATH),
     requestedTitles(),
-    fetchJson(SEGA_CATALOG_URL, "SEGA song catalog"),
   ]);
-  const previousById = new Map(previous.songs.map((song) => [song.id, song]));
-  const songs = [];
+  const unmatchedSongs = new Map((previous.unmatchedSongs ?? [])
+    .map((entry) => [normalizeTitle(entry.title), entry]));
+  const newTitles = titles.filter((title) => {
+    if (isAlreadyCataloged(title, previous.songs)) return false;
+    const wasUnmatched = unmatchedSongs.has(normalizeTitle(title));
+    return !wasUnmatched || hasMatchingOverride(title, overrides);
+  });
+  if (!newTitles.length) {
+    console.log(`Song catalog is current (${previous.songs.length} songs, ${unmatchedSongs.size} unmatched).`);
+    return;
+  }
 
-  for (const requestedTitle of titles) {
+  console.log(`Found ${newTitles.length} new song(s).`);
+  const officialSongs = await fetchJson(SEGA_CATALOG_URL, "SEGA song catalog");
+  const songs = [...previous.songs];
+
+  for (const requestedTitle of newTitles) {
     const official = findOfficialSong(requestedTitle, officialSongs, overrides);
     if (!official) {
       console.warn(`No official catalog match for: ${requestedTitle}`);
+      const key = normalizeTitle(requestedTitle);
+      unmatchedSongs.set(key, {
+        title: requestedTitle,
+        reason: "No matching title in the SEGA song catalog",
+        firstSeenAt: unmatchedSongs.get(key)?.firstSeenAt ?? new Date().toISOString(),
+        lastAttemptedAt: new Date().toISOString(),
+      });
       continue;
     }
+
+    unmatchedSongs.delete(normalizeTitle(requestedTitle));
 
     const override = overrides[official.title] ?? {};
     const id = override.id ?? fallbackId(official.title);
     const sourceJacketUrl = new URL(official.image_url, SEGA_JACKET_BASE_URL).toString();
     const uploadedJacketUrl = await uploadJacket(id, sourceJacketUrl);
-    const previousSong = previousById.get(id);
-
     songs.push({
       id,
       title: official.title,
       alternateTitles: unique(override.alternateTitles ?? []),
-      jacketUrl: uploadedJacketUrl ?? previousSong?.jacketUrl ?? null,
+      jacketUrl: uploadedJacketUrl,
       charts: extractCharts(official, override),
     });
 
@@ -193,7 +225,11 @@ async function main() {
     await new Promise((resolve) => setTimeout(resolve, 250));
   }
 
-  const catalog = { generatedAt: new Date().toISOString(), songs: songs.sort((a, b) => a.title.localeCompare(b.title)) };
+  const catalog = {
+    generatedAt: new Date().toISOString(),
+    songs: songs.sort((a, b) => a.title.localeCompare(b.title)),
+    unmatchedSongs: [...unmatchedSongs.values()].sort((a, b) => a.title.localeCompare(b.title)),
+  };
   await writeFile(GENERATED_PATH, `${JSON.stringify(catalog, null, 2)}\n`);
   console.log(`Wrote ${songs.length} song(s) to ${path.relative(ROOT, GENERATED_PATH)}.`);
 }

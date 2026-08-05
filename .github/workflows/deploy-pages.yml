@@ -4,6 +4,9 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+  workflow_run:
+    workflows: ["Sync new song metadata"]
+    types: [completed]
 
 permissions:
   contents: read
@@ -16,17 +19,18 @@ concurrency:
 
 jobs:
   build:
+    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: main
       - uses: actions/setup-node@v4
         with:
           node-version: 24.14.1
           cache: npm
       - run: npm ci
       - run: npm run build
-        env:
-          VITE_SCORES_API_URL: ${{ vars.SCORES_API_URL }}
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:

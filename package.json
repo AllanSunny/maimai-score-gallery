@@ -11,6 +11,7 @@
     "build": "tsc -b && vite build",
     "preview": "vite preview",
     "lint": "eslint .",
+    "scores:sync": "NODE_EXTRA_CA_CERTS=${NODE_EXTRA_CA_CERTS:-/etc/ssl/cert.pem} node --env-file-if-exists=.env.r2 scripts/sync-scores.mjs",
     "catalog:sync": "NODE_EXTRA_CA_CERTS=${NODE_EXTRA_CA_CERTS:-/etc/ssl/cert.pem} node --env-file-if-exists=.env.r2 scripts/sync-catalog.mjs",
     "catalog:sample": "NODE_EXTRA_CA_CERTS=${NODE_EXTRA_CA_CERTS:-/etc/ssl/cert.pem} node --env-file-if-exists=.env.r2 scripts/sync-catalog.mjs --sample tsunagite"
   },

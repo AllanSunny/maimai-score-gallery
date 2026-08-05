@@ -1,18 +1,10 @@
-name: Sync song catalog
+name: Sync new song metadata
 
 on:
   workflow_dispatch:
-    inputs:
-      sample:
-        description: "Use the Tsunagite sample instead of the score feed"
-        required: false
-        type: boolean
-        default: false
-  schedule:
-    # GitHub cron uses UTC. These cover midnight Eastern in both EST and EDT;
-    # the schedule-check job below skips the non-matching run.
-    - cron: "0 4 * * 0"
-    - cron: "0 5 * * 0"
+  workflow_run:
+    workflows: ["Archive spreadsheet scores"]
+    types: [completed]
 
 permissions:
   contents: write
@@ -22,25 +14,8 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  schedule-check:
-    runs-on: ubuntu-latest
-    outputs:
-      should-run: ${{ steps.eastern-time.outputs.should-run }}
-    steps:
-      - name: Check for Sunday at midnight Eastern
-        id: eastern-time
-        env:
-          EVENT_NAME: ${{ github.event_name }}
-        run: |
-          if [ "$EVENT_NAME" != "schedule" ] || [ "$(TZ=America/New_York date +%u-%H)" = "7-00" ]; then
-            echo "should-run=true" >> "$GITHUB_OUTPUT"
-          else
-            echo "should-run=false" >> "$GITHUB_OUTPUT"
-          fi
-
   sync:
-    needs: schedule-check
-    if: ${{ needs.schedule-check.outputs.should-run == 'true' }}
+    if: ${{ github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
@@ -58,11 +33,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Verify download tooling
-        run: curl --version
-
-      - name: Sync recorded songs
-        if: ${{ github.event_name == 'schedule' || inputs.sample != true }}
+      - name: Sync metadata for new songs
         run: npm run catalog:sync
         env:
           R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
@@ -70,29 +41,16 @@ jobs:
           R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
           R2_BUCKET_NAME: ${{ vars.R2_BUCKET_NAME }}
           R2_PUBLIC_URL: ${{ vars.R2_PUBLIC_URL }}
-          SCORES_API_URL: ${{ vars.SCORES_API_URL }}
-
-      - name: Sync Tsunagite sample
-        if: ${{ github.event_name == 'workflow_dispatch' && inputs.sample == true }}
-        run: npm run catalog:sample -- --dry-run
-        env:
-          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
-          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
-          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
-          R2_BUCKET_NAME: ${{ vars.R2_BUCKET_NAME }}
-          R2_PUBLIC_URL: ${{ vars.R2_PUBLIC_URL }}
-          SCORES_API_URL: ${{ vars.SCORES_API_URL }}
 
       - name: Commit generated catalog
-        if: ${{ github.event_name == 'schedule' || inputs.sample != true }}
         run: |
           if git diff --quiet -- src/data/generated-catalog.json; then
-            echo "Catalog is already current."
+            echo "Song catalog is already current."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add src/data/generated-catalog.json
-          git commit -m "Update generated song catalog"
+          git commit -m "Add metadata for new songs"
           git pull --rebase origin main
           git push

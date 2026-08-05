@@ -1,0 +1,68 @@
+name: Archive spreadsheet scores
+
+on:
+  workflow_dispatch:
+  schedule:
+    # GitHub cron uses UTC. These cover midnight Eastern in both EST and EDT.
+    - cron: "0 4 * * 0"
+    - cron: "0 5 * * 0"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: score-archive
+  cancel-in-progress: false
+
+jobs:
+  archive:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Check whether this is midnight Eastern
+        id: schedule-check
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+        run: |
+          if [ "$EVENT_NAME" != "schedule" ] || [ "$(TZ=America/New_York date +%u-%H)" = "7-00" ]; then
+            echo "should-run=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "should-run=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Check out repository
+        if: ${{ steps.schedule-check.outputs.should-run == 'true' }}
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Set up Node.js
+        if: ${{ steps.schedule-check.outputs.should-run == 'true' }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24.14.1
+          cache: npm
+
+      - name: Install dependencies
+        if: ${{ steps.schedule-check.outputs.should-run == 'true' }}
+        run: npm ci
+
+      - name: Archive new spreadsheet rows
+        if: ${{ steps.schedule-check.outputs.should-run == 'true' }}
+        run: npm run scores:sync
+        env:
+          SCORES_API_URL: ${{ vars.SCORES_API_URL }}
+
+      - name: Commit score archive
+        if: ${{ steps.schedule-check.outputs.should-run == 'true' }}
+        run: |
+          if git diff --quiet -- src/data/generated-scores.json; then
+            echo "Score archive is already current."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/data/generated-scores.json
+          git commit -m "Archive new spreadsheet scores"
+          git pull --rebase origin main
+          git push

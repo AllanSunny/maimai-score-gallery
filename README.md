@@ -27,12 +27,13 @@ example that accepts a `className` prop, allowing callers to extend it:
 Use utilities directly for one-off layouts. Extract a component when the same
 visual pattern appears more than once.
 
-## Catalog and jacket synchronization
+## Score archive, catalog, and jacket synchronization
 
-The same catalog importer runs locally and in GitHub Actions. It reads recorded
-song titles, matches them against SEGA's public catalog, uploads missing jacket
-art to Cloudflare R2, merges `catalog/overrides.json`, and writes the tracked
-`src/data/generated-catalog.json` file.
+The same importers run locally and in GitHub Actions. The score importer appends
+new spreadsheet rows to `src/data/generated-scores.json`. The catalog importer
+then processes only song titles not already in `src/data/generated-catalog.json`,
+matches them against SEGA's public catalog, uploads their jackets to Cloudflare
+R2, and merges `catalog/overrides.json`.
 
 ### Local setup
 
@@ -43,12 +44,20 @@ Script score-feed URL. `.env.r2` is ignored by Git.
 
 ```bash
 npm install
+npm run scores:sync
 npm run catalog:sample
 npm run catalog:sync
 ```
 
-`catalog:sample` synchronizes only `系ぎて` (Tsunagite). `catalog:sync` reads all
-recorded titles from `SCORES_API_URL`.
+`scores:sync` archives plays not already stored. `catalog:sample` synchronizes
+only `系ぎて` (Tsunagite). `catalog:sync` reads titles from the score archive and
+downloads metadata only for songs not already cataloged.
+
+Titles that cannot be matched are recorded in `generated-catalog.json` under
+`unmatchedSongs` with their first-seen time, last attempt, and error reason.
+They are skipped on later runs. To retry one, add it to the correct song's
+`alternateTitles` in `catalog/overrides.json`; the next sync will detect that
+override and try the match again.
 
 To inspect generated metadata without uploading a jacket:
 
@@ -70,7 +79,7 @@ Under **Actions → Variables**, add:
 - `R2_PUBLIC_URL`
 - `SCORES_API_URL`
 
-Run **Sync song catalog** from the Actions tab and enable the Tsunagite sample
-checkbox for the first test. The scheduled run executes every Sunday at
-midnight Eastern time, synchronizes all recorded songs, and commits catalog
-changes back to `main`.
+Run **Archive spreadsheet scores** from the Actions tab for a real-data test.
+It runs every Sunday at midnight Eastern time and automatically starts **Sync
+new song metadata** when it finishes. That workflow processes only net-new
+songs, then **Deploy to GitHub Pages** publishes the completed archive.
