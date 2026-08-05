@@ -71,5 +71,6 @@ Under **Actions → Variables**, add:
 - `SCORES_API_URL`
 
 Run **Sync song catalog** from the Actions tab and enable the Tsunagite sample
-checkbox for the first test. The scheduled run executes weekly, synchronizes
-all recorded songs, and commits catalog changes back to `main`.
+checkbox for the first test. The scheduled run executes every Sunday at
+midnight Eastern time, synchronizes all recorded songs, and commits catalog
+changes back to `main`.
