@@ -1,2 +1,2 @@
 # maimai-score-gallery
-A place for Allan to view the timeline of his maimai high scores
+I really like rhythm games and maimai is my latest obsession. There are many beautiful fan-created services out there that help you with score tracking, but those tend to focus on the high points. I wanted to have a place where I could reminisce about my progression through various charts in the game.
