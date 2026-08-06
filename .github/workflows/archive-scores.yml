@@ -8,7 +8,7 @@ on:
     - cron: "0 5 * * 0"
 
 permissions:
-  contents: write
+  contents: read
 
 concurrency:
   group: score-archive
@@ -31,7 +31,6 @@ jobs:
           fi
 
       - name: Check out repository
-        if: ${{ steps.schedule-check.outputs.should-run == 'true' }}
         uses: actions/checkout@v4
         with:
           ref: main
@@ -53,16 +52,10 @@ jobs:
         env:
           SCORES_API_URL: ${{ vars.SCORES_API_URL }}
 
-      - name: Commit score archive
-        if: ${{ steps.schedule-check.outputs.should-run == 'true' }}
-        run: |
-          if git diff --quiet -- src/data/generated-scores.json; then
-            echo "Score archive is already current."
-            exit 0
-          fi
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add src/data/generated-scores.json
-          git commit -m "Archive new spreadsheet scores"
-          git pull --rebase origin main
-          git push
+      - name: Pass score archive to metadata workflow
+        uses: actions/upload-artifact@v4
+        with:
+          name: score-archive
+          path: src/data/generated-scores.json
+          if-no-files-found: error
+          retention-days: 1

@@ -7,6 +7,7 @@ on:
     types: [completed]
 
 permissions:
+  actions: read
   contents: write
 
 concurrency:
@@ -24,16 +25,38 @@ jobs:
         with:
           ref: main
 
+      - name: Download updated score archive
+        if: ${{ github.event_name == 'workflow_run' }}
+        uses: actions/download-artifact@v4
+        with:
+          name: score-archive
+          path: src/data
+          github-token: ${{ github.token }}
+          run-id: ${{ github.event.workflow_run.id }}
+
+      - name: Check for score archive changes
+        id: data-check
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] || \
+            ! git diff --quiet -- src/data/generated-scores.json; then
+            echo "should-run=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "should-run=false" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Set up Node.js
+        if: ${{ steps.data-check.outputs.should-run == 'true' }}
         uses: actions/setup-node@v4
         with:
           node-version: 24.14.1
           cache: npm
 
       - name: Install dependencies
+        if: ${{ steps.data-check.outputs.should-run == 'true' }}
         run: npm ci
 
       - name: Complete maimaidx.jp certificate chain
+        if: ${{ steps.data-check.outputs.should-run == 'true' }}
         run: |
           set -euo pipefail
           leaf_certificate="$RUNNER_TEMP/maimaidx-leaf.pem"
@@ -71,6 +94,7 @@ jobs:
           echo "NODE_EXTRA_CA_CERTS=$ca_bundle" >> "$GITHUB_ENV"
 
       - name: Sync metadata for new songs
+        if: ${{ steps.data-check.outputs.should-run == 'true' }}
         run: npm run catalog:sync
         env:
           R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
@@ -78,15 +102,20 @@ jobs:
           R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
           R2_BUCKET_NAME: ${{ vars.R2_BUCKET_NAME }}
 
-      - name: Commit generated catalog
+      - name: Commit score and catalog data
+        if: ${{ steps.data-check.outputs.should-run == 'true' }}
         run: |
-          if git diff --quiet -- src/data/generated-catalog.json; then
-            echo "Song catalog is already current."
+          if git diff --quiet -- \
+            src/data/generated-scores.json \
+            src/data/generated-catalog.json; then
+            echo "Score and song data are already current."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add src/data/generated-catalog.json
-          git commit -m "Add metadata for new songs"
+          git add \
+            src/data/generated-scores.json \
+            src/data/generated-catalog.json
+          git commit -m "Add new score data"
           git pull --rebase origin main
           git push

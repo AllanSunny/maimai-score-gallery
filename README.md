@@ -86,4 +86,5 @@ R2 credentials are available only to the metadata workflow.
 Run **Archive spreadsheet scores** from the Actions tab for a real-data test.
 It runs every Sunday at midnight Eastern time and automatically starts **Sync
 new song metadata** when it finishes. That workflow processes only net-new
-songs, then **Deploy to GitHub Pages** publishes the completed archive.
+songs, commits the score archive and catalog together as `Add new score data`,
+then **Deploy to GitHub Pages** publishes the completed archive.
