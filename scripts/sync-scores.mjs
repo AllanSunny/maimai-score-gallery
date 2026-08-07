@@ -21,8 +21,18 @@ function findChartId(score, songs) {
 }
 
 function scoreFingerprint(score) {
-  const { id: _id, chartId: _chartId, ...publicScore } = score;
+  const {
+    id: _id,
+    chartId: _chartId,
+    alternateTitles: _alternateTitles,
+    judgmentsByType: _judgmentsByType,
+    ...publicScore
+  } = score;
   return JSON.stringify(publicScore);
+}
+
+function alternateTitles(score) {
+  return [...new Set((score.alternateTitles ?? []).map((title) => String(title).trim()).filter(Boolean))];
 }
 
 async function downloadJson(url) {
@@ -48,14 +58,42 @@ async function main() {
   const feed = await downloadJson(process.env.SCORES_API_URL);
   if (!Array.isArray(feed.scores)) throw new Error("Score feed must contain a scores array.");
 
-  const archivedScores = new Set(archive.scores.map(scoreFingerprint));
-  const additions = feed.scores.filter((score) => {
-    if (!score.id || archivedScores.has(scoreFingerprint(score))) return false;
-    archivedScores.add(scoreFingerprint(score));
-    return true;
-  }).map((score) => ({ ...score, chartId: findChartId(score, catalog.songs) }));
+  const archivedByFingerprint = new Map(archive.scores.map((score, index) => [scoreFingerprint(score), index]));
+  const additions = [];
+  let metadataChanged = false;
 
-  if (!additions.length) {
+  feed.scores.forEach((score) => {
+    if (!score.id) return;
+    const fingerprint = scoreFingerprint(score);
+    const existingIndex = archivedByFingerprint.get(fingerprint);
+    if (existingIndex !== undefined) {
+      const archivedCount = archive.scores.length;
+      const existing = existingIndex < archivedCount
+        ? archive.scores[existingIndex]
+        : additions[existingIndex - archivedCount];
+      const mergedTitles = [...new Set([...alternateTitles(existing), ...alternateTitles(score)])];
+      const judgmentsByType = score.judgmentsByType ?? existing.judgmentsByType ?? null;
+      if (
+        JSON.stringify(mergedTitles) !== JSON.stringify(alternateTitles(existing)) ||
+        JSON.stringify(judgmentsByType) !== JSON.stringify(existing.judgmentsByType ?? null)
+      ) {
+        const updated = { ...existing, alternateTitles: mergedTitles, judgmentsByType };
+        if (existingIndex < archivedCount) archive.scores[existingIndex] = updated;
+        else additions[existingIndex - archivedCount] = updated;
+        metadataChanged = true;
+      }
+      return;
+    }
+    archivedByFingerprint.set(fingerprint, archive.scores.length + additions.length);
+    additions.push({
+      ...score,
+      alternateTitles: alternateTitles(score),
+      judgmentsByType: score.judgmentsByType ?? null,
+      chartId: findChartId(score, catalog.songs),
+    });
+  });
+
+  if (!additions.length && !metadataChanged) {
     console.log(`Score archive is current (${archive.scores.length} plays).`);
     return;
   }
@@ -64,7 +102,7 @@ async function main() {
     .sort((a, b) => a.playedAt.localeCompare(b.playedAt));
   const nextArchive = { updatedAt: new Date().toISOString(), scores };
   await writeFile(ARCHIVE_PATH, `${JSON.stringify(nextArchive, null, 2)}\n`);
-  console.log(`Archived ${additions.length} new play(s); ${scores.length} total.`);
+  console.log(`Archived ${additions.length} new play(s); updated alternate titles; ${scores.length} total.`);
 }
 
 main().catch((error) => {

@@ -47,6 +47,14 @@ export interface JudgmentSet {
   miss: number;
 }
 
+export interface JudgmentBreakdown {
+  break: JudgmentSet;
+  tap: JudgmentSet;
+  hold: JudgmentSet;
+  slide: JudgmentSet;
+  touch: JudgmentSet;
+}
+
 export interface ScoreRecord {
   id: string;
   chartId: string | null;
@@ -66,6 +74,7 @@ export interface ScoreRecord {
   fast: number;
   slow: number;
   judgments: JudgmentSet;
+  judgmentsByType: JudgmentBreakdown | null;
 }
 
 export type Score = ScoreRecord;

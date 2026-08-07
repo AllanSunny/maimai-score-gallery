@@ -42,6 +42,7 @@ interface ScoreRecord {
   fast: number;
   slow: number;
   judgments: JudgmentSet;
+  judgmentsByType: JudgmentBreakdown | null;
 }
 
 interface JudgmentSet {
@@ -50,6 +51,14 @@ interface JudgmentSet {
   great: number;
   good: number;
   miss: number;
+}
+
+interface JudgmentBreakdown {
+  break: JudgmentSet;
+  tap: JudgmentSet;
+  hold: JudgmentSet;
+  slide: JudgmentSet;
+  touch: JudgmentSet;
 }
 ```
 
@@ -116,6 +125,8 @@ Add the unmatched title to the correct entry's `alternateTitles` in
 - Song-version IDs end in `-dx` or `-std`.
 - Chart IDs append the normalized difficulty to the song-version ID.
 - DX and STD versions share their parent song's immutable `jacketKey`.
+- Alternate titles are additive: later score rows may add translations or
+  romaji without replacing aliases already stored on the song.
 - `chartConstant: null` means the source has no constant and no override exists.
 - Seed titles in `catalog/seed-titles.json` request metadata before scores exist.
 

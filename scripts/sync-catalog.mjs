@@ -72,10 +72,10 @@ async function fetchJson(url, label) {
   return JSON.parse((await download(url, label)).toString("utf8"));
 }
 
-async function requestedTitles() {
+async function requestedSongs() {
   if (sample) {
     if (normalizeTitle(sample) !== "tsunagite") throw new Error(`Unknown sample: ${sample}`);
-    return ["系ぎて"];
+    return [{ title: "系ぎて", alternateTitles: ["Tsunagite"] }];
   }
 
   const [archive, seedTitles] = await Promise.all([
@@ -84,7 +84,35 @@ async function requestedTitles() {
   ]);
   if (!Array.isArray(archive.scores)) throw new Error("Score archive must contain a scores array.");
   if (!Array.isArray(seedTitles)) throw new Error("Catalog seed titles must be an array.");
-  return unique([...archive.scores.map((score) => score.songTitle), ...seedTitles]);
+  const requested = new Map();
+  archive.scores.forEach((score) => {
+    const key = normalizeTitle(score.songTitle);
+    const entry = requested.get(key) ?? { title: score.songTitle, alternateTitles: [] };
+    entry.alternateTitles = unique([...entry.alternateTitles, ...(score.alternateTitles ?? [])]);
+    requested.set(key, entry);
+  });
+  seedTitles.forEach((title) => {
+    const key = normalizeTitle(title);
+    if (!requested.has(key)) requested.set(key, { title, alternateTitles: [] });
+  });
+  return [...requested.values()];
+}
+
+function mergeRequestedAliases(songs, requested) {
+  let changed = false;
+  requested.forEach((request) => {
+    const target = normalizeTitle(request.title);
+    const song = songs.find((entry) => [entry.title, ...(entry.alternateTitles ?? [])]
+      .some((name) => normalizeTitle(name) === target));
+    if (!song) return;
+    const aliases = unique([...song.alternateTitles, ...request.alternateTitles])
+      .filter((title) => normalizeTitle(title) !== normalizeTitle(song.title));
+    if (JSON.stringify(aliases) !== JSON.stringify(song.alternateTitles)) {
+      song.alternateTitles = aliases;
+      changed = true;
+    }
+  });
+  return changed;
 }
 
 function isAlreadyCataloged(title, songs) {
@@ -211,11 +239,13 @@ async function uploadJacket(songId, sourceUrl) {
 }
 
 async function main() {
-  const [overrides, previous, titles] = await Promise.all([
+  const [overrides, previous, requested] = await Promise.all([
     readJson(OVERRIDES_PATH),
     readJson(GENERATED_PATH),
-    requestedTitles(),
+    requestedSongs(),
   ]);
+  const titles = requested.map((entry) => entry.title);
+  const aliasesChanged = mergeRequestedAliases(previous.songs, requested);
   const unmatchedSongs = new Map((previous.unmatchedSongs ?? [])
     .map((entry) => [normalizeTitle(entry.title), entry]));
   const newTitles = titles.filter((title) => {
@@ -225,6 +255,11 @@ async function main() {
   });
   if (!newTitles.length) {
     await linkArchivedScores(previous.songs);
+    if (aliasesChanged) {
+      previous.generatedAt = new Date().toISOString();
+      await writeFile(GENERATED_PATH, `${JSON.stringify(previous, null, 2)}\n`);
+      console.log("Updated song aliases from the score archive.");
+    }
     console.log(`Song catalog is current (${previous.songs.length} songs, ${unmatchedSongs.size} unmatched).`);
     return;
   }
@@ -250,6 +285,7 @@ async function main() {
     unmatchedSongs.delete(normalizeTitle(requestedTitle));
 
     const override = overrides[official.title] ?? {};
+    const requestedAliases = requested.find((entry) => normalizeTitle(entry.title) === normalizeTitle(requestedTitle))?.alternateTitles ?? [];
     const baseId = override.id ?? fallbackId(official.title);
     const sourceJacketUrl = new URL(official.image_url, SEGA_JACKET_BASE_URL).toString();
     const jacketKey = await uploadJacket(baseId, sourceJacketUrl);
@@ -268,7 +304,8 @@ async function main() {
     songs.push({
       id: baseId,
       title: official.title,
-      alternateTitles: unique(override.alternateTitles ?? []),
+      alternateTitles: unique([...(override.alternateTitles ?? []), ...requestedAliases])
+        .filter((title) => normalizeTitle(title) !== normalizeTitle(official.title)),
       jacketKey,
       versions,
     });

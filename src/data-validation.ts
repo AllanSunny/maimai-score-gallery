@@ -39,6 +39,12 @@ function validateChart(value: unknown, path: string) {
   if (chart.chartConstant !== null) number(chart.chartConstant, `${path}.chartConstant`);
 }
 
+function validateJudgments(value: unknown, path: string) {
+  const judgments = object(value, path);
+  ["criticalPerfect", "perfect", "great", "good", "miss"].forEach((field) =>
+    number(judgments[field], `${path}.${field}`));
+}
+
 export function parseGeneratedCatalog(value: unknown): GeneratedCatalog {
   const catalog = object(value, "catalog");
   string(catalog.generatedAt, "catalog.generatedAt");
@@ -79,8 +85,12 @@ export function parseScoresResponse(value: unknown): ScoresResponse {
     ["achievement", "rating", "ratingChange", "fast", "slow"].forEach((field) => number(score[field], `${path}.${field}`));
     if (score.chartConstant !== undefined) number(score.chartConstant, `${path}.chartConstant`);
     if (score.alternateTitles !== undefined) array(score.alternateTitles, `${path}.alternateTitles`).forEach((title, titleIndex) => string(title, `${path}.alternateTitles[${titleIndex}]`));
-    const judgments = object(score.judgments, `${path}.judgments`);
-    ["criticalPerfect", "perfect", "great", "good", "miss"].forEach((field) => number(judgments[field], `${path}.judgments.${field}`));
+    validateJudgments(score.judgments, `${path}.judgments`);
+    if (score.judgmentsByType !== null) {
+      const breakdown = object(score.judgmentsByType, `${path}.judgmentsByType`);
+      ["break", "tap", "hold", "slide", "touch"].forEach((noteType) =>
+        validateJudgments(breakdown[noteType], `${path}.judgmentsByType.${noteType}`));
+    }
   });
   return value as ScoresResponse;
 }
