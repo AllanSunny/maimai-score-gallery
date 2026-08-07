@@ -1,0 +1,51 @@
+scripts/sync-scores.mjs
+  s_6d06bd4898dc7f::t_ccb3af15b2f5cd 2,10,41-43,69-76,97,105
+  s_6d06bd4898dc7f::t_012b35d0a86528 77-78
+  s_6d06bd4898dc7f::t_3475bce2dc2554 36-38
+  s_6d06bd4898dc7f::t_d3c555a44a8d07 39-40
+  s_6d06bd4898dc7f::t_3904357ad5afbc 79
+catalog/overrides.json
+  s_6d06bd4898dc7f::t_3475bce2dc2554 10
+.github/workflows/sync-catalog.yml
+  s_6d06bd4898dc7f::t_012b35d0a86528 41-42
+  s_6d06bd4898dc7f::t_c254f9c84b75b1 33
+.gitignore
+  s_6d06bd4898dc7f::t_ccb3af15b2f5cd 9
+src/data-validation.ts
+  s_6d06bd4898dc7f::t_3475bce2dc2554 33-37,61
+src/demo-data.ts
+  s_6d06bd4898dc7f::t_012b35d0a86528 5
+scripts/sync-catalog.mjs
+  s_6d06bd4898dc7f::t_3475bce2dc2554 45-51,95,131,329
+  s_6d06bd4898dc7f::t_09011a6989cb48 15,60-68,98,101,109-114
+docs/data-model.md
+  s_6d06bd4898dc7f::t_3475bce2dc2554 129
+  s_6d06bd4898dc7f::t_09011a6989cb48 127-128
+src/data/generated-catalog.json
+  s_6d06bd4898dc7f::t_2f3a2376beda5a 316
+  h_278fafc5c28027 45
+.github/workflows/archive-scores.yml
+  s_6d06bd4898dc7f::t_012b35d0a86528 55-61
+  s_6d06bd4898dc7f::t_c254f9c84b75b1 66-68
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.21",
+  "base_commit_sha": "eec9425817fc57206ad881d43da3e4b5a515ae31",
+  "prompts": {},
+  "humans": {
+    "h_278fafc5c28027": {
+      "author": "Allan Sun <allansun@live.com>"
+    }
+  },
+  "sessions": {
+    "s_6d06bd4898dc7f": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019faca2-0a30-75f3-8a51-06f8e9067195",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Allan Sun <allansun@live.com>"
+    }
+  }
+}
