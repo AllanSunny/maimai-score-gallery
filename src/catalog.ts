@@ -14,14 +14,18 @@ function normalizeTitle(value: string) {
   return value.normalize("NFKC").replace(/\s+/g, " ").trim().toLocaleLowerCase();
 }
 
-const catalogByTitle = new Map<string, CatalogSong>();
+const catalogByTitleAndType = new Map<string, CatalogSong>();
+
+function catalogKey(title: string, chartType: CatalogSong["chartType"]) {
+  return `${normalizeTitle(title)}\u0000${chartType}`;
+}
 
 catalogSongs.forEach((song) => {
   [song.title, ...song.alternateTitles].forEach((title) => {
-    catalogByTitle.set(normalizeTitle(title), song);
+    catalogByTitleAndType.set(catalogKey(title, song.chartType), song);
   });
 });
 
-export function findCatalogSong(title: string) {
-  return catalogByTitle.get(normalizeTitle(title));
+export function findCatalogSong(title: string, chartType: CatalogSong["chartType"]) {
+  return catalogByTitleAndType.get(catalogKey(title, chartType));
 }

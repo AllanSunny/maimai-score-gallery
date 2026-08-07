@@ -19,7 +19,7 @@ function groupScoresBySong(scores: Score[]): SongSummary[] {
   const songs = new Map<string, SongSummary>();
 
   scores.forEach((score) => {
-    const metadata = findCatalogSong(score.songTitle);
+    const metadata = findCatalogSong(score.songTitle, score.chartType);
     const canonicalTitle = metadata?.title ?? score.songTitle;
     const songKey = `${canonicalTitle}\u0000${score.chartType}`;
     const song: SongSummary = songs.get(songKey) ?? {
@@ -28,9 +28,9 @@ function groupScoresBySong(scores: Score[]): SongSummary[] {
       alternateTitles: [...(metadata?.alternateTitles ?? [])],
       jacketUrl: metadata?.jacketUrl,
       charts: (metadata?.charts ?? [])
-        .filter((chart) => chart.chartType === score.chartType)
         .map((chart): SongChartSummary => ({
           ...chart,
+          chartType: score.chartType,
           chartConstant: chart.chartConstant ?? undefined,
         })),
     };
@@ -44,7 +44,7 @@ function groupScoresBySong(scores: Score[]): SongSummary[] {
       (chart) => chart.difficulty === score.difficulty && chart.chartType === score.chartType,
     );
     const metadataChart = metadata?.charts.find(
-      (chart) => chart.difficulty === score.difficulty && chart.chartType === score.chartType,
+      (chart) => chart.difficulty === score.difficulty,
     );
     const chart: SongChartSummary = {
       difficulty: score.difficulty,

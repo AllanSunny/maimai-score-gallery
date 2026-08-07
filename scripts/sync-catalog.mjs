@@ -109,13 +109,19 @@ function findOfficialSong(title, officialSongs, overrides) {
   });
 }
 
-function extractCharts(song, override) {
-  return chartFields.flatMap(([chartType, difficulty, field]) => {
+function extractChartVersions(song, override) {
+  const versions = new Map();
+
+  chartFields.forEach(([chartType, difficulty, field]) => {
     const level = song[field];
-    if (!level) return [];
+    if (!level) return;
     const correction = override.charts?.[`${chartType}:${difficulty}`] ?? {};
-    return [{ chartType, difficulty, level: String(level), chartConstant: correction.chartConstant ?? null }];
+    const charts = versions.get(chartType) ?? [];
+    charts.push({ difficulty, level: String(level), chartConstant: correction.chartConstant ?? null });
+    versions.set(chartType, charts);
   });
+
+  return [...versions].map(([chartType, charts]) => ({ chartType, charts }));
 }
 
 function contentExtension(contentType, sourceUrl) {
@@ -215,15 +221,20 @@ async function main() {
     unmatchedSongs.delete(normalizeTitle(requestedTitle));
 
     const override = overrides[official.title] ?? {};
-    const id = override.id ?? fallbackId(official.title);
+    const baseId = override.id ?? fallbackId(official.title);
     const sourceJacketUrl = new URL(official.image_url, SEGA_JACKET_BASE_URL).toString();
-    const jacketKey = await uploadJacket(id, sourceJacketUrl);
-    songs.push({
-      id,
-      title: official.title,
-      alternateTitles: unique(override.alternateTitles ?? []),
-      jacketKey,
-      charts: extractCharts(official, override),
+    const jacketKey = await uploadJacket(baseId, sourceJacketUrl);
+    const versions = extractChartVersions(official, override);
+
+    versions.forEach(({ chartType, charts }) => {
+      songs.push({
+        id: `${baseId}-${chartType.toLowerCase()}`,
+        title: official.title,
+        chartType,
+        alternateTitles: unique(override.alternateTitles ?? []),
+        jacketKey,
+        charts,
+      });
     });
 
     // Be polite to the source host when synchronizing multiple new jackets.

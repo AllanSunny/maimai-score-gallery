@@ -2,31 +2,28 @@
   "generatedAt": "2026-08-07T02:29:36.418Z",
   "songs": [
     {
-      "id": "song-5e2b531bd3e7",
+      "id": "song-5e2b531bd3e7-std",
       "title": "Altale",
+      "chartType": "STD",
       "alternateTitles": [],
       "jacketKey": "jackets/song-5e2b531bd3e7-49acaa463591.png",
       "charts": [
         {
-          "chartType": "STD",
           "difficulty": "BASIC",
           "level": "4",
           "chartConstant": null
         },
         {
-          "chartType": "STD",
           "difficulty": "ADVANCED",
           "level": "8",
           "chartConstant": null
         },
         {
-          "chartType": "STD",
           "difficulty": "EXPERT",
           "level": "12",
           "chartConstant": null
         },
         {
-          "chartType": "STD",
           "difficulty": "MASTER",
           "level": "13+",
           "chartConstant": null
@@ -34,31 +31,28 @@
       ]
     },
     {
-      "id": "song-a7a461d9d280",
+      "id": "song-a7a461d9d280-dx",
       "title": "M@GICAL☆CURE! LOVE ♥ SHOT!",
+      "chartType": "DX",
       "alternateTitles": [],
       "jacketKey": "jackets/song-a7a461d9d280-28fe15352109.png",
       "charts": [
         {
-          "chartType": "DX",
           "difficulty": "BASIC",
           "level": "4",
           "chartConstant": null
         },
         {
-          "chartType": "DX",
           "difficulty": "ADVANCED",
           "level": "7+",
           "chartConstant": null
         },
         {
-          "chartType": "DX",
           "difficulty": "EXPERT",
           "level": "11",
           "chartConstant": null
         },
         {
-          "chartType": "DX",
           "difficulty": "MASTER",
           "level": "13+",
           "chartConstant": null
@@ -66,55 +60,57 @@
       ]
     },
     {
-      "id": "magical-flavor",
+      "id": "magical-flavor-dx",
       "title": "Magical Flavor",
+      "chartType": "DX",
       "alternateTitles": [],
       "jacketKey": "jackets/magical-flavor-5edfd122de62.png",
       "charts": [
         {
-          "chartType": "DX",
           "difficulty": "BASIC",
           "level": "3",
           "chartConstant": null
         },
         {
-          "chartType": "DX",
           "difficulty": "ADVANCED",
           "level": "6",
           "chartConstant": null
         },
         {
-          "chartType": "DX",
           "difficulty": "EXPERT",
           "level": "10",
           "chartConstant": null
         },
         {
-          "chartType": "DX",
           "difficulty": "MASTER",
           "level": "13",
           "chartConstant": null
-        },
+        }
+      ]
+    },
+    {
+      "id": "magical-flavor-std",
+      "title": "Magical Flavor",
+      "chartType": "STD",
+      "alternateTitles": [],
+      "jacketKey": "jackets/magical-flavor-5edfd122de62.png",
+      "charts": [
         {
-          "chartType": "STD",
           "difficulty": "BASIC",
           "level": "3",
           "chartConstant": null
         },
         {
-          "chartType": "STD",
           "difficulty": "ADVANCED",
           "level": "8",
           "chartConstant": null
         },
         {
-          "chartType": "STD",
           "difficulty": "EXPERT",
           "level": "10+",
           "chartConstant": null
         },
         {
-          "chartType": "STD",
           "difficulty": "MASTER",
           "level": "13",
           "chartConstant": null
@@ -122,31 +118,28 @@
       ]
     },
     {
-      "id": "song-4f39f6af9e43",
+      "id": "song-4f39f6af9e43-dx",
       "title": "エゴロック",
+      "chartType": "DX",
       "alternateTitles": [],
       "jacketKey": "jackets/song-4f39f6af9e43-3aaaaee27f49.png",
       "charts": [
         {
-          "chartType": "DX",
           "difficulty": "BASIC",
           "level": "5",
           "chartConstant": null
         },
         {
-          "chartType": "DX",
           "difficulty": "ADVANCED",
           "level": "7+",
           "chartConstant": null
         },
         {
-          "chartType": "DX",
           "difficulty": "EXPERT",
           "level": "10",
           "chartConstant": null
         },
         {
-          "chartType": "DX",
           "difficulty": "MASTER",
           "level": "13+",
           "chartConstant": null
@@ -154,31 +147,28 @@
       ]
     },
     {
-      "id": "song-638e826988e6",
+      "id": "song-638e826988e6-dx",
       "title": "おくすり飲んで寝よう",
+      "chartType": "DX",
       "alternateTitles": [],
       "jacketKey": "jackets/song-638e826988e6-18eff5f64dd4.png",
       "charts": [
         {
-          "chartType": "DX",
           "difficulty": "BASIC",
           "level": "3",
           "chartConstant": null
         },
         {
-          "chartType": "DX",
           "difficulty": "ADVANCED",
           "level": "6",
           "chartConstant": null
         },
         {
-          "chartType": "DX",
           "difficulty": "EXPERT",
           "level": "9+",
           "chartConstant": null
         },
         {
-          "chartType": "DX",
           "difficulty": "MASTER",
           "level": "12+",
           "chartConstant": null
@@ -186,37 +176,33 @@
       ]
     },
     {
-      "id": "song-08f22014494d",
+      "id": "song-08f22014494d-dx",
       "title": "メズマライザー",
+      "chartType": "DX",
       "alternateTitles": [],
       "jacketKey": "jackets/song-08f22014494d-e314571b9b94.png",
       "charts": [
         {
-          "chartType": "DX",
           "difficulty": "BASIC",
           "level": "3",
           "chartConstant": null
         },
         {
-          "chartType": "DX",
           "difficulty": "ADVANCED",
           "level": "7",
           "chartConstant": null
         },
         {
-          "chartType": "DX",
           "difficulty": "EXPERT",
           "level": "10",
           "chartConstant": null
         },
         {
-          "chartType": "DX",
           "difficulty": "MASTER",
           "level": "11+",
           "chartConstant": null
         },
         {
-          "chartType": "DX",
           "difficulty": "Re:MASTER",
           "level": "13+",
           "chartConstant": null
@@ -224,37 +210,33 @@
       ]
     },
     {
-      "id": "song-067df9d0eb73",
+      "id": "song-067df9d0eb73-dx",
       "title": "愛♡スクリ～ム！",
+      "chartType": "DX",
       "alternateTitles": [],
       "jacketKey": "jackets/song-067df9d0eb73-3f760e2a0fbb.png",
       "charts": [
         {
-          "chartType": "DX",
           "difficulty": "BASIC",
           "level": "2",
           "chartConstant": null
         },
         {
-          "chartType": "DX",
           "difficulty": "ADVANCED",
           "level": "6",
           "chartConstant": null
         },
         {
-          "chartType": "DX",
           "difficulty": "EXPERT",
           "level": "9",
           "chartConstant": null
         },
         {
-          "chartType": "DX",
           "difficulty": "MASTER",
           "level": "11",
           "chartConstant": null
         },
         {
-          "chartType": "DX",
           "difficulty": "Re:MASTER",
           "level": "13",
           "chartConstant": null
@@ -262,39 +244,35 @@
       ]
     },
     {
-      "id": "tsunagite",
+      "id": "tsunagite-dx",
       "title": "系ぎて",
+      "chartType": "DX",
       "alternateTitles": [
         "Tsunagite"
       ],
       "jacketKey": "jackets/tsunagite-0f15deab27d9.png",
       "charts": [
         {
-          "chartType": "DX",
           "difficulty": "BASIC",
           "level": "7",
           "chartConstant": null
         },
         {
-          "chartType": "DX",
           "difficulty": "ADVANCED",
           "level": "10",
           "chartConstant": null
         },
         {
-          "chartType": "DX",
           "difficulty": "EXPERT",
           "level": "13+",
           "chartConstant": null
         },
         {
-          "chartType": "DX",
           "difficulty": "MASTER",
           "level": "14+",
           "chartConstant": null
         },
         {
-          "chartType": "DX",
           "difficulty": "Re:MASTER",
           "level": "15",
           "chartConstant": null

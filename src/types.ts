@@ -2,7 +2,6 @@ export type Difficulty = "BASIC" | "ADVANCED" | "EXPERT" | "MASTER" | "Re:MASTER
 export type ChartType = "DX" | "STD";
 
 export interface CatalogChart {
-  chartType: ChartType;
   difficulty: Difficulty;
   level: string;
   chartConstant: number | null;
@@ -11,6 +10,7 @@ export interface CatalogChart {
 export interface CatalogSong {
   id: string;
   title: string;
+  chartType: ChartType;
   alternateTitles: string[];
   jacketUrl: string | null;
   charts: CatalogChart[];
