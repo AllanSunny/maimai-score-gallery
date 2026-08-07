@@ -28,7 +28,6 @@ interface ScoreRecord {
   chartId: string | null;      // Stable Chart ID; null only while unmatched
   playedAt: string;            // ISO 8601 capture time
   songTitle: string;           // Title reported by OCR / spreadsheet
-  alternateTitles?: string[];  // Optional searchable names
   chartType: "DX" | "STD";
   difficulty: "BASIC" | "ADVANCED" | "EXPERT" | "MASTER" | "Re:MASTER";
   level: string;               // Display level, e.g. "13+"
@@ -125,8 +124,9 @@ Add the unmatched title to the correct entry's `alternateTitles` in
 - Song-version IDs end in `-dx` or `-std`.
 - Chart IDs append the normalized difficulty to the song-version ID.
 - DX and STD versions share their parent song's immutable `jacketKey`.
-- Alternate titles are additive: later score rows may add translations or
-  romaji without replacing aliases already stored on the song.
+- Alternate titles exist only on `Song`. Spreadsheet aliases pass between sync
+  jobs as a temporary artifact and merge additively without entering score JSON.
+- Alternate titles are trimmed and normalized to lowercase during import.
 - `chartConstant: null` means the source has no constant and no override exists.
 - Seed titles in `catalog/seed-titles.json` request metadata before scores exist.
 

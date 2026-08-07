@@ -30,6 +30,11 @@ function nullableString(value: unknown, path: string) {
   if (value !== null) string(value, path);
 }
 
+function lowercaseString(value: unknown, path: string) {
+  string(value, path);
+  if (value !== value.toLocaleLowerCase()) throw new Error(`${path} must be lowercase.`);
+}
+
 function validateChart(value: unknown, path: string) {
   const chart = object(value, path);
   string(chart.id, `${path}.id`);
@@ -53,7 +58,7 @@ export function parseGeneratedCatalog(value: unknown): GeneratedCatalog {
     const song = object(songValue, path);
     string(song.id, `${path}.id`);
     string(song.title, `${path}.title`);
-    array(song.alternateTitles, `${path}.alternateTitles`).forEach((title, index) => string(title, `${path}.alternateTitles[${index}]`));
+    array(song.alternateTitles, `${path}.alternateTitles`).forEach((title, index) => lowercaseString(title, `${path}.alternateTitles[${index}]`));
     nullableString(song.jacketKey, `${path}.jacketKey`);
     array(song.versions, `${path}.versions`).forEach((versionValue, versionIndex) => {
       const versionPath = `${path}.versions[${versionIndex}]`;
@@ -84,7 +89,6 @@ export function parseScoresResponse(value: unknown): ScoresResponse {
     if (!difficulties.has(score.difficulty as Difficulty)) throw new Error(`${path}.difficulty is invalid.`);
     ["achievement", "rating", "ratingChange", "fast", "slow"].forEach((field) => number(score[field], `${path}.${field}`));
     if (score.chartConstant !== undefined) number(score.chartConstant, `${path}.chartConstant`);
-    if (score.alternateTitles !== undefined) array(score.alternateTitles, `${path}.alternateTitles`).forEach((title, titleIndex) => string(title, `${path}.alternateTitles[${titleIndex}]`));
     validateJudgments(score.judgments, `${path}.judgments`);
     if (score.judgmentsByType !== null) {
       const breakdown = object(score.judgmentsByType, `${path}.judgmentsByType`);

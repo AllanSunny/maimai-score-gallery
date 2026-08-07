@@ -34,12 +34,6 @@ function groupScoresBySong(scores: Score[]): SongSummary[] {
           chartConstant: chart.chartConstant ?? undefined,
         })),
     };
-    score.alternateTitles?.forEach((title) => {
-      const normalizedTitle = title.trim();
-      if (normalizedTitle && normalizedTitle !== score.songTitle && !song.alternateTitles.includes(normalizedTitle)) {
-        song.alternateTitles.push(normalizedTitle);
-      }
-    });
     const chartIndex = song.charts.findIndex(
       (chart) => chart.difficulty === score.difficulty && chart.chartType === score.chartType,
     );

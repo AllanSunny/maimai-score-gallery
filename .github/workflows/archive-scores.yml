@@ -52,10 +52,19 @@ jobs:
         env:
           SCORES_API_URL: ${{ vars.SCORES_API_URL }}
 
+      - name: Ensure alias handoff exists
+        run: |
+          if [ ! -f .sync/song-aliases.json ]; then
+            mkdir -p .sync
+            echo '[]' > .sync/song-aliases.json
+          fi
+
       - name: Pass score archive to metadata workflow
         uses: actions/upload-artifact@v4
         with:
           name: score-archive
-          path: src/data/generated-scores.json
+          path: |
+            src/data/generated-scores.json
+            .sync/song-aliases.json
           if-no-files-found: error
           retention-days: 1

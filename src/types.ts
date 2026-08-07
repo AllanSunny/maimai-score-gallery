@@ -60,7 +60,6 @@ export interface ScoreRecord {
   chartId: string | null;
   playedAt: string;
   songTitle: string;
-  alternateTitles?: string[];
   chartType: ChartType;
   difficulty: Difficulty;
   level: string;

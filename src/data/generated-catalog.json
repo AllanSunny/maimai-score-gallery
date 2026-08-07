@@ -42,7 +42,7 @@
     {
       "id": "song-a7a461d9d280",
       "title": "M@GICAL☆CURE! LOVE ♥ SHOT!",
-      "alternateTitles": [],
+      "alternateTitles": ["magical cure love shot"],
       "jacketKey": "jackets/song-a7a461d9d280-28fe15352109.png",
       "versions": [
         {
@@ -313,7 +313,7 @@
       "id": "tsunagite",
       "title": "系ぎて",
       "alternateTitles": [
-        "Tsunagite"
+        "tsunagite"
       ],
       "jacketKey": "jackets/tsunagite-0f15deab27d9.png",
       "versions": [

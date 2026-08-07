@@ -12,6 +12,7 @@ const OVERRIDES_PATH = path.join(ROOT, "catalog", "overrides.json");
 const SEED_TITLES_PATH = path.join(ROOT, "catalog", "seed-titles.json");
 const GENERATED_PATH = path.join(ROOT, "src", "data", "generated-catalog.json");
 const SCORES_PATH = path.join(ROOT, "src", "data", "generated-scores.json");
+const ALIAS_HANDOFF_PATH = path.join(ROOT, ".sync", "song-aliases.json");
 const SEGA_CATALOG_URL = process.env.SEGA_CATALOG_URL ?? "https://maimai.sega.jp/data/maimai_songs.json";
 const SEGA_JACKET_BASE_URL = process.env.SEGA_JACKET_BASE_URL ?? "https://maimaidx.jp/maimai-mobile/img/Music/";
 
@@ -41,12 +42,28 @@ function unique(values) {
   return [...new Set(values.filter(Boolean))];
 }
 
+function alternateTitles(values, canonicalTitle = "") {
+  const canonical = normalizeTitle(canonicalTitle);
+  return unique(values
+    .map((title) => String(title).trim().toLocaleLowerCase())
+    .filter((title) => title && normalizeTitle(title) !== canonical));
+}
+
 function fallbackId(title) {
   return `song-${createHash("sha256").update(title).digest("hex").slice(0, 12)}`;
 }
 
 async function readJson(filePath) {
   return JSON.parse(await readFile(filePath, "utf8"));
+}
+
+async function readOptionalJson(filePath, fallback) {
+  try {
+    return await readJson(filePath);
+  } catch (error) {
+    if (error?.code === "ENOENT") return fallback;
+    throw error;
+  }
 }
 
 async function download(url, label) {
@@ -75,12 +92,13 @@ async function fetchJson(url, label) {
 async function requestedSongs() {
   if (sample) {
     if (normalizeTitle(sample) !== "tsunagite") throw new Error(`Unknown sample: ${sample}`);
-    return [{ title: "系ぎて", alternateTitles: ["Tsunagite"] }];
+    return [{ title: "系ぎて", alternateTitles: ["tsunagite"] }];
   }
 
-  const [archive, seedTitles] = await Promise.all([
+  const [archive, seedTitles, aliasHandoff] = await Promise.all([
     readJson(SCORES_PATH),
     readJson(SEED_TITLES_PATH),
+    readOptionalJson(ALIAS_HANDOFF_PATH, []),
   ]);
   if (!Array.isArray(archive.scores)) throw new Error("Score archive must contain a scores array.");
   if (!Array.isArray(seedTitles)) throw new Error("Catalog seed titles must be an array.");
@@ -88,7 +106,12 @@ async function requestedSongs() {
   archive.scores.forEach((score) => {
     const key = normalizeTitle(score.songTitle);
     const entry = requested.get(key) ?? { title: score.songTitle, alternateTitles: [] };
-    entry.alternateTitles = unique([...entry.alternateTitles, ...(score.alternateTitles ?? [])]);
+    requested.set(key, entry);
+  });
+  aliasHandoff.forEach((handoff) => {
+    const key = normalizeTitle(handoff.title);
+    const entry = requested.get(key) ?? { title: handoff.title, alternateTitles: [] };
+    entry.alternateTitles = alternateTitles([...entry.alternateTitles, ...(handoff.alternateTitles ?? [])], entry.title);
     requested.set(key, entry);
   });
   seedTitles.forEach((title) => {
@@ -105,8 +128,7 @@ function mergeRequestedAliases(songs, requested) {
     const song = songs.find((entry) => [entry.title, ...(entry.alternateTitles ?? [])]
       .some((name) => normalizeTitle(name) === target));
     if (!song) return;
-    const aliases = unique([...song.alternateTitles, ...request.alternateTitles])
-      .filter((title) => normalizeTitle(title) !== normalizeTitle(song.title));
+    const aliases = alternateTitles([...song.alternateTitles, ...request.alternateTitles], song.title);
     if (JSON.stringify(aliases) !== JSON.stringify(song.alternateTitles)) {
       song.alternateTitles = aliases;
       changed = true;
@@ -304,8 +326,7 @@ async function main() {
     songs.push({
       id: baseId,
       title: official.title,
-      alternateTitles: unique([...(override.alternateTitles ?? []), ...requestedAliases])
-        .filter((title) => normalizeTitle(title) !== normalizeTitle(official.title)),
+      alternateTitles: alternateTitles([...(override.alternateTitles ?? []), ...requestedAliases], official.title),
       jacketKey,
       versions,
     });
