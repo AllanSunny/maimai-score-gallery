@@ -3,10 +3,11 @@ import { fetchScores } from "../api";
 import { findCatalogSong } from "../catalog";
 import { SongInfo, type SongChartSummary } from "../components/song/SongInfo";
 import { PageHeading } from "../components/ui/PageHeading";
-import type { Difficulty, Score } from "../types";
+import type { ChartType, Difficulty, Score } from "../types";
 
 interface SongSummary {
   name: string;
+  chartType: ChartType;
   alternateTitles: string[];
   jacketUrl?: string | null;
   charts: SongChartSummary[];
@@ -20,14 +21,18 @@ function groupScoresBySong(scores: Score[]): SongSummary[] {
   scores.forEach((score) => {
     const metadata = findCatalogSong(score.songTitle);
     const canonicalTitle = metadata?.title ?? score.songTitle;
-    const song: SongSummary = songs.get(canonicalTitle) ?? {
+    const songKey = `${canonicalTitle}\u0000${score.chartType}`;
+    const song: SongSummary = songs.get(songKey) ?? {
       name: canonicalTitle,
+      chartType: score.chartType,
       alternateTitles: [...(metadata?.alternateTitles ?? [])],
       jacketUrl: metadata?.jacketUrl,
-      charts: (metadata?.charts ?? []).map((chart): SongChartSummary => ({
-        ...chart,
-        chartConstant: chart.chartConstant ?? undefined,
-      })),
+      charts: (metadata?.charts ?? [])
+        .filter((chart) => chart.chartType === score.chartType)
+        .map((chart): SongChartSummary => ({
+          ...chart,
+          chartConstant: chart.chartConstant ?? undefined,
+        })),
     };
     score.alternateTitles?.forEach((title) => {
       const normalizedTitle = title.trim();
@@ -56,10 +61,11 @@ function groupScoresBySong(scores: Score[]): SongSummary[] {
     }
 
     song.charts.sort((a, b) => difficultyOrder.indexOf(a.difficulty) - difficultyOrder.indexOf(b.difficulty));
-    songs.set(canonicalTitle, song);
+    songs.set(songKey, song);
   });
 
-  return [...songs.values()].sort((a, b) => a.name.localeCompare(b.name));
+  return [...songs.values()].sort((a, b) =>
+    a.name.localeCompare(b.name) || a.chartType.localeCompare(b.chartType));
 }
 
 export function ScoreListPage() {
@@ -100,7 +106,7 @@ export function ScoreListPage() {
 
       {!loading && (
         <div className="mt-8 grid gap-4">
-          {songs.map((song) => <SongInfo key={song.name} {...song} />)}
+          {songs.map((song) => <SongInfo key={`${song.name}-${song.chartType}`} {...song} />)}
           {!songs.length && <p className="rounded-2xl border border-line p-10 text-center text-sm text-muted">No matching songs.</p>}
         </div>
       )}

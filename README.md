@@ -59,6 +59,10 @@ They are skipped on later runs. To retry one, add it to the correct song's
 `alternateTitles` in `catalog/overrides.json`; the next sync will detect that
 override and try the match again.
 
+Songs can be imported before a score exists by adding their exact title to
+`catalog/seed-titles.json`. Seeded songs use the same incremental metadata and
+jacket workflow as titles discovered in the score archive.
+
 To inspect generated metadata without uploading a jacket:
 
 ```bash

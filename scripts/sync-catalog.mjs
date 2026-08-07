@@ -9,6 +9,7 @@ const execFileAsync = promisify(execFile);
 
 const ROOT = process.cwd();
 const OVERRIDES_PATH = path.join(ROOT, "catalog", "overrides.json");
+const SEED_TITLES_PATH = path.join(ROOT, "catalog", "seed-titles.json");
 const GENERATED_PATH = path.join(ROOT, "src", "data", "generated-catalog.json");
 const SCORES_PATH = path.join(ROOT, "src", "data", "generated-scores.json");
 const SEGA_CATALOG_URL = process.env.SEGA_CATALOG_URL ?? "https://maimai.sega.jp/data/maimai_songs.json";
@@ -77,9 +78,13 @@ async function requestedTitles() {
     return ["系ぎて"];
   }
 
-  const archive = await readJson(SCORES_PATH);
+  const [archive, seedTitles] = await Promise.all([
+    readJson(SCORES_PATH),
+    readJson(SEED_TITLES_PATH),
+  ]);
   if (!Array.isArray(archive.scores)) throw new Error("Score archive must contain a scores array.");
-  return unique(archive.scores.map((score) => score.songTitle));
+  if (!Array.isArray(seedTitles)) throw new Error("Catalog seed titles must be an array.");
+  return unique([...archive.scores.map((score) => score.songTitle), ...seedTitles]);
 }
 
 function isAlreadyCataloged(title, songs) {

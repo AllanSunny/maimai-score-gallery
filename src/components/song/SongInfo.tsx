@@ -10,6 +10,7 @@ export interface SongChartSummary {
 
 interface SongInfoProps {
   name: string;
+  chartType: ChartType;
   alternateTitles?: string[];
   jacketUrl?: string | null;
   charts: SongChartSummary[];
@@ -23,17 +24,20 @@ const difficultyStyles: Record<Difficulty, string> = {
   "Re:MASTER": "border-l-fuchsia-400",
 };
 
-export function SongInfo({ name, alternateTitles = [], jacketUrl, charts }: SongInfoProps) {
+export function SongInfo({ name, chartType, alternateTitles = [], jacketUrl, charts }: SongInfoProps) {
   return (
     <article className="overflow-hidden rounded-2xl border border-line bg-white/60">
       <header className="flex items-center gap-4 border-b border-line px-5 py-5 sm:px-6">
         {jacketUrl && <img src={jacketUrl} alt="" width="64" height="64" loading="lazy" decoding="async" referrerPolicy="no-referrer" className="size-16 rounded-lg object-cover" />}
-        <div>
+        <div className="min-w-0 flex-1">
           <h2 className="text-lg font-semibold tracking-tight">{name}</h2>
           {alternateTitles.length > 0 && (
             <p className="mt-1 text-sm text-muted">{alternateTitles.join(" · ")}</p>
           )}
         </div>
+        <span className="shrink-0 rounded-full border border-line bg-cream px-3 py-1 text-xs font-semibold tracking-wider text-muted">
+          {chartType}
+        </span>
       </header>
 
       <div className="divide-y divide-line">
@@ -48,7 +52,6 @@ export function SongInfo({ name, alternateTitles = [], jacketUrl, charts }: Song
             >
               <div>
                 <p className="text-sm font-semibold">{chart.difficulty}</p>
-                <p className="mt-0.5 text-[11px] uppercase tracking-wider text-muted">{chart.chartType}</p>
               </div>
 
               <div className="hidden sm:block">
