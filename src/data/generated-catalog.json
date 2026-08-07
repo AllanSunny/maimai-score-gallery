@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-05T09:13:42.842Z",
+  "generatedAt": "2026-08-07T02:29:36.418Z",
   "songs": [
     {
       "id": "song-5e2b531bd3e7",
@@ -61,6 +61,62 @@
           "chartType": "DX",
           "difficulty": "MASTER",
           "level": "13+",
+          "chartConstant": null
+        }
+      ]
+    },
+    {
+      "id": "magical-flavor",
+      "title": "Magical Flavor",
+      "alternateTitles": [],
+      "jacketKey": "jackets/magical-flavor-5edfd122de62.png",
+      "charts": [
+        {
+          "chartType": "DX",
+          "difficulty": "BASIC",
+          "level": "3",
+          "chartConstant": null
+        },
+        {
+          "chartType": "DX",
+          "difficulty": "ADVANCED",
+          "level": "6",
+          "chartConstant": null
+        },
+        {
+          "chartType": "DX",
+          "difficulty": "EXPERT",
+          "level": "10",
+          "chartConstant": null
+        },
+        {
+          "chartType": "DX",
+          "difficulty": "MASTER",
+          "level": "13",
+          "chartConstant": null
+        },
+        {
+          "chartType": "STD",
+          "difficulty": "BASIC",
+          "level": "3",
+          "chartConstant": null
+        },
+        {
+          "chartType": "STD",
+          "difficulty": "ADVANCED",
+          "level": "8",
+          "chartConstant": null
+        },
+        {
+          "chartType": "STD",
+          "difficulty": "EXPERT",
+          "level": "10+",
+          "chartConstant": null
+        },
+        {
+          "chartType": "STD",
+          "difficulty": "MASTER",
+          "level": "13",
           "chartConstant": null
         }
       ]
