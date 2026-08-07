@@ -2,280 +2,356 @@
   "generatedAt": "2026-08-07T02:29:36.418Z",
   "songs": [
     {
-      "id": "song-5e2b531bd3e7-std",
+      "id": "song-5e2b531bd3e7",
       "title": "Altale",
-      "chartType": "STD",
       "alternateTitles": [],
       "jacketKey": "jackets/song-5e2b531bd3e7-49acaa463591.png",
-      "charts": [
+      "versions": [
         {
-          "difficulty": "BASIC",
-          "level": "4",
-          "chartConstant": null
-        },
-        {
-          "difficulty": "ADVANCED",
-          "level": "8",
-          "chartConstant": null
-        },
-        {
-          "difficulty": "EXPERT",
-          "level": "12",
-          "chartConstant": null
-        },
-        {
-          "difficulty": "MASTER",
-          "level": "13+",
-          "chartConstant": null
+          "id": "song-5e2b531bd3e7-std",
+          "chartType": "STD",
+          "charts": [
+            {
+              "id": "song-5e2b531bd3e7-std-basic",
+              "difficulty": "BASIC",
+              "level": "4",
+              "chartConstant": null
+            },
+            {
+              "id": "song-5e2b531bd3e7-std-advanced",
+              "difficulty": "ADVANCED",
+              "level": "8",
+              "chartConstant": null
+            },
+            {
+              "id": "song-5e2b531bd3e7-std-expert",
+              "difficulty": "EXPERT",
+              "level": "12",
+              "chartConstant": null
+            },
+            {
+              "id": "song-5e2b531bd3e7-std-master",
+              "difficulty": "MASTER",
+              "level": "13+",
+              "chartConstant": null
+            }
+          ]
         }
       ]
     },
     {
-      "id": "song-a7a461d9d280-dx",
+      "id": "song-a7a461d9d280",
       "title": "M@GICAL☆CURE! LOVE ♥ SHOT!",
-      "chartType": "DX",
       "alternateTitles": [],
       "jacketKey": "jackets/song-a7a461d9d280-28fe15352109.png",
-      "charts": [
+      "versions": [
         {
-          "difficulty": "BASIC",
-          "level": "4",
-          "chartConstant": null
-        },
-        {
-          "difficulty": "ADVANCED",
-          "level": "7+",
-          "chartConstant": null
-        },
-        {
-          "difficulty": "EXPERT",
-          "level": "11",
-          "chartConstant": null
-        },
-        {
-          "difficulty": "MASTER",
-          "level": "13+",
-          "chartConstant": null
+          "id": "song-a7a461d9d280-dx",
+          "chartType": "DX",
+          "charts": [
+            {
+              "id": "song-a7a461d9d280-dx-basic",
+              "difficulty": "BASIC",
+              "level": "4",
+              "chartConstant": null
+            },
+            {
+              "id": "song-a7a461d9d280-dx-advanced",
+              "difficulty": "ADVANCED",
+              "level": "7+",
+              "chartConstant": null
+            },
+            {
+              "id": "song-a7a461d9d280-dx-expert",
+              "difficulty": "EXPERT",
+              "level": "11",
+              "chartConstant": null
+            },
+            {
+              "id": "song-a7a461d9d280-dx-master",
+              "difficulty": "MASTER",
+              "level": "13+",
+              "chartConstant": null
+            }
+          ]
         }
       ]
     },
     {
-      "id": "magical-flavor-dx",
+      "id": "magical-flavor",
       "title": "Magical Flavor",
-      "chartType": "DX",
       "alternateTitles": [],
       "jacketKey": "jackets/magical-flavor-5edfd122de62.png",
-      "charts": [
+      "versions": [
         {
-          "difficulty": "BASIC",
-          "level": "3",
-          "chartConstant": null
+          "id": "magical-flavor-dx",
+          "chartType": "DX",
+          "charts": [
+            {
+              "id": "magical-flavor-dx-basic",
+              "difficulty": "BASIC",
+              "level": "3",
+              "chartConstant": null
+            },
+            {
+              "id": "magical-flavor-dx-advanced",
+              "difficulty": "ADVANCED",
+              "level": "6",
+              "chartConstant": null
+            },
+            {
+              "id": "magical-flavor-dx-expert",
+              "difficulty": "EXPERT",
+              "level": "10",
+              "chartConstant": null
+            },
+            {
+              "id": "magical-flavor-dx-master",
+              "difficulty": "MASTER",
+              "level": "13",
+              "chartConstant": null
+            }
+          ]
         },
         {
-          "difficulty": "ADVANCED",
-          "level": "6",
-          "chartConstant": null
-        },
-        {
-          "difficulty": "EXPERT",
-          "level": "10",
-          "chartConstant": null
-        },
-        {
-          "difficulty": "MASTER",
-          "level": "13",
-          "chartConstant": null
+          "id": "magical-flavor-std",
+          "chartType": "STD",
+          "charts": [
+            {
+              "id": "magical-flavor-std-basic",
+              "difficulty": "BASIC",
+              "level": "3",
+              "chartConstant": null
+            },
+            {
+              "id": "magical-flavor-std-advanced",
+              "difficulty": "ADVANCED",
+              "level": "8",
+              "chartConstant": null
+            },
+            {
+              "id": "magical-flavor-std-expert",
+              "difficulty": "EXPERT",
+              "level": "10+",
+              "chartConstant": null
+            },
+            {
+              "id": "magical-flavor-std-master",
+              "difficulty": "MASTER",
+              "level": "13",
+              "chartConstant": null
+            }
+          ]
         }
       ]
     },
     {
-      "id": "magical-flavor-std",
-      "title": "Magical Flavor",
-      "chartType": "STD",
-      "alternateTitles": [],
-      "jacketKey": "jackets/magical-flavor-5edfd122de62.png",
-      "charts": [
-        {
-          "difficulty": "BASIC",
-          "level": "3",
-          "chartConstant": null
-        },
-        {
-          "difficulty": "ADVANCED",
-          "level": "8",
-          "chartConstant": null
-        },
-        {
-          "difficulty": "EXPERT",
-          "level": "10+",
-          "chartConstant": null
-        },
-        {
-          "difficulty": "MASTER",
-          "level": "13",
-          "chartConstant": null
-        }
-      ]
-    },
-    {
-      "id": "song-4f39f6af9e43-dx",
+      "id": "song-4f39f6af9e43",
       "title": "エゴロック",
-      "chartType": "DX",
       "alternateTitles": [],
       "jacketKey": "jackets/song-4f39f6af9e43-3aaaaee27f49.png",
-      "charts": [
+      "versions": [
         {
-          "difficulty": "BASIC",
-          "level": "5",
-          "chartConstant": null
-        },
-        {
-          "difficulty": "ADVANCED",
-          "level": "7+",
-          "chartConstant": null
-        },
-        {
-          "difficulty": "EXPERT",
-          "level": "10",
-          "chartConstant": null
-        },
-        {
-          "difficulty": "MASTER",
-          "level": "13+",
-          "chartConstant": null
+          "id": "song-4f39f6af9e43-dx",
+          "chartType": "DX",
+          "charts": [
+            {
+              "id": "song-4f39f6af9e43-dx-basic",
+              "difficulty": "BASIC",
+              "level": "5",
+              "chartConstant": null
+            },
+            {
+              "id": "song-4f39f6af9e43-dx-advanced",
+              "difficulty": "ADVANCED",
+              "level": "7+",
+              "chartConstant": null
+            },
+            {
+              "id": "song-4f39f6af9e43-dx-expert",
+              "difficulty": "EXPERT",
+              "level": "10",
+              "chartConstant": null
+            },
+            {
+              "id": "song-4f39f6af9e43-dx-master",
+              "difficulty": "MASTER",
+              "level": "13+",
+              "chartConstant": null
+            }
+          ]
         }
       ]
     },
     {
-      "id": "song-638e826988e6-dx",
+      "id": "song-638e826988e6",
       "title": "おくすり飲んで寝よう",
-      "chartType": "DX",
       "alternateTitles": [],
       "jacketKey": "jackets/song-638e826988e6-18eff5f64dd4.png",
-      "charts": [
+      "versions": [
         {
-          "difficulty": "BASIC",
-          "level": "3",
-          "chartConstant": null
-        },
-        {
-          "difficulty": "ADVANCED",
-          "level": "6",
-          "chartConstant": null
-        },
-        {
-          "difficulty": "EXPERT",
-          "level": "9+",
-          "chartConstant": null
-        },
-        {
-          "difficulty": "MASTER",
-          "level": "12+",
-          "chartConstant": null
+          "id": "song-638e826988e6-dx",
+          "chartType": "DX",
+          "charts": [
+            {
+              "id": "song-638e826988e6-dx-basic",
+              "difficulty": "BASIC",
+              "level": "3",
+              "chartConstant": null
+            },
+            {
+              "id": "song-638e826988e6-dx-advanced",
+              "difficulty": "ADVANCED",
+              "level": "6",
+              "chartConstant": null
+            },
+            {
+              "id": "song-638e826988e6-dx-expert",
+              "difficulty": "EXPERT",
+              "level": "9+",
+              "chartConstant": null
+            },
+            {
+              "id": "song-638e826988e6-dx-master",
+              "difficulty": "MASTER",
+              "level": "12+",
+              "chartConstant": null
+            }
+          ]
         }
       ]
     },
     {
-      "id": "song-08f22014494d-dx",
+      "id": "song-08f22014494d",
       "title": "メズマライザー",
-      "chartType": "DX",
       "alternateTitles": [],
       "jacketKey": "jackets/song-08f22014494d-e314571b9b94.png",
-      "charts": [
+      "versions": [
         {
-          "difficulty": "BASIC",
-          "level": "3",
-          "chartConstant": null
-        },
-        {
-          "difficulty": "ADVANCED",
-          "level": "7",
-          "chartConstant": null
-        },
-        {
-          "difficulty": "EXPERT",
-          "level": "10",
-          "chartConstant": null
-        },
-        {
-          "difficulty": "MASTER",
-          "level": "11+",
-          "chartConstant": null
-        },
-        {
-          "difficulty": "Re:MASTER",
-          "level": "13+",
-          "chartConstant": null
+          "id": "song-08f22014494d-dx",
+          "chartType": "DX",
+          "charts": [
+            {
+              "id": "song-08f22014494d-dx-basic",
+              "difficulty": "BASIC",
+              "level": "3",
+              "chartConstant": null
+            },
+            {
+              "id": "song-08f22014494d-dx-advanced",
+              "difficulty": "ADVANCED",
+              "level": "7",
+              "chartConstant": null
+            },
+            {
+              "id": "song-08f22014494d-dx-expert",
+              "difficulty": "EXPERT",
+              "level": "10",
+              "chartConstant": null
+            },
+            {
+              "id": "song-08f22014494d-dx-master",
+              "difficulty": "MASTER",
+              "level": "11+",
+              "chartConstant": null
+            },
+            {
+              "id": "song-08f22014494d-dx-re-master",
+              "difficulty": "Re:MASTER",
+              "level": "13+",
+              "chartConstant": null
+            }
+          ]
         }
       ]
     },
     {
-      "id": "song-067df9d0eb73-dx",
+      "id": "song-067df9d0eb73",
       "title": "愛♡スクリ～ム！",
-      "chartType": "DX",
       "alternateTitles": [],
       "jacketKey": "jackets/song-067df9d0eb73-3f760e2a0fbb.png",
-      "charts": [
+      "versions": [
         {
-          "difficulty": "BASIC",
-          "level": "2",
-          "chartConstant": null
-        },
-        {
-          "difficulty": "ADVANCED",
-          "level": "6",
-          "chartConstant": null
-        },
-        {
-          "difficulty": "EXPERT",
-          "level": "9",
-          "chartConstant": null
-        },
-        {
-          "difficulty": "MASTER",
-          "level": "11",
-          "chartConstant": null
-        },
-        {
-          "difficulty": "Re:MASTER",
-          "level": "13",
-          "chartConstant": null
+          "id": "song-067df9d0eb73-dx",
+          "chartType": "DX",
+          "charts": [
+            {
+              "id": "song-067df9d0eb73-dx-basic",
+              "difficulty": "BASIC",
+              "level": "2",
+              "chartConstant": null
+            },
+            {
+              "id": "song-067df9d0eb73-dx-advanced",
+              "difficulty": "ADVANCED",
+              "level": "6",
+              "chartConstant": null
+            },
+            {
+              "id": "song-067df9d0eb73-dx-expert",
+              "difficulty": "EXPERT",
+              "level": "9",
+              "chartConstant": null
+            },
+            {
+              "id": "song-067df9d0eb73-dx-master",
+              "difficulty": "MASTER",
+              "level": "11",
+              "chartConstant": null
+            },
+            {
+              "id": "song-067df9d0eb73-dx-re-master",
+              "difficulty": "Re:MASTER",
+              "level": "13",
+              "chartConstant": null
+            }
+          ]
         }
       ]
     },
     {
-      "id": "tsunagite-dx",
+      "id": "tsunagite",
       "title": "系ぎて",
-      "chartType": "DX",
       "alternateTitles": [
         "Tsunagite"
       ],
       "jacketKey": "jackets/tsunagite-0f15deab27d9.png",
-      "charts": [
+      "versions": [
         {
-          "difficulty": "BASIC",
-          "level": "7",
-          "chartConstant": null
-        },
-        {
-          "difficulty": "ADVANCED",
-          "level": "10",
-          "chartConstant": null
-        },
-        {
-          "difficulty": "EXPERT",
-          "level": "13+",
-          "chartConstant": null
-        },
-        {
-          "difficulty": "MASTER",
-          "level": "14+",
-          "chartConstant": null
-        },
-        {
-          "difficulty": "Re:MASTER",
-          "level": "15",
-          "chartConstant": null
+          "id": "tsunagite-dx",
+          "chartType": "DX",
+          "charts": [
+            {
+              "id": "tsunagite-dx-basic",
+              "difficulty": "BASIC",
+              "level": "7",
+              "chartConstant": null
+            },
+            {
+              "id": "tsunagite-dx-advanced",
+              "difficulty": "ADVANCED",
+              "level": "10",
+              "chartConstant": null
+            },
+            {
+              "id": "tsunagite-dx-expert",
+              "difficulty": "EXPERT",
+              "level": "13+",
+              "chartConstant": null
+            },
+            {
+              "id": "tsunagite-dx-master",
+              "difficulty": "MASTER",
+              "level": "14+",
+              "chartConstant": null
+            },
+            {
+              "id": "tsunagite-dx-re-master",
+              "difficulty": "Re:MASTER",
+              "level": "15",
+              "chartConstant": null
+            }
+          ]
         }
       ]
     }

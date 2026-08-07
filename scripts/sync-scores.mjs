@@ -6,9 +6,22 @@ import { promisify } from "node:util";
 
 const execFileAsync = promisify(execFile);
 const ARCHIVE_PATH = path.join(process.cwd(), "src", "data", "generated-scores.json");
+const CATALOG_PATH = path.join(process.cwd(), "src", "data", "generated-catalog.json");
+
+function normalizeTitle(value) {
+  return String(value ?? "").normalize("NFKC").replace(/\s+/g, " ").trim().toLocaleLowerCase();
+}
+
+function findChartId(score, songs) {
+  const target = normalizeTitle(score.songTitle);
+  const song = songs.find((entry) => [entry.title, ...(entry.alternateTitles ?? [])]
+    .some((name) => normalizeTitle(name) === target));
+  const version = song?.versions.find((entry) => entry.chartType === score.chartType);
+  return version?.charts.find((chart) => chart.difficulty === score.difficulty)?.id ?? null;
+}
 
 function scoreFingerprint(score) {
-  const { id: _id, ...publicScore } = score;
+  const { id: _id, chartId: _chartId, ...publicScore } = score;
   return JSON.stringify(publicScore);
 }
 
@@ -28,7 +41,10 @@ async function downloadJson(url) {
 async function main() {
   if (!process.env.SCORES_API_URL) throw new Error("SCORES_API_URL is required.");
 
-  const archive = JSON.parse(await readFile(ARCHIVE_PATH, "utf8"));
+  const [archive, catalog] = await Promise.all([
+    readFile(ARCHIVE_PATH, "utf8").then(JSON.parse),
+    readFile(CATALOG_PATH, "utf8").then(JSON.parse),
+  ]);
   const feed = await downloadJson(process.env.SCORES_API_URL);
   if (!Array.isArray(feed.scores)) throw new Error("Score feed must contain a scores array.");
 
@@ -37,7 +53,7 @@ async function main() {
     if (!score.id || archivedScores.has(scoreFingerprint(score))) return false;
     archivedScores.add(scoreFingerprint(score));
     return true;
-  });
+  }).map((score) => ({ ...score, chartId: findChartId(score, catalog.songs) }));
 
   if (!additions.length) {
     console.log(`Score archive is current (${archive.scores.length} plays).`);

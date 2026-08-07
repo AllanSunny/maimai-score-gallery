@@ -1,6 +1,6 @@
 import archivedScores from "./data/generated-scores.json";
-import type { ScoresResponse } from "./types";
+import { parseScoresResponse } from "./data-validation";
 
-export async function fetchScores(): Promise<ScoresResponse> {
-  return archivedScores as ScoresResponse;
+export async function fetchScores() {
+  return parseScoresResponse(archivedScores);
 }

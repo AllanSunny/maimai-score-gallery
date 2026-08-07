@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { fetchScores } from "../api";
+import { findCatalogSong } from "../catalog";
 import { PageHeading } from "../components/ui/PageHeading";
 import type { ChartType, Difficulty, Score } from "../types";
 
@@ -19,9 +20,15 @@ export function ChartDetailPage({ songName, chartType, difficulty }: ChartDetail
       .finally(() => setLoading(false));
   }, []);
 
-  const history = useMemo(() => scores
-    .filter((score) => score.songTitle === songName && score.chartType === chartType && score.difficulty === difficulty)
-    .sort((a, b) => b.playedAt.localeCompare(a.playedAt)), [chartType, difficulty, scores, songName]);
+  const history = useMemo(() => {
+    const metadata = findCatalogSong(songName, chartType);
+    const chartId = metadata?.charts.find((chart) => chart.difficulty === difficulty)?.id;
+    return scores
+      .filter((score) => chartId
+        ? score.chartId === chartId
+        : score.songTitle === songName && score.chartType === chartType && score.difficulty === difficulty)
+      .sort((a, b) => b.playedAt.localeCompare(a.playedAt));
+  }, [chartType, difficulty, scores, songName]);
   const record = history.reduce<Score | undefined>((best, score) => !best || score.achievement > best.achievement ? score : best, undefined);
 
   return (

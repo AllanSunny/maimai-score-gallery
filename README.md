@@ -29,6 +29,9 @@ visual pattern appears more than once.
 
 ## Score archive, catalog, and jacket synchronization
 
+See [docs/data-model.md](docs/data-model.md) for the centralized reference for
+stored score, song-version, chart, jacket, and unmatched-title structures.
+
 The same importers run locally and in GitHub Actions. The score importer appends
 new spreadsheet rows to `src/data/generated-scores.json`. The catalog importer
 then processes only song titles not already in `src/data/generated-catalog.json`,

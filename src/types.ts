@@ -1,19 +1,42 @@
 export type Difficulty = "BASIC" | "ADVANCED" | "EXPERT" | "MASTER" | "Re:MASTER";
 export type ChartType = "DX" | "STD";
 
-export interface CatalogChart {
+export interface Chart {
+  id: string;
   difficulty: Difficulty;
   level: string;
   chartConstant: number | null;
 }
 
-export interface CatalogSong {
+export interface SongVersion {
+  id: string;
+  chartType: ChartType;
+  charts: Chart[];
+}
+
+export interface Song {
   id: string;
   title: string;
-  chartType: ChartType;
   alternateTitles: string[];
+  jacketKey: string | null;
+  versions: SongVersion[];
+}
+
+export interface CatalogSongView extends Omit<Song, "versions">, SongVersion {
   jacketUrl: string | null;
-  charts: CatalogChart[];
+}
+
+export interface UnmatchedSong {
+  title: string;
+  reason: string;
+  firstSeenAt: string;
+  lastAttemptedAt: string;
+}
+
+export interface GeneratedCatalog {
+  generatedAt: string;
+  songs: Song[];
+  unmatchedSongs: UnmatchedSong[];
 }
 
 export interface JudgmentSet {
@@ -24,8 +47,9 @@ export interface JudgmentSet {
   miss: number;
 }
 
-export interface Score {
+export interface ScoreRecord {
   id: string;
+  chartId: string | null;
   playedAt: string;
   songTitle: string;
   alternateTitles?: string[];
@@ -44,7 +68,9 @@ export interface Score {
   judgments: JudgmentSet;
 }
 
+export type Score = ScoreRecord;
+
 export interface ScoresResponse {
-  scores: Score[];
+  scores: ScoreRecord[];
   updatedAt: string;
 }

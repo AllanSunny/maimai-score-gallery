@@ -30,6 +30,7 @@ jobs:
           node-version: 24.14.1
           cache: npm
       - run: npm ci
+      - run: npm run data:validate
       - run: npm run build
         env:
           VITE_JACKET_BASE_URL: ${{ vars.R2_PUBLIC_URL }}

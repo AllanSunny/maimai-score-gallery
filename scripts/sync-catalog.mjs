@@ -124,6 +124,34 @@ function extractChartVersions(song, override) {
   return [...versions].map(([chartType, charts]) => ({ chartType, charts }));
 }
 
+function chartSlug(difficulty) {
+  return difficulty.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+}
+
+function findChartId(score, songs) {
+  const target = normalizeTitle(score.songTitle);
+  const song = songs.find((entry) => [entry.title, ...(entry.alternateTitles ?? [])]
+    .some((name) => normalizeTitle(name) === target));
+  const version = song?.versions.find((entry) => entry.chartType === score.chartType);
+  return version?.charts.find((chart) => chart.difficulty === score.difficulty)?.id ?? null;
+}
+
+async function linkArchivedScores(songs) {
+  if (sample) return;
+  const archive = await readJson(SCORES_PATH);
+  let changed = false;
+  archive.scores = archive.scores.map((score) => {
+    const chartId = findChartId(score, songs);
+    if (score.chartId === chartId) return score;
+    changed = true;
+    return { ...score, chartId };
+  });
+  if (changed) {
+    await writeFile(SCORES_PATH, `${JSON.stringify(archive, null, 2)}\n`);
+    console.log("Updated score-to-chart associations.");
+  }
+}
+
 function contentExtension(contentType, sourceUrl) {
   if (contentType.includes("webp")) return "webp";
   if (contentType.includes("jpeg")) return "jpg";
@@ -196,6 +224,7 @@ async function main() {
     return !wasUnmatched || hasMatchingOverride(title, overrides);
   });
   if (!newTitles.length) {
+    await linkArchivedScores(previous.songs);
     console.log(`Song catalog is current (${previous.songs.length} songs, ${unmatchedSongs.size} unmatched).`);
     return;
   }
@@ -224,17 +253,24 @@ async function main() {
     const baseId = override.id ?? fallbackId(official.title);
     const sourceJacketUrl = new URL(official.image_url, SEGA_JACKET_BASE_URL).toString();
     const jacketKey = await uploadJacket(baseId, sourceJacketUrl);
-    const versions = extractChartVersions(official, override);
-
-    versions.forEach(({ chartType, charts }) => {
-      songs.push({
-        id: `${baseId}-${chartType.toLowerCase()}`,
-        title: official.title,
+    const versions = extractChartVersions(official, override).map(({ chartType, charts }) => {
+      const versionId = `${baseId}-${chartType.toLowerCase()}`;
+      return {
+        id: versionId,
         chartType,
-        alternateTitles: unique(override.alternateTitles ?? []),
-        jacketKey,
-        charts,
-      });
+        charts: charts.map((chart) => ({
+          id: `${versionId}-${chartSlug(chart.difficulty)}`,
+          ...chart,
+        })),
+      };
+    });
+
+    songs.push({
+      id: baseId,
+      title: official.title,
+      alternateTitles: unique(override.alternateTitles ?? []),
+      jacketKey,
+      versions,
     });
 
     // Be polite to the source host when synchronizing multiple new jackets.
@@ -247,6 +283,7 @@ async function main() {
     unmatchedSongs: [...unmatchedSongs.values()].sort((a, b) => a.title.localeCompare(b.title)),
   };
   await writeFile(GENERATED_PATH, `${JSON.stringify(catalog, null, 2)}\n`);
+  await linkArchivedScores(catalog.songs);
   console.log(`Wrote ${songs.length} song(s) to ${path.relative(ROOT, GENERATED_PATH)}.`);
 }
 
