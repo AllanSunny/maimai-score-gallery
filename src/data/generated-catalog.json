@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-07T02:29:36.418Z",
+  "generatedAt": "2026-08-07T09:30:12.923Z",
   "songs": [
     {
       "id": "song-5e2b531bd3e7",
@@ -42,7 +42,9 @@
     {
       "id": "song-a7a461d9d280",
       "title": "M@GICAL☆CURE! LOVE ♥ SHOT!",
-      "alternateTitles": ["magical cure love shot"],
+      "alternateTitles": [
+        "magical cure love shot"
+      ],
       "jacketKey": "jackets/song-a7a461d9d280-28fe15352109.png",
       "versions": [
         {
@@ -146,9 +148,51 @@
       ]
     },
     {
+      "id": "song-9a2f2ad520e2",
+      "title": "ウミユリ海底譚",
+      "alternateTitles": [
+        "umiyuri kaiteitan"
+      ],
+      "jacketKey": "jackets/song-9a2f2ad520e2-164fbc170ae5.png",
+      "versions": [
+        {
+          "id": "song-9a2f2ad520e2-std",
+          "chartType": "STD",
+          "charts": [
+            {
+              "id": "song-9a2f2ad520e2-std-basic",
+              "difficulty": "BASIC",
+              "level": "4",
+              "chartConstant": null
+            },
+            {
+              "id": "song-9a2f2ad520e2-std-advanced",
+              "difficulty": "ADVANCED",
+              "level": "7",
+              "chartConstant": null
+            },
+            {
+              "id": "song-9a2f2ad520e2-std-expert",
+              "difficulty": "EXPERT",
+              "level": "9+",
+              "chartConstant": null
+            },
+            {
+              "id": "song-9a2f2ad520e2-std-master",
+              "difficulty": "MASTER",
+              "level": "13",
+              "chartConstant": null
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "song-4f39f6af9e43",
       "title": "エゴロック",
-      "alternateTitles": [],
+      "alternateTitles": [
+        "mesmerizer"
+      ],
       "jacketKey": "jackets/song-4f39f6af9e43-3aaaaee27f49.png",
       "versions": [
         {
@@ -186,7 +230,9 @@
     {
       "id": "song-638e826988e6",
       "title": "おくすり飲んで寝よう",
-      "alternateTitles": [],
+      "alternateTitles": [
+        "okusurinondeneyou"
+      ],
       "jacketKey": "jackets/song-638e826988e6-18eff5f64dd4.png",
       "versions": [
         {
@@ -224,7 +270,9 @@
     {
       "id": "song-08f22014494d",
       "title": "メズマライザー",
-      "alternateTitles": [],
+      "alternateTitles": [
+        "mesmerizer"
+      ],
       "jacketKey": "jackets/song-08f22014494d-e314571b9b94.png",
       "versions": [
         {
@@ -266,9 +314,97 @@
       ]
     },
     {
+      "id": "song-52e03f4cfc5d",
+      "title": "モニタリング",
+      "alternateTitles": [
+        "monitoring"
+      ],
+      "jacketKey": "jackets/song-52e03f4cfc5d-82d44f9c281b.png",
+      "versions": [
+        {
+          "id": "song-52e03f4cfc5d-dx",
+          "chartType": "DX",
+          "charts": [
+            {
+              "id": "song-52e03f4cfc5d-dx-basic",
+              "difficulty": "BASIC",
+              "level": "3",
+              "chartConstant": null
+            },
+            {
+              "id": "song-52e03f4cfc5d-dx-advanced",
+              "difficulty": "ADVANCED",
+              "level": "6",
+              "chartConstant": null
+            },
+            {
+              "id": "song-52e03f4cfc5d-dx-expert",
+              "difficulty": "EXPERT",
+              "level": "10+",
+              "chartConstant": null
+            },
+            {
+              "id": "song-52e03f4cfc5d-dx-master",
+              "difficulty": "MASTER",
+              "level": "11+",
+              "chartConstant": null
+            },
+            {
+              "id": "song-52e03f4cfc5d-dx-re-master",
+              "difficulty": "Re:MASTER",
+              "level": "13",
+              "chartConstant": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "song-2f64638892ab",
+      "title": "人マニア",
+      "alternateTitles": [
+        "hito mania"
+      ],
+      "jacketKey": "jackets/song-2f64638892ab-07df5054d98b.png",
+      "versions": [
+        {
+          "id": "song-2f64638892ab-dx",
+          "chartType": "DX",
+          "charts": [
+            {
+              "id": "song-2f64638892ab-dx-basic",
+              "difficulty": "BASIC",
+              "level": "3",
+              "chartConstant": null
+            },
+            {
+              "id": "song-2f64638892ab-dx-advanced",
+              "difficulty": "ADVANCED",
+              "level": "6",
+              "chartConstant": null
+            },
+            {
+              "id": "song-2f64638892ab-dx-expert",
+              "difficulty": "EXPERT",
+              "level": "10+",
+              "chartConstant": null
+            },
+            {
+              "id": "song-2f64638892ab-dx-master",
+              "difficulty": "MASTER",
+              "level": "13+",
+              "chartConstant": null
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "song-067df9d0eb73",
       "title": "愛♡スクリ～ム！",
-      "alternateTitles": [],
+      "alternateTitles": [
+        "aiscream"
+      ],
       "jacketKey": "jackets/song-067df9d0eb73-3f760e2a0fbb.png",
       "versions": [
         {
@@ -303,6 +439,52 @@
               "id": "song-067df9d0eb73-dx-re-master",
               "difficulty": "Re:MASTER",
               "level": "13",
+              "chartConstant": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "song-de8bb67fb249",
+      "title": "熱異常",
+      "alternateTitles": [
+        "netsu ijō"
+      ],
+      "jacketKey": "jackets/song-de8bb67fb249-60a40d4e5b1a.png",
+      "versions": [
+        {
+          "id": "song-de8bb67fb249-dx",
+          "chartType": "DX",
+          "charts": [
+            {
+              "id": "song-de8bb67fb249-dx-basic",
+              "difficulty": "BASIC",
+              "level": "4",
+              "chartConstant": null
+            },
+            {
+              "id": "song-de8bb67fb249-dx-advanced",
+              "difficulty": "ADVANCED",
+              "level": "7+",
+              "chartConstant": null
+            },
+            {
+              "id": "song-de8bb67fb249-dx-expert",
+              "difficulty": "EXPERT",
+              "level": "10",
+              "chartConstant": null
+            },
+            {
+              "id": "song-de8bb67fb249-dx-master",
+              "difficulty": "MASTER",
+              "level": "12",
+              "chartConstant": null
+            },
+            {
+              "id": "song-de8bb67fb249-dx-re-master",
+              "difficulty": "Re:MASTER",
+              "level": "13+",
               "chartConstant": null
             }
           ]
