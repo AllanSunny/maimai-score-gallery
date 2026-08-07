@@ -1,0 +1,57 @@
+README.md
+  s_6d06bd4898dc7f::t_11331d349c1671 32-34
+src/data-validation.ts
+  s_6d06bd4898dc7f::t_8d68bd123703b4 1-86
+package.json
+  s_6d06bd4898dc7f::t_8d68bd123703b4 14
+src/demo-data.ts
+  s_6d06bd4898dc7f::t_1f78af5756d911 5,11,17
+src/types.ts
+  s_6d06bd4898dc7f::t_11331d349c1671 21,23-24,27-37,39
+  s_6d06bd4898dc7f::t_2ec6fdabbc00bc 4-5,11,14-19,22,25,38,50,52,71-72,74
+.github/workflows/deploy-pages.yml
+  s_6d06bd4898dc7f::t_f0011d510d7787 33
+docs/data-model.md
+  s_6d06bd4898dc7f::t_11331d349c1671 1-8,12-22,24-25,27,29-59,62-65,67-69,72-74,82-83,86-113,119-120
+  s_6d06bd4898dc7f::t_146e67c032cfb3 9-11,23,26,28,60-61,66,70-71,75-81,84-85,114-118,121-127
+src/data/generated-scores.json
+  s_6d06bd4898dc7f::t_74e62a79a4ac94 25-26,49-50,73-74,97-98,121-122,145-146,169-170,193-194
+src/data/generated-catalog.json
+  s_6d06bd4898dc7f::t_74e62a79a4ac94 5,9-38,43,47-76,81,85-114,117-144,149,153-182,187,191-220,225,229-264,269,273-308,313,319-354
+src/pages/ChartDetailPage.tsx
+  s_6d06bd4898dc7f::t_f0011d510d7787 3,23-31
+scripts/validate-data.mjs
+  s_6d06bd4898dc7f::t_8d68bd123703b4 1-9
+scripts/sync-catalog.mjs
+  s_6d06bd4898dc7f::t_89f1b1fc87be92 127-154,227,256-259,261-273,286
+src/catalog.ts
+  s_6d06bd4898dc7f::t_11331d349c1671 8
+  s_6d06bd4898dc7f::t_2ec6fdabbc00bc 2-3,7,9-16,22,24,34
+src/api.ts
+  s_6d06bd4898dc7f::t_2ec6fdabbc00bc 2,4-5
+.github/workflows/sync-catalog.yml
+  s_6d06bd4898dc7f::t_f0011d510d7787 105-108
+scripts/sync-scores.mjs
+  s_6d06bd4898dc7f::t_89f1b1fc87be92 9-21,24,44-47,56
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.21",
+  "base_commit_sha": "365e4db16c7692694f204545c0652b3cf1c20e2c",
+  "prompts": {},
+  "humans": {
+    "h_278fafc5c28027": {
+      "author": "Allan Sun <allansun@live.com>"
+    }
+  },
+  "sessions": {
+    "s_6d06bd4898dc7f": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019faca2-0a30-75f3-8a51-06f8e9067195",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Allan Sun <allansun@live.com>"
+    }
+  }
+}
