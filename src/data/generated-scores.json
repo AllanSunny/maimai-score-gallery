@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-10T01:06:32.339Z",
+  "updatedAt": "2026-08-10T01:09:12.577Z",
   "scores": [
     {
       "playedAt": "2025-11-10T02:30:43.000Z",
@@ -1891,6 +1891,67 @@
       "slow": 13,
       "id": "yNIeuMhCH1Jgf8jlLqDRV637EKZ4WhJvN7OnchRtjf4",
       "chartId": null
+    },
+    {
+      "playedAt": "2026-04-18T00:44:00.000Z",
+      "songTitle": "Baqeela",
+      "chartType": "DX",
+      "difficulty": "MASTER",
+      "level": "13+",
+      "achievement": 100.4026,
+      "rank": "SSS",
+      "combo": "Clear",
+      "sync": "None",
+      "rating": 14746,
+      "ratingChange": 1,
+      "judgments": {
+        "criticalPerfect": 690,
+        "perfect": 266,
+        "great": 24,
+        "good": 0,
+        "miss": 2
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 29,
+          "perfect": 15,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 420,
+          "perfect": 229,
+          "great": 24,
+          "good": 0,
+          "miss": 0
+        },
+        "hold": {
+          "criticalPerfect": 28,
+          "perfect": 22,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 75,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 138,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 2
+        }
+      },
+      "fast": 26,
+      "slow": 13,
+      "id": "Vkeh2JixUE3QBtuLyTBuZNVP6U5fc4lAbiMdsZ9MqSg",
+      "chartId": "song-7fbb1100d70a-dx-master"
     },
     {
       "playedAt": "2026-04-18T01:28:53.000Z",
