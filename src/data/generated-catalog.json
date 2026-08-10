@@ -1105,13 +1105,5 @@
         }
       ]
     }
-  ],
-  "unmatchedSongs": [
-    {
-      "title": "Bageela",
-      "reason": "No matching title in the SEGA song catalog",
-      "firstSeenAt": "2026-08-10T01:07:10.774Z",
-      "lastAttemptedAt": "2026-08-10T01:07:10.774Z"
-    }
   ]
 }
