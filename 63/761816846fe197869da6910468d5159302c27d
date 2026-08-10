@@ -1,0 +1,14 @@
+src/data/generated-scores.json
+  h_278fafc5c28027 1835-1836,1840-1841,1844-1845,1847-1851,1855-1856,1862-1866,1869-1870,1876,1878,1883,1887,1890-1891,1893
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.21",
+  "base_commit_sha": "63761816846fe197869da6910468d5159302c27d",
+  "prompts": {},
+  "humans": {
+    "h_278fafc5c28027": {
+      "author": "Allan Sun <allansun@live.com>"
+    }
+  }
+}
