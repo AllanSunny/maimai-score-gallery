@@ -1,6 +1,47 @@
 {
-  "generatedAt": "2026-08-07T09:30:12.923Z",
+  "generatedAt": "2026-08-10T01:07:23.466Z",
   "songs": [
+    {
+      "id": "song-85572925973b",
+      "title": "1000年生きてる",
+      "alternateTitles": [
+        "sennen ikiteru",
+        "living millenium"
+      ],
+      "jacketKey": "jackets/song-85572925973b-993595587e76.png",
+      "versions": [
+        {
+          "id": "song-85572925973b-dx",
+          "chartType": "DX",
+          "charts": [
+            {
+              "id": "song-85572925973b-dx-basic",
+              "difficulty": "BASIC",
+              "level": "3",
+              "chartConstant": null
+            },
+            {
+              "id": "song-85572925973b-dx-advanced",
+              "difficulty": "ADVANCED",
+              "level": "7+",
+              "chartConstant": null
+            },
+            {
+              "id": "song-85572925973b-dx-expert",
+              "difficulty": "EXPERT",
+              "level": "9",
+              "chartConstant": null
+            },
+            {
+              "id": "song-85572925973b-dx-master",
+              "difficulty": "MASTER",
+              "level": "13",
+              "chartConstant": null
+            }
+          ]
+        }
+      ]
+    },
     {
       "id": "song-5e2b531bd3e7",
       "title": "Altale",
@@ -31,6 +72,196 @@
             },
             {
               "id": "song-5e2b531bd3e7-std-master",
+              "difficulty": "MASTER",
+              "level": "13+",
+              "chartConstant": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "song-7fbb1100d70a",
+      "title": "Baqeela",
+      "alternateTitles": [],
+      "jacketKey": "jackets/song-7fbb1100d70a-4c45900498bc.png",
+      "versions": [
+        {
+          "id": "song-7fbb1100d70a-dx",
+          "chartType": "DX",
+          "charts": [
+            {
+              "id": "song-7fbb1100d70a-dx-basic",
+              "difficulty": "BASIC",
+              "level": "3",
+              "chartConstant": null
+            },
+            {
+              "id": "song-7fbb1100d70a-dx-advanced",
+              "difficulty": "ADVANCED",
+              "level": "6",
+              "chartConstant": null
+            },
+            {
+              "id": "song-7fbb1100d70a-dx-expert",
+              "difficulty": "EXPERT",
+              "level": "10+",
+              "chartConstant": null
+            },
+            {
+              "id": "song-7fbb1100d70a-dx-master",
+              "difficulty": "MASTER",
+              "level": "13+",
+              "chartConstant": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "song-e82460b7a2b0",
+      "title": "enchanted wanderer",
+      "alternateTitles": [],
+      "jacketKey": "jackets/song-e82460b7a2b0-381bd59a4f24.png",
+      "versions": [
+        {
+          "id": "song-e82460b7a2b0-dx",
+          "chartType": "DX",
+          "charts": [
+            {
+              "id": "song-e82460b7a2b0-dx-basic",
+              "difficulty": "BASIC",
+              "level": "3",
+              "chartConstant": null
+            },
+            {
+              "id": "song-e82460b7a2b0-dx-advanced",
+              "difficulty": "ADVANCED",
+              "level": "7",
+              "chartConstant": null
+            },
+            {
+              "id": "song-e82460b7a2b0-dx-expert",
+              "difficulty": "EXPERT",
+              "level": "12",
+              "chartConstant": null
+            },
+            {
+              "id": "song-e82460b7a2b0-dx-master",
+              "difficulty": "MASTER",
+              "level": "13+",
+              "chartConstant": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "song-bdf8ca5b6c93",
+      "title": "IMAWANOKIWA",
+      "alternateTitles": [],
+      "jacketKey": "jackets/song-bdf8ca5b6c93-65964c54f712.png",
+      "versions": [
+        {
+          "id": "song-bdf8ca5b6c93-dx",
+          "chartType": "DX",
+          "charts": [
+            {
+              "id": "song-bdf8ca5b6c93-dx-basic",
+              "difficulty": "BASIC",
+              "level": "3",
+              "chartConstant": null
+            },
+            {
+              "id": "song-bdf8ca5b6c93-dx-advanced",
+              "difficulty": "ADVANCED",
+              "level": "7",
+              "chartConstant": null
+            },
+            {
+              "id": "song-bdf8ca5b6c93-dx-expert",
+              "difficulty": "EXPERT",
+              "level": "10+",
+              "chartConstant": null
+            },
+            {
+              "id": "song-bdf8ca5b6c93-dx-master",
+              "difficulty": "MASTER",
+              "level": "13+",
+              "chartConstant": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "song-eba8086f378f",
+      "title": "Last Kingdom",
+      "alternateTitles": [],
+      "jacketKey": "jackets/song-eba8086f378f-edceb58d0e46.png",
+      "versions": [
+        {
+          "id": "song-eba8086f378f-dx",
+          "chartType": "DX",
+          "charts": [
+            {
+              "id": "song-eba8086f378f-dx-basic",
+              "difficulty": "BASIC",
+              "level": "4",
+              "chartConstant": null
+            },
+            {
+              "id": "song-eba8086f378f-dx-advanced",
+              "difficulty": "ADVANCED",
+              "level": "7+",
+              "chartConstant": null
+            },
+            {
+              "id": "song-eba8086f378f-dx-expert",
+              "difficulty": "EXPERT",
+              "level": "12",
+              "chartConstant": null
+            },
+            {
+              "id": "song-eba8086f378f-dx-master",
+              "difficulty": "MASTER",
+              "level": "13+",
+              "chartConstant": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "song-400e36d3b8d1",
+      "title": "Lover's Trick",
+      "alternateTitles": [],
+      "jacketKey": "jackets/song-400e36d3b8d1-699b3f8bf843.png",
+      "versions": [
+        {
+          "id": "song-400e36d3b8d1-dx",
+          "chartType": "DX",
+          "charts": [
+            {
+              "id": "song-400e36d3b8d1-dx-basic",
+              "difficulty": "BASIC",
+              "level": "3",
+              "chartConstant": null
+            },
+            {
+              "id": "song-400e36d3b8d1-dx-advanced",
+              "difficulty": "ADVANCED",
+              "level": "7",
+              "chartConstant": null
+            },
+            {
+              "id": "song-400e36d3b8d1-dx-expert",
+              "difficulty": "EXPERT",
+              "level": "10+",
+              "chartConstant": null
+            },
+            {
+              "id": "song-400e36d3b8d1-dx-master",
               "difficulty": "MASTER",
               "level": "13+",
               "chartConstant": null
@@ -148,6 +379,88 @@
       ]
     },
     {
+      "id": "song-e55f5c1d041d",
+      "title": "Mystic Parade",
+      "alternateTitles": [],
+      "jacketKey": "jackets/song-e55f5c1d041d-ebfc0284be1f.png",
+      "versions": [
+        {
+          "id": "song-e55f5c1d041d-dx",
+          "chartType": "DX",
+          "charts": [
+            {
+              "id": "song-e55f5c1d041d-dx-basic",
+              "difficulty": "BASIC",
+              "level": "3",
+              "chartConstant": null
+            },
+            {
+              "id": "song-e55f5c1d041d-dx-advanced",
+              "difficulty": "ADVANCED",
+              "level": "7",
+              "chartConstant": null
+            },
+            {
+              "id": "song-e55f5c1d041d-dx-expert",
+              "difficulty": "EXPERT",
+              "level": "10",
+              "chartConstant": null
+            },
+            {
+              "id": "song-e55f5c1d041d-dx-master",
+              "difficulty": "MASTER",
+              "level": "13",
+              "chartConstant": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "song-ff485a6d8bed",
+      "title": "Never Give Up!",
+      "alternateTitles": [],
+      "jacketKey": "jackets/song-ff485a6d8bed-3132232122f9.png",
+      "versions": [
+        {
+          "id": "song-ff485a6d8bed-dx",
+          "chartType": "DX",
+          "charts": [
+            {
+              "id": "song-ff485a6d8bed-dx-basic",
+              "difficulty": "BASIC",
+              "level": "4",
+              "chartConstant": null
+            },
+            {
+              "id": "song-ff485a6d8bed-dx-advanced",
+              "difficulty": "ADVANCED",
+              "level": "7+",
+              "chartConstant": null
+            },
+            {
+              "id": "song-ff485a6d8bed-dx-expert",
+              "difficulty": "EXPERT",
+              "level": "10+",
+              "chartConstant": null
+            },
+            {
+              "id": "song-ff485a6d8bed-dx-master",
+              "difficulty": "MASTER",
+              "level": "13+",
+              "chartConstant": null
+            },
+            {
+              "id": "song-ff485a6d8bed-dx-re-master",
+              "difficulty": "Re:MASTER",
+              "level": "13+",
+              "chartConstant": null
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "song-9a2f2ad520e2",
       "title": "ウミユリ海底譚",
       "alternateTitles": [
@@ -228,6 +541,86 @@
       ]
     },
     {
+      "id": "song-c034ac69d6d8",
+      "title": "エンジェル ドリーム",
+      "alternateTitles": [
+        "angel dream"
+      ],
+      "jacketKey": "jackets/song-c034ac69d6d8-c60924991f7b.png",
+      "versions": [
+        {
+          "id": "song-c034ac69d6d8-dx",
+          "chartType": "DX",
+          "charts": [
+            {
+              "id": "song-c034ac69d6d8-dx-basic",
+              "difficulty": "BASIC",
+              "level": "3",
+              "chartConstant": null
+            },
+            {
+              "id": "song-c034ac69d6d8-dx-advanced",
+              "difficulty": "ADVANCED",
+              "level": "7+",
+              "chartConstant": null
+            },
+            {
+              "id": "song-c034ac69d6d8-dx-expert",
+              "difficulty": "EXPERT",
+              "level": "10",
+              "chartConstant": null
+            },
+            {
+              "id": "song-c034ac69d6d8-dx-master",
+              "difficulty": "MASTER",
+              "level": "13+",
+              "chartConstant": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "song-487d0c975e16",
+      "title": "オーバーライド",
+      "alternateTitles": [
+        "override"
+      ],
+      "jacketKey": "jackets/song-487d0c975e16-dbef685059f1.png",
+      "versions": [
+        {
+          "id": "song-487d0c975e16-dx",
+          "chartType": "DX",
+          "charts": [
+            {
+              "id": "song-487d0c975e16-dx-basic",
+              "difficulty": "BASIC",
+              "level": "4",
+              "chartConstant": null
+            },
+            {
+              "id": "song-487d0c975e16-dx-advanced",
+              "difficulty": "ADVANCED",
+              "level": "7+",
+              "chartConstant": null
+            },
+            {
+              "id": "song-487d0c975e16-dx-expert",
+              "difficulty": "EXPERT",
+              "level": "11",
+              "chartConstant": null
+            },
+            {
+              "id": "song-487d0c975e16-dx-master",
+              "difficulty": "MASTER",
+              "level": "13",
+              "chartConstant": null
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "song-638e826988e6",
       "title": "おくすり飲んで寝よう",
       "alternateTitles": [
@@ -261,6 +654,178 @@
               "id": "song-638e826988e6-dx-master",
               "difficulty": "MASTER",
               "level": "12+",
+              "chartConstant": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "song-5331d36bf069",
+      "title": "きゅうくらりん",
+      "alternateTitles": [
+        "kyūkurarin"
+      ],
+      "jacketKey": "jackets/song-5331d36bf069-6cd3ac67e953.png",
+      "versions": [
+        {
+          "id": "song-5331d36bf069-dx",
+          "chartType": "DX",
+          "charts": [
+            {
+              "id": "song-5331d36bf069-dx-basic",
+              "difficulty": "BASIC",
+              "level": "4",
+              "chartConstant": null
+            },
+            {
+              "id": "song-5331d36bf069-dx-advanced",
+              "difficulty": "ADVANCED",
+              "level": "7",
+              "chartConstant": null
+            },
+            {
+              "id": "song-5331d36bf069-dx-expert",
+              "difficulty": "EXPERT",
+              "level": "11+",
+              "chartConstant": null
+            },
+            {
+              "id": "song-5331d36bf069-dx-master",
+              "difficulty": "MASTER",
+              "level": "13+",
+              "chartConstant": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "song-3b20b9fdc5ab",
+      "title": "ダイダイダイダイダイキライ",
+      "alternateTitles": [
+        "daikirai"
+      ],
+      "jacketKey": "jackets/song-3b20b9fdc5ab-d778f372d0f1.png",
+      "versions": [
+        {
+          "id": "song-3b20b9fdc5ab-dx",
+          "chartType": "DX",
+          "charts": [
+            {
+              "id": "song-3b20b9fdc5ab-dx-basic",
+              "difficulty": "BASIC",
+              "level": "4",
+              "chartConstant": null
+            },
+            {
+              "id": "song-3b20b9fdc5ab-dx-advanced",
+              "difficulty": "ADVANCED",
+              "level": "6",
+              "chartConstant": null
+            },
+            {
+              "id": "song-3b20b9fdc5ab-dx-expert",
+              "difficulty": "EXPERT",
+              "level": "10",
+              "chartConstant": null
+            },
+            {
+              "id": "song-3b20b9fdc5ab-dx-master",
+              "difficulty": "MASTER",
+              "level": "11+",
+              "chartConstant": null
+            },
+            {
+              "id": "song-3b20b9fdc5ab-dx-re-master",
+              "difficulty": "Re:MASTER",
+              "level": "13+",
+              "chartConstant": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "song-58508b2f410c",
+      "title": "テトリス",
+      "alternateTitles": [
+        "tetoris"
+      ],
+      "jacketKey": "jackets/song-58508b2f410c-bff1f2c90253.png",
+      "versions": [
+        {
+          "id": "song-58508b2f410c-dx",
+          "chartType": "DX",
+          "charts": [
+            {
+              "id": "song-58508b2f410c-dx-basic",
+              "difficulty": "BASIC",
+              "level": "4",
+              "chartConstant": null
+            },
+            {
+              "id": "song-58508b2f410c-dx-advanced",
+              "difficulty": "ADVANCED",
+              "level": "7",
+              "chartConstant": null
+            },
+            {
+              "id": "song-58508b2f410c-dx-expert",
+              "difficulty": "EXPERT",
+              "level": "10+",
+              "chartConstant": null
+            },
+            {
+              "id": "song-58508b2f410c-dx-master",
+              "difficulty": "MASTER",
+              "level": "12",
+              "chartConstant": null
+            },
+            {
+              "id": "song-58508b2f410c-dx-re-master",
+              "difficulty": "Re:MASTER",
+              "level": "13+",
+              "chartConstant": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "song-2322d2fdf93d",
+      "title": "どんぐりGAME",
+      "alternateTitles": [
+        "dongurigame"
+      ],
+      "jacketKey": "jackets/song-2322d2fdf93d-57566a9f73cd.png",
+      "versions": [
+        {
+          "id": "song-2322d2fdf93d-dx",
+          "chartType": "DX",
+          "charts": [
+            {
+              "id": "song-2322d2fdf93d-dx-basic",
+              "difficulty": "BASIC",
+              "level": "2",
+              "chartConstant": null
+            },
+            {
+              "id": "song-2322d2fdf93d-dx-advanced",
+              "difficulty": "ADVANCED",
+              "level": "6",
+              "chartConstant": null
+            },
+            {
+              "id": "song-2322d2fdf93d-dx-expert",
+              "difficulty": "EXPERT",
+              "level": "10",
+              "chartConstant": null
+            },
+            {
+              "id": "song-2322d2fdf93d-dx-master",
+              "difficulty": "MASTER",
+              "level": "13+",
               "chartConstant": null
             }
           ]
@@ -449,7 +1014,8 @@
       "id": "song-de8bb67fb249",
       "title": "熱異常",
       "alternateTitles": [
-        "netsu ijō", "heat abnormal"
+        "netsu ijō",
+        "heat abnormal"
       ],
       "jacketKey": "jackets/song-de8bb67fb249-60a40d4e5b1a.png",
       "versions": [
@@ -495,7 +1061,9 @@
       "id": "tsunagite",
       "title": "系ぎて",
       "alternateTitles": [
-        "tsunagite", "connected", "tuna"
+        "tsunagite",
+        "connected",
+        "tuna"
       ],
       "jacketKey": "jackets/tsunagite-0f15deab27d9.png",
       "versions": [
@@ -538,5 +1106,12 @@
       ]
     }
   ],
-  "unmatchedSongs": []
+  "unmatchedSongs": [
+    {
+      "title": "Bageela",
+      "reason": "No matching title in the SEGA song catalog",
+      "firstSeenAt": "2026-08-10T01:07:10.774Z",
+      "lastAttemptedAt": "2026-08-10T01:07:10.774Z"
+    }
+  ]
 }
