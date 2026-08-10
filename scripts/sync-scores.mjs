@@ -27,6 +27,7 @@ function scoreFingerprint(score) {
     chartId: _chartId,
     alternateTitles: _alternateTitles,
     judgmentsByType: _judgmentsByType,
+    rank: _rank,
     ...publicScore
   } = score;
   return JSON.stringify(publicScore);
@@ -39,7 +40,7 @@ function alternateTitles(score) {
 }
 
 function storedScore(score, chartId) {
-  const { alternateTitles: _alternateTitles, ...record } = score;
+  const { alternateTitles: _alternateTitles, rank: _rank, ...record } = score;
   return { ...record, chartId, judgmentsByType: score.judgmentsByType ?? null };
 }
 
@@ -80,6 +81,13 @@ async function main() {
   const archivedByFingerprint = new Map(archive.scores.map((score, index) => [scoreFingerprint(score), index]));
   const additions = [];
   let metadataChanged = false;
+
+  archive.scores = archive.scores.map((score) => {
+    if (!("rank" in score)) return score;
+    const { rank: _rank, ...record } = score;
+    metadataChanged = true;
+    return record;
+  });
 
   feed.scores.forEach((score) => {
     if (!score.id) return;

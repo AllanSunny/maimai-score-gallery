@@ -33,7 +33,6 @@ interface ScoreRecord {
   level: string;               // Display level, e.g. "13+"
   chartConstant?: number;
   achievement: number;         // Percentage on a 0–101 scale
-  rank: string;
   combo: string;
   sync: string;
   rating: number;
@@ -60,6 +59,8 @@ interface JudgmentBreakdown {
   touch: JudgmentSet;
 }
 ```
+
+Rank is derived in the frontend from `achievement`; it is not stored on each score record.
 
 Notes/Location is intentionally excluded from the public archive.
 

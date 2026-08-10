@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import { fetchScores } from "../api";
 import { findCatalogSong } from "../catalog";
 import { PageHeading } from "../components/ui/PageHeading";
+import { achievementRank } from "../rank";
 import type { ChartType, Difficulty, Score } from "../types";
 
 interface ChartDetailPageProps {
@@ -39,7 +40,7 @@ export function ChartDetailPage({ songName, chartType, difficulty }: ChartDetail
       {loading ? <p className="mt-10 text-sm text-muted">Loading chart history…</p> : (
         <>
           <section className="mt-12 grid gap-4 sm:grid-cols-3">
-            <div className="rounded-2xl border border-line bg-white/60 p-5"><p className="text-xs uppercase tracking-wider text-muted">Current record</p><p className="mt-2 text-2xl font-semibold tabular-nums">{record ? `${record.achievement.toFixed(4)}%` : "—"}</p></div>
+            <div className="rounded-2xl border border-line bg-white/60 p-5"><p className="text-xs uppercase tracking-wider text-muted">Current record</p><p className="mt-2 text-2xl font-semibold tabular-nums">{record ? `${record.achievement.toFixed(4)}%` : "—"}</p>{record && <p className="mt-1 text-sm font-semibold text-muted">{achievementRank(record.achievement)}</p>}</div>
             <div className="rounded-2xl border border-line bg-white/60 p-5"><p className="text-xs uppercase tracking-wider text-muted">Level</p><p className="mt-2 text-2xl font-semibold">{record?.level ?? "—"}</p></div>
             <div className="rounded-2xl border border-line bg-white/60 p-5"><p className="text-xs uppercase tracking-wider text-muted">Chart constant</p><p className="mt-2 text-2xl font-semibold">{record?.chartConstant?.toFixed(1) ?? "—"}</p></div>
           </section>
@@ -47,7 +48,7 @@ export function ChartDetailPage({ songName, chartType, difficulty }: ChartDetail
           <section className="mt-12">
             <h2 className="text-xl font-semibold tracking-tight">Score progression</h2>
             <div className="mt-5 overflow-hidden rounded-2xl border border-line bg-white/60">
-              {history.map((score) => <div key={score.id} className="flex justify-between border-b border-line p-5 text-sm last:border-0"><time className="text-muted">{new Date(score.playedAt).toLocaleDateString()}</time><span className="font-semibold tabular-nums">{score.achievement.toFixed(4)}%</span></div>)}
+              {history.map((score) => <div key={score.id} className="flex justify-between border-b border-line p-5 text-sm last:border-0"><time className="text-muted">{new Date(score.playedAt).toLocaleDateString()}</time><span className="text-right"><span className="block font-semibold tabular-nums">{score.achievement.toFixed(4)}%</span><span className="mt-1 block text-xs font-semibold text-muted">{achievementRank(score.achievement)}</span></span></div>)}
               {!history.length && <p className="p-10 text-center text-sm text-muted">No plays recorded for this chart yet.</p>}
             </div>
           </section>

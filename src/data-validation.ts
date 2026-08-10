@@ -83,7 +83,7 @@ export function parseScoresResponse(value: unknown): ScoresResponse {
   array(archive.scores, "scoreArchive.scores").forEach((scoreValue, index) => {
     const path = `scoreArchive.scores[${index}]`;
     const score = object(scoreValue, path);
-    ["id", "playedAt", "songTitle", "chartType", "difficulty", "level", "rank", "combo", "sync"].forEach((field) => string(score[field], `${path}.${field}`));
+    ["id", "playedAt", "songTitle", "chartType", "difficulty", "level", "combo", "sync"].forEach((field) => string(score[field], `${path}.${field}`));
     nullableString(score.chartId, `${path}.chartId`);
     if (!chartTypes.has(score.chartType as ChartType)) throw new Error(`${path}.chartType is invalid.`);
     if (!difficulties.has(score.difficulty as Difficulty)) throw new Error(`${path}.difficulty is invalid.`);

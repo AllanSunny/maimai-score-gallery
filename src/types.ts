@@ -65,7 +65,6 @@ export interface ScoreRecord {
   level: string;
   chartConstant?: number;
   achievement: number;
-  rank: string;
   combo: string;
   sync: string;
   rating: number;

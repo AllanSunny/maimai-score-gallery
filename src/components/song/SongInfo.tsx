@@ -1,4 +1,5 @@
 import type { ChartType, Difficulty } from "../../types";
+import { achievementRank } from "../../rank";
 
 export interface SongChartSummary {
   difficulty: Difficulty;
@@ -69,6 +70,11 @@ export function SongInfo({ name, chartType, alternateTitles = [], jacketUrl, cha
                 <p className="mt-0.5 font-semibold tabular-nums">
                   {chart.achievement == null ? "—" : `${chart.achievement.toFixed(4)}%`}
                 </p>
+                {chart.achievement != null && (
+                  <p className="mt-1 text-xs font-semibold text-muted">
+                    {achievementRank(chart.achievement)}
+                  </p>
+                )}
                 <p className="mt-1 text-xs text-muted sm:hidden">
                   {chart.chartConstant && chart.chartConstant.toFixed(1)}
                 </p>
