@@ -48,17 +48,17 @@
 }
 
 .song-detail-frame__difficulty {
-  top: 60%;
+  top: 60.5%;
   left: 5.8%;
   width: 55.5%;
   height: 8.7%;
   font-family: var(--font-rodin-bold);
-  font-size: 7.7cqw;
+  font-size: 7cqw;
   font-weight: 800;
   letter-spacing: -0.055em;
   -webkit-text-stroke: 0.12em var(--difficulty-color);
   paint-order: stroke fill;
-  filter: drop-shadow(0 0.045em 0.035em rgb(255 255 255 / 80%));
+  filter: drop-shadow(0 0.045em 0.045em rgb(255 255 255 / 80%));
 }
 
 .song-detail-frame__level {
@@ -70,11 +70,14 @@
   gap: 0.01em;
   color: white;
   font-family: var(--font-rodin-bold);
-  font-size: 2.4em;
+  font-size: 12cqw;
   font-weight: 800;
   letter-spacing: -0.075em;
   -webkit-text-stroke: 0.1em var(--difficulty-color);
   paint-order: stroke fill;
+  text-shadow:
+          0 0.0em 0.2em var(--difficulty-color),
+          0 0.0em 0.2em var(--difficulty-color);
 }
 
 .song-detail-frame__level-prefix {
@@ -116,11 +119,11 @@
 }
 
 .song-detail-frame[data-difficulty="ADVANCED"] {
-  --difficulty-color: #e7a719;
+  --difficulty-color: #ea9800;
 }
 
 .song-detail-frame[data-difficulty="EXPERT"] {
-  --difficulty-color: #e54e59;
+  --difficulty-color: #ec4354;
 }
 
 .song-detail-frame[data-difficulty="MASTER"] {
