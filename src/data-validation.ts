@@ -47,6 +47,7 @@ function validateChart(value: unknown, path: string) {
   if (!difficulties.has(chart.difficulty as Difficulty)) throw new Error(`${path}.difficulty is invalid.`);
   string(chart.level, `${path}.level`);
   if (chart.chartConstant !== null) number(chart.chartConstant, `${path}.chartConstant`);
+  nullableString(chart.charter, `${path}.charter`);
 }
 
 function validateJudgments(value: unknown, path: string) {

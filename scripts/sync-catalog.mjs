@@ -15,6 +15,8 @@ const ALIAS_HANDOFF_PATH = path.join(ROOT, ".sync", "song-aliases.json");
 const REJECTED_SCORES_PATH = path.join(ROOT, ".sync", "rejected-scores.json");
 const SEGA_CATALOG_URL = process.env.SEGA_CATALOG_URL ?? "https://maimai.sega.jp/data/maimai_songs.json";
 const SEGA_JACKET_BASE_URL = process.env.SEGA_JACKET_BASE_URL ?? "https://maimaidx.jp/maimai-mobile/img/Music/";
+const DIVING_FISH_CATALOG_URL = process.env.DIVING_FISH_CATALOG_URL
+  ?? "https://www.diving-fish.com/api/maimaidxprober/music_data";
 
 const args = process.argv.slice(2);
 const dryRun = args.includes("--dry-run");
@@ -31,6 +33,13 @@ const chartFields = [
   ["STD", "MASTER", "lev_mas"],
   ["STD", "Re:MASTER", "lev_remas"],
 ];
+const difficultyIndexes = new Map([
+  ["BASIC", 0],
+  ["ADVANCED", 1],
+  ["EXPERT", 2],
+  ["MASTER", 3],
+  ["Re:MASTER", 4],
+]);
 
 function normalizeTitle(value) {
   return String(value ?? "").normalize("NFKC").replace(/\s+/g, " ").trim().toLocaleLowerCase();
@@ -145,19 +154,97 @@ function songArtist(official, override = {}) {
   return artist;
 }
 
-function extractChartVersions(song, override) {
+function communityChartKey(title, chartType) {
+  return `${normalizeTitle(title)}|${chartType}`;
+}
+
+function communityChartType(type) {
+  if (type === "DX") return "DX";
+  if (type === "SD" || type === "STD") return "STD";
+  return null;
+}
+
+function indexCommunityCharts(songs) {
+  const index = new Map();
+  songs.forEach((song) => {
+    const chartType = communityChartType(song.type);
+    if (!chartType) return;
+    const key = communityChartKey(song.title, chartType);
+    const entries = index.get(key) ?? [];
+    entries.push(song);
+    index.set(key, entries);
+  });
+  return index;
+}
+
+function findCommunitySong(title, chartType, communitySongs) {
+  const matches = communitySongs.get(communityChartKey(title, chartType)) ?? [];
+  if (matches.length === 1) return matches[0];
+  if (matches.length > 1) {
+    console.warn(`Ambiguous Diving-Fish match for ${title} (${chartType}); leaving chart metadata unchanged.`);
+  }
+  return null;
+}
+
+function communityChartMetadata(song, index) {
+  if (!song) return {};
+  const chart = Array.isArray(song.charts) ? song.charts[index] : null;
+  const chartConstant = Array.isArray(song.ds) && Number.isFinite(song.ds[index])
+    ? song.ds[index]
+    : null;
+  const rawCharter = String(chart?.charter ?? "").trim();
+  return {
+    chartConstant,
+    charter: rawCharter && rawCharter !== "-" ? rawCharter : null,
+  };
+}
+
+function extractChartVersions(song, override, communitySongs) {
   const versions = new Map();
+  const matches = new Map();
 
   chartFields.forEach(([chartType, difficulty, field]) => {
     const level = song[field];
     if (!level) return;
     const correction = override.charts?.[`${chartType}:${difficulty}`] ?? {};
     const charts = versions.get(chartType) ?? [];
-    charts.push({ difficulty, level: String(level), chartConstant: correction.chartConstant ?? null });
+    if (!matches.has(chartType)) {
+      matches.set(chartType, findCommunitySong(song.title, chartType, communitySongs));
+    }
+    const communitySong = matches.get(chartType);
+    const metadata = communityChartMetadata(communitySong, difficultyIndexes.get(difficulty));
+    charts.push({
+      difficulty,
+      level: String(level),
+      chartConstant: correction.chartConstant ?? metadata.chartConstant ?? null,
+      charter: correction.charter ?? metadata.charter ?? null,
+    });
     versions.set(chartType, charts);
   });
 
   return [...versions].map(([chartType, charts]) => ({ chartType, charts }));
+}
+
+function enrichExistingCharts(songs, communitySongs, overrides) {
+  let changed = false;
+  songs.forEach((song) => {
+    const override = overrides[song.title] ?? {};
+    song.versions.forEach((version) => {
+      const communitySong = findCommunitySong(song.title, version.chartType, communitySongs);
+      version.charts.forEach((chart) => {
+        const correction = override.charts?.[`${version.chartType}:${chart.difficulty}`] ?? {};
+        const metadata = communityChartMetadata(communitySong, difficultyIndexes.get(chart.difficulty));
+        const chartConstant = correction.chartConstant ?? metadata.chartConstant ?? chart.chartConstant ?? null;
+        const charter = correction.charter ?? metadata.charter ?? chart.charter ?? null;
+        if (chart.chartConstant !== chartConstant || chart.charter !== charter) {
+          chart.chartConstant = chartConstant;
+          chart.charter = charter;
+          changed = true;
+        }
+      });
+    });
+  });
+  return changed;
 }
 
 function chartSlug(difficulty) {
@@ -288,21 +375,16 @@ async function main() {
   const newTitles = titles.filter((title) => !isAlreadyCataloged(title, previous.songs));
   const missingArtistSongs = previous.songs.filter((song) =>
     typeof song.artist !== "string" || !song.artist.trim());
-  if (!newTitles.length && !missingArtistSongs.length) {
-    await linkArchivedScores(previous.songs, unmatchedSongs);
-    if (aliasesChanged) {
-      previous.generatedAt = new Date().toISOString();
-      await writeFile(GENERATED_PATH, `${JSON.stringify(previous, null, 2)}\n`);
-      console.log("Updated song aliases from the score archive.");
-    }
-    console.log(`Song catalog is current (${previous.songs.length} songs).`);
-    return;
-  }
-
   console.log(`Found ${newTitles.length} new song(s) and ${missingArtistSongs.length} artist credit(s) to backfill.`);
-  const officialSongs = await fetchJson(SEGA_CATALOG_URL, "SEGA song catalog");
+  const [officialSongs, divingFishSongs] = await Promise.all([
+    newTitles.length || missingArtistSongs.length
+      ? fetchJson(SEGA_CATALOG_URL, "SEGA song catalog")
+      : Promise.resolve([]),
+    fetchJson(DIVING_FISH_CATALOG_URL, "Diving-Fish chart metadata"),
+  ]);
+  const communitySongs = indexCommunityCharts(divingFishSongs);
   const songs = [...previous.songs];
-  let songsChanged = false;
+  let songsChanged = enrichExistingCharts(songs, communitySongs, overrides);
 
   missingArtistSongs.forEach((song) => {
     const official = findOfficialSong(song.title, officialSongs, overrides);
@@ -331,7 +413,7 @@ async function main() {
     const baseId = override.id ?? fallbackId(official.title);
     const sourceJacketUrl = new URL(official.image_url, SEGA_JACKET_BASE_URL).toString();
     const jacketKey = await uploadJacket(baseId, sourceJacketUrl);
-    const versions = extractChartVersions(official, override).map(({ chartType, charts }) => {
+    const versions = extractChartVersions(official, override, communitySongs).map(({ chartType, charts }) => {
       const versionId = `${baseId}-${chartType.toLowerCase()}`;
       return {
         id: versionId,

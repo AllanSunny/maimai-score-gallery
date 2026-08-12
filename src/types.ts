@@ -6,6 +6,7 @@ export interface Chart {
   difficulty: Difficulty;
   level: string;
   chartConstant: number | null;
+  charter: string | null;
 }
 
 export interface SongVersion {

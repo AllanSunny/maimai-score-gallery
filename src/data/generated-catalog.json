@@ -19,25 +19,29 @@
               "id": "song-85572925973b-dx-basic",
               "difficulty": "BASIC",
               "level": "3",
-              "chartConstant": null
+              "chartConstant": null,
+              "charter": null
             },
             {
               "id": "song-85572925973b-dx-advanced",
               "difficulty": "ADVANCED",
               "level": "7+",
-              "chartConstant": null
+              "chartConstant": null,
+              "charter": null
             },
             {
               "id": "song-85572925973b-dx-expert",
               "difficulty": "EXPERT",
               "level": "9",
-              "chartConstant": null
+              "chartConstant": null,
+              "charter": null
             },
             {
               "id": "song-85572925973b-dx-master",
               "difficulty": "MASTER",
               "level": "13",
-              "chartConstant": null
+              "chartConstant": null,
+              "charter": null
             }
           ]
         }
@@ -58,25 +62,29 @@
               "id": "song-5e2b531bd3e7-std-basic",
               "difficulty": "BASIC",
               "level": "4",
-              "chartConstant": null
+              "chartConstant": null,
+              "charter": null
             },
             {
               "id": "song-5e2b531bd3e7-std-advanced",
               "difficulty": "ADVANCED",
               "level": "8",
-              "chartConstant": null
+              "chartConstant": null,
+              "charter": null
             },
             {
               "id": "song-5e2b531bd3e7-std-expert",
               "difficulty": "EXPERT",
               "level": "12",
-              "chartConstant": null
+              "chartConstant": null,
+              "charter": null
             },
             {
               "id": "song-5e2b531bd3e7-std-master",
               "difficulty": "MASTER",
               "level": "13+",
-              "chartConstant": null
+              "chartConstant": null,
+              "charter": null
             }
           ]
         }
@@ -97,25 +105,29 @@
               "id": "song-7fbb1100d70a-dx-basic",
               "difficulty": "BASIC",
               "level": "3",
-              "chartConstant": null
+              "chartConstant": null,
+              "charter": null
             },
             {
               "id": "song-7fbb1100d70a-dx-advanced",
               "difficulty": "ADVANCED",
               "level": "6",
-              "chartConstant": null
+              "chartConstant": null,
+              "charter": null
             },
             {
               "id": "song-7fbb1100d70a-dx-expert",
               "difficulty": "EXPERT",
               "level": "10+",
-              "chartConstant": null
+              "chartConstant": null,
+              "charter": null
             },
             {
               "id": "song-7fbb1100d70a-dx-master",
               "difficulty": "MASTER",
               "level": "13+",
-              "chartConstant": null
+              "chartConstant": null,
+              "charter": null
             }
           ]
         }
@@ -136,25 +148,29 @@
               "id": "song-e82460b7a2b0-dx-basic",
               "difficulty": "BASIC",
               "level": "3",
-              "chartConstant": null
+              "chartConstant": null,
+              "charter": null
             },
             {
               "id": "song-e82460b7a2b0-dx-advanced",
               "difficulty": "ADVANCED",
               "level": "7",
-              "chartConstant": null
+              "chartConstant": null,
+              "charter": null
             },
             {
               "id": "song-e82460b7a2b0-dx-expert",
               "difficulty": "EXPERT",
               "level": "12",
-              "chartConstant": null
+              "chartConstant": null,
+              "charter": null
             },
             {
               "id": "song-e82460b7a2b0-dx-master",
               "difficulty": "MASTER",
               "level": "13+",
-              "chartConstant": null
+              "chartConstant": null,
+              "charter": null
             }
           ]
         }
@@ -175,25 +191,29 @@
               "id": "song-bdf8ca5b6c93-dx-basic",
               "difficulty": "BASIC",
               "level": "3",
-              "chartConstant": null
+              "chartConstant": null,
+              "charter": null
             },
             {
               "id": "song-bdf8ca5b6c93-dx-advanced",
               "difficulty": "ADVANCED",
               "level": "7",
-              "chartConstant": null
+              "chartConstant": null,
+              "charter": null
             },
             {
               "id": "song-bdf8ca5b6c93-dx-expert",
               "difficulty": "EXPERT",
               "level": "10+",
-              "chartConstant": null
+              "chartConstant": null,
+              "charter": null
             },
             {
               "id": "song-bdf8ca5b6c93-dx-master",
               "difficulty": "MASTER",
               "level": "13+",
-              "chartConstant": null
+              "chartConstant": null,
+              "charter": null
             }
           ]
         }
@@ -214,25 +234,29 @@
               "id": "song-eba8086f378f-dx-basic",
               "difficulty": "BASIC",
               "level": "4",
-              "chartConstant": null
+              "chartConstant": null,
+              "charter": null
             },
             {
               "id": "song-eba8086f378f-dx-advanced",
               "difficulty": "ADVANCED",
               "level": "7+",
-              "chartConstant": null
+              "chartConstant": null,
+              "charter": null
             },
             {
               "id": "song-eba8086f378f-dx-expert",
               "difficulty": "EXPERT",
               "level": "12",
-              "chartConstant": null
+              "chartConstant": null,
+              "charter": null
             },
             {
               "id": "song-eba8086f378f-dx-master",
               "difficulty": "MASTER",
               "level": "13+",
-              "chartConstant": null
+              "chartConstant": null,
+              "charter": null
             }
           ]
         }
@@ -253,25 +277,29 @@
               "id": "song-400e36d3b8d1-dx-basic",
               "difficulty": "BASIC",
               "level": "3",
-              "chartConstant": null
+              "chartConstant": null,
+              "charter": null
             },
             {
               "id": "song-400e36d3b8d1-dx-advanced",
               "difficulty": "ADVANCED",
               "level": "7",
-              "chartConstant": null
+              "chartConstant": null,
+              "charter": null
             },
             {
               "id": "song-400e36d3b8d1-dx-expert",
               "difficulty": "EXPERT",
               "level": "10+",
-              "chartConstant": null
+              "chartConstant": null,
+              "charter": null
             },
             {
               "id": "song-400e36d3b8d1-dx-master",
               "difficulty": "MASTER",
               "level": "13+",
-              "chartConstant": null
+              "chartConstant": null,
+              "charter": null
             }
           ]
         }
@@ -294,25 +322,29 @@
               "id": "song-a7a461d9d280-dx-basic",
               "difficulty": "BASIC",
               "level": "4",
-              "chartConstant": null
+              "chartConstant": null,
+              "charter": null
             },
             {
               "id": "song-a7a461d9d280-dx-advanced",
               "difficulty": "ADVANCED",
               "level": "7+",
-              "chartConstant": null
+              "chartConstant": null,
+              "charter": null
             },
             {
               "id": "song-a7a461d9d280-dx-expert",
               "difficulty": "EXPERT",
               "level": "11",
-              "chartConstant": null
+              "chartConstant": null,
+              "charter": null
             },
             {
               "id": "song-a7a461d9d280-dx-master",
               "difficulty": "MASTER",
               "level": "13+",
-              "chartConstant": null
+              "chartConstant": null,
+              "charter": null
             }
           ]
         }
@@ -333,25 +365,29 @@
               "id": "magical-flavor-dx-basic",
               "difficulty": "BASIC",
               "level": "3",
-              "chartConstant": null
+              "chartConstant": null,
+              "charter": null
             },
             {
               "id": "magical-flavor-dx-advanced",
               "difficulty": "ADVANCED",
               "level": "6",
-              "chartConstant": null
+              "chartConstant": null,
+              "charter": null
             },
             {
               "id": "magical-flavor-dx-expert",
               "difficulty": "EXPERT",
               "level": "10",
-              "chartConstant": null
+              "chartConstant": null,
+              "charter": null
             },
             {
               "id": "magical-flavor-dx-master",
               "difficulty": "MASTER",
               "level": "13",
-              "chartConstant": null
+              "chartConstant": null,
+              "charter": null
             }
           ]
         },
@@ -363,25 +399,29 @@
               "id": "magical-flavor-std-basic",
               "difficulty": "BASIC",
               "level": "3",
-              "chartConstant": null
+              "chartConstant": null,
+              "charter": null
             },
             {
               "id": "magical-flavor-std-advanced",
               "difficulty": "ADVANCED",
               "level": "8",
-              "chartConstant": null
+              "chartConstant": null,
+              "charter": null
             },
             {
               "id": "magical-flavor-std-expert",
               "difficulty": "EXPERT",
               "level": "10+",
-              "chartConstant": null
+              "chartConstant": null,
+              "charter": null
             },
             {
               "id": "magical-flavor-std-master",
               "difficulty": "MASTER",
               "level": "13",
-              "chartConstant": null
+              "chartConstant": null,
+              "charter": null
             }
           ]
         }
@@ -402,25 +442,29 @@
               "id": "song-e55f5c1d041d-dx-basic",
               "difficulty": "BASIC",
               "level": "3",
-              "chartConstant": null
+              "chartConstant": null,
+              "charter": null
             },
             {
               "id": "song-e55f5c1d041d-dx-advanced",
               "difficulty": "ADVANCED",
               "level": "7",
-              "chartConstant": null
+              "chartConstant": null,
+              "charter": null
             },
             {
               "id": "song-e55f5c1d041d-dx-expert",
               "difficulty": "EXPERT",
               "level": "10",
-              "chartConstant": null
+              "chartConstant": null,
+              "charter": null
             },
             {
               "id": "song-e55f5c1d041d-dx-master",
               "difficulty": "MASTER",
               "level": "13",
-              "chartConstant": null
+              "chartConstant": null,
+              "charter": null
             }
           ]
         }
@@ -441,31 +485,36 @@
               "id": "song-ff485a6d8bed-dx-basic",
               "difficulty": "BASIC",
               "level": "4",
-              "chartConstant": null
+              "chartConstant": null,
+              "charter": null
             },
             {
               "id": "song-ff485a6d8bed-dx-advanced",
               "difficulty": "ADVANCED",
               "level": "7+",
-              "chartConstant": null
+              "chartConstant": null,
+              "charter": null
             },
             {
               "id": "song-ff485a6d8bed-dx-expert",
               "difficulty": "EXPERT",
               "level": "10+",
-              "chartConstant": null
+              "chartConstant": null,
+              "charter": null
             },
             {
               "id": "song-ff485a6d8bed-dx-master",
               "difficulty": "MASTER",
               "level": "13+",
-              "chartConstant": null
+              "chartConstant": null,
+              "charter": null
             },
             {
               "id": "song-ff485a6d8bed-dx-re-master",
               "difficulty": "Re:MASTER",
               "level": "13+",
-              "chartConstant": null
+              "chartConstant": null,
+              "charter": null
             }
           ]
         }
@@ -488,25 +537,29 @@
               "id": "song-9a2f2ad520e2-std-basic",
               "difficulty": "BASIC",
               "level": "4",
-              "chartConstant": null
+              "chartConstant": null,
+              "charter": null
             },
             {
               "id": "song-9a2f2ad520e2-std-advanced",
               "difficulty": "ADVANCED",
               "level": "7",
-              "chartConstant": null
+              "chartConstant": null,
+              "charter": null
             },
             {
               "id": "song-9a2f2ad520e2-std-expert",
               "difficulty": "EXPERT",
               "level": "9+",
-              "chartConstant": null
+              "chartConstant": null,
+              "charter": null
             },
             {
               "id": "song-9a2f2ad520e2-std-master",
               "difficulty": "MASTER",
               "level": "13",
-              "chartConstant": null
+              "chartConstant": null,
+              "charter": null
             }
           ]
         }
@@ -529,25 +582,29 @@
               "id": "song-4f39f6af9e43-dx-basic",
               "difficulty": "BASIC",
               "level": "5",
-              "chartConstant": null
+              "chartConstant": null,
+              "charter": null
             },
             {
               "id": "song-4f39f6af9e43-dx-advanced",
               "difficulty": "ADVANCED",
               "level": "7+",
-              "chartConstant": null
+              "chartConstant": null,
+              "charter": null
             },
             {
               "id": "song-4f39f6af9e43-dx-expert",
               "difficulty": "EXPERT",
               "level": "10",
-              "chartConstant": null
+              "chartConstant": null,
+              "charter": null
             },
             {
               "id": "song-4f39f6af9e43-dx-master",
               "difficulty": "MASTER",
               "level": "13+",
-              "chartConstant": null
+              "chartConstant": null,
+              "charter": null
             }
           ]
         }
@@ -570,25 +627,29 @@
               "id": "song-c034ac69d6d8-dx-basic",
               "difficulty": "BASIC",
               "level": "3",
-              "chartConstant": null
+              "chartConstant": null,
+              "charter": null
             },
             {
               "id": "song-c034ac69d6d8-dx-advanced",
               "difficulty": "ADVANCED",
               "level": "7+",
-              "chartConstant": null
+              "chartConstant": null,
+              "charter": null
             },
             {
               "id": "song-c034ac69d6d8-dx-expert",
               "difficulty": "EXPERT",
               "level": "10",
-              "chartConstant": null
+              "chartConstant": null,
+              "charter": null
             },
             {
               "id": "song-c034ac69d6d8-dx-master",
               "difficulty": "MASTER",
               "level": "13+",
-              "chartConstant": null
+              "chartConstant": null,
+              "charter": null
             }
           ]
         }
@@ -611,25 +672,29 @@
               "id": "song-487d0c975e16-dx-basic",
               "difficulty": "BASIC",
               "level": "4",
-              "chartConstant": null
+              "chartConstant": null,
+              "charter": null
             },
             {
               "id": "song-487d0c975e16-dx-advanced",
               "difficulty": "ADVANCED",
               "level": "7+",
-              "chartConstant": null
+              "chartConstant": null,
+              "charter": null
             },
             {
               "id": "song-487d0c975e16-dx-expert",
               "difficulty": "EXPERT",
               "level": "11",
-              "chartConstant": null
+              "chartConstant": null,
+              "charter": null
             },
             {
               "id": "song-487d0c975e16-dx-master",
               "difficulty": "MASTER",
               "level": "13",
-              "chartConstant": null
+              "chartConstant": null,
+              "charter": null
             }
           ]
         }
@@ -652,25 +717,29 @@
               "id": "song-638e826988e6-dx-basic",
               "difficulty": "BASIC",
               "level": "3",
-              "chartConstant": null
+              "chartConstant": null,
+              "charter": null
             },
             {
               "id": "song-638e826988e6-dx-advanced",
               "difficulty": "ADVANCED",
               "level": "6",
-              "chartConstant": null
+              "chartConstant": null,
+              "charter": null
             },
             {
               "id": "song-638e826988e6-dx-expert",
               "difficulty": "EXPERT",
               "level": "9+",
-              "chartConstant": null
+              "chartConstant": null,
+              "charter": null
             },
             {
               "id": "song-638e826988e6-dx-master",
               "difficulty": "MASTER",
               "level": "12+",
-              "chartConstant": null
+              "chartConstant": null,
+              "charter": null
             }
           ]
         }
@@ -693,25 +762,29 @@
               "id": "song-5331d36bf069-dx-basic",
               "difficulty": "BASIC",
               "level": "4",
-              "chartConstant": null
+              "chartConstant": null,
+              "charter": null
             },
             {
               "id": "song-5331d36bf069-dx-advanced",
               "difficulty": "ADVANCED",
               "level": "7",
-              "chartConstant": null
+              "chartConstant": null,
+              "charter": null
             },
             {
               "id": "song-5331d36bf069-dx-expert",
               "difficulty": "EXPERT",
               "level": "11+",
-              "chartConstant": null
+              "chartConstant": null,
+              "charter": null
             },
             {
               "id": "song-5331d36bf069-dx-master",
               "difficulty": "MASTER",
               "level": "13+",
-              "chartConstant": null
+              "chartConstant": null,
+              "charter": null
             }
           ]
         }
@@ -734,31 +807,36 @@
               "id": "song-3b20b9fdc5ab-dx-basic",
               "difficulty": "BASIC",
               "level": "4",
-              "chartConstant": null
+              "chartConstant": null,
+              "charter": null
             },
             {
               "id": "song-3b20b9fdc5ab-dx-advanced",
               "difficulty": "ADVANCED",
               "level": "6",
-              "chartConstant": null
+              "chartConstant": null,
+              "charter": null
             },
             {
               "id": "song-3b20b9fdc5ab-dx-expert",
               "difficulty": "EXPERT",
               "level": "10",
-              "chartConstant": null
+              "chartConstant": null,
+              "charter": null
             },
             {
               "id": "song-3b20b9fdc5ab-dx-master",
               "difficulty": "MASTER",
               "level": "11+",
-              "chartConstant": null
+              "chartConstant": null,
+              "charter": null
             },
             {
               "id": "song-3b20b9fdc5ab-dx-re-master",
               "difficulty": "Re:MASTER",
               "level": "13+",
-              "chartConstant": null
+              "chartConstant": null,
+              "charter": null
             }
           ]
         }
@@ -781,31 +859,36 @@
               "id": "song-58508b2f410c-dx-basic",
               "difficulty": "BASIC",
               "level": "4",
-              "chartConstant": null
+              "chartConstant": null,
+              "charter": null
             },
             {
               "id": "song-58508b2f410c-dx-advanced",
               "difficulty": "ADVANCED",
               "level": "7",
-              "chartConstant": null
+              "chartConstant": null,
+              "charter": null
             },
             {
               "id": "song-58508b2f410c-dx-expert",
               "difficulty": "EXPERT",
               "level": "10+",
-              "chartConstant": null
+              "chartConstant": null,
+              "charter": null
             },
             {
               "id": "song-58508b2f410c-dx-master",
               "difficulty": "MASTER",
               "level": "12",
-              "chartConstant": null
+              "chartConstant": null,
+              "charter": null
             },
             {
               "id": "song-58508b2f410c-dx-re-master",
               "difficulty": "Re:MASTER",
               "level": "13+",
-              "chartConstant": null
+              "chartConstant": null,
+              "charter": null
             }
           ]
         }
@@ -828,25 +911,29 @@
               "id": "song-2322d2fdf93d-dx-basic",
               "difficulty": "BASIC",
               "level": "2",
-              "chartConstant": null
+              "chartConstant": null,
+              "charter": null
             },
             {
               "id": "song-2322d2fdf93d-dx-advanced",
               "difficulty": "ADVANCED",
               "level": "6",
-              "chartConstant": null
+              "chartConstant": null,
+              "charter": null
             },
             {
               "id": "song-2322d2fdf93d-dx-expert",
               "difficulty": "EXPERT",
               "level": "10",
-              "chartConstant": null
+              "chartConstant": null,
+              "charter": null
             },
             {
               "id": "song-2322d2fdf93d-dx-master",
               "difficulty": "MASTER",
               "level": "13+",
-              "chartConstant": null
+              "chartConstant": null,
+              "charter": null
             }
           ]
         }
@@ -869,31 +956,36 @@
               "id": "song-08f22014494d-dx-basic",
               "difficulty": "BASIC",
               "level": "3",
-              "chartConstant": null
+              "chartConstant": null,
+              "charter": null
             },
             {
               "id": "song-08f22014494d-dx-advanced",
               "difficulty": "ADVANCED",
               "level": "7",
-              "chartConstant": null
+              "chartConstant": null,
+              "charter": null
             },
             {
               "id": "song-08f22014494d-dx-expert",
               "difficulty": "EXPERT",
               "level": "10",
-              "chartConstant": null
+              "chartConstant": null,
+              "charter": null
             },
             {
               "id": "song-08f22014494d-dx-master",
               "difficulty": "MASTER",
               "level": "11+",
-              "chartConstant": null
+              "chartConstant": null,
+              "charter": null
             },
             {
               "id": "song-08f22014494d-dx-re-master",
               "difficulty": "Re:MASTER",
               "level": "13+",
-              "chartConstant": null
+              "chartConstant": null,
+              "charter": null
             }
           ]
         }
@@ -916,31 +1008,36 @@
               "id": "song-52e03f4cfc5d-dx-basic",
               "difficulty": "BASIC",
               "level": "3",
-              "chartConstant": null
+              "chartConstant": null,
+              "charter": null
             },
             {
               "id": "song-52e03f4cfc5d-dx-advanced",
               "difficulty": "ADVANCED",
               "level": "6",
-              "chartConstant": null
+              "chartConstant": null,
+              "charter": null
             },
             {
               "id": "song-52e03f4cfc5d-dx-expert",
               "difficulty": "EXPERT",
               "level": "10+",
-              "chartConstant": null
+              "chartConstant": null,
+              "charter": null
             },
             {
               "id": "song-52e03f4cfc5d-dx-master",
               "difficulty": "MASTER",
               "level": "11+",
-              "chartConstant": null
+              "chartConstant": null,
+              "charter": null
             },
             {
               "id": "song-52e03f4cfc5d-dx-re-master",
               "difficulty": "Re:MASTER",
               "level": "13",
-              "chartConstant": null
+              "chartConstant": null,
+              "charter": null
             }
           ]
         }
@@ -963,25 +1060,29 @@
               "id": "song-2f64638892ab-dx-basic",
               "difficulty": "BASIC",
               "level": "3",
-              "chartConstant": null
+              "chartConstant": null,
+              "charter": null
             },
             {
               "id": "song-2f64638892ab-dx-advanced",
               "difficulty": "ADVANCED",
               "level": "6",
-              "chartConstant": null
+              "chartConstant": null,
+              "charter": null
             },
             {
               "id": "song-2f64638892ab-dx-expert",
               "difficulty": "EXPERT",
               "level": "10+",
-              "chartConstant": null
+              "chartConstant": null,
+              "charter": null
             },
             {
               "id": "song-2f64638892ab-dx-master",
               "difficulty": "MASTER",
               "level": "13+",
-              "chartConstant": null
+              "chartConstant": null,
+              "charter": null
             }
           ]
         }
@@ -1004,31 +1105,36 @@
               "id": "song-067df9d0eb73-dx-basic",
               "difficulty": "BASIC",
               "level": "2",
-              "chartConstant": null
+              "chartConstant": null,
+              "charter": null
             },
             {
               "id": "song-067df9d0eb73-dx-advanced",
               "difficulty": "ADVANCED",
               "level": "6",
-              "chartConstant": null
+              "chartConstant": null,
+              "charter": null
             },
             {
               "id": "song-067df9d0eb73-dx-expert",
               "difficulty": "EXPERT",
               "level": "9",
-              "chartConstant": null
+              "chartConstant": null,
+              "charter": null
             },
             {
               "id": "song-067df9d0eb73-dx-master",
               "difficulty": "MASTER",
               "level": "11",
-              "chartConstant": null
+              "chartConstant": null,
+              "charter": null
             },
             {
               "id": "song-067df9d0eb73-dx-re-master",
               "difficulty": "Re:MASTER",
               "level": "13",
-              "chartConstant": null
+              "chartConstant": null,
+              "charter": null
             }
           ]
         }
@@ -1052,31 +1158,36 @@
               "id": "song-de8bb67fb249-dx-basic",
               "difficulty": "BASIC",
               "level": "4",
-              "chartConstant": null
+              "chartConstant": null,
+              "charter": null
             },
             {
               "id": "song-de8bb67fb249-dx-advanced",
               "difficulty": "ADVANCED",
               "level": "7+",
-              "chartConstant": null
+              "chartConstant": null,
+              "charter": null
             },
             {
               "id": "song-de8bb67fb249-dx-expert",
               "difficulty": "EXPERT",
               "level": "10",
-              "chartConstant": null
+              "chartConstant": null,
+              "charter": null
             },
             {
               "id": "song-de8bb67fb249-dx-master",
               "difficulty": "MASTER",
               "level": "12",
-              "chartConstant": null
+              "chartConstant": null,
+              "charter": null
             },
             {
               "id": "song-de8bb67fb249-dx-re-master",
               "difficulty": "Re:MASTER",
               "level": "13+",
-              "chartConstant": null
+              "chartConstant": null,
+              "charter": null
             }
           ]
         }
@@ -1101,31 +1212,36 @@
               "id": "tsunagite-dx-basic",
               "difficulty": "BASIC",
               "level": "7",
-              "chartConstant": null
+              "chartConstant": null,
+              "charter": null
             },
             {
               "id": "tsunagite-dx-advanced",
               "difficulty": "ADVANCED",
               "level": "10",
-              "chartConstant": null
+              "chartConstant": null,
+              "charter": null
             },
             {
               "id": "tsunagite-dx-expert",
               "difficulty": "EXPERT",
               "level": "13+",
-              "chartConstant": null
+              "chartConstant": null,
+              "charter": null
             },
             {
               "id": "tsunagite-dx-master",
               "difficulty": "MASTER",
               "level": "14+",
-              "chartConstant": null
+              "chartConstant": null,
+              "charter": null
             },
             {
               "id": "tsunagite-dx-re-master",
               "difficulty": "Re:MASTER",
               "level": "15",
-              "chartConstant": null
+              "chartConstant": null,
+              "charter": null
             }
           ]
         }

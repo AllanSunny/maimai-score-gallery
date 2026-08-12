@@ -94,7 +94,7 @@ jobs:
           echo "CURL_CA_BUNDLE=$ca_bundle" >> "$GITHUB_ENV"
           echo "NODE_EXTRA_CA_CERTS=$ca_bundle" >> "$GITHUB_ENV"
 
-      - name: Sync metadata for new songs
+      - name: Sync song, chart constant, and charter metadata
         if: ${{ steps.data-check.outputs.should-run == 'true' }}
         run: npm run catalog:sync
         env:
