@@ -48,7 +48,7 @@
 }
 
 .song-detail-frame__difficulty {
-  top: 59.1%;
+  top: 60%;
   left: 5.8%;
   width: 55.5%;
   height: 8.7%;
@@ -68,19 +68,19 @@
   height: 8.7%;
   justify-content: flex-start;
   gap: 0.01em;
-  color: var(--difficulty-color);
+  color: white;
   font-family: var(--font-rodin-bold);
-  font-size: 8.5cqw;
+  font-size: 2.4em;
   font-weight: 800;
   letter-spacing: -0.075em;
-  -webkit-text-stroke: 0.075em white;
+  -webkit-text-stroke: 0.1em var(--difficulty-color);
   paint-order: stroke fill;
 }
 
 .song-detail-frame__level-prefix {
   align-self: flex-end;
-  margin: 0 0.05em 0.18em 0;
-  font-size: 0.52em;
+  margin: 0 0.1em 0.3em 0.43em;
+  font-size: 0.45em;
   letter-spacing: -0.08em;
 }
 
