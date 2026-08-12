@@ -58,6 +58,7 @@ export function parseGeneratedCatalog(value: unknown): GeneratedCatalog {
     const song = object(songValue, path);
     string(song.id, `${path}.id`);
     string(song.title, `${path}.title`);
+    nullableString(song.artist, `${path}.artist`);
     array(song.alternateTitles, `${path}.alternateTitles`).forEach((title, index) => lowercaseString(title, `${path}.alternateTitles[${index}]`));
     nullableString(song.jacketKey, `${path}.jacketKey`);
     array(song.versions, `${path}.versions`).forEach((versionValue, versionIndex) => {

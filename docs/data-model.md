@@ -78,6 +78,7 @@ interface GeneratedCatalog {
 interface Song {
   id: string;                   // e.g. "magical-flavor"
   title: string;                // Canonical SEGA title
+  artist: string | null;        // Artist credit from the SEGA catalog
   alternateTitles: string[];    // Romaji, translations, or remembered names
   jacketKey: string | null;     // R2 object key, never credentials or a full URL
   versions: SongVersion[];

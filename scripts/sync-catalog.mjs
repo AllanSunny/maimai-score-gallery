@@ -139,6 +139,10 @@ function findOfficialSong(title, officialSongs, overrides) {
   });
 }
 
+function songArtist(official, override = {}) {
+  return String(override.artist ?? official.artist ?? "").trim() || null;
+}
+
 function extractChartVersions(song, override) {
   const versions = new Map();
 
@@ -280,7 +284,8 @@ async function main() {
   const aliasesChanged = mergeRequestedAliases(previous.songs, requested);
   const unmatchedSongs = new Map();
   const newTitles = titles.filter((title) => !isAlreadyCataloged(title, previous.songs));
-  if (!newTitles.length) {
+  const missingArtistSongs = previous.songs.filter((song) => song.artist == null);
+  if (!newTitles.length && !missingArtistSongs.length) {
     await linkArchivedScores(previous.songs, unmatchedSongs);
     if (aliasesChanged) {
       previous.generatedAt = new Date().toISOString();
@@ -291,10 +296,21 @@ async function main() {
     return;
   }
 
-  console.log(`Found ${newTitles.length} new song(s).`);
+  console.log(`Found ${newTitles.length} new song(s) and ${missingArtistSongs.length} artist credit(s) to backfill.`);
   const officialSongs = await fetchJson(SEGA_CATALOG_URL, "SEGA song catalog");
   const songs = [...previous.songs];
   let songsChanged = false;
+
+  missingArtistSongs.forEach((song) => {
+    const official = findOfficialSong(song.title, officialSongs, overrides);
+    const override = official ? overrides[official.title] ?? {} : {};
+    const artist = official ? songArtist(official, override) : null;
+    if (song.artist !== artist || !("artist" in song)) {
+      song.artist = artist;
+      songsChanged = true;
+    }
+    if (!official) console.warn(`Could not backfill artist for: ${song.title}`);
+  });
 
   for (const requestedTitle of newTitles) {
     const official = findOfficialSong(requestedTitle, officialSongs, overrides);
@@ -330,6 +346,7 @@ async function main() {
     songs.push({
       id: baseId,
       title: official.title,
+      artist: songArtist(official, override),
       alternateTitles: alternateTitles([...(override.alternateTitles ?? []), ...requestedAliases], official.title),
       jacketKey,
       versions,

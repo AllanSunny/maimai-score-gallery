@@ -45,7 +45,7 @@ export function ChartDetailPage({ songName, chartType, difficulty }: ChartDetail
             {metadata?.jacketUrl && (
               <SongDetailFrame
                 title={metadata.title}
-                artist=""
+                artist={metadata.artist ?? ""}
                 jacketUrl={metadata.jacketUrl}
                 chartType={chartType}
                 difficulty={difficulty}
