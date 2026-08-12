@@ -73,7 +73,6 @@ owns one or more DX/STD versions, and each version owns its difficulty charts.
 interface GeneratedCatalog {
   generatedAt: string;
   songs: Song[];
-  unmatchedSongs: UnmatchedSong[];
 }
 
 interface Song {
@@ -101,22 +100,13 @@ interface Chart {
 The browser derives `jacketUrl` at build time from `VITE_JACKET_BASE_URL` and
 the stored `jacketKey`. It is not part of the persisted catalog schema.
 
-## Unmatched songs
+## Rejected song names
 
-Titles absent from SEGA's catalog are retained so they are not fetched every
-week.
-
-```ts
-interface UnmatchedSong {
-  title: string;
-  reason: string;
-  firstSeenAt: string;
-  lastAttemptedAt: string;
-}
-```
-
-Add the unmatched title to the correct entry's `alternateTitles` in
-`catalog/overrides.json` to retry it.
+Scores whose song titles remain unmatched are quarantined before commit. The
+metadata workflow uploads `.sync/rejected-scores.json` as a temporary GitHub
+Actions artifact containing the rejected title and affected score IDs/times.
+They are not stored in either generated data file. Correct the spreadsheet title
+or add an override, then rerun the score archive workflow to retry them.
 
 ## Matching and identity rules
 
@@ -129,7 +119,6 @@ Add the unmatched title to the correct entry's `alternateTitles` in
   jobs as a temporary artifact and merge additively without entering score JSON.
 - Alternate titles are trimmed and normalized to lowercase during import.
 - `chartConstant: null` means the source has no constant and no override exists.
-- Seed titles in `catalog/seed-titles.json` request metadata before scores exist.
 
 ## Enforcement
 

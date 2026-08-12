@@ -26,17 +26,9 @@ export interface CatalogSongView extends Omit<Song, "versions">, SongVersion {
   jacketUrl: string | null;
 }
 
-export interface UnmatchedSong {
-  title: string;
-  reason: string;
-  firstSeenAt: string;
-  lastAttemptedAt: string;
-}
-
 export interface GeneratedCatalog {
   generatedAt: string;
   songs: Song[];
-  unmatchedSongs: UnmatchedSong[];
 }
 
 export interface JudgmentSet {

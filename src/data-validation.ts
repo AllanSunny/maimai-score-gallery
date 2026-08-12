@@ -69,11 +69,6 @@ export function parseGeneratedCatalog(value: unknown): GeneratedCatalog {
       array(version.charts, `${versionPath}.charts`).forEach((chart, chartIndex) => validateChart(chart, `${versionPath}.charts[${chartIndex}]`));
     });
   });
-  array(catalog.unmatchedSongs, "catalog.unmatchedSongs").forEach((entryValue, index) => {
-    const path = `catalog.unmatchedSongs[${index}]`;
-    const entry = object(entryValue, path);
-    ["title", "reason", "firstSeenAt", "lastAttemptedAt"].forEach((field) => string(entry[field], `${path}.${field}`));
-  });
   return value as GeneratedCatalog;
 }
 

@@ -103,6 +103,52 @@ jobs:
           R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
           R2_BUCKET_NAME: ${{ vars.R2_BUCKET_NAME }}
 
+      - name: Check for rejected score names
+        if: ${{ steps.data-check.outputs.should-run == 'true' }}
+        id: rejected-scores
+        run: |
+          if [ -f .sync/rejected-scores.json ] && \
+            [ "$(jq '.rejectedSongs | length' .sync/rejected-scores.json)" -gt 0 ]; then
+            echo "found=true" >> "$GITHUB_OUTPUT"
+            jq -r '.rejectedSongs[] | "Rejected \(.scores | length) score(s) with unknown song name: \(.title)"' \
+              .sync/rejected-scores.json
+          else
+            echo "found=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Upload rejected score names
+        if: ${{ steps.rejected-scores.outputs.found == 'true' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: rejected-score-names
+          path: .sync/rejected-scores.json
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Notify Discord about rejected scores
+        if: ${{ steps.rejected-scores.outputs.found == 'true' }}
+        continue-on-error: true
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        run: |
+          jq '{
+            content: (
+              "⚠️ **Maimai score sync rejected unknown song names**\n\n" +
+              (.rejectedSongs | map(
+                "• **\(.title)** — \(.scores | length) score(s)\n" +
+                "  Played: \([.scores[].playedAt[0:10]] | unique | join(", "))"
+              ) | join("\n\n")) +
+              "\n\nCorrect the spreadsheet title or add an override, then rerun **Archive spreadsheet scores**."
+            )[0:1900],
+            allowed_mentions: { parse: [] }
+          }' .sync/rejected-scores.json | curl \
+            --fail \
+            --silent \
+            --show-error \
+            --header "Content-Type: application/json" \
+            --data-binary @- \
+            "$DISCORD_WEBHOOK_URL"
+
       - name: Validate generated data
         if: ${{ steps.data-check.outputs.should-run == 'true' }}
         run: npm run data:validate

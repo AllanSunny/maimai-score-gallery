@@ -36,7 +36,7 @@ The same importers run locally and in GitHub Actions. The score importer appends
 new spreadsheet rows to `src/data/generated-scores.json`. The catalog importer
 then processes only song titles not already in `src/data/generated-catalog.json`,
 matches them against SEGA's public catalog, uploads their jackets to Cloudflare
-R2, and merges `catalog/overrides.json`.
+R2, and merges `src/data/overrides.json`.
 
 ### Local setup
 
@@ -48,28 +48,24 @@ URL. `.env.r2` is ignored by Git.
 ```bash
 npm install
 npm run scores:sync
-npm run catalog:sample
 npm run catalog:sync
 ```
 
-`scores:sync` archives plays not already stored. `catalog:sample` synchronizes
-only `系ぎて` (Tsunagite). `catalog:sync` reads titles from the score archive and
-downloads metadata only for songs not already cataloged.
+`scores:sync` archives plays not already stored. `catalog:sync` reads titles
+from the score archive and downloads metadata only for songs not already
+cataloged.
 
-Titles that cannot be matched are recorded in `generated-catalog.json` under
-`unmatchedSongs` with their first-seen time, last attempt, and error reason.
-They are skipped on later runs. To retry one, add it to the correct song's
-`alternateTitles` in `catalog/overrides.json`; the next sync will detect that
-override and try the match again.
-
-Songs can be imported before a score exists by adding their exact title to
-`catalog/seed-titles.json`. Seeded songs use the same incremental metadata and
-jacket workflow as titles discovered in the score archive.
+Titles that cannot be matched are excluded from the committed score archive and
+listed in the metadata workflow's `rejected-score-names` artifact for 30 days.
+Correct the title in the spreadsheet or add it to the correct song's
+`alternateTitles` in `src/data/overrides.json`, then manually rerun **Archive
+spreadsheet scores**. Unmatched names are retried and are never written to the
+public catalog.
 
 To inspect generated metadata without uploading a jacket:
 
 ```bash
-npm run catalog:sample -- --dry-run
+npm run catalog:sync -- --dry-run
 ```
 
 ### GitHub configuration
@@ -79,6 +75,7 @@ Under **Settings → Secrets and variables → Actions → Secrets**, add:
 - `R2_ACCOUNT_ID`
 - `R2_ACCESS_KEY_ID`
 - `R2_SECRET_ACCESS_KEY`
+- `DISCORD_WEBHOOK_URL`
 
 Under **Actions → Variables**, add:
 

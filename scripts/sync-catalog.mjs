@@ -1,6 +1,6 @@
 import { createHash } from "node:crypto";
 import { execFile } from "node:child_process";
-import { readFile, writeFile } from "node:fs/promises";
+import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import process from "node:process";
 import { promisify } from "node:util";
@@ -8,17 +8,15 @@ import { promisify } from "node:util";
 const execFileAsync = promisify(execFile);
 
 const ROOT = process.cwd();
-const OVERRIDES_PATH = path.join(ROOT, "catalog", "overrides.json");
-const SEED_TITLES_PATH = path.join(ROOT, "catalog", "seed-titles.json");
+const OVERRIDES_PATH = path.join(ROOT, "src", "data", "overrides.json");
 const GENERATED_PATH = path.join(ROOT, "src", "data", "generated-catalog.json");
 const SCORES_PATH = path.join(ROOT, "src", "data", "generated-scores.json");
 const ALIAS_HANDOFF_PATH = path.join(ROOT, ".sync", "song-aliases.json");
+const REJECTED_SCORES_PATH = path.join(ROOT, ".sync", "rejected-scores.json");
 const SEGA_CATALOG_URL = process.env.SEGA_CATALOG_URL ?? "https://maimai.sega.jp/data/maimai_songs.json";
 const SEGA_JACKET_BASE_URL = process.env.SEGA_JACKET_BASE_URL ?? "https://maimaidx.jp/maimai-mobile/img/Music/";
 
 const args = process.argv.slice(2);
-const sampleIndex = args.indexOf("--sample");
-const sample = sampleIndex >= 0 ? args[sampleIndex + 1] : null;
 const dryRun = args.includes("--dry-run");
 
 const chartFields = [
@@ -90,18 +88,11 @@ async function fetchJson(url, label) {
 }
 
 async function requestedSongs() {
-  if (sample) {
-    if (normalizeTitle(sample) !== "tsunagite") throw new Error(`Unknown sample: ${sample}`);
-    return [{ title: "系ぎて", alternateTitles: ["tsunagite"] }];
-  }
-
-  const [archive, seedTitles, aliasHandoff] = await Promise.all([
+  const [archive, aliasHandoff] = await Promise.all([
     readJson(SCORES_PATH),
-    readJson(SEED_TITLES_PATH),
     readOptionalJson(ALIAS_HANDOFF_PATH, []),
   ]);
   if (!Array.isArray(archive.scores)) throw new Error("Score archive must contain a scores array.");
-  if (!Array.isArray(seedTitles)) throw new Error("Catalog seed titles must be an array.");
   const requested = new Map();
   archive.scores.forEach((score) => {
     const key = normalizeTitle(score.songTitle);
@@ -113,10 +104,6 @@ async function requestedSongs() {
     const entry = requested.get(key) ?? { title: handoff.title, alternateTitles: [] };
     entry.alternateTitles = alternateTitles([...entry.alternateTitles, ...(handoff.alternateTitles ?? [])], entry.title);
     requested.set(key, entry);
-  });
-  seedTitles.forEach((title) => {
-    const key = normalizeTitle(title);
-    if (!requested.has(key)) requested.set(key, { title, alternateTitles: [] });
   });
   return [...requested.values()];
 }
@@ -141,13 +128,6 @@ function isAlreadyCataloged(title, songs) {
   const target = normalizeTitle(title);
   return songs.some((song) => [song.title, ...(song.alternateTitles ?? [])]
     .some((name) => normalizeTitle(name) === target));
-}
-
-function hasMatchingOverride(title, overrides) {
-  const target = normalizeTitle(title);
-  return Object.entries(overrides).some(([officialTitle, override]) =>
-    [officialTitle, ...(override.alternateTitles ?? [])]
-      .some((name) => normalizeTitle(name) === target));
 }
 
 function findOfficialSong(title, officialSongs, overrides) {
@@ -186,19 +166,49 @@ function findChartId(score, songs) {
   return version?.charts.find((chart) => chart.difficulty === score.difficulty)?.id ?? null;
 }
 
-async function linkArchivedScores(songs) {
-  if (sample) return;
+async function linkArchivedScores(songs, unmatchedSongs) {
   const archive = await readJson(SCORES_PATH);
   let changed = false;
-  archive.scores = archive.scores.map((score) => {
+  const rejectedByTitle = new Map();
+  const acceptedScores = [];
+
+  archive.scores.forEach((score) => {
+    const unmatched = unmatchedSongs.get(normalizeTitle(score.songTitle));
+    if (unmatched) {
+      const rejected = rejectedByTitle.get(unmatched.title) ?? {
+        title: unmatched.title,
+        reason: unmatched.reason,
+        scores: [],
+      };
+      rejected.scores.push({ id: score.id, playedAt: score.playedAt });
+      rejectedByTitle.set(unmatched.title, rejected);
+      changed = true;
+      return;
+    }
+
     const chartId = findChartId(score, songs);
-    if (score.chartId === chartId) return score;
-    changed = true;
-    return { ...score, chartId };
+    if (score.chartId === chartId) {
+      acceptedScores.push(score);
+    } else {
+      acceptedScores.push({ ...score, chartId });
+      changed = true;
+    }
   });
+
+  const rejectedSongs = [...rejectedByTitle.values()]
+    .sort((a, b) => a.title.localeCompare(b.title));
+  const rejectedScoreCount = rejectedSongs.reduce((total, entry) => total + entry.scores.length, 0);
+  await mkdir(path.dirname(REJECTED_SCORES_PATH), { recursive: true });
+  await writeFile(REJECTED_SCORES_PATH, `${JSON.stringify({
+    generatedAt: new Date().toISOString(),
+    rejectedSongs,
+  }, null, 2)}\n`);
+
   if (changed) {
+    archive.scores = acceptedScores;
+    archive.updatedAt = new Date().toISOString();
     await writeFile(SCORES_PATH, `${JSON.stringify(archive, null, 2)}\n`);
-    console.log("Updated score-to-chart associations.");
+    console.log(`Updated score-to-chart associations; rejected ${rejectedScoreCount} unknown-title play(s).`);
   }
 }
 
@@ -268,27 +278,23 @@ async function main() {
   ]);
   const titles = requested.map((entry) => entry.title);
   const aliasesChanged = mergeRequestedAliases(previous.songs, requested);
-  const unmatchedSongs = new Map((previous.unmatchedSongs ?? [])
-    .map((entry) => [normalizeTitle(entry.title), entry]));
-  const newTitles = titles.filter((title) => {
-    if (isAlreadyCataloged(title, previous.songs)) return false;
-    const wasUnmatched = unmatchedSongs.has(normalizeTitle(title));
-    return !wasUnmatched || hasMatchingOverride(title, overrides);
-  });
+  const unmatchedSongs = new Map();
+  const newTitles = titles.filter((title) => !isAlreadyCataloged(title, previous.songs));
   if (!newTitles.length) {
-    await linkArchivedScores(previous.songs);
+    await linkArchivedScores(previous.songs, unmatchedSongs);
     if (aliasesChanged) {
       previous.generatedAt = new Date().toISOString();
       await writeFile(GENERATED_PATH, `${JSON.stringify(previous, null, 2)}\n`);
       console.log("Updated song aliases from the score archive.");
     }
-    console.log(`Song catalog is current (${previous.songs.length} songs, ${unmatchedSongs.size} unmatched).`);
+    console.log(`Song catalog is current (${previous.songs.length} songs).`);
     return;
   }
 
   console.log(`Found ${newTitles.length} new song(s).`);
   const officialSongs = await fetchJson(SEGA_CATALOG_URL, "SEGA song catalog");
   const songs = [...previous.songs];
+  let songsChanged = false;
 
   for (const requestedTitle of newTitles) {
     const official = findOfficialSong(requestedTitle, officialSongs, overrides);
@@ -298,8 +304,6 @@ async function main() {
       unmatchedSongs.set(key, {
         title: requestedTitle,
         reason: "No matching title in the SEGA song catalog",
-        firstSeenAt: unmatchedSongs.get(key)?.firstSeenAt ?? new Date().toISOString(),
-        lastAttemptedAt: new Date().toISOString(),
       });
       continue;
     }
@@ -330,19 +334,25 @@ async function main() {
       jacketKey,
       versions,
     });
+    songsChanged = true;
 
     // Be polite to the source host when synchronizing multiple new jackets.
     await new Promise((resolve) => setTimeout(resolve, 250));
   }
 
-  const catalog = {
-    generatedAt: new Date().toISOString(),
-    songs: songs.sort((a, b) => a.title.localeCompare(b.title)),
-    unmatchedSongs: [...unmatchedSongs.values()].sort((a, b) => a.title.localeCompare(b.title)),
-  };
-  await writeFile(GENERATED_PATH, `${JSON.stringify(catalog, null, 2)}\n`);
-  await linkArchivedScores(catalog.songs);
-  console.log(`Wrote ${songs.length} song(s) to ${path.relative(ROOT, GENERATED_PATH)}.`);
+  const catalog = aliasesChanged || songsChanged
+    ? {
+        generatedAt: new Date().toISOString(),
+        songs: songs.sort((a, b) => a.title.localeCompare(b.title)),
+      }
+    : previous;
+  if (aliasesChanged || songsChanged) {
+    await writeFile(GENERATED_PATH, `${JSON.stringify(catalog, null, 2)}\n`);
+  }
+  await linkArchivedScores(catalog.songs, unmatchedSongs);
+  if (aliasesChanged || songsChanged) {
+    console.log(`Wrote ${songs.length} song(s) to ${path.relative(ROOT, GENERATED_PATH)}.`);
+  }
 }
 
 main().catch((error) => {
