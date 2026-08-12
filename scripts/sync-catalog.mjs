@@ -140,7 +140,9 @@ function findOfficialSong(title, officialSongs, overrides) {
 }
 
 function songArtist(official, override = {}) {
-  return String(override.artist ?? official.artist ?? "").trim() || null;
+  const artist = String(override.artist ?? official.artist ?? "").trim();
+  if (!artist) throw new Error(`Official catalog entry is missing an artist: ${official.title}`);
+  return artist;
 }
 
 function extractChartVersions(song, override) {
@@ -284,7 +286,8 @@ async function main() {
   const aliasesChanged = mergeRequestedAliases(previous.songs, requested);
   const unmatchedSongs = new Map();
   const newTitles = titles.filter((title) => !isAlreadyCataloged(title, previous.songs));
-  const missingArtistSongs = previous.songs.filter((song) => song.artist == null);
+  const missingArtistSongs = previous.songs.filter((song) =>
+    typeof song.artist !== "string" || !song.artist.trim());
   if (!newTitles.length && !missingArtistSongs.length) {
     await linkArchivedScores(previous.songs, unmatchedSongs);
     if (aliasesChanged) {
@@ -303,13 +306,10 @@ async function main() {
 
   missingArtistSongs.forEach((song) => {
     const official = findOfficialSong(song.title, officialSongs, overrides);
-    const override = official ? overrides[official.title] ?? {} : {};
-    const artist = official ? songArtist(official, override) : null;
-    if (song.artist !== artist || !("artist" in song)) {
-      song.artist = artist;
-      songsChanged = true;
-    }
-    if (!official) console.warn(`Could not backfill artist for: ${song.title}`);
+    if (!official) throw new Error(`Could not backfill artist for: ${song.title}`);
+    const override = overrides[official.title] ?? {};
+    song.artist = songArtist(official, override);
+    songsChanged = true;
   });
 
   for (const requestedTitle of newTitles) {

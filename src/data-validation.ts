@@ -22,6 +22,11 @@ function string(value: unknown, path: string): asserts value is string {
   if (typeof value !== "string") throw new Error(`${path} must be a string.`);
 }
 
+function nonemptyString(value: unknown, path: string): asserts value is string {
+  string(value, path);
+  if (!value.trim()) throw new Error(`${path} must not be empty.`);
+}
+
 function number(value: unknown, path: string): asserts value is number {
   if (typeof value !== "number" || !Number.isFinite(value)) throw new Error(`${path} must be a finite number.`);
 }
@@ -58,7 +63,7 @@ export function parseGeneratedCatalog(value: unknown): GeneratedCatalog {
     const song = object(songValue, path);
     string(song.id, `${path}.id`);
     string(song.title, `${path}.title`);
-    nullableString(song.artist, `${path}.artist`);
+    nonemptyString(song.artist, `${path}.artist`);
     array(song.alternateTitles, `${path}.alternateTitles`).forEach((title, index) => lowercaseString(title, `${path}.alternateTitles[${index}]`));
     nullableString(song.jacketKey, `${path}.jacketKey`);
     array(song.versions, `${path}.versions`).forEach((versionValue, versionIndex) => {

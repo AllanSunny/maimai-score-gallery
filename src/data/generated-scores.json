@@ -1802,10 +1802,10 @@
       "chartId": "song-7fbb1100d70a-dx-master"
     },
     {
-      "playedAt": "2026-05-07T23:11:05.000Z",
+      "playedAt": "2026-05-08T03:11:43.000Z",
       "songTitle": "Never Give Up!",
       "chartType": "DX",
-      "difficulty": "MASTER",
+      "difficulty": "Re:MASTER",
       "level": "13+",
       "achievement": 100.5278,
       "combo": "Clear",
@@ -1859,7 +1859,7 @@
       "fast": 12,
       "slow": 0,
       "id": "yNIeuMhCH1Jgf8jlLqDRV637EKZ4WhJvN7OnchRtjf4",
-      "chartId": "song-ff485a6d8bed-dx-master"
+      "chartId": "song-ff485a6d8bed-dx-re-master"
     },
     {
       "playedAt": "2026-04-18T00:44:00.000Z",

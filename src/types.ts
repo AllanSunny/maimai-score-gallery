@@ -17,7 +17,7 @@ export interface SongVersion {
 export interface Song {
   id: string;
   title: string;
-  artist: string | null;
+  artist: string;
   alternateTitles: string[];
   jacketKey: string | null;
   versions: SongVersion[];
