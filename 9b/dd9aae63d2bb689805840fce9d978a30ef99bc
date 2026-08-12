@@ -1,0 +1,38 @@
+src/styles.css
+  s_6d06bd4898dc7f::t_b32c414bede6f5 22
+  s_6d06bd4898dc7f::t_edc729ceea8d59 3-18,34-35
+  s_6d06bd4898dc7f::t_f8919f615b729b 19-21,23-26,33
+.env.example
+  s_6d06bd4898dc7f::t_c8dccc0f9b8395 1-3,9-11
+src/pages/ChartDetailPage.tsx
+  s_6d06bd4898dc7f::t_499043a033c01f 4,18-19,28,34,44-60
+src/components/song/SongDetailFrame.css
+  s_6d06bd4898dc7f::t_edc729ceea8d59 1-132
+README.md
+  s_6d06bd4898dc7f::t_c8dccc0f9b8395 44-47
+src/components/song/SongDetailFrame.tsx
+  s_6d06bd4898dc7f::t_edc729ceea8d59 1-90
+package.json
+  s_6d06bd4898dc7f::t_c8dccc0f9b8395 15-16
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.22",
+  "base_commit_sha": "9bdd9aae63d2bb689805840fce9d978a30ef99bc",
+  "prompts": {},
+  "humans": {
+    "h_278fafc5c28027": {
+      "author": "Allan Sun <allansun@live.com>"
+    }
+  },
+  "sessions": {
+    "s_6d06bd4898dc7f": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019faca2-0a30-75f3-8a51-06f8e9067195",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Allan Sun <allansun@live.com>"
+    }
+  }
+}
