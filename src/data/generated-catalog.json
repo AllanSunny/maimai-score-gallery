@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-08-10T01:07:23.466Z",
+  "generatedAt": "2026-08-12T08:20:52.428Z",
   "songs": [
     {
       "id": "song-85572925973b",
       "title": "1000年生きてる",
-      "artist": null,
+      "artist": "いよわ",
       "alternateTitles": [
         "sennen ikiteru",
         "living millenium"
@@ -46,7 +46,7 @@
     {
       "id": "song-5e2b531bd3e7",
       "title": "Altale",
-      "artist": null,
+      "artist": "削除",
       "alternateTitles": [],
       "jacketKey": "jackets/song-5e2b531bd3e7-49acaa463591.png",
       "versions": [
@@ -85,7 +85,7 @@
     {
       "id": "song-7fbb1100d70a",
       "title": "Baqeela",
-      "artist": null,
+      "artist": "owl＊tree",
       "alternateTitles": [],
       "jacketKey": "jackets/song-7fbb1100d70a-4c45900498bc.png",
       "versions": [
@@ -124,7 +124,7 @@
     {
       "id": "song-e82460b7a2b0",
       "title": "enchanted wanderer",
-      "artist": null,
+      "artist": "linear ring",
       "alternateTitles": [],
       "jacketKey": "jackets/song-e82460b7a2b0-381bd59a4f24.png",
       "versions": [
@@ -163,7 +163,7 @@
     {
       "id": "song-bdf8ca5b6c93",
       "title": "IMAWANOKIWA",
-      "artist": null,
+      "artist": "いよわ",
       "alternateTitles": [],
       "jacketKey": "jackets/song-bdf8ca5b6c93-65964c54f712.png",
       "versions": [
@@ -202,7 +202,7 @@
     {
       "id": "song-eba8086f378f",
       "title": "Last Kingdom",
-      "artist": null,
+      "artist": "USAO",
       "alternateTitles": [],
       "jacketKey": "jackets/song-eba8086f378f-edceb58d0e46.png",
       "versions": [
@@ -241,7 +241,7 @@
     {
       "id": "song-400e36d3b8d1",
       "title": "Lover's Trick",
-      "artist": null,
+      "artist": "litmus*",
       "alternateTitles": [],
       "jacketKey": "jackets/song-400e36d3b8d1-699b3f8bf843.png",
       "versions": [
@@ -280,7 +280,7 @@
     {
       "id": "song-a7a461d9d280",
       "title": "M@GICAL☆CURE! LOVE ♥ SHOT!",
-      "artist": null,
+      "artist": "SAWTOWNE",
       "alternateTitles": [
         "magical cure love shot"
       ],
@@ -321,7 +321,7 @@
     {
       "id": "magical-flavor",
       "title": "Magical Flavor",
-      "artist": null,
+      "artist": "DECO*27 feat.Tia",
       "alternateTitles": [],
       "jacketKey": "jackets/magical-flavor-5edfd122de62.png",
       "versions": [
@@ -390,7 +390,7 @@
     {
       "id": "song-e55f5c1d041d",
       "title": "Mystic Parade",
-      "artist": null,
+      "artist": "ひとしずく×やま△ feat.悠佑＆ないこ（いれいす）",
       "alternateTitles": [],
       "jacketKey": "jackets/song-e55f5c1d041d-ebfc0284be1f.png",
       "versions": [
@@ -429,7 +429,7 @@
     {
       "id": "song-ff485a6d8bed",
       "title": "Never Give Up!",
-      "artist": null,
+      "artist": "nanobii",
       "alternateTitles": [],
       "jacketKey": "jackets/song-ff485a6d8bed-3132232122f9.png",
       "versions": [
@@ -474,7 +474,7 @@
     {
       "id": "song-9a2f2ad520e2",
       "title": "ウミユリ海底譚",
-      "artist": null,
+      "artist": "n-buna",
       "alternateTitles": [
         "umiyuri kaiteitan"
       ],
@@ -515,7 +515,7 @@
     {
       "id": "song-4f39f6af9e43",
       "title": "エゴロック",
-      "artist": null,
+      "artist": "すりぃ",
       "alternateTitles": [
         "egorock"
       ],
@@ -556,7 +556,7 @@
     {
       "id": "song-c034ac69d6d8",
       "title": "エンジェル ドリーム",
-      "artist": null,
+      "artist": "「太鼓の達人」より",
       "alternateTitles": [
         "angel dream"
       ],
@@ -597,7 +597,7 @@
     {
       "id": "song-487d0c975e16",
       "title": "オーバーライド",
-      "artist": null,
+      "artist": "吉田夜世",
       "alternateTitles": [
         "override"
       ],
@@ -638,7 +638,7 @@
     {
       "id": "song-638e826988e6",
       "title": "おくすり飲んで寝よう",
-      "artist": null,
+      "artist": "もちうつね",
       "alternateTitles": [
         "okusurinondeneyou"
       ],
@@ -679,7 +679,7 @@
     {
       "id": "song-5331d36bf069",
       "title": "きゅうくらりん",
-      "artist": null,
+      "artist": "いよわ",
       "alternateTitles": [
         "kyūkurarin"
       ],
@@ -720,7 +720,7 @@
     {
       "id": "song-3b20b9fdc5ab",
       "title": "ダイダイダイダイダイキライ",
-      "artist": null,
+      "artist": "雨良 Amala",
       "alternateTitles": [
         "daikirai"
       ],
@@ -767,7 +767,7 @@
     {
       "id": "song-58508b2f410c",
       "title": "テトリス",
-      "artist": null,
+      "artist": "柊マグネタイト",
       "alternateTitles": [
         "tetoris"
       ],
@@ -814,7 +814,7 @@
     {
       "id": "song-2322d2fdf93d",
       "title": "どんぐりGAME",
-      "artist": null,
+      "artist": "こっちのけんと",
       "alternateTitles": [
         "dongurigame"
       ],
@@ -855,7 +855,7 @@
     {
       "id": "song-08f22014494d",
       "title": "メズマライザー",
-      "artist": null,
+      "artist": "サツキ feat.初音ミク・重音テト",
       "alternateTitles": [
         "mesmerizer"
       ],
@@ -902,7 +902,7 @@
     {
       "id": "song-52e03f4cfc5d",
       "title": "モニタリング",
-      "artist": null,
+      "artist": "DECO*27",
       "alternateTitles": [
         "monitoring"
       ],
@@ -949,7 +949,7 @@
     {
       "id": "song-2f64638892ab",
       "title": "人マニア",
-      "artist": null,
+      "artist": "原口沙輔 feat.重音テト",
       "alternateTitles": [
         "hito mania"
       ],
@@ -990,7 +990,7 @@
     {
       "id": "song-067df9d0eb73",
       "title": "愛♡スクリ～ム！",
-      "artist": null,
+      "artist": "AiScReam[黒澤ルビィ(CV.降幡 愛)、上原歩夢(CV.大西亜玖璃)、若菜四季(CV.大熊和奏)]",
       "alternateTitles": [
         "aiscream"
       ],
@@ -1037,7 +1037,7 @@
     {
       "id": "song-de8bb67fb249",
       "title": "熱異常",
-      "artist": null,
+      "artist": "いよわ",
       "alternateTitles": [
         "netsu ijō",
         "heat abnormal"
@@ -1085,7 +1085,7 @@
     {
       "id": "tsunagite",
       "title": "系ぎて",
-      "artist": null,
+      "artist": "rintaro soma",
       "alternateTitles": [
         "tsunagite",
         "connected",
