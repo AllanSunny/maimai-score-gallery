@@ -64,10 +64,10 @@
 .song-detail-frame__level {
   top: 59%;
   left: 64.2%;
-  width: 28.8%;
+  width: 26.5%;
   height: 8.7%;
-  justify-content: flex-start;
-  gap: 0.01em;
+  justify-content: center;
+  gap: 0.1em;
   color: white;
   font-family: var(--font-rodin-bold);
   font-size: 12cqw;
@@ -75,21 +75,29 @@
   letter-spacing: -0.075em;
   -webkit-text-stroke: 0.1em var(--difficulty-color);
   paint-order: stroke fill;
-  text-shadow:
-          0 0.0em 0.2em var(--difficulty-color),
-          0 0.0em 0.2em var(--difficulty-color);
+  text-shadow: 0 0.0em 0.2em var(--difficulty-color),
+    0 0.0em 0.2em var(--difficulty-color);
 }
 
 .song-detail-frame__level-prefix {
   align-self: flex-end;
-  margin: 0 0.1em 0.3em 0.43em;
+  margin: 0 0 0.3em;
   font-size: 0.45em;
   letter-spacing: -0.08em;
 }
 
-.song-detail-frame__level sup {
-  align-self: flex-start;
-  margin-top: 0.08em;
+.song-detail-frame__level-value {
+  position: relative;
+  display: flex;
+  align-items: center;
+  align-self: stretch;
+  margin: 0;
+}
+
+.song-detail-frame__level-value sup {
+  position: absolute;
+  top: -0.2em;
+  left: calc(100% + 0.1em);
   font-size: 0.52em;
   line-height: 1;
 }
