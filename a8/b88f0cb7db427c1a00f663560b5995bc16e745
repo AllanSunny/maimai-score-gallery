@@ -1,0 +1,42 @@
+src/data/generated-catalog.json
+  s_6d06bd4898dc7f::t_dd315b32d00060 1108
+package.json
+  s_6d06bd4898dc7f::t_ac632983c38304 16
+docs/data-model.md
+  s_6d06bd4898dc7f::t_f2c58e32855c45 103
+  s_6d06bd4898dc7f::t_017a1d3356fe83 105-107
+  s_6d06bd4898dc7f::t_dd315b32d00060 108-109
+README.md
+  s_6d06bd4898dc7f::t_6028ea28d8a762 39,61
+  s_6d06bd4898dc7f::t_ac632983c38304 54-56,68
+  s_6d06bd4898dc7f::t_dd315b32d00060 58-60,62-63
+  s_6d06bd4898dc7f::t_9d33261042a8c3 78
+scripts/sync-catalog.mjs
+  s_6d06bd4898dc7f::t_dd315b32d00060 281-282,290
+  s_6d06bd4898dc7f::t_6028ea28d8a762 11
+  s_6d06bd4898dc7f::t_de290e5d191ef9 200,211
+  s_6d06bd4898dc7f::t_34ad40722c8bea 297,337,343-351,353-355
+  s_6d06bd4898dc7f::t_b45829d3dcb866 91
+  s_6d06bd4898dc7f::t_017a1d3356fe83 3,15,169,172-188,190-195,197-199,201-206,208-209,284,352
+.github/workflows/sync-catalog.yml
+  s_6d06bd4898dc7f::t_cb05b8e3b1254c 128-129,131-138,140-151
+  s_6d06bd4898dc7f::t_de93b1e001003d 139
+  s_6d06bd4898dc7f::t_9d33261042a8c3 130
+  s_6d06bd4898dc7f::t_017a1d3356fe83 106-127
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.22",
+  "base_commit_sha": "a8b88f0cb7db427c1a00f663560b5995bc16e745",
+  "prompts": {},
+  "sessions": {
+    "s_6d06bd4898dc7f": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019faca2-0a30-75f3-8a51-06f8e9067195",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Allan Sun <allansun@live.com>"
+    }
+  }
+}
