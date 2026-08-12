@@ -41,9 +41,10 @@ R2, and merges `src/data/overrides.json`.
 ### Local setup
 
 In Cloudflare, create an R2 API token with **Object Read & Write** access scoped
-only to the jacket bucket. Copy `.env.r2.example` to `.env.r2` and provide the
-account ID, R2 access-key pair, bucket name, and public Apps Script score-feed
-URL. `.env.r2` is ignored by Git.
+only to the jacket bucket. Copy `.env.example` to `.env.local` and provide the
+account ID, R2 access-key pair, bucket name, public Apps Script score-feed URL,
+and `VITE_JACKET_BASE_URL`. The jacket URL should match GitHub's
+`R2_PUBLIC_URL` Actions variable. `.env.local` is ignored by Git.
 
 ```bash
 npm install

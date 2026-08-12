@@ -1,5 +1,28 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap');
 @import "tailwindcss";
+
+@font-face {
+  font-family: "Rodin Pro";
+  src: url("./assets/fonts/Rodin Pro DB.otf") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Rodin NTLG Pro";
+  src: url("./assets/fonts/RodinNTLG Pro EB.otf") format("opentype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Rodin Pro";
+  src: url("./assets/fonts/RodinNTLG Pro EB.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
 
 @theme {
   --color-coral: #e85d45;
@@ -7,7 +30,9 @@
   --color-muted: #746f68;
   --color-line: #ded8cf;
   --color-cream: #faf8f4;
-  --font-sans: "DM Sans", sans-serif;
+  --font-sans: "Rodin Pro", sans-serif;
+  --font-rodin: "Rodin Pro", sans-serif;
+  --font-rodin-bold: "Rodin NTLG Pro", "Rodin Pro", sans-serif;
 }
 
 :root {

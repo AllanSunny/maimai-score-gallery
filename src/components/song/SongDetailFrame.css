@@ -1,0 +1,132 @@
+.song-detail-frame {
+  position: relative;
+  container-type: inline-size;
+  display: block;
+  width: 100%;
+  aspect-ratio: 570 / 918;
+  overflow: hidden;
+  color: white;
+  font-family: var(--font-rodin);
+  isolation: isolate;
+}
+
+.song-detail-frame__jacket,
+.song-detail-frame__frame {
+  position: absolute;
+  display: block;
+  user-select: none;
+  pointer-events: none;
+}
+
+.song-detail-frame__jacket {
+  z-index: 0;
+  top: 14.6%;
+  left: 12.8%;
+  width: 73.9%;
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
+.song-detail-frame__frame {
+  z-index: 1;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.song-detail-frame__difficulty,
+.song-detail-frame__level,
+.song-detail-frame__title,
+.song-detail-frame__artist {
+  position: absolute;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  line-height: 1;
+}
+
+.song-detail-frame__difficulty {
+  top: 59.1%;
+  left: 5.8%;
+  width: 55.5%;
+  height: 8.7%;
+  font-family: var(--font-rodin-bold);
+  font-size: 7.7cqw;
+  font-weight: 800;
+  letter-spacing: -0.055em;
+  -webkit-text-stroke: 0.12em var(--difficulty-color);
+  paint-order: stroke fill;
+  filter: drop-shadow(0 0.045em 0.035em rgb(255 255 255 / 80%));
+}
+
+.song-detail-frame__level {
+  top: 59%;
+  left: 64.2%;
+  width: 28.8%;
+  height: 8.7%;
+  justify-content: flex-start;
+  gap: 0.01em;
+  color: var(--difficulty-color);
+  font-family: var(--font-rodin-bold);
+  font-size: 8.5cqw;
+  font-weight: 800;
+  letter-spacing: -0.075em;
+  -webkit-text-stroke: 0.075em white;
+  paint-order: stroke fill;
+}
+
+.song-detail-frame__level-prefix {
+  align-self: flex-end;
+  margin: 0 0.05em 0.18em 0;
+  font-size: 0.52em;
+  letter-spacing: -0.08em;
+}
+
+.song-detail-frame__level sup {
+  align-self: flex-start;
+  margin-top: 0.08em;
+  font-size: 0.52em;
+  line-height: 1;
+}
+
+.song-detail-frame__title {
+  top: 68.5%;
+  left: 5.1%;
+  width: 89.4%;
+  height: 7.5%;
+  padding: 0 4%;
+  font-weight: 600;
+  text-shadow: 0 0.06em 0.08em rgb(0 0 0 / 45%);
+}
+
+.song-detail-frame__artist {
+  top: 76%;
+  left: 5.1%;
+  width: 89.4%;
+  height: 5.7%;
+  padding: 0 4%;
+  font-weight: 600;
+  text-shadow: 0 0.06em 0.08em rgb(0 0 0 / 45%);
+}
+
+.song-detail-frame[data-difficulty="BASIC"] {
+  --difficulty-color: #22a96b;
+}
+
+.song-detail-frame[data-difficulty="ADVANCED"] {
+  --difficulty-color: #e7a719;
+}
+
+.song-detail-frame[data-difficulty="EXPERT"] {
+  --difficulty-color: #e54e59;
+}
+
+.song-detail-frame[data-difficulty="MASTER"] {
+  --difficulty-color: #9b4bd3;
+}
+
+.song-detail-frame[data-difficulty="Re:MASTER"] {
+  --difficulty-color: #ae62df;
+}
