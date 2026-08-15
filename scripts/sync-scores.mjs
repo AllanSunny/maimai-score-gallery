@@ -1,10 +1,7 @@
-import { execFile } from "node:child_process";
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
-import process from "node:process";
-import { promisify } from "node:util";
+import { readScoreSheet } from "./lib/sheet-scores.mjs";
 
-const execFileAsync = promisify(execFile);
 const ARCHIVE_PATH = path.join(process.cwd(), "src", "data", "generated-scores.json");
 const CATALOG_PATH = path.join(process.cwd(), "src", "data", "generated-catalog.json");
 const ALIAS_HANDOFF_PATH = path.join(process.cwd(), ".sync", "song-aliases.json");
@@ -49,28 +46,13 @@ function storedScore(score, chartId) {
   return { ...record, chartId, judgmentsByType: score.judgmentsByType ?? null };
 }
 
-async function downloadJson(url) {
-  const { stdout } = await execFileAsync("curl", [
-    "--fail",
-    "--location",
-    "--silent",
-    "--show-error",
-    "--user-agent",
-    "maimai-score-gallery score importer",
-    url,
-  ], { encoding: "buffer", maxBuffer: 20 * 1024 * 1024 });
-  return JSON.parse(stdout.toString("utf8"));
-}
-
 async function main() {
-  if (!process.env.SCORES_API_URL) throw new Error("SCORES_API_URL is required.");
-
-  const [archive, catalog] = await Promise.all([
+  const [archive, catalog, sheetScores] = await Promise.all([
     readFile(ARCHIVE_PATH, "utf8").then(JSON.parse),
     readFile(CATALOG_PATH, "utf8").then(JSON.parse),
+    readScoreSheet(),
   ]);
-  const feed = await downloadJson(process.env.SCORES_API_URL);
-  if (!Array.isArray(feed.scores)) throw new Error("Score feed must contain a scores array.");
+  const feed = { scores: sheetScores };
 
   await mkdir(path.dirname(ALIAS_HANDOFF_PATH), { recursive: true });
   // Title metadata now belongs to the song catalog and will arrive through

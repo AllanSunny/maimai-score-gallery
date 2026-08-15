@@ -50,7 +50,9 @@ jobs:
         if: ${{ steps.schedule-check.outputs.should-run == 'true' }}
         run: npm run scores:sync
         env:
-          SCORES_API_URL: ${{ vars.SCORES_API_URL }}
+          GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
+          GOOGLE_SPREADSHEET_ID: ${{ vars.GOOGLE_SPREADSHEET_ID }}
+          GOOGLE_SHEET_NAME: ${{ vars.GOOGLE_SHEET_NAME }}
 
       - name: Ensure alias handoff exists
         run: |

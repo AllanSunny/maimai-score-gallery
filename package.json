@@ -10,9 +10,11 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "preview": "vite preview",
+    "test": "node --test scripts/lib/*.test.mjs",
     "lint": "eslint .",
     "data:validate": "node scripts/validate-data.mjs",
     "google:check": "node --env-file-if-exists=.env.local scripts/check-google-access.mjs",
+    "scores:check": "node --env-file-if-exists=.env.local scripts/check-score-sheet.mjs",
     "scores:sync": "NODE_EXTRA_CA_CERTS=${NODE_EXTRA_CA_CERTS:-/etc/ssl/cert.pem} node --env-file-if-exists=.env.local scripts/sync-scores.mjs",
     "catalog:sync": "NODE_EXTRA_CA_CERTS=${NODE_EXTRA_CA_CERTS:-/etc/ssl/cert.pem} node --env-file-if-exists=.env.local scripts/sync-catalog.mjs"
   },
