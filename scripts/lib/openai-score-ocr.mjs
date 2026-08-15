@@ -80,7 +80,7 @@ export function scoreOcrOptions(environment = process.env) {
     detail,
     maxOutputTokens: integerSetting(
       "OPENAI_OCR_MAX_OUTPUT_TOKENS",
-      environment.OPENAI_OCR_MAX_OUTPUT_TOKENS ?? 3000,
+      environment.OPENAI_OCR_MAX_OUTPUT_TOKENS ?? 5000,
       { minimum: 500, maximum: 10000 },
     ),
   };
