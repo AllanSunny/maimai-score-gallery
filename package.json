@@ -15,6 +15,7 @@
     "data:validate": "node scripts/validate-data.mjs",
     "google:check": "node --env-file-if-exists=.env.local scripts/check-google-access.mjs",
     "scores:check": "node --env-file-if-exists=.env.local scripts/check-score-sheet.mjs",
+    "scores:import": "node --env-file-if-exists=.env.local scripts/import-images.mjs",
     "scores:sync": "NODE_EXTRA_CA_CERTS=${NODE_EXTRA_CA_CERTS:-/etc/ssl/cert.pem} node --env-file-if-exists=.env.local scripts/sync-scores.mjs",
     "catalog:sync": "NODE_EXTRA_CA_CERTS=${NODE_EXTRA_CA_CERTS:-/etc/ssl/cert.pem} node --env-file-if-exists=.env.local scripts/sync-catalog.mjs"
   },

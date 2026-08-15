@@ -25,6 +25,11 @@ const songs = [
     image_url: "netsu.png",
     dx_lev_exp: "12+",
   },
+  {
+    title: "愛♡スクリ～ム！",
+    image_url: "ai-scream.png",
+    dx_lev_mas: "11",
+  },
 ];
 
 function resolver(catalog = songs) {
@@ -33,6 +38,7 @@ function resolver(catalog = songs) {
 
 test("song title normalization ignores harmless Unicode and spacing differences", () => {
   assert.equal(normalizedSongTitle(" Ｍｙｓｔｉｃ　Parade "), "mysticparade");
+  assert.equal(normalizedSongTitle("愛♡スクリ～ム！"), normalizedSongTitle("愛♡スクリーム！"));
 });
 
 test("resolver returns a canonical exact match and authoritative chart level", async () => {
@@ -78,6 +84,44 @@ test("resolver never applies edge matching unless OCR marked the title clipped",
       difficulty: "BASIC",
     }),
     (error) => error instanceof SongResolutionError && error.code === "UNKNOWN_TITLE",
+  );
+});
+
+test("resolver tolerates one OCR symbol substitution when the best match is unique", async () => {
+  const result = await resolver().resolve({
+    visibleTitle: "愛☆スクリーム！",
+    titleTruncated: false,
+    chartType: "DX",
+    difficulty: "MASTER",
+  });
+  assert.equal(result.canonicalTitle, "愛♡スクリ～ム！");
+  assert.equal(result.matchType, "fuzzy");
+});
+
+test("resolver tolerates one OCR substitution in a clipped ending", async () => {
+  const result = await resolver().resolve({
+    visibleTitle: "…Parxde",
+    titleTruncated: true,
+    chartType: "DX",
+    difficulty: "BASIC",
+  });
+  assert.equal(result.canonicalTitle, "Mystic Parade");
+  assert.equal(result.matchType, "truncated-fuzzy-edge");
+});
+
+test("resolver rejects fuzzy matches tied across multiple songs", async () => {
+  const catalog = [
+    { title: "Test★Song", image_url: "one.png", dx_lev_mas: "12" },
+    { title: "Test♡Song", image_url: "two.png", dx_lev_mas: "12" },
+  ];
+  await assert.rejects(
+    resolver(catalog).resolve({
+      visibleTitle: "Test☆Song",
+      titleTruncated: false,
+      chartType: "DX",
+      difficulty: "MASTER",
+    }),
+    (error) => error.code === "AMBIGUOUS_TITLE" && error.candidates.length === 2,
   );
 });
 

@@ -87,20 +87,30 @@ export async function prepareOcrImage(image, options = ocrImageOptions()) {
 }
 
 export async function imageCaptureMetadata(buffer) {
-  const metadata = await exifr.parse(buffer, [
-    "DateTimeOriginal",
-    "CreateDate",
-    "ModifyDate",
-    "OffsetTimeOriginal",
-    "OffsetTimeDigitized",
-    "OffsetTime",
-    "Orientation",
-    "Make",
-    "Model",
-  ]).catch(() => null);
+  const metadata = await exifr.parse(buffer, {
+    pick: [
+      "DateTimeOriginal",
+      "CreateDate",
+      "ModifyDate",
+      "OffsetTimeOriginal",
+      "OffsetTimeDigitized",
+      "OffsetTime",
+      "Orientation",
+      "Make",
+      "Model",
+    ],
+    reviveValues: false,
+  }).catch(() => null);
+
+  const dateTimeOriginal = metadata?.DateTimeOriginal ?? null;
+  const createDate = metadata?.CreateDate ?? null;
+  const modifyDate = metadata?.ModifyDate ?? null;
 
   return {
-    capturedAt: metadata?.DateTimeOriginal ?? metadata?.CreateDate ?? metadata?.ModifyDate ?? null,
+    capturedAt: dateTimeOriginal ?? createDate ?? modifyDate,
+    dateTimeOriginal,
+    createDate,
+    modifyDate,
     offset: metadata?.OffsetTimeOriginal ?? metadata?.OffsetTimeDigitized ?? metadata?.OffsetTime ?? null,
     orientation: metadata?.Orientation ?? null,
     make: metadata?.Make ?? null,

@@ -1,5 +1,5 @@
 import path from "node:path";
-import { createGoogleClients, requiredEnvironment } from "./google-auth.mjs";
+import { createGoogleClients, GOOGLE_SCOPES, requiredEnvironment } from "./google-auth.mjs";
 import { isHeicImage } from "./ocr-image.mjs";
 
 const COMMON_IMAGE_EXTENSIONS = /\.(?:avif|heic|heif|jpe?g|png|webp)$/i;
@@ -34,10 +34,12 @@ export function processedImageName({ canonicalTitle, capturedAt, originalName })
   return `${title.slice(0, Math.max(1, 180 - suffix.length)).trim()}${suffix}`;
 }
 
-export async function createDriveImageStore() {
+export async function createDriveImageStore({ readOnly = false } = {}) {
   const incomingFolderId = requiredEnvironment("GOOGLE_DRIVE_FOLDER_ID");
   const processedFolderId = requiredEnvironment("GOOGLE_PROCESSED_FOLDER_ID");
-  const { drive } = await createGoogleClients();
+  const { drive } = await createGoogleClients(
+    readOnly ? GOOGLE_SCOPES.imageReader : GOOGLE_SCOPES.importer,
+  );
 
   return {
     async listIncoming() {
@@ -46,8 +48,8 @@ export async function createDriveImageStore() {
       do {
         const response = await drive.files.list({
           q: `'${escapedDriveQueryValue(incomingFolderId)}' in parents and trashed = false`,
-          fields: "nextPageToken,files(id,name,mimeType,createdTime,modifiedTime,size,parents)",
-          orderBy: "createdTime,id",
+          fields: "nextPageToken,files(id,name,mimeType,createdTime,modifiedTime,size,parents,imageMediaMetadata(time))",
+          orderBy: "createdTime,name",
           pageSize: 1000,
           pageToken,
         });

@@ -30,6 +30,10 @@ export function normalizedSongTitle(value) {
   return String(value ?? "")
     .normalize("NFKC")
     .replace(/[\u200B-\u200D\uFEFF]/g, "")
+    .replace(/[\uFE0E\uFE0F]/g, "")
+    // SEGA sometimes styles a Japanese prolonged sound with a wave dash.
+    // OCR commonly returns the standard long-vowel mark for the same glyph.
+    .replace(/[~〜～]/gu, "ー")
     .replace(/\s+/gu, "")
     .trim()
     .toLocaleLowerCase();
@@ -55,6 +59,47 @@ function candidateNames(songs) {
   return songs.map((song) => String(song.title ?? "")).filter(Boolean).sort();
 }
 
+function editDistance(leftValue, rightValue) {
+  const left = Array.from(leftValue);
+  const right = Array.from(rightValue);
+  let previous = right.map((_, index) => index + 1);
+  previous.unshift(0);
+  left.forEach((character, leftIndex) => {
+    const current = [leftIndex + 1];
+    right.forEach((other, rightIndex) => {
+      current.push(Math.min(
+        current[rightIndex] + 1,
+        previous[rightIndex + 1] + 1,
+        previous[rightIndex] + (character === other ? 0 : 1),
+      ));
+    });
+    previous = current;
+  });
+  return previous.at(-1);
+}
+
+function permittedEditDistance(value) {
+  const length = Array.from(value).length;
+  if (length < 4) return 0;
+  return length < 14 ? 1 : 2;
+}
+
+function closestUniqueMatch(value, songs, segmentsForTitle) {
+  const maximum = permittedEditDistance(value);
+  if (maximum === 0) return { match: null, ambiguous: [] };
+  const scored = uniqueSongs(songs).map((song) => ({
+    song,
+    distance: Math.min(...segmentsForTitle(normalizedSongTitle(song.title))
+      .map((segment) => editDistance(value, segment))),
+  }));
+  const nearestDistance = Math.min(...scored.map(({ distance }) => distance));
+  if (nearestDistance > maximum) return { match: null, ambiguous: [] };
+  const nearest = scored.filter(({ distance }) => distance === nearestDistance);
+  return nearest.length === 1
+    ? { match: nearest[0].song, ambiguous: [] }
+    : { match: null, ambiguous: nearest.map(({ song }) => song) };
+}
+
 function resolveTitle(visibleTitle, titleTruncated, songs) {
   const target = normalizedSongTitle(visibleTitle);
   if (!target) {
@@ -72,6 +117,15 @@ function resolveTitle(visibleTitle, titleTruncated, songs) {
   }
 
   if (!titleTruncated) {
+    const fuzzy = closestUniqueMatch(target, songs, (title) => [title]);
+    if (fuzzy.match) return { song: fuzzy.match, matchType: "fuzzy" };
+    if (fuzzy.ambiguous.length) {
+      throw new SongResolutionError(
+        "AMBIGUOUS_TITLE",
+        `The OCR title ${JSON.stringify(visibleTitle)} is equally close to multiple SEGA songs.`,
+        { candidates: candidateNames(fuzzy.ambiguous) },
+      );
+    }
     throw new SongResolutionError(
       "UNKNOWN_TITLE",
       `No SEGA song matches ${JSON.stringify(visibleTitle)}.`,
@@ -103,6 +157,23 @@ function resolveTitle(visibleTitle, titleTruncated, songs) {
     return { song: edgeMatches[0], matchType };
   }
   if (edgeMatches.length === 0) {
+    const fragmentLength = Array.from(fragment).length;
+    const fuzzy = closestUniqueMatch(fragment, songs, (title) => {
+      const characters = Array.from(title);
+      if (characters.length < fragmentLength) return [title];
+      return [
+        characters.slice(0, fragmentLength).join(""),
+        characters.slice(-fragmentLength).join(""),
+      ];
+    });
+    if (fuzzy.match) return { song: fuzzy.match, matchType: "truncated-fuzzy-edge" };
+    if (fuzzy.ambiguous.length) {
+      throw new SongResolutionError(
+        "AMBIGUOUS_TITLE",
+        `The clipped OCR title ${JSON.stringify(visibleTitle)} is equally close to multiple SEGA songs.`,
+        { candidates: candidateNames(fuzzy.ambiguous) },
+      );
+    }
     throw new SongResolutionError(
       "UNKNOWN_TITLE",
       `No SEGA song has an edge matching the clipped title ${JSON.stringify(visibleTitle)}.`,

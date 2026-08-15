@@ -58,7 +58,7 @@ function timeZoneParts(date, timeZone) {
   return Object.fromEntries(parts.map(({ type, value }) => [type, value]));
 }
 
-function zonedDateTimeIso(value, timeZone) {
+export function zonedDateTimeIso(value, timeZone) {
   const text = String(value ?? "").trim();
   const isoLocal = text.match(/^(\d{4})-(\d{2})-(\d{2})[ T](\d{1,2}):(\d{2}):(\d{2})$/);
   const usLocal = text.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})\s+(\d{1,2}):(\d{2}):(\d{2})$/);
