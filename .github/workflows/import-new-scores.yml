@@ -71,6 +71,8 @@ jobs:
           GOOGLE_SHEET_NAME: ${{ vars.GOOGLE_SHEET_NAME }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           OPENAI_OCR_MODEL: ${{ vars.OPENAI_OCR_MODEL }}
+          OPENAI_OCR_MAX_OUTPUT_TOKENS: ${{ vars.OPENAI_OCR_MAX_OUTPUT_TOKENS }}
+          OPENAI_REASONING_EFFORT: ${{ vars.OPENAI_REASONING_EFFORT }}
           SCORE_CAPTURE_TIME_ZONE: America/New_York
 
       - name: Inspect image import report

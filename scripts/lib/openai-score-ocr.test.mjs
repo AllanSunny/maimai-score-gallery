@@ -6,7 +6,8 @@ test("score OCR keeps the proven model and high-detail defaults", () => {
   assert.deepEqual(scoreOcrOptions({}), {
     model: "gpt-5.5",
     detail: "high",
-    maxOutputTokens: 3000,
+    reasoningEffort: "low",
+    maxOutputTokens: 5000,
   });
 });
 
@@ -19,6 +20,7 @@ test("score OCR request sends a full JPEG through a strict schema", () => {
 
   assert.equal(request.store, false);
   assert.equal(request.text.format.strict, true);
+  assert.deepEqual(request.reasoning, { effort: "low", summary: "auto" });
   assert.equal(image.detail, "high");
   assert.equal(image.image_url, "data:image/jpeg;base64,aW1hZ2U=");
 });
@@ -64,13 +66,26 @@ test("score OCR reports why a response has no structured output", async () => {
     },
   };
 
+  let caughtError;
   await assert.rejects(
     parseScoreImage(
       { buffer: Buffer.from("image"), mimeType: "image/jpeg" },
       { client, prompt: "extract", options: scoreOcrOptions({}) },
-    ),
+    ).catch((error) => {
+      caughtError = error;
+      throw error;
+    }),
     /status=incomplete; incomplete_reason=max_output_tokens; response_id=resp_incomplete/,
   );
+  assert.deepEqual(caughtError.openAiDiagnostics, {
+    responseId: "resp_incomplete",
+    status: "incomplete",
+    incompleteReason: "max_output_tokens",
+    inputTokens: null,
+    outputTokens: null,
+    reasoningTokens: null,
+    reasoningSummary: [],
+  });
 });
 
 test("score OCR reports why structured output contains invalid JSON", async () => {

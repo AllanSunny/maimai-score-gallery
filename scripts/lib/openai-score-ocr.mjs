@@ -5,6 +5,7 @@ import { requiredEnvironment } from "./google-auth.mjs";
 const maimaiScorePromptUrl = new URL("./maimai-score-prompt.md", import.meta.url);
 export const SCORE_OCR_PROMPT_VERSION = "2026-08-15-v3";
 const details = new Set(["low", "high", "auto", "original"]);
+const reasoningEfforts = new Set(["minimal", "low", "medium", "high"]);
 
 const nullableNumber = { type: ["number", "null"] };
 const judgmentProperties = {
@@ -75,12 +76,17 @@ export function scoreOcrOptions(environment = process.env) {
   if (!details.has(detail)) {
     throw new Error("OPENAI_IMAGE_DETAIL must be low, high, auto, or original.");
   }
+  const reasoningEffort = environment.OPENAI_REASONING_EFFORT?.trim() || "low";
+  if (!reasoningEfforts.has(reasoningEffort)) {
+    throw new Error("OPENAI_REASONING_EFFORT must be minimal, low, medium, or high.");
+  }
   return {
     model: environment.OPENAI_OCR_MODEL?.trim() || "gpt-5.5",
     detail,
+    reasoningEffort,
     maxOutputTokens: integerSetting(
       "OPENAI_OCR_MAX_OUTPUT_TOKENS",
-      environment.OPENAI_OCR_MAX_OUTPUT_TOKENS ?? 5000,
+      environment.OPENAI_OCR_MAX_OUTPUT_TOKENS?.trim() || 5000,
       { minimum: 500, maximum: 10000 },
     ),
   };
@@ -91,6 +97,10 @@ export function scoreOcrRequest({ image, prompt, options = scoreOcrOptions() }) 
     model: options.model,
     store: false,
     max_output_tokens: options.maxOutputTokens,
+    reasoning: {
+      effort: options.reasoningEffort,
+      summary: "auto",
+    },
     text: {
       format: {
         type: "json_schema",
@@ -113,6 +123,28 @@ export function scoreOcrRequest({ image, prompt, options = scoreOcrOptions() }) 
   };
 }
 
+function responseDiagnostics(response) {
+  const reasoningSummary = (response.output ?? []).flatMap((item) =>
+    item.type === "reasoning"
+      ? (item.summary ?? []).map((summary) => summary.text).filter(Boolean)
+      : []);
+  return {
+    responseId: response.id ?? null,
+    status: response.status ?? null,
+    incompleteReason: response.incomplete_details?.reason ?? null,
+    inputTokens: response.usage?.input_tokens ?? null,
+    outputTokens: response.usage?.output_tokens ?? null,
+    reasoningTokens: response.usage?.output_tokens_details?.reasoning_tokens ?? null,
+    reasoningSummary,
+  };
+}
+
+function ocrError(message, response, options = {}) {
+  const error = new Error(message, options);
+  error.openAiDiagnostics = responseDiagnostics(response);
+  return error;
+}
+
 export async function parseScoreImage(image, dependencies = {}) {
   const options = dependencies.options ?? scoreOcrOptions();
   const prompt = dependencies.prompt ?? await readFile(maimaiScorePromptUrl, "utf8");
@@ -130,7 +162,7 @@ export async function parseScoreImage(image, dependencies = {}) {
       response.id && `response_id=${response.id}`,
     ].filter(Boolean);
     const suffix = details.length > 0 ? ` (${details.join("; ")})` : "";
-    throw new Error(`OpenAI returned no structured OCR output${suffix}.`);
+    throw ocrError(`OpenAI returned no structured OCR output${suffix}.`, response);
   }
 
   try {
@@ -148,6 +180,6 @@ export async function parseScoreImage(image, dependencies = {}) {
       response.id && `response_id=${response.id}`,
     ].filter(Boolean);
     const suffix = details.length > 0 ? ` (${details.join("; ")})` : "";
-    throw new Error(`OpenAI returned invalid structured OCR JSON${suffix}.`, { cause: error });
+    throw ocrError(`OpenAI returned invalid structured OCR JSON${suffix}.`, response, { cause: error });
   }
 }

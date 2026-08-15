@@ -284,6 +284,9 @@ async function main() {
     } catch (error) {
       result.status = "rejected";
       result.error = reportedError(error);
+      if (error?.openAiDiagnostics) {
+        console.error(`  OpenAI diagnostics: ${JSON.stringify(error.openAiDiagnostics)}`);
+      }
       if (result.importLogRow && !committed) {
         try {
           await importLog.reject(result.importLogRow, error);
