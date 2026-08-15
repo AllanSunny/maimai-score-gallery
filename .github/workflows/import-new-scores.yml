@@ -249,6 +249,6 @@ jobs:
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
           RUN_URL: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: |
-          jq -n --arg url "$RUN_URL" '{content: ("❌ **Import New Scores failed**\n\n" + $url), allowed_mentions: {parse: []}}' \
+          jq -n --arg url "$RUN_URL" '{content: ("❌ **Import New Scores failed**\n\n<" + $url + ">"), allowed_mentions: {parse: []}}' \
             | curl --fail --silent --show-error --header "Content-Type: application/json" \
               --data-binary @- "$DISCORD_WEBHOOK_URL"

@@ -48,3 +48,50 @@ test("score OCR loads the maimai score prompt and exposes structured output and 
   assert.equal(result.usage.total_tokens, 120);
   assert.equal(result.responseId, "resp_test");
 });
+
+test("score OCR reports why a response has no structured output", async () => {
+  const client = {
+    responses: {
+      async create() {
+        return {
+          id: "resp_incomplete",
+          status: "incomplete",
+          incomplete_details: { reason: "max_output_tokens" },
+          output_text: "",
+          output: [],
+        };
+      },
+    },
+  };
+
+  await assert.rejects(
+    parseScoreImage(
+      { buffer: Buffer.from("image"), mimeType: "image/jpeg" },
+      { client, prompt: "extract", options: scoreOcrOptions({}) },
+    ),
+    /status=incomplete; incomplete_reason=max_output_tokens; response_id=resp_incomplete/,
+  );
+});
+
+test("score OCR reports why structured output contains invalid JSON", async () => {
+  const client = {
+    responses: {
+      async create() {
+        return {
+          id: "resp_truncated",
+          status: "incomplete",
+          incomplete_details: { reason: "max_output_tokens" },
+          output_text: '{"visibleTitle":"Test',
+        };
+      },
+    },
+  };
+
+  await assert.rejects(
+    parseScoreImage(
+      { buffer: Buffer.from("image"), mimeType: "image/jpeg" },
+      { client, prompt: "extract", options: scoreOcrOptions({}) },
+    ),
+    /parse_error=.*status=incomplete; incomplete_reason=max_output_tokens; response_id=resp_truncated/,
+  );
+});

@@ -118,7 +118,20 @@ export async function parseScoreImage(image, dependencies = {}) {
   const prompt = dependencies.prompt ?? await readFile(maimaiScorePromptUrl, "utf8");
   const client = dependencies.client ?? new OpenAI({ apiKey: requiredEnvironment("OPENAI_API_KEY") });
   const response = await client.responses.create(scoreOcrRequest({ image, prompt, options }));
-  if (!response.output_text) throw new Error("OpenAI returned no structured OCR output.");
+  if (!response.output_text) {
+    const details = [
+      response.status && `status=${response.status}`,
+      response.incomplete_details?.reason
+        && `incomplete_reason=${response.incomplete_details.reason}`,
+      response.error?.message && `api_error=${response.error.message}`,
+      ...(response.output ?? []).flatMap((item) => (item.content ?? [])
+        .filter((content) => content.type === "refusal" && content.refusal)
+        .map((content) => `refusal=${content.refusal}`)),
+      response.id && `response_id=${response.id}`,
+    ].filter(Boolean);
+    const suffix = details.length > 0 ? ` (${details.join("; ")})` : "";
+    throw new Error(`OpenAI returned no structured OCR output${suffix}.`);
+  }
 
   try {
     return {
@@ -127,6 +140,14 @@ export async function parseScoreImage(image, dependencies = {}) {
       responseId: response.id,
     };
   } catch (error) {
-    throw new Error("OpenAI returned invalid structured OCR JSON.", { cause: error });
+    const details = [
+      error?.message && `parse_error=${error.message}`,
+      response.status && `status=${response.status}`,
+      response.incomplete_details?.reason
+        && `incomplete_reason=${response.incomplete_details.reason}`,
+      response.id && `response_id=${response.id}`,
+    ].filter(Boolean);
+    const suffix = details.length > 0 ? ` (${details.join("; ")})` : "";
+    throw new Error(`OpenAI returned invalid structured OCR JSON${suffix}.`, { cause: error });
   }
 }
