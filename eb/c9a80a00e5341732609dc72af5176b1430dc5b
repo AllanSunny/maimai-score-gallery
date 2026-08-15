@@ -1,0 +1,38 @@
+.gitignore
+  s_6d06bd4898dc7f::t_da4ff750cb54fe 5
+scripts/lib/google-auth.mjs
+  s_6d06bd4898dc7f::t_4830f98574011c 1-55
+package.json
+  s_6d06bd4898dc7f::t_4830f98574011c 15
+  s_6d06bd4898dc7f::t_13c8ee61e6e15d 23-25,30,37
+.env.example
+  s_6d06bd4898dc7f::t_7ed472bd99d4d0 18
+  s_6d06bd4898dc7f::t_da4ff750cb54fe 12-17,19-23
+.github/workflows/check-google-access.yml
+  s_6d06bd4898dc7f::t_4830f98574011c 1-33
+scripts/check-google-access.mjs
+  s_6d06bd4898dc7f::t_4830f98574011c 1-64
+package-lock.json
+  s_6d06bd4898dc7f::t_c3efcc7e740c1e 28,796-813,873-883,2173-2182,2200-2225,2236-2256,2270-2279,2334-2371,2402-2421,2572-2581,2622-2653,2661-2667,2682-2714,2940-2946,2985-3008,3060-3089,3104-3169,3180-3240,3254-3286,3300-3303,3305-3317,3319-3322,3324-3452,3464-3477,3527-3536,3557-3572,3603-3612,3647-3669,3979-3988,4005-4014,4023-4025,4047-4086,4097-4109,4160-4166,4187-4210,4277-4293,4396-4411,4444-4464,4504-4592,4602-4705,4860-4866,4975-4984,5011-5108
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.22",
+  "base_commit_sha": "ebc9a80a00e5341732609dc72af5176b1430dc5b",
+  "prompts": {},
+  "humans": {
+    "h_278fafc5c28027": {
+      "author": "Allan Sun <allansun@live.com>"
+    }
+  },
+  "sessions": {
+    "s_6d06bd4898dc7f": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019faca2-0a30-75f3-8a51-06f8e9067195",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Allan Sun <allansun@live.com>"
+    }
+  }
+}
