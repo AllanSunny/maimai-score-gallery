@@ -61,7 +61,11 @@ function correctedOcr(score, review) {
 }
 
 function cachedScore(record, sourceHash) {
-  if (!record?.ocrJson || record.sourceHash !== sourceHash) return null;
+  if (
+    !record?.ocrJson
+    || record.sourceHash !== sourceHash
+    || record.promptVersion !== SCORE_OCR_PROMPT_VERSION
+  ) return null;
   try {
     return JSON.parse(record.ocrJson);
   } catch {
@@ -324,7 +328,9 @@ async function main() {
   await mkdir(path.dirname(reportPath), { recursive: true });
   await writeFile(reportPath, `${JSON.stringify(report, null, 2)}\n`);
   console.log(`Import report written to ${path.relative(process.cwd(), reportPath)}.`);
-  if (report.rejectedCount > 0 || report.movePendingCount > 0) process.exitCode = 1;
+  // Reviewable image-level failures are recorded in the report and review
+  // sheet. They should not fail the job or prevent accepted scores from
+  // continuing through the archive and catalog stages.
 }
 
 main().catch((error) => {

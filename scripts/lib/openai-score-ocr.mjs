@@ -3,7 +3,7 @@ import OpenAI from "openai";
 import { requiredEnvironment } from "./google-auth.mjs";
 
 const maimaiScorePromptUrl = new URL("./maimai-score-prompt.md", import.meta.url);
-export const SCORE_OCR_PROMPT_VERSION = "2026-08-15-v2";
+export const SCORE_OCR_PROMPT_VERSION = "2026-08-15-v3";
 const details = new Set(["low", "high", "auto", "original"]);
 
 const nullableNumber = { type: ["number", "null"] };
@@ -25,7 +25,7 @@ const SCORE_OCR_SCHEMA = {
   type: "object",
   additionalProperties: false,
   properties: {
-    visibleTitle: { type: "string" },
+    visibleTitle: { type: "string", minLength: 1 },
     visibleArtist: { type: ["string", "null"] },
     titleTruncated: { type: "boolean" },
     chartType: { type: "string", enum: ["DX", "STD", "UTAGE"] },

@@ -54,7 +54,6 @@ jobs:
       - name: Parse incoming score images
         id: image-import
         if: ${{ steps.schedule-check.outputs.should-run == 'true' }}
-        continue-on-error: true
         run: |
           if [ -n "$IMAGE_LIMIT" ]; then
             npm run scores:import -- --limit "$IMAGE_LIMIT"
@@ -145,7 +144,13 @@ jobs:
       - uses: actions/download-artifact@v4
         with:
           name: score-archive
-          path: .
+          # A single-file artifact is extracted without its source directories.
+          # Put it directly where catalog:sync reads it.
+          path: src/data
+      - name: Verify archived scores were restored
+        run: |
+          test -f src/data/generated-scores.json
+          echo "Catalog sync received $(jq '.scores | length' src/data/generated-scores.json) archived scores."
       - uses: actions/setup-node@v4
         with:
           node-version: 24.14.1
