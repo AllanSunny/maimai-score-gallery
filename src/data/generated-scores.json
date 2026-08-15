@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-12T08:20:52.439Z",
+  "updatedAt": "2026-08-15T19:24:57.834Z",
   "scores": [
     {
       "playedAt": "2025-11-10T02:30:43.000Z",
@@ -239,6 +239,66 @@
       "fast": 83,
       "slow": 65,
       "id": "dG1squya4F0lxFw_XHxhQNai4sum-vnxuBXEeDEcz34",
+      "chartId": "song-a7a461d9d280-dx-master"
+    },
+    {
+      "playedAt": "2025-12-06T06:23:19.000Z",
+      "songTitle": "M@GICAL☆CURE! LOVE ♥ SHOT!",
+      "chartType": "DX",
+      "difficulty": "MASTER",
+      "level": "13+",
+      "achievement": 95.6947,
+      "combo": "Clear",
+      "sync": "None",
+      "rating": 13189,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 545,
+        "perfect": 243,
+        "great": 82,
+        "good": 66,
+        "miss": 11
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 25,
+          "perfect": 3,
+          "great": 1,
+          "good": 0,
+          "miss": 1
+        },
+        "tap": {
+          "criticalPerfect": 310,
+          "perfect": 214,
+          "great": 70,
+          "good": 62,
+          "miss": 10
+        },
+        "hold": {
+          "criticalPerfect": 37,
+          "perfect": 25,
+          "great": 2,
+          "good": 1,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 127,
+          "perfect": 0,
+          "great": 9,
+          "good": 3,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 46,
+          "perfect": 1,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 83,
+      "slow": 65,
+      "id": "W5FIw4XdQeGVLS9ax4cUu4oEwKg1aY7-Vq_tztrAdEo",
       "chartId": "song-a7a461d9d280-dx-master"
     },
     {
@@ -782,6 +842,66 @@
       "chartId": "song-5331d36bf069-dx-master"
     },
     {
+      "playedAt": "2026-01-19T18:46:59.000Z",
+      "songTitle": "きゅうくらりん",
+      "chartType": "DX",
+      "difficulty": "MASTER",
+      "level": "13+",
+      "achievement": 100.0358,
+      "combo": "Clear",
+      "sync": "None",
+      "rating": 13965,
+      "ratingChange": 8,
+      "judgments": {
+        "criticalPerfect": 512,
+        "perfect": 312,
+        "great": 25,
+        "good": 6,
+        "miss": 4
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 37,
+          "perfect": 11,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 228,
+          "perfect": 224,
+          "great": 23,
+          "good": 5,
+          "miss": 4
+        },
+        "hold": {
+          "criticalPerfect": 118,
+          "perfect": 77,
+          "great": 0,
+          "good": 1,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 112,
+          "perfect": 0,
+          "great": 2,
+          "good": 0,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 17,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 31,
+      "slow": 11,
+      "id": "AB2gSzRiTuMLkjR3_qF9C6N1xjeMyr4bgoah79EIzP0",
+      "chartId": "song-5331d36bf069-dx-master"
+    },
+    {
       "playedAt": "2026-01-28T02:40:19.000Z",
       "songTitle": "ウミユリ海底譚",
       "chartType": "STD",
@@ -1082,6 +1202,66 @@
       "chartId": "song-bdf8ca5b6c93-dx-master"
     },
     {
+      "playedAt": "2026-03-04T04:01:33.000Z",
+      "songTitle": "IMAWANOKIWA",
+      "chartType": "DX",
+      "difficulty": "MASTER",
+      "level": "13+",
+      "achievement": 100.5977,
+      "combo": "FC+",
+      "sync": "None",
+      "rating": 14424,
+      "ratingChange": 12,
+      "judgments": {
+        "criticalPerfect": 609,
+        "perfect": 262,
+        "great": 14,
+        "good": 0,
+        "miss": 0
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 21,
+          "perfect": 7,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 403,
+          "perfect": 198,
+          "great": 7,
+          "good": 0,
+          "miss": 0
+        },
+        "hold": {
+          "criticalPerfect": 95,
+          "perfect": 57,
+          "great": 6,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 69,
+          "perfect": 0,
+          "great": 1,
+          "good": 0,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 21,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 14,
+      "slow": 7,
+      "id": "fYw-UYQk8v3BKd1m2I0aQ66gun82_VgeKN8Qnsnb6lY",
+      "chartId": "song-bdf8ca5b6c93-dx-master"
+    },
+    {
       "playedAt": "2026-03-04T04:04:53.000Z",
       "songTitle": "きゅうくらりん",
       "chartType": "DX",
@@ -1199,6 +1379,66 @@
       "fast": 11,
       "slow": 5,
       "id": "xx9giQlHtuxhP023pqIbMSPuFDnLjMQFPAg7rr4beUE",
+      "chartId": "song-e82460b7a2b0-dx-master"
+    },
+    {
+      "playedAt": "2026-03-11T00:05:03.000Z",
+      "songTitle": "enchanted wanderer",
+      "chartType": "DX",
+      "difficulty": "MASTER",
+      "level": "13+",
+      "achievement": 100.0203,
+      "combo": "Clear",
+      "sync": "None",
+      "rating": 14502,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 485,
+        "perfect": 92,
+        "great": 12,
+        "good": 2,
+        "miss": 3
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 25,
+          "perfect": 2,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 200,
+          "perfect": 73,
+          "great": 9,
+          "good": 0,
+          "miss": 3
+        },
+        "hold": {
+          "criticalPerfect": 44,
+          "perfect": 17,
+          "great": 1,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 103,
+          "perfect": 0,
+          "great": 2,
+          "good": 2,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 113,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 11,
+      "slow": 5,
+      "id": "fHVmTn-BWj2W2jRxn1alwSdCtA9DwEFWHx0eX3Rtz4g",
       "chartId": "song-e82460b7a2b0-dx-master"
     },
     {
@@ -1802,66 +2042,6 @@
       "chartId": "song-7fbb1100d70a-dx-master"
     },
     {
-      "playedAt": "2026-05-08T03:11:43.000Z",
-      "songTitle": "Never Give Up!",
-      "chartType": "DX",
-      "difficulty": "Re:MASTER",
-      "level": "13+",
-      "achievement": 100.5278,
-      "combo": "Clear",
-      "sync": "None",
-      "rating": 14860,
-      "ratingChange": 11,
-      "judgments": {
-        "criticalPerfect": 511,
-        "perfect": 235,
-        "great": 8,
-        "good": 4,
-        "miss": 1
-      },
-      "judgmentsByType": {
-        "break": {
-          "criticalPerfect": 17,
-          "perfect": 0,
-          "great": 0,
-          "good": 0,
-          "miss": 0
-        },
-        "tap": {
-          "criticalPerfect": 290,
-          "perfect": 197,
-          "great": 7,
-          "good": 4,
-          "miss": 1
-        },
-        "hold": {
-          "criticalPerfect": 46,
-          "perfect": 38,
-          "great": 0,
-          "good": 0,
-          "miss": 0
-        },
-        "slide": {
-          "criticalPerfect": 73,
-          "perfect": 0,
-          "great": 1,
-          "good": 0,
-          "miss": 0
-        },
-        "touch": {
-          "criticalPerfect": 85,
-          "perfect": 0,
-          "great": 0,
-          "good": 0,
-          "miss": 0
-        }
-      },
-      "fast": 12,
-      "slow": 0,
-      "id": "yNIeuMhCH1Jgf8jlLqDRV637EKZ4WhJvN7OnchRtjf4",
-      "chartId": "song-ff485a6d8bed-dx-re-master"
-    },
-    {
       "playedAt": "2026-04-18T00:44:00.000Z",
       "songTitle": "Baqeela",
       "chartType": "DX",
@@ -1979,6 +2159,66 @@
       "fast": 10,
       "slow": 12,
       "id": "bEY_yLvQXi_M15zbvLIyKRHP5H9gUmxTNMvqm_5O02A",
+      "chartId": "song-7fbb1100d70a-dx-master"
+    },
+    {
+      "playedAt": "2026-04-18T01:28:53.000Z",
+      "songTitle": "Baqeela",
+      "chartType": "DX",
+      "difficulty": "MASTER",
+      "level": "13+",
+      "achievement": 100.67,
+      "combo": "Clear",
+      "sync": "None",
+      "rating": 14757,
+      "ratingChange": 11,
+      "judgments": {
+        "criticalPerfect": 697,
+        "perfect": 274,
+        "great": 10,
+        "good": 0,
+        "miss": 1
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 32,
+          "perfect": 12,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 425,
+          "perfect": 239,
+          "great": 9,
+          "good": 0,
+          "miss": 0
+        },
+        "hold": {
+          "criticalPerfect": 27,
+          "perfect": 23,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 74,
+          "perfect": 0,
+          "great": 1,
+          "good": 0,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 139,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 1
+        }
+      },
+      "fast": 10,
+      "slow": 12,
+      "id": "cC6Hs7qJmgLPXkoden9-WeRWEWlvbhkNc-MfJVhlehA",
       "chartId": "song-7fbb1100d70a-dx-master"
     },
     {
@@ -2342,6 +2582,66 @@
       "chartId": "song-e55f5c1d041d-dx-master"
     },
     {
+      "playedAt": "2026-05-03T04:34:03.000Z",
+      "songTitle": "Mystic Parade",
+      "chartType": "DX",
+      "difficulty": "MASTER",
+      "level": "13",
+      "achievement": 100.4159,
+      "combo": "Clear",
+      "sync": "None",
+      "rating": 14807,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 564,
+        "perfect": 312,
+        "great": 18,
+        "good": 0,
+        "miss": 2
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 43,
+          "perfect": 20,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 391,
+          "perfect": 274,
+          "great": 14,
+          "good": 0,
+          "miss": 2
+        },
+        "hold": {
+          "criticalPerfect": 26,
+          "perfect": 18,
+          "great": 2,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 80,
+          "perfect": 0,
+          "great": 2,
+          "good": 0,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 24,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 21,
+      "slow": 17,
+      "id": "9dyon2JnqPBbPvBi_5qieG6oWPc5JmUvhPElfjQm05M",
+      "chartId": "song-e55f5c1d041d-dx-master"
+    },
+    {
       "playedAt": "2026-05-03T05:12:28.000Z",
       "songTitle": "Never Give Up!",
       "chartType": "DX",
@@ -2459,6 +2759,66 @@
       "fast": 48,
       "slow": 11,
       "id": "mg1tASia3DGVufCPmlI0L3xPmP7ON7sPiRJ0OHNByoQ",
+      "chartId": "song-e55f5c1d041d-dx-master"
+    },
+    {
+      "playedAt": "2026-05-08T00:23:41.000Z",
+      "songTitle": "Mystic Parade",
+      "chartType": "DX",
+      "difficulty": "MASTER",
+      "level": "13",
+      "achievement": 100.2002,
+      "combo": "FC+",
+      "sync": "None",
+      "rating": 14825,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 555,
+        "perfect": 300,
+        "great": 41,
+        "good": 0,
+        "miss": 0
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 44,
+          "perfect": 18,
+          "great": 1,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 381,
+          "perfect": 263,
+          "great": 37,
+          "good": 0,
+          "miss": 0
+        },
+        "hold": {
+          "criticalPerfect": 24,
+          "perfect": 19,
+          "great": 3,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 82,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 24,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 48,
+      "slow": 11,
+      "id": "CYFY84hu40Gh8ZH-tp67Emyth-8wjxQ-JiRJqmB9hrE",
       "chartId": "song-e55f5c1d041d-dx-master"
     },
     {
@@ -2582,6 +2942,126 @@
       "chartId": "song-ff485a6d8bed-dx-re-master"
     },
     {
+      "playedAt": "2026-05-08T02:55:02.000Z",
+      "songTitle": "Never Give Up!",
+      "chartType": "DX",
+      "difficulty": "Re:MASTER",
+      "level": "13+",
+      "achievement": 100.3851,
+      "combo": "FC",
+      "sync": "None",
+      "rating": 14849,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 508,
+        "perfect": 225,
+        "great": 24,
+        "good": 2,
+        "miss": 0
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 15,
+          "perfect": 2,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 278,
+          "perfect": 196,
+          "great": 23,
+          "good": 2,
+          "miss": 0
+        },
+        "hold": {
+          "criticalPerfect": 57,
+          "perfect": 27,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 73,
+          "perfect": 0,
+          "great": 1,
+          "good": 0,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 85,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 27,
+      "slow": 1,
+      "id": "rIi-_Q19Jq3k6O8wTVU8BHK9cZTdcqwRlsc38h6_o5c",
+      "chartId": "song-ff485a6d8bed-dx-re-master"
+    },
+    {
+      "playedAt": "2026-05-08T02:55:02.000Z",
+      "songTitle": "Never Give Up!",
+      "chartType": "DX",
+      "difficulty": "Re:MASTER",
+      "level": "13+",
+      "achievement": 100.5278,
+      "combo": "Clear",
+      "sync": "None",
+      "rating": 14860,
+      "ratingChange": 11,
+      "judgments": {
+        "criticalPerfect": 511,
+        "perfect": 235,
+        "great": 8,
+        "good": 4,
+        "miss": 1
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 17,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 290,
+          "perfect": 197,
+          "great": 7,
+          "good": 4,
+          "miss": 1
+        },
+        "hold": {
+          "criticalPerfect": 46,
+          "perfect": 38,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 73,
+          "perfect": 0,
+          "great": 1,
+          "good": 0,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 85,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 12,
+      "slow": 0,
+      "id": "-JE4IjmjolKipW7sQGzi-wbhXcKQZuyzdW43IQpB-TA",
+      "chartId": "song-ff485a6d8bed-dx-re-master"
+    },
+    {
       "playedAt": "2026-05-08T02:59:43.000Z",
       "songTitle": "Never Give Up!",
       "chartType": "DX",
@@ -2639,6 +3119,66 @@
       "fast": 15,
       "slow": 4,
       "id": "SqvKEyF3iZq8IXfVWGljC1V9h7udFggswvpHaDyBIYw",
+      "chartId": "song-ff485a6d8bed-dx-re-master"
+    },
+    {
+      "playedAt": "2026-05-08T03:11:43.000Z",
+      "songTitle": "Never Give Up!",
+      "chartType": "DX",
+      "difficulty": "Re:MASTER",
+      "level": "13+",
+      "achievement": 100.5278,
+      "combo": "Clear",
+      "sync": "None",
+      "rating": 14860,
+      "ratingChange": 11,
+      "judgments": {
+        "criticalPerfect": 511,
+        "perfect": 235,
+        "great": 8,
+        "good": 4,
+        "miss": 1
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 17,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 290,
+          "perfect": 197,
+          "great": 7,
+          "good": 4,
+          "miss": 1
+        },
+        "hold": {
+          "criticalPerfect": 46,
+          "perfect": 38,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 73,
+          "perfect": 0,
+          "great": 1,
+          "good": 0,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 85,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 12,
+      "slow": 0,
+      "id": "yNIeuMhCH1Jgf8jlLqDRV637EKZ4WhJvN7OnchRtjf4",
       "chartId": "song-ff485a6d8bed-dx-re-master"
     },
     {
@@ -2942,6 +3482,66 @@
       "chartId": "song-85572925973b-dx-master"
     },
     {
+      "playedAt": "2026-05-14T00:59:56.000Z",
+      "songTitle": "1000年生きてる",
+      "chartType": "DX",
+      "difficulty": "MASTER",
+      "level": "13",
+      "achievement": 100.3641,
+      "combo": "FC",
+      "sync": "None",
+      "rating": 14969,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 427,
+        "perfect": 164,
+        "great": 7,
+        "good": 3,
+        "miss": 0
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 13,
+          "perfect": 4,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 250,
+          "perfect": 148,
+          "great": 4,
+          "good": 2,
+          "miss": 0
+        },
+        "hold": {
+          "criticalPerfect": 34,
+          "perfect": 12,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 92,
+          "perfect": 0,
+          "great": 3,
+          "good": 1,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 38,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 10,
+      "slow": 4,
+      "id": "pIiK4TtvOs2pYzqAjXeLvsFp0cH4v0PWTRQEaUqUWFQ",
+      "chartId": "song-85572925973b-dx-master"
+    },
+    {
       "playedAt": "2026-05-14T01:02:58.000Z",
       "songTitle": "1000年生きてる",
       "chartType": "DX",
@@ -3062,6 +3662,66 @@
       "chartId": "song-52e03f4cfc5d-dx-re-master"
     },
     {
+      "playedAt": "2026-05-21T22:34:15.000Z",
+      "songTitle": "モニタリング",
+      "chartType": "DX",
+      "difficulty": "Re:MASTER",
+      "level": "13",
+      "achievement": 100.5,
+      "combo": "FC",
+      "sync": "None",
+      "rating": 15025,
+      "ratingChange": 9,
+      "judgments": {
+        "criticalPerfect": 434,
+        "perfect": 197,
+        "great": 14,
+        "good": 1,
+        "miss": 0
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 21,
+          "perfect": 10,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 252,
+          "perfect": 175,
+          "great": 11,
+          "good": 1,
+          "miss": 0
+        },
+        "hold": {
+          "criticalPerfect": 29,
+          "perfect": 12,
+          "great": 2,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 101,
+          "perfect": 0,
+          "great": 1,
+          "good": 0,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 31,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 22,
+      "slow": 3,
+      "id": "aopYj4gzXnV1oWvlROb737NQ2CtgEW-OBRDGvm42hUA",
+      "chartId": "song-52e03f4cfc5d-dx-re-master"
+    },
+    {
       "playedAt": "2026-05-21T23:55:17.000Z",
       "songTitle": "人マニア",
       "chartType": "DX",
@@ -3119,6 +3779,66 @@
       "fast": 19,
       "slow": 11,
       "id": "DSQGTGxZ5uk8anUIDsaNssD4tgAUtHgr6-AxgrBf_Rc",
+      "chartId": "song-2f64638892ab-dx-master"
+    },
+    {
+      "playedAt": "2026-05-21T23:55:17.000Z",
+      "songTitle": "人マニア",
+      "chartType": "DX",
+      "difficulty": "MASTER",
+      "level": "13+",
+      "achievement": 100.6093,
+      "combo": "FC",
+      "sync": "None",
+      "rating": 15043,
+      "ratingChange": 11,
+      "judgments": {
+        "criticalPerfect": 599,
+        "perfect": 173,
+        "great": 9,
+        "good": 2,
+        "miss": 0
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 53,
+          "perfect": 19,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 264,
+          "perfect": 149,
+          "great": 8,
+          "good": 1,
+          "miss": 0
+        },
+        "hold": {
+          "criticalPerfect": 20,
+          "perfect": 5,
+          "great": 1,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 94,
+          "perfect": 0,
+          "great": 0,
+          "good": 1,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 168,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 19,
+      "slow": 11,
+      "id": "MSqEfh0I66Z1Gl5p7I2tazq3aaur8qAEdnK3oYMe7FI",
       "chartId": "song-2f64638892ab-dx-master"
     },
     {
@@ -3482,6 +4202,66 @@
       "chartId": "song-e55f5c1d041d-dx-master"
     },
     {
+      "playedAt": "2026-07-25T04:06:43.000Z",
+      "songTitle": "Mystic Parade",
+      "chartType": "DX",
+      "difficulty": "MASTER",
+      "level": "13",
+      "achievement": 100.0357,
+      "combo": "FC",
+      "sync": "FS",
+      "rating": 15120,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 530,
+        "perfect": 333,
+        "great": 32,
+        "good": 1,
+        "miss": 0
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 51,
+          "perfect": 9,
+          "great": 2,
+          "good": 1,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 352,
+          "perfect": 300,
+          "great": 29,
+          "good": 0,
+          "miss": 0
+        },
+        "hold": {
+          "criticalPerfect": 21,
+          "perfect": 24,
+          "great": 1,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 82,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 24,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 40,
+      "slow": 2,
+      "id": "H2oR9J0avjRLPN90nWcqN024aAWs2LiNlxgFjJ6CtX8",
+      "chartId": "song-e55f5c1d041d-dx-master"
+    },
+    {
       "playedAt": "2026-07-25T04:25:41.000Z",
       "songTitle": "どんぐりGAME",
       "chartType": "DX",
@@ -3539,6 +4319,66 @@
       "fast": 15,
       "slow": 2,
       "id": "lbNbhq2fl6fh8ajiWEnnFHciRbTegUSlQDbwSYp14JQ",
+      "chartId": "song-2322d2fdf93d-dx-master"
+    },
+    {
+      "playedAt": "2026-07-25T04:25:41.000Z",
+      "songTitle": "どんぐりGAME",
+      "chartType": "DX",
+      "difficulty": "MASTER",
+      "level": "13+",
+      "achievement": 100.6323,
+      "combo": "FC",
+      "sync": "None",
+      "rating": 15131,
+      "ratingChange": 11,
+      "judgments": {
+        "criticalPerfect": 466,
+        "perfect": 131,
+        "great": 10,
+        "good": 1,
+        "miss": 0
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 17,
+          "perfect": 6,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 197,
+          "perfect": 120,
+          "great": 8,
+          "good": 1,
+          "miss": 0
+        },
+        "hold": {
+          "criticalPerfect": 8,
+          "perfect": 5,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 187,
+          "perfect": 0,
+          "great": 2,
+          "good": 0,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 57,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 15,
+      "slow": 2,
+      "id": "k572JzER9qng03V2e-S4-0jzzYtOYbY2xcuSG-9Omv0",
       "chartId": "song-2322d2fdf93d-dx-master"
     },
     {
@@ -3600,6 +4440,66 @@
           "miss": 0
         }
       }
+    },
+    {
+      "playedAt": "2026-07-25T05:34:16.000Z",
+      "songTitle": "愛♡スクリ～ム！",
+      "chartType": "DX",
+      "difficulty": "MASTER",
+      "level": "11",
+      "achievement": 100.9767,
+      "combo": "AP",
+      "sync": "None",
+      "rating": 15138,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 458,
+        "perfect": 82,
+        "great": 0,
+        "good": 0,
+        "miss": 0
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 39,
+          "perfect": 4,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 258,
+          "perfect": 70,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "hold": {
+          "criticalPerfect": 28,
+          "perfect": 8,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 86,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 47,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 2,
+      "slow": 2,
+      "id": "wewQGh_a9n3hf8TWzNgZRCOdW4RGewQVxlvX0LCaYeI",
+      "chartId": "song-067df9d0eb73-dx-master"
     },
     {
       "playedAt": "2026-07-28T02:00:07.000Z",
@@ -3722,6 +4622,66 @@
       "chartId": "song-c034ac69d6d8-dx-master"
     },
     {
+      "playedAt": "2026-08-06T03:11:42.000Z",
+      "songTitle": "エンジェル ドリーム",
+      "chartType": "DX",
+      "difficulty": "MASTER",
+      "level": "13+",
+      "achievement": 100.4199,
+      "combo": "Clear",
+      "sync": "None",
+      "rating": 15186,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 545,
+        "perfect": 274,
+        "great": 8,
+        "good": 6,
+        "miss": 1
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 43,
+          "perfect": 18,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 344,
+          "perfect": 234,
+          "great": 8,
+          "good": 5,
+          "miss": 1
+        },
+        "hold": {
+          "criticalPerfect": 34,
+          "perfect": 22,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 100,
+          "perfect": 0,
+          "great": 0,
+          "good": 1,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 24,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 19,
+      "slow": 13,
+      "id": "5dqEP2hnIbDIvJG0eNkZjc75DCMVcXJx3nJpbM-IeTY",
+      "chartId": "song-c034ac69d6d8-dx-master"
+    },
+    {
       "playedAt": "2026-08-06T03:29:57.000Z",
       "songTitle": "エンジェル ドリーム",
       "chartType": "DX",
@@ -3779,6 +4739,66 @@
       "fast": 18,
       "slow": 10,
       "id": "AJbY5307vUVgP11bsy_68U6ExTzzlUGRBUIXRszfPBg",
+      "chartId": "song-c034ac69d6d8-dx-master"
+    },
+    {
+      "playedAt": "2026-08-06T03:29:57.000Z",
+      "songTitle": "エンジェル ドリーム",
+      "chartType": "DX",
+      "difficulty": "MASTER",
+      "level": "13+",
+      "achievement": 100.6601,
+      "combo": "FC",
+      "sync": "None",
+      "rating": 15198,
+      "ratingChange": 12,
+      "judgments": {
+        "criticalPerfect": 582,
+        "perfect": 241,
+        "great": 9,
+        "good": 2,
+        "miss": 0
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 44,
+          "perfect": 17,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 371,
+          "perfect": 212,
+          "great": 8,
+          "good": 1,
+          "miss": 0
+        },
+        "hold": {
+          "criticalPerfect": 42,
+          "perfect": 12,
+          "great": 1,
+          "good": 1,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 101,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 24,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 18,
+      "slow": 10,
+      "id": "AKQA3kR4H5trShkCEV6txKQoCtMDEfyu0UuY_t6YLCk",
       "chartId": "song-c034ac69d6d8-dx-master"
     },
     {
@@ -3900,6 +4920,606 @@
       "slow": 9,
       "id": "teAVpE8ep1iomn9oREtd7egrft1d_2Ft7W_lWIbL_PU",
       "chartId": "song-e55f5c1d041d-dx-master"
+    },
+    {
+      "playedAt": "2026-08-14T23:50:25.000Z",
+      "songTitle": "Unwelcome School",
+      "chartType": "DX",
+      "difficulty": "EXPERT",
+      "level": "10+",
+      "achievement": 100.8653,
+      "combo": "AP",
+      "sync": "None",
+      "rating": 15202,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 372,
+        "perfect": 107,
+        "great": 0,
+        "good": 0,
+        "miss": 0
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 6,
+          "perfect": 7,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 240,
+          "perfect": 86,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "hold": {
+          "criticalPerfect": 62,
+          "perfect": 14,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 48,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 16,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 5,
+      "slow": 2,
+      "id": "aUOmsd0NT1V0quoEOnjXJaGTeaUrn6EnZvMA2Ru3zYw",
+      "chartId": "song-62ffd18e0b91-dx-expert"
+    },
+    {
+      "playedAt": "2026-08-14T23:57:48.000Z",
+      "songTitle": "ゆけむり魂温泉 II",
+      "chartType": "DX",
+      "difficulty": "MASTER",
+      "level": "13+",
+      "achievement": 100.4047,
+      "combo": "FC",
+      "sync": "None",
+      "rating": 15202,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 603,
+        "perfect": 289,
+        "great": 9,
+        "good": 4,
+        "miss": 0
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 43,
+          "perfect": 24,
+          "great": 0,
+          "good": 1,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 429,
+          "perfect": 242,
+          "great": 8,
+          "good": 3,
+          "miss": 0
+        },
+        "hold": {
+          "criticalPerfect": 31,
+          "perfect": 23,
+          "great": 1,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 74,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 26,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 9,
+      "slow": 28,
+      "id": "4fE4SFN74lXecIPMtaRjSVJWE7mQ0RyRrkJc6zTrz00",
+      "chartId": "song-97aadb9a4e53-dx-master"
+    },
+    {
+      "playedAt": "2026-08-15T00:03:27.000Z",
+      "songTitle": "ゆけむり魂温泉 II",
+      "chartType": "DX",
+      "difficulty": "MASTER",
+      "level": "13+",
+      "achievement": 100.8053,
+      "combo": "FC+",
+      "sync": "None",
+      "rating": 15209,
+      "ratingChange": 7,
+      "judgments": {
+        "criticalPerfect": 651,
+        "perfect": 250,
+        "great": 4,
+        "good": 0,
+        "miss": 0
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 51,
+          "perfect": 16,
+          "great": 1,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 460,
+          "perfect": 219,
+          "great": 3,
+          "good": 0,
+          "miss": 0
+        },
+        "hold": {
+          "criticalPerfect": 40,
+          "perfect": 15,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 74,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 26,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 7,
+      "slow": 13,
+      "id": "gUPgTxk9ymeGyOL6SdRKcXALixifAH5W7DMNvsPQJ-4",
+      "chartId": "song-97aadb9a4e53-dx-master"
+    },
+    {
+      "playedAt": "2026-08-15T00:38:56.000Z",
+      "songTitle": "どんぐりGAME",
+      "chartType": "DX",
+      "difficulty": "MASTER",
+      "level": "13+",
+      "achievement": 100.729,
+      "combo": "FC",
+      "sync": "None",
+      "rating": 15209,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 473,
+        "perfect": 127,
+        "great": 6,
+        "good": 2,
+        "miss": 0
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 20,
+          "perfect": 3,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 197,
+          "perfect": 122,
+          "great": 5,
+          "good": 2,
+          "miss": 0
+        },
+        "hold": {
+          "criticalPerfect": 11,
+          "perfect": 2,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 188,
+          "perfect": 0,
+          "great": 1,
+          "good": 0,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 57,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 9,
+      "slow": 2,
+      "id": "5OJ9V7mPuV8LaMVIX-GXMb8WHmPpDRiuz_Fe9DSCd6c",
+      "chartId": "song-2322d2fdf93d-dx-master"
+    },
+    {
+      "playedAt": "2026-08-15T00:47:14.000Z",
+      "songTitle": "OMAKENO Stroke",
+      "chartType": "DX",
+      "difficulty": "MASTER",
+      "level": "13+",
+      "achievement": 100.2669,
+      "combo": "FC",
+      "sync": "None",
+      "rating": 15209,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 520,
+        "perfect": 193,
+        "great": 12,
+        "good": 4,
+        "miss": 0
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 24,
+          "perfect": 8,
+          "great": 0,
+          "good": 1,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 323,
+          "perfect": 178,
+          "great": 12,
+          "good": 3,
+          "miss": 0
+        },
+        "hold": {
+          "criticalPerfect": 28,
+          "perfect": 7,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 88,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 57,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 19,
+      "slow": 5,
+      "id": "20qg5inatgt0CoSlHZCwVAOTvQtloM_M7z1xnkLukK4",
+      "chartId": "song-325196ba308f-dx-master"
+    },
+    {
+      "playedAt": "2026-08-15T00:53:45.000Z",
+      "songTitle": "RE Aoharu",
+      "chartType": "DX",
+      "difficulty": "MASTER",
+      "level": "13+",
+      "achievement": 100.5672,
+      "combo": "FC",
+      "sync": "FS+",
+      "rating": 15209,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 552,
+        "perfect": 162,
+        "great": 15,
+        "good": 3,
+        "miss": 0
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 35,
+          "perfect": 6,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 363,
+          "perfect": 153,
+          "great": 15,
+          "good": 3,
+          "miss": 0
+        },
+        "hold": {
+          "criticalPerfect": 13,
+          "perfect": 3,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 112,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 29,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 16,
+      "slow": 8,
+      "id": "e9z5xlle1Y7BkeNB8wFeDWCA2xUoJdPe2Ei7BlijmsE",
+      "chartId": "song-32642cb2835b-dx-master"
+    },
+    {
+      "playedAt": "2026-08-15T01:30:25.000Z",
+      "songTitle": "エゴロック",
+      "chartType": "DX",
+      "difficulty": "EXPERT",
+      "level": "10",
+      "achievement": 100.8321,
+      "combo": "FC+",
+      "sync": "None",
+      "rating": 15209,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 347,
+        "perfect": 117,
+        "great": 2,
+        "good": 0,
+        "miss": 0
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 15,
+          "perfect": 9,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 261,
+          "perfect": 104,
+          "great": 2,
+          "good": 0,
+          "miss": 0
+        },
+        "hold": {
+          "criticalPerfect": 26,
+          "perfect": 4,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 18,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 27,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 0,
+      "slow": 11,
+      "id": "1uLRndM9yIplLF4MvOMRWiyG9BX2zLQjl6etC4f9U0o",
+      "chartId": "song-4f39f6af9e43-dx-expert"
+    },
+    {
+      "playedAt": "2026-08-15T01:45:37.000Z",
+      "songTitle": "POWER OF UNITY",
+      "chartType": "DX",
+      "difficulty": "MASTER",
+      "level": "13+",
+      "achievement": 98.9338,
+      "combo": "Clear",
+      "sync": "None",
+      "rating": 15209,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 559,
+        "perfect": 305,
+        "great": 37,
+        "good": 10,
+        "miss": 2
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 43,
+          "perfect": 30,
+          "great": 6,
+          "good": 1,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 340,
+          "perfect": 270,
+          "great": 31,
+          "good": 9,
+          "miss": 1
+        },
+        "hold": {
+          "criticalPerfect": 10,
+          "perfect": 5,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 92,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 1
+        },
+        "touch": {
+          "criticalPerfect": 74,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 44,
+      "slow": 33,
+      "id": "N83NH6q1dHOQw95-jXLjrTA4OppRhuC5gkVBZoJM6zE",
+      "chartId": "song-215555e704fd-dx-master"
+    },
+    {
+      "playedAt": "2026-08-15T01:56:02.000Z",
+      "songTitle": "OMAKENO Stroke",
+      "chartType": "DX",
+      "difficulty": "MASTER",
+      "level": "13+",
+      "achievement": 100.8612,
+      "combo": "FC+",
+      "sync": "None",
+      "rating": 15209,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 573,
+        "perfect": 151,
+        "great": 5,
+        "good": 0,
+        "miss": 0
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 28,
+          "perfect": 5,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 375,
+          "perfect": 136,
+          "great": 5,
+          "good": 0,
+          "miss": 0
+        },
+        "hold": {
+          "criticalPerfect": 25,
+          "perfect": 10,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 88,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 57,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 5,
+      "slow": 5,
+      "id": "U2sY9QhJ99Q85R8sQ2I96nbzuQKE0vYfnPEeIOsvpK4",
+      "chartId": "song-325196ba308f-dx-master"
+    },
+    {
+      "playedAt": "2026-08-15T02:55:24.000Z",
+      "songTitle": "命テステス",
+      "chartType": "DX",
+      "difficulty": "MASTER",
+      "level": "13+",
+      "achievement": 99.1856,
+      "combo": "Clear",
+      "sync": "None",
+      "rating": 15209,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 346,
+        "perfect": 134,
+        "great": 20,
+        "good": 8,
+        "miss": 1
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 4,
+          "perfect": 3,
+          "great": 1,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 149,
+          "perfect": 120,
+          "great": 12,
+          "good": 7,
+          "miss": 1
+        },
+        "hold": {
+          "criticalPerfect": 19,
+          "perfect": 11,
+          "great": 3,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 103,
+          "perfect": 0,
+          "great": 4,
+          "good": 1,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 71,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 18,
+      "slow": 13,
+      "id": "VfGgrVRmI2FxO6_z64i7F9nGYuIzuFqKzOs7KZpFtbk",
+      "chartId": "song-db821594b039-dx-master"
     }
   ]
 }

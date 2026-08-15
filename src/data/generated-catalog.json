@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-12T10:20:00.201Z",
+  "generatedAt": "2026-08-15T19:24:57.822Z",
   "songs": [
     {
       "id": "song-85572925973b",
@@ -575,6 +575,205 @@
               "level": "13+",
               "chartConstant": 13.7,
               "charter": "鳩ホルダー"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "song-325196ba308f",
+      "titles": {
+        "canonical": "OMAKENO Stroke",
+        "kana": [],
+        "romaji": [],
+        "english": [],
+        "aliases": []
+      },
+      "artist": "t+pazolite",
+      "jacketKey": "jackets/song-325196ba308f-2e27c51d6a51.png",
+      "versions": [
+        {
+          "id": "song-325196ba308f-dx",
+          "chartType": "DX",
+          "charts": [
+            {
+              "id": "song-325196ba308f-dx-basic",
+              "difficulty": "BASIC",
+              "level": "5",
+              "chartConstant": 5,
+              "charter": null
+            },
+            {
+              "id": "song-325196ba308f-dx-advanced",
+              "difficulty": "ADVANCED",
+              "level": "8",
+              "chartConstant": 8,
+              "charter": null
+            },
+            {
+              "id": "song-325196ba308f-dx-expert",
+              "difficulty": "EXPERT",
+              "level": "11+",
+              "chartConstant": 11.9,
+              "charter": "アマリリス"
+            },
+            {
+              "id": "song-325196ba308f-dx-master",
+              "difficulty": "MASTER",
+              "level": "13+",
+              "chartConstant": 13.8,
+              "charter": "Luxizhel"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "song-215555e704fd",
+      "titles": {
+        "canonical": "POWER OF UNITY",
+        "kana": [],
+        "romaji": [],
+        "english": [],
+        "aliases": []
+      },
+      "artist": "Zekk",
+      "jacketKey": "jackets/song-215555e704fd-ac649c38f888.png",
+      "versions": [
+        {
+          "id": "song-215555e704fd-dx",
+          "chartType": "DX",
+          "charts": [
+            {
+              "id": "song-215555e704fd-dx-basic",
+              "difficulty": "BASIC",
+              "level": "5",
+              "chartConstant": 5,
+              "charter": null
+            },
+            {
+              "id": "song-215555e704fd-dx-advanced",
+              "difficulty": "ADVANCED",
+              "level": "8",
+              "chartConstant": 8.2,
+              "charter": null
+            },
+            {
+              "id": "song-215555e704fd-dx-expert",
+              "difficulty": "EXPERT",
+              "level": "12",
+              "chartConstant": 12,
+              "charter": "鳩ホルダー"
+            },
+            {
+              "id": "song-215555e704fd-dx-master",
+              "difficulty": "MASTER",
+              "level": "13+",
+              "chartConstant": 13.8,
+              "charter": "Jack"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "song-32642cb2835b",
+      "titles": {
+        "canonical": "RE Aoharu",
+        "kana": [],
+        "romaji": [],
+        "english": [],
+        "aliases": []
+      },
+      "artist": "Nor「ブルーアーカイブ -Blue Archive-」",
+      "jacketKey": "jackets/song-32642cb2835b-c9f7310b59f6.png",
+      "versions": [
+        {
+          "id": "song-32642cb2835b-dx",
+          "chartType": "DX",
+          "charts": [
+            {
+              "id": "song-32642cb2835b-dx-basic",
+              "difficulty": "BASIC",
+              "level": "3",
+              "chartConstant": null,
+              "charter": null
+            },
+            {
+              "id": "song-32642cb2835b-dx-advanced",
+              "difficulty": "ADVANCED",
+              "level": "7",
+              "chartConstant": null,
+              "charter": null
+            },
+            {
+              "id": "song-32642cb2835b-dx-expert",
+              "difficulty": "EXPERT",
+              "level": "10+",
+              "chartConstant": null,
+              "charter": null
+            },
+            {
+              "id": "song-32642cb2835b-dx-master",
+              "difficulty": "MASTER",
+              "level": "13+",
+              "chartConstant": null,
+              "charter": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "song-62ffd18e0b91",
+      "titles": {
+        "canonical": "Unwelcome School",
+        "kana": [],
+        "romaji": [],
+        "english": [],
+        "aliases": []
+      },
+      "artist": "Mitsukiyo「ブルーアーカイブ -Blue Archive-」",
+      "jacketKey": "jackets/song-62ffd18e0b91-cd821c112561.png",
+      "versions": [
+        {
+          "id": "song-62ffd18e0b91-dx",
+          "chartType": "DX",
+          "charts": [
+            {
+              "id": "song-62ffd18e0b91-dx-basic",
+              "difficulty": "BASIC",
+              "level": "4",
+              "chartConstant": null,
+              "charter": null
+            },
+            {
+              "id": "song-62ffd18e0b91-dx-advanced",
+              "difficulty": "ADVANCED",
+              "level": "7",
+              "chartConstant": null,
+              "charter": null
+            },
+            {
+              "id": "song-62ffd18e0b91-dx-expert",
+              "difficulty": "EXPERT",
+              "level": "10+",
+              "chartConstant": null,
+              "charter": null
+            },
+            {
+              "id": "song-62ffd18e0b91-dx-master",
+              "difficulty": "MASTER",
+              "level": "12",
+              "chartConstant": null,
+              "charter": null
+            },
+            {
+              "id": "song-62ffd18e0b91-dx-re-master",
+              "difficulty": "Re:MASTER",
+              "level": "14",
+              "chartConstant": null,
+              "charter": null
             }
           ]
         }
@@ -1179,6 +1378,54 @@
       ]
     },
     {
+      "id": "song-97aadb9a4e53",
+      "titles": {
+        "canonical": "ゆけむり魂温泉 II",
+        "kana": [],
+        "romaji": [],
+        "english": [],
+        "aliases": []
+      },
+      "artist": "魂音泉",
+      "jacketKey": "jackets/song-97aadb9a4e53-2583cc02a574.png",
+      "versions": [
+        {
+          "id": "song-97aadb9a4e53-dx",
+          "chartType": "DX",
+          "charts": [
+            {
+              "id": "song-97aadb9a4e53-dx-basic",
+              "difficulty": "BASIC",
+              "level": "4",
+              "chartConstant": 4,
+              "charter": null
+            },
+            {
+              "id": "song-97aadb9a4e53-dx-advanced",
+              "difficulty": "ADVANCED",
+              "level": "6",
+              "chartConstant": 6,
+              "charter": null
+            },
+            {
+              "id": "song-97aadb9a4e53-dx-expert",
+              "difficulty": "EXPERT",
+              "level": "10",
+              "chartConstant": 10.2,
+              "charter": "Luxizhel"
+            },
+            {
+              "id": "song-97aadb9a4e53-dx-master",
+              "difficulty": "MASTER",
+              "level": "13+",
+              "chartConstant": 13.7,
+              "charter": "7.3Hz＋Jack"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "song-2f64638892ab",
       "titles": {
         "canonical": "人マニア",
@@ -1225,6 +1472,54 @@
               "level": "13+",
               "chartConstant": 13.7,
               "charter": "はっぴー"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "song-db821594b039",
+      "titles": {
+        "canonical": "命テステス",
+        "kana": [],
+        "romaji": [],
+        "english": [],
+        "aliases": []
+      },
+      "artist": "ぱりぱりさらうどん",
+      "jacketKey": "jackets/song-db821594b039-b4f1c5c65e7f.png",
+      "versions": [
+        {
+          "id": "song-db821594b039-dx",
+          "chartType": "DX",
+          "charts": [
+            {
+              "id": "song-db821594b039-dx-basic",
+              "difficulty": "BASIC",
+              "level": "3",
+              "chartConstant": null,
+              "charter": null
+            },
+            {
+              "id": "song-db821594b039-dx-advanced",
+              "difficulty": "ADVANCED",
+              "level": "8",
+              "chartConstant": null,
+              "charter": null
+            },
+            {
+              "id": "song-db821594b039-dx-expert",
+              "difficulty": "EXPERT",
+              "level": "11",
+              "chartConstant": null,
+              "charter": null
+            },
+            {
+              "id": "song-db821594b039-dx-master",
+              "difficulty": "MASTER",
+              "level": "13+",
+              "chartConstant": null,
+              "charter": null
             }
           ]
         }
