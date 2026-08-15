@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-15T19:24:57.834Z",
+  "updatedAt": "2026-08-15T19:36:15.273Z",
   "scores": [
     {
       "playedAt": "2025-11-10T02:30:43.000Z",
@@ -5102,6 +5102,66 @@
       "chartId": "song-97aadb9a4e53-dx-master"
     },
     {
+      "playedAt": "2026-08-15T00:28:32.000Z",
+      "songTitle": "ANiMA",
+      "chartType": "DX",
+      "difficulty": "MASTER",
+      "level": "14+",
+      "achievement": 95.8554,
+      "combo": "Clear",
+      "sync": "None",
+      "rating": 15209,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 498,
+        "perfect": 268,
+        "great": 123,
+        "good": 43,
+        "miss": 12
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 81,
+          "perfect": 23,
+          "great": 2,
+          "good": 5,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 226,
+          "perfect": 236,
+          "great": 114,
+          "good": 35,
+          "miss": 11
+        },
+        "hold": {
+          "criticalPerfect": 29,
+          "perfect": 9,
+          "great": 7,
+          "good": 2,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 65,
+          "perfect": 0,
+          "great": 0,
+          "good": 1,
+          "miss": 1
+        },
+        "touch": {
+          "criticalPerfect": 97,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 143,
+      "slow": 46,
+      "id": "aI600g9X4VO7RK5B6hDDU_xWQ-8ii1BnCzaXQLcsilI",
+      "chartId": "song-d7d117cd566e-dx-master"
+    },
+    {
       "playedAt": "2026-08-15T00:38:56.000Z",
       "songTitle": "どんぐりGAME",
       "chartType": "DX",
@@ -5280,6 +5340,66 @@
       "slow": 8,
       "id": "e9z5xlle1Y7BkeNB8wFeDWCA2xUoJdPe2Ei7BlijmsE",
       "chartId": "song-32642cb2835b-dx-master"
+    },
+    {
+      "playedAt": "2026-08-15T01:00:07.000Z",
+      "songTitle": "どんぐりGAME",
+      "chartType": "DX",
+      "difficulty": "EXPERT",
+      "level": "10",
+      "achievement": 100.95,
+      "combo": "AP",
+      "sync": "None",
+      "rating": 15209,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 340,
+        "perfect": 80,
+        "great": 0,
+        "good": 0,
+        "miss": 0
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 16,
+          "perfect": 4,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 177,
+          "perfect": 60,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "hold": {
+          "criticalPerfect": 75,
+          "perfect": 16,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 33,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 39,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 2,
+      "slow": 2,
+      "id": "X0spiGN1gB_0QccMPDrsaJXWRfYdxI49nq516ue5SpQ",
+      "chartId": "song-2322d2fdf93d-dx-expert"
     },
     {
       "playedAt": "2026-08-15T01:30:25.000Z",
@@ -5462,6 +5582,126 @@
       "chartId": "song-325196ba308f-dx-master"
     },
     {
+      "playedAt": "2026-08-15T02:32:44.000Z",
+      "songTitle": "Unwelcome School",
+      "chartType": "DX",
+      "difficulty": "Re:MASTER",
+      "level": "14",
+      "achievement": 98.5457,
+      "combo": "Clear",
+      "sync": "None",
+      "rating": 15209,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 594,
+        "perfect": 282,
+        "great": 49,
+        "good": 26,
+        "miss": 9
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 35,
+          "perfect": 13,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 365,
+          "perfect": 262,
+          "great": 46,
+          "good": 24,
+          "miss": 9
+        },
+        "hold": {
+          "criticalPerfect": 10,
+          "perfect": 7,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 147,
+          "perfect": 0,
+          "great": 3,
+          "good": 2,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 37,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 59,
+      "slow": 29,
+      "id": "oXwhOIlU-H90abc4qz8tIuqEfveZwJpdo5tS3MRQLo0",
+      "chartId": "song-62ffd18e0b91-dx-re-master"
+    },
+    {
+      "playedAt": "2026-08-15T02:36:15.000Z",
+      "songTitle": "Last Kingdom",
+      "chartType": "DX",
+      "difficulty": "MASTER",
+      "level": "13+",
+      "achievement": 100.7844,
+      "combo": "FC+",
+      "sync": "None",
+      "rating": 15209,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 624,
+        "perfect": 219,
+        "great": 8,
+        "good": 0,
+        "miss": 0
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 53,
+          "perfect": 21,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 382,
+          "perfect": 173,
+          "great": 7,
+          "good": 0,
+          "miss": 0
+        },
+        "hold": {
+          "criticalPerfect": 72,
+          "perfect": 25,
+          "great": 1,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 64,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 53,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 17,
+      "slow": 12,
+      "id": "dqt_nPGNY2_Wzv-5KJh0ZVhx76He3yWKyO4Z0jYuvBc",
+      "chartId": "song-eba8086f378f-dx-master"
+    },
+    {
       "playedAt": "2026-08-15T02:55:24.000Z",
       "songTitle": "命テステス",
       "chartType": "DX",
@@ -5520,6 +5760,66 @@
       "slow": 13,
       "id": "VfGgrVRmI2FxO6_z64i7F9nGYuIzuFqKzOs7KZpFtbk",
       "chartId": "song-db821594b039-dx-master"
+    },
+    {
+      "playedAt": "2026-08-15T09:08:02.000Z",
+      "songTitle": "Party☆People☆Princess",
+      "chartType": "DX",
+      "difficulty": "EXPERT",
+      "level": "11+",
+      "achievement": 100.8565,
+      "combo": "FC+",
+      "sync": "FDX+",
+      "rating": 15209,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 457,
+        "perfect": 126,
+        "great": 4,
+        "good": 0,
+        "miss": 0
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 43,
+          "perfect": 6,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 255,
+          "perfect": 87,
+          "great": 3,
+          "good": 0,
+          "miss": 0
+        },
+        "hold": {
+          "criticalPerfect": 57,
+          "perfect": 33,
+          "great": 1,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 50,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 52,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 3,
+      "slow": 7,
+      "id": "C-VePwfIZrtBj7YILJDielEevxnYv_2Mw7R9jCBhHa8",
+      "chartId": "song-3d08dd4bc3b8-dx-expert"
     }
   ]
 }

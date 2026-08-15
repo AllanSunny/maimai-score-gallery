@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-15T19:24:57.822Z",
+  "generatedAt": "2026-08-15T19:36:15.261Z",
   "songs": [
     {
       "id": "song-85572925973b",
@@ -98,6 +98,54 @@
               "level": "13+",
               "chartConstant": 13.7,
               "charter": "チャン@DP皆伝"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "song-d7d117cd566e",
+      "titles": {
+        "canonical": "ANiMA",
+        "kana": [],
+        "romaji": [],
+        "english": [],
+        "aliases": []
+      },
+      "artist": "xi",
+      "jacketKey": "jackets/song-d7d117cd566e-98a313c1934c.png",
+      "versions": [
+        {
+          "id": "song-d7d117cd566e-dx",
+          "chartType": "DX",
+          "charts": [
+            {
+              "id": "song-d7d117cd566e-dx-basic",
+              "difficulty": "BASIC",
+              "level": "6",
+              "chartConstant": null,
+              "charter": null
+            },
+            {
+              "id": "song-d7d117cd566e-dx-advanced",
+              "difficulty": "ADVANCED",
+              "level": "8",
+              "chartConstant": null,
+              "charter": null
+            },
+            {
+              "id": "song-d7d117cd566e-dx-expert",
+              "difficulty": "EXPERT",
+              "level": "12+",
+              "chartConstant": null,
+              "charter": null
+            },
+            {
+              "id": "song-d7d117cd566e-dx-master",
+              "difficulty": "MASTER",
+              "level": "14+",
+              "chartConstant": null,
+              "charter": null
             }
           ]
         }
@@ -623,6 +671,54 @@
               "level": "13+",
               "chartConstant": 13.8,
               "charter": "Luxizhel"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "song-3d08dd4bc3b8",
+      "titles": {
+        "canonical": "Party☆People☆Princess",
+        "kana": [],
+        "romaji": [],
+        "english": [],
+        "aliases": []
+      },
+      "artist": "Sound Artz",
+      "jacketKey": "jackets/song-3d08dd4bc3b8-f47dfafb8640.png",
+      "versions": [
+        {
+          "id": "song-3d08dd4bc3b8-dx",
+          "chartType": "DX",
+          "charts": [
+            {
+              "id": "song-3d08dd4bc3b8-dx-basic",
+              "difficulty": "BASIC",
+              "level": "5",
+              "chartConstant": 5,
+              "charter": null
+            },
+            {
+              "id": "song-3d08dd4bc3b8-dx-advanced",
+              "difficulty": "ADVANCED",
+              "level": "7+",
+              "chartConstant": 7.8,
+              "charter": null
+            },
+            {
+              "id": "song-3d08dd4bc3b8-dx-expert",
+              "difficulty": "EXPERT",
+              "level": "11+",
+              "chartConstant": 11.9,
+              "charter": "サファ太"
+            },
+            {
+              "id": "song-3d08dd4bc3b8-dx-master",
+              "difficulty": "MASTER",
+              "level": "14",
+              "chartConstant": 14.3,
+              "charter": "鳩ホルダー & Luxizhel"
             }
           ]
         }
