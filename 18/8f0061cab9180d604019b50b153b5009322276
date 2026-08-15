@@ -1,0 +1,26 @@
+.github/workflows/deploy-pages.yml
+  s_6d06bd4898dc7f::t_189de42a38e2d1 7
+.github/workflows/import-new-scores.yml
+  s_6d06bd4898dc7f::t_189de42a38e2d1 17-18,217-218,234,238,247-252,255
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.22",
+  "base_commit_sha": "188f0061cab9180d604019b50b153b5009322276",
+  "prompts": {},
+  "humans": {
+    "h_278fafc5c28027": {
+      "author": "Allan Sun <allansun@live.com>"
+    }
+  },
+  "sessions": {
+    "s_6d06bd4898dc7f": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019faca2-0a30-75f3-8a51-06f8e9067195",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Allan Sun <allansun@live.com>"
+    }
+  }
+}
