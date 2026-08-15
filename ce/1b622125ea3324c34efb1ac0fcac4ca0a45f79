@@ -1,0 +1,49 @@
+scripts/sync-scores.mjs
+  s_6d06bd4898dc7f::t_d14e594525dfb6 76-78
+  s_6d06bd4898dc7f::t_539ef88c7a7b3c 16-26,29
+src/pages/ChartDetailPage.tsx
+  s_6d06bd4898dc7f::t_f91d72117ea20a 47
+src/pages/ScoreListPage.tsx
+  s_6d06bd4898dc7f::t_539ef88c7a7b3c 186
+  s_6d06bd4898dc7f::t_f91d72117ea20a 6-7,10,46-53,56,91,114
+src/catalog.ts
+  s_6d06bd4898dc7f::t_f91d72117ea20a 3,30
+src/components/song/SongInfo.tsx
+  s_6d06bd4898dc7f::t_539ef88c7a7b3c 2-3,14,28-30
+scripts/sync-catalog.mjs
+  s_6d06bd4898dc7f::t_0fb9b22330307c 52,59-89,139,144-145,155,158-163,172,180,265-266,268,291,425-427,448,466,480
+src/data/overrides.json
+  s_6d06bd4898dc7f::t_539ef88c7a7b3c 4-9,14-21
+src/data/generated-catalog.json
+  s_6d06bd4898dc7f::t_2dc356478501f7 6-7,11-14,16-18,60-66,108-114,156-162,204-205,209-212,254-260,302-308,350-358,400-406,482-488,530-536,585-586,590-595,637-638,643,647,689-690,694-699,741-742,746-751,793-794,798-803,845-853,895-896,900-905,954-955,959-964,1013-1014,1018-1023,1065-1066,1070-1075,1124-1125,1129-1134,1183-1184,1188-1193,1235-1236,1240-1245,1294-1295,1299-1306,1355-1356,1360-1369
+  s_6d06bd4898dc7f::t_736280dbfd20da 8-10,206-208,587-589,639-641,691-693,743-745,795-797,897-899,956-958,1015-1017,1067-1069,1126-1128,1185-1187,1237-1239,1296-1298,1357-1359
+  s_6d06bd4898dc7f::t_5fcbf66214633d 15,642,644-646
+src/data-validation.ts
+  s_6d06bd4898dc7f::t_d14e594525dfb6 46,49-55
+  s_6d06bd4898dc7f::t_f91d72117ea20a 43-45,47-48,56-59,83
+src/types.ts
+  s_6d06bd4898dc7f::t_f91d72117ea20a 18-25,28
+src/song-titles.ts
+  s_6d06bd4898dc7f::t_f91d72117ea20a 1-11
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.22",
+  "base_commit_sha": "ce1b622125ea3324c34efb1ac0fcac4ca0a45f79",
+  "prompts": {},
+  "humans": {
+    "h_278fafc5c28027": {
+      "author": "Allan Sun <allansun@live.com>"
+    }
+  },
+  "sessions": {
+    "s_6d06bd4898dc7f": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019faca2-0a30-75f3-8a51-06f8e9067195",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Allan Sun <allansun@live.com>"
+    }
+  }
+}
