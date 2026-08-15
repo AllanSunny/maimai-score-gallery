@@ -1,0 +1,14 @@
+scripts/lib/openai-score-ocr.mjs
+  h_278fafc5c28027 83
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.22",
+  "base_commit_sha": "bfa13d692fd39bf22696600f30ff635f16c29624",
+  "prompts": {},
+  "humans": {
+    "h_278fafc5c28027": {
+      "author": "Allan Sun <allansun@live.com>"
+    }
+  }
+}
