@@ -192,7 +192,7 @@ export async function readScoreSheet() {
   return (await readScoreSheetWithRows()).map(({ score }) => score);
 }
 
-async function readScoreSheetWithRows() {
+export async function readScoreSheetWithRows() {
   const spreadsheetId = requiredEnvironment("GOOGLE_SPREADSHEET_ID");
   const sheetName = requiredEnvironment("GOOGLE_SHEET_NAME");
   const { sheets } = await createGoogleClients(GOOGLE_SCOPES.readonly);

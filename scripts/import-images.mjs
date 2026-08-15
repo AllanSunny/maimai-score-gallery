@@ -14,6 +14,7 @@ import {
 import { createReviewQueue, REVIEW_STATUSES } from "./lib/review-queue.mjs";
 import { proposedScoreRecord } from "./lib/score-import-record.mjs";
 import { createScoreSheetWriter } from "./lib/score-sheet-writer.mjs";
+import { readScoreSheetWithRows } from "./lib/sheet-scores.mjs";
 import { createSongTitleResolver } from "./lib/song-title-resolver.mjs";
 
 function argumentsFrom(commandLine) {
@@ -78,9 +79,13 @@ async function main() {
   const timeZone = process.env.SCORE_CAPTURE_TIME_ZONE?.trim() || "America/New_York";
   const drive = await createDriveImageStore();
   const resolver = createSongTitleResolver();
-  const [importLog, scoreWriter, reviewQueue] = await Promise.all([
-    createImportLog(), createScoreSheetWriter(), createReviewQueue(),
+  const [importLog, scoreWriter, reviewQueue, existingScoreRows] = await Promise.all([
+    createImportLog(), createScoreSheetWriter(), createReviewQueue(), readScoreSheetWithRows(),
   ]);
+  const existingScoresByFingerprint = new Map(existingScoreRows.map(({ rowNumber, score }) => [
+    scoreFingerprint(score),
+    { canonicalTitle: score.songTitle, captureTime: score.playedAt, spreadsheetRow: rowNumber },
+  ]));
   const files = await drive.listIncoming();
   const results = [];
   let actionCount = 0;
@@ -247,8 +252,11 @@ async function main() {
       const fingerprint = scoreFingerprint(proposedScore);
       result.scoreFingerprint = fingerprint;
       {
-        const duplicate = await importLog.findSuccessfulByScoreFingerprint(fingerprint);
-        if (duplicate && duplicate.driveFileId !== file.id) {
+        const loggedDuplicate = await importLog.findSuccessfulByScoreFingerprint(fingerprint);
+        const duplicate = loggedDuplicate && loggedDuplicate.driveFileId !== file.id
+          ? loggedDuplicate
+          : existingScoresByFingerprint.get(fingerprint);
+        if (duplicate) {
           await importLog.markDuplicate(result.importLogRow, duplicate, sourceHash);
           committed = true;
           result.spreadsheetRow = duplicate.spreadsheetRow;
@@ -265,6 +273,11 @@ async function main() {
         result.spreadsheetRow = await scoreWriter.append(proposedScore, {
           rowNumber: result.importLogRow,
           scoreFingerprint: fingerprint,
+        });
+        existingScoresByFingerprint.set(fingerprint, {
+          canonicalTitle: proposedScore.songTitle,
+          captureTime: proposedScore.playedAt,
+          spreadsheetRow: result.spreadsheetRow,
         });
         committed = true;
         result.status = "imported";

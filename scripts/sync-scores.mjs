@@ -1,5 +1,6 @@
 import { readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
+import { scoreFingerprint as scoreIdentityFingerprint } from "./lib/import-fingerprints.mjs";
 import { readScoreSheet } from "./lib/sheet-scores.mjs";
 
 const ARCHIVE_PATH = path.join(process.cwd(), "src", "data", "generated-scores.json");
@@ -28,14 +29,17 @@ function findChartId(score, songs) {
   return version?.charts.find((chart) => chart.difficulty === score.difficulty)?.id ?? null;
 }
 
-function scoreFingerprint(score) {
+function storedScoreFingerprint(score) {
   const {
     id: _id,
     chartId: _chartId,
     judgmentsByType: _judgmentsByType,
     ...publicScore
   } = score;
-  return JSON.stringify(publicScore);
+  return JSON.stringify({
+    ...publicScore,
+    achievement: Number(Number(publicScore.achievement).toFixed(4)),
+  });
 }
 
 function storedScore(score, chartId) {
@@ -50,28 +54,38 @@ async function main() {
   ]);
   const feed = { scores: sheetScores };
 
-  const archivedByFingerprint = new Map(archive.scores.map((score, index) => [scoreFingerprint(score), index]));
+  const uniqueArchivedScores = [];
+  const archivedIdentities = new Set();
+  archive.scores.forEach((score) => {
+    const identity = scoreIdentityFingerprint(score);
+    if (archivedIdentities.has(identity)) return;
+    archivedIdentities.add(identity);
+    uniqueArchivedScores.push(score);
+  });
+  const archivedByFingerprint = new Map(uniqueArchivedScores
+    .map((score, index) => [storedScoreFingerprint(score), index]));
   const additions = [];
 
   feed.scores.forEach((score) => {
     if (!score.id) return;
-    const fingerprint = scoreFingerprint(score);
+    const fingerprint = storedScoreFingerprint(score);
     const existingIndex = archivedByFingerprint.get(fingerprint);
     if (existingIndex !== undefined) return;
-    archivedByFingerprint.set(fingerprint, archive.scores.length + additions.length);
+    archivedByFingerprint.set(fingerprint, uniqueArchivedScores.length + additions.length);
     additions.push(storedScore(score, findChartId(score, catalog.songs)));
   });
 
-  if (!additions.length) {
+  const duplicatesRemoved = archive.scores.length - uniqueArchivedScores.length;
+  if (!additions.length && duplicatesRemoved === 0) {
     console.log(`Score archive is current (${archive.scores.length} plays).`);
     return;
   }
 
-  const scores = [...archive.scores, ...additions]
+  const scores = [...uniqueArchivedScores, ...additions]
     .sort((a, b) => a.playedAt.localeCompare(b.playedAt));
   const nextArchive = { updatedAt: new Date().toISOString(), scores };
   await writeFile(ARCHIVE_PATH, `${JSON.stringify(nextArchive, null, 2)}\n`);
-  console.log(`Archived ${additions.length} new play(s); ${scores.length} total.`);
+  console.log(`Archived ${additions.length} new play(s), removed ${duplicatesRemoved} duplicate(s); ${scores.length} total.`);
 }
 
 main().catch((error) => {

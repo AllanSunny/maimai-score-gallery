@@ -19,3 +19,21 @@ test("score fingerprint ignores non-identity judgment details", () => {
   assert.equal(scoreFingerprint(score), scoreFingerprint({ ...score, judgments: { great: 1 } }));
   assert.notEqual(scoreFingerprint(score), scoreFingerprint({ ...score, achievement: 100.9 }));
 });
+
+test("score fingerprint normalizes display-equivalent score identities", () => {
+  const score = {
+    playedAt: "2026-03-11T00:05:03.000Z",
+    songTitle: "enchanted wanderer",
+    chartType: "DX",
+    difficulty: "MASTER",
+    achievement: 100.02029999999999,
+  };
+  assert.equal(scoreFingerprint(score), scoreFingerprint({
+    ...score,
+    playedAt: "2026-03-11T00:05:03Z",
+    songTitle: "Enchanted   Wanderer",
+    chartType: "dx",
+    difficulty: "master",
+    achievement: 100.0203,
+  }));
+});

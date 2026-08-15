@@ -175,6 +175,9 @@ export async function createImportLog() {
     },
 
     async markDuplicate(rowNumber, duplicate, sourceHash) {
+      const duplicateDescription = duplicate.driveFileId
+        ? `Duplicate of Drive file ${duplicate.driveFileId}`
+        : `Duplicate of existing spreadsheet row ${duplicate.spreadsheetRow}`;
       await sheets.spreadsheets.values.update({
         spreadsheetId,
         range: `${quotedSheetName()}!C${rowNumber}:J${rowNumber}`,
@@ -185,7 +188,7 @@ export async function createImportLog() {
           duplicate.spreadsheetRow,
           "DUPLICATE",
           new Date().toISOString(),
-          `Duplicate of Drive file ${duplicate.driveFileId}`,
+          duplicateDescription,
           sourceHash,
           duplicate.scoreFingerprint,
         ]] },
