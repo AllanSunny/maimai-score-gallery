@@ -1,0 +1,28 @@
+scripts/lib/score-sheet-writer.mjs
+  s_6d06bd4898dc7f::t_f1c8c4a11c1dea 1-148
+scripts/lib/score-sheet-writer.test.mjs
+  s_6d06bd4898dc7f::t_f1c8c4a11c1dea 1-30
+scripts/lib/import-log.mjs
+  s_6d06bd4898dc7f::t_f1c8c4a11c1dea 1-130
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.22",
+  "base_commit_sha": "6e8c49e7367bb9b32c432215a0a7d91e2babff66",
+  "prompts": {},
+  "humans": {
+    "h_278fafc5c28027": {
+      "author": "Allan Sun <allansun@live.com>"
+    }
+  },
+  "sessions": {
+    "s_6d06bd4898dc7f": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019faca2-0a30-75f3-8a51-06f8e9067195",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Allan Sun <allansun@live.com>"
+    }
+  }
+}
