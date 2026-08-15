@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-15T19:36:15.273Z",
+  "updatedAt": "2026-08-15T19:42:43.925Z",
   "scores": [
     {
       "playedAt": "2025-11-10T02:30:43.000Z",
@@ -5580,6 +5580,66 @@
       "slow": 5,
       "id": "U2sY9QhJ99Q85R8sQ2I96nbzuQKE0vYfnPEeIOsvpK4",
       "chartId": "song-325196ba308f-dx-master"
+    },
+    {
+      "playedAt": "2026-08-15T02:15:24.000Z",
+      "songTitle": "Lover's Trick",
+      "chartType": "DX",
+      "difficulty": "MASTER",
+      "level": "13+",
+      "achievement": 100.6435,
+      "combo": "FC+",
+      "sync": "None",
+      "rating": 15209,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 535,
+        "perfect": 205,
+        "great": 8,
+        "good": 0,
+        "miss": 0
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 8,
+          "perfect": 10,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 347,
+          "perfect": 166,
+          "great": 7,
+          "good": 0,
+          "miss": 0
+        },
+        "hold": {
+          "criticalPerfect": 59,
+          "perfect": 29,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 36,
+          "perfect": 0,
+          "great": 1,
+          "good": 0,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 85,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 4,
+      "slow": 14,
+      "id": "JarvXRAewuPsIlaKaoFfYhsV9vuTHx7D1wBkspy5nDs",
+      "chartId": "song-400e36d3b8d1-dx-master"
     },
     {
       "playedAt": "2026-08-15T02:32:44.000Z",
