@@ -12,27 +12,29 @@
     "preview": "vite preview",
     "lint": "eslint .",
     "data:validate": "node scripts/validate-data.mjs",
+    "google:check": "node --env-file-if-exists=.env.local scripts/check-google-access.mjs",
     "scores:sync": "NODE_EXTRA_CA_CERTS=${NODE_EXTRA_CA_CERTS:-/etc/ssl/cert.pem} node --env-file-if-exists=.env.local scripts/sync-scores.mjs",
     "catalog:sync": "NODE_EXTRA_CA_CERTS=${NODE_EXTRA_CA_CERTS:-/etc/ssl/cert.pem} node --env-file-if-exists=.env.local scripts/sync-catalog.mjs"
   },
   "dependencies": {
     "@vitejs/plugin-react": "latest",
-    "vite": "latest",
-    "typescript": "latest",
     "react": "latest",
     "react-dom": "latest",
-    "recharts": "latest"
+    "recharts": "latest",
+    "typescript": "latest",
+    "vite": "latest"
   },
   "devDependencies": {
     "@aws-sdk/client-s3": "latest",
-    "@tailwindcss/vite": "latest",
     "@eslint/js": "latest",
+    "@tailwindcss/vite": "latest",
     "@types/react": "latest",
     "@types/react-dom": "latest",
     "eslint": "latest",
     "eslint-plugin-react-hooks": "latest",
     "eslint-plugin-react-refresh": "latest",
     "globals": "latest",
+    "googleapis": "^174.0.1",
     "tailwindcss": "latest",
     "typescript-eslint": "latest"
   }
