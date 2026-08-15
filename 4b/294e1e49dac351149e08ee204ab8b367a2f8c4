@@ -1,0 +1,49 @@
+scripts/lib/drive-images.mjs
+  s_6d06bd4898dc7f::t_032261a2fed6a4 1-85
+.env.example
+  s_6d06bd4898dc7f::t_d868e485a755df 26-29
+  s_6d06bd4898dc7f::t_89557210cf68d1 22-24
+  s_6d06bd4898dc7f::t_e020db7213fb93 25
+scripts/lib/openai-score-ocr.mjs
+  s_6d06bd4898dc7f::t_89557210cf68d1 1-4,6-115,117-130
+  s_6d06bd4898dc7f::t_7ef55916db9eac 5,116
+scripts/lib/ocr-image.test.mjs
+  s_6d06bd4898dc7f::t_d868e485a755df 1-71
+package.json
+  s_6d06bd4898dc7f::t_0fc8540abf8464 41
+  s_6d06bd4898dc7f::t_7f777dc8d44aee 43
+  s_6d06bd4898dc7f::t_2444f435125ddc 38
+  s_6d06bd4898dc7f::t_339e73dbf15212 42
+scripts/lib/openai-score-ocr.test.mjs
+  s_6d06bd4898dc7f::t_89557210cf68d1 1-25,27,29-30,33-42,44-45,47-50
+  s_6d06bd4898dc7f::t_7ef55916db9eac 26,28,31-32,43,46
+scripts/lib/drive-images.test.mjs
+  s_6d06bd4898dc7f::t_032261a2fed6a4 1-27
+scripts/lib/ocr-image.mjs
+  s_6d06bd4898dc7f::t_d868e485a755df 1-109
+package-lock.json
+  s_6d06bd4898dc7f::t_7ef5d0b0523963 27,30-32,606-616,811-1337,3482-3488,3996-4008,4256-4265,4682-4715,5087-5149
+scripts/lib/maimai-score-prompt.md
+  s_6d06bd4898dc7f::t_0fa5a13485353b 1-15
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.22",
+  "base_commit_sha": "4b294e1e49dac351149e08ee204ab8b367a2f8c4",
+  "prompts": {},
+  "humans": {
+    "h_278fafc5c28027": {
+      "author": "Allan Sun <allansun@live.com>"
+    }
+  },
+  "sessions": {
+    "s_6d06bd4898dc7f": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019faca2-0a30-75f3-8a51-06f8e9067195",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Allan Sun <allansun@live.com>"
+    }
+  }
+}
