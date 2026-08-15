@@ -1,0 +1,30 @@
+scripts/lib/openai-score-ocr.mjs
+  s_6d06bd4898dc7f::t_1edf884e816e42 121-134
+  s_6d06bd4898dc7f::t_6d9512c8ea8168 143-151
+.github/workflows/import-new-scores.yml
+  s_6d06bd4898dc7f::t_db38027ee6de95 252
+scripts/lib/openai-score-ocr.test.mjs
+  s_6d06bd4898dc7f::t_1edf884e816e42 51-74
+  s_6d06bd4898dc7f::t_6d9512c8ea8168 75-97
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.22",
+  "base_commit_sha": "b329ebd67831111235ff2b3cbd190b39da87da9b",
+  "prompts": {},
+  "humans": {
+    "h_278fafc5c28027": {
+      "author": "Allan Sun <allansun@live.com>"
+    }
+  },
+  "sessions": {
+    "s_6d06bd4898dc7f": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019faca2-0a30-75f3-8a51-06f8e9067195",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": null
+    }
+  }
+}
