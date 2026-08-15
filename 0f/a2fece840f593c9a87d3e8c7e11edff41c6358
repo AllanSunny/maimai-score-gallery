@@ -1,0 +1,56 @@
+scripts/lib/capture-time.test.mjs
+  s_6d06bd4898dc7f::t_976f81672afc7d 1-56
+.env.example
+  s_6d06bd4898dc7f::t_49000f965ac88d 30-31
+scripts/lib/song-title-resolver.mjs
+  s_6d06bd4898dc7f::t_d66dbef2cceda7 33,62-102,120-128,160-176
+  s_6d06bd4898dc7f::t_6e34a07e351035 34-36
+scripts/lib/score-import-record.test.mjs
+  s_6d06bd4898dc7f::t_027c12e94196c3 61,64-69
+  s_6d06bd4898dc7f::t_b7156cb8ef6a6a 1-60,62-63,70
+scripts/lib/google-auth.mjs
+  s_6d06bd4898dc7f::t_b7156cb8ef6a6a 9-12
+scripts/lib/song-title-resolver.test.mjs
+  s_6d06bd4898dc7f::t_6e34a07e351035 41
+  s_6d06bd4898dc7f::t_c4f70740eabe73 28-32
+  s_6d06bd4898dc7f::t_d66dbef2cceda7 90-127
+scripts/lib/sheet-scores.mjs
+  s_6d06bd4898dc7f::t_976f81672afc7d 61
+scripts/lib/capture-time.mjs
+  s_6d06bd4898dc7f::t_976f81672afc7d 1-83
+package.json
+  s_6d06bd4898dc7f::t_b7156cb8ef6a6a 18
+scripts/lib/score-import-record.mjs
+  s_6d06bd4898dc7f::t_027c12e94196c3 71-75,81-82
+  s_6d06bd4898dc7f::t_b7156cb8ef6a6a 1-70,76-80,83-86
+scripts/import-images.mjs
+  s_6d06bd4898dc7f::t_b7156cb8ef6a6a 1-44,56-59,61-65,67,70,76-80,83-84,87-88,90-110
+  s_6d06bd4898dc7f::t_6e34a07e351035 45-55,60,66,68-69,71-75,81-82,85-86,89
+scripts/lib/drive-images.mjs
+  s_6d06bd4898dc7f::t_c2aae7f62eadf5 52
+  s_6d06bd4898dc7f::t_b7156cb8ef6a6a 2,37,40-42
+  s_6d06bd4898dc7f::t_976f81672afc7d 51
+scripts/lib/ocr-image.mjs
+  s_6d06bd4898dc7f::t_976f81672afc7d 90-107,110-113
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.22",
+  "base_commit_sha": "0fa2fece840f593c9a87d3e8c7e11edff41c6358",
+  "prompts": {},
+  "humans": {
+    "h_278fafc5c28027": {
+      "author": "Allan Sun <allansun@live.com>"
+    }
+  },
+  "sessions": {
+    "s_6d06bd4898dc7f": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019faca2-0a30-75f3-8a51-06f8e9067195",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Allan Sun <allansun@live.com>"
+    }
+  }
+}
