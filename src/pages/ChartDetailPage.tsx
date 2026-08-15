@@ -1,10 +1,11 @@
-import { useEffect, useMemo, useState } from "react";
-import { fetchScores } from "../api";
-import { findCatalogSong } from "../catalog";
+import { useMemo } from "react";
+import { scores } from "../utils/scores";
+import { findCatalogSong } from "../utils/catalog";
 import { SongDetailFrame } from "../components/song/SongDetailFrame";
 import { PageHeading } from "../components/ui/PageHeading";
-import { achievementRank } from "../rank";
-import type { ChartType, Difficulty, Score } from "../types";
+import { formatEasternDateTime } from "../utils/date-time";
+import { achievementRank } from "../utils/rank";
+import type { ChartType, Difficulty, Score } from "../utils/types";
 
 interface ChartDetailPageProps {
   songName: string;
@@ -13,25 +14,16 @@ interface ChartDetailPageProps {
 }
 
 export function ChartDetailPage({ songName, chartType, difficulty }: ChartDetailPageProps) {
-  const [scores, setScores] = useState<Score[]>([]);
-  const [loading, setLoading] = useState(true);
   const metadata = findCatalogSong(songName, chartType);
   const chartMetadata = metadata?.charts.find((chart) => chart.difficulty === difficulty);
 
-  useEffect(() => {
-    fetchScores()
-      .then(({ scores: results }) => setScores(results))
-      .finally(() => setLoading(false));
-  }, []);
-
   const history = useMemo(() => {
     const chartId = chartMetadata?.id;
-    return scores
-      .filter((score) => chartId
-        ? score.chartId === chartId
-        : score.songTitle === songName && score.chartType === chartType && score.difficulty === difficulty)
-      .sort((a, b) => b.playedAt.localeCompare(a.playedAt));
-  }, [chartMetadata?.id, chartType, difficulty, scores, songName]);
+    return chartId ? scores
+      .filter((score) => score.chartId === chartId)
+      .sort((a, b) => b.playedAt.localeCompare(a.playedAt))
+      : [];
+  }, [chartMetadata?.id]);
   const record = history.reduce<Score | undefined>((best, score) => !best || score.achievement > best.achievement ? score : best, undefined);
 
   return (
@@ -39,8 +31,7 @@ export function ChartDetailPage({ songName, chartType, difficulty }: ChartDetail
       <a href="#/scores" className="mb-8 inline-block text-sm text-muted hover:text-ink">← All scores</a>
       <PageHeading eyebrow={`${difficulty} · ${chartType}`} title={songName} description="Detailed chart statistics and score progression over time." />
 
-      {loading ? <p className="mt-10 text-sm text-muted">Loading chart history…</p> : (
-        <>
+      <>
           <section className="mt-12 grid items-start gap-8 lg:grid-cols-[minmax(0,20rem)_1fr]">
             {metadata?.jacketUrl && (
               <SongDetailFrame
@@ -63,12 +54,11 @@ export function ChartDetailPage({ songName, chartType, difficulty }: ChartDetail
           <section className="mt-12">
             <h2 className="text-xl font-semibold tracking-tight">Score progression</h2>
             <div className="mt-5 overflow-hidden rounded-2xl border border-line bg-white/60">
-              {history.map((score) => <div key={score.id} className="flex justify-between border-b border-line p-5 text-sm last:border-0"><time className="text-muted">{new Date(score.playedAt).toLocaleDateString()}</time><span className="text-right"><span className="block font-semibold tabular-nums">{score.achievement.toFixed(4)}%</span><span className="mt-1 block text-xs font-semibold text-muted">{achievementRank(score.achievement)}</span></span></div>)}
+              {history.map((score) => <div key={score.id} className="flex justify-between border-b border-line p-5 text-sm last:border-0"><time className="text-muted">{formatEasternDateTime(score.playedAt)}</time><span className="text-right"><span className="block font-semibold tabular-nums">{score.achievement.toFixed(4)}%</span><span className="mt-1 block text-xs font-semibold text-muted">{achievementRank(score.achievement)}</span></span></div>)}
               {!history.length && <p className="p-10 text-center text-sm text-muted">No plays recorded for this chart yet.</p>}
             </div>
           </section>
-        </>
-      )}
+      </>
     </div>
   );
 }

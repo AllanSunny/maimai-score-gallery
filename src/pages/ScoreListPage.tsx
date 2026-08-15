@@ -1,10 +1,10 @@
 import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
-import { fetchScores } from "../api";
-import { findCatalogSong } from "../catalog";
+import { scores } from "../utils/scores";
+import { findCatalogSong } from "../utils/catalog";
 import { SongInfo, type SongChartSummary } from "../components/song/SongInfo";
 import { PageHeading } from "../components/ui/PageHeading";
-import { allSongTitles } from "../song-titles";
-import type { ChartType, Difficulty, Score, SongTitles } from "../types";
+import { allSongTitles } from "../utils/song-titles";
+import type { ChartType, Difficulty, Score, SongTitles } from "../utils/types";
 
 interface SongSummary {
   titles: SongTitles;
@@ -93,27 +93,17 @@ function groupScoresBySong(scores: Score[]): SongSummary[] {
 
 export function ScoreListPage() {
   const [initialState] = useState(readListState);
-  const [scores, setScores] = useState<Score[]>([]);
   const [query, setQuery] = useState(initialState.query);
   const [visibleCount, setVisibleCount] = useState(initialState.visibleCount);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState("");
   const loadMoreRef = useRef<HTMLDivElement>(null);
   const hasRestoredScroll = useRef(false);
-
-  useEffect(() => {
-    fetchScores()
-      .then(({ scores: results }) => setScores(results))
-      .catch((reason: Error) => setError(reason.message))
-      .finally(() => setLoading(false));
-  }, []);
 
   const songs = useMemo(() => {
     const normalizedQuery = query.trim().toLocaleLowerCase();
     return groupScoresBySong(scores).filter((song) =>
       allSongTitles(song.titles).join(" ").toLocaleLowerCase().includes(normalizedQuery),
     );
-  }, [query, scores]);
+  }, [query]);
 
   const visibleSongs = songs.slice(0, visibleCount);
   const hasMoreSongs = visibleCount < songs.length;
@@ -136,7 +126,7 @@ export function ScoreListPage() {
   }, [hasMoreSongs, songs.length, visibleCount]);
 
   useLayoutEffect(() => {
-    if (loading || hasRestoredScroll.current) return;
+    if (hasRestoredScroll.current) return;
     hasRestoredScroll.current = true;
 
     const frame = requestAnimationFrame(() => {
@@ -148,7 +138,7 @@ export function ScoreListPage() {
     });
 
     return () => cancelAnimationFrame(frame);
-  }, [initialState.scrollY, loading, visibleSongs.length]);
+  }, [initialState.scrollY, visibleSongs.length]);
 
   function handleSearch(queryValue: string) {
     setQuery(queryValue);
@@ -176,11 +166,7 @@ export function ScoreListPage() {
         <input type="search" value={query} onChange={(event) => handleSearch(event.target.value)} placeholder="Search by song title…" className="w-full rounded-xl border border-line bg-white px-4 py-3 text-sm outline-none transition placeholder:text-muted/70 focus:border-coral focus:ring-3 focus:ring-coral/10" />
       </label>
 
-      {error && <p className="mt-8 rounded-xl bg-red-50 p-4 text-sm text-red-700">Unable to load scores: {error}</p>}
-      {loading && <p className="mt-10 text-sm text-muted">Loading scores…</p>}
-
-      {!loading && (
-        <div className="mt-8 grid gap-4" onClickCapture={(event) => {
+      <div className="mt-8 grid gap-4" onClickCapture={(event) => {
           if ((event.target as HTMLElement).closest('a[href^="#/songs/"]')) preserveListPosition();
         }}>
           {visibleSongs.map((song) => <SongInfo key={`${song.titles.canonical}-${song.chartType}`} {...song} />)}
@@ -197,8 +183,7 @@ export function ScoreListPage() {
               )}
             </div>
           )}
-        </div>
-      )}
+      </div>
     </div>
   );
 }

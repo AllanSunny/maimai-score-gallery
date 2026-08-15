@@ -1,4 +1,4 @@
-import generatedCatalog from "./data/generated-catalog.json";
+import generatedCatalog from "../data/generated-catalog.json";
 import { parseGeneratedCatalog } from "./data-validation";
 import { allSongTitles } from "./song-titles";
 import type { CatalogSongView } from "./types";
@@ -7,7 +7,7 @@ const jacketBaseUrl = import.meta.env.VITE_JACKET_BASE_URL?.replace(/\/$/, "");
 
 const storedCatalog = parseGeneratedCatalog(generatedCatalog);
 
-export const catalogSongs: CatalogSongView[] = storedCatalog.songs.flatMap((song) =>
+const catalogSongs: CatalogSongView[] = storedCatalog.songs.flatMap((song) =>
   song.versions.map((version) => ({
     ...song,
     ...version,

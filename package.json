@@ -23,7 +23,6 @@
     "@vitejs/plugin-react": "latest",
     "react": "latest",
     "react-dom": "latest",
-    "recharts": "latest",
     "typescript": "latest",
     "vite": "latest"
   },

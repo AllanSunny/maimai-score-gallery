@@ -56,7 +56,33 @@ function uniqueSongs(songs) {
 }
 
 function candidateNames(songs) {
-  return songs.map((song) => String(song.title ?? "")).filter(Boolean).sort();
+  return songs.map((song) => [song.title, song.artist].filter(Boolean).join(" — ")).filter(Boolean).sort();
+}
+
+function normalizedArtist(value) {
+  return String(value ?? "").normalize("NFKC").replace(/\s+/gu, "").trim().toLocaleLowerCase();
+}
+
+function chartAvailable(song, chartType, difficulty) {
+  const field = chartFields[chartType]?.[difficulty];
+  return Boolean(field && String(song[field] ?? "").trim());
+}
+
+function disambiguateSongs(songs, { chartType, difficulty, level, visibleArtist }) {
+  let candidates = uniqueSongs(songs);
+  const chartMatches = candidates.filter((song) => chartAvailable(song, chartType, difficulty));
+  if (chartMatches.length) candidates = chartMatches;
+  const chartField = chartFields[chartType]?.[difficulty];
+  const levelMatches = chartField
+    ? candidates.filter((song) => String(song[chartField] ?? "").trim() === String(level ?? "").trim())
+    : [];
+  if (levelMatches.length) candidates = levelMatches;
+  const artist = normalizedArtist(visibleArtist);
+  if (artist) {
+    const artistMatches = candidates.filter((song) => normalizedArtist(song.artist) === artist);
+    if (artistMatches.length) candidates = artistMatches;
+  }
+  return candidates.length === 1 ? candidates[0] : null;
 }
 
 function editDistance(leftValue, rightValue) {
@@ -100,7 +126,7 @@ function closestUniqueMatch(value, songs, segmentsForTitle) {
     : { match: null, ambiguous: nearest.map(({ song }) => song) };
 }
 
-function resolveTitle(visibleTitle, titleTruncated, songs) {
+function resolveTitle(visibleTitle, titleTruncated, songs, context) {
   const target = normalizedSongTitle(visibleTitle);
   if (!target) {
     throw new SongResolutionError("EMPTY_TITLE", "OCR returned an empty song title.");
@@ -109,6 +135,8 @@ function resolveTitle(visibleTitle, titleTruncated, songs) {
   const exact = uniqueSongs(songs.filter((song) => normalizedSongTitle(song.title) === target));
   if (exact.length === 1) return { song: exact[0], matchType: "exact" };
   if (exact.length > 1) {
+    const disambiguated = disambiguateSongs(exact, context);
+    if (disambiguated) return { song: disambiguated, matchType: "exact-disambiguated" };
     throw new SongResolutionError(
       "AMBIGUOUS_TITLE",
       `Multiple SEGA songs exactly match ${JSON.stringify(visibleTitle)}.`,
@@ -120,6 +148,8 @@ function resolveTitle(visibleTitle, titleTruncated, songs) {
     const fuzzy = closestUniqueMatch(target, songs, (title) => [title]);
     if (fuzzy.match) return { song: fuzzy.match, matchType: "fuzzy" };
     if (fuzzy.ambiguous.length) {
+      const disambiguated = disambiguateSongs(fuzzy.ambiguous, context);
+      if (disambiguated) return { song: disambiguated, matchType: "fuzzy-disambiguated" };
       throw new SongResolutionError(
         "AMBIGUOUS_TITLE",
         `The OCR title ${JSON.stringify(visibleTitle)} is equally close to multiple SEGA songs.`,
@@ -156,6 +186,10 @@ function resolveTitle(visibleTitle, titleTruncated, songs) {
         : "truncated-edge";
     return { song: edgeMatches[0], matchType };
   }
+  if (edgeMatches.length > 1) {
+    const disambiguated = disambiguateSongs(edgeMatches, context);
+    if (disambiguated) return { song: disambiguated, matchType: "truncated-edge-disambiguated" };
+  }
   if (edgeMatches.length === 0) {
     const fragmentLength = Array.from(fragment).length;
     const fuzzy = closestUniqueMatch(fragment, songs, (title) => {
@@ -168,6 +202,8 @@ function resolveTitle(visibleTitle, titleTruncated, songs) {
     });
     if (fuzzy.match) return { song: fuzzy.match, matchType: "truncated-fuzzy-edge" };
     if (fuzzy.ambiguous.length) {
+      const disambiguated = disambiguateSongs(fuzzy.ambiguous, context);
+      if (disambiguated) return { song: disambiguated, matchType: "truncated-fuzzy-disambiguated" };
       throw new SongResolutionError(
         "AMBIGUOUS_TITLE",
         `The clipped OCR title ${JSON.stringify(visibleTitle)} is equally close to multiple SEGA songs.`,
@@ -188,6 +224,13 @@ function resolveTitle(visibleTitle, titleTruncated, songs) {
 }
 
 function resolveChart(song, chartType, difficulty) {
+  if (chartType === "UTAGE" || song.lev_utage) {
+    throw new SongResolutionError(
+      "UNSUPPORTED_UTAGE",
+      `${song.title} is an UTAGE chart, which is not supported by this importer.`,
+      { canonicalTitle: song.title, chartType: "UTAGE", difficulty },
+    );
+  }
   const field = chartFields[chartType]?.[difficulty];
   const level = field ? String(song[field] ?? "").trim() : "";
   if (!field || !level) {
@@ -202,9 +245,10 @@ function resolveChart(song, chartType, difficulty) {
 
 export function createSongTitleResolver({ loadCatalog = createSegaCatalogLoader() } = {}) {
   return {
-    async resolve({ visibleTitle, titleTruncated, chartType, difficulty }) {
+    async resolve({ visibleTitle, visibleArtist, titleTruncated, chartType, difficulty, level }) {
       const songs = await loadCatalog();
-      const { song, matchType } = resolveTitle(visibleTitle, titleTruncated, songs);
+      const context = { chartType, difficulty, level, visibleArtist };
+      const { song, matchType } = resolveTitle(visibleTitle, titleTruncated, songs, context);
       return {
         canonicalTitle: song.title,
         matchType,

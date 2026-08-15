@@ -38,6 +38,16 @@ test("capture time falls back from EXIF to Drive image metadata", () => {
   assert.equal(result.source, "drive-image-metadata");
 });
 
+test("Drive EXIF-style metadata without an offset defaults to Eastern time", () => {
+  const result = selectCaptureTime({
+    embedded: {},
+    driveFile: { imageMediaMetadata: { time: "2026:07:25 01:34:16" } },
+    timeZone: "America/New_York",
+  });
+  assert.equal(result.capturedAt, "2026-07-25T05:34:16.000Z");
+  assert.equal(result.source, "drive-image-metadata");
+});
+
 test("capture time uses Drive creation time only after other metadata is absent", () => {
   const result = selectCaptureTime({
     embedded: {},

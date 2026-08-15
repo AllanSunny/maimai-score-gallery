@@ -168,3 +168,38 @@ test("resolver rejects a chart combination absent from the catalog", async () =>
     (error) => error.code === "CHART_NOT_FOUND" && error.canonicalTitle === "熱異常",
   );
 });
+
+test("resolver disambiguates duplicate titles using artist data", async () => {
+  const catalog = [
+    { title: "Same Song", artist: "Artist A", image_url: "a.png", dx_lev_mas: "12" },
+    { title: "Same Song", artist: "Artist B", image_url: "b.png", dx_lev_mas: "13" },
+  ];
+  const result = await resolver(catalog).resolve({
+    visibleTitle: "Same Song",
+    visibleArtist: "Artist B",
+    titleTruncated: false,
+    chartType: "DX",
+    difficulty: "MASTER",
+  });
+  assert.equal(result.officialSong.artist, "Artist B");
+  assert.equal(result.chart.level, "13");
+});
+
+test("resolver explicitly rejects UTAGE charts", async () => {
+  const catalog = [{
+    title: "Party Song",
+    artist: "Artist",
+    image_url: "party.png",
+    lev_utage: "14?",
+  }];
+  await assert.rejects(
+    resolver(catalog).resolve({
+      visibleTitle: "Party Song",
+      visibleArtist: "Artist",
+      titleTruncated: false,
+      chartType: "UTAGE",
+      difficulty: "MASTER",
+    }),
+    (error) => error.code === "UNSUPPORTED_UTAGE",
+  );
+});

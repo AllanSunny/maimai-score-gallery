@@ -1,7 +1,7 @@
 const judgmentNames = ["criticalPerfect", "perfect", "great", "good", "miss"];
 const noteTypes = ["break", "tap", "hold", "slide", "touch"];
 
-export class ScoreValidationError extends Error {
+class ScoreValidationError extends Error {
   constructor(code, message, details = {}) {
     super(message);
     this.name = "ScoreValidationError";
@@ -68,8 +68,7 @@ export function proposedScoreRecord({ ocr, resolution, capturedAt }) {
     combo: ocr.combo,
     sync: ocr.sync,
     rating: finiteNumber(ocr.rating, "rating", { integer: true, minimum: 0 }),
-    // Preserve the Apps Script behavior: an absent/unreadable change means no recorded change.
-    // The dry-run report retains the raw OCR null for later inspection.
+    // An absent or unreadable change means no recorded change.
     ratingChange: ocr.ratingChange === null
       ? 0
       : finiteNumber(ocr.ratingChange, "ratingChange", { integer: true }),

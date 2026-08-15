@@ -1,8 +1,9 @@
 import { createGoogleClients, requiredEnvironment } from "./google-auth.mjs";
+import { IMPORT_LOG_SHEET_NAME } from "./import-log.mjs";
 
 const SCORE_HEADERS = {
   first: ["Date / Time", "Song Title", "Chart Type", "Difficulty", "Chart Level", "Achievement %"],
-  statuses: ["Combo Status", "Sync Status", "Rating (At Time)", "Rating Change"],
+  statuses: ["Combo Status", "Sync Status", "Rating", "Rating Change"],
   judgments: [
     "Critical Perfect", "Perfect", "Great", "Good", "Miss", "Fast", "Slow",
     "Critical Perfect Breaks", "Perfect Breaks", "Great Breaks", "Good Breaks", "Miss Breaks",
@@ -24,39 +25,32 @@ function normalizedHeader(value) {
 function assertHeaders(actual, expected, startColumn) {
   expected.forEach((header, index) => {
     const actualHeader = actual[startColumn + index];
-    if (normalizedHeader(actualHeader) !== normalizedHeader(header)) {
+    const alternatives = Array.isArray(header) ? header : [header];
+    if (!alternatives.some((candidate) => normalizedHeader(actualHeader) === normalizedHeader(candidate))) {
       throw new Error(
-        `Expected ${header} in column ${startColumn + index + 1}, found ${JSON.stringify(actualHeader ?? "")}.`,
+        `Expected ${alternatives.join(" or ")} in column ${startColumn + index + 1}, found ${JSON.stringify(actualHeader ?? "")}.`,
       );
     }
   });
 }
 
-function formattedLocalTime(playedAt, timeZone) {
-  const parts = Object.fromEntries(new Intl.DateTimeFormat("en-US", {
-    timeZone,
-    year: "numeric",
-    month: "2-digit",
-    day: "2-digit",
-    hour: "2-digit",
-    minute: "2-digit",
-    second: "2-digit",
-    hourCycle: "h23",
-  }).formatToParts(new Date(playedAt)).map(({ type, value }) => [type, value]));
-  return `${parts.year}-${parts.month}-${parts.day} ${parts.hour}:${parts.minute}:${parts.second}`;
+function utcTimestamp(playedAt) {
+  const date = new Date(playedAt);
+  if (Number.isNaN(date.getTime())) throw new Error(`Invalid playedAt value: ${JSON.stringify(playedAt)}.`);
+  return date.toISOString();
 }
 
 function judgmentValues(set) {
   return [set.criticalPerfect, set.perfect, set.great, set.good, set.miss];
 }
 
-export function scoreSheetValues(score, timeZone) {
+export function scoreSheetValues(score) {
   const breakdown = score.judgmentsByType;
   const noteTypeValues = ["break", "tap", "hold", "slide", "touch"]
     .flatMap((noteType) => breakdown ? judgmentValues(breakdown[noteType]) : ["", "", "", "", ""]);
   return {
     first: [
-      formattedLocalTime(score.playedAt, timeZone),
+      utcTimestamp(score.playedAt),
       score.songTitle,
       score.chartType,
       score.difficulty,
@@ -73,10 +67,26 @@ export function scoreSheetValues(score, timeZone) {
   };
 }
 
+const managedScoreColumns = Array.from({ length: 44 }, (_, index) => index)
+  .filter((index) => index !== 6 && index !== 11);
+
+export function firstAvailableScoreRow(rows) {
+  const emptyIndex = rows.findIndex((row) => managedScoreColumns.every((index) => {
+    const value = row[index];
+    return value === null || value === undefined || String(value).trim() === "";
+  }));
+  return emptyIndex === -1 ? rows.length + 2 : emptyIndex + 2;
+}
+
+export function importedLogValues({ canonicalTitle, captureTime, spreadsheetRow }, updatedAt) {
+  return [canonicalTitle, captureTime, spreadsheetRow, "IMPORTED", updatedAt, ""];
+}
+
 export async function createScoreSheetWriter() {
   const spreadsheetId = requiredEnvironment("GOOGLE_SPREADSHEET_ID");
   const sheetName = requiredEnvironment("GOOGLE_SHEET_NAME");
   const quotedSheet = `'${escapedSheetName(sheetName)}'`;
+  const quotedImportLog = `'${escapedSheetName(IMPORT_LOG_SHEET_NAME)}'`;
   const { sheets } = await createGoogleClients();
   const [metadata, headerResponse] = await Promise.all([
     sheets.spreadsheets.get({
@@ -93,36 +103,22 @@ export async function createScoreSheetWriter() {
   if (!worksheet?.properties?.sheetId && worksheet?.properties?.sheetId !== 0) {
     throw new Error(`Worksheet ${JSON.stringify(sheetName)} was not found.`);
   }
-  const timeZone = metadata.data.properties?.timeZone;
-  if (!timeZone) throw new Error("Spreadsheet timezone is unavailable.");
+  if (!metadata.data.properties?.timeZone) throw new Error("Spreadsheet timezone is unavailable.");
   const headers = headerResponse.data.values?.[0] ?? [];
   assertHeaders(headers, SCORE_HEADERS.first, 0);
   assertHeaders(headers, SCORE_HEADERS.statuses, 7);
   assertHeaders(headers, SCORE_HEADERS.judgments, 12);
 
   return {
-    async append(score) {
+    async append(score, importedLog = null) {
       const dateColumn = await sheets.spreadsheets.values.get({
         spreadsheetId,
-        range: `${quotedSheet}!A2:A`,
+        range: `${quotedSheet}!A2:AR`,
         valueRenderOption: "FORMATTED_VALUE",
       });
       const rows = dateColumn.data.values ?? [];
-      const emptyIndex = rows.findIndex((row) => !row[0]);
-      const rowNumber = emptyIndex === -1 ? rows.length + 2 : emptyIndex + 2;
-      const values = scoreSheetValues(score, timeZone);
-
-      await sheets.spreadsheets.values.batchUpdate({
-        spreadsheetId,
-        requestBody: {
-          valueInputOption: "RAW",
-          data: [
-            { range: `${quotedSheet}!A${rowNumber}:F${rowNumber}`, values: [values.first] },
-            { range: `${quotedSheet}!H${rowNumber}:K${rowNumber}`, values: [values.statuses] },
-            { range: `${quotedSheet}!M${rowNumber}:AR${rowNumber}`, values: [values.judgments] },
-          ],
-        },
-      });
+      const rowNumber = firstAvailableScoreRow(rows);
+      const values = scoreSheetValues(score);
 
       await sheets.spreadsheets.batchUpdate({
         spreadsheetId,
@@ -140,6 +136,33 @@ export async function createScoreSheetWriter() {
               fields: "userEnteredFormat.numberFormat",
             },
           }],
+        },
+      });
+
+      const data = [
+        { range: `${quotedSheet}!A${rowNumber}:F${rowNumber}`, values: [values.first] },
+        { range: `${quotedSheet}!H${rowNumber}:K${rowNumber}`, values: [values.statuses] },
+        { range: `${quotedSheet}!M${rowNumber}:AR${rowNumber}`, values: [values.judgments] },
+      ];
+      if (importedLog) {
+        data.push({
+          range: `${quotedImportLog}!C${importedLog.rowNumber}:H${importedLog.rowNumber}`,
+          values: [importedLogValues({
+            canonicalTitle: score.songTitle,
+            captureTime: score.playedAt,
+            spreadsheetRow: rowNumber,
+          }, new Date().toISOString())],
+        });
+        data.push({
+          range: `${quotedImportLog}!J${importedLog.rowNumber}`,
+          values: [[importedLog.scoreFingerprint]],
+        });
+      }
+      await sheets.spreadsheets.values.batchUpdate({
+        spreadsheetId,
+        requestBody: {
+          valueInputOption: "RAW",
+          data,
         },
       });
       return rowNumber;

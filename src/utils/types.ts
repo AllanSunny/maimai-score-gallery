@@ -58,7 +58,7 @@ export interface JudgmentBreakdown {
 
 export interface ScoreRecord {
   id: string;
-  chartId: string | null;
+  chartId: string;
   playedAt: string;
   songTitle: string;
   chartType: ChartType;

@@ -1,5 +1,5 @@
 import { readFile } from "node:fs/promises";
-import { parseGeneratedCatalog, parseScoresResponse } from "../src/data-validation.ts";
+import { parseGeneratedCatalog, parseScoresResponse } from "../src/utils/data-validation.ts";
 
 const catalog = JSON.parse(await readFile("src/data/generated-catalog.json", "utf8"));
 const scores = JSON.parse(await readFile("src/data/generated-scores.json", "utf8"));

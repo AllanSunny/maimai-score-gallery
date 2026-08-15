@@ -11,15 +11,11 @@ const ROOT = process.cwd();
 const OVERRIDES_PATH = path.join(ROOT, "src", "data", "overrides.json");
 const GENERATED_PATH = path.join(ROOT, "src", "data", "generated-catalog.json");
 const SCORES_PATH = path.join(ROOT, "src", "data", "generated-scores.json");
-const ALIAS_HANDOFF_PATH = path.join(ROOT, ".sync", "song-aliases.json");
 const REJECTED_SCORES_PATH = path.join(ROOT, ".sync", "rejected-scores.json");
 const SEGA_CATALOG_URL = process.env.SEGA_CATALOG_URL ?? "https://maimai.sega.jp/data/maimai_songs.json";
 const SEGA_JACKET_BASE_URL = process.env.SEGA_JACKET_BASE_URL ?? "https://maimaidx.jp/maimai-mobile/img/Music/";
 const DIVING_FISH_CATALOG_URL = process.env.DIVING_FISH_CATALOG_URL
   ?? "https://www.diving-fish.com/api/maimaidxprober/music_data";
-
-const args = process.argv.slice(2);
-const dryRun = args.includes("--dry-run");
 
 const chartFields = [
   ["DX", "BASIC", "dx_lev_bas"],
@@ -76,14 +72,14 @@ function overrideTitleValues(override) {
   ];
 }
 
-function createSongTitles(canonical, override, requestedAliases = []) {
+function createSongTitles(canonical, override) {
   const titles = override.titles ?? {};
   return {
     canonical,
     kana: normalizedTitles(titles.kana ?? [], canonical),
     romaji: normalizedTitles(titles.romaji ?? [], canonical),
     english: normalizedTitles(titles.english ?? [], canonical),
-    aliases: normalizedTitles([...(titles.aliases ?? []), ...requestedAliases], canonical),
+    aliases: normalizedTitles(titles.aliases ?? [], canonical),
   };
 }
 
@@ -93,15 +89,6 @@ function fallbackId(title) {
 
 async function readJson(filePath) {
   return JSON.parse(await readFile(filePath, "utf8"));
-}
-
-async function readOptionalJson(filePath, fallback) {
-  try {
-    return await readJson(filePath);
-  } catch (error) {
-    if (error?.code === "ENOENT") return fallback;
-    throw error;
-  }
 }
 
 async function download(url, label) {
@@ -128,43 +115,14 @@ async function fetchJson(url, label) {
 }
 
 async function requestedSongs() {
-  const [archive, aliasHandoff] = await Promise.all([
-    readJson(SCORES_PATH),
-    readOptionalJson(ALIAS_HANDOFF_PATH, []),
-  ]);
+  const archive = await readJson(SCORES_PATH);
   if (!Array.isArray(archive.scores)) throw new Error("Score archive must contain a scores array.");
   const requested = new Map();
   archive.scores.forEach((score) => {
     const key = normalizeTitle(score.songTitle);
-    const entry = requested.get(key) ?? { title: score.songTitle, aliases: [] };
-    requested.set(key, entry);
-  });
-  aliasHandoff.forEach((handoff) => {
-    const key = normalizeTitle(handoff.title);
-    const entry = requested.get(key) ?? { title: handoff.title, aliases: [] };
-    entry.aliases = normalizedTitles([...entry.aliases, ...(handoff.alternateTitles ?? [])], entry.title);
-    requested.set(key, entry);
+    requested.set(key, { title: score.songTitle });
   });
   return [...requested.values()];
-}
-
-function mergeRequestedAliases(songs, requested) {
-  let changed = false;
-  requested.forEach((request) => {
-    const target = normalizeTitle(request.title);
-    const song = songs.find((entry) => songTitleValues(entry)
-      .some((name) => normalizeTitle(name) === target));
-    if (!song) return;
-    const aliases = normalizedTitles(
-      [...song.titles.aliases, ...request.aliases],
-      song.titles.canonical,
-    );
-    if (JSON.stringify(aliases) !== JSON.stringify(song.titles.aliases)) {
-      song.titles.aliases = aliases;
-      changed = true;
-    }
-  });
-  return changed;
 }
 
 function isAlreadyCataloged(title, songs) {
@@ -351,10 +309,6 @@ async function uploadJacket(songId, sourceUrl) {
   const required = ["R2_ACCOUNT_ID", "R2_ACCESS_KEY_ID", "R2_SECRET_ACCESS_KEY", "R2_BUCKET_NAME"];
   const missing = required.filter((name) => !process.env[name]);
   if (missing.length) {
-    if (dryRun) {
-      console.log(`Dry run: skipping R2 upload for ${songId}.`);
-      return null;
-    }
     throw new Error(`Missing R2 configuration: ${missing.join(", ")}`);
   }
 
@@ -405,7 +359,6 @@ async function main() {
     requestedSongs(),
   ]);
   const titles = requested.map((entry) => entry.title);
-  const aliasesChanged = mergeRequestedAliases(previous.songs, requested);
   const unmatchedSongs = new Map();
   const newTitles = titles.filter((title) => !isAlreadyCataloged(title, previous.songs));
   const missingArtistSongs = previous.songs.filter((song) =>
@@ -445,7 +398,6 @@ async function main() {
     unmatchedSongs.delete(normalizeTitle(requestedTitle));
 
     const override = overrides[official.title] ?? {};
-    const requestedAliases = requested.find((entry) => normalizeTitle(entry.title) === normalizeTitle(requestedTitle))?.aliases ?? [];
     const baseId = override.id ?? fallbackId(official.title);
     const sourceJacketUrl = new URL(official.image_url, SEGA_JACKET_BASE_URL).toString();
     const jacketKey = await uploadJacket(baseId, sourceJacketUrl);
@@ -463,7 +415,7 @@ async function main() {
 
     songs.push({
       id: baseId,
-      titles: createSongTitles(official.title, override, requestedAliases),
+      titles: createSongTitles(official.title, override),
       artist: songArtist(official, override),
       jacketKey,
       versions,
@@ -474,17 +426,17 @@ async function main() {
     await new Promise((resolve) => setTimeout(resolve, 250));
   }
 
-  const catalog = aliasesChanged || songsChanged
+  const catalog = songsChanged
     ? {
         generatedAt: new Date().toISOString(),
         songs: songs.sort((a, b) => a.titles.canonical.localeCompare(b.titles.canonical)),
       }
     : previous;
-  if (aliasesChanged || songsChanged) {
+  if (songsChanged) {
     await writeFile(GENERATED_PATH, `${JSON.stringify(catalog, null, 2)}\n`);
   }
   await linkArchivedScores(catalog.songs, unmatchedSongs);
-  if (aliasesChanged || songsChanged) {
+  if (songsChanged) {
     console.log(`Wrote ${songs.length} song(s) to ${path.relative(ROOT, GENERATED_PATH)}.`);
   }
 }

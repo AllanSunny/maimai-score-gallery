@@ -1,10 +1,9 @@
-import { mkdir, readFile, writeFile } from "node:fs/promises";
+import { readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { readScoreSheet } from "./lib/sheet-scores.mjs";
 
 const ARCHIVE_PATH = path.join(process.cwd(), "src", "data", "generated-scores.json");
 const CATALOG_PATH = path.join(process.cwd(), "src", "data", "generated-catalog.json");
-const ALIAS_HANDOFF_PATH = path.join(process.cwd(), ".sync", "song-aliases.json");
 
 function normalizeTitle(value) {
   return String(value ?? "").normalize("NFKC").replace(/\s+/g, " ").trim().toLocaleLowerCase();
@@ -33,17 +32,14 @@ function scoreFingerprint(score) {
   const {
     id: _id,
     chartId: _chartId,
-    alternateTitles: _alternateTitles,
     judgmentsByType: _judgmentsByType,
-    rank: _rank,
     ...publicScore
   } = score;
   return JSON.stringify(publicScore);
 }
 
 function storedScore(score, chartId) {
-  const { alternateTitles: _alternateTitles, rank: _rank, ...record } = score;
-  return { ...record, chartId, judgmentsByType: score.judgmentsByType ?? null };
+  return { ...score, chartId, judgmentsByType: score.judgmentsByType ?? null };
 }
 
 async function main() {
@@ -54,47 +50,19 @@ async function main() {
   ]);
   const feed = { scores: sheetScores };
 
-  await mkdir(path.dirname(ALIAS_HANDOFF_PATH), { recursive: true });
-  // Title metadata now belongs to the song catalog and will arrive through
-  // the image importer's typed metadata handoff rather than score records.
-  await writeFile(ALIAS_HANDOFF_PATH, "[]\n");
-
   const archivedByFingerprint = new Map(archive.scores.map((score, index) => [scoreFingerprint(score), index]));
   const additions = [];
-  let metadataChanged = false;
-
-  archive.scores = archive.scores.map((score) => {
-    if (!("rank" in score)) return score;
-    const { rank: _rank, ...record } = score;
-    metadataChanged = true;
-    return record;
-  });
 
   feed.scores.forEach((score) => {
     if (!score.id) return;
     const fingerprint = scoreFingerprint(score);
     const existingIndex = archivedByFingerprint.get(fingerprint);
-    if (existingIndex !== undefined) {
-      const archivedCount = archive.scores.length;
-      const existing = existingIndex < archivedCount
-        ? archive.scores[existingIndex]
-        : additions[existingIndex - archivedCount];
-      const judgmentsByType = score.judgmentsByType ?? existing.judgmentsByType ?? null;
-      if (
-        JSON.stringify(judgmentsByType) !== JSON.stringify(existing.judgmentsByType ?? null)
-      ) {
-        const updated = { ...existing, judgmentsByType };
-        if (existingIndex < archivedCount) archive.scores[existingIndex] = updated;
-        else additions[existingIndex - archivedCount] = updated;
-        metadataChanged = true;
-      }
-      return;
-    }
+    if (existingIndex !== undefined) return;
     archivedByFingerprint.set(fingerprint, archive.scores.length + additions.length);
     additions.push(storedScore(score, findChartId(score, catalog.songs)));
   });
 
-  if (!additions.length && !metadataChanged) {
+  if (!additions.length) {
     console.log(`Score archive is current (${archive.scores.length} plays).`);
     return;
   }
@@ -103,7 +71,7 @@ async function main() {
     .sort((a, b) => a.playedAt.localeCompare(b.playedAt));
   const nextArchive = { updatedAt: new Date().toISOString(), scores };
   await writeFile(ARCHIVE_PATH, `${JSON.stringify(nextArchive, null, 2)}\n`);
-  console.log(`Archived ${additions.length} new play(s); updated alternate titles; ${scores.length} total.`);
+  console.log(`Archived ${additions.length} new play(s); ${scores.length} total.`);
 }
 
 main().catch((error) => {

@@ -5,7 +5,7 @@ import { ChartDetailPage } from "./pages/ChartDetailPage";
 import { ProfilePage } from "./pages/ProfilePage";
 import { ScoreListPage } from "./pages/ScoreListPage";
 import { Top50Page } from "./pages/Top50Page";
-import type { ChartType, Difficulty } from "./types";
+import type { ChartType, Difficulty } from "./utils/types";
 
 type Route = "/" | "/profile" | "/top-50" | "/scores" | `/songs/${string}`;
 

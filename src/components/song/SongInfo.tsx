@@ -1,6 +1,6 @@
-import { achievementRank } from "../../rank";
-import { allSongTitles } from "../../song-titles";
-import type { ChartType, Difficulty, SongTitles } from "../../types";
+import { achievementRank } from "../../utils/rank";
+import { allSongTitles } from "../../utils/song-titles";
+import type { ChartType, Difficulty, SongTitles } from "../../utils/types";
 
 export interface SongChartSummary {
   difficulty: Difficulty;

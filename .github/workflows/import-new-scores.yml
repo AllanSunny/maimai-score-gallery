@@ -1,0 +1,244 @@
+name: Import New Scores
+
+on:
+  workflow_dispatch:
+    inputs:
+      image_limit:
+        description: Maximum new images to process
+        required: true
+        default: "25"
+  schedule:
+    # GitHub cron is UTC; the gate below selects midnight Eastern across DST.
+    - cron: "0 4 * * 0"
+    - cron: "0 5 * * 0"
+
+permissions:
+  actions: read
+  contents: write
+
+concurrency:
+  group: import-new-scores
+  cancel-in-progress: false
+
+jobs:
+  import-images:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    outputs:
+      should-run: ${{ steps.schedule-check.outputs.should-run }}
+    steps:
+      - name: Check whether this is midnight Eastern
+        id: schedule-check
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+        run: |
+          if [ "$EVENT_NAME" != "schedule" ] || [ "$(TZ=America/New_York date +%u-%H)" = "7-00" ]; then
+            echo "should-run=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "should-run=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - uses: actions/checkout@v4
+        if: ${{ steps.schedule-check.outputs.should-run == 'true' }}
+        with:
+          ref: main
+
+      - uses: actions/setup-node@v4
+        if: ${{ steps.schedule-check.outputs.should-run == 'true' }}
+        with:
+          node-version: 24.14.1
+          cache: npm
+
+      - run: npm ci
+        if: ${{ steps.schedule-check.outputs.should-run == 'true' }}
+
+      - name: Parse incoming score images
+        id: image-import
+        if: ${{ steps.schedule-check.outputs.should-run == 'true' }}
+        continue-on-error: true
+        run: npm run scores:import -- --limit "${{ inputs.image_limit || '25' }}"
+        env:
+          GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
+          GOOGLE_DRIVE_FOLDER_ID: ${{ vars.GOOGLE_DRIVE_FOLDER_ID }}
+          GOOGLE_PROCESSED_FOLDER_ID: ${{ vars.GOOGLE_PROCESSED_FOLDER_ID }}
+          GOOGLE_SPREADSHEET_ID: ${{ vars.GOOGLE_SPREADSHEET_ID }}
+          GOOGLE_SHEET_NAME: ${{ vars.GOOGLE_SHEET_NAME }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_OCR_MODEL: ${{ vars.OPENAI_OCR_MODEL }}
+          SCORE_CAPTURE_TIME_ZONE: America/New_York
+
+      - name: Inspect image import report
+        id: import-report
+        if: ${{ steps.schedule-check.outputs.should-run == 'true' && always() }}
+        run: |
+          test -f .sync/image-import.json
+          echo "rejected=$(jq '.rejectedCount' .sync/image-import.json)" >> "$GITHUB_OUTPUT"
+          echo "move-pending=$(jq '.movePendingCount' .sync/image-import.json)" >> "$GITHUB_OUTPUT"
+
+      - name: Upload image import report
+        if: ${{ steps.schedule-check.outputs.should-run == 'true' && always() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: image-import-report
+          path: .sync/image-import.json
+          if-no-files-found: error
+          retention-days: 7
+
+      - name: Notify Discord about image reviews
+        if: ${{ steps.import-report.outputs.rejected != '0' || steps.import-report.outputs.move-pending != '0' }}
+        continue-on-error: true
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        run: |
+          jq '{
+            content: (
+              "⚠️ **Maimai images need review**\n\n" +
+              ([.results[] | select(.status == "rejected" or .status == "imported-move-pending") |
+                "• **\(.driveFile.name)** — \(.error.message)"] | join("\n")) +
+              "\n\nOpen **Score Import Review**, correct the row, check **Retry**, and rerun **Import New Scores**."
+            )[0:1900],
+            allowed_mentions: { parse: [] }
+          }' .sync/image-import.json | curl --fail --silent --show-error \
+            --header "Content-Type: application/json" --data-binary @- "$DISCORD_WEBHOOK_URL"
+
+  archive-scores:
+    needs: import-images
+    if: ${{ needs.import-images.outputs.should-run == 'true' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24.14.1
+          cache: npm
+      - run: npm ci
+      - name: Archive spreadsheet scores
+        run: npm run scores:sync
+        env:
+          GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
+          GOOGLE_SPREADSHEET_ID: ${{ vars.GOOGLE_SPREADSHEET_ID }}
+          GOOGLE_SHEET_NAME: ${{ vars.GOOGLE_SHEET_NAME }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: score-archive
+          path: |
+            src/data/generated-scores.json
+          if-no-files-found: error
+          retention-days: 1
+
+  sync-catalog:
+    needs: archive-scores
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/download-artifact@v4
+        with:
+          name: score-archive
+          path: .
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24.14.1
+          cache: npm
+      - run: npm ci
+      - name: Complete maimaidx.jp certificate chain
+        run: |
+          set -euo pipefail
+          leaf="$RUNNER_TEMP/maimaidx-leaf.pem"
+          issuer_der="$RUNNER_TEMP/maimaidx-issuer.cer"
+          issuer_pem="$RUNNER_TEMP/maimaidx-issuer.pem"
+          bundle="$RUNNER_TEMP/maimai-ca-bundle.pem"
+          openssl s_client -showcerts -connect maimaidx.jp:443 -servername maimaidx.jp </dev/null 2>/dev/null \
+            | awk '/BEGIN CERTIFICATE/{copy=1} copy{print} /END CERTIFICATE/{exit}' > "$leaf"
+          issuer_url="$(openssl x509 -in "$leaf" -noout -text | sed -n 's/.*CA Issuers - URI:\(.*\)/\1/p' | head -n 1)"
+          test -n "$issuer_url"
+          curl --fail --location --silent --show-error "$issuer_url" --output "$issuer_der"
+          openssl x509 -inform DER -in "$issuer_der" -out "$issuer_pem"
+          cat /etc/ssl/certs/ca-certificates.crt "$issuer_pem" > "$bundle"
+          echo "CURL_CA_BUNDLE=$bundle" >> "$GITHUB_ENV"
+          echo "NODE_EXTRA_CA_CERTS=$bundle" >> "$GITHUB_ENV"
+      - name: Sync new song metadata
+        run: npm run catalog:sync
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET_NAME: ${{ vars.R2_BUCKET_NAME }}
+      - name: Inspect rejected song names
+        id: rejected-scores
+        run: |
+          count=0
+          if [ -f .sync/rejected-scores.json ]; then
+            count="$(jq '.rejectedSongs | length' .sync/rejected-scores.json)"
+          fi
+          echo "count=$count" >> "$GITHUB_OUTPUT"
+      - name: Notify Discord about rejected song names
+        if: ${{ steps.rejected-scores.outputs.count != '0' }}
+        continue-on-error: true
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        run: |
+          jq '{content: ("⚠️ **Unknown maimai song names were rejected**\n\n" +
+            (.rejectedSongs | map("• **\(.title)** — \(.scores | length) score(s)") | join("\n")) +
+            "\n\nCorrect the review/spreadsheet data, then rerun **Import New Scores**.")[0:1900],
+            allowed_mentions: {parse: []}}' .sync/rejected-scores.json | curl --fail --silent --show-error \
+            --header "Content-Type: application/json" --data-binary @- "$DISCORD_WEBHOOK_URL"
+      - run: npm run data:validate
+      - uses: actions/upload-artifact@v4
+        with:
+          name: generated-data
+          path: |
+            src/data/generated-scores.json
+            src/data/generated-catalog.json
+            .sync/rejected-scores.json
+          if-no-files-found: ignore
+          retention-days: 1
+
+  commit-data:
+    needs: sync-catalog
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/download-artifact@v4
+        with:
+          name: generated-data
+          path: .
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24.14.1
+          cache: npm
+      - run: npm ci
+      - run: npm run data:validate
+      - name: Commit score and catalog data once
+        run: |
+          if git diff --quiet -- src/data/generated-scores.json src/data/generated-catalog.json; then
+            echo "Score and song data are already current."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/data/generated-scores.json src/data/generated-catalog.json
+          git commit -m "Add new score data"
+          git pull --rebase origin main
+          git push
+
+  notify-failure:
+    needs: [import-images, archive-scores, sync-catalog, commit-data]
+    if: ${{ failure() }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Notify Discord about pipeline failure
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          RUN_URL: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          jq -n --arg url "$RUN_URL" '{content: ("❌ **Import New Scores failed**\n\n" + $url), allowed_mentions: {parse: []}}' \
+            | curl --fail --silent --show-error --header "Content-Type: application/json" \
+              --data-binary @- "$DISCORD_WEBHOOK_URL"

@@ -1,7 +1,7 @@
 # Data model
 
 This is the central reference for data stored by the score gallery. The
-corresponding compile-time definitions live in `src/types.ts`.
+corresponding compile-time definitions live in `src/utils/types.ts`.
 
 ```mermaid
 flowchart LR
@@ -25,7 +25,7 @@ interface ScoresResponse {
 
 interface ScoreRecord {
   id: string;                  // Stable play identifier
-  chartId: string | null;      // Stable Chart ID; null only while unmatched
+  chartId: string;             // Stable Chart ID assigned before commit
   playedAt: string;            // ISO 8601 capture time
   songTitle: string;           // Title reported by OCR / spreadsheet
   chartType: "DX" | "STD";
@@ -77,11 +77,18 @@ interface GeneratedCatalog {
 
 interface Song {
   id: string;                   // e.g. "magical-flavor"
-  title: string;                // Canonical SEGA title
+  titles: SongTitles;
   artist: string;               // Artist credit from the SEGA catalog
-  alternateTitles: string[];    // Romaji, translations, or remembered names
   jacketKey: string | null;     // R2 object key, never credentials or a full URL
   versions: SongVersion[];
+}
+
+interface SongTitles {
+  canonical: string;
+  kana: string[];
+  romaji: string[];
+  english: string[];
+  aliases: string[];
 }
 
 interface SongVersion {
@@ -111,19 +118,19 @@ or add an override, then rerun the score archive workflow to retry them.
 
 ## Matching and identity rules
 
-- A score references a stable `Chart.id`; title/type/difficulty are retained as
-  source data and as a fallback while a song is unmatched.
+- Every committed score references a stable `Chart.id`; title/type/difficulty
+  remain as readable source data.
 - Song-version IDs end in `-dx` or `-std`.
 - Chart IDs append the normalized difficulty to the song-version ID.
 - DX and STD versions share their parent song's immutable `jacketKey`.
-- Alternate titles exist only on `Song`. Spreadsheet aliases pass between sync
-  jobs as a temporary artifact and merge additively without entering score JSON.
-- Alternate titles are trimmed and normalized to lowercase during import.
+- Search titles exist only in `Song.titles`, never on score records.
+- Kana, romaji, English titles, and aliases are trimmed and normalized to
+  lowercase during catalog import.
 - `chartConstant: null` means the source has no constant and no override exists.
 
 ## Enforcement
 
-`src/data-validation.ts` validates both generated JSON files at runtime. The
+`src/utils/data-validation.ts` validates both generated JSON files at runtime. The
 same validation runs in catalog synchronization and GitHub Pages deployment
 through `npm run data:validate`; invalid data stops the workflow before commit
 or deployment.

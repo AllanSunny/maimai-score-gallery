@@ -3,20 +3,21 @@ import { createGoogleClients, GOOGLE_SCOPES, requiredEnvironment } from "./googl
 import { isHeicImage } from "./ocr-image.mjs";
 
 const COMMON_IMAGE_EXTENSIONS = /\.(?:avif|heic|heif|jpe?g|png|webp)$/i;
+const SUPPORTED_IMAGE_MIME_TYPES = /^image\/(?:avif|heic|heif|jpeg|png|webp)$/i;
 
 function escapedDriveQueryValue(value) {
   return value.replace(/\\/g, "\\\\").replace(/'/g, "\\'");
 }
 
 export function isSupportedScoreImage({ mimeType = "", name = "" }) {
-  return mimeType.toLocaleLowerCase().startsWith("image/")
+  return SUPPORTED_IMAGE_MIME_TYPES.test(mimeType)
     || isHeicImage({ mimeType, fileName: name })
     || COMMON_IMAGE_EXTENSIONS.test(name);
 }
 
 function safeFilenamePart(value) {
   return String(value)
-    .normalize("NFKC")
+    .normalize("NFC")
     .replace(/[<>:"/\\|?*\u0000-\u001f]/g, " ")
     .replace(/\s+/g, " ")
     .replace(/[ .]+$/g, "")
@@ -34,12 +35,10 @@ export function processedImageName({ canonicalTitle, capturedAt, originalName })
   return `${title.slice(0, Math.max(1, 180 - suffix.length)).trim()}${suffix}`;
 }
 
-export async function createDriveImageStore({ readOnly = false } = {}) {
+export async function createDriveImageStore() {
   const incomingFolderId = requiredEnvironment("GOOGLE_DRIVE_FOLDER_ID");
   const processedFolderId = requiredEnvironment("GOOGLE_PROCESSED_FOLDER_ID");
-  const { drive } = await createGoogleClients(
-    readOnly ? GOOGLE_SCOPES.imageReader : GOOGLE_SCOPES.importer,
-  );
+  const { drive } = await createGoogleClients(GOOGLE_SCOPES.importer);
 
   return {
     async listIncoming() {

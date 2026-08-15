@@ -58,7 +58,7 @@ test("proposed score rejects inconsistent judgment totals", () => {
   );
 });
 
-test("proposed score preserves Apps Script fallbacks for missing change and timing counts", () => {
+test("proposed score defaults missing change and timing counts to zero", () => {
   const input = validInput();
   input.ocr.ratingChange = null;
   input.ocr.fast = null;

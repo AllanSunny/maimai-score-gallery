@@ -30,8 +30,12 @@ function exifIso(value, offset, timeZone) {
   return zonedDateTimeIso(wallClock, timeZone);
 }
 
-function metadataIso(value) {
+function metadataIso(value, timeZone) {
   if (!value) return null;
+  const wallClock = exifWallClock(value);
+  if (/^\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}$/.test(wallClock)) {
+    return zonedDateTimeIso(wallClock, timeZone);
+  }
   const parsed = new Date(value);
   return Number.isNaN(parsed.getTime()) ? null : parsed.toISOString();
 }
@@ -51,7 +55,7 @@ export function selectCaptureTime({ embedded = {}, driveFile = {}, timeZone }) {
     };
   }
 
-  const driveImageTime = metadataIso(driveFile.imageMediaMetadata?.time);
+  const driveImageTime = metadataIso(driveFile.imageMediaMetadata?.time, timeZone);
   if (driveImageTime) {
     return {
       capturedAt: driveImageTime,
@@ -65,7 +69,7 @@ export function selectCaptureTime({ embedded = {}, driveFile = {}, timeZone }) {
     };
   }
 
-  const driveCreatedTime = metadataIso(driveFile.createdTime);
+  const driveCreatedTime = metadataIso(driveFile.createdTime, timeZone);
   if (driveCreatedTime) {
     return {
       capturedAt: driveCreatedTime,

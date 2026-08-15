@@ -8,7 +8,7 @@ import basicStdFrame from "../../assets/jacket_frames/std/basic.png";
 import expertStdFrame from "../../assets/jacket_frames/std/expert.png";
 import masterStdFrame from "../../assets/jacket_frames/std/master.png";
 import remasterStdFrame from "../../assets/jacket_frames/std/remaster.png";
-import type { ChartType, Difficulty } from "../../types";
+import type { ChartType, Difficulty } from "../../utils/types";
 import "./SongDetailFrame.css";
 
 const frames: Record<ChartType, Record<Difficulty, string>> = {
@@ -28,7 +28,7 @@ const frames: Record<ChartType, Record<Difficulty, string>> = {
   },
 };
 
-export interface SongDetailFrameProps {
+interface SongDetailFrameProps {
   title: string;
   artist: string;
   jacketUrl: string;

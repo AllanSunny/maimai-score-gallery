@@ -61,8 +61,7 @@ function timeZoneParts(date, timeZone) {
 export function zonedDateTimeIso(value, timeZone) {
   const text = String(value ?? "").trim();
   const isoLocal = text.match(/^(\d{4})-(\d{2})-(\d{2})[ T](\d{1,2}):(\d{2}):(\d{2})$/);
-  const usLocal = text.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})\s+(\d{1,2}):(\d{2}):(\d{2})$/);
-  if (!isoLocal && !usLocal) {
+  if (!isoLocal) {
     const parsed = new Date(text);
     if (!Number.isNaN(parsed.getTime()) && /(?:Z|[+-]\d{2}:?\d{2})$/i.test(text)) {
       return parsed.toISOString();
@@ -70,8 +69,7 @@ export function zonedDateTimeIso(value, timeZone) {
     throw new Error(`Unsupported Date / Time value: ${JSON.stringify(text)}.`);
   }
 
-  const [, year, month, day, hour, minute, second] = isoLocal
-    ?? [usLocal[0], usLocal[3], usLocal[1], usLocal[2], usLocal[4], usLocal[5], usLocal[6]];
+  const [, year, month, day, hour, minute, second] = isoLocal;
   const wallClockUtc = Date.UTC(+year, +month - 1, +day, +hour, +minute, +second);
   let instant = wallClockUtc;
   for (let attempt = 0; attempt < 2; attempt += 1) {
@@ -87,6 +85,18 @@ export function zonedDateTimeIso(value, timeZone) {
     instant += wallClockUtc - representedUtc;
   }
   return new Date(instant).toISOString();
+}
+
+function utcDateTimeIso(value) {
+  const text = String(value ?? "").trim();
+  if (!/(?:Z|[+-]\d{2}:?\d{2})$/i.test(text)) {
+    throw new Error(`Date / Time must be an ISO timestamp with a UTC offset: ${JSON.stringify(text)}.`);
+  }
+  const parsed = new Date(text);
+  if (Number.isNaN(parsed.getTime())) {
+    throw new Error(`Invalid Date / Time value: ${JSON.stringify(text)}.`);
+  }
+  return parsed.toISOString();
 }
 
 function judgmentSet(row, headers, suffix = "") {
@@ -135,7 +145,7 @@ function scoreId(score) {
   return createHash("sha256").update(identity).digest("base64url");
 }
 
-export function parseScoreRows(rows, timeZone) {
+export function parseScoreRows(rows) {
   if (!rows.length) return [];
   const headers = headerIndex(rows[0]);
   const requiredHeaders = [
@@ -159,7 +169,7 @@ export function parseScoreRows(rows, timeZone) {
     if (achievement === null) throw new Error(`Invalid achievement on sheet row ${rowIndex + 2}.`);
 
     const score = {
-      playedAt: zonedDateTimeIso(date, timeZone),
+      playedAt: utcDateTimeIso(date),
       songTitle: title,
       chartType: String(cell(row, headers, "Chart Type") || "DX").trim().toUpperCase(),
       difficulty: String(cell(row, headers, "Difficulty") || "").trim(),
@@ -167,7 +177,7 @@ export function parseScoreRows(rows, timeZone) {
       achievement,
       combo: String(cell(row, headers, "Combo Status") || "").trim(),
       sync: String(cell(row, headers, "Sync Status") || "").trim(),
-      rating: numberValue(cell(row, headers, "Rating (At Time)")),
+      rating: numberValue(cell(row, headers, "Rating")),
       ratingChange: numberValue(cell(row, headers, "Rating Change")),
       judgments: judgmentSet(row, headers),
       judgmentsByType: judgmentBreakdown(row, headers),
@@ -179,22 +189,23 @@ export function parseScoreRows(rows, timeZone) {
 }
 
 export async function readScoreSheet() {
+  return (await readScoreSheetWithRows()).map(({ score }) => score);
+}
+
+async function readScoreSheetWithRows() {
   const spreadsheetId = requiredEnvironment("GOOGLE_SPREADSHEET_ID");
   const sheetName = requiredEnvironment("GOOGLE_SHEET_NAME");
   const { sheets } = await createGoogleClients(GOOGLE_SCOPES.readonly);
   const escapedSheetName = sheetName.replace(/'/g, "''");
-  const [metadata, values] = await Promise.all([
-    sheets.spreadsheets.get({
-      spreadsheetId,
-      fields: "properties(timeZone)",
-    }),
-    sheets.spreadsheets.values.get({
-      spreadsheetId,
-      range: `'${escapedSheetName}'!A:ZZ`,
-      valueRenderOption: "FORMATTED_VALUE",
-    }),
-  ]);
-  const timeZone = metadata.data.properties?.timeZone;
-  if (!timeZone) throw new Error("Spreadsheet timezone is unavailable.");
-  return parseScoreRows(values.data.values ?? [], timeZone);
+  const values = await sheets.spreadsheets.values.get({
+    spreadsheetId,
+    range: `'${escapedSheetName}'!A:ZZ`,
+    valueRenderOption: "FORMATTED_VALUE",
+  });
+  const rows = values.data.values ?? [];
+  if (!rows.length) return [];
+  return rows.slice(1).flatMap((row, index) => {
+    const parsed = parseScoreRows([rows[0], row]);
+    return parsed.map((score) => ({ rowNumber: index + 2, score }));
+  });
 }
