@@ -18,9 +18,9 @@ import { createSongTitleResolver } from "./lib/song-title-resolver.mjs";
 
 function argumentsFrom(commandLine) {
   const limitIndex = commandLine.indexOf("--limit");
-  const limit = limitIndex === -1 ? 10 : Number(commandLine[limitIndex + 1]);
-  if (!Number.isInteger(limit) || limit < 1 || limit > 25) {
-    throw new Error("--limit must be an integer from 1 through 25.");
+  const limit = limitIndex === -1 ? Infinity : Number(commandLine[limitIndex + 1]);
+  if (limit !== Infinity && (!Number.isInteger(limit) || limit < 1)) {
+    throw new Error("--limit must be a positive integer.");
   }
   return { limit };
 }
@@ -305,7 +305,7 @@ async function main() {
 
   const report = {
     generatedAt: new Date().toISOString(),
-    requestedLimit: limit,
+    requestedLimit: Number.isFinite(limit) ? limit : null,
     processedCount: results.length,
     importedCount: results.filter(({ status }) => status === "imported").length,
     reconciledCount: results.filter(({ status }) => status === "reconciled").length,

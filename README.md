@@ -58,6 +58,9 @@ Drive and Sheets. `scores:sync` archives plays not already stored.
 `catalog:sync` reads titles from the score archive and downloads metadata only
 for songs not already cataloged.
 
+Without `--limit`, the image importer processes the full actionable queue
+sequentially. Use `--limit 1` only when testing a local or manual run.
+
 Titles that cannot be matched are excluded from the committed score archive and
 reported through Discord. Correct image-import failures in the visible
 `Score Import Review` sheet and check `Retry`, or add catalog corrections to

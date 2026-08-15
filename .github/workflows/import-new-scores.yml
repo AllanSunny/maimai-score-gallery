@@ -4,9 +4,8 @@ on:
   workflow_dispatch:
     inputs:
       image_limit:
-        description: Maximum new images to process
-        required: true
-        default: "25"
+        description: Optional image limit for a test run; blank processes all new images
+        required: false
   schedule:
     # GitHub cron is UTC; the gate below selects midnight Eastern across DST.
     - cron: "0 4 * * 0"
@@ -56,8 +55,14 @@ jobs:
         id: image-import
         if: ${{ steps.schedule-check.outputs.should-run == 'true' }}
         continue-on-error: true
-        run: npm run scores:import -- --limit "${{ inputs.image_limit || '25' }}"
+        run: |
+          if [ -n "$IMAGE_LIMIT" ]; then
+            npm run scores:import -- --limit "$IMAGE_LIMIT"
+          else
+            npm run scores:import
+          fi
         env:
+          IMAGE_LIMIT: ${{ inputs.image_limit }}
           GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
           GOOGLE_DRIVE_FOLDER_ID: ${{ vars.GOOGLE_DRIVE_FOLDER_ID }}
           GOOGLE_PROCESSED_FOLDER_ID: ${{ vars.GOOGLE_PROCESSED_FOLDER_ID }}
