@@ -9,3 +9,7 @@ export function allSongTitles(titles: SongTitles): string[] {
     ...titles.aliases,
   ];
 }
+
+export function displayedAlternateTitles(titles: SongTitles): string[] {
+  return [...titles.romaji, ...titles.english];
+}

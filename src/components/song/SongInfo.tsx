@@ -1,5 +1,5 @@
 import { achievementRank } from "../../utils/rank";
-import { allSongTitles } from "../../utils/song-titles";
+import { displayedAlternateTitles } from "../../utils/song-titles";
 import type { ChartType, Difficulty, SongTitles } from "../../utils/types";
 
 export interface SongChartSummary {
@@ -26,7 +26,7 @@ const difficultyStyles: Record<Difficulty, string> = {
 };
 
 export function SongInfo({ titles, chartType, jacketUrl, charts }: SongInfoProps) {
-  const alternateTitles = allSongTitles(titles).slice(1);
+  const alternateTitles = displayedAlternateTitles(titles);
   const name = titles.canonical;
   return (
     <article className="overflow-hidden rounded-2xl border border-line bg-white/60">
