@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-15T19:36:15.261Z",
+  "generatedAt": "2026-08-15T23:42:47.835Z",
   "songs": [
     {
       "id": "song-85572925973b",
@@ -200,6 +200,184 @@
       ]
     },
     {
+      "id": "song-dc1a2f9d7bd7",
+      "titles": {
+        "canonical": "CHAOS",
+        "kana": [],
+        "romaji": [],
+        "english": [],
+        "aliases": []
+      },
+      "artist": "Æsir",
+      "jacketKey": "jackets/song-dc1a2f9d7bd7-242e116c358f.png",
+      "versions": [
+        {
+          "id": "song-dc1a2f9d7bd7-dx",
+          "chartType": "DX",
+          "charts": [
+            {
+              "id": "song-dc1a2f9d7bd7-dx-basic",
+              "difficulty": "BASIC",
+              "level": "5",
+              "chartConstant": null,
+              "charter": null
+            },
+            {
+              "id": "song-dc1a2f9d7bd7-dx-advanced",
+              "difficulty": "ADVANCED",
+              "level": "7+",
+              "chartConstant": null,
+              "charter": null
+            },
+            {
+              "id": "song-dc1a2f9d7bd7-dx-expert",
+              "difficulty": "EXPERT",
+              "level": "11+",
+              "chartConstant": null,
+              "charter": null
+            },
+            {
+              "id": "song-dc1a2f9d7bd7-dx-master",
+              "difficulty": "MASTER",
+              "level": "13+",
+              "chartConstant": null,
+              "charter": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "song-fa9e1d22205a",
+      "titles": {
+        "canonical": "conflict",
+        "kana": [],
+        "romaji": [],
+        "english": [],
+        "aliases": []
+      },
+      "artist": "siromaru + cranky",
+      "jacketKey": "jackets/song-fa9e1d22205a-995bae14cca1.png",
+      "versions": [
+        {
+          "id": "song-fa9e1d22205a-dx",
+          "chartType": "DX",
+          "charts": [
+            {
+              "id": "song-fa9e1d22205a-dx-basic",
+              "difficulty": "BASIC",
+              "level": "3",
+              "chartConstant": 3,
+              "charter": null
+            },
+            {
+              "id": "song-fa9e1d22205a-dx-advanced",
+              "difficulty": "ADVANCED",
+              "level": "8",
+              "chartConstant": 8.2,
+              "charter": null
+            },
+            {
+              "id": "song-fa9e1d22205a-dx-expert",
+              "difficulty": "EXPERT",
+              "level": "11",
+              "chartConstant": 11.4,
+              "charter": "華火職人"
+            },
+            {
+              "id": "song-fa9e1d22205a-dx-master",
+              "difficulty": "MASTER",
+              "level": "13",
+              "chartConstant": 13.5,
+              "charter": "小鳥遊さん"
+            }
+          ]
+        },
+        {
+          "id": "song-fa9e1d22205a-std",
+          "chartType": "STD",
+          "charts": [
+            {
+              "id": "song-fa9e1d22205a-std-basic",
+              "difficulty": "BASIC",
+              "level": "5",
+              "chartConstant": 5,
+              "charter": null
+            },
+            {
+              "id": "song-fa9e1d22205a-std-advanced",
+              "difficulty": "ADVANCED",
+              "level": "8",
+              "chartConstant": 8,
+              "charter": null
+            },
+            {
+              "id": "song-fa9e1d22205a-std-expert",
+              "difficulty": "EXPERT",
+              "level": "12+",
+              "chartConstant": 12.7,
+              "charter": "Techno Kitchen"
+            },
+            {
+              "id": "song-fa9e1d22205a-std-master",
+              "difficulty": "MASTER",
+              "level": "14",
+              "chartConstant": 14.2,
+              "charter": "rioN"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "song-dca63a8a0a36",
+      "titles": {
+        "canonical": "Don't Fight The Music",
+        "kana": [],
+        "romaji": [],
+        "english": [],
+        "aliases": []
+      },
+      "artist": "黒魔",
+      "jacketKey": "jackets/song-dca63a8a0a36-7a30c85cc3f0.png",
+      "versions": [
+        {
+          "id": "song-dca63a8a0a36-dx",
+          "chartType": "DX",
+          "charts": [
+            {
+              "id": "song-dca63a8a0a36-dx-basic",
+              "difficulty": "BASIC",
+              "level": "5",
+              "chartConstant": 5,
+              "charter": null
+            },
+            {
+              "id": "song-dca63a8a0a36-dx-advanced",
+              "difficulty": "ADVANCED",
+              "level": "9",
+              "chartConstant": 9,
+              "charter": null
+            },
+            {
+              "id": "song-dca63a8a0a36-dx-expert",
+              "difficulty": "EXPERT",
+              "level": "12+",
+              "chartConstant": 12.8,
+              "charter": "ロシェ@ペンギン"
+            },
+            {
+              "id": "song-dca63a8a0a36-dx-master",
+              "difficulty": "MASTER",
+              "level": "14",
+              "chartConstant": 14.1,
+              "charter": "翠楼屋 vs あまくちジンジャー"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "song-e82460b7a2b0",
       "titles": {
         "canonical": "enchanted wanderer",
@@ -242,6 +420,136 @@
               "level": "13+",
               "chartConstant": 13.8,
               "charter": "アマリリス"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "song-4ffbb20786b9",
+      "titles": {
+        "canonical": "Glorious Crown",
+        "kana": [],
+        "romaji": [],
+        "english": [],
+        "aliases": []
+      },
+      "artist": "xi",
+      "jacketKey": "jackets/song-4ffbb20786b9-c413afb8c9f6.png",
+      "versions": [
+        {
+          "id": "song-4ffbb20786b9-std",
+          "chartType": "STD",
+          "charts": [
+            {
+              "id": "song-4ffbb20786b9-std-basic",
+              "difficulty": "BASIC",
+              "level": "7",
+              "chartConstant": 7,
+              "charter": null
+            },
+            {
+              "id": "song-4ffbb20786b9-std-advanced",
+              "difficulty": "ADVANCED",
+              "level": "10",
+              "chartConstant": 10.5,
+              "charter": null
+            },
+            {
+              "id": "song-4ffbb20786b9-std-expert",
+              "difficulty": "EXPERT",
+              "level": "13",
+              "chartConstant": 13.2,
+              "charter": "ぴちネコ"
+            },
+            {
+              "id": "song-4ffbb20786b9-std-master",
+              "difficulty": "MASTER",
+              "level": "14+",
+              "chartConstant": 14.8,
+              "charter": "チャン@DP皆伝 vs Jack"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "song-2ffef18fba7f",
+      "titles": {
+        "canonical": "Halcyon",
+        "kana": [],
+        "romaji": [],
+        "english": [],
+        "aliases": []
+      },
+      "artist": "xi",
+      "jacketKey": "jackets/song-2ffef18fba7f-0d7b16b15dd0.png",
+      "versions": [
+        {
+          "id": "song-2ffef18fba7f-dx",
+          "chartType": "DX",
+          "charts": [
+            {
+              "id": "song-2ffef18fba7f-dx-basic",
+              "difficulty": "BASIC",
+              "level": "3",
+              "chartConstant": 3,
+              "charter": null
+            },
+            {
+              "id": "song-2ffef18fba7f-dx-advanced",
+              "difficulty": "ADVANCED",
+              "level": "8",
+              "chartConstant": 8.5,
+              "charter": null
+            },
+            {
+              "id": "song-2ffef18fba7f-dx-expert",
+              "difficulty": "EXPERT",
+              "level": "11",
+              "chartConstant": 11.4,
+              "charter": "うさぎランドリー"
+            },
+            {
+              "id": "song-2ffef18fba7f-dx-master",
+              "difficulty": "MASTER",
+              "level": "13",
+              "chartConstant": 13.5,
+              "charter": "ぴちネコ"
+            }
+          ]
+        },
+        {
+          "id": "song-2ffef18fba7f-std",
+          "chartType": "STD",
+          "charts": [
+            {
+              "id": "song-2ffef18fba7f-std-basic",
+              "difficulty": "BASIC",
+              "level": "6",
+              "chartConstant": 6,
+              "charter": null
+            },
+            {
+              "id": "song-2ffef18fba7f-std-advanced",
+              "difficulty": "ADVANCED",
+              "level": "8+",
+              "chartConstant": 8.8,
+              "charter": null
+            },
+            {
+              "id": "song-2ffef18fba7f-std-expert",
+              "difficulty": "EXPERT",
+              "level": "12",
+              "chartConstant": 12.5,
+              "charter": "隅田川星人"
+            },
+            {
+              "id": "song-2ffef18fba7f-std-master",
+              "difficulty": "MASTER",
+              "level": "14",
+              "chartConstant": 14.3,
+              "charter": "ロシアンブラック"
             }
           ]
         }
@@ -677,6 +985,88 @@
       ]
     },
     {
+      "id": "song-0ac24dd304e4",
+      "titles": {
+        "canonical": "Oshama Scramble!",
+        "kana": [],
+        "romaji": [],
+        "english": [],
+        "aliases": []
+      },
+      "artist": "t+pazolite",
+      "jacketKey": "jackets/song-0ac24dd304e4-1de0544e6a65.png",
+      "versions": [
+        {
+          "id": "song-0ac24dd304e4-dx",
+          "chartType": "DX",
+          "charts": [
+            {
+              "id": "song-0ac24dd304e4-dx-basic",
+              "difficulty": "BASIC",
+              "level": "4",
+              "chartConstant": 4,
+              "charter": null
+            },
+            {
+              "id": "song-0ac24dd304e4-dx-advanced",
+              "difficulty": "ADVANCED",
+              "level": "8+",
+              "chartConstant": 8.7,
+              "charter": null
+            },
+            {
+              "id": "song-0ac24dd304e4-dx-expert",
+              "difficulty": "EXPERT",
+              "level": "11",
+              "chartConstant": 11.4,
+              "charter": "はっぴー"
+            },
+            {
+              "id": "song-0ac24dd304e4-dx-master",
+              "difficulty": "MASTER",
+              "level": "13+",
+              "chartConstant": 13.6,
+              "charter": "Jack"
+            }
+          ]
+        },
+        {
+          "id": "song-0ac24dd304e4-std",
+          "chartType": "STD",
+          "charts": [
+            {
+              "id": "song-0ac24dd304e4-std-basic",
+              "difficulty": "BASIC",
+              "level": "6",
+              "chartConstant": 6,
+              "charter": null
+            },
+            {
+              "id": "song-0ac24dd304e4-std-advanced",
+              "difficulty": "ADVANCED",
+              "level": "8+",
+              "chartConstant": 8.6,
+              "charter": null
+            },
+            {
+              "id": "song-0ac24dd304e4-std-expert",
+              "difficulty": "EXPERT",
+              "level": "11+",
+              "chartConstant": 11.9,
+              "charter": "Techno Kitchen"
+            },
+            {
+              "id": "song-0ac24dd304e4-std-master",
+              "difficulty": "MASTER",
+              "level": "14",
+              "chartConstant": 14.5,
+              "charter": "Jack"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "song-3d08dd4bc3b8",
       "titles": {
         "canonical": "Party☆People☆Princess",
@@ -821,6 +1211,61 @@
       ]
     },
     {
+      "id": "song-7fa77704b857",
+      "titles": {
+        "canonical": "the EmpErroR",
+        "kana": [],
+        "romaji": [],
+        "english": [],
+        "aliases": []
+      },
+      "artist": "sasakure.UK",
+      "jacketKey": "jackets/song-7fa77704b857-5b68225b9bd4.png",
+      "versions": [
+        {
+          "id": "song-7fa77704b857-std",
+          "chartType": "STD",
+          "charts": [
+            {
+              "id": "song-7fa77704b857-std-basic",
+              "difficulty": "BASIC",
+              "level": "5",
+              "chartConstant": 5,
+              "charter": null
+            },
+            {
+              "id": "song-7fa77704b857-std-advanced",
+              "difficulty": "ADVANCED",
+              "level": "10+",
+              "chartConstant": 10.6,
+              "charter": null
+            },
+            {
+              "id": "song-7fa77704b857-std-expert",
+              "difficulty": "EXPERT",
+              "level": "13",
+              "chartConstant": 13.4,
+              "charter": "すきやき奉行"
+            },
+            {
+              "id": "song-7fa77704b857-std-master",
+              "difficulty": "MASTER",
+              "level": "14+",
+              "chartConstant": 14.8,
+              "charter": "小鳥遊さん"
+            },
+            {
+              "id": "song-7fa77704b857-std-re-master",
+              "difficulty": "Re:MASTER",
+              "level": "14+",
+              "chartConstant": 14.9,
+              "charter": "-ZONE- SaFaRi"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "song-62ffd18e0b91",
       "titles": {
         "canonical": "Unwelcome School",
@@ -870,6 +1315,150 @@
               "level": "14",
               "chartConstant": null,
               "charter": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "song-455da6cc1460",
+      "titles": {
+        "canonical": "あいたい星人",
+        "kana": [],
+        "romaji": [],
+        "english": [],
+        "aliases": []
+      },
+      "artist": "DECO*27",
+      "jacketKey": "jackets/song-455da6cc1460-f091a2d4dc10.png",
+      "versions": [
+        {
+          "id": "song-455da6cc1460-dx",
+          "chartType": "DX",
+          "charts": [
+            {
+              "id": "song-455da6cc1460-dx-basic",
+              "difficulty": "BASIC",
+              "level": "3",
+              "chartConstant": 3,
+              "charter": null
+            },
+            {
+              "id": "song-455da6cc1460-dx-advanced",
+              "difficulty": "ADVANCED",
+              "level": "6",
+              "chartConstant": 6.2,
+              "charter": null
+            },
+            {
+              "id": "song-455da6cc1460-dx-expert",
+              "difficulty": "EXPERT",
+              "level": "9+",
+              "chartConstant": 9.7,
+              "charter": "はっぴー"
+            },
+            {
+              "id": "song-455da6cc1460-dx-master",
+              "difficulty": "MASTER",
+              "level": "13",
+              "chartConstant": 13.2,
+              "charter": "じゃこレモン"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "song-517240e03361",
+      "titles": {
+        "canonical": "アニマル",
+        "kana": [],
+        "romaji": [],
+        "english": [],
+        "aliases": []
+      },
+      "artist": "DECO*27",
+      "jacketKey": "jackets/song-517240e03361-e3bc9ea63468.png",
+      "versions": [
+        {
+          "id": "song-517240e03361-dx",
+          "chartType": "DX",
+          "charts": [
+            {
+              "id": "song-517240e03361-dx-basic",
+              "difficulty": "BASIC",
+              "level": "3",
+              "chartConstant": 3,
+              "charter": null
+            },
+            {
+              "id": "song-517240e03361-dx-advanced",
+              "difficulty": "ADVANCED",
+              "level": "7+",
+              "chartConstant": 7.8,
+              "charter": null
+            },
+            {
+              "id": "song-517240e03361-dx-expert",
+              "difficulty": "EXPERT",
+              "level": "10+",
+              "chartConstant": 10.8,
+              "charter": "カマボコ君"
+            },
+            {
+              "id": "song-517240e03361-dx-master",
+              "difficulty": "MASTER",
+              "level": "13",
+              "chartConstant": 13.1,
+              "charter": "Redarrow"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "song-9484ecffb2df",
+      "titles": {
+        "canonical": "ありふれたせかいせいふく",
+        "kana": [],
+        "romaji": [],
+        "english": [],
+        "aliases": []
+      },
+      "artist": "ピノキオピー",
+      "jacketKey": "jackets/song-9484ecffb2df-edeb396dafde.png",
+      "versions": [
+        {
+          "id": "song-9484ecffb2df-std",
+          "chartType": "STD",
+          "charts": [
+            {
+              "id": "song-9484ecffb2df-std-basic",
+              "difficulty": "BASIC",
+              "level": "5",
+              "chartConstant": 5,
+              "charter": null
+            },
+            {
+              "id": "song-9484ecffb2df-std-advanced",
+              "difficulty": "ADVANCED",
+              "level": "7+",
+              "chartConstant": 7.6,
+              "charter": null
+            },
+            {
+              "id": "song-9484ecffb2df-std-expert",
+              "difficulty": "EXPERT",
+              "level": "9+",
+              "chartConstant": 9.9,
+              "charter": "しろいろ"
+            },
+            {
+              "id": "song-9484ecffb2df-std-master",
+              "difficulty": "MASTER",
+              "level": "13+",
+              "chartConstant": 13.6,
+              "charter": "Jack"
             }
           ]
         }
@@ -1356,6 +1945,205 @@
       ]
     },
     {
+      "id": "song-e8be0960fb5f",
+      "titles": {
+        "canonical": "ナイト・オブ・ナイツ",
+        "kana": [],
+        "romaji": [],
+        "english": [],
+        "aliases": []
+      },
+      "artist": "ビートまりお(COOL＆CREATE)",
+      "jacketKey": "jackets/song-e8be0960fb5f-8c8092c4d6b8.png",
+      "versions": [
+        {
+          "id": "song-e8be0960fb5f-dx",
+          "chartType": "DX",
+          "charts": [
+            {
+              "id": "song-e8be0960fb5f-dx-basic",
+              "difficulty": "BASIC",
+              "level": "5",
+              "chartConstant": 5,
+              "charter": null
+            },
+            {
+              "id": "song-e8be0960fb5f-dx-advanced",
+              "difficulty": "ADVANCED",
+              "level": "7+",
+              "chartConstant": 7.7,
+              "charter": null
+            },
+            {
+              "id": "song-e8be0960fb5f-dx-expert",
+              "difficulty": "EXPERT",
+              "level": "11+",
+              "chartConstant": 11.8,
+              "charter": "鳩ホルダー"
+            },
+            {
+              "id": "song-e8be0960fb5f-dx-master",
+              "difficulty": "MASTER",
+              "level": "13",
+              "chartConstant": 13.5,
+              "charter": "はっぴー"
+            }
+          ]
+        },
+        {
+          "id": "song-e8be0960fb5f-std",
+          "chartType": "STD",
+          "charts": [
+            {
+              "id": "song-e8be0960fb5f-std-basic",
+              "difficulty": "BASIC",
+              "level": "4",
+              "chartConstant": 4,
+              "charter": null
+            },
+            {
+              "id": "song-e8be0960fb5f-std-advanced",
+              "difficulty": "ADVANCED",
+              "level": "8",
+              "chartConstant": 8,
+              "charter": null
+            },
+            {
+              "id": "song-e8be0960fb5f-std-expert",
+              "difficulty": "EXPERT",
+              "level": "12",
+              "chartConstant": 12,
+              "charter": "チャン@DP皆伝"
+            },
+            {
+              "id": "song-e8be0960fb5f-std-master",
+              "difficulty": "MASTER",
+              "level": "13",
+              "chartConstant": 13.3,
+              "charter": "mai-Star"
+            },
+            {
+              "id": "song-e8be0960fb5f-std-re-master",
+              "difficulty": "Re:MASTER",
+              "level": "14",
+              "chartConstant": 14.4,
+              "charter": "某S氏"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "song-aa146dfca961",
+      "titles": {
+        "canonical": "はいよろこんで",
+        "kana": [],
+        "romaji": [],
+        "english": [],
+        "aliases": []
+      },
+      "artist": "こっちのけんと",
+      "jacketKey": "jackets/song-aa146dfca961-9a5f3c9e349b.png",
+      "versions": [
+        {
+          "id": "song-aa146dfca961-dx",
+          "chartType": "DX",
+          "charts": [
+            {
+              "id": "song-aa146dfca961-dx-basic",
+              "difficulty": "BASIC",
+              "level": "3",
+              "chartConstant": 3,
+              "charter": null
+            },
+            {
+              "id": "song-aa146dfca961-dx-advanced",
+              "difficulty": "ADVANCED",
+              "level": "6",
+              "chartConstant": 6.5,
+              "charter": null
+            },
+            {
+              "id": "song-aa146dfca961-dx-expert",
+              "difficulty": "EXPERT",
+              "level": "9+",
+              "chartConstant": 9.8,
+              "charter": "鳩ホルダー"
+            },
+            {
+              "id": "song-aa146dfca961-dx-master",
+              "difficulty": "MASTER",
+              "level": "11+",
+              "chartConstant": 11.6,
+              "charter": "緑風 犬三郎"
+            },
+            {
+              "id": "song-aa146dfca961-dx-re-master",
+              "difficulty": "Re:MASTER",
+              "level": "13",
+              "chartConstant": 13.2,
+              "charter": "Jack"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "song-9028eaf59903",
+      "titles": {
+        "canonical": "ビビデバ",
+        "kana": [],
+        "romaji": [],
+        "english": [],
+        "aliases": []
+      },
+      "artist": "星街すいせい（ホロライブ）",
+      "jacketKey": "jackets/song-9028eaf59903-13a208234b68.png",
+      "versions": [
+        {
+          "id": "song-9028eaf59903-dx",
+          "chartType": "DX",
+          "charts": [
+            {
+              "id": "song-9028eaf59903-dx-basic",
+              "difficulty": "BASIC",
+              "level": "2",
+              "chartConstant": 2,
+              "charter": null
+            },
+            {
+              "id": "song-9028eaf59903-dx-advanced",
+              "difficulty": "ADVANCED",
+              "level": "6",
+              "chartConstant": 6.4,
+              "charter": null
+            },
+            {
+              "id": "song-9028eaf59903-dx-expert",
+              "difficulty": "EXPERT",
+              "level": "9+",
+              "chartConstant": 9.7,
+              "charter": "サファ太"
+            },
+            {
+              "id": "song-9028eaf59903-dx-master",
+              "difficulty": "MASTER",
+              "level": "11+",
+              "chartConstant": 11.8,
+              "charter": "緑風 犬三郎"
+            },
+            {
+              "id": "song-9028eaf59903-dx-re-master",
+              "difficulty": "Re:MASTER",
+              "level": "13",
+              "chartConstant": 13.2,
+              "charter": "シチミヘルツ"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "song-08f22014494d",
       "titles": {
         "canonical": "メズマライザー",
@@ -1409,6 +2197,136 @@
               "level": "13+",
               "chartConstant": 13.8,
               "charter": "サファ太"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "song-940363864a61",
+      "titles": {
+        "canonical": "モ°ルモ°ル",
+        "kana": [],
+        "romaji": [],
+        "english": [],
+        "aliases": []
+      },
+      "artist": "sasakure.UK",
+      "jacketKey": "jackets/song-940363864a61-bb85818ec0f7.png",
+      "versions": [
+        {
+          "id": "song-940363864a61-dx",
+          "chartType": "DX",
+          "charts": [
+            {
+              "id": "song-940363864a61-dx-basic",
+              "difficulty": "BASIC",
+              "level": "6",
+              "chartConstant": 6,
+              "charter": null
+            },
+            {
+              "id": "song-940363864a61-dx-advanced",
+              "difficulty": "ADVANCED",
+              "level": "8",
+              "chartConstant": 8.2,
+              "charter": null
+            },
+            {
+              "id": "song-940363864a61-dx-expert",
+              "difficulty": "EXPERT",
+              "level": "12",
+              "chartConstant": 12.2,
+              "charter": "小鳥遊さん"
+            },
+            {
+              "id": "song-940363864a61-dx-master",
+              "difficulty": "MASTER",
+              "level": "13+",
+              "chartConstant": 13.9,
+              "charter": "サファ太"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "song-759a718763cf",
+      "titles": {
+        "canonical": "モザイクロール",
+        "kana": [],
+        "romaji": [],
+        "english": [],
+        "aliases": []
+      },
+      "artist": "DECO*27",
+      "jacketKey": "jackets/song-759a718763cf-6eaab39b14fe.png",
+      "versions": [
+        {
+          "id": "song-759a718763cf-dx",
+          "chartType": "DX",
+          "charts": [
+            {
+              "id": "song-759a718763cf-dx-basic",
+              "difficulty": "BASIC",
+              "level": "3",
+              "chartConstant": 3,
+              "charter": null
+            },
+            {
+              "id": "song-759a718763cf-dx-advanced",
+              "difficulty": "ADVANCED",
+              "level": "6",
+              "chartConstant": 6.5,
+              "charter": null
+            },
+            {
+              "id": "song-759a718763cf-dx-expert",
+              "difficulty": "EXPERT",
+              "level": "10",
+              "chartConstant": 10.2,
+              "charter": "じゃこレモン"
+            },
+            {
+              "id": "song-759a718763cf-dx-master",
+              "difficulty": "MASTER",
+              "level": "13",
+              "chartConstant": 13.1,
+              "charter": "サファ太"
+            }
+          ]
+        },
+        {
+          "id": "song-759a718763cf-std",
+          "chartType": "STD",
+          "charts": [
+            {
+              "id": "song-759a718763cf-std-basic",
+              "difficulty": "BASIC",
+              "level": "3",
+              "chartConstant": 3,
+              "charter": null
+            },
+            {
+              "id": "song-759a718763cf-std-advanced",
+              "difficulty": "ADVANCED",
+              "level": "7+",
+              "chartConstant": 7.7,
+              "charter": null
+            },
+            {
+              "id": "song-759a718763cf-std-expert",
+              "difficulty": "EXPERT",
+              "level": "10+",
+              "chartConstant": 10.7,
+              "charter": "mai-Star"
+            },
+            {
+              "id": "song-759a718763cf-std-master",
+              "difficulty": "MASTER",
+              "level": "12+",
+              "chartConstant": 12.7,
+              "charter": "mai-Star"
             }
           ]
         }
@@ -1522,6 +2440,198 @@
       ]
     },
     {
+      "id": "song-d47f70af5b17",
+      "titles": {
+        "canonical": "ラビットホール",
+        "kana": [],
+        "romaji": [],
+        "english": [],
+        "aliases": []
+      },
+      "artist": "DECO*27",
+      "jacketKey": "jackets/song-d47f70af5b17-3924267e35bf.png",
+      "versions": [
+        {
+          "id": "song-d47f70af5b17-dx",
+          "chartType": "DX",
+          "charts": [
+            {
+              "id": "song-d47f70af5b17-dx-basic",
+              "difficulty": "BASIC",
+              "level": "3",
+              "chartConstant": 3,
+              "charter": null
+            },
+            {
+              "id": "song-d47f70af5b17-dx-advanced",
+              "difficulty": "ADVANCED",
+              "level": "7",
+              "chartConstant": 7,
+              "charter": null
+            },
+            {
+              "id": "song-d47f70af5b17-dx-expert",
+              "difficulty": "EXPERT",
+              "level": "9+",
+              "chartConstant": 9.8,
+              "charter": "サファ太"
+            },
+            {
+              "id": "song-d47f70af5b17-dx-master",
+              "difficulty": "MASTER",
+              "level": "11+",
+              "chartConstant": 11.8,
+              "charter": "緑風 犬三郎"
+            },
+            {
+              "id": "song-d47f70af5b17-dx-re-master",
+              "difficulty": "Re:MASTER",
+              "level": "13",
+              "chartConstant": 13.3,
+              "charter": "Luxizhel & Jack"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "song-3ce7f814ff96",
+      "titles": {
+        "canonical": "ローリンガール",
+        "kana": [],
+        "romaji": [],
+        "english": [],
+        "aliases": []
+      },
+      "artist": "wowaka",
+      "jacketKey": "jackets/song-3ce7f814ff96-601119bc7c5c.png",
+      "versions": [
+        {
+          "id": "song-3ce7f814ff96-dx",
+          "chartType": "DX",
+          "charts": [
+            {
+              "id": "song-3ce7f814ff96-dx-basic",
+              "difficulty": "BASIC",
+              "level": "4",
+              "chartConstant": null,
+              "charter": null
+            },
+            {
+              "id": "song-3ce7f814ff96-dx-advanced",
+              "difficulty": "ADVANCED",
+              "level": "7+",
+              "chartConstant": null,
+              "charter": null
+            },
+            {
+              "id": "song-3ce7f814ff96-dx-expert",
+              "difficulty": "EXPERT",
+              "level": "10+",
+              "chartConstant": null,
+              "charter": null
+            },
+            {
+              "id": "song-3ce7f814ff96-dx-master",
+              "difficulty": "MASTER",
+              "level": "13",
+              "chartConstant": null,
+              "charter": null
+            }
+          ]
+        },
+        {
+          "id": "song-3ce7f814ff96-std",
+          "chartType": "STD",
+          "charts": [
+            {
+              "id": "song-3ce7f814ff96-std-basic",
+              "difficulty": "BASIC",
+              "level": "4",
+              "chartConstant": 4,
+              "charter": null
+            },
+            {
+              "id": "song-3ce7f814ff96-std-advanced",
+              "difficulty": "ADVANCED",
+              "level": "7",
+              "chartConstant": 7.4,
+              "charter": null
+            },
+            {
+              "id": "song-3ce7f814ff96-std-expert",
+              "difficulty": "EXPERT",
+              "level": "9+",
+              "chartConstant": 9.8,
+              "charter": "はっぴー"
+            },
+            {
+              "id": "song-3ce7f814ff96-std-master",
+              "difficulty": "MASTER",
+              "level": "13",
+              "chartConstant": 13.2,
+              "charter": "mai-Star"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "song-86b237cecc19",
+      "titles": {
+        "canonical": "ワールズエンド・ダンスホール",
+        "kana": [],
+        "romaji": [],
+        "english": [],
+        "aliases": []
+      },
+      "artist": "wowaka",
+      "jacketKey": "jackets/song-86b237cecc19-1fb0ce394b93.png",
+      "versions": [
+        {
+          "id": "song-86b237cecc19-std",
+          "chartType": "STD",
+          "charts": [
+            {
+              "id": "song-86b237cecc19-std-basic",
+              "difficulty": "BASIC",
+              "level": "7",
+              "chartConstant": 7,
+              "charter": null
+            },
+            {
+              "id": "song-86b237cecc19-std-advanced",
+              "difficulty": "ADVANCED",
+              "level": "8",
+              "chartConstant": 8.4,
+              "charter": null
+            },
+            {
+              "id": "song-86b237cecc19-std-expert",
+              "difficulty": "EXPERT",
+              "level": "9+",
+              "chartConstant": 9.7,
+              "charter": "譜面-100号"
+            },
+            {
+              "id": "song-86b237cecc19-std-master",
+              "difficulty": "MASTER",
+              "level": "13",
+              "chartConstant": 13,
+              "charter": "ニャイン"
+            },
+            {
+              "id": "song-86b237cecc19-std-re-master",
+              "difficulty": "Re:MASTER",
+              "level": "13",
+              "chartConstant": 13.3,
+              "charter": "はっぴー"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "song-2f64638892ab",
       "titles": {
         "canonical": "人マニア",
@@ -1568,6 +2678,88 @@
               "level": "13+",
               "chartConstant": 13.7,
               "charter": "はっぴー"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "song-438eaed9a234",
+      "titles": {
+        "canonical": "初音ミクの消失",
+        "kana": [],
+        "romaji": [],
+        "english": [],
+        "aliases": []
+      },
+      "artist": "cosMo＠暴走P",
+      "jacketKey": "jackets/song-438eaed9a234-2188d7578619.png",
+      "versions": [
+        {
+          "id": "song-438eaed9a234-dx",
+          "chartType": "DX",
+          "charts": [
+            {
+              "id": "song-438eaed9a234-dx-basic",
+              "difficulty": "BASIC",
+              "level": "6",
+              "chartConstant": 6,
+              "charter": null
+            },
+            {
+              "id": "song-438eaed9a234-dx-advanced",
+              "difficulty": "ADVANCED",
+              "level": "8",
+              "chartConstant": 8,
+              "charter": null
+            },
+            {
+              "id": "song-438eaed9a234-dx-expert",
+              "difficulty": "EXPERT",
+              "level": "12",
+              "chartConstant": 12,
+              "charter": "Luxizhel"
+            },
+            {
+              "id": "song-438eaed9a234-dx-master",
+              "difficulty": "MASTER",
+              "level": "14",
+              "chartConstant": 14.5,
+              "charter": "はっぴー"
+            }
+          ]
+        },
+        {
+          "id": "song-438eaed9a234-std",
+          "chartType": "STD",
+          "charts": [
+            {
+              "id": "song-438eaed9a234-std-basic",
+              "difficulty": "BASIC",
+              "level": "6",
+              "chartConstant": 6,
+              "charter": null
+            },
+            {
+              "id": "song-438eaed9a234-std-advanced",
+              "difficulty": "ADVANCED",
+              "level": "8+",
+              "chartConstant": 8.8,
+              "charter": null
+            },
+            {
+              "id": "song-438eaed9a234-std-expert",
+              "difficulty": "EXPERT",
+              "level": "11+",
+              "chartConstant": 11.8,
+              "charter": "某S氏"
+            },
+            {
+              "id": "song-438eaed9a234-std-master",
+              "difficulty": "MASTER",
+              "level": "13+",
+              "chartConstant": 13.9,
+              "charter": "チャン@DP皆伝"
             }
           ]
         }
@@ -1742,6 +2934,61 @@
       ]
     },
     {
+      "id": "song-389f9829e427",
+      "titles": {
+        "canonical": "神っぽいな",
+        "kana": [],
+        "romaji": [],
+        "english": [],
+        "aliases": []
+      },
+      "artist": "ピノキオピー",
+      "jacketKey": "jackets/song-389f9829e427-dd66b90f26ba.png",
+      "versions": [
+        {
+          "id": "song-389f9829e427-dx",
+          "chartType": "DX",
+          "charts": [
+            {
+              "id": "song-389f9829e427-dx-basic",
+              "difficulty": "BASIC",
+              "level": "2",
+              "chartConstant": 2,
+              "charter": null
+            },
+            {
+              "id": "song-389f9829e427-dx-advanced",
+              "difficulty": "ADVANCED",
+              "level": "6",
+              "chartConstant": 6.5,
+              "charter": null
+            },
+            {
+              "id": "song-389f9829e427-dx-expert",
+              "difficulty": "EXPERT",
+              "level": "8+",
+              "chartConstant": 8.7,
+              "charter": "畳返し"
+            },
+            {
+              "id": "song-389f9829e427-dx-master",
+              "difficulty": "MASTER",
+              "level": "11+",
+              "chartConstant": 11.7,
+              "charter": "緑風 犬三郎"
+            },
+            {
+              "id": "song-389f9829e427-dx-re-master",
+              "difficulty": "Re:MASTER",
+              "level": "13",
+              "chartConstant": 13.3,
+              "charter": "サファ太"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "tsunagite",
       "titles": {
         "canonical": "系ぎて",
@@ -1799,6 +3046,61 @@
               "level": "15",
               "chartConstant": 15,
               "charter": "BEYOND THE MEMORiES"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "song-c3ab5ce385d0",
+      "titles": {
+        "canonical": "酔いどれ知らず",
+        "kana": [],
+        "romaji": [],
+        "english": [],
+        "aliases": []
+      },
+      "artist": "Kanaria",
+      "jacketKey": "jackets/song-c3ab5ce385d0-9153b7a3d66a.png",
+      "versions": [
+        {
+          "id": "song-c3ab5ce385d0-dx",
+          "chartType": "DX",
+          "charts": [
+            {
+              "id": "song-c3ab5ce385d0-dx-basic",
+              "difficulty": "BASIC",
+              "level": "2",
+              "chartConstant": 2,
+              "charter": null
+            },
+            {
+              "id": "song-c3ab5ce385d0-dx-advanced",
+              "difficulty": "ADVANCED",
+              "level": "6",
+              "chartConstant": 6,
+              "charter": null
+            },
+            {
+              "id": "song-c3ab5ce385d0-dx-expert",
+              "difficulty": "EXPERT",
+              "level": "8",
+              "chartConstant": 8.5,
+              "charter": "Luxizhel"
+            },
+            {
+              "id": "song-c3ab5ce385d0-dx-master",
+              "difficulty": "MASTER",
+              "level": "11+",
+              "chartConstant": 11.6,
+              "charter": "緑風 犬三郎"
+            },
+            {
+              "id": "song-c3ab5ce385d0-dx-re-master",
+              "difficulty": "Re:MASTER",
+              "level": "13",
+              "chartConstant": 13.2,
+              "charter": "サファ太"
             }
           ]
         }
