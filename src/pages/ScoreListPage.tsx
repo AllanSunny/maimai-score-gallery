@@ -3,12 +3,12 @@ import { fetchScores } from "../api";
 import { findCatalogSong } from "../catalog";
 import { SongInfo, type SongChartSummary } from "../components/song/SongInfo";
 import { PageHeading } from "../components/ui/PageHeading";
-import type { ChartType, Difficulty, Score } from "../types";
+import { allSongTitles } from "../song-titles";
+import type { ChartType, Difficulty, Score, SongTitles } from "../types";
 
 interface SongSummary {
-  name: string;
+  titles: SongTitles;
   chartType: ChartType;
-  alternateTitles: string[];
   jacketUrl?: string | null;
   charts: SongChartSummary[];
 }
@@ -43,12 +43,18 @@ function groupScoresBySong(scores: Score[]): SongSummary[] {
 
   scores.forEach((score) => {
     const metadata = findCatalogSong(score.songTitle, score.chartType);
-    const canonicalTitle = metadata?.title ?? score.songTitle;
+    const titles = metadata?.titles ?? {
+      canonical: score.songTitle,
+      kana: [],
+      romaji: [],
+      english: [],
+      aliases: [],
+    };
+    const canonicalTitle = titles.canonical;
     const songKey = `${canonicalTitle}\u0000${score.chartType}`;
     const song: SongSummary = songs.get(songKey) ?? {
-      name: canonicalTitle,
+      titles,
       chartType: score.chartType,
-      alternateTitles: [...(metadata?.alternateTitles ?? [])],
       jacketUrl: metadata?.jacketUrl,
       charts: (metadata?.charts ?? [])
         .map((chart): SongChartSummary => ({
@@ -82,7 +88,7 @@ function groupScoresBySong(scores: Score[]): SongSummary[] {
   });
 
   return [...songs.values()].sort((a, b) =>
-    a.name.localeCompare(b.name) || a.chartType.localeCompare(b.chartType));
+    a.titles.canonical.localeCompare(b.titles.canonical) || a.chartType.localeCompare(b.chartType));
 }
 
 export function ScoreListPage() {
@@ -105,7 +111,7 @@ export function ScoreListPage() {
   const songs = useMemo(() => {
     const normalizedQuery = query.trim().toLocaleLowerCase();
     return groupScoresBySong(scores).filter((song) =>
-      [song.name, ...song.alternateTitles].join(" ").toLocaleLowerCase().includes(normalizedQuery),
+      allSongTitles(song.titles).join(" ").toLocaleLowerCase().includes(normalizedQuery),
     );
   }, [query, scores]);
 
@@ -177,7 +183,7 @@ export function ScoreListPage() {
         <div className="mt-8 grid gap-4" onClickCapture={(event) => {
           if ((event.target as HTMLElement).closest('a[href^="#/songs/"]')) preserveListPosition();
         }}>
-          {visibleSongs.map((song) => <SongInfo key={`${song.name}-${song.chartType}`} {...song} />)}
+          {visibleSongs.map((song) => <SongInfo key={`${song.titles.canonical}-${song.chartType}`} {...song} />)}
           {!songs.length && <p className="rounded-2xl border border-line p-10 text-center text-sm text-muted">No matching songs.</p>}
           {songs.length > 0 && (
             <div ref={loadMoreRef} className="py-4 text-center">

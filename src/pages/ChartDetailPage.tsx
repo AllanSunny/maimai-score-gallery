@@ -44,7 +44,7 @@ export function ChartDetailPage({ songName, chartType, difficulty }: ChartDetail
           <section className="mt-12 grid items-start gap-8 lg:grid-cols-[minmax(0,20rem)_1fr]">
             {metadata?.jacketUrl && (
               <SongDetailFrame
-                title={metadata.title}
+                title={metadata.titles.canonical}
                 artist={metadata.artist}
                 jacketUrl={metadata.jacketUrl}
                 chartType={chartType}

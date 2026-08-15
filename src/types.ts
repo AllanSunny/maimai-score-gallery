@@ -15,11 +15,18 @@ export interface SongVersion {
   charts: Chart[];
 }
 
+export interface SongTitles {
+  canonical: string;
+  kana: string[];
+  romaji: string[];
+  english: string[];
+  aliases: string[];
+}
+
 export interface Song {
   id: string;
-  title: string;
+  titles: SongTitles;
   artist: string;
-  alternateTitles: string[];
   jacketKey: string | null;
   versions: SongVersion[];
 }

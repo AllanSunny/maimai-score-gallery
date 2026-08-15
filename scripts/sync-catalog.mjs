@@ -49,11 +49,42 @@ function unique(values) {
   return [...new Set(values.filter(Boolean))];
 }
 
-function alternateTitles(values, canonicalTitle = "") {
+function normalizedTitles(values, canonicalTitle = "") {
   const canonical = normalizeTitle(canonicalTitle);
   return unique(values
     .map((title) => String(title).trim().toLocaleLowerCase())
     .filter((title) => title && normalizeTitle(title) !== canonical));
+}
+
+function songTitleValues(song) {
+  return [
+    song.titles.canonical,
+    ...song.titles.kana,
+    ...song.titles.romaji,
+    ...song.titles.english,
+    ...song.titles.aliases,
+  ];
+}
+
+function overrideTitleValues(override) {
+  const titles = override.titles ?? {};
+  return [
+    ...(titles.kana ?? []),
+    ...(titles.romaji ?? []),
+    ...(titles.english ?? []),
+    ...(titles.aliases ?? []),
+  ];
+}
+
+function createSongTitles(canonical, override, requestedAliases = []) {
+  const titles = override.titles ?? {};
+  return {
+    canonical,
+    kana: normalizedTitles(titles.kana ?? [], canonical),
+    romaji: normalizedTitles(titles.romaji ?? [], canonical),
+    english: normalizedTitles(titles.english ?? [], canonical),
+    aliases: normalizedTitles([...(titles.aliases ?? []), ...requestedAliases], canonical),
+  };
 }
 
 function fallbackId(title) {
@@ -105,13 +136,13 @@ async function requestedSongs() {
   const requested = new Map();
   archive.scores.forEach((score) => {
     const key = normalizeTitle(score.songTitle);
-    const entry = requested.get(key) ?? { title: score.songTitle, alternateTitles: [] };
+    const entry = requested.get(key) ?? { title: score.songTitle, aliases: [] };
     requested.set(key, entry);
   });
   aliasHandoff.forEach((handoff) => {
     const key = normalizeTitle(handoff.title);
-    const entry = requested.get(key) ?? { title: handoff.title, alternateTitles: [] };
-    entry.alternateTitles = alternateTitles([...entry.alternateTitles, ...(handoff.alternateTitles ?? [])], entry.title);
+    const entry = requested.get(key) ?? { title: handoff.title, aliases: [] };
+    entry.aliases = normalizedTitles([...entry.aliases, ...(handoff.alternateTitles ?? [])], entry.title);
     requested.set(key, entry);
   });
   return [...requested.values()];
@@ -121,12 +152,15 @@ function mergeRequestedAliases(songs, requested) {
   let changed = false;
   requested.forEach((request) => {
     const target = normalizeTitle(request.title);
-    const song = songs.find((entry) => [entry.title, ...(entry.alternateTitles ?? [])]
+    const song = songs.find((entry) => songTitleValues(entry)
       .some((name) => normalizeTitle(name) === target));
     if (!song) return;
-    const aliases = alternateTitles([...song.alternateTitles, ...request.alternateTitles], song.title);
-    if (JSON.stringify(aliases) !== JSON.stringify(song.alternateTitles)) {
-      song.alternateTitles = aliases;
+    const aliases = normalizedTitles(
+      [...song.titles.aliases, ...request.aliases],
+      song.titles.canonical,
+    );
+    if (JSON.stringify(aliases) !== JSON.stringify(song.titles.aliases)) {
+      song.titles.aliases = aliases;
       changed = true;
     }
   });
@@ -135,7 +169,7 @@ function mergeRequestedAliases(songs, requested) {
 
 function isAlreadyCataloged(title, songs) {
   const target = normalizeTitle(title);
-  return songs.some((song) => [song.title, ...(song.alternateTitles ?? [])]
+  return songs.some((song) => songTitleValues(song)
     .some((name) => normalizeTitle(name) === target));
 }
 
@@ -143,7 +177,7 @@ function findOfficialSong(title, officialSongs, overrides) {
   const target = normalizeTitle(title);
   return officialSongs.find((song) => {
     const override = overrides[song.title] ?? {};
-    const names = [song.title, ...(override.alternateTitles ?? [])];
+    const names = [song.title, ...overrideTitleValues(override)];
     return names.some((name) => normalizeTitle(name) === target);
   });
 }
@@ -228,9 +262,10 @@ function extractChartVersions(song, override, communitySongs) {
 function enrichExistingCharts(songs, communitySongs, overrides) {
   let changed = false;
   songs.forEach((song) => {
-    const override = overrides[song.title] ?? {};
+    const canonicalTitle = song.titles.canonical;
+    const override = overrides[canonicalTitle] ?? {};
     song.versions.forEach((version) => {
-      const communitySong = findCommunitySong(song.title, version.chartType, communitySongs);
+      const communitySong = findCommunitySong(canonicalTitle, version.chartType, communitySongs);
       version.charts.forEach((chart) => {
         const correction = override.charts?.[`${version.chartType}:${chart.difficulty}`] ?? {};
         const metadata = communityChartMetadata(communitySong, difficultyIndexes.get(chart.difficulty));
@@ -253,7 +288,7 @@ function chartSlug(difficulty) {
 
 function findChartId(score, songs) {
   const target = normalizeTitle(score.songTitle);
-  const song = songs.find((entry) => [entry.title, ...(entry.alternateTitles ?? [])]
+  const song = songs.find((entry) => songTitleValues(entry)
     .some((name) => normalizeTitle(name) === target));
   const version = song?.versions.find((entry) => entry.chartType === score.chartType);
   return version?.charts.find((chart) => chart.difficulty === score.difficulty)?.id ?? null;
@@ -387,8 +422,9 @@ async function main() {
   let songsChanged = enrichExistingCharts(songs, communitySongs, overrides);
 
   missingArtistSongs.forEach((song) => {
-    const official = findOfficialSong(song.title, officialSongs, overrides);
-    if (!official) throw new Error(`Could not backfill artist for: ${song.title}`);
+    const canonicalTitle = song.titles.canonical;
+    const official = findOfficialSong(canonicalTitle, officialSongs, overrides);
+    if (!official) throw new Error(`Could not backfill artist for: ${canonicalTitle}`);
     const override = overrides[official.title] ?? {};
     song.artist = songArtist(official, override);
     songsChanged = true;
@@ -409,7 +445,7 @@ async function main() {
     unmatchedSongs.delete(normalizeTitle(requestedTitle));
 
     const override = overrides[official.title] ?? {};
-    const requestedAliases = requested.find((entry) => normalizeTitle(entry.title) === normalizeTitle(requestedTitle))?.alternateTitles ?? [];
+    const requestedAliases = requested.find((entry) => normalizeTitle(entry.title) === normalizeTitle(requestedTitle))?.aliases ?? [];
     const baseId = override.id ?? fallbackId(official.title);
     const sourceJacketUrl = new URL(official.image_url, SEGA_JACKET_BASE_URL).toString();
     const jacketKey = await uploadJacket(baseId, sourceJacketUrl);
@@ -427,9 +463,8 @@ async function main() {
 
     songs.push({
       id: baseId,
-      title: official.title,
+      titles: createSongTitles(official.title, override, requestedAliases),
       artist: songArtist(official, override),
-      alternateTitles: alternateTitles([...(override.alternateTitles ?? []), ...requestedAliases], official.title),
       jacketKey,
       versions,
     });
@@ -442,7 +477,7 @@ async function main() {
   const catalog = aliasesChanged || songsChanged
     ? {
         generatedAt: new Date().toISOString(),
-        songs: songs.sort((a, b) => a.title.localeCompare(b.title)),
+        songs: songs.sort((a, b) => a.titles.canonical.localeCompare(b.titles.canonical)),
       }
     : previous;
   if (aliasesChanged || songsChanged) {

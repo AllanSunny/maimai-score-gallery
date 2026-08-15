@@ -1,5 +1,6 @@
 import generatedCatalog from "./data/generated-catalog.json";
 import { parseGeneratedCatalog } from "./data-validation";
+import { allSongTitles } from "./song-titles";
 import type { CatalogSongView } from "./types";
 
 const jacketBaseUrl = import.meta.env.VITE_JACKET_BASE_URL?.replace(/\/$/, "");
@@ -26,7 +27,7 @@ function catalogKey(title: string, chartType: CatalogSongView["chartType"]) {
 }
 
 catalogSongs.forEach((song) => {
-  [song.title, ...song.alternateTitles].forEach((title) => {
+  allSongTitles(song.titles).forEach((title) => {
     catalogByTitleAndType.set(catalogKey(title, song.chartType), song);
   });
 });

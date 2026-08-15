@@ -1,14 +1,24 @@
 {
   "Magical Flavor": {
     "id": "magical-flavor",
-    "alternateTitles": [],
+    "titles": {
+      "kana": [],
+      "romaji": [],
+      "english": [],
+      "aliases": []
+    },
     "charts": {}
   },
   "系ぎて": {
     "id": "tsunagite",
-    "alternateTitles": [
-      "tsunagite"
-    ],
+    "titles": {
+      "kana": [],
+      "romaji": [
+        "tsunagite"
+      ],
+      "english": [],
+      "aliases": []
+    },
     "charts": {}
   }
 }

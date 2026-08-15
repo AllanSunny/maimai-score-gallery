@@ -40,6 +40,23 @@ function lowercaseString(value: unknown, path: string) {
   if (value !== value.toLocaleLowerCase()) throw new Error(`${path} must be lowercase.`);
 }
 
+function validateSongTitles(value: unknown, path: string) {
+  const titles = object(value, path);
+  nonemptyString(titles.canonical, `${path}.canonical`);
+  const seen = new Map([[titles.canonical.normalize("NFKC").toLocaleLowerCase(), `${path}.canonical`]]);
+  ["kana", "romaji", "english", "aliases"].forEach((category) => {
+    array(titles[category], `${path}.${category}`).forEach((title, index) => {
+      const titlePath = `${path}.${category}[${index}]`;
+      nonemptyString(title, titlePath);
+      lowercaseString(title, titlePath);
+      const normalized = title.normalize("NFKC").toLocaleLowerCase();
+      const existingPath = seen.get(normalized);
+      if (existingPath) throw new Error(`${titlePath} duplicates ${existingPath}.`);
+      seen.set(normalized, titlePath);
+    });
+  });
+}
+
 function validateChart(value: unknown, path: string) {
   const chart = object(value, path);
   string(chart.id, `${path}.id`);
@@ -63,9 +80,8 @@ export function parseGeneratedCatalog(value: unknown): GeneratedCatalog {
     const path = `catalog.songs[${songIndex}]`;
     const song = object(songValue, path);
     string(song.id, `${path}.id`);
-    string(song.title, `${path}.title`);
+    validateSongTitles(song.titles, `${path}.titles`);
     nonemptyString(song.artist, `${path}.artist`);
-    array(song.alternateTitles, `${path}.alternateTitles`).forEach((title, index) => lowercaseString(title, `${path}.alternateTitles[${index}]`));
     nullableString(song.jacketKey, `${path}.jacketKey`);
     array(song.versions, `${path}.versions`).forEach((versionValue, versionIndex) => {
       const versionPath = `${path}.versions[${versionIndex}]`;

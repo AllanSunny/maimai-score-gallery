@@ -1,5 +1,6 @@
-import type { ChartType, Difficulty } from "../../types";
 import { achievementRank } from "../../rank";
+import { allSongTitles } from "../../song-titles";
+import type { ChartType, Difficulty, SongTitles } from "../../types";
 
 export interface SongChartSummary {
   difficulty: Difficulty;
@@ -10,9 +11,8 @@ export interface SongChartSummary {
 }
 
 interface SongInfoProps {
-  name: string;
+  titles: SongTitles;
   chartType: ChartType;
-  alternateTitles?: string[];
   jacketUrl?: string | null;
   charts: SongChartSummary[];
 }
@@ -25,7 +25,9 @@ const difficultyStyles: Record<Difficulty, string> = {
   "Re:MASTER": "border-l-fuchsia-400",
 };
 
-export function SongInfo({ name, chartType, alternateTitles = [], jacketUrl, charts }: SongInfoProps) {
+export function SongInfo({ titles, chartType, jacketUrl, charts }: SongInfoProps) {
+  const alternateTitles = allSongTitles(titles).slice(1);
+  const name = titles.canonical;
   return (
     <article className="overflow-hidden rounded-2xl border border-line bg-white/60">
       <header className="flex items-center gap-4 border-b border-line px-5 py-5 sm:px-6">

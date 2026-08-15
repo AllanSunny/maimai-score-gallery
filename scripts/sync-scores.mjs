@@ -13,9 +13,20 @@ function normalizeTitle(value) {
   return String(value ?? "").normalize("NFKC").replace(/\s+/g, " ").trim().toLocaleLowerCase();
 }
 
+function songTitleValues(song) {
+  const titles = song.titles;
+  return [
+    titles.canonical,
+    ...titles.kana,
+    ...titles.romaji,
+    ...titles.english,
+    ...titles.aliases,
+  ];
+}
+
 function findChartId(score, songs) {
   const target = normalizeTitle(score.songTitle);
-  const song = songs.find((entry) => [entry.title, ...(entry.alternateTitles ?? [])]
+  const song = songs.find((entry) => songTitleValues(entry)
     .some((name) => normalizeTitle(name) === target));
   const version = song?.versions.find((entry) => entry.chartType === score.chartType);
   return version?.charts.find((chart) => chart.difficulty === score.difficulty)?.id ?? null;
@@ -31,12 +42,6 @@ function scoreFingerprint(score) {
     ...publicScore
   } = score;
   return JSON.stringify(publicScore);
-}
-
-function alternateTitles(score) {
-  return [...new Set((score.alternateTitles ?? [])
-    .map((title) => String(title).trim().toLocaleLowerCase())
-    .filter(Boolean))];
 }
 
 function storedScore(score, chartId) {
@@ -67,16 +72,10 @@ async function main() {
   const feed = await downloadJson(process.env.SCORES_API_URL);
   if (!Array.isArray(feed.scores)) throw new Error("Score feed must contain a scores array.");
 
-  const aliasesByTitle = new Map();
-  feed.scores.forEach((score) => {
-    const key = normalizeTitle(score.songTitle);
-    const entry = aliasesByTitle.get(key) ?? { title: score.songTitle, alternateTitles: [] };
-    entry.alternateTitles = [...new Set([...entry.alternateTitles, ...alternateTitles(score)])];
-    aliasesByTitle.set(key, entry);
-  });
   await mkdir(path.dirname(ALIAS_HANDOFF_PATH), { recursive: true });
-  const aliasHandoff = [...aliasesByTitle.values()].filter((entry) => entry.alternateTitles.length);
-  await writeFile(ALIAS_HANDOFF_PATH, `${JSON.stringify(aliasHandoff, null, 2)}\n`);
+  // Title metadata now belongs to the song catalog and will arrive through
+  // the image importer's typed metadata handoff rather than score records.
+  await writeFile(ALIAS_HANDOFF_PATH, "[]\n");
 
   const archivedByFingerprint = new Map(archive.scores.map((score, index) => [scoreFingerprint(score), index]));
   const additions = [];
