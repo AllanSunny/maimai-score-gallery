@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-15T19:42:43.925Z",
+  "updatedAt": "2026-08-15T19:57:28.042Z",
   "scores": [
     {
       "playedAt": "2025-11-10T02:30:43.000Z",
@@ -5400,6 +5400,66 @@
       "slow": 2,
       "id": "X0spiGN1gB_0QccMPDrsaJXWRfYdxI49nq516ue5SpQ",
       "chartId": "song-2322d2fdf93d-dx-expert"
+    },
+    {
+      "playedAt": "2026-08-15T01:19:12.000Z",
+      "songTitle": "enchanted wanderer",
+      "chartType": "DX",
+      "difficulty": "MASTER",
+      "level": "13+",
+      "achievement": 100.6639,
+      "combo": "FC+",
+      "sync": "FS",
+      "rating": 15209,
+      "ratingChange": -38,
+      "judgments": {
+        "criticalPerfect": 447,
+        "perfect": 139,
+        "great": 8,
+        "good": 0,
+        "miss": 0
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 17,
+          "perfect": 10,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 176,
+          "perfect": 103,
+          "great": 6,
+          "good": 0,
+          "miss": 0
+        },
+        "hold": {
+          "criticalPerfect": 35,
+          "perfect": 26,
+          "great": 1,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 106,
+          "perfect": 0,
+          "great": 1,
+          "good": 0,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 113,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 6,
+      "slow": 12,
+      "id": "Sk4D8IemzBebyn5oO8thwoAp63KlyrQhv1YUbaPxFbU",
+      "chartId": "song-e82460b7a2b0-dx-master"
     },
     {
       "playedAt": "2026-08-15T01:30:25.000Z",
