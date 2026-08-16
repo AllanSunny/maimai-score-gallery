@@ -1,0 +1,39 @@
+scripts/lib/sheet-grid.mjs
+  s_6d06bd4898dc7f::t_ff5d1687b2aa6a 1-38
+scripts/lib/sheet-grid.test.mjs
+  s_6d06bd4898dc7f::t_ff5d1687b2aa6a 1-31
+scripts/lib/review-queue.mjs
+  s_6d06bd4898dc7f::t_ff5d1687b2aa6a 2,147-148,150-152
+  s_6d06bd4898dc7f::t_5d7482afa4c116 56-62,117,124-134,138-146,149,153-154,229
+scripts/lib/review-queue.test.mjs
+  s_6d06bd4898dc7f::t_5d7482afa4c116 6,34-38
+  s_6d06bd4898dc7f::t_4fb3c9e298cbdf 39
+scripts/lib/score-sheet-writer.mjs
+  s_6d06bd4898dc7f::t_ff5d1687b2aa6a 3,123-129
+  s_6d06bd4898dc7f::t_cac63b6c0942b1 94,116
+  s_6d06bd4898dc7f::t_7598101534afff 130
+scripts/import-images.mjs
+  s_6d06bd4898dc7f::t_5d7482afa4c116 257-274
+  s_6d06bd4898dc7f::t_67735b552e5295 255-256
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.22",
+  "base_commit_sha": "5b859e3797a727afe4cce0adf56e89c576737161",
+  "prompts": {},
+  "humans": {
+    "h_278fafc5c28027": {
+      "author": "Allan Sun <allansun@live.com>"
+    }
+  },
+  "sessions": {
+    "s_6d06bd4898dc7f": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019faca2-0a30-75f3-8a51-06f8e9067195",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Allan Sun <allansun@live.com>"
+    }
+  }
+}
