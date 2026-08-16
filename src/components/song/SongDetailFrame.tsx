@@ -68,10 +68,19 @@ export function SongDetailFrame({
 
       <div className="song-detail-frame__difficulty">{difficulty}</div>
       <div className="song-detail-frame__level" aria-label={`Level ${normalizedLevel}`}>
-        <span className="song-detail-frame__level-prefix">LV</span>
-        <span className="song-detail-frame__level-value">
-          <span>{levelNumber}</span>
-          {hasPlus && <sup>+</sup>}
+        <span className="song-detail-frame__level-layer song-detail-frame__level-glow" aria-hidden="true">
+          <span className="song-detail-frame__level-prefix">LV</span>
+          <span className="song-detail-frame__level-value">
+            <span>{levelNumber}</span>
+            {hasPlus && <sup>+</sup>}
+          </span>
+        </span>
+        <span className="song-detail-frame__level-layer song-detail-frame__level-text" aria-hidden="true">
+          <span className="song-detail-frame__level-prefix">LV</span>
+          <span className="song-detail-frame__level-value">
+            <span>{levelNumber}</span>
+            {hasPlus && <sup>+</sup>}
+          </span>
         </span>
       </div>
 

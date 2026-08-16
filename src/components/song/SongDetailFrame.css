@@ -66,17 +66,32 @@
   left: 64.2%;
   width: 26.5%;
   height: 8.7%;
-  justify-content: center;
-  gap: 0.1em;
   color: white;
   font-family: var(--font-rodin-bold);
   font-size: 12cqw;
   font-weight: 800;
   letter-spacing: -0.075em;
+}
+
+.song-detail-frame__level-layer {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.1em;
+  white-space: nowrap;
+}
+
+.song-detail-frame__level-glow {
+  color: transparent;
+  -webkit-text-stroke: 0;
+  text-shadow: 0 0 0.2em var(--difficulty-color), 0 0 0.3em var(--difficulty-color);
+}
+
+.song-detail-frame__level-text {
   -webkit-text-stroke: 0.1em var(--difficulty-color);
   paint-order: stroke fill;
-  text-shadow: 0 0.0em 0.2em var(--difficulty-color),
-    0 0.0em 0.2em var(--difficulty-color);
 }
 
 .song-detail-frame__level-prefix {
