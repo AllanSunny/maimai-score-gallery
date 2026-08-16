@@ -105,6 +105,7 @@ function judgmentSet(row, headers, suffix = "") {
     name,
     cell(row, headers, `${judgmentHeaders[name]}${suffix}`),
   ]));
+  if (Object.values(values).every(isBlank)) return null;
   const criticalPerfect = isBlank(values.criticalPerfect)
     ? numberValue(values.perfect)
     : numberValue(values.criticalPerfect);
@@ -130,7 +131,9 @@ function judgmentBreakdown(row, headers) {
     const label = noteType === "touch"
       ? "Touches"
       : `${noteType[0].toUpperCase()}${noteType.slice(1)}s`;
-    return [noteType, judgmentSet(row, headers, ` ${label}`)];
+    return [noteType, judgmentSet(row, headers, ` ${label}`) ?? {
+      criticalPerfect: 0, perfect: 0, great: 0, good: 0, miss: 0,
+    }];
   }));
 }
 
@@ -182,8 +185,8 @@ export function parseScoreRows(rows) {
       ratingChange: numberValue(cell(row, headers, "Rating Change")),
       judgments: judgmentSet(row, headers),
       judgmentsByType: judgmentBreakdown(row, headers),
-      fast: numberValue(cell(row, headers, "Fast")),
-      slow: numberValue(cell(row, headers, "Slow")),
+      fast: isBlank(cell(row, headers, "Fast")) ? null : numberValue(cell(row, headers, "Fast")),
+      slow: isBlank(cell(row, headers, "Slow")) ? null : numberValue(cell(row, headers, "Slow")),
     };
     return [{ ...score, id: scoreId(score) }];
   });

@@ -37,9 +37,9 @@ interface ScoreRecord {
   sync: string;
   rating: number;
   ratingChange: number;
-  fast: number;
-  slow: number;
-  judgments: JudgmentSet;
+  fast: number | null;         // null when timing counts are unavailable
+  slow: number | null;
+  judgments: JudgmentSet | null; // null when no overall counts are known
   judgmentsByType: JudgmentBreakdown | null;
 }
 

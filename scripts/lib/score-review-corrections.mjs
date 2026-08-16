@@ -82,13 +82,15 @@ export function manualScoreFromReview(review) {
     "Corrected Sync Status",
     "Corrected Rating",
   ];
-  const requiredJudgments = ["Perfect", "Great", "Good", "Miss"]
-    .map((judgment) => `Corrected ${judgment}`);
-  if (requiredHeaders.some((header) => blank(fields[header]))
-    || requiredJudgments.some((header) => blank(review.correctedJudgments?.[header]))) return null;
+  if (requiredHeaders.some((header) => blank(fields[header]))) return null;
   const judgmentsByType = correctedBreakdown(review);
   if (judgmentsByType === undefined) return null;
-  const perfect = correctedCount(review.correctedJudgments["Corrected Perfect"], "Corrected Perfect");
+  const correctedTotals = Object.keys(judgmentHeaders).map((label) =>
+    correctedCount(review.correctedJudgments?.[`Corrected ${label}`], `Corrected ${label}`));
+  const hasAnyTotal = correctedTotals.some((count) => count !== null);
+  const hasAllRequiredTotals = correctedTotals.slice(1).every((count) => count !== null);
+  if (hasAnyTotal && !hasAllRequiredTotals && judgmentsByType === null) return null;
+  const perfect = correctedTotals[1];
   return {
     visibleTitle: review.correctedTitle,
     visibleArtist: review.correctedArtist || null,
@@ -112,14 +114,13 @@ export function manualScoreFromReview(review) {
     ]),
     rating: correctedNumber(fields["Corrected Rating"], "Corrected Rating", { integer: true, minimum: 0 }),
     ratingChange: correctedNumber(fields["Corrected Rating Change"], "Corrected Rating Change", { integer: true }) ?? 0,
-    judgments: Object.fromEntries(Object.entries(judgmentHeaders).map(([label, judgment]) => {
-      const header = `Corrected ${label}`;
-      const count = correctedCount(review.correctedJudgments?.[header], header);
-      return [judgment, count ?? perfect];
-    })),
+    judgments: Object.fromEntries(Object.values(judgmentHeaders).map((judgment, index) => [
+      judgment,
+      correctedTotals[index] ?? (judgment === "criticalPerfect" ? perfect : null),
+    ])),
     judgmentsByType,
-    fast: correctedNumber(fields["Corrected Fast"], "Corrected Fast", { integer: true, minimum: 0 }) ?? 0,
-    slow: correctedNumber(fields["Corrected Slow"], "Corrected Slow", { integer: true, minimum: 0 }) ?? 0,
+    fast: correctedNumber(fields["Corrected Fast"], "Corrected Fast", { integer: true, minimum: 0 }),
+    slow: correctedNumber(fields["Corrected Slow"], "Corrected Slow", { integer: true, minimum: 0 }),
   };
 }
 

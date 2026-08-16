@@ -42,6 +42,7 @@ function utcTimestamp(playedAt) {
 }
 
 function judgmentValues(set) {
+  if (!set) return ["", "", "", "", ""];
   return [set.criticalPerfect, set.perfect, set.great, set.good, set.miss];
 }
 
@@ -61,8 +62,8 @@ export function scoreSheetValues(score) {
     statuses: [score.combo, score.sync, score.rating, score.ratingChange],
     judgments: [
       ...judgmentValues(score.judgments),
-      score.fast,
-      score.slow,
+      score.fast ?? "",
+      score.slow ?? "",
       ...noteTypeValues,
     ],
   };

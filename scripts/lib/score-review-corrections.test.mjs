@@ -76,6 +76,30 @@ test("a complete review row creates a manual score without OCR", () => {
   assert.equal(manual.judgmentsByType, null);
 });
 
+test("a manual score may omit all judgment counts", () => {
+  const manual = manualScoreFromReview({
+    correctedTitle: "Manual Song",
+    correctedScoreFields: {
+      "Corrected Chart Type": "STD",
+      "Corrected Difficulty": "EXPERT",
+      "Corrected Achievement %": 97.5,
+      "Corrected Combo Status": "Clear",
+      "Corrected Sync Status": "None",
+      "Corrected Rating": 14000,
+    },
+    correctedJudgments: {},
+  });
+
+  assert.deepEqual(manual.judgments, {
+    criticalPerfect: null,
+    perfect: null,
+    great: null,
+    good: null,
+    miss: null,
+  });
+  assert.equal(manual.judgmentsByType, null);
+});
+
 test("review corrections reject invalid judgment counts", () => {
   assert.throws(
     () => applyReviewCorrections(score(), {

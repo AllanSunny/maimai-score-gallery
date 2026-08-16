@@ -63,7 +63,10 @@ test("omits a judgment breakdown when every note-type cell is blank", () => {
   })]);
 
   assert.equal(score.achievement, 99.1234);
+  assert.equal(score.judgments, null);
   assert.equal(score.judgmentsByType, null);
+  assert.equal(score.fast, null);
+  assert.equal(score.slow, null);
 });
 
 test("rounds achievement percentages to four decimal places", () => {

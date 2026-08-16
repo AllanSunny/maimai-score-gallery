@@ -33,6 +33,27 @@ test("maps a score into ranges without rank, notes, or alternate titles", () => 
   assert.ok(values.judgments.slice(7).every((value) => value === ""));
 });
 
+test("leaves all unavailable judgment and timing cells blank", () => {
+  const values = scoreSheetValues({
+    playedAt: "2026-08-08T04:20:39.000Z",
+    songTitle: "Mystic Parade",
+    chartType: "DX",
+    difficulty: "MASTER",
+    level: "13",
+    achievement: 97,
+    combo: "Clear",
+    sync: "None",
+    rating: 15202,
+    ratingChange: 0,
+    judgments: null,
+    judgmentsByType: null,
+    fast: null,
+    slow: null,
+  });
+
+  assert.ok(values.judgments.every((value) => value === ""));
+});
+
 test("selects only a row whose importer-managed cells are all empty", () => {
   const partial = [];
   partial[1] = "Existing title";

@@ -124,13 +124,29 @@ test("proposed score requires readable totals when the note-type breakdown is un
   );
 });
 
-test("proposed score defaults missing change and timing counts to zero", () => {
+test("proposed score accepts a play with no known judgment counts", () => {
+  const input = validInput();
+  input.ocr.judgmentsByType = null;
+  input.ocr.judgments = {
+    criticalPerfect: null,
+    perfect: null,
+    great: null,
+    good: null,
+    miss: null,
+  };
+
+  const record = proposedScoreRecord(input);
+  assert.equal(record.judgments, null);
+  assert.equal(record.judgmentsByType, null);
+});
+
+test("proposed score defaults a missing rating change to zero and preserves unknown timing counts", () => {
   const input = validInput();
   input.ocr.ratingChange = null;
   input.ocr.fast = null;
   input.ocr.slow = null;
   const record = proposedScoreRecord(input);
   assert.equal(record.ratingChange, 0);
-  assert.equal(record.fast, 0);
-  assert.equal(record.slow, 0);
+  assert.equal(record.fast, null);
+  assert.equal(record.slow, null);
 });

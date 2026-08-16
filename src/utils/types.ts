@@ -70,9 +70,9 @@ export interface ScoreRecord {
   sync: string;
   rating: number;
   ratingChange: number;
-  fast: number;
-  slow: number;
-  judgments: JudgmentSet;
+  fast: number | null;
+  slow: number | null;
+  judgments: JudgmentSet | null;
   judgmentsByType: JudgmentBreakdown | null;
 }
 

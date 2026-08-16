@@ -105,9 +105,12 @@ export function parseScoresResponse(value: unknown): ScoresResponse {
     nonemptyString(score.chartId, `${path}.chartId`);
     if (!chartTypes.has(score.chartType as ChartType)) throw new Error(`${path}.chartType is invalid.`);
     if (!difficulties.has(score.difficulty as Difficulty)) throw new Error(`${path}.difficulty is invalid.`);
-    ["achievement", "rating", "ratingChange", "fast", "slow"].forEach((field) => number(score[field], `${path}.${field}`));
+    ["achievement", "rating", "ratingChange"].forEach((field) => number(score[field], `${path}.${field}`));
+    ["fast", "slow"].forEach((field) => {
+      if (score[field] !== null) number(score[field], `${path}.${field}`);
+    });
     if (score.chartConstant !== undefined) number(score.chartConstant, `${path}.chartConstant`);
-    validateJudgments(score.judgments, `${path}.judgments`);
+    if (score.judgments !== null) validateJudgments(score.judgments, `${path}.judgments`);
     if (score.judgmentsByType !== null) {
       const breakdown = object(score.judgmentsByType, `${path}.judgmentsByType`);
       ["break", "tap", "hold", "slide", "touch"].forEach((noteType) =>

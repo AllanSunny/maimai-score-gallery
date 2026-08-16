@@ -73,6 +73,9 @@ function overallJudgmentSet(values, rawBreakdown, normalizedBreakdown) {
   if (!values || typeof values !== "object") {
     throw new ScoreValidationError("UNREADABLE_VALUE", "judgments is unreadable.");
   }
+  if (!rawBreakdown && judgmentNames.every((judgment) => values[judgment] === null)) {
+    return null;
+  }
   const resolved = {};
   ["perfect", "great", "good", "miss"].forEach((judgment) => {
     resolved[judgment] = values[judgment] === null
@@ -98,7 +101,7 @@ function overallJudgmentSet(values, rawBreakdown, normalizedBreakdown) {
 }
 
 function validateJudgmentSums(raw, normalized) {
-  if (!raw.judgmentsByType || !normalized.judgmentsByType) return;
+  if (!raw.judgmentsByType || !normalized.judgmentsByType || !normalized.judgments) return;
   const legacyLayout = legacyCriticalPerfectLayout(raw.judgmentsByType);
 
   judgmentNames.forEach((judgment) => {
@@ -143,8 +146,8 @@ export function proposedScoreRecord({ ocr, resolution, capturedAt }) {
       : finiteNumber(ocr.ratingChange, "ratingChange", { integer: true }),
     judgments: overallJudgmentSet(ocr.judgments, ocr.judgmentsByType, judgmentsByType),
     judgmentsByType,
-    fast: ocr.fast === null ? 0 : finiteNumber(ocr.fast, "fast", { integer: true, minimum: 0 }),
-    slow: ocr.slow === null ? 0 : finiteNumber(ocr.slow, "slow", { integer: true, minimum: 0 }),
+    fast: ocr.fast === null ? null : finiteNumber(ocr.fast, "fast", { integer: true, minimum: 0 }),
+    slow: ocr.slow === null ? null : finiteNumber(ocr.slow, "slow", { integer: true, minimum: 0 }),
   };
   validateJudgmentSums(ocr, record);
   return record;

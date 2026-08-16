@@ -162,7 +162,7 @@ async function main() {
       const rawScore = manualScoreFromReview(review);
       if (!rawScore) {
         throw new Error(
-          "A fully manual entry requires corrected title, chart type, difficulty, achievement, combo, sync, rating, and Perfect/Great/Good/Miss totals. Note-type judgments must be either complete or entirely blank.",
+          "A fully manual entry requires corrected title, chart type, difficulty, achievement, combo, sync, and rating. Judgment totals and note-type judgments may be entirely blank; if supplied, they must be complete enough to validate.",
         );
       }
       const resolution = await serial(() => resolver.resolve(rawScore));
