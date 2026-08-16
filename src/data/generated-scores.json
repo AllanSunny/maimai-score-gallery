@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-16T23:26:18.000Z",
+  "updatedAt": "2026-08-16T23:37:37.924Z",
   "scores": [
     {
       "playedAt": "2025-11-10T02:30:43.000Z",
@@ -19,10 +19,6 @@
         "good": 13,
         "miss": 7
       },
-      "fast": 7,
-      "slow": 46,
-      "id": "47LEGoRlAcY-3iqOMJ66TIyUu332sHgWDAIM1BxRyCU",
-      "chartId": "song-08f22014494d-dx-expert",
       "judgmentsByType": {
         "break": {
           "criticalPerfect": 14,
@@ -59,7 +55,11 @@
           "good": 5,
           "miss": 3
         }
-      }
+      },
+      "fast": 7,
+      "slow": 46,
+      "id": "47LEGoRlAcY-3iqOMJ66TIyUu332sHgWDAIM1BxRyCU",
+      "chartId": "song-08f22014494d-dx-expert"
     },
     {
       "playedAt": "2025-11-10T02:39:12.000Z",
@@ -3062,6 +3062,66 @@
       "chartId": "song-65fb0872677f-dx-expert"
     },
     {
+      "playedAt": "2025-11-11T23:47:57.000Z",
+      "songTitle": "ロストワンの号哭",
+      "chartType": "STD",
+      "difficulty": "EXPERT",
+      "level": "10+",
+      "achievement": 99.8913,
+      "combo": "Clear",
+      "sync": null,
+      "rating": 9456,
+      "ratingChange": 1334,
+      "judgments": {
+        "criticalPerfect": 516,
+        "perfect": 516,
+        "great": 27,
+        "good": 1,
+        "miss": 1
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 5,
+          "perfect": 5,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 390,
+          "perfect": 390,
+          "great": 27,
+          "good": 1,
+          "miss": 1
+        },
+        "hold": {
+          "criticalPerfect": 78,
+          "perfect": 78,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 38,
+          "perfect": 38,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 0,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 20,
+      "slow": 8,
+      "id": "Srm8QpJCsQGE7P6Zww8cKRqtkyMW91vGty_tNLD0Osg",
+      "chartId": "song-4bac2beaa7db-std-expert"
+    },
+    {
       "playedAt": "2025-11-11T23:48:03.000Z",
       "songTitle": "ロストワンの号哭",
       "chartType": "STD",
@@ -5253,7 +5313,7 @@
       "level": "11+",
       "achievement": 99.5799,
       "combo": "FC",
-      "sync": null,
+      "sync": "FS+",
       "rating": 10536,
       "ratingChange": 0,
       "judgments": {
@@ -5263,8 +5323,43 @@
         "good": 3,
         "miss": 0
       },
-      "judgmentsByType": null,
-
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 4,
+          "perfect": 5,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 361,
+          "perfect": 361,
+          "great": 11,
+          "good": 1,
+          "miss": 0
+        },
+        "hold": {
+          "criticalPerfect": 39,
+          "perfect": 39,
+          "great": 1,
+          "good": 1,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 65,
+          "perfect": 65,
+          "great": 6,
+          "good": 1,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 18,
+          "perfect": 18,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
       "fast": 18,
       "slow": 3,
       "id": "sftV6xDi-1Mvd6EUeHy7ZEjRJ4ZttMPt_8YfIGmhyPU",
@@ -24298,7 +24393,7 @@
       "level": "12",
       "achievement": 100.407,
       "combo": "FC",
-      "sync": "Sync",
+      "sync": "FS",
       "rating": 13669,
       "ratingChange": 0,
       "judgments": {
@@ -31247,7 +31342,7 @@
       },
       "fast": 31,
       "slow": 11,
-      "id": "_WRvEJrGcHV9yJuHXET2_ENsmXezrebicC2sTQ7NFHc",
+      "id": "AB2gSzRiTuMLkjR3_qF9C6N1xjeMyr4bgoah79EIzP0",
       "chartId": "song-5331d36bf069-dx-master"
     },
     {
@@ -31607,7 +31702,7 @@
       },
       "fast": 14,
       "slow": 7,
-      "id": "I7u6j6ZDV3kvXMG320oMpYWz_lOmCyrtY5_dzeZPs58",
+      "id": "fYw-UYQk8v3BKd1m2I0aQ66gun82_VgeKN8Qnsnb6lY",
       "chartId": "song-bdf8ca5b6c93-dx-master"
     },
     {
@@ -31727,7 +31822,7 @@
       },
       "fast": 11,
       "slow": 5,
-      "id": "xx9giQlHtuxhP023pqIbMSPuFDnLjMQFPAg7rr4beUE",
+      "id": "fHVmTn-BWj2W2jRxn1alwSdCtA9DwEFWHx0eX3Rtz4g",
       "chartId": "song-e82460b7a2b0-dx-master"
     },
     {
@@ -32048,10 +32143,6 @@
         "good": 1,
         "miss": 0
       },
-      "fast": 5,
-      "slow": 11,
-      "id": "ECGiI9ejf6d7kZ893Crie9ImWyjidB1P5VJlPSrD4iw",
-      "chartId": "song-5e2b531bd3e7-std-master",
       "judgmentsByType": {
         "break": {
           "criticalPerfect": 19,
@@ -32088,7 +32179,11 @@
           "good": 0,
           "miss": 0
         }
-      }
+      },
+      "fast": 5,
+      "slow": 11,
+      "id": "ECGiI9ejf6d7kZ893Crie9ImWyjidB1P5VJlPSrD4iw",
+      "chartId": "song-5e2b531bd3e7-std-master"
     },
     {
       "playedAt": "2026-04-04T22:52:40.000Z",
@@ -32447,7 +32542,7 @@
       },
       "fast": 10,
       "slow": 12,
-      "id": "bEY_yLvQXi_M15zbvLIyKRHP5H9gUmxTNMvqm_5O02A",
+      "id": "cC6Hs7qJmgLPXkoden9-WeRWEWlvbhkNc-MfJVhlehA",
       "chartId": "song-7fbb1100d70a-dx-master"
     },
     {
@@ -32807,7 +32902,7 @@
       },
       "fast": 21,
       "slow": 17,
-      "id": "HZ_2DgSUPyEsFBnZAxnVpHyP2FEAF4uZuMAoZZX4voA",
+      "id": "9dyon2JnqPBbPvBi_5qieG6oWPc5JmUvhPElfjQm05M",
       "chartId": "song-e55f5c1d041d-dx-master"
     },
     {
@@ -32927,7 +33022,7 @@
       },
       "fast": 48,
       "slow": 11,
-      "id": "mg1tASia3DGVufCPmlI0L3xPmP7ON7sPiRJ0OHNByoQ",
+      "id": "CYFY84hu40Gh8ZH-tp67Emyth-8wjxQ-JiRJqmB9hrE",
       "chartId": "song-e55f5c1d041d-dx-master"
     },
     {
@@ -33047,7 +33142,7 @@
       },
       "fast": 27,
       "slow": 1,
-      "id": "d_Qjm9D1MOJ4RV-ELOcKmawD9z8j-888KEg9gHp32L0",
+      "id": "rIi-_Q19Jq3k6O8wTVU8BHK9cZTdcqwRlsc38h6_o5c",
       "chartId": "song-ff485a6d8bed-dx-re-master"
     },
     {
@@ -33308,10 +33403,6 @@
         "good": 3,
         "miss": 2
       },
-      "fast": 11,
-      "slow": 5,
-      "id": "NevUgNc6HvKGnEipHhk2iS02yf58KGfv8BvcQjSw-6g",
-      "chartId": "song-a7a461d9d280-dx-master",
       "judgmentsByType": {
         "break": {
           "criticalPerfect": 30,
@@ -33348,7 +33439,11 @@
           "good": 0,
           "miss": 0
         }
-      }
+      },
+      "fast": 11,
+      "slow": 5,
+      "id": "NevUgNc6HvKGnEipHhk2iS02yf58KGfv8BvcQjSw-6g",
+      "chartId": "song-a7a461d9d280-dx-master"
     },
     {
       "playedAt": "2026-05-14T00:40:19.000Z",
@@ -33527,7 +33622,7 @@
       },
       "fast": 10,
       "slow": 4,
-      "id": "YEQVMewDU7Qb8SCi226o0M81bsb3LHlh7an8iNLm3l8",
+      "id": "pIiK4TtvOs2pYzqAjXeLvsFp0cH4v0PWTRQEaUqUWFQ",
       "chartId": "song-85572925973b-dx-master"
     },
     {
@@ -33647,7 +33742,7 @@
       },
       "fast": 22,
       "slow": 3,
-      "id": "GrDJ225b17-VWpB7dCQ4hdWlJOKNZUbRgTiV9RCquwc",
+      "id": "aopYj4gzXnV1oWvlROb737NQ2CtgEW-OBRDGvm42hUA",
       "chartId": "song-52e03f4cfc5d-dx-re-master"
     },
     {
@@ -33707,7 +33802,7 @@
       },
       "fast": 19,
       "slow": 11,
-      "id": "DSQGTGxZ5uk8anUIDsaNssD4tgAUtHgr6-AxgrBf_Rc",
+      "id": "MSqEfh0I66Z1Gl5p7I2tazq3aaur8qAEdnK3oYMe7FI",
       "chartId": "song-2f64638892ab-dx-master"
     },
     {
@@ -33728,10 +33823,6 @@
         "good": 0,
         "miss": 0
       },
-      "fast": 0,
-      "slow": 0,
-      "id": "hLrTZQRyVgFqakt97igYp3rZOFtGIRRD7vIxlkds5mk",
-      "chartId": "song-08f22014494d-dx-expert",
       "judgmentsByType": {
         "break": {
           "criticalPerfect": 16,
@@ -33768,7 +33859,11 @@
           "good": 0,
           "miss": 0
         }
-      }
+      },
+      "fast": 0,
+      "slow": 0,
+      "id": "hLrTZQRyVgFqakt97igYp3rZOFtGIRRD7vIxlkds5mk",
+      "chartId": "song-08f22014494d-dx-expert"
     },
     {
       "playedAt": "2026-07-03T03:02:37.000Z",
@@ -33788,10 +33883,6 @@
         "good": 1,
         "miss": 0
       },
-      "fast": 27,
-      "slow": 6,
-      "id": "-0JWEcs-f0PYKpFV4Fnii3-fWo3PprQbwjM9LyJ4SoA",
-      "chartId": "song-4f39f6af9e43-dx-master",
       "judgmentsByType": {
         "break": {
           "criticalPerfect": 50,
@@ -33828,7 +33919,11 @@
           "good": 0,
           "miss": 0
         }
-      }
+      },
+      "fast": 27,
+      "slow": 6,
+      "id": "-0JWEcs-f0PYKpFV4Fnii3-fWo3PprQbwjM9LyJ4SoA",
+      "chartId": "song-4f39f6af9e43-dx-master"
     },
     {
       "playedAt": "2026-07-20T03:40:19.000Z",
@@ -33848,10 +33943,6 @@
         "good": 0,
         "miss": 0
       },
-      "fast": 0,
-      "slow": 0,
-      "id": "Y2WuOucwOXI38xNLCS1KubFqrQy_SRVGfut3HShzLHw",
-      "chartId": "song-638e826988e6-dx-expert",
       "judgmentsByType": {
         "break": {
           "criticalPerfect": 9,
@@ -33888,7 +33979,11 @@
           "good": 0,
           "miss": 0
         }
-      }
+      },
+      "fast": 0,
+      "slow": 0,
+      "id": "Y2WuOucwOXI38xNLCS1KubFqrQy_SRVGfut3HShzLHw",
+      "chartId": "song-638e826988e6-dx-expert"
     },
     {
       "playedAt": "2026-07-25T03:18:10.000Z",
@@ -34067,7 +34162,7 @@
       },
       "fast": 40,
       "slow": 2,
-      "id": "cHXfqV9TF46KLfJSwtMhY9L1Y3vVIcRciM49KIOrST0",
+      "id": "H2oR9J0avjRLPN90nWcqN024aAWs2LiNlxgFjJ6CtX8",
       "chartId": "song-e55f5c1d041d-dx-master"
     },
     {
@@ -34127,7 +34222,7 @@
       },
       "fast": 15,
       "slow": 2,
-      "id": "lbNbhq2fl6fh8ajiWEnnFHciRbTegUSlQDbwSYp14JQ",
+      "id": "k572JzER9qng03V2e-S4-0jzzYtOYbY2xcuSG-9Omv0",
       "chartId": "song-2322d2fdf93d-dx-master"
     },
     {
@@ -34148,10 +34243,6 @@
         "good": 0,
         "miss": 0
       },
-      "fast": 2,
-      "slow": 2,
-      "id": "CFKkE9E13pNq9Lw8uwA9CzX8R58CJSvAcJd41Yg0XY0",
-      "chartId": "song-067df9d0eb73-dx-master",
       "judgmentsByType": {
         "break": {
           "criticalPerfect": 39,
@@ -34188,7 +34279,11 @@
           "good": 0,
           "miss": 0
         }
-      }
+      },
+      "fast": 2,
+      "slow": 2,
+      "id": "wewQGh_a9n3hf8TWzNgZRCOdW4RGewQVxlvX0LCaYeI",
+      "chartId": "song-067df9d0eb73-dx-master"
     },
     {
       "playedAt": "2026-07-28T02:00:07.000Z",
@@ -34208,10 +34303,6 @@
         "good": 4,
         "miss": 0
       },
-      "fast": 21,
-      "slow": 5,
-      "id": "EgvB410utrDx7wJAo1Bl3WThDAKzVTUryT-b6sFpidQ",
-      "chartId": "tsunagite-dx-expert",
       "judgmentsByType": {
         "break": {
           "criticalPerfect": 31,
@@ -34248,7 +34339,11 @@
           "good": 0,
           "miss": 0
         }
-      }
+      },
+      "fast": 21,
+      "slow": 5,
+      "id": "EgvB410utrDx7wJAo1Bl3WThDAKzVTUryT-b6sFpidQ",
+      "chartId": "tsunagite-dx-expert"
     },
     {
       "playedAt": "2026-08-06T03:11:42.000Z",
@@ -34307,7 +34402,7 @@
       },
       "fast": 19,
       "slow": 13,
-      "id": "HAvyqnPQMv7HIzwtmemqy6YeD4gipQhUMnTpOGZGQzU",
+      "id": "5dqEP2hnIbDIvJG0eNkZjc75DCMVcXJx3nJpbM-IeTY",
       "chartId": "song-c034ac69d6d8-dx-master"
     },
     {
@@ -34367,7 +34462,7 @@
       },
       "fast": 18,
       "slow": 10,
-      "id": "AJbY5307vUVgP11bsy_68U6ExTzzlUGRBUIXRszfPBg",
+      "id": "AKQA3kR4H5trShkCEV6txKQoCtMDEfyu0UuY_t6YLCk",
       "chartId": "song-c034ac69d6d8-dx-master"
     },
     {
