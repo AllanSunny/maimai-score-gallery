@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-16T14:44:40.789Z",
+  "updatedAt": "2026-08-16T15:06:07.481Z",
   "scores": [
     {
       "playedAt": "2025-11-10T02:30:43.000Z",
@@ -7130,6 +7130,66 @@
       "chartId": "song-5331d36bf069-dx-expert"
     },
     {
+      "playedAt": "2025-11-16T05:25:52.000Z",
+      "songTitle": "ouroboros -twin stroke of the end-",
+      "chartType": "DX",
+      "difficulty": "EXPERT",
+      "level": "12",
+      "achievement": 99.9602,
+      "combo": "FC",
+      "sync": "None",
+      "rating": 11357,
+      "ratingChange": 35,
+      "judgments": {
+        "criticalPerfect": 686,
+        "perfect": 686,
+        "great": 27,
+        "good": 4,
+        "miss": 0
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 22,
+          "perfect": 8,
+          "great": 1,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 485,
+          "perfect": 485,
+          "great": 21,
+          "good": 4,
+          "miss": 0
+        },
+        "hold": {
+          "criticalPerfect": 70,
+          "perfect": 70,
+          "great": 2,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 71,
+          "perfect": 71,
+          "great": 3,
+          "good": 0,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 30,
+          "perfect": 30,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 16,
+      "slow": 15,
+      "id": "64x5DZiJp2vxfH3pHmZkreJZa2-N7wJ0512NG7wOsfo",
+      "chartId": "song-6dad40406ef0-dx-expert"
+    },
+    {
       "playedAt": "2025-11-16T05:38:20.000Z",
       "songTitle": "言ノ葉カルマ",
       "chartType": "STD",
@@ -8208,6 +8268,66 @@
       "slow": 7,
       "id": "XLPtswfRpi6u49acMgMY7fCgw-X0xqgLvio5YuDF7Bs",
       "chartId": "song-bcdd634d7a4b-std-expert"
+    },
+    {
+      "playedAt": "2025-11-20T04:46:15.000Z",
+      "songTitle": "全世界共通リズム感テスト",
+      "chartType": "STD",
+      "difficulty": "MASTER",
+      "level": "12",
+      "achievement": 100.9263,
+      "combo": "AP",
+      "sync": "None",
+      "rating": 11763,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 95,
+        "perfect": 34,
+        "great": 0,
+        "good": 0,
+        "miss": 0
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 95,
+          "perfect": 34,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 0,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "hold": {
+          "criticalPerfect": 0,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 0,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 0,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 0,
+      "slow": 0,
+      "id": "q1vO8TaktoO4tPHplRFxk5EWB53m-Wvaomik2G8QZp4",
+      "chartId": "zen-sekai-kyoutsuu-rhythm-kan-test-std-master"
     },
     {
       "playedAt": "2025-11-20T04:56:35.000Z",
@@ -21890,6 +22010,66 @@
       "chartId": "song-bc39c978dd14-std-master"
     },
     {
+      "playedAt": "2025-12-26T03:47:27.000Z",
+      "songTitle": "ラグトレイン",
+      "chartType": "DX",
+      "difficulty": "MASTER",
+      "level": "13",
+      "achievement": 98.8313,
+      "combo": "Clear",
+      "sync": "FS",
+      "rating": 13524,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 518,
+        "perfect": 212,
+        "great": 23,
+        "good": 12,
+        "miss": 7
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 3,
+          "perfect": 8,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 348,
+          "perfect": 170,
+          "great": 17,
+          "good": 10,
+          "miss": 6
+        },
+        "hold": {
+          "criticalPerfect": 46,
+          "perfect": 34,
+          "great": 4,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 92,
+          "perfect": 0,
+          "great": 2,
+          "good": 2,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 29,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 1
+        }
+      },
+      "fast": 20,
+      "slow": 15,
+      "id": "Q7f17Zvgr-zCPxS5zLEKW5wmL8W6PzbCi3tMzxJZPNw",
+      "chartId": "song-0cedd756d872-dx-master"
+    },
+    {
       "playedAt": "2025-12-26T04:00:12.000Z",
       "songTitle": "Altale",
       "chartType": "STD",
@@ -22128,6 +22308,66 @@
       "slow": 13,
       "id": "V8XTyRbMeAhK-1pyd55zgA1Eemf99xeWSoj_efDFHYM",
       "chartId": "song-aa0d2367e56d-dx-master"
+    },
+    {
+      "playedAt": "2025-12-26T05:11:44.000Z",
+      "songTitle": "砂の函",
+      "chartType": "DX",
+      "difficulty": "EXPERT",
+      "level": "11",
+      "achievement": 100.389,
+      "combo": "FC",
+      "sync": "FS+",
+      "rating": 13539,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 380,
+        "perfect": 109,
+        "great": 12,
+        "good": 4,
+        "miss": 0
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 36,
+          "perfect": 4,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 185,
+          "perfect": 79,
+          "great": 8,
+          "good": 4,
+          "miss": 0
+        },
+        "hold": {
+          "criticalPerfect": 76,
+          "perfect": 26,
+          "great": 4,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 63,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 20,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 11,
+      "slow": 5,
+      "id": "EIwXnfzu8dCgbws-bw5xlw9eK02Zhop6GZzU4RsPcV8",
+      "chartId": "song-10696a7a7611-dx-expert"
     },
     {
       "playedAt": "2025-12-26T05:15:05.000Z",
@@ -25310,6 +25550,66 @@
       "chartId": "song-1c2a0228b93f-dx-master"
     },
     {
+      "playedAt": "2026-01-01T00:13:00.000Z",
+      "songTitle": "ツギハギスタッカート",
+      "chartType": "DX",
+      "difficulty": "MASTER",
+      "level": "12+",
+      "achievement": 100.57,
+      "combo": "FC",
+      "sync": "FS+",
+      "rating": 13714,
+      "ratingChange": 18,
+      "judgments": {
+        "criticalPerfect": 437,
+        "perfect": 152,
+        "great": 7,
+        "good": 3,
+        "miss": 0
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 7,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 233,
+          "perfect": 134,
+          "great": 5,
+          "good": 3,
+          "miss": 0
+        },
+        "hold": {
+          "criticalPerfect": 30,
+          "perfect": 18,
+          "great": 1,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 66,
+          "perfect": 0,
+          "great": 1,
+          "good": 0,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 101,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 3,
+      "slow": 7,
+      "id": "oqi6T82lxgH8NkWQpq51zKJxttYUMeGTUULLiADEb_o",
+      "chartId": "song-1c2a0228b93f-dx-master"
+    },
+    {
       "playedAt": "2026-01-01T00:13:12.000Z",
       "songTitle": "ツギハギスタッカート",
       "chartType": "DX",
@@ -26390,6 +26690,66 @@
       "chartId": "song-ab52aadc0f84-dx-master"
     },
     {
+      "playedAt": "2026-01-01T02:18:56.000Z",
+      "songTitle": "Love's Theme of BADASS ～バッド・アス 愛のテーマ～",
+      "chartType": "DX",
+      "difficulty": "EXPERT",
+      "level": "13",
+      "achievement": 100.0289,
+      "combo": "FC",
+      "sync": "FS",
+      "rating": 13746,
+      "ratingChange": 12,
+      "judgments": {
+        "criticalPerfect": 588,
+        "perfect": 139,
+        "great": 15,
+        "good": 2,
+        "miss": 0
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 25,
+          "perfect": 30,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 395,
+          "perfect": 99,
+          "great": 4,
+          "good": 1,
+          "miss": 0
+        },
+        "hold": {
+          "criticalPerfect": 18,
+          "perfect": 9,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 113,
+          "perfect": 0,
+          "great": 11,
+          "good": 1,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 37,
+          "perfect": 1,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 44,
+      "slow": 3,
+      "id": "Ih_LT_XU9CxOd7k93xXRmeDJ_lhlyDl6RryTkM05bfg",
+      "chartId": "song-7ba8a31c8012-dx-expert"
+    },
+    {
       "playedAt": "2026-01-01T02:34:10.000Z",
       "songTitle": "どうしてこうなった",
       "chartType": "STD",
@@ -26568,6 +26928,66 @@
       "slow": 37,
       "id": "_OeTUAnlTve9B6Hiwo6zwzgujs_NhCk5uuWl7gByqkY",
       "chartId": "song-2a6b24ad2872-std-expert"
+    },
+    {
+      "playedAt": "2026-01-01T02:47:39.000Z",
+      "songTitle": "Caliburne ～Story of the Legendary sword～",
+      "chartType": "STD",
+      "difficulty": "EXPERT",
+      "level": "12+",
+      "achievement": 97.1731,
+      "combo": "Clear",
+      "sync": "FS",
+      "rating": 13746,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 382,
+        "perfect": 235,
+        "great": 41,
+        "good": 17,
+        "miss": 5
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 10,
+          "perfect": 3,
+          "great": 5,
+          "good": 1,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 262,
+          "perfect": 220,
+          "great": 32,
+          "good": 14,
+          "miss": 5
+        },
+        "hold": {
+          "criticalPerfect": 22,
+          "perfect": 12,
+          "great": 1,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 88,
+          "perfect": 0,
+          "great": 3,
+          "good": 2,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 0,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 48,
+      "slow": 13,
+      "id": "lh20_WEHo2IVkoZOJmZ6SP3CvBozks85jZq-QJU19p4",
+      "chartId": "song-7a8b00a7d2e1-std-expert"
     },
     {
       "playedAt": "2026-01-01T02:52:46.000Z",

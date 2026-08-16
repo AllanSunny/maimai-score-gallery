@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-16T14:45:20.166Z",
+  "generatedAt": "2026-08-16T15:06:07.411Z",
   "songs": [
     {
       "id": "song-550d332f837c",
@@ -858,6 +858,54 @@
               "level": "14",
               "chartConstant": 14.2,
               "charter": "小鳥遊さん"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "song-7a8b00a7d2e1",
+      "titles": {
+        "canonical": "Caliburne ～Story of the Legendary sword～",
+        "kana": [],
+        "romaji": [],
+        "english": [],
+        "aliases": []
+      },
+      "artist": "Project Grimoire",
+      "jacketKey": "jackets/song-7a8b00a7d2e1-28303ee7a5d8.png",
+      "versions": [
+        {
+          "id": "song-7a8b00a7d2e1-std",
+          "chartType": "STD",
+          "charts": [
+            {
+              "id": "song-7a8b00a7d2e1-std-basic",
+              "difficulty": "BASIC",
+              "level": "5",
+              "chartConstant": 5,
+              "charter": null
+            },
+            {
+              "id": "song-7a8b00a7d2e1-std-advanced",
+              "difficulty": "ADVANCED",
+              "level": "9",
+              "chartConstant": 9.4,
+              "charter": null
+            },
+            {
+              "id": "song-7a8b00a7d2e1-std-expert",
+              "difficulty": "EXPERT",
+              "level": "12+",
+              "chartConstant": 12.9,
+              "charter": "Jack vs mai-Star"
+            },
+            {
+              "id": "song-7a8b00a7d2e1-std-master",
+              "difficulty": "MASTER",
+              "level": "14",
+              "chartConstant": 14.3,
+              "charter": "はっぴー"
             }
           ]
         }
@@ -2841,6 +2889,60 @@
               "level": "12+",
               "chartConstant": 12.8,
               "charter": "チャン@DP皆伝"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "song-7ba8a31c8012",
+      "titles": {
+        "canonical": "Love's Theme of BADASS ～バッド・アス 愛のテーマ～",
+        "kana": [
+          "らぶず てえま おぶ ばっど あす ばっど あす あい の てえま"
+        ],
+        "romaji": [
+          "rabuzu teema obu baddo asu baddo asu ai no teema"
+        ],
+        "english": [
+          "badass love theme"
+        ],
+        "aliases": []
+      },
+      "artist": "Hommarju",
+      "jacketKey": "jackets/song-7ba8a31c8012-4bf5f3c46205.png",
+      "versions": [
+        {
+          "id": "song-7ba8a31c8012-dx",
+          "chartType": "DX",
+          "charts": [
+            {
+              "id": "song-7ba8a31c8012-dx-basic",
+              "difficulty": "BASIC",
+              "level": "6",
+              "chartConstant": 6,
+              "charter": null
+            },
+            {
+              "id": "song-7ba8a31c8012-dx-advanced",
+              "difficulty": "ADVANCED",
+              "level": "8",
+              "chartConstant": 8.5,
+              "charter": null
+            },
+            {
+              "id": "song-7ba8a31c8012-dx-expert",
+              "difficulty": "EXPERT",
+              "level": "13",
+              "chartConstant": 13,
+              "charter": "はっぴー"
+            },
+            {
+              "id": "song-7ba8a31c8012-dx-master",
+              "difficulty": "MASTER",
+              "level": "14",
+              "chartConstant": 14.1,
+              "charter": "Jack"
             }
           ]
         }
@@ -9831,6 +9933,60 @@
       ]
     },
     {
+      "id": "song-0cedd756d872",
+      "titles": {
+        "canonical": "ラグトレイン",
+        "kana": [
+          "らぐ とれいん"
+        ],
+        "romaji": [
+          "ragu torein"
+        ],
+        "english": [
+          "lagtrain"
+        ],
+        "aliases": []
+      },
+      "artist": "稲葉曇",
+      "jacketKey": "jackets/song-0cedd756d872-646c6f89e4d6.png",
+      "versions": [
+        {
+          "id": "song-0cedd756d872-dx",
+          "chartType": "DX",
+          "charts": [
+            {
+              "id": "song-0cedd756d872-dx-basic",
+              "difficulty": "BASIC",
+              "level": "2",
+              "chartConstant": 2,
+              "charter": null
+            },
+            {
+              "id": "song-0cedd756d872-dx-advanced",
+              "difficulty": "ADVANCED",
+              "level": "6",
+              "chartConstant": 6.5,
+              "charter": null
+            },
+            {
+              "id": "song-0cedd756d872-dx-expert",
+              "difficulty": "EXPERT",
+              "level": "9+",
+              "chartConstant": 9.8,
+              "charter": "Jack"
+            },
+            {
+              "id": "song-0cedd756d872-dx-master",
+              "difficulty": "MASTER",
+              "level": "13",
+              "chartConstant": 13.2,
+              "charter": "はっぴー"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "song-d47f70af5b17",
       "titles": {
         "canonical": "ラビットホール",
@@ -10364,6 +10520,63 @@
               "level": "14",
               "chartConstant": 14,
               "charter": "某S氏"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zen-sekai-kyoutsuu-rhythm-kan-test",
+      "titles": {
+        "canonical": "全世界共通リズム感テスト",
+        "kana": [
+          "ぜんせかいきょうつうりずむかんてすと",
+          "ゼンセカイキョウツウリズムカンテスト"
+        ],
+        "romaji": [
+          "zen sekai kyoutsuu rizumu kan tesuto"
+        ],
+        "english": [
+          "the rhythm sense test"
+        ],
+        "aliases": [
+          "global rhythm sense test"
+        ]
+      },
+      "artist": "☆リズムに合わせてボタンを叩き達成率を競うゲームです☆",
+      "jacketKey": "jackets/rhythm-sense.webp",
+      "versions": [
+        {
+          "id": "zen-sekai-kyoutsuu-rhythm-kan-test-std",
+          "chartType": "STD",
+          "charts": [
+            {
+              "id": "zen-sekai-kyoutsuu-rhythm-kan-test-std-basic",
+              "difficulty": "BASIC",
+              "level": "6",
+              "chartConstant": 6,
+              "charter": "チャン@DP皆伝"
+            },
+            {
+              "id": "zen-sekai-kyoutsuu-rhythm-kan-test-std-advanced",
+              "difficulty": "ADVANCED",
+              "level": "8",
+              "chartConstant": 8,
+              "charter": "チャン@DP皆伝"
+            },
+            {
+              "id": "zen-sekai-kyoutsuu-rhythm-kan-test-std-expert",
+              "difficulty": "EXPERT",
+              "level": "10",
+              "chartConstant": 10,
+              "charter": "チャン@DP皆伝"
+            },
+            {
+              "id": "zen-sekai-kyoutsuu-rhythm-kan-test-std-master",
+              "difficulty": "MASTER",
+              "level": "12",
+              "chartConstant": 12,
+              "charter": "チャン@DP皆伝"
             }
           ]
         }
