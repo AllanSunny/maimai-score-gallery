@@ -1,4 +1,47 @@
 {
+  "全世界共通リズム感テスト": {
+    "standalone": true,
+    "id": "zen-sekai-kyoutsuu-rhythm-kan-test",
+    "artist": "☆リズムに合わせてボタンを叩き達成率を競うゲームです☆",
+    "jacketKey": null,
+    "titles": {
+      "kana": [
+        "ぜんせかいきょうつうりずむかんてすと",
+        "ゼンセカイキョウツウリズムカンテスト"
+      ],
+      "romaji": [
+        "zen sekai kyoutsuu rizumu kan tesuto"
+      ],
+      "english": [
+        "the rhythm sense test"
+      ],
+      "aliases": [
+        "global rhythm sense test"
+      ]
+    },
+    "charts": {
+      "STD:BASIC": {
+        "level": "6",
+        "chartConstant": 6.0,
+        "charter": "チャン@DP皆伝"
+      },
+      "STD:ADVANCED": {
+        "level": "8",
+        "chartConstant": 8.0,
+        "charter": "チャン@DP皆伝"
+      },
+      "STD:EXPERT": {
+        "level": "10",
+        "chartConstant": 10.0,
+        "charter": "チャン@DP皆伝"
+      },
+      "STD:MASTER": {
+        "level": "12",
+        "chartConstant": 12.0,
+        "charter": "チャン@DP皆伝"
+      }
+    }
+  },
   "Magical Flavor": {
     "id": "magical-flavor",
     "titles": {
