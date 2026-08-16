@@ -1,0 +1,12 @@
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.22",
+  "base_commit_sha": "b31094fa6f2bcbd1480786ea7c2674266713aaa3",
+  "prompts": {},
+  "humans": {
+    "h_278fafc5c28027": {
+      "author": "Allan Sun <allansun@live.com>"
+    }
+  }
+}
