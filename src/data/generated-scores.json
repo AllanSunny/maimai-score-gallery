@@ -2763,15 +2763,15 @@
     },
     {
       "playedAt": "2025-11-11T22:46:59.000Z",
-      "songTitle": "ウミユリ海底譚",
+      "songTitle": "トンデモワンダーズ",
       "chartType": "STD",
       "difficulty": "EXPERT",
-      "level": "9+",
+      "level": "10",
       "achievement": 100.3058,
-      "combo": "FC",
+      "combo": "FC+",
       "sync": "None",
-      "rating": 20279,
-      "ratingChange": 0,
+      "rating": 9091,
+      "ratingChange": 33,
       "judgments": {
         "criticalPerfect": 15,
         "perfect": 444,
@@ -2819,7 +2819,7 @@
       "fast": 11,
       "slow": 2,
       "id": "OtgwQAkGuxHzFXLcoXKpsvkuRAm6AuLlGD6Nquq4sXI",
-      "chartId": "song-9a2f2ad520e2-std-expert"
+      "chartId": "song-0cad2b7a0c5f-std-expert"
     },
     {
       "playedAt": "2025-11-11T23:14:01.000Z",
