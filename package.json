@@ -24,7 +24,8 @@
     "react": "latest",
     "react-dom": "latest",
     "typescript": "latest",
-    "vite": "latest"
+    "vite": "latest",
+    "wanakana": "^5.3.1"
   },
   "devDependencies": {
     "@aws-sdk/client-s3": "latest",

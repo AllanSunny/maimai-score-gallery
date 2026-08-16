@@ -11,5 +11,5 @@ export function allSongTitles(titles: SongTitles): string[] {
 }
 
 export function displayedAlternateTitles(titles: SongTitles): string[] {
-  return [...titles.romaji, ...titles.english];
+  return [...new Set([...titles.romaji, ...titles.english, ...titles.aliases])];
 }

@@ -179,6 +179,10 @@ jobs:
       - name: Sync new song metadata
         run: npm run catalog:sync
         env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_TITLE_MODEL: ${{ vars.OPENAI_TITLE_MODEL }}
+          OPENAI_TITLE_MAX_OUTPUT_TOKENS: ${{ vars.OPENAI_TITLE_MAX_OUTPUT_TOKENS }}
+          OPENAI_REASONING_EFFORT: ${{ vars.OPENAI_REASONING_EFFORT }}
           R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
           R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
           R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}

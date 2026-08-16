@@ -4,6 +4,7 @@ import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import process from "node:process";
 import { promisify } from "node:util";
+import { enrichMissingSongTitles } from "./lib/catalog-title-enrichment.mjs";
 
 const execFileAsync = promisify(execFile);
 
@@ -425,6 +426,9 @@ async function main() {
     // Be polite to the source host when synchronizing multiple new jackets.
     await new Promise((resolve) => setTimeout(resolve, 250));
   }
+
+  const enrichedTitleCount = await enrichMissingSongTitles(songs);
+  if (enrichedTitleCount > 0) songsChanged = true;
 
   const catalog = songsChanged
     ? {
