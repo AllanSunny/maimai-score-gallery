@@ -7,6 +7,13 @@ export const REVIEW_STATUSES = Object.freeze({
   ignored: "Ignored",
 });
 
+const judgmentNames = ["Critical Perfect", "Perfect", "Great", "Good", "Miss"];
+const noteTypeNames = ["Breaks", "Taps", "Holds", "Slides", "Touches"];
+const judgmentCorrectionHeaders = [
+  ...judgmentNames.map((judgment) => `Corrected ${judgment}`),
+  ...noteTypeNames.flatMap((noteType) =>
+    judgmentNames.map((judgment) => `Corrected ${judgment} ${noteType}`)),
+];
 const headers = [
   "Filename",
   "Status",
@@ -17,11 +24,36 @@ const headers = [
   "Corrected Artist",
   "Corrected Capture Time (UTC)",
   "Corrected Rating Change",
+  ...judgmentCorrectionHeaders,
   "Retry",
   "Spreadsheet Row",
   "Last Attempted (UTC)",
   "Drive File ID",
 ];
+const headerIndexes = new Map(headers.map((header, index) => [header, index]));
+
+function columnName(index) {
+  let value = index + 1;
+  let result = "";
+  while (value > 0) {
+    value -= 1;
+    result = String.fromCharCode(65 + (value % 26)) + result;
+    value = Math.floor(value / 26);
+  }
+  return result;
+}
+
+function columnFor(header) {
+  return columnName(headerIndexes.get(header));
+}
+
+function value(row, header) {
+  return row[headerIndexes.get(header)] ?? "";
+}
+
+function correctedJudgments(row) {
+  return Object.fromEntries(judgmentCorrectionHeaders.map((header) => [header, value(row, header)]));
+}
 
 function quotedSheetName() {
   return `'${REVIEW_SHEET_NAME.replace(/'/g, "''")}'`;
@@ -30,19 +62,22 @@ function quotedSheetName() {
 function record(row, index) {
   return {
     rowNumber: index + 2,
-    filename: String(row[0] ?? ""),
-    status: String(row[1] ?? ""),
-    error: String(row[2] ?? ""),
-    ocrTitle: String(row[3] ?? ""),
-    candidates: String(row[4] ?? ""),
-    correctedTitle: String(row[5] ?? "").trim(),
-    correctedArtist: String(row[6] ?? "").trim(),
-    correctedCaptureTime: String(row[7] ?? "").trim(),
-    correctedRatingChange: row[8] ?? "",
-    retry: row[9] === true,
-    spreadsheetRow: row[10] === "" || row[10] === undefined ? null : Number(row[10]),
-    lastAttempted: String(row[11] ?? ""),
-    driveFileId: String(row[12] ?? ""),
+    filename: String(value(row, "Filename")),
+    status: String(value(row, "Status")),
+    error: String(value(row, "Error")),
+    ocrTitle: String(value(row, "OCR Title")),
+    candidates: String(value(row, "Candidate Titles")),
+    correctedTitle: String(value(row, "Corrected Title")).trim(),
+    correctedArtist: String(value(row, "Corrected Artist")).trim(),
+    correctedCaptureTime: String(value(row, "Corrected Capture Time (UTC)")).trim(),
+    correctedRatingChange: value(row, "Corrected Rating Change"),
+    correctedJudgments: correctedJudgments(row),
+    retry: value(row, "Retry") === true,
+    spreadsheetRow: value(row, "Spreadsheet Row") === ""
+      ? null
+      : Number(value(row, "Spreadsheet Row")),
+    lastAttempted: String(value(row, "Last Attempted (UTC)")),
+    driveFileId: String(value(row, "Drive File ID")),
   };
 }
 
@@ -51,7 +86,7 @@ export async function createReviewQueue() {
   const { sheets } = await createGoogleClients();
   const headerResponse = await sheets.spreadsheets.values.get({
     spreadsheetId,
-    range: `${quotedSheetName()}!A1:M1`,
+    range: `${quotedSheetName()}!A1:${columnName(headers.length - 1)}1`,
     valueRenderOption: "FORMATTED_VALUE",
   });
   if (JSON.stringify(headerResponse.data.values?.[0] ?? []) !== JSON.stringify(headers)) {
@@ -63,7 +98,7 @@ export async function createReviewQueue() {
     if (recordCache) return recordCache;
     const response = await sheets.spreadsheets.values.get({
       spreadsheetId,
-      range: `${quotedSheetName()}!A2:M`,
+      range: `${quotedSheetName()}!A2:${columnName(headers.length - 1)}`,
       valueRenderOption: "UNFORMATTED_VALUE",
     });
     recordCache = (response.data.values ?? []).map(record);
@@ -85,8 +120,8 @@ export async function createReviewQueue() {
         requestBody: {
           valueInputOption: "RAW",
           data: [
-            { range: `${quotedSheetName()}!J${rowNumber}`, values: [[false]] },
-            { range: `${quotedSheetName()}!L${rowNumber}`, values: [[new Date().toISOString()]] },
+            { range: `${quotedSheetName()}!${columnFor("Retry")}${rowNumber}`, values: [[false]] },
+            { range: `${quotedSheetName()}!${columnFor("Last Attempted (UTC)")}${rowNumber}`, values: [[new Date().toISOString()]] },
           ],
         },
       });
@@ -107,8 +142,8 @@ export async function createReviewQueue() {
                 range: `${quotedSheetName()}!A${existing.rowNumber}:E${existing.rowNumber}`,
                 values: [[filename, REVIEW_STATUSES.review, String(error?.message ?? error), ocrTitle, candidates.join(" | ")]],
               },
-              { range: `${quotedSheetName()}!J${existing.rowNumber}`, values: [[false]] },
-              { range: `${quotedSheetName()}!L${existing.rowNumber}`, values: [[attemptedAt]] },
+              { range: `${quotedSheetName()}!${columnFor("Retry")}${existing.rowNumber}`, values: [[false]] },
+              { range: `${quotedSheetName()}!${columnFor("Last Attempted (UTC)")}${existing.rowNumber}`, values: [[attemptedAt]] },
             ],
           },
         });
@@ -123,7 +158,7 @@ export async function createReviewQueue() {
       const rowNumber = empty?.rowNumber ?? (entries.at(-1)?.rowNumber ?? 1) + 1;
       await sheets.spreadsheets.values.update({
         spreadsheetId,
-        range: `${quotedSheetName()}!A${rowNumber}:M${rowNumber}`,
+        range: `${quotedSheetName()}!A${rowNumber}:${columnName(headers.length - 1)}${rowNumber}`,
         valueInputOption: "RAW",
         requestBody: { values: [[
           filename,
@@ -131,12 +166,15 @@ export async function createReviewQueue() {
           String(error?.message ?? error),
           ocrTitle,
           candidates.join(" | "),
-          "", "", "", "", false, "", attemptedAt, driveFileId,
+          "", "", "", "",
+          ...judgmentCorrectionHeaders.map(() => ""),
+          false, "", attemptedAt, driveFileId,
         ]] },
       });
       const newRecord = record([
         filename, REVIEW_STATUSES.review, String(error?.message ?? error),
-        ocrTitle, candidates.join(" | "), "", "", "", "", false, "", attemptedAt, driveFileId,
+        ocrTitle, candidates.join(" | "), "", "", "", "",
+        ...judgmentCorrectionHeaders.map(() => ""), false, "", attemptedAt, driveFileId,
       ], rowNumber - 2);
       if (empty) Object.assign(empty, newRecord);
       else entries.push(newRecord);
@@ -152,7 +190,10 @@ export async function createReviewQueue() {
           valueInputOption: "RAW",
           data: [
             { range: `${quotedSheetName()}!B${existing.rowNumber}:C${existing.rowNumber}`, values: [[REVIEW_STATUSES.imported, ""]] },
-            { range: `${quotedSheetName()}!J${existing.rowNumber}:L${existing.rowNumber}`, values: [[false, spreadsheetRow, new Date().toISOString()]] },
+            {
+              range: `${quotedSheetName()}!${columnFor("Retry")}${existing.rowNumber}:${columnFor("Last Attempted (UTC)")}${existing.rowNumber}`,
+              values: [[false, spreadsheetRow, new Date().toISOString()]],
+            },
           ],
         },
       });

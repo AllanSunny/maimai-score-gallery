@@ -72,6 +72,25 @@ test("proposed score rejects inconsistent judgment totals", () => {
   );
 });
 
+test("proposed score derives obscured overall totals from note-type counts", () => {
+  const input = validInput();
+  input.ocr.judgments = {
+    criticalPerfect: null,
+    perfect: null,
+    great: null,
+    good: null,
+    miss: null,
+  };
+  const record = proposedScoreRecord(input);
+  assert.deepEqual(record.judgments, {
+    criticalPerfect: 50,
+    perfect: 10,
+    great: 5,
+    good: 0,
+    miss: 0,
+  });
+});
+
 test("proposed score defaults missing change and timing counts to zero", () => {
   const input = validInput();
   input.ocr.ratingChange = null;

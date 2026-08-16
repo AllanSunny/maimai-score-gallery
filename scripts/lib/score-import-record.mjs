@@ -42,16 +42,56 @@ function judgmentSet(values, path) {
   };
 }
 
+function legacyCriticalPerfectLayout(rawBreakdown) {
+  return ["tap", "hold", "slide", "touch"]
+    .every((noteType) => rawBreakdown[noteType].criticalPerfect === null)
+    && rawBreakdown.break.criticalPerfect !== null;
+}
+
+function derivedOverallJudgment(judgment, rawBreakdown, normalizedBreakdown) {
+  if (judgment === "criticalPerfect" && legacyCriticalPerfectLayout(rawBreakdown)) {
+    return null;
+  }
+  const total = noteTypes.reduce((sum, noteType) => sum + normalizedBreakdown[noteType][judgment], 0);
+  return total + (judgment === "perfect" && legacyCriticalPerfectLayout(rawBreakdown)
+    ? normalizedBreakdown.break.criticalPerfect
+    : 0);
+}
+
+function overallJudgmentSet(values, rawBreakdown, normalizedBreakdown) {
+  if (!values || typeof values !== "object") {
+    throw new ScoreValidationError("UNREADABLE_VALUE", "judgments is unreadable.");
+  }
+  const resolved = {};
+  ["perfect", "great", "good", "miss"].forEach((judgment) => {
+    resolved[judgment] = values[judgment] === null
+      ? derivedOverallJudgment(judgment, rawBreakdown, normalizedBreakdown)
+      : finiteNumber(values[judgment], `judgments.${judgment}`, { integer: true, minimum: 0 });
+  });
+  resolved.criticalPerfect = values.criticalPerfect === null
+    ? derivedOverallJudgment("criticalPerfect", rawBreakdown, normalizedBreakdown)
+      ?? resolved.perfect
+    : finiteNumber(values.criticalPerfect, "judgments.criticalPerfect", {
+      integer: true,
+      minimum: 0,
+    });
+  return {
+    criticalPerfect: resolved.criticalPerfect,
+    perfect: resolved.perfect,
+    great: resolved.great,
+    good: resolved.good,
+    miss: resolved.miss,
+  };
+}
+
 function validateJudgmentSums(raw, normalized) {
-  const legacyCriticalPerfectLayout = ["tap", "hold", "slide", "touch"]
-    .every((noteType) => raw.judgmentsByType[noteType].criticalPerfect === null)
-    && raw.judgmentsByType.break.criticalPerfect !== null;
+  const legacyLayout = legacyCriticalPerfectLayout(raw.judgmentsByType);
 
   judgmentNames.forEach((judgment) => {
     const values = noteTypes.map((noteType) => raw.judgmentsByType[noteType][judgment]);
     if (raw.judgments[judgment] === null || values.some((value) => value === null)) return;
     const sum = values.reduce((total, value) => total + value, 0)
-      + (legacyCriticalPerfectLayout && judgment === "perfect"
+      + (legacyLayout && judgment === "perfect"
         ? raw.judgmentsByType.break.criticalPerfect
         : 0);
     if (sum !== normalized.judgments[judgment]) {
@@ -65,6 +105,10 @@ function validateJudgmentSums(raw, normalized) {
 }
 
 export function proposedScoreRecord({ ocr, resolution, capturedAt }) {
+  const judgmentsByType = Object.fromEntries(noteTypes.map((noteType) => [
+    noteType,
+    judgmentSet(ocr.judgmentsByType?.[noteType], `judgmentsByType.${noteType}`),
+  ]));
   const record = {
     playedAt: capturedAt,
     songTitle: resolution.canonicalTitle,
@@ -79,11 +123,8 @@ export function proposedScoreRecord({ ocr, resolution, capturedAt }) {
     ratingChange: ocr.ratingChange === null
       ? 0
       : finiteNumber(ocr.ratingChange, "ratingChange", { integer: true }),
-    judgments: judgmentSet(ocr.judgments, "judgments"),
-    judgmentsByType: Object.fromEntries(noteTypes.map((noteType) => [
-      noteType,
-      judgmentSet(ocr.judgmentsByType?.[noteType], `judgmentsByType.${noteType}`),
-    ])),
+    judgments: overallJudgmentSet(ocr.judgments, ocr.judgmentsByType, judgmentsByType),
+    judgmentsByType,
     fast: ocr.fast === null ? 0 : finiteNumber(ocr.fast, "fast", { integer: true, minimum: 0 }),
     slow: ocr.slow === null ? 0 : finiteNumber(ocr.slow, "slow", { integer: true, minimum: 0 }),
   };
