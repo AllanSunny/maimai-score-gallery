@@ -1,8 +1,17 @@
 export function createSerialQueue() {
   let tail = Promise.resolve();
+  let lastRateLimitedStart = 0;
 
-  return function serial(task) {
-    const result = tail.then(task, task);
+  return function serial(task, { minimumDelayMs = 0 } = {}) {
+    async function run() {
+      if (minimumDelayMs > 0) {
+        const waitMs = Math.max(0, lastRateLimitedStart + minimumDelayMs - Date.now());
+        if (waitMs > 0) await new Promise((resolve) => setTimeout(resolve, waitMs));
+        lastRateLimitedStart = Date.now();
+      }
+      return task();
+    }
+    const result = tail.then(run, run);
     tail = result.catch(() => {});
     return result;
   };

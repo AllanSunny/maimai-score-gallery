@@ -37,3 +37,14 @@ test("concurrent map limits active work and preserves result order", async () =>
   assert.deepEqual(results, [6, 4, 2, 0]);
   assert.equal(maximum, 2);
 });
+
+test("serial queue spaces rate-limited work", async () => {
+  const serial = createSerialQueue();
+  const starts = [];
+  await Promise.all([
+    serial(() => starts.push(Date.now()), { minimumDelayMs: 20 }),
+    serial(() => starts.push(Date.now()), { minimumDelayMs: 20 }),
+  ]);
+
+  assert.ok(starts[1] - starts[0] >= 15);
+});
