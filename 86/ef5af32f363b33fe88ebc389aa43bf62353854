@@ -1,0 +1,35 @@
+scripts/lib/catalog-title-enrichment.mjs
+  s_6d06bd4898dc7f::t_b02ebb28bbb639 1-151
+scripts/sync-catalog.mjs
+  s_6d06bd4898dc7f::t_b02ebb28bbb639 7,430-431
+  s_6d06bd4898dc7f::t_9bf78bed37a1aa 432
+package.json
+  s_6d06bd4898dc7f::t_6d6d37a3f84b2d 27-28
+.env.example
+  s_6d06bd4898dc7f::t_b02ebb28bbb639 26-28
+src/utils/song-titles.ts
+  s_6d06bd4898dc7f::t_b9a2f99afff5c9 14
+scripts/lib/catalog-title-enrichment.test.mjs
+  s_6d06bd4898dc7f::t_b02ebb28bbb639 1-42,44-56
+  s_6d06bd4898dc7f::t_72fdcf2e102338 43
+.github/workflows/import-new-scores.yml
+  s_6d06bd4898dc7f::t_b02ebb28bbb639 182-185
+package-lock.json
+  s_6d06bd4898dc7f::t_bfeda260d7b095 15-16,5313-5321
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.22",
+  "base_commit_sha": "86ef5af32f363b33fe88ebc389aa43bf62353854",
+  "prompts": {},
+  "sessions": {
+    "s_6d06bd4898dc7f": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019faca2-0a30-75f3-8a51-06f8e9067195",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Allan Sun <allansun@live.com>"
+    }
+  }
+}
