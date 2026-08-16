@@ -1,0 +1,30 @@
+scripts/lib/import-concurrency.mjs
+  s_c5289c37771990::t_971c8af9032874 3,5-14
+scripts/lib/import-concurrency.test.mjs
+  s_c5289c37771990::t_971c8af9032874 40-50
+scripts/import-images.mjs
+  s_c5289c37771990::t_8afb886f5f14ed 156,186,191,197,207,284,298,300,307,315,323,375,400,428,437,459,464
+  s_c5289c37771990::t_971c8af9032874 103-113
+  s_c5289c37771990::t_d60cb849cabfdf 114
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.22",
+  "base_commit_sha": "ba0baf3f425e57c81706e22f8c3f4ef94eccdd19",
+  "prompts": {},
+  "humans": {
+    "h_278fafc5c28027": {
+      "author": "Allan Sun <allansun@live.com>"
+    }
+  },
+  "sessions": {
+    "s_c5289c37771990": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a008fe-a51d-7590-8c18-764df15fa711",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Allan Sun <allansun@live.com>"
+    }
+  }
+}
