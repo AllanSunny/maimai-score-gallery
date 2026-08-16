@@ -1,0 +1,44 @@
+scripts/lib/openai-score-ocr.test.mjs
+  s_c5289c37771990::t_dd420581049511 5,16
+  s_c5289c37771990::t_fd33dc9ea2cbf6 11-12,33,36,38,58
+.github/workflows/import-new-scores.yml
+  s_c5289c37771990::t_fd33dc9ea2cbf6 27,67
+  s_c5289c37771990::t_e3c6c85661127b 7
+scripts/lib/import-concurrency.test.mjs
+  s_c5289c37771990::t_fd33dc9ea2cbf6 1-39
+scripts/import-images.mjs
+  s_c5289c37771990::t_dd420581049511 253-258
+  s_c5289c37771990::t_d6239a2c9ba49c 229-230,242-243,250-251,268,271-272,276-277,286,288,292-295,301,303,306,309,311,314-315,321,329-330,363,369,373,389,391-392,407,411,414,419-420,425-426,429,445,450,456
+  s_c5289c37771990::t_9e15664c3d6677 388,390,393-406,408-409,416-417
+  s_c5289c37771990::t_f199568142ca3b 206,464-465,467
+  s_c5289c37771990::t_f30e5e9ef15829 144,156,174,179,185,195,202
+  s_c5289c37771990::t_4ea039166bd062 8,66-88,91-95,100-106,114-125,127
+scripts/lib/score-sheet-writer.mjs
+  s_c5289c37771990::t_33cd38bb5b42a5 91-99,109-114,166-172
+scripts/lib/import-concurrency.mjs
+  s_c5289c37771990::t_fd33dc9ea2cbf6 1-26
+scripts/lib/openai-score-ocr.mjs
+  s_c5289c37771990::t_4dae68f20f2c9e 6
+  s_c5289c37771990::t_fd33dc9ea2cbf6 11-12,135-138
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.22",
+  "base_commit_sha": "0342d85c5005ad9f0802a3fee30c3a83e363fc2e",
+  "prompts": {},
+  "humans": {
+    "h_278fafc5c28027": {
+      "author": "Allan Sun <allansun@live.com>"
+    }
+  },
+  "sessions": {
+    "s_c5289c37771990": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a008fe-a51d-7590-8c18-764df15fa711",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Allan Sun <allansun@live.com>"
+    }
+  }
+}
