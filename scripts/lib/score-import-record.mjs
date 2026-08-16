@@ -43,10 +43,17 @@ function judgmentSet(values, path) {
 }
 
 function validateJudgmentSums(raw, normalized) {
+  const legacyCriticalPerfectLayout = ["tap", "hold", "slide", "touch"]
+    .every((noteType) => raw.judgmentsByType[noteType].criticalPerfect === null)
+    && raw.judgmentsByType.break.criticalPerfect !== null;
+
   judgmentNames.forEach((judgment) => {
     const values = noteTypes.map((noteType) => raw.judgmentsByType[noteType][judgment]);
     if (raw.judgments[judgment] === null || values.some((value) => value === null)) return;
-    const sum = values.reduce((total, value) => total + value, 0);
+    const sum = values.reduce((total, value) => total + value, 0)
+      + (legacyCriticalPerfectLayout && judgment === "perfect"
+        ? raw.judgmentsByType.break.criticalPerfect
+        : 0);
     if (sum !== normalized.judgments[judgment]) {
       throw new ScoreValidationError(
         "JUDGMENT_MISMATCH",

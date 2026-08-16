@@ -49,6 +49,20 @@ test("proposed score falls back from missing critical perfect to perfect", () =>
   assert.ok(Object.values(record.judgmentsByType).every((set) => set.criticalPerfect === 2));
 });
 
+test("legacy judgment layouts include break critical perfect in the overall perfect total", () => {
+  const input = validInput();
+  input.ocr.judgments.criticalPerfect = null;
+  input.ocr.judgments.perfect = 20;
+  ["tap", "hold", "slide", "touch"].forEach((noteType) => {
+    input.ocr.judgmentsByType[noteType].criticalPerfect = null;
+  });
+
+  const record = proposedScoreRecord(input);
+  assert.equal(record.judgments.perfect, 20);
+  assert.equal(record.judgmentsByType.break.criticalPerfect, 10);
+  assert.equal(record.judgmentsByType.tap.criticalPerfect, 2);
+});
+
 test("proposed score rejects inconsistent judgment totals", () => {
   const input = validInput();
   input.ocr.judgments.great = 6;

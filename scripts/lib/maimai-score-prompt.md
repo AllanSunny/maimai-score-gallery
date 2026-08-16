@@ -17,7 +17,9 @@ The full-frame photograph normally contains two different physical displays. Tre
 - Read combo and sync badges from the lower touchscreen using only the allowed schema values.
 - Read overall CRITICAL PERFECT, PERFECT, GREAT, GOOD, and MISS totals from the lower touchscreen.
 - Read the TAP, HOLD, SLIDE, TOUCH, and BREAK breakdown table from the upper monitor. A displayed blank or dash is zero. Use null only when a value is obscured or genuinely unreadable.
-- When readable, verify each judgment's five note-type values sum to its overall total.
+- Older result layouts do not separate CRITICAL PERFECT from PERFECT for TAP, HOLD, SLIDE, or TOUCH. In that layout, return null—not zero—for those four missing `criticalPerfect` cells. BREAK still separates `criticalPerfect` and `perfect`.
+- In the older layout, verify the lower touchscreen's overall PERFECT total as: TAP PERFECT + HOLD PERFECT + SLIDE PERFECT + TOUCH PERFECT + BREAK PERFECT + BREAK CRITICAL PERFECT.
+- In the newer layout, where every note type has separate CRITICAL PERFECT and PERFECT cells, verify each judgment's five note-type values sum directly to its corresponding overall total.
 - Read FAST from the upper monitor's FAST value. The upper monitor labels the slow count as LATE; return that LATE value in the `slow` field.
 - Read rating from the large rating number on the lower touchscreen and rating change from the smaller signed value beneath or beside it. Do not calculate rating change. Return zero only when the screen clearly shows no change; use null when unreadable.
 
