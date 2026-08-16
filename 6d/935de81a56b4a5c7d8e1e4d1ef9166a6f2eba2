@@ -1,0 +1,32 @@
+README.md
+  s_6d06bd4898dc7f::t_93bef581a4575d 81-113
+scripts/lib/catalog-overrides.mjs
+  s_6d06bd4898dc7f::t_502b176bb62883 1-42,50-83
+  s_6d06bd4898dc7f::t_b40bb84142d2a2 43-44,49
+  s_6d06bd4898dc7f::t_c6b20a088b0302 45-48
+scripts/sync-catalog.mjs
+  s_6d06bd4898dc7f::t_2f2474e2ec2e71 419-421
+  s_6d06bd4898dc7f::t_f1980a36ccd1c7 8,151-156,375,403-405,417-418,422,436-437
+scripts/lib/catalog-overrides.test.mjs
+  s_6d06bd4898dc7f::t_b40bb84142d2a2 1-45
+scripts/lib/song-title-resolver.mjs
+  s_6d06bd4898dc7f::t_502b176bb62883 2,59-66,144,183-184,186,255-264
+scripts/lib/song-title-resolver.test.mjs
+  s_6d06bd4898dc7f::t_b40bb84142d2a2 56-72
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.22",
+  "base_commit_sha": "6d935de81a56b4a5c7d8e1e4d1ef9166a6f2eba2",
+  "prompts": {},
+  "sessions": {
+    "s_6d06bd4898dc7f": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019faca2-0a30-75f3-8a51-06f8e9067195",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Allan Sun <allansun@live.com>"
+    }
+  }
+}
