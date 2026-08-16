@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-16T23:37:37.924Z",
+  "updatedAt": "2026-08-16T23:40:15.693Z",
   "scores": [
     {
       "playedAt": "2025-11-10T02:30:43.000Z",
@@ -31413,7 +31413,7 @@
       "level": "13",
       "achievement": 99.6098,
       "combo": "FC",
-      "sync": null,
+      "sync": "Sync",
       "rating": 14011,
       "ratingChange": 4,
       "judgments": {
@@ -33993,7 +33993,7 @@
       "level": "11+",
       "achievement": 100.9274,
       "combo": "AP",
-      "sync": null,
+      "sync": "Sync",
       "rating": 15119,
       "ratingChange": 0,
       "judgments": {
