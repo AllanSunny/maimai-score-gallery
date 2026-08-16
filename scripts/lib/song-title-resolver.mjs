@@ -1,4 +1,5 @@
 import { createSegaCatalogLoader } from "./sega-catalog.mjs";
+import { createCatalogOverridesLoader, standaloneCatalogSongs } from "./catalog-overrides.mjs";
 
 const chartFields = {
   DX: {
@@ -53,6 +54,14 @@ function uniqueSongs(songs) {
     seen.add(key);
     return true;
   });
+}
+
+function songTitles(song) {
+  return song.matchTitles?.length ? song.matchTitles : [song.title];
+}
+
+function titleMatches(song, target) {
+  return songTitles(song).some((title) => normalizedSongTitle(title) === target);
 }
 
 function candidateNames(songs) {
@@ -132,7 +141,7 @@ function resolveTitle(visibleTitle, titleTruncated, songs, context) {
     throw new SongResolutionError("EMPTY_TITLE", "OCR returned an empty song title.");
   }
 
-  const exact = uniqueSongs(songs.filter((song) => normalizedSongTitle(song.title) === target));
+  const exact = uniqueSongs(songs.filter((song) => titleMatches(song, target)));
   if (exact.length === 1) return { song: exact[0], matchType: "exact" };
   if (exact.length > 1) {
     const disambiguated = disambiguateSongs(exact, context);
@@ -171,10 +180,10 @@ function resolveTitle(visibleTitle, titleTruncated, songs, context) {
       { candidates: [] },
     );
   }
-  const edgeMatches = uniqueSongs(songs.filter((song) => {
-    const title = normalizedSongTitle(song.title);
+  const edgeMatches = uniqueSongs(songs.filter((song) => songTitles(song).some((candidate) => {
+    const title = normalizedSongTitle(candidate);
     return title.startsWith(fragment) || title.endsWith(fragment);
-  }));
+  })));
   if (edgeMatches.length === 1) {
     const title = normalizedSongTitle(edgeMatches[0].title);
     const matchesBeginning = title.startsWith(fragment);
@@ -243,7 +252,16 @@ function resolveChart(song, chartType, difficulty) {
   return { chartType, difficulty, level };
 }
 
-export function createSongTitleResolver({ loadCatalog = createSegaCatalogLoader() } = {}) {
+function defaultCatalogLoader() {
+  const loadOfficialCatalog = createSegaCatalogLoader();
+  const loadOverrides = createCatalogOverridesLoader();
+  return async function loadCatalog() {
+    const [officialSongs, overrides] = await Promise.all([loadOfficialCatalog(), loadOverrides()]);
+    return [...officialSongs, ...standaloneCatalogSongs(overrides)];
+  };
+}
+
+export function createSongTitleResolver({ loadCatalog = defaultCatalogLoader() } = {}) {
   return {
     async resolve({ visibleTitle, visibleArtist, titleTruncated, chartType, difficulty, level }) {
       const songs = await loadCatalog();

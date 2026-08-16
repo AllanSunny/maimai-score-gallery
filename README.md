@@ -78,6 +78,39 @@ columns override only the populated overall or note-type counts; blank cells
 continue using OCR. Unmatched names are retried and are never written to the
 public catalog.
 
+Songs removed from SEGA's current catalog can be defined as standalone entries
+in `src/data/overrides.json`. Standalone entries require an explicit stable ID,
+artist, and at least one chart level. Jacket, chart constant, and charter data
+may be unavailable:
+
+```json
+{
+  "Removed Song": {
+    "standalone": true,
+    "id": "removed-song",
+    "artist": "Artist Name",
+    "jacketKey": null,
+    "titles": {
+      "kana": [],
+      "romaji": [],
+      "english": [],
+      "aliases": []
+    },
+    "charts": {
+      "STD:MASTER": {
+        "level": "13+",
+        "chartConstant": null,
+        "charter": null
+      }
+    }
+  }
+}
+```
+
+The score importer includes these entries during title validation, and catalog
+sync generates the same song/version/chart structure used for SEGA-backed
+songs. Set `jacketKey` later if a jacket is uploaded to R2.
+
 The review sheet can also serve as a manual score entry with or without a
 queued image. For an image-free entry, leave Filename and Drive File ID blank,
 set Status to `Review`, and provide corrected capture time in UTC, title, chart

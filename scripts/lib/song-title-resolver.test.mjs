@@ -53,6 +53,23 @@ test("resolver returns a canonical exact match and authoritative chart level", a
   assert.deepEqual(result.chart, { chartType: "DX", difficulty: "MASTER", level: "13+" });
 });
 
+test("resolver matches alternate titles supplied by a standalone override", async () => {
+  const result = await resolver([{
+    title: "Removed Song",
+    artist: "Former Artist",
+    image_url: null,
+    matchTitles: ["Removed Song", "archived song"],
+    lev_mas: "13+",
+  }]).resolve({
+    visibleTitle: "Archived Song",
+    titleTruncated: false,
+    chartType: "STD",
+    difficulty: "MASTER",
+  });
+  assert.equal(result.canonicalTitle, "Removed Song");
+  assert.equal(result.chart.level, "13+");
+});
+
 test("resolver completes one uniquely clipped title", async () => {
   const result = await resolver().resolve({
     visibleTitle: "Mystic Par…",

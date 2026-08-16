@@ -5,6 +5,7 @@ import path from "node:path";
 import process from "node:process";
 import { promisify } from "node:util";
 import { enrichMissingSongTitles } from "./lib/catalog-title-enrichment.mjs";
+import { standaloneCatalogSongs } from "./lib/catalog-overrides.mjs";
 
 const execFileAsync = promisify(execFile);
 
@@ -145,6 +146,12 @@ function findOfficialSong(title, officialSongs, overrides) {
     const names = [song.title, ...overrideTitleValues(override)];
     return names.some((name) => normalizeTitle(name) === target);
   });
+}
+
+function findStandaloneSong(title, songs) {
+  const target = normalizeTitle(title);
+  return songs.find((song) => song.matchTitles
+    .some((name) => normalizeTitle(name) === target));
 }
 
 function songArtist(official, override = {}) {
@@ -365,6 +372,7 @@ async function main() {
     readJson(GENERATED_PATH),
     requestedSongs(),
   ]);
+  const standaloneSongs = standaloneCatalogSongs(overrides);
   const titles = requested.map((entry) => entry.title);
   const unmatchedSongs = new Map();
   const newTitles = titles.filter((title) => !isAlreadyCataloged(title, previous.songs));
@@ -392,7 +400,9 @@ async function main() {
 
   for (const requestedTitle of newTitles) {
     const official = findOfficialSong(requestedTitle, officialSongs, overrides);
-    if (!official) {
+    const standalone = findStandaloneSong(requestedTitle, standaloneSongs);
+    const sourceSong = official ?? standalone;
+    if (!sourceSong) {
       console.warn(`No official catalog match for: ${requestedTitle}`);
       const key = normalizeTitle(requestedTitle);
       unmatchedSongs.set(key, {
@@ -404,11 +414,12 @@ async function main() {
 
     unmatchedSongs.delete(normalizeTitle(requestedTitle));
 
-    const override = overrides[official.title] ?? {};
-    const baseId = override.id ?? fallbackId(official.title);
-    const sourceJacketUrl = new URL(official.image_url, SEGA_JACKET_BASE_URL).toString();
-    const jacketKey = await uploadJacket(baseId, sourceJacketUrl);
-    const versions = extractChartVersions(official, override, communitySongs).map(({ chartType, charts }) => {
+    const override = official ? (overrides[official.title] ?? {}) : standalone.standaloneOverride;
+    const baseId = override.id ?? fallbackId(sourceSong.title);
+    const jacketKey = official
+      ? await uploadJacket(baseId, new URL(sourceSong.image_url, SEGA_JACKET_BASE_URL).toString())
+      : (override.jacketKey ?? null);
+    const versions = extractChartVersions(sourceSong, override, communitySongs).map(({ chartType, charts }) => {
       const versionId = `${baseId}-${chartType.toLowerCase()}`;
       return {
         id: versionId,
@@ -422,8 +433,8 @@ async function main() {
 
     songs.push({
       id: baseId,
-      titles: createSongTitles(official.title, override),
-      artist: songArtist(official, override),
+      titles: createSongTitles(sourceSong.title, override),
+      artist: songArtist(sourceSong, override),
       jacketKey,
       versions,
     });
