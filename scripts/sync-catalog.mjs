@@ -6,6 +6,7 @@ import process from "node:process";
 import { promisify } from "node:util";
 import { enrichMissingSongTitles } from "./lib/catalog-title-enrichment.mjs";
 import { standaloneCatalogSongs } from "./lib/catalog-overrides.mjs";
+import { catalogOutput } from "./lib/catalog-output.mjs";
 
 const execFileAsync = promisify(execFile);
 
@@ -386,8 +387,8 @@ async function main() {
     fetchJson(CHART_SUPPLEMENT_METADATA_URL, "supplemental chart metadata"),
   ]);
   const communitySongs = indexCommunityCharts(chartMetadataSongs);
-  const songs = [...previous.songs];
-  let songsChanged = enrichExistingCharts(songs, communitySongs, overrides);
+  const songs = structuredClone(previous.songs);
+  enrichExistingCharts(songs, communitySongs, overrides);
 
   missingArtistSongs.forEach((song) => {
     const canonicalTitle = song.titles.canonical;
@@ -395,7 +396,6 @@ async function main() {
     if (!official) throw new Error(`Could not backfill artist for: ${canonicalTitle}`);
     const override = overrides[official.title] ?? {};
     song.artist = songArtist(official, override);
-    songsChanged = true;
   });
 
   for (const requestedTitle of newTitles) {
@@ -438,26 +438,19 @@ async function main() {
       jacketKey,
       versions,
     });
-    songsChanged = true;
 
     // Be polite to the source host when synchronizing multiple new jackets.
     await new Promise((resolve) => setTimeout(resolve, 250));
   }
 
-  const enrichedTitleCount = await enrichMissingSongTitles(songs);
-  if (enrichedTitleCount > 0) songsChanged = true;
+  await enrichMissingSongTitles(songs);
 
-  const catalog = songsChanged
-    ? {
-        generatedAt: new Date().toISOString(),
-        songs: songs.sort((a, b) => a.titles.canonical.localeCompare(b.titles.canonical)),
-      }
-    : previous;
-  if (songsChanged) {
+  const { catalog, changed: catalogChanged } = catalogOutput(previous, songs);
+  if (catalogChanged) {
     await writeFile(GENERATED_PATH, `${JSON.stringify(catalog, null, 2)}\n`);
   }
   await linkArchivedScores(catalog.songs, unmatchedSongs);
-  if (songsChanged) {
+  if (catalogChanged) {
     console.log(`Wrote ${songs.length} song(s) to ${path.relative(ROOT, GENERATED_PATH)}.`);
   }
 }
