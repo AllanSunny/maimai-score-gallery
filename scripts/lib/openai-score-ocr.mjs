@@ -3,7 +3,7 @@ import OpenAI from "openai";
 import { requiredEnvironment } from "./google-auth.mjs";
 
 const maimaiScorePromptUrl = new URL("./maimai-score-prompt.md", import.meta.url);
-export const SCORE_OCR_PROMPT_VERSION = "2026-08-15-v6";
+export const SCORE_OCR_PROMPT_VERSION = "2026-08-16-v7";
 const SCORE_OCR_OPTIONS = Object.freeze({
   detail: "high",
   reasoningEffort: "low",
