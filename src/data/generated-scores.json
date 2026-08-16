@@ -25286,66 +25286,6 @@
       "chartId": "song-1c2a0228b93f-dx-master"
     },
     {
-      "playedAt": "2026-01-01T00:13:00.000Z",
-      "songTitle": "ツギハギスタッカート",
-      "chartType": "DX",
-      "difficulty": "MASTER",
-      "level": "12+",
-      "achievement": 100.57,
-      "combo": "FC",
-      "sync": "FS+",
-      "rating": 13714,
-      "ratingChange": 18,
-      "judgments": {
-        "criticalPerfect": 437,
-        "perfect": 152,
-        "great": 7,
-        "good": 3,
-        "miss": 0
-      },
-      "judgmentsByType": {
-        "break": {
-          "criticalPerfect": 7,
-          "perfect": 0,
-          "great": 0,
-          "good": 0,
-          "miss": 0
-        },
-        "tap": {
-          "criticalPerfect": 233,
-          "perfect": 134,
-          "great": 5,
-          "good": 3,
-          "miss": 0
-        },
-        "hold": {
-          "criticalPerfect": 30,
-          "perfect": 18,
-          "great": 1,
-          "good": 0,
-          "miss": 0
-        },
-        "slide": {
-          "criticalPerfect": 66,
-          "perfect": 0,
-          "great": 1,
-          "good": 0,
-          "miss": 0
-        },
-        "touch": {
-          "criticalPerfect": 101,
-          "perfect": 0,
-          "great": 0,
-          "good": 0,
-          "miss": 0
-        }
-      },
-      "fast": 3,
-      "slow": 7,
-      "id": "oqi6T82lxgH8NkWQpq51zKJxttYUMeGTUULLiADEb_o",
-      "chartId": "song-1c2a0228b93f-dx-master"
-    },
-    {
       "playedAt": "2026-01-01T00:13:12.000Z",
       "songTitle": "ツギハギスタッカート",
       "chartType": "DX",
