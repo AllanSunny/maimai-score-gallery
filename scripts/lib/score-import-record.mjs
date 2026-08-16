@@ -122,6 +122,12 @@ function validateJudgmentSums(raw, normalized) {
 }
 
 export function proposedScoreRecord({ ocr, resolution, capturedAt }) {
+  if (["FS", "FS+", "FDX", "FDX+"].includes(ocr.sync) && ocr.combo === "Clear") {
+    throw new ScoreValidationError(
+      "INVALID_SYNC_STATUS",
+      `${ocr.sync} is incompatible with a Clear combo; use Sync for a generic sync play.`,
+    );
+  }
   const judgmentsByType = ocr.judgmentsByType === null
     ? null
     : Object.fromEntries(noteTypes.map((noteType) => [

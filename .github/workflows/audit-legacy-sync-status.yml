@@ -1,0 +1,117 @@
+name: Audit Legacy Sync Status
+
+on:
+  workflow_dispatch:
+    inputs:
+      apply_updates:
+        description: Update spreadsheet rows and deploy corrected data
+        type: boolean
+        default: false
+        required: true
+      image_limit:
+        description: Optional number of legacy images to inspect; blank audits all
+        required: false
+      drive_file_id:
+        description: Optional exact processed Drive file ID for a targeted test
+        required: false
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: audit-legacy-sync-status
+  cancel-in-progress: false
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    outputs:
+      changed: ${{ steps.commit.outputs.changed }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24.14.1
+          cache: npm
+      - run: npm ci
+      - name: Re-OCR legacy sync badge positions
+        env:
+          APPLY_UPDATES: ${{ inputs.apply_updates }}
+          IMAGE_LIMIT: ${{ inputs.image_limit }}
+          DRIVE_FILE_ID: ${{ inputs.drive_file_id }}
+          SYNC_AUDIT_CONCURRENCY: 4
+          GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
+          GOOGLE_PROCESSED_FOLDER_ID: ${{ vars.GOOGLE_PROCESSED_FOLDER_ID }}
+          GOOGLE_SPREADSHEET_ID: ${{ vars.GOOGLE_SPREADSHEET_ID }}
+          GOOGLE_SHEET_NAME: ${{ vars.GOOGLE_SHEET_NAME }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_OCR_MODEL: ${{ vars.OPENAI_OCR_MODEL }}
+        run: |
+          args=()
+          if [ "$APPLY_UPDATES" = "true" ]; then
+            args+=(--apply)
+          fi
+          if [ -n "$IMAGE_LIMIT" ]; then
+            args+=(--limit "$IMAGE_LIMIT")
+          fi
+          if [ -n "$DRIVE_FILE_ID" ]; then
+            args+=(--drive-file-id "$DRIVE_FILE_ID")
+          fi
+          node --env-file-if-exists=.env.local scripts/one-off/legacy-sync-status/audit.mjs "${args[@]}"
+      - name: Upload sync audit report
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: legacy-sync-status-audit
+          path: .sync/sync-status-audit.json
+          if-no-files-found: error
+          retention-days: 30
+      - name: Regenerate score archive
+        if: ${{ inputs.apply_updates }}
+        env:
+          GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
+          GOOGLE_SPREADSHEET_ID: ${{ vars.GOOGLE_SPREADSHEET_ID }}
+          GOOGLE_SHEET_NAME: ${{ vars.GOOGLE_SHEET_NAME }}
+        run: npm run scores:sync
+      - run: npm run data:validate
+        if: ${{ inputs.apply_updates }}
+      - name: Commit corrected sync statuses
+        id: commit
+        if: ${{ inputs.apply_updates }}
+        run: |
+          if git diff --quiet -- src/data/generated-scores.json; then
+            echo "No archived sync statuses changed."
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/data/generated-scores.json
+          git commit -m "Reconcile legacy sync statuses"
+          git pull --rebase origin main
+          git push
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+
+  deploy-pages:
+    needs: audit
+    if: ${{ needs.audit.outputs.changed == 'true' }}
+    uses: ./.github/workflows/deploy-pages.yml
+
+  notify-failure:
+    needs: [audit, deploy-pages]
+    if: ${{ failure() }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Notify Discord
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          RUN_URL: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          jq -n --arg url "$RUN_URL" '{content: ("❌ **Legacy sync-status audit failed**\n\n<" + $url + ">"), allowed_mentions: {parse: []}}' \
+            | curl --fail --silent --show-error --header "Content-Type: application/json" \
+              --data-binary @- "$DISCORD_WEBHOOK_URL"

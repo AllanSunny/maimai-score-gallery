@@ -114,12 +114,6 @@ export async function createImportLog() {
         record.sourceHash === sourceHash && ["IMPORTED", "DUPLICATE"].includes(record.status)) ?? null;
     },
 
-    async findSuccessfulByScoreFingerprint(scoreFingerprint) {
-      return (await records()).find((record) =>
-        record.scoreFingerprint === scoreFingerprint
-        && ["IMPORTED", "DUPLICATE"].includes(record.status)) ?? null;
-    },
-
     async begin({ driveFileId, originalFilename, captureTime }) {
       const response = await sheets.spreadsheets.values.append({
         spreadsheetId,

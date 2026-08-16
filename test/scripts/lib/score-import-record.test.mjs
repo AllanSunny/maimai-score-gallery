@@ -150,3 +150,15 @@ test("proposed score defaults a missing rating change to zero and preserves unkn
   assert.equal(record.fast, null);
   assert.equal(record.slow, null);
 });
+
+test("proposed score rejects FS-family statuses without a full combo", () => {
+  const input = validInput();
+  input.ocr.combo = "Clear";
+  input.ocr.sync = "FS";
+  assert.throws(
+    () => proposedScoreRecord(input),
+    (error) => error.code === "INVALID_SYNC_STATUS",
+  );
+  input.ocr.sync = "Sync";
+  assert.equal(proposedScoreRecord(input).sync, "Sync");
+});

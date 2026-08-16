@@ -6,6 +6,7 @@ import { createDriveImageStore } from "./lib/drive-images.mjs";
 import { scoreFingerprint, sourceFingerprint } from "./lib/import-fingerprints.mjs";
 import { createImportLog } from "./lib/import-log.mjs";
 import { createSerialQueue, mapConcurrent } from "./lib/import-concurrency.mjs";
+import { resolveLiveScoreReference } from "./lib/logged-score-reference.mjs";
 import { imageCaptureMetadata, ocrImageOptions, prepareOcrImage } from "./lib/ocr-image.mjs";
 import {
   parseScoreImage,
@@ -116,10 +117,15 @@ async function main() {
   const scoreWriter = await serial(createScoreSheetWriter);
   const reviewQueue = await serial(createReviewQueue);
   const existingScoreRows = await serial(readScoreSheetWithRows);
-  const existingScoresByFingerprint = new Map(existingScoreRows.map(({ rowNumber, score }) => [
-    scoreFingerprint(score),
-    { canonicalTitle: score.songTitle, captureTime: score.playedAt, spreadsheetRow: rowNumber },
-  ]));
+  const existingScoresByFingerprint = new Map(existingScoreRows.map(({ rowNumber, score }) => {
+    const fingerprint = scoreFingerprint(score);
+    return [fingerprint, {
+      canonicalTitle: score.songTitle,
+      captureTime: score.playedAt,
+      spreadsheetRow: rowNumber,
+      scoreFingerprint: fingerprint,
+    }];
+  }));
   const files = await drive.listIncoming();
   const results = [];
   let actionCount = 0;
@@ -193,6 +199,7 @@ async function main() {
           canonicalTitle: proposedScore.songTitle,
           captureTime: proposedScore.playedAt,
           spreadsheetRow: result.spreadsheetRow,
+          scoreFingerprint: fingerprint,
         });
         await sheetWrite(() => reviewQueue.markRowImported(review.rowNumber, result.spreadsheetRow));
         result.status = "imported";
@@ -293,25 +300,34 @@ async function main() {
             throw new Error(`Imported log row ${latestImport.rowNumber} is missing its title or capture time.`);
           }
           result.importLogRow = latestImport.rowNumber;
-          result.spreadsheetRow = latestImport.spreadsheetRow;
+          const liveReference = resolveLiveScoreReference(latestImport, existingScoresByFingerprint);
+          if (!liveReference) {
+            throw new Error(
+              `Import log row ${latestImport.rowNumber} has no matching live MainInfo score; its stored row number is informational only.`,
+            );
+          }
+          result.spreadsheetRow = liveReference.spreadsheetRow;
           const moveLoggedFile = latestImport.status === "DUPLICATE"
             ? drive.moveToDuplicates
             : drive.moveToProcessed;
           result.processedDriveFile = await serial(() => moveLoggedFile(file, {
-            canonicalTitle: latestImport.canonicalTitle,
-            capturedAt: latestImport.captureTime,
+            canonicalTitle: liveReference.canonicalTitle,
+            capturedAt: liveReference.captureTime,
           }));
-          await sheetWrite(() => reviewQueue.markImported(file.id, latestImport.spreadsheetRow));
+          await sheetWrite(() => reviewQueue.markImported(file.id, liveReference.spreadsheetRow));
           result.status = "reconciled";
-          console.log(`  Reconciled previously imported row ${latestImport.spreadsheetRow}; no OCR request made.`);
+          console.log(`  Reconciled previously imported row ${liveReference.spreadsheetRow}; no OCR request made.`);
           results.push(result);
           await writeReport();
           return;
         }
-        if (latestImport?.status === "PROCESSING" && latestImport.spreadsheetRow) {
-          throw new Error(
-            `Processing log row ${latestImport.rowNumber} already references spreadsheet row ${latestImport.spreadsheetRow}; manual reconciliation is required.`,
-          );
+        if (latestImport?.status === "PROCESSING") {
+          const liveReference = resolveLiveScoreReference(latestImport, existingScoresByFingerprint);
+          if (liveReference) {
+            throw new Error(
+              `Processing log row ${latestImport.rowNumber} matches live MainInfo row ${liveReference.spreadsheetRow}; manual reconciliation is required.`,
+            );
+          }
         }
         if (["PROCESSING", "REJECTED"].includes(latestImport?.status)) {
           result.importLogRow = latestImport.rowNumber;
@@ -330,7 +346,8 @@ async function main() {
       const sourceHash = sourceFingerprint(original);
       result.sourceHash = sourceHash;
       {
-        const duplicate = await serial(() => importLog.findSuccessfulBySourceHash(sourceHash));
+        const loggedDuplicate = await serial(() => importLog.findSuccessfulBySourceHash(sourceHash));
+        const duplicate = resolveLiveScoreReference(loggedDuplicate, existingScoresByFingerprint);
         if (duplicate && duplicate.driveFileId !== file.id) {
           await sheetWrite(() => importLog.markDuplicate(result.importLogRow, duplicate, sourceHash));
           committed = true;
@@ -418,10 +435,7 @@ async function main() {
       result.scoreFingerprint = fingerprint;
       {
         const commit = await sheetWrite(async () => {
-          const loggedDuplicate = await importLog.findSuccessfulByScoreFingerprint(fingerprint);
-          const duplicate = loggedDuplicate && loggedDuplicate.driveFileId !== file.id
-            ? loggedDuplicate
-            : existingScoresByFingerprint.get(fingerprint);
+          const duplicate = existingScoresByFingerprint.get(fingerprint);
           if (duplicate) {
             await importLog.markDuplicate(result.importLogRow, duplicate, sourceHash);
             return { duplicate, spreadsheetRow: duplicate.spreadsheetRow };
@@ -434,6 +448,7 @@ async function main() {
             canonicalTitle: proposedScore.songTitle,
             captureTime: proposedScore.playedAt,
             spreadsheetRow,
+            scoreFingerprint: fingerprint,
           });
           return { duplicate: null, spreadsheetRow };
         });
