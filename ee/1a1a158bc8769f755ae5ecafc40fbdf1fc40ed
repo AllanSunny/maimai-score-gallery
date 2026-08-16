@@ -1,0 +1,34 @@
+scripts/one-off/legacy-sync-status/audit.mjs
+  s_6d06bd4898dc7f::t_2ef13d595f0a30 53
+  s_6d06bd4898dc7f::t_d9fffdfba542cd 98
+  s_6d06bd4898dc7f::t_ece71db49c7146 227-229
+  s_6d06bd4898dc7f::t_186fe76c05d7cd 1,17-18,27-31,99-134,177-181,208-220,230,269-270,274-275
+.github/workflows/audit-legacy-sync-status.yml
+  s_6d06bd4898dc7f::t_d9fffdfba542cd 94-101
+  s_6d06bd4898dc7f::t_af570683f21c93 68-93,126-127,131
+test/scripts/one-off/legacy-sync-status/sync-status-ocr.test.mjs
+  s_6d06bd4898dc7f::t_d9fffdfba542cd 4,63-72
+  s_6d06bd4898dc7f::t_2ef13d595f0a30 5-8,46-62
+  s_6d06bd4898dc7f::t_099453d8a3a6d3 3
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.22",
+  "base_commit_sha": "ee1a1a158bc8769f755ae5ecafc40fbdf1fc40ed",
+  "prompts": {},
+  "humans": {
+    "h_278fafc5c28027": {
+      "author": "Allan Sun <allansun@live.com>"
+    }
+  },
+  "sessions": {
+    "s_6d06bd4898dc7f": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019faca2-0a30-75f3-8a51-06f8e9067195",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Allan Sun <allansun@live.com>"
+    }
+  }
+}
