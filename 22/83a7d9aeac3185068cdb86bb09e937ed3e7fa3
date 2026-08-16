@@ -1,0 +1,58 @@
+test/scripts/lib/sheet-scores.test.mjs
+  s_6d06bd4898dc7f::t_1406c2d474829a 3
+test/scripts/lib/import-fingerprints.test.mjs
+  s_6d06bd4898dc7f::t_1406c2d474829a 3
+test/scripts/lib/catalog-output.test.mjs
+  s_6d06bd4898dc7f::t_1406c2d474829a 3
+test/scripts/lib/openai-score-ocr.test.mjs
+  s_6d06bd4898dc7f::t_1406c2d474829a 3
+test/scripts/lib/review-queue.test.mjs
+  s_6d06bd4898dc7f::t_1406c2d474829a 7
+test/scripts/lib/score-import-record.test.mjs
+  s_6d06bd4898dc7f::t_1406c2d474829a 3
+test/scripts/lib/drive-images.test.mjs
+  s_6d06bd4898dc7f::t_1406c2d474829a 3
+test/scripts/lib/sega-catalog.test.mjs
+  s_6d06bd4898dc7f::t_1406c2d474829a 3
+test/scripts/lib/capture-time.test.mjs
+  s_6d06bd4898dc7f::t_1406c2d474829a 3
+test/scripts/lib/import-concurrency.test.mjs
+  s_6d06bd4898dc7f::t_1406c2d474829a 3
+test/scripts/lib/catalog-overrides.test.mjs
+  s_6d06bd4898dc7f::t_1406c2d474829a 3
+test/scripts/lib/score-review-corrections.test.mjs
+  s_6d06bd4898dc7f::t_1406c2d474829a 6
+test/scripts/lib/sheet-grid.test.mjs
+  s_6d06bd4898dc7f::t_1406c2d474829a 3
+test/scripts/lib/song-title-resolver.test.mjs
+  s_6d06bd4898dc7f::t_1406c2d474829a 3
+test/scripts/lib/score-sheet-writer.test.mjs
+  s_6d06bd4898dc7f::t_1406c2d474829a 7
+test/scripts/lib/catalog-title-enrichment.test.mjs
+  s_6d06bd4898dc7f::t_1406c2d474829a 3
+test/scripts/lib/ocr-image.test.mjs
+  s_6d06bd4898dc7f::t_1406c2d474829a 9
+package.json
+  s_6d06bd4898dc7f::t_1406c2d474829a 13
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.22",
+  "base_commit_sha": "2283a7d9aeac3185068cdb86bb09e937ed3e7fa3",
+  "prompts": {},
+  "humans": {
+    "h_278fafc5c28027": {
+      "author": "Allan Sun <allansun@live.com>"
+    }
+  },
+  "sessions": {
+    "s_6d06bd4898dc7f": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019faca2-0a30-75f3-8a51-06f8e9067195",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Allan Sun <allansun@live.com>"
+    }
+  }
+}
