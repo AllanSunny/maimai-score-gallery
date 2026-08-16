@@ -1,0 +1,26 @@
+test/scripts/lib/score-archive.test.mjs
+  s_6d06bd4898dc7f::t_740396aeec3d3d 21,27-34
+scripts/lib/score-archive.mjs
+  s_6d06bd4898dc7f::t_740396aeec3d3d 15
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.22",
+  "base_commit_sha": "8782ee83cff23aa832f8b1be5b087ff6f5866b37",
+  "prompts": {},
+  "humans": {
+    "h_278fafc5c28027": {
+      "author": "Allan Sun <allansun@live.com>"
+    }
+  },
+  "sessions": {
+    "s_6d06bd4898dc7f": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019faca2-0a30-75f3-8a51-06f8e9067195",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Allan Sun <allansun@live.com>"
+    }
+  }
+}
