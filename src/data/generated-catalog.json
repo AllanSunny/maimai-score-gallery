@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-16T01:01:01.301Z",
+  "generatedAt": "2026-08-16T01:20:43.184Z",
   "songs": [
     {
       "id": "song-85572925973b",
@@ -242,6 +242,60 @@
               "level": "14",
               "chartConstant": 14,
               "charter": "mai-Star"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "song-a33e7097af26",
+      "titles": {
+        "canonical": "Bad Apple!! feat.nomico ～五十嵐 撫子 Ver.～",
+        "kana": [
+          "ばっど あっぷる ふぃーちゃりんぐ のみこ いがらし なでしこ ばあじょん"
+        ],
+        "romaji": [
+          "baddo appuru fyi-charingu nomiko igarashi nadeshiko baajon"
+        ],
+        "english": [
+          "bad apple!! feat. nomico — nadeshiko igarashi version —"
+        ],
+        "aliases": []
+      },
+      "artist": "Masayoshi Minoshima [covered by 五十嵐 撫子(CV:花井 美春)]",
+      "jacketKey": "jackets/song-a33e7097af26-4e86978587dc.png",
+      "versions": [
+        {
+          "id": "song-a33e7097af26-dx",
+          "chartType": "DX",
+          "charts": [
+            {
+              "id": "song-a33e7097af26-dx-basic",
+              "difficulty": "BASIC",
+              "level": "3",
+              "chartConstant": 3,
+              "charter": null
+            },
+            {
+              "id": "song-a33e7097af26-dx-advanced",
+              "difficulty": "ADVANCED",
+              "level": "6",
+              "chartConstant": 6.5,
+              "charter": null
+            },
+            {
+              "id": "song-a33e7097af26-dx-expert",
+              "difficulty": "EXPERT",
+              "level": "10+",
+              "chartConstant": 10.7,
+              "charter": "鳩ホルダー"
+            },
+            {
+              "id": "song-a33e7097af26-dx-master",
+              "difficulty": "MASTER",
+              "level": "13",
+              "chartConstant": 13.3,
+              "charter": "はっぴー"
             }
           ]
         }
