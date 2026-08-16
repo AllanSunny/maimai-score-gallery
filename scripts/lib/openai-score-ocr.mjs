@@ -3,11 +3,13 @@ import OpenAI from "openai";
 import { requiredEnvironment } from "./google-auth.mjs";
 
 const maimaiScorePromptUrl = new URL("./maimai-score-prompt.md", import.meta.url);
-export const SCORE_OCR_PROMPT_VERSION = "2026-08-16-v7";
+export const SCORE_OCR_PROMPT_VERSION = "2026-08-16-v8";
 const SCORE_OCR_OPTIONS = Object.freeze({
   detail: "high",
   reasoningEffort: "low",
   maxOutputTokens: 5000,
+  timeoutMs: 45_000,
+  maxRetries: 1,
 });
 
 const nullableNumber = { type: ["number", "null"] };
@@ -130,7 +132,10 @@ export async function parseScoreImage(image, dependencies = {}) {
   const options = dependencies.options ?? scoreOcrOptions();
   const prompt = dependencies.prompt ?? await readFile(maimaiScorePromptUrl, "utf8");
   const client = dependencies.client ?? new OpenAI({ apiKey: requiredEnvironment("OPENAI_API_KEY") });
-  const response = await client.responses.create(scoreOcrRequest({ image, prompt, options }));
+  const response = await client.responses.create(
+    scoreOcrRequest({ image, prompt, options }),
+    { timeout: options.timeoutMs, maxRetries: options.maxRetries },
+  );
   if (!response.output_text) {
     const details = [
       response.status && `status=${response.status}`,

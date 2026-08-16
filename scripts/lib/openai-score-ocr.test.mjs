@@ -2,16 +2,18 @@ import assert from "node:assert/strict";
 import test from "node:test";
 import { parseScoreImage, scoreOcrOptions, scoreOcrRequest } from "./openai-score-ocr.mjs";
 
-test("score OCR keeps the proven model and high-detail defaults", () => {
+test("score OCR uses high detail with bounded retries", () => {
   assert.deepEqual(scoreOcrOptions({}), {
     model: "gpt-5.5",
     detail: "high",
     reasoningEffort: "low",
     maxOutputTokens: 5000,
+    timeoutMs: 45_000,
+    maxRetries: 1,
   });
 });
 
-test("score OCR request sends a full JPEG through a strict schema", () => {
+test("score OCR request sends a high-detail JPEG through a strict schema", () => {
   const request = scoreOcrRequest({
     image: { buffer: Buffer.from("image"), mimeType: "image/jpeg" },
     prompt: "extract",
@@ -28,10 +30,12 @@ test("score OCR request sends a full JPEG through a strict schema", () => {
 test("score OCR loads the maimai score prompt and exposes structured output and usage", async () => {
   const expected = { visibleTitle: "Test Song" };
   let request;
+  let requestOptions;
   const client = {
     responses: {
-      async create(value) {
+      async create(value, options) {
         request = value;
+        requestOptions = options;
         return {
           id: "resp_test",
           output_text: JSON.stringify(expected),
@@ -51,6 +55,7 @@ test("score OCR loads the maimai score prompt and exposes structured output and 
   assert.deepEqual(result.score, expected);
   assert.equal(result.usage.total_tokens, 120);
   assert.equal(result.responseId, "resp_test");
+  assert.deepEqual(requestOptions, { timeout: 45_000, maxRetries: 1 });
 });
 
 test("score OCR reports why a response has no structured output", async () => {

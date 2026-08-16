@@ -88,17 +88,15 @@ export async function createScoreSheetWriter() {
   const quotedSheet = `'${escapedSheetName(sheetName)}'`;
   const quotedImportLog = `'${escapedSheetName(IMPORT_LOG_SHEET_NAME)}'`;
   const { sheets } = await createGoogleClients();
-  const [metadata, headerResponse] = await Promise.all([
-    sheets.spreadsheets.get({
-      spreadsheetId,
-      fields: "properties(timeZone),sheets.properties(sheetId,title)",
-    }),
-    sheets.spreadsheets.values.get({
-      spreadsheetId,
-      range: `${quotedSheet}!1:1`,
-      valueRenderOption: "FORMATTED_VALUE",
-    }),
-  ]);
+  const metadata = await sheets.spreadsheets.get({
+    spreadsheetId,
+    fields: "properties(timeZone),sheets.properties(sheetId,title)",
+  });
+  const headerResponse = await sheets.spreadsheets.values.get({
+    spreadsheetId,
+    range: `${quotedSheet}!1:1`,
+    valueRenderOption: "FORMATTED_VALUE",
+  });
   const worksheet = metadata.data.sheets?.find(({ properties }) => properties?.title === sheetName);
   if (!worksheet?.properties?.sheetId && worksheet?.properties?.sheetId !== 0) {
     throw new Error(`Worksheet ${JSON.stringify(sheetName)} was not found.`);
@@ -108,15 +106,15 @@ export async function createScoreSheetWriter() {
   assertHeaders(headers, SCORE_HEADERS.first, 0);
   assertHeaders(headers, SCORE_HEADERS.statuses, 7);
   assertHeaders(headers, SCORE_HEADERS.judgments, 12);
+  const scoreResponse = await sheets.spreadsheets.values.get({
+    spreadsheetId,
+    range: `${quotedSheet}!A2:AR`,
+    valueRenderOption: "FORMATTED_VALUE",
+  });
+  const rows = scoreResponse.data.values ?? [];
 
   return {
     async append(score, importedLog = null) {
-      const dateColumn = await sheets.spreadsheets.values.get({
-        spreadsheetId,
-        range: `${quotedSheet}!A2:AR`,
-        valueRenderOption: "FORMATTED_VALUE",
-      });
-      const rows = dateColumn.data.values ?? [];
       const rowNumber = firstAvailableScoreRow(rows);
       const values = scoreSheetValues(score);
 
@@ -165,6 +163,13 @@ export async function createScoreSheetWriter() {
           data,
         },
       });
+      rows[rowNumber - 2] = [
+        ...values.first,
+        "",
+        ...values.statuses,
+        "",
+        ...values.judgments,
+      ];
       return rowNumber;
     },
   };

@@ -5,6 +5,7 @@ import { selectCaptureTime } from "./lib/capture-time.mjs";
 import { createDriveImageStore } from "./lib/drive-images.mjs";
 import { scoreFingerprint, sourceFingerprint } from "./lib/import-fingerprints.mjs";
 import { createImportLog } from "./lib/import-log.mjs";
+import { createSerialQueue, mapConcurrent } from "./lib/import-concurrency.mjs";
 import { imageCaptureMetadata, ocrImageOptions, prepareOcrImage } from "./lib/ocr-image.mjs";
 import {
   parseScoreImage,
@@ -62,15 +63,47 @@ function cachedScore(record, sourceHash) {
   }
 }
 
+function positiveIntegerSetting(name, value, fallback) {
+  const parsed = Number(value || fallback);
+  if (!Number.isInteger(parsed) || parsed < 1) throw new Error(`${name} must be a positive integer.`);
+  return parsed;
+}
+
+function importReport(results, limit) {
+  const completed = results.filter(Boolean);
+  return {
+    generatedAt: new Date().toISOString(),
+    requestedLimit: Number.isFinite(limit) ? limit : null,
+    processedCount: completed.length,
+    importedCount: completed.filter(({ status }) => status === "imported").length,
+    reconciledCount: completed.filter(({ status }) => status === "reconciled").length,
+    movePendingCount: completed.filter(({ status }) => status === "imported-move-pending").length,
+    duplicateCount: completed.filter(({ status }) => status === "duplicate").length,
+    awaitingReviewCount: completed.filter(({ status }) => status === "awaiting-review").length,
+    ignoredCount: completed.filter(({ status }) => status === "ignored").length,
+    rejectedCount: completed.filter(({ status }) => status === "rejected").length,
+    results: completed,
+  };
+}
+
 async function main() {
   const { limit } = argumentsFrom(process.argv.slice(2));
+  const concurrency = positiveIntegerSetting(
+    "SCORE_IMPORT_CONCURRENCY",
+    process.env.SCORE_IMPORT_CONCURRENCY,
+    4,
+  );
   const timeZone = process.env.SCORE_CAPTURE_TIME_ZONE?.trim();
   if (!timeZone) throw new Error("SCORE_CAPTURE_TIME_ZONE is required.");
   const drive = await createDriveImageStore();
   const resolver = createSongTitleResolver();
-  const [importLog, scoreWriter, reviewQueue, existingScoreRows] = await Promise.all([
-    createImportLog(), createScoreSheetWriter(), createReviewQueue(), readScoreSheetWithRows(),
-  ]);
+  // Every Sheets and catalog operation uses this queue. Image downloads,
+  // conversion, metadata extraction, and OpenAI OCR may run concurrently.
+  const serial = createSerialQueue();
+  const importLog = await serial(createImportLog);
+  const scoreWriter = await serial(createScoreSheetWriter);
+  const reviewQueue = await serial(createReviewQueue);
+  const existingScoreRows = await serial(readScoreSheetWithRows);
   const existingScoresByFingerprint = new Map(existingScoreRows.map(({ rowNumber, score }) => [
     scoreFingerprint(score),
     { canonicalTitle: score.songTitle, captureTime: score.playedAt, spreadsheetRow: rowNumber },
@@ -78,8 +111,20 @@ async function main() {
   const files = await drive.listIncoming();
   const results = [];
   let actionCount = 0;
+  const reportPath = path.join(process.cwd(), ".sync", "image-import.json");
+  let reportWrites = Promise.resolve();
+  function writeReport() {
+    reportWrites = reportWrites.then(async () => {
+      await mkdir(path.dirname(reportPath), { recursive: true });
+      await writeFile(reportPath, `${JSON.stringify(importReport(results, limit), null, 2)}\n`);
+    });
+    return reportWrites;
+  }
+  process.once("SIGTERM", () => {
+    writeReport().finally(() => process.exit(143));
+  });
 
-  const manualEntries = await reviewQueue.manualEntries();
+  const manualEntries = await serial(() => reviewQueue.manualEntries());
   console.log(`Import found ${manualEntries.length} checked manual review row(s).`);
   for (const review of manualEntries) {
     const result = {
@@ -96,7 +141,7 @@ async function main() {
       error: null,
     };
     try {
-      await reviewQueue.markRetryStarted(review.rowNumber);
+      await serial(() => reviewQueue.markRetryStarted(review.rowNumber));
       const capturedAt = correctedUtcTime(review.correctedCaptureTime);
       if (!capturedAt) {
         throw new Error("A fully manual entry requires Corrected Capture Time (UTC).");
@@ -108,7 +153,7 @@ async function main() {
           "A fully manual entry requires corrected title, chart type, difficulty, achievement, combo, sync, rating, and Perfect/Great/Good/Miss totals. Note-type judgments must be either complete or entirely blank.",
         );
       }
-      const resolution = await resolver.resolve(rawScore);
+      const resolution = await serial(() => resolver.resolve(rawScore));
       result.resolution = {
         canonicalTitle: resolution.canonicalTitle,
         matchType: resolution.matchType,
@@ -126,18 +171,18 @@ async function main() {
       if (duplicate) {
         result.status = "duplicate";
         result.spreadsheetRow = duplicate.spreadsheetRow;
-        await reviewQueue.markRowImported(review.rowNumber, duplicate.spreadsheetRow);
+        await serial(() => reviewQueue.markRowImported(review.rowNumber, duplicate.spreadsheetRow));
         console.log(
           `Manual review row ${review.rowNumber} duplicates spreadsheet row ${duplicate.spreadsheetRow}; no row inserted.`,
         );
       } else {
-        result.spreadsheetRow = await scoreWriter.append(proposedScore);
+        result.spreadsheetRow = await serial(() => scoreWriter.append(proposedScore));
         existingScoresByFingerprint.set(fingerprint, {
           canonicalTitle: proposedScore.songTitle,
           captureTime: proposedScore.playedAt,
           spreadsheetRow: result.spreadsheetRow,
         });
-        await reviewQueue.markRowImported(review.rowNumber, result.spreadsheetRow);
+        await serial(() => reviewQueue.markRowImported(review.rowNumber, result.spreadsheetRow));
         result.status = "imported";
         console.log(
           `Imported manual review row ${review.rowNumber} as spreadsheet row ${result.spreadsheetRow}.`,
@@ -147,17 +192,18 @@ async function main() {
       result.status = "rejected";
       result.error = reportedError(error);
       try {
-        await reviewQueue.markRowRejected(review.rowNumber, error, error?.candidates ?? []);
+        await serial(() => reviewQueue.markRowRejected(review.rowNumber, error, error?.candidates ?? []));
       } catch (reviewError) {
         result.error.reviewQueueError = String(reviewError?.message ?? reviewError);
       }
       console.error(`Manual review row ${review.rowNumber} rejected: ${error?.message ?? error}`);
     }
     results.push(result);
+    await writeReport();
   }
 
   console.log(`Import found ${files.length} incoming image(s) to inspect.`);
-  for (const [index, file] of files.entries()) {
+  await mapConcurrent(files, concurrency, async (file, index) => {
     console.log(`[${index + 1}/${files.length}] Processing ${file.name} (${file.id})`);
     const result = {
       status: "processing",
@@ -180,8 +226,8 @@ async function main() {
     };
     let committed = false;
     try {
-      const latestImport = await importLog.latest(file.id);
-      const initialReview = await reviewQueue.find(file.id);
+      const latestImport = await serial(() => importLog.latest(file.id));
+      const initialReview = await serial(() => reviewQueue.find(file.id));
       result.appliedCorrections = initialReview ? {
           correctedTitle: initialReview.correctedTitle,
           correctedArtist: initialReview.correctedArtist,
@@ -193,17 +239,23 @@ async function main() {
           result.status = "ignored";
           console.log("  Skipped because the review row is marked Ignored.");
           results.push(result);
-          continue;
+          await writeReport();
+          return;
         }
         if (latestImport?.status === "REJECTED" && !reviewQueue.shouldRetry(initialReview)) {
           result.status = "awaiting-review";
           result.importLogRow = latestImport.rowNumber;
           console.log("  Awaiting a checked Retry box in Score Import Review; no OCR request made.");
           results.push(result);
-          continue;
+          await writeReport();
+          return;
         }
-        if (actionCount >= limit) break;
-        actionCount += 1;
+        const withinLimit = await serial(() => {
+          if (actionCount >= limit) return false;
+          actionCount += 1;
+          return true;
+        });
+        if (!withinLimit) return;
         if (["IMPORTED", "DUPLICATE"].includes(latestImport?.status)) {
           if (!latestImport.canonicalTitle || !latestImport.captureTime) {
             throw new Error(`Imported log row ${latestImport.rowNumber} is missing its title or capture time.`);
@@ -213,15 +265,16 @@ async function main() {
           const moveLoggedFile = latestImport.status === "DUPLICATE"
             ? drive.moveToDuplicates
             : drive.moveToProcessed;
-          result.processedDriveFile = await moveLoggedFile(file, {
+          result.processedDriveFile = await serial(() => moveLoggedFile(file, {
             canonicalTitle: latestImport.canonicalTitle,
             capturedAt: latestImport.captureTime,
-          });
-          await reviewQueue.markImported(file.id, latestImport.spreadsheetRow);
+          }));
+          await serial(() => reviewQueue.markImported(file.id, latestImport.spreadsheetRow));
           result.status = "reconciled";
           console.log(`  Reconciled previously imported row ${latestImport.spreadsheetRow}; no OCR request made.`);
           results.push(result);
-          continue;
+          await writeReport();
+          return;
         }
         if (latestImport?.status === "PROCESSING" && latestImport.spreadsheetRow) {
           throw new Error(
@@ -230,39 +283,42 @@ async function main() {
         }
         if (["PROCESSING", "REJECTED"].includes(latestImport?.status)) {
           result.importLogRow = latestImport.rowNumber;
-          await importLog.resume(latestImport.rowNumber);
+          await serial(() => importLog.resume(latestImport.rowNumber));
         } else {
-          result.importLogRow = await importLog.begin({
+          result.importLogRow = await serial(() => importLog.begin({
               driveFileId: file.id,
               originalFilename: file.name,
               captureTime: "",
-            });
+            }));
         }
-        if (reviewQueue.shouldRetry(initialReview)) await reviewQueue.markRetryStarted(initialReview.rowNumber);
+        if (reviewQueue.shouldRetry(initialReview)) {
+          await serial(() => reviewQueue.markRetryStarted(initialReview.rowNumber));
+        }
       const original = await drive.download(file.id);
       const sourceHash = sourceFingerprint(original);
       result.sourceHash = sourceHash;
       {
-        const duplicate = await importLog.findSuccessfulBySourceHash(sourceHash);
+        const duplicate = await serial(() => importLog.findSuccessfulBySourceHash(sourceHash));
         if (duplicate && duplicate.driveFileId !== file.id) {
-          await importLog.markDuplicate(result.importLogRow, duplicate, sourceHash);
+          await serial(() => importLog.markDuplicate(result.importLogRow, duplicate, sourceHash));
           committed = true;
           result.spreadsheetRow = duplicate.spreadsheetRow;
-          result.processedDriveFile = await drive.moveToDuplicates(file, {
+          result.processedDriveFile = await serial(() => drive.moveToDuplicates(file, {
             canonicalTitle: duplicate.canonicalTitle,
             capturedAt: duplicate.captureTime,
-          });
+          }));
           result.status = "duplicate";
-          await reviewQueue.markImported(file.id, duplicate.spreadsheetRow);
+          await serial(() => reviewQueue.markImported(file.id, duplicate.spreadsheetRow));
           console.log(`  Duplicate image of spreadsheet row ${duplicate.spreadsheetRow}; no OCR request made.`);
           results.push(result);
-          continue;
+          await writeReport();
+          return;
         }
       }
       const embedded = await imageCaptureMetadata(original);
       const captureTime = selectCaptureTime({ embedded, driveFile: file, timeZone });
       {
-        const review = await reviewQueue.find(file.id);
+        const review = await serial(() => reviewQueue.find(file.id));
         const override = correctedUtcTime(review?.correctedCaptureTime);
         if (override) {
           captureTime.capturedAt = override;
@@ -270,8 +326,8 @@ async function main() {
         }
       }
       result.captureTime = captureTime;
-      const latest = await importLog.latest(file.id);
-      const review = await reviewQueue.find(file.id);
+      const latest = await serial(() => importLog.latest(file.id));
+      const review = await serial(() => reviewQueue.find(file.id));
       let rawOcr = manualScoreFromReview(review);
       if (rawOcr) {
         result.usedManualEntry = true;
@@ -304,17 +360,17 @@ async function main() {
           promptVersion: SCORE_OCR_PROMPT_VERSION,
           usage: parsed.usage,
         };
-        await importLog.cacheOcr(result.importLogRow, {
+        await serial(() => importLog.cacheOcr(result.importLogRow, {
           sourceHash,
           score: rawOcr,
           model: options.model,
           promptVersion: SCORE_OCR_PROMPT_VERSION,
           responseId: parsed.responseId,
-        });
+        }));
       }
       result.ocr = rawOcr;
       const resolvedOcr = applyReviewCorrections(rawOcr, review);
-      const resolution = await resolver.resolve(resolvedOcr);
+      const resolution = await serial(() => resolver.resolve(resolvedOcr));
       result.resolution = {
         canonicalTitle: resolution.canonicalTitle,
         matchType: resolution.matchType,
@@ -329,42 +385,51 @@ async function main() {
       const fingerprint = scoreFingerprint(proposedScore);
       result.scoreFingerprint = fingerprint;
       {
-        const loggedDuplicate = await importLog.findSuccessfulByScoreFingerprint(fingerprint);
-        const duplicate = loggedDuplicate && loggedDuplicate.driveFileId !== file.id
-          ? loggedDuplicate
-          : existingScoresByFingerprint.get(fingerprint);
-        if (duplicate) {
-          await importLog.markDuplicate(result.importLogRow, duplicate, sourceHash);
+        const commit = await serial(async () => {
+          const loggedDuplicate = await importLog.findSuccessfulByScoreFingerprint(fingerprint);
+          const duplicate = loggedDuplicate && loggedDuplicate.driveFileId !== file.id
+            ? loggedDuplicate
+            : existingScoresByFingerprint.get(fingerprint);
+          if (duplicate) {
+            await importLog.markDuplicate(result.importLogRow, duplicate, sourceHash);
+            return { duplicate, spreadsheetRow: duplicate.spreadsheetRow };
+          }
+          const spreadsheetRow = await scoreWriter.append(proposedScore, {
+            rowNumber: result.importLogRow,
+            scoreFingerprint: fingerprint,
+          });
+          existingScoresByFingerprint.set(fingerprint, {
+            canonicalTitle: proposedScore.songTitle,
+            captureTime: proposedScore.playedAt,
+            spreadsheetRow,
+          });
+          return { duplicate: null, spreadsheetRow };
+        });
+        result.spreadsheetRow = commit.spreadsheetRow;
+        if (commit.duplicate) {
           committed = true;
-          result.spreadsheetRow = duplicate.spreadsheetRow;
-          result.processedDriveFile = await drive.moveToDuplicates(file, {
+          result.processedDriveFile = await serial(() => drive.moveToDuplicates(file, {
             canonicalTitle: resolution.canonicalTitle,
             capturedAt: captureTime.capturedAt,
-          });
+          }));
           result.status = "duplicate";
-          await reviewQueue.markImported(file.id, duplicate.spreadsheetRow);
-          console.log(`  Duplicate score of spreadsheet row ${duplicate.spreadsheetRow}; no row inserted.`);
+          await serial(() => reviewQueue.markImported(file.id, commit.spreadsheetRow));
+          console.log(`  Duplicate score of spreadsheet row ${commit.spreadsheetRow}; no row inserted.`);
           results.push(result);
-          continue;
+          await writeReport();
+          return;
         }
-        result.spreadsheetRow = await scoreWriter.append(proposedScore, {
-          rowNumber: result.importLogRow,
-          scoreFingerprint: fingerprint,
-        });
-        existingScoresByFingerprint.set(fingerprint, {
-          canonicalTitle: proposedScore.songTitle,
-          captureTime: proposedScore.playedAt,
-          spreadsheetRow: result.spreadsheetRow,
-        });
         committed = true;
         result.status = "imported";
         try {
-          await reviewQueue.markImported(file.id, result.spreadsheetRow);
-          result.processedDriveFile = await drive.moveToProcessed(file, {
+          await serial(() => reviewQueue.markImported(file.id, result.spreadsheetRow));
+          result.processedDriveFile = await serial(() => drive.moveToProcessed(file, {
             canonicalTitle: resolution.canonicalTitle,
             capturedAt: captureTime.capturedAt,
-          });
-          console.log(`  Imported spreadsheet row ${result.spreadsheetRow} and moved the source image.`);
+          }));
+          console.log(
+            `  Imported spreadsheet row ${result.spreadsheetRow} and moved ${file.name}.`,
+          );
         } catch (error) {
           result.status = "imported-move-pending";
           result.error = reportedError(error);
@@ -379,18 +444,18 @@ async function main() {
       }
       if (result.importLogRow && !committed) {
         try {
-          await importLog.reject(result.importLogRow, error);
+          await serial(() => importLog.reject(result.importLogRow, error));
         } catch (logError) {
           result.error.importLogError = String(logError?.message ?? logError);
         }
         try {
-          await reviewQueue.upsertRejection({
+          await serial(() => reviewQueue.upsertRejection({
             driveFileId: file.id,
             filename: file.name,
             error,
             ocrTitle: result.ocr?.visibleTitle ?? "",
             candidates: error?.candidates ?? [],
-          });
+          }));
         } catch (reviewError) {
           result.error.reviewQueueError = String(reviewError?.message ?? reviewError);
         }
@@ -398,28 +463,10 @@ async function main() {
       console.error(`  Rejected: ${error?.message ?? error}`);
     }
     results.push(result);
-  }
+    await writeReport();
+  });
 
-  const report = {
-    generatedAt: new Date().toISOString(),
-    requestedLimit: Number.isFinite(limit) ? limit : null,
-    processedCount: results.length,
-    importedCount: results.filter(({ status }) => status === "imported").length,
-    reconciledCount: results.filter(({ status }) => status === "reconciled").length,
-    movePendingCount: results.filter(({ status }) => status === "imported-move-pending").length,
-    duplicateCount: results.filter(({ status }) => status === "duplicate").length,
-    awaitingReviewCount: results.filter(({ status }) => status === "awaiting-review").length,
-    ignoredCount: results.filter(({ status }) => status === "ignored").length,
-    rejectedCount: results.filter(({ status }) => status === "rejected").length,
-    results,
-  };
-  const reportPath = path.join(
-    process.cwd(),
-    ".sync",
-    "image-import.json",
-  );
-  await mkdir(path.dirname(reportPath), { recursive: true });
-  await writeFile(reportPath, `${JSON.stringify(report, null, 2)}\n`);
+  await writeReport();
   console.log(`Import report written to ${path.relative(process.cwd(), reportPath)}.`);
   // Reviewable image-level failures are recorded in the report and review
   // sheet. They should not fail the job or prevent accepted scores from

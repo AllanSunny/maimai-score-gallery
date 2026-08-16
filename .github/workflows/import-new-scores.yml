@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       image_limit:
-        description: Optional image limit for a test run; blank processes all new images
+        description: Optional image limit for a test run; blank processes all actionable images
         required: false
   schedule:
     # GitHub cron is UTC; the gate below selects midnight Eastern across DST.
@@ -24,7 +24,7 @@ concurrency:
 jobs:
   import-images:
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 150
     outputs:
       should-run: ${{ steps.schedule-check.outputs.should-run }}
     steps:
@@ -64,6 +64,7 @@ jobs:
           fi
         env:
           IMAGE_LIMIT: ${{ inputs.image_limit }}
+          SCORE_IMPORT_CONCURRENCY: 4
           GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
           GOOGLE_DRIVE_FOLDER_ID: ${{ vars.GOOGLE_DRIVE_FOLDER_ID }}
           GOOGLE_PROCESSED_FOLDER_ID: ${{ vars.GOOGLE_PROCESSED_FOLDER_ID }}
