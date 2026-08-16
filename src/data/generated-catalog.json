@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-16T00:25:11.708Z",
+  "generatedAt": "2026-08-16T00:32:06.706Z",
   "songs": [
     {
       "id": "song-85572925973b",
@@ -1372,9 +1372,15 @@
       "id": "song-455da6cc1460",
       "titles": {
         "canonical": "あいたい星人",
-        "kana": [],
-        "romaji": [],
-        "english": [],
+        "kana": [
+          "あいたい せいじん"
+        ],
+        "romaji": [
+          "aitai seijin"
+        ],
+        "english": [
+          "i wanna meet you alien"
+        ],
         "aliases": []
       },
       "artist": "DECO*27",
@@ -1420,9 +1426,15 @@
       "id": "song-dd8a4e36a251",
       "titles": {
         "canonical": "アイドル新鋭隊",
-        "kana": [],
-        "romaji": [],
-        "english": [],
+        "kana": [
+          "あいどる しんえいたい"
+        ],
+        "romaji": [
+          "aidoru shin'eitai"
+        ],
+        "english": [
+          "newly edgy idols"
+        ],
         "aliases": []
       },
       "artist": "Mitchie M / 初音ミク / MORE MORE JUMP！「プロジェクトセカイ カラフルステージ！ feat. 初音ミク」",
@@ -1468,9 +1480,15 @@
       "id": "song-517240e03361",
       "titles": {
         "canonical": "アニマル",
-        "kana": [],
-        "romaji": [],
-        "english": [],
+        "kana": [
+          "あにまる"
+        ],
+        "romaji": [
+          "animaru"
+        ],
+        "english": [
+          "animal"
+        ],
         "aliases": []
       },
       "artist": "DECO*27",
@@ -1516,9 +1534,15 @@
       "id": "song-371492138f3d",
       "titles": {
         "canonical": "アポカリプスに反逆の焔を焚べろ",
-        "kana": [],
-        "romaji": [],
-        "english": [],
+        "kana": [
+          "あぽかりぷすに はんぎゃくの ほのおを くべろ"
+        ],
+        "romaji": [
+          "apokaripusuni hangyakuno honoowo kubero"
+        ],
+        "english": [
+          "stoke the flames of rebellion in the apocalypse"
+        ],
         "aliases": []
       },
       "artist": "cosMo＠暴走AlterEgo",
@@ -1564,9 +1588,15 @@
       "id": "song-9484ecffb2df",
       "titles": {
         "canonical": "ありふれたせかいせいふく",
-        "kana": [],
-        "romaji": [],
-        "english": [],
+        "kana": [
+          "ありふれた せかい せいふく"
+        ],
+        "romaji": [
+          "arifureta sekai seifuku"
+        ],
+        "english": [
+          "common world domination"
+        ],
         "aliases": []
       },
       "artist": "ピノキオピー",
@@ -1612,9 +1642,15 @@
       "id": "song-c2823057ae4f",
       "titles": {
         "canonical": "いっぱい食べる君が好きだよ",
-        "kana": [],
-        "romaji": [],
-        "english": [],
+        "kana": [
+          "いっぱい たべる きみが すきだよ"
+        ],
+        "romaji": [
+          "ippai taberu kimiga sukidayo"
+        ],
+        "english": [
+          "i like you when you eat a lot"
+        ],
         "aliases": []
       },
       "artist": "ななひら",
@@ -1712,9 +1748,15 @@
       "id": "song-260908208d43",
       "titles": {
         "canonical": "エイリアンエイリアン",
-        "kana": [],
-        "romaji": [],
-        "english": [],
+        "kana": [
+          "えいりあん えいりあん"
+        ],
+        "romaji": [
+          "eirian eirian"
+        ],
+        "english": [
+          "alien alien"
+        ],
         "aliases": []
       },
       "artist": "ナユタン星人",
@@ -1763,8 +1805,12 @@
         "kana": [
           "えごろっく"
         ],
-        "romaji": [],
-        "english": [],
+        "romaji": [
+          "egorokku"
+        ],
+        "english": [
+          "ego rock"
+        ],
         "aliases": [
           "egorock"
         ]
@@ -1813,9 +1859,12 @@
       "titles": {
         "canonical": "エンジェル ドリーム",
         "kana": [
-          "えんじぇる どりーむ"
+          "えんじぇる どりーむ",
+          "えんじぇる どりいむ"
         ],
-        "romaji": [],
+        "romaji": [
+          "enjeru doriimu"
+        ],
         "english": [
           "angel dream"
         ],
@@ -1865,9 +1914,12 @@
       "titles": {
         "canonical": "オーバーライド",
         "kana": [
-          "おーばーらいど"
+          "おーばーらいど",
+          "おおばあらいど"
         ],
-        "romaji": [],
+        "romaji": [
+          "oobaaraido"
+        ],
         "english": [
           "override"
         ],
@@ -1972,7 +2024,9 @@
         "romaji": [
           "kyuukurarin"
         ],
-        "english": [],
+        "english": [
+          "kyu-kurarin"
+        ],
         "aliases": []
       },
       "artist": "いよわ",
@@ -2018,9 +2072,15 @@
       "id": "song-e92c47515940",
       "titles": {
         "canonical": "ジレンマ",
-        "kana": [],
-        "romaji": [],
-        "english": [],
+        "kana": [
+          "じれんま"
+        ],
+        "romaji": [
+          "jirenma"
+        ],
+        "english": [
+          "dilemma"
+        ],
         "aliases": []
       },
       "artist": "DECO*27",
@@ -2069,8 +2129,12 @@
         "kana": [
           "だいだいだいだいだいきらい"
         ],
-        "romaji": [],
-        "english": [],
+        "romaji": [
+          "daidaidaidaidaikirai"
+        ],
+        "english": [
+          "hate you so so so so much"
+        ],
         "aliases": [
           "daikirai"
         ]
@@ -2128,8 +2192,12 @@
         "kana": [
           "てとりす"
         ],
-        "romaji": [],
-        "english": [],
+        "romaji": [
+          "tetorisu"
+        ],
+        "english": [
+          "tetris"
+        ],
         "aliases": [
           "tetoris"
         ]
@@ -2236,9 +2304,15 @@
       "id": "song-e8be0960fb5f",
       "titles": {
         "canonical": "ナイト・オブ・ナイツ",
-        "kana": [],
-        "romaji": [],
-        "english": [],
+        "kana": [
+          "ないと おぶ ないつ"
+        ],
+        "romaji": [
+          "naito obu naitsu"
+        ],
+        "english": [
+          "night of knights"
+        ],
         "aliases": []
       },
       "artist": "ビートまりお(COOL＆CREATE)",
@@ -2325,9 +2399,15 @@
       "id": "song-aa146dfca961",
       "titles": {
         "canonical": "はいよろこんで",
-        "kana": [],
-        "romaji": [],
-        "english": [],
+        "kana": [
+          "はい よろこんで"
+        ],
+        "romaji": [
+          "hai yorokonde"
+        ],
+        "english": [
+          "yes, gladly"
+        ],
         "aliases": []
       },
       "artist": "こっちのけんと",
@@ -2380,9 +2460,15 @@
       "id": "song-9028eaf59903",
       "titles": {
         "canonical": "ビビデバ",
-        "kana": [],
-        "romaji": [],
-        "english": [],
+        "kana": [
+          "びびでば"
+        ],
+        "romaji": [
+          "bibideba"
+        ],
+        "english": [
+          "bibbidiba"
+        ],
         "aliases": []
       },
       "artist": "星街すいせい（ホロライブ）",
@@ -2436,9 +2522,12 @@
       "titles": {
         "canonical": "メズマライザー",
         "kana": [
-          "めずまらいざー"
+          "めずまらいざー",
+          "めずまらいざあ"
         ],
-        "romaji": [],
+        "romaji": [
+          "mezumaraizaa"
+        ],
         "english": [
           "mesmerizer"
         ],
@@ -2494,8 +2583,12 @@
       "id": "song-940363864a61",
       "titles": {
         "canonical": "モ°ルモ°ル",
-        "kana": [],
-        "romaji": [],
+        "kana": [
+          "もるもる"
+        ],
+        "romaji": [
+          "morumoru"
+        ],
         "english": [],
         "aliases": []
       },
@@ -2542,9 +2635,15 @@
       "id": "song-759a718763cf",
       "titles": {
         "canonical": "モザイクロール",
-        "kana": [],
-        "romaji": [],
-        "english": [],
+        "kana": [
+          "もざいく ろうる"
+        ],
+        "romaji": [
+          "mozaiku rouru"
+        ],
+        "english": [
+          "mozaik role"
+        ],
         "aliases": []
       },
       "artist": "DECO*27",
@@ -2627,7 +2726,9 @@
         "kana": [
           "もにたりんぐ"
         ],
-        "romaji": [],
+        "romaji": [
+          "monitaringu"
+        ],
         "english": [
           "monitoring"
         ],
@@ -2684,7 +2785,9 @@
       "titles": {
         "canonical": "もぺもぺ",
         "kana": [],
-        "romaji": [],
+        "romaji": [
+          "mopemope"
+        ],
         "english": [],
         "aliases": []
       },
@@ -2731,9 +2834,15 @@
       "id": "song-97aadb9a4e53",
       "titles": {
         "canonical": "ゆけむり魂温泉 II",
-        "kana": [],
-        "romaji": [],
-        "english": [],
+        "kana": [
+          "ゆけむり たまおんせん つう"
+        ],
+        "romaji": [
+          "yukemuri tamaonsen tsuu"
+        ],
+        "english": [
+          "steam spirit hot springs ii"
+        ],
         "aliases": []
       },
       "artist": "魂音泉",
@@ -2779,9 +2888,15 @@
       "id": "song-d47f70af5b17",
       "titles": {
         "canonical": "ラビットホール",
-        "kana": [],
-        "romaji": [],
-        "english": [],
+        "kana": [
+          "らびっと ほうる"
+        ],
+        "romaji": [
+          "rabitto houru"
+        ],
+        "english": [
+          "rabbit hole"
+        ],
         "aliases": []
       },
       "artist": "DECO*27",
@@ -2834,9 +2949,15 @@
       "id": "song-3ce7f814ff96",
       "titles": {
         "canonical": "ローリンガール",
-        "kana": [],
-        "romaji": [],
-        "english": [],
+        "kana": [
+          "ろうりん がある"
+        ],
+        "romaji": [
+          "rourin gaaru"
+        ],
+        "english": [
+          "rolling girl"
+        ],
         "aliases": []
       },
       "artist": "wowaka",
@@ -2916,9 +3037,15 @@
       "id": "song-86b237cecc19",
       "titles": {
         "canonical": "ワールズエンド・ダンスホール",
-        "kana": [],
-        "romaji": [],
-        "english": [],
+        "kana": [
+          "わあるず えんど だんす ほうる"
+        ],
+        "romaji": [
+          "waaruzu endo dansu houru"
+        ],
+        "english": [
+          "world's end dancehall"
+        ],
         "aliases": []
       },
       "artist": "wowaka",
@@ -3023,9 +3150,15 @@
       "id": "song-438eaed9a234",
       "titles": {
         "canonical": "初音ミクの消失",
-        "kana": [],
-        "romaji": [],
-        "english": [],
+        "kana": [
+          "はつね みく の しょうしつ"
+        ],
+        "romaji": [
+          "hatsune miku no shoushitsu"
+        ],
+        "english": [
+          "the disappearance of hatsune miku"
+        ],
         "aliases": []
       },
       "artist": "cosMo＠暴走P",
@@ -3105,9 +3238,15 @@
       "id": "song-21c8a54c340b",
       "titles": {
         "canonical": "初音ミクの激唱",
-        "kana": [],
-        "romaji": [],
-        "english": [],
+        "kana": [
+          "はつね みく の げきしょう"
+        ],
+        "romaji": [
+          "hatsune miku no gekishou"
+        ],
+        "english": [
+          "the intense voice of hatsune miku"
+        ],
         "aliases": []
       },
       "artist": "Storyteller",
@@ -3153,9 +3292,15 @@
       "id": "song-db821594b039",
       "titles": {
         "canonical": "命テステス",
-        "kana": [],
-        "romaji": [],
-        "english": [],
+        "kana": [
+          "いのち てすてす"
+        ],
+        "romaji": [
+          "inochi tesutesu"
+        ],
+        "english": [
+          "life test test"
+        ],
         "aliases": []
       },
       "artist": "ぱりぱりさらうどん",
@@ -3202,10 +3347,15 @@
       "titles": {
         "canonical": "愛♡スクリ～ム！",
         "kana": [
-          "あいすくりーむ"
+          "あいすくりーむ",
+          "あい すくりいむ"
         ],
-        "romaji": [],
-        "english": [],
+        "romaji": [
+          "ai sukuriimu"
+        ],
+        "english": [
+          "ice cream"
+        ],
         "aliases": [
           "aiscream"
         ]
@@ -3321,9 +3471,15 @@
       "id": "song-389f9829e427",
       "titles": {
         "canonical": "神っぽいな",
-        "kana": [],
-        "romaji": [],
-        "english": [],
+        "kana": [
+          "かみっぽいな"
+        ],
+        "romaji": [
+          "kamippoina"
+        ],
+        "english": [
+          "god-ish"
+        ],
         "aliases": []
       },
       "artist": "ピノキオピー",
@@ -3376,9 +3532,15 @@
       "id": "song-0ede0734dd4a",
       "titles": {
         "canonical": "竹",
-        "kana": [],
-        "romaji": [],
-        "english": [],
+        "kana": [
+          "たけ"
+        ],
+        "romaji": [
+          "take"
+        ],
+        "english": [
+          "bamboo"
+        ],
         "aliases": []
       },
       "artist": "立秋 feat.ちょこ",
@@ -3487,9 +3649,15 @@
       "id": "song-5958b78766c8",
       "titles": {
         "canonical": "裏表ラバーズ",
-        "kana": [],
-        "romaji": [],
-        "english": [],
+        "kana": [
+          "うらおもて らばあず"
+        ],
+        "romaji": [
+          "uraomote rabaazu"
+        ],
+        "english": [
+          "two-faced lovers"
+        ],
         "aliases": []
       },
       "artist": "wowaka",
@@ -3535,9 +3703,15 @@
       "id": "song-c3ab5ce385d0",
       "titles": {
         "canonical": "酔いどれ知らず",
-        "kana": [],
-        "romaji": [],
-        "english": [],
+        "kana": [
+          "よいどれしらず"
+        ],
+        "romaji": [
+          "yoidoreshirazu"
+        ],
+        "english": [
+          "yoidore shirazu"
+        ],
         "aliases": []
       },
       "artist": "Kanaria",
