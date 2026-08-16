@@ -1,0 +1,27 @@
+src/components/song/SongDetailFrame.tsx
+  s_b095ac8202e2ae::t_a3e362b8d3d2ee 71-83
+src/components/song/SongDetailFrame.css
+  s_b095ac8202e2ae::t_a3e362b8d3d2ee 74-88,90-92
+  h_278fafc5c28027 89
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.22",
+  "base_commit_sha": "ef0f3fe0ac29c43fb9bae96eb6410952b11ae57d",
+  "prompts": {},
+  "humans": {
+    "h_278fafc5c28027": {
+      "author": "Allan Sun <allansun@live.com>"
+    }
+  },
+  "sessions": {
+    "s_b095ac8202e2ae": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a00926-8e56-79c2-b8b8-f78f5453cf73",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": null
+    }
+  }
+}
