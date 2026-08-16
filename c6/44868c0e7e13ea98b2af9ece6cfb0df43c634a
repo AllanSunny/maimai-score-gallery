@@ -1,0 +1,30 @@
+scripts/lib/score-review-corrections.test.mjs
+  s_6d06bd4898dc7f::t_530551b853d9ab 1-47
+scripts/lib/score-review-corrections.mjs
+  s_6d06bd4898dc7f::t_0f85d7376fb46c 34-36
+  s_6d06bd4898dc7f::t_530551b853d9ab 1-33,37-55
+README.md
+  s_6d06bd4898dc7f::t_c42b3c7d0f36eb 67-70
+scripts/import-images.mjs
+  s_6d06bd4898dc7f::t_530551b853d9ab 16,109,229
+scripts/lib/review-queue.mjs
+  s_6d06bd4898dc7f::t_0bbe1d1464a113 20,58-61,146-154,173-182,184-193,208-210
+  s_6d06bd4898dc7f::t_7878659754be46 212-213
+  s_6d06bd4898dc7f::t_ba9b103e339469 211
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.22",
+  "base_commit_sha": "c644868c0e7e13ea98b2af9ece6cfb0df43c634a",
+  "prompts": {},
+  "sessions": {
+    "s_6d06bd4898dc7f": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019faca2-0a30-75f3-8a51-06f8e9067195",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Allan Sun <allansun@live.com>"
+    }
+  }
+}
