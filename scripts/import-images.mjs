@@ -143,7 +143,10 @@ async function main() {
           }
           result.importLogRow = latestImport.rowNumber;
           result.spreadsheetRow = latestImport.spreadsheetRow;
-          result.processedDriveFile = await drive.moveToProcessed(file, {
+          const moveLoggedFile = latestImport.status === "DUPLICATE"
+            ? drive.moveToDuplicates
+            : drive.moveToProcessed;
+          result.processedDriveFile = await moveLoggedFile(file, {
             canonicalTitle: latestImport.canonicalTitle,
             capturedAt: latestImport.captureTime,
           });
@@ -178,7 +181,7 @@ async function main() {
           await importLog.markDuplicate(result.importLogRow, duplicate, sourceHash);
           committed = true;
           result.spreadsheetRow = duplicate.spreadsheetRow;
-          result.processedDriveFile = await drive.moveToProcessed(file, {
+          result.processedDriveFile = await drive.moveToDuplicates(file, {
             canonicalTitle: duplicate.canonicalTitle,
             capturedAt: duplicate.captureTime,
           });
@@ -261,7 +264,7 @@ async function main() {
           await importLog.markDuplicate(result.importLogRow, duplicate, sourceHash);
           committed = true;
           result.spreadsheetRow = duplicate.spreadsheetRow;
-          result.processedDriveFile = await drive.moveToProcessed(file, {
+          result.processedDriveFile = await drive.moveToDuplicates(file, {
             canonicalTitle: resolution.canonicalTitle,
             capturedAt: captureTime.capturedAt,
           });

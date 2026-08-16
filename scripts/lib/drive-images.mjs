@@ -38,7 +38,25 @@ export function processedImageName({ canonicalTitle, capturedAt, originalName })
 export async function createDriveImageStore() {
   const incomingFolderId = requiredEnvironment("GOOGLE_DRIVE_FOLDER_ID");
   const processedFolderId = requiredEnvironment("GOOGLE_PROCESSED_FOLDER_ID");
+  const duplicatesFolderId = requiredEnvironment("GOOGLE_DUPLICATES_FOLDER_ID");
   const { drive } = await createGoogleClients(GOOGLE_SCOPES.importer);
+
+  async function move(file, destinationFolderId, { canonicalTitle, capturedAt }) {
+    const removeParents = (file.parents ?? []).join(",") || incomingFolderId;
+    const name = processedImageName({
+      canonicalTitle,
+      capturedAt,
+      originalName: file.name ?? "score.heic",
+    });
+    const response = await drive.files.update({
+      fileId: file.id,
+      addParents: destinationFolderId,
+      removeParents,
+      fields: "id,name,parents",
+      requestBody: { name },
+    });
+    return response.data;
+  }
 
   return {
     async listIncoming() {
@@ -67,20 +85,11 @@ export async function createDriveImageStore() {
     },
 
     async moveToProcessed(file, { canonicalTitle, capturedAt }) {
-      const removeParents = (file.parents ?? []).join(",") || incomingFolderId;
-      const name = processedImageName({
-        canonicalTitle,
-        capturedAt,
-        originalName: file.name ?? "score.heic",
-      });
-      const response = await drive.files.update({
-        fileId: file.id,
-        addParents: processedFolderId,
-        removeParents,
-        fields: "id,name,parents",
-        requestBody: { name },
-      });
-      return response.data;
+      return move(file, processedFolderId, { canonicalTitle, capturedAt });
+    },
+
+    async moveToDuplicates(file, { canonicalTitle, capturedAt }) {
+      return move(file, duplicatesFolderId, { canonicalTitle, capturedAt });
     },
   };
 }

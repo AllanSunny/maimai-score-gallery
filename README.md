@@ -86,6 +86,7 @@ The live repository uses the following **Actions variables**:
 | --- | --- |
 | `GOOGLE_DRIVE_FOLDER_ID` | Incoming score-image folder |
 | `GOOGLE_PROCESSED_FOLDER_ID` | Destination for successfully imported images |
+| `GOOGLE_DUPLICATES_FOLDER_ID` | Destination for duplicate images that can be reviewed and deleted |
 | `GOOGLE_SPREADSHEET_ID` | Score workbook and import-review workbook |
 | `GOOGLE_SHEET_NAME` | Main score sheet, currently `MainInfo` |
 | `OPENAI_OCR_MODEL` | Model shared by score OCR and title enrichment |

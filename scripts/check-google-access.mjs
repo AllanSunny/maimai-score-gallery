@@ -2,6 +2,7 @@ import { createGoogleClients, GOOGLE_SCOPES, requiredEnvironment } from "./lib/g
 
 const incomingFolderId = requiredEnvironment("GOOGLE_DRIVE_FOLDER_ID");
 const processedFolderId = requiredEnvironment("GOOGLE_PROCESSED_FOLDER_ID");
+const duplicatesFolderId = requiredEnvironment("GOOGLE_DUPLICATES_FOLDER_ID");
 const spreadsheetId = requiredEnvironment("GOOGLE_SPREADSHEET_ID");
 const sheetName = requiredEnvironment("GOOGLE_SHEET_NAME");
 
@@ -21,9 +22,10 @@ async function folderAccess(fileId, label) {
   return folder;
 }
 
-const [incomingFolder, processedFolder, spreadsheetFile, spreadsheet] = await Promise.all([
+const [incomingFolder, processedFolder, duplicatesFolder, spreadsheetFile, spreadsheet] = await Promise.all([
   folderAccess(incomingFolderId, "Incoming"),
   folderAccess(processedFolderId, "Processed"),
+  folderAccess(duplicatesFolderId, "Duplicates"),
   drive.files.get({
     fileId: spreadsheetId,
     fields: "id,name,mimeType,trashed,capabilities(canEdit)",
@@ -55,10 +57,12 @@ const incomingSample = await drive.files.list({
 console.log("Google API connectivity check passed.");
 console.log(`Incoming folder: ${incomingFolder.name}`);
 console.log(`Processed folder: ${processedFolder.name}`);
+console.log(`Duplicates folder: ${duplicatesFolder.name}`);
 console.log(`Spreadsheet: ${spreadsheet.properties?.title}`);
 console.log(`Worksheet: ${worksheet.properties?.title}`);
 console.log(`Incoming folder readable: ${incomingSample.data.files !== undefined}`);
 console.log(`Incoming folder editable: ${Boolean(incomingFolder.capabilities?.canEdit)}`);
 console.log(`Incoming files removable: ${Boolean(incomingFolder.capabilities?.canRemoveChildren)}`);
 console.log(`Processed folder accepts files: ${Boolean(processedFolder.capabilities?.canAddChildren)}`);
+console.log(`Duplicates folder accepts files: ${Boolean(duplicatesFolder.capabilities?.canAddChildren)}`);
 console.log(`Spreadsheet editable: ${Boolean(spreadsheetFile.capabilities?.canEdit)}`);
