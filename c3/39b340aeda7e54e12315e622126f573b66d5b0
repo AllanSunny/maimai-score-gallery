@@ -1,0 +1,59 @@
+scripts/sync-scores.mjs
+  s_6d06bd4898dc7f::t_960781e9c8c40b 3,49-54,59,61-64
+scripts/import-images.mjs
+  s_6d06bd4898dc7f::t_9e43ed7369d0a8 120-128,202,451
+  s_6d06bd4898dc7f::t_8ab5745428a35b 9,303-309,314-315,317,319,325,349-350,438
+  s_6d06bd4898dc7f::t_d900bfec79ab9e 324,326-330
+test/scripts/one-off/legacy-sync-status/sync-status-ocr.test.mjs
+  s_6d06bd4898dc7f::t_fe5d916c9a80ff 25,28,31,34,36-38
+  s_6d06bd4898dc7f::t_73861cc9b9716d 1-24,26-27,29-30,32-33,35,39-40
+scripts/lib/score-archive.mjs
+  s_6d06bd4898dc7f::t_960781e9c8c40b 1-56
+test/scripts/lib/score-archive.test.mjs
+  s_6d06bd4898dc7f::t_960781e9c8c40b 1-40
+test/scripts/lib/score-import-record.test.mjs
+  s_6d06bd4898dc7f::t_fe5d916c9a80ff 153-164
+scripts/lib/score-import-record.mjs
+  s_6d06bd4898dc7f::t_fe5d916c9a80ff 125-130
+scripts/one-off/legacy-sync-status/prompt.md
+  s_6d06bd4898dc7f::t_73861cc9b9716d 1-15
+package.json
+  s_6d06bd4898dc7f::t_4115270315893f 13
+test/scripts/lib/logged-score-reference.test.mjs
+  s_6d06bd4898dc7f::t_8ab5745428a35b 1-23
+scripts/lib/logged-score-reference.mjs
+  s_6d06bd4898dc7f::t_8ab5745428a35b 1-5
+scripts/one-off/legacy-sync-status/sync-status-ocr.mjs
+  s_6d06bd4898dc7f::t_73861cc9b9716d 1-93
+.github/workflows/audit-legacy-sync-status.yml
+  s_6d06bd4898dc7f::t_73861cc9b9716d 65
+  s_6d06bd4898dc7f::t_f0b4e0a7166657 14-16,46,61-63
+  s_6d06bd4898dc7f::t_8317d8cf73cbb3 1-13,17-45,47-60,64,66-117
+scripts/one-off/legacy-sync-status/audit.mjs
+  s_6d06bd4898dc7f::t_3b602d182a66f4 19-20,24-25,101-102,104,107-109,134,140,142,144,146-147,149-150,154-155,157-159,163,179
+  s_6d06bd4898dc7f::t_fe5d916c9a80ff 34,37-39,191
+  s_6d06bd4898dc7f::t_542a1f25453c49 47-62,66-76,84-86,148,151-153
+  s_6d06bd4898dc7f::t_b70a33c7788a00 7,110
+  s_6d06bd4898dc7f::t_73861cc9b9716d 1-6,8-18,21-23,26-33,35-36,40-46,63-65,77-83,87-100,103,105-106,111-133,135-139,141,143,145,156,160-162,164-178,180-190,192-230
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.22",
+  "base_commit_sha": "c339b340aeda7e54e12315e622126f573b66d5b0",
+  "prompts": {},
+  "humans": {
+    "h_278fafc5c28027": {
+      "author": "Allan Sun <allansun@live.com>"
+    }
+  },
+  "sessions": {
+    "s_6d06bd4898dc7f": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019faca2-0a30-75f3-8a51-06f8e9067195",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Allan Sun <allansun@live.com>"
+    }
+  }
+}
