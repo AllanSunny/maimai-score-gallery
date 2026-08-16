@@ -102,7 +102,7 @@ jobs:
             content: (
               "⚠️ **Maimai images need review**\n\n" +
               ([.results[] | select(.status == "rejected" or .status == "imported-move-pending") |
-                "• **\(.driveFile.name)** — \(.error.message)"] | join("\n")) +
+                "• **\(if .driveFile then .driveFile.name else "Manual review row \(.reviewRow)" end)** — \(.error.message)"] | join("\n")) +
               "\n\nOpen **Score Import Review**, correct the row, check **Retry**, and rerun **Import New Scores**."
             )[0:1900],
             allowed_mentions: { parse: [] }

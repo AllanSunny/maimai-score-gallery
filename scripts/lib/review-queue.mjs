@@ -44,6 +44,14 @@ const headers = [
 ];
 const headerIndexes = new Map(headers.map((header, index) => [header, index]));
 
+export function isManualReviewEntry(entry) {
+  return !entry.driveFileId && entry.status === REVIEW_STATUSES.review && entry.retry;
+}
+
+export function isReusableReviewRow(entry) {
+  return !entry.hasContent;
+}
+
 function columnName(index) {
   let value = index + 1;
   let result = "";
@@ -98,6 +106,7 @@ function record(row, index) {
       : Number(value(row, "Spreadsheet Row")),
     lastAttempted: String(value(row, "Last Attempted (UTC)")),
     driveFileId: String(value(row, "Drive File ID")),
+    hasContent: row.some((cell) => cell !== "" && cell !== null && cell !== undefined),
   };
 }
 
@@ -126,6 +135,10 @@ export async function createReviewQueue() {
   }
 
   return {
+    async manualEntries() {
+      return (await records()).filter(isManualReviewEntry);
+    },
+
     async find(driveFileId) {
       return (await records()).find((entry) => entry.driveFileId === driveFileId) ?? null;
     },
@@ -180,7 +193,7 @@ export async function createReviewQueue() {
         return existing.rowNumber;
       }
       const entries = await records();
-      const empty = entries.find((entry) => !entry.driveFileId);
+      const empty = entries.find(isReusableReviewRow);
       const rowNumber = empty?.rowNumber ?? (entries.at(-1)?.rowNumber ?? 1) + 1;
       await sheets.spreadsheets.values.update({
         spreadsheetId,
@@ -215,25 +228,62 @@ export async function createReviewQueue() {
     async markImported(driveFileId, spreadsheetRow) {
       const existing = await this.find(driveFileId);
       if (!existing) return;
+      await this.markRowImported(existing.rowNumber, spreadsheetRow);
+    },
+
+    async markRowImported(rowNumber, spreadsheetRow) {
       await sheets.spreadsheets.values.batchUpdate({
         spreadsheetId,
         requestBody: {
           valueInputOption: "RAW",
           data: [
             {
-              range: `${quotedSheetName()}!B${existing.rowNumber}:D${existing.rowNumber}`,
+              range: `${quotedSheetName()}!B${rowNumber}:D${rowNumber}`,
               values: [[REVIEW_STATUSES.imported, false, ""]],
             },
             {
-              range: `${quotedSheetName()}!${columnFor("Spreadsheet Row")}${existing.rowNumber}:${columnFor("Last Attempted (UTC)")}${existing.rowNumber}`,
+              range: `${quotedSheetName()}!${columnFor("Spreadsheet Row")}${rowNumber}:${columnFor("Last Attempted (UTC)")}${rowNumber}`,
               values: [[spreadsheetRow, new Date().toISOString()]],
             },
           ],
         },
       });
+      const existing = (await records()).find((entry) => entry.rowNumber === rowNumber);
       Object.assign(existing, {
         status: REVIEW_STATUSES.imported, error: "", retry: false,
         spreadsheetRow, lastAttempted: new Date().toISOString(),
+      });
+    },
+
+    async markRowRejected(rowNumber, error, candidates = []) {
+      const attemptedAt = new Date().toISOString();
+      await sheets.spreadsheets.values.batchUpdate({
+        spreadsheetId,
+        requestBody: {
+          valueInputOption: "RAW",
+          data: [
+            {
+              range: `${quotedSheetName()}!B${rowNumber}:D${rowNumber}`,
+              values: [[REVIEW_STATUSES.review, false, String(error?.message ?? error)]],
+            },
+            {
+              range: `${quotedSheetName()}!${columnFor("Candidate Titles")}${rowNumber}`,
+              values: [[candidates.join(" | ")]],
+            },
+            {
+              range: `${quotedSheetName()}!${columnFor("Last Attempted (UTC)")}${rowNumber}`,
+              values: [[attemptedAt]],
+            },
+          ],
+        },
+      });
+      const existing = (await records()).find((entry) => entry.rowNumber === rowNumber);
+      if (existing) Object.assign(existing, {
+        status: REVIEW_STATUSES.review,
+        error: String(error?.message ?? error),
+        candidates: candidates.join(" | "),
+        retry: false,
+        lastAttempted: attemptedAt,
       });
     },
   };

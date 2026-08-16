@@ -79,6 +79,83 @@ async function main() {
   const results = [];
   let actionCount = 0;
 
+  const manualEntries = await reviewQueue.manualEntries();
+  console.log(`Import found ${manualEntries.length} checked manual review row(s).`);
+  for (const review of manualEntries) {
+    const result = {
+      status: "processing",
+      source: "manual-review",
+      reviewRow: review.rowNumber,
+      driveFile: null,
+      captureTime: null,
+      resolution: null,
+      proposedScore: null,
+      spreadsheetRow: null,
+      scoreFingerprint: null,
+      usedManualEntry: true,
+      error: null,
+    };
+    try {
+      await reviewQueue.markRetryStarted(review.rowNumber);
+      const capturedAt = correctedUtcTime(review.correctedCaptureTime);
+      if (!capturedAt) {
+        throw new Error("A fully manual entry requires Corrected Capture Time (UTC).");
+      }
+      result.captureTime = { capturedAt, source: "review-correction" };
+      const rawScore = manualScoreFromReview(review);
+      if (!rawScore) {
+        throw new Error(
+          "A fully manual entry requires corrected title, chart type, difficulty, achievement, combo, sync, rating, and Perfect/Great/Good/Miss totals. Note-type judgments must be either complete or entirely blank.",
+        );
+      }
+      const resolution = await resolver.resolve(rawScore);
+      result.resolution = {
+        canonicalTitle: resolution.canonicalTitle,
+        matchType: resolution.matchType,
+        chart: resolution.chart,
+      };
+      const proposedScore = proposedScoreRecord({
+        ocr: rawScore,
+        resolution,
+        capturedAt,
+      });
+      result.proposedScore = proposedScore;
+      const fingerprint = scoreFingerprint(proposedScore);
+      result.scoreFingerprint = fingerprint;
+      const duplicate = existingScoresByFingerprint.get(fingerprint);
+      if (duplicate) {
+        result.status = "duplicate";
+        result.spreadsheetRow = duplicate.spreadsheetRow;
+        await reviewQueue.markRowImported(review.rowNumber, duplicate.spreadsheetRow);
+        console.log(
+          `Manual review row ${review.rowNumber} duplicates spreadsheet row ${duplicate.spreadsheetRow}; no row inserted.`,
+        );
+      } else {
+        result.spreadsheetRow = await scoreWriter.append(proposedScore);
+        existingScoresByFingerprint.set(fingerprint, {
+          canonicalTitle: proposedScore.songTitle,
+          captureTime: proposedScore.playedAt,
+          spreadsheetRow: result.spreadsheetRow,
+        });
+        await reviewQueue.markRowImported(review.rowNumber, result.spreadsheetRow);
+        result.status = "imported";
+        console.log(
+          `Imported manual review row ${review.rowNumber} as spreadsheet row ${result.spreadsheetRow}.`,
+        );
+      }
+    } catch (error) {
+      result.status = "rejected";
+      result.error = reportedError(error);
+      try {
+        await reviewQueue.markRowRejected(review.rowNumber, error, error?.candidates ?? []);
+      } catch (reviewError) {
+        result.error.reviewQueueError = String(reviewError?.message ?? reviewError);
+      }
+      console.error(`Manual review row ${review.rowNumber} rejected: ${error?.message ?? error}`);
+    }
+    results.push(result);
+  }
+
   console.log(`Import found ${files.length} incoming image(s) to inspect.`);
   for (const [index, file] of files.entries()) {
     console.log(`[${index + 1}/${files.length}] Processing ${file.name} (${file.id})`);

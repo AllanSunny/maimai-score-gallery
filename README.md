@@ -78,12 +78,14 @@ columns override only the populated overall or note-type counts; blank cells
 continue using OCR. Unmatched names are retried and are never written to the
 public catalog.
 
-The review sheet can also serve as a manual score entry for a queued image.
-Provide a corrected title, chart type, difficulty, achievement, combo, sync,
-rating, and the Perfect/Great/Good/Miss totals, then check `Retry`. Rating
-change, FAST, and SLOW default to zero when blank; Critical Perfect falls back
-to Perfect. A fully populated manual entry bypasses OpenAI. Note-type judgment
-corrections are optional as a group and remain unavailable when omitted.
+The review sheet can also serve as a manual score entry with or without a
+queued image. For an image-free entry, leave Filename and Drive File ID blank,
+set Status to `Review`, and provide corrected capture time in UTC, title, chart
+type, difficulty, achievement, combo, sync, rating, and the
+Perfect/Great/Good/Miss totals. Then check `Retry`. Rating change, FAST, and
+SLOW default to zero when blank; Critical Perfect falls back to Perfect. A
+fully populated manual entry bypasses OpenAI. Note-type judgment corrections
+are optional as a group and remain unavailable when omitted.
 
 ### GitHub configuration
 
