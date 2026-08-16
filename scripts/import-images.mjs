@@ -13,7 +13,10 @@ import {
 } from "./lib/openai-score-ocr.mjs";
 import { createReviewQueue, REVIEW_STATUSES } from "./lib/review-queue.mjs";
 import { proposedScoreRecord } from "./lib/score-import-record.mjs";
-import { applyReviewCorrections } from "./lib/score-review-corrections.mjs";
+import {
+  applyReviewCorrections,
+  manualScoreFromReview,
+} from "./lib/score-review-corrections.mjs";
 import { createScoreSheetWriter } from "./lib/score-sheet-writer.mjs";
 import { readScoreSheetWithRows } from "./lib/sheet-scores.mjs";
 import { createSongTitleResolver } from "./lib/song-title-resolver.mjs";
@@ -94,6 +97,7 @@ async function main() {
       sourceHash: null,
       scoreFingerprint: null,
       usedCachedOcr: false,
+      usedManualEntry: false,
       appliedCorrections: null,
       error: null,
     };
@@ -105,7 +109,7 @@ async function main() {
           correctedTitle: initialReview.correctedTitle,
           correctedArtist: initialReview.correctedArtist,
           correctedCaptureTime: initialReview.correctedCaptureTime,
-          correctedRatingChange: initialReview.correctedRatingChange,
+          correctedScoreFields: initialReview.correctedScoreFields,
           correctedJudgments: initialReview.correctedJudgments,
       } : null;
         if (initialReview?.status === REVIEW_STATUSES.ignored) {
@@ -190,8 +194,15 @@ async function main() {
       }
       result.captureTime = captureTime;
       const latest = await importLog.latest(file.id);
-      let rawOcr = cachedScore(latest, sourceHash);
+      const review = await reviewQueue.find(file.id);
+      let rawOcr = manualScoreFromReview(review);
       if (rawOcr) {
+        result.usedManualEntry = true;
+        console.log("  Using complete review-sheet manual entry; no OpenAI request made.");
+      } else {
+        rawOcr = cachedScore(latest, sourceHash);
+      }
+      if (rawOcr && !result.usedManualEntry) {
         result.usedCachedOcr = true;
         result.openai = {
           responseId: latest.openaiResponseId,
@@ -200,7 +211,7 @@ async function main() {
           usage: null,
         };
         console.log("  Reusing cached OCR JSON; no OpenAI request made.");
-      } else {
+      } else if (!rawOcr) {
         const prepared = await prepareOcrImage({
           buffer: original,
           mimeType: file.mimeType,
@@ -225,7 +236,6 @@ async function main() {
         });
       }
       result.ocr = rawOcr;
-      const review = await reviewQueue.find(file.id);
       const resolvedOcr = applyReviewCorrections(rawOcr, review);
       const resolution = await resolver.resolve(resolvedOcr);
       result.resolution = {

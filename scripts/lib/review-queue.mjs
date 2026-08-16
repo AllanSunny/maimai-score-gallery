@@ -14,6 +14,18 @@ const judgmentCorrectionHeaders = [
   ...noteTypeNames.flatMap((noteType) =>
     judgmentNames.map((judgment) => `Corrected ${judgment} ${noteType}`)),
 ];
+const scoreCorrectionHeaders = [
+  "Corrected Chart Type",
+  "Corrected Difficulty",
+  "Corrected Chart Level",
+  "Corrected Achievement %",
+  "Corrected Combo Status",
+  "Corrected Sync Status",
+  "Corrected Rating",
+  "Corrected Rating Change",
+  "Corrected Fast",
+  "Corrected Slow",
+];
 const headers = [
   "Filename",
   "Status",
@@ -24,7 +36,7 @@ const headers = [
   "Corrected Title",
   "Corrected Artist",
   "Corrected Capture Time (UTC)",
-  "Corrected Rating Change",
+  ...scoreCorrectionHeaders,
   ...judgmentCorrectionHeaders,
   "Spreadsheet Row",
   "Last Attempted (UTC)",
@@ -55,6 +67,10 @@ function correctedJudgments(row) {
   return Object.fromEntries(judgmentCorrectionHeaders.map((header) => [header, value(row, header)]));
 }
 
+function correctedScoreFields(row) {
+  return Object.fromEntries(scoreCorrectionHeaders.map((header) => [header, value(row, header)]));
+}
+
 function rowValues(values) {
   return headers.map((header) => values[header] ?? "");
 }
@@ -74,7 +90,7 @@ function record(row, index) {
     correctedTitle: String(value(row, "Corrected Title")).trim(),
     correctedArtist: String(value(row, "Corrected Artist")).trim(),
     correctedCaptureTime: String(value(row, "Corrected Capture Time (UTC)")).trim(),
-    correctedRatingChange: value(row, "Corrected Rating Change"),
+    correctedScoreFields: correctedScoreFields(row),
     correctedJudgments: correctedJudgments(row),
     retry: value(row, "Retry") === true,
     spreadsheetRow: value(row, "Spreadsheet Row") === ""
