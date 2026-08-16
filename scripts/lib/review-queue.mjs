@@ -17,6 +17,7 @@ const judgmentCorrectionHeaders = [
 const headers = [
   "Filename",
   "Status",
+  "Retry",
   "Error",
   "OCR Title",
   "Candidate Titles",
@@ -25,7 +26,6 @@ const headers = [
   "Corrected Capture Time (UTC)",
   "Corrected Rating Change",
   ...judgmentCorrectionHeaders,
-  "Retry",
   "Spreadsheet Row",
   "Last Attempted (UTC)",
   "Drive File ID",
@@ -53,6 +53,10 @@ function value(row, header) {
 
 function correctedJudgments(row) {
   return Object.fromEntries(judgmentCorrectionHeaders.map((header) => [header, value(row, header)]));
+}
+
+function rowValues(values) {
+  return headers.map((header) => values[header] ?? "");
 }
 
 function quotedSheetName() {
@@ -139,10 +143,16 @@ export async function createReviewQueue() {
             valueInputOption: "RAW",
             data: [
               {
-                range: `${quotedSheetName()}!A${existing.rowNumber}:E${existing.rowNumber}`,
-                values: [[filename, REVIEW_STATUSES.review, String(error?.message ?? error), ocrTitle, candidates.join(" | ")]],
+                range: `${quotedSheetName()}!A${existing.rowNumber}:F${existing.rowNumber}`,
+                values: [[
+                  filename,
+                  REVIEW_STATUSES.review,
+                  false,
+                  String(error?.message ?? error),
+                  ocrTitle,
+                  candidates.join(" | "),
+                ]],
               },
-              { range: `${quotedSheetName()}!${columnFor("Retry")}${existing.rowNumber}`, values: [[false]] },
               { range: `${quotedSheetName()}!${columnFor("Last Attempted (UTC)")}${existing.rowNumber}`, values: [[attemptedAt]] },
             ],
           },
@@ -160,22 +170,27 @@ export async function createReviewQueue() {
         spreadsheetId,
         range: `${quotedSheetName()}!A${rowNumber}:${columnName(headers.length - 1)}${rowNumber}`,
         valueInputOption: "RAW",
-        requestBody: { values: [[
-          filename,
-          REVIEW_STATUSES.review,
-          String(error?.message ?? error),
-          ocrTitle,
-          candidates.join(" | "),
-          "", "", "", "",
-          ...judgmentCorrectionHeaders.map(() => ""),
-          false, "", attemptedAt, driveFileId,
-        ]] },
+        requestBody: { values: [rowValues({
+          Filename: filename,
+          Status: REVIEW_STATUSES.review,
+          Retry: false,
+          Error: String(error?.message ?? error),
+          "OCR Title": ocrTitle,
+          "Candidate Titles": candidates.join(" | "),
+          "Last Attempted (UTC)": attemptedAt,
+          "Drive File ID": driveFileId,
+        })] },
       });
-      const newRecord = record([
-        filename, REVIEW_STATUSES.review, String(error?.message ?? error),
-        ocrTitle, candidates.join(" | "), "", "", "", "",
-        ...judgmentCorrectionHeaders.map(() => ""), false, "", attemptedAt, driveFileId,
-      ], rowNumber - 2);
+      const newRecord = record(rowValues({
+        Filename: filename,
+        Status: REVIEW_STATUSES.review,
+        Retry: false,
+        Error: String(error?.message ?? error),
+        "OCR Title": ocrTitle,
+        "Candidate Titles": candidates.join(" | "),
+        "Last Attempted (UTC)": attemptedAt,
+        "Drive File ID": driveFileId,
+      }), rowNumber - 2);
       if (empty) Object.assign(empty, newRecord);
       else entries.push(newRecord);
       return rowNumber;
@@ -189,10 +204,13 @@ export async function createReviewQueue() {
         requestBody: {
           valueInputOption: "RAW",
           data: [
-            { range: `${quotedSheetName()}!B${existing.rowNumber}:C${existing.rowNumber}`, values: [[REVIEW_STATUSES.imported, ""]] },
             {
-              range: `${quotedSheetName()}!${columnFor("Retry")}${existing.rowNumber}:${columnFor("Last Attempted (UTC)")}${existing.rowNumber}`,
-              values: [[false, spreadsheetRow, new Date().toISOString()]],
+              range: `${quotedSheetName()}!B${existing.rowNumber}:D${existing.rowNumber}`,
+              values: [[REVIEW_STATUSES.imported, false, ""]],
+            },
+            {
+              range: `${quotedSheetName()}!${columnFor("Spreadsheet Row")}${existing.rowNumber}:${columnFor("Last Attempted (UTC)")}${existing.rowNumber}`,
+              values: [[spreadsheetRow, new Date().toISOString()]],
             },
           ],
         },

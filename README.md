@@ -64,8 +64,10 @@ sequentially. Use `--limit 1` only when testing a local or manual run.
 Titles that cannot be matched are excluded from the committed score archive and
 reported through Discord. Correct image-import failures in the visible
 `Score Import Review` sheet and check `Retry`, or add catalog corrections to
-`src/data/overrides.json`, then rerun **Import New Scores**. Unmatched names are
-retried and are never written to the public catalog.
+`src/data/overrides.json`, then rerun **Import New Scores**. Judgment correction
+columns override only the populated overall or note-type counts; blank cells
+continue using OCR. Unmatched names are retried and are never written to the
+public catalog.
 
 ### GitHub configuration
 

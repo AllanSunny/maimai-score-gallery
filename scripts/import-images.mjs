@@ -13,6 +13,7 @@ import {
 } from "./lib/openai-score-ocr.mjs";
 import { createReviewQueue, REVIEW_STATUSES } from "./lib/review-queue.mjs";
 import { proposedScoreRecord } from "./lib/score-import-record.mjs";
+import { applyReviewCorrections } from "./lib/score-review-corrections.mjs";
 import { createScoreSheetWriter } from "./lib/score-sheet-writer.mjs";
 import { readScoreSheetWithRows } from "./lib/sheet-scores.mjs";
 import { createSongTitleResolver } from "./lib/song-title-resolver.mjs";
@@ -43,22 +44,6 @@ function correctedUtcTime(value) {
   const parsed = new Date(value);
   if (Number.isNaN(parsed.getTime())) throw new Error("Corrected Capture Time is invalid.");
   return parsed.toISOString();
-}
-
-function correctedOcr(score, review) {
-  if (!review) return score;
-  const corrected = structuredClone(score);
-  if (review.correctedTitle) {
-    corrected.visibleTitle = review.correctedTitle;
-    corrected.titleTruncated = false;
-  }
-  if (review.correctedArtist) corrected.visibleArtist = review.correctedArtist;
-  if (review.correctedRatingChange !== "") {
-    const ratingChange = Number(review.correctedRatingChange);
-    if (!Number.isInteger(ratingChange)) throw new Error("Corrected Rating Change must be an integer.");
-    corrected.ratingChange = ratingChange;
-  }
-  return corrected;
 }
 
 function cachedScore(record, sourceHash) {
@@ -121,6 +106,7 @@ async function main() {
           correctedArtist: initialReview.correctedArtist,
           correctedCaptureTime: initialReview.correctedCaptureTime,
           correctedRatingChange: initialReview.correctedRatingChange,
+          correctedJudgments: initialReview.correctedJudgments,
       } : null;
         if (initialReview?.status === REVIEW_STATUSES.ignored) {
           result.status = "ignored";
@@ -240,7 +226,7 @@ async function main() {
       }
       result.ocr = rawOcr;
       const review = await reviewQueue.find(file.id);
-      const resolvedOcr = correctedOcr(rawOcr, review);
+      const resolvedOcr = applyReviewCorrections(rawOcr, review);
       const resolution = await resolver.resolve(resolvedOcr);
       result.resolution = {
         canonicalTitle: resolution.canonicalTitle,
