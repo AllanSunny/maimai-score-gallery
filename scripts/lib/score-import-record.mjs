@@ -76,8 +76,10 @@ function overallJudgmentSet(values, rawBreakdown, normalizedBreakdown) {
       : finiteNumber(values[judgment], `judgments.${judgment}`, { integer: true, minimum: 0 });
   });
   resolved.criticalPerfect = values.criticalPerfect === null
-    ? derivedOverallJudgment("criticalPerfect", rawBreakdown, normalizedBreakdown)
-      ?? resolved.perfect
+    ? rawBreakdown
+      ? derivedOverallJudgment("criticalPerfect", rawBreakdown, normalizedBreakdown)
+        ?? resolved.perfect
+      : resolved.perfect
     : finiteNumber(values.criticalPerfect, "judgments.criticalPerfect", {
       integer: true,
       minimum: 0,

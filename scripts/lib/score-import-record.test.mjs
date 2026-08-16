@@ -99,6 +99,14 @@ test("proposed score accepts overall totals when the note-type breakdown is unav
   assert.equal(record.judgmentsByType, null);
 });
 
+test("totals-only scores fall back from missing critical perfect to perfect", () => {
+  const input = validInput();
+  input.ocr.judgmentsByType = null;
+  input.ocr.judgments.criticalPerfect = null;
+  const record = proposedScoreRecord(input);
+  assert.equal(record.judgments.criticalPerfect, record.judgments.perfect);
+});
+
 test("proposed score requires readable totals when the note-type breakdown is unavailable", () => {
   const input = validInput();
   input.ocr.judgmentsByType = null;
