@@ -1,0 +1,29 @@
+scripts/lib/review-queue.mjs
+  s_6d06bd4898dc7f::t_261a248516de50 17-28,39,70-73,93
+README.md
+  s_6d06bd4898dc7f::t_56bed99b17a624 72-78
+scripts/import-images.mjs
+  s_6d06bd4898dc7f::t_261a248516de50 16-19,112,197-198,200-205,214
+  s_6d06bd4898dc7f::t_c8f4b007d2228d 100
+scripts/lib/score-review-corrections.mjs
+  s_6d06bd4898dc7f::t_c8f4b007d2228d 26-119,128-154
+scripts/lib/score-review-corrections.test.mjs
+  s_6d06bd4898dc7f::t_9ab18714799be3 3-6,27-31,41-42,49-76
+  s_6d06bd4898dc7f::t_532780cfb25e5b 77-78
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.22",
+  "base_commit_sha": "63761a92f81022d6e6e74c7734d6b7fc8d79dc44",
+  "prompts": {},
+  "sessions": {
+    "s_6d06bd4898dc7f": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019faca2-0a30-75f3-8a51-06f8e9067195",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Allan Sun <allansun@live.com>"
+    }
+  }
+}
