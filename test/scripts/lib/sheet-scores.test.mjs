@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { parseScoreRows } from "./sheet-scores.mjs";
+import { parseScoreRows } from "../../../scripts/lib/sheet-scores.mjs";
 
 const headers = [
   "Date / Time", "Song Title", "Chart Type", "Difficulty", "Chart Level",

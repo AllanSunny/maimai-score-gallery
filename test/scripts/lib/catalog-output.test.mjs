@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { catalogOutput } from "./catalog-output.mjs";
+import { catalogOutput } from "../../../scripts/lib/catalog-output.mjs";
 
 const song = (canonical, artist = "Artist") => ({
   id: canonical.toLowerCase(),

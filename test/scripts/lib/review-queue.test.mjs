@@ -4,7 +4,7 @@ import {
   isManualReviewEntry,
   isReusableReviewRow,
   reviewRowHasContent,
-} from "./review-queue.mjs";
+} from "../../../scripts/lib/review-queue.mjs";
 
 test("a checked Review row without a Drive file is a manual import", () => {
   assert.equal(isManualReviewEntry({

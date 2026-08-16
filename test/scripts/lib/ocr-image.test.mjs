@@ -6,7 +6,7 @@ import {
   isHeicImage,
   ocrImageOptions,
   prepareOcrImage,
-} from "./ocr-image.mjs";
+} from "../../../scripts/lib/ocr-image.mjs";
 
 test("OCR image settings default to the parity-first values", () => {
   assert.deepEqual(ocrImageOptions({}), DEFAULT_OCR_IMAGE_OPTIONS);

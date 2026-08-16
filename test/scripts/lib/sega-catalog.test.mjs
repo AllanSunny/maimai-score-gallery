@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { createSegaCatalogLoader } from "./sega-catalog.mjs";
+import { createSegaCatalogLoader } from "../../../scripts/lib/sega-catalog.mjs";
 
 test("SEGA catalog loader downloads only once per process", async () => {
   let calls = 0;

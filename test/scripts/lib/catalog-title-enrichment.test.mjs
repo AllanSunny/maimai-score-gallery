@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { enrichMissingSongTitles } from "./catalog-title-enrichment.mjs";
+import { enrichMissingSongTitles } from "../../../scripts/lib/catalog-title-enrichment.mjs";
 
 function song(canonical, titles = {}) {
   return {

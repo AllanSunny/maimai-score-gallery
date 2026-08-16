@@ -4,7 +4,7 @@ import {
   firstAvailableScoreRow,
   importedLogValues,
   scoreSheetValues,
-} from "./score-sheet-writer.mjs";
+} from "../../../scripts/lib/score-sheet-writer.mjs";
 
 test("maps a score into ranges without rank, notes, or alternate titles", () => {
   const values = scoreSheetValues({

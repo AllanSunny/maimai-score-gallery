@@ -3,7 +3,7 @@ import test from "node:test";
 import {
   applyReviewCorrections,
   manualScoreFromReview,
-} from "./score-review-corrections.mjs";
+} from "../../../scripts/lib/score-review-corrections.mjs";
 
 function score() {
   const judgments = { criticalPerfect: 10, perfect: 2, great: 1, good: 0, miss: 0 };

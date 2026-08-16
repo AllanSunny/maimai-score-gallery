@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { standaloneCatalogSongs } from "./catalog-overrides.mjs";
+import { standaloneCatalogSongs } from "../../../scripts/lib/catalog-overrides.mjs";
 
 test("standalone overrides become resolver-compatible catalog songs", () => {
   const songs = standaloneCatalogSongs({

@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { selectCaptureTime } from "./capture-time.mjs";
+import { selectCaptureTime } from "../../../scripts/lib/capture-time.mjs";
 
 test("capture time prioritizes EXIF and respects its explicit offset", () => {
   const result = selectCaptureTime({

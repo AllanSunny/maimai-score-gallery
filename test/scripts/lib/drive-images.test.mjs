@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { isSupportedScoreImage, processedImageName } from "./drive-images.mjs";
+import { isSupportedScoreImage, processedImageName } from "../../../scripts/lib/drive-images.mjs";
 
 test("Drive image filtering accepts image MIME types and HEIC fallbacks", () => {
   assert.equal(isSupportedScoreImage({ mimeType: "image/jpeg", name: "score" }), true);

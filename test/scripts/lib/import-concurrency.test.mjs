@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { createSerialQueue, mapConcurrent } from "./import-concurrency.mjs";
+import { createSerialQueue, mapConcurrent } from "../../../scripts/lib/import-concurrency.mjs";
 
 test("serial queue never overlaps work and continues after a rejection", async () => {
   const serial = createSerialQueue();

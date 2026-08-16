@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { parseScoreImage, scoreOcrOptions, scoreOcrRequest } from "./openai-score-ocr.mjs";
+import { parseScoreImage, scoreOcrOptions, scoreOcrRequest } from "../../../scripts/lib/openai-score-ocr.mjs";
 
 test("score OCR uses high detail with bounded retries", () => {
   assert.deepEqual(scoreOcrOptions({}), {

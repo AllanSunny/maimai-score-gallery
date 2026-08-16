@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { scoreFingerprint, sourceFingerprint } from "./import-fingerprints.mjs";
+import { scoreFingerprint, sourceFingerprint } from "../../../scripts/lib/import-fingerprints.mjs";
 
 test("source fingerprint is stable and content-sensitive", () => {
   assert.equal(sourceFingerprint(Buffer.from("same")), sourceFingerprint(Buffer.from("same")));

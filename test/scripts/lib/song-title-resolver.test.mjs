@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { createSongTitleResolver, normalizedSongTitle, SongResolutionError } from "./song-title-resolver.mjs";
+import { createSongTitleResolver, normalizedSongTitle, SongResolutionError } from "../../../scripts/lib/song-title-resolver.mjs";
 
 const songs = [
   {

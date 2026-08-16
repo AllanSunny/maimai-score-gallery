@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { proposedScoreRecord } from "./score-import-record.mjs";
+import { proposedScoreRecord } from "../../../scripts/lib/score-import-record.mjs";
 
 function judgmentSet(overrides = {}) {
   return { criticalPerfect: 10, perfect: 2, great: 1, good: 0, miss: 0, ...overrides };

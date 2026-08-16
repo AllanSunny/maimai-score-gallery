@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { additionalRowsRequired, ensureSheetRow } from "./sheet-grid.mjs";
+import { additionalRowsRequired, ensureSheetRow } from "../../../scripts/lib/sheet-grid.mjs";
 
 test("calculates shared sheet growth in bounded batches", () => {
   assert.equal(additionalRowsRequired(1000, 1000), 0);
