@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-16T01:20:43.184Z",
+  "generatedAt": "2026-08-16T01:23:34.952Z",
   "songs": [
     {
       "id": "song-85572925973b",
@@ -3644,6 +3644,60 @@
               "level": "13",
               "chartConstant": 13.3,
               "charter": "Luxizhel & Jack"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "song-48ebdafbb49f",
+      "titles": {
+        "canonical": "ルカルカ★ナイトフィーバー",
+        "kana": [
+          "るかるか ないと ふぃいばあ"
+        ],
+        "romaji": [
+          "rukaruka naito fyiibaa"
+        ],
+        "english": [
+          "luka luka★night fever"
+        ],
+        "aliases": []
+      },
+      "artist": "samfree",
+      "jacketKey": "jackets/song-48ebdafbb49f-8435a67ca247.png",
+      "versions": [
+        {
+          "id": "song-48ebdafbb49f-std",
+          "chartType": "STD",
+          "charts": [
+            {
+              "id": "song-48ebdafbb49f-std-basic",
+              "difficulty": "BASIC",
+              "level": "6",
+              "chartConstant": 6,
+              "charter": null
+            },
+            {
+              "id": "song-48ebdafbb49f-std-advanced",
+              "difficulty": "ADVANCED",
+              "level": "7+",
+              "chartConstant": 7.6,
+              "charter": null
+            },
+            {
+              "id": "song-48ebdafbb49f-std-expert",
+              "difficulty": "EXPERT",
+              "level": "9",
+              "chartConstant": 9.3,
+              "charter": "譜面-100号"
+            },
+            {
+              "id": "song-48ebdafbb49f-std-master",
+              "difficulty": "MASTER",
+              "level": "11+",
+              "chartConstant": 11.7,
+              "charter": "ニャイン"
             }
           ]
         }

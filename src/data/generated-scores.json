@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-16T01:20:43.217Z",
+  "updatedAt": "2026-08-16T01:23:34.987Z",
   "scores": [
     {
       "playedAt": "2025-11-10T02:30:43.000Z",
@@ -4142,6 +4142,30 @@
       "chartId": "song-6d47ffabb20e-dx-expert"
     },
     {
+      "playedAt": "2025-11-12T01:03:33.000Z",
+      "songTitle": "初音ミクの激唱",
+      "chartType": "STD",
+      "difficulty": "EXPERT",
+      "level": "12",
+      "achievement": 100.4,
+      "combo": "FC+",
+      "sync": "None",
+      "rating": 10098,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 546,
+        "perfect": 546,
+        "great": 17,
+        "good": 0,
+        "miss": 0
+      },
+      "judgmentsByType": null,
+      "fast": 17,
+      "slow": 0,
+      "id": "ObaLyGhWqjNdYT9q-CiarXHRUyBuN1vpTS7K1ePPgvU",
+      "chartId": "song-21c8a54c340b-std-expert"
+    },
+    {
       "playedAt": "2025-11-13T22:10:25.000Z",
       "songTitle": "イガク",
       "chartType": "DX",
@@ -5220,6 +5244,66 @@
       "slow": 14,
       "id": "QL6_wP5_TSgRA-06iqWba4LlQtWicvtCOCQXDyT3140",
       "chartId": "song-461be4a49f43-dx-master"
+    },
+    {
+      "playedAt": "2025-11-14T04:43:00.000Z",
+      "songTitle": "ルカルカ★ナイトフィーバー",
+      "chartType": "STD",
+      "difficulty": "MASTER",
+      "level": "11+",
+      "achievement": 98.7485,
+      "combo": "Clear",
+      "sync": "None",
+      "rating": 10508,
+      "ratingChange": 6,
+      "judgments": {
+        "criticalPerfect": 349,
+        "perfect": 349,
+        "great": 24,
+        "good": 7,
+        "miss": 1
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 9,
+          "perfect": 5,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 292,
+          "perfect": 292,
+          "great": 19,
+          "good": 7,
+          "miss": 1
+        },
+        "hold": {
+          "criticalPerfect": 31,
+          "perfect": 31,
+          "great": 3,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 12,
+          "perfect": 12,
+          "great": 2,
+          "good": 0,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 0,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 14,
+      "slow": 17,
+      "id": "SoVAoqQKzhsrSpWINrv-vO6fkOV8ULKgLnnZAG-762A",
+      "chartId": "song-48ebdafbb49f-std-master"
     },
     {
       "playedAt": "2025-11-14T04:52:25.000Z",
