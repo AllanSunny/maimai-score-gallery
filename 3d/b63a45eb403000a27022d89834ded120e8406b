@@ -1,0 +1,28 @@
+README.md
+  s_6d06bd4898dc7f::t_76b7375536e0cf 81-88
+scripts/lib/review-queue.mjs
+  s_6d06bd4898dc7f::t_eb4db4ac39e8b6 109,138,140-141,231-234,241,245,251,257-288
+  s_6d06bd4898dc7f::t_cf5a04b487e350 47-54,139,196
+scripts/lib/review-queue.test.mjs
+  s_6d06bd4898dc7f::t_cf5a04b487e350 1-32
+.github/workflows/import-new-scores.yml
+  s_6d06bd4898dc7f::t_2057adfb0f9a38 105
+scripts/import-images.mjs
+  s_6d06bd4898dc7f::t_367f9e0d5c63ed 82-158
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.22",
+  "base_commit_sha": "3db63a45eb403000a27022d89834ded120e8406b",
+  "prompts": {},
+  "sessions": {
+    "s_6d06bd4898dc7f": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019faca2-0a30-75f3-8a51-06f8e9067195",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Allan Sun <allansun@live.com>"
+    }
+  }
+}
