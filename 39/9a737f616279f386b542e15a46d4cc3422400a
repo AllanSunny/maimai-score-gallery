@@ -1,0 +1,46 @@
+.github/workflows/import-new-scores.yml
+  s_6d06bd4898dc7f::t_38dd3975b73fa6 74,182
+  s_6d06bd4898dc7f::t_e0fea3e85e98b8 185
+  s_6d06bd4898dc7f::t_85b66182a9f297 75,183-184
+scripts/lib/catalog-title-enrichment.mjs
+  s_6d06bd4898dc7f::t_132aa55f5c12f5 101
+  s_6d06bd4898dc7f::t_38dd3975b73fa6 99
+  s_6d06bd4898dc7f::t_9979f871144d22 6,100
+.env.example
+  s_6d06bd4898dc7f::t_f951a03aef4d34 20,25
+  s_6d06bd4898dc7f::t_e0fea3e85e98b8 28
+scripts/lib/openai-score-ocr.mjs
+  s_6d06bd4898dc7f::t_38dd3975b73fa6 71
+  s_6d06bd4898dc7f::t_132aa55f5c12f5 7-11
+scripts/import-images.mjs
+  s_6d06bd4898dc7f::t_38dd3975b73fa6 79-80
+scripts/sync-catalog.mjs
+  s_6d06bd4898dc7f::t_e0fea3e85e98b8 25,183,378
+  s_6d06bd4898dc7f::t_85b66182a9f297 16-24
+  s_6d06bd4898dc7f::t_6e51ce903dfc72 374,380
+scripts/lib/sega-catalog.mjs
+  s_6d06bd4898dc7f::t_85b66182a9f297 6-10,37
+  s_6d06bd4898dc7f::t_d197155d7113d7 5
+scripts/lib/sega-catalog.test.mjs
+  s_6d06bd4898dc7f::t_85b66182a9f297 24-27
+README.md
+  s_6d06bd4898dc7f::t_f951a03aef4d34 72-100
+scripts/lib/ocr-image.mjs
+  s_6d06bd4898dc7f::t_132aa55f5c12f5 20-21
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.22",
+  "base_commit_sha": "399a737f616279f386b542e15a46d4cc3422400a",
+  "prompts": {},
+  "sessions": {
+    "s_6d06bd4898dc7f": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019faca2-0a30-75f3-8a51-06f8e9067195",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Allan Sun <allansun@live.com>"
+    }
+  }
+}
