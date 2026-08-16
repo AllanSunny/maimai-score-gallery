@@ -28,8 +28,6 @@ jobs:
   audit:
     runs-on: ubuntu-latest
     timeout-minutes: 180
-    outputs:
-      changed: ${{ steps.commit.outputs.changed }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -41,7 +39,6 @@ jobs:
       - run: npm ci
       - name: Re-OCR legacy sync badge positions
         env:
-          APPLY_UPDATES: ${{ inputs.apply_updates }}
           IMAGE_LIMIT: ${{ inputs.image_limit }}
           DRIVE_FILE_ID: ${{ inputs.drive_file_id }}
           SYNC_AUDIT_CONCURRENCY: 4
@@ -53,9 +50,6 @@ jobs:
           OPENAI_OCR_MODEL: ${{ vars.OPENAI_OCR_MODEL }}
         run: |
           args=()
-          if [ "$APPLY_UPDATES" = "true" ]; then
-            args+=(--apply)
-          fi
           if [ -n "$IMAGE_LIMIT" ]; then
             args+=(--limit "$IMAGE_LIMIT")
           fi
@@ -71,18 +65,49 @@ jobs:
           path: .sync/sync-status-audit.json
           if-no-files-found: error
           retention-days: 30
+
+  apply:
+    needs: audit
+    if: ${{ inputs.apply_updates }}
+    runs-on: ubuntu-latest
+    outputs:
+      changed: ${{ steps.commit.outputs.changed }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24.14.1
+          cache: npm
+      - run: npm ci
+      - uses: actions/download-artifact@v4
+        with:
+          name: legacy-sync-status-audit
+          path: .sync
+      - name: Apply saved sync audit report
+        env:
+          GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
+          GOOGLE_SPREADSHEET_ID: ${{ vars.GOOGLE_SPREADSHEET_ID }}
+          GOOGLE_SHEET_NAME: ${{ vars.GOOGLE_SHEET_NAME }}
+        run: node --env-file-if-exists=.env.local scripts/one-off/legacy-sync-status/audit.mjs --apply-report .sync/sync-status-audit.json
+      - name: Upload sync application report
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: legacy-sync-status-application
+          path: .sync/sync-status-audit.json
+          if-no-files-found: error
+          retention-days: 30
       - name: Regenerate score archive
-        if: ${{ inputs.apply_updates }}
         env:
           GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
           GOOGLE_SPREADSHEET_ID: ${{ vars.GOOGLE_SPREADSHEET_ID }}
           GOOGLE_SHEET_NAME: ${{ vars.GOOGLE_SHEET_NAME }}
         run: npm run scores:sync
       - run: npm run data:validate
-        if: ${{ inputs.apply_updates }}
       - name: Commit corrected sync statuses
         id: commit
-        if: ${{ inputs.apply_updates }}
         run: |
           if git diff --quiet -- src/data/generated-scores.json; then
             echo "No archived sync statuses changed."
@@ -98,12 +123,12 @@ jobs:
           echo "changed=true" >> "$GITHUB_OUTPUT"
 
   deploy-pages:
-    needs: audit
-    if: ${{ needs.audit.outputs.changed == 'true' }}
+    needs: apply
+    if: ${{ needs.apply.outputs.changed == 'true' }}
     uses: ./.github/workflows/deploy-pages.yml
 
   notify-failure:
-    needs: [audit, deploy-pages]
+    needs: [audit, apply, deploy-pages]
     if: ${{ failure() }}
     runs-on: ubuntu-latest
     steps:

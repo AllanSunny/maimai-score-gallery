@@ -1,4 +1,4 @@
-import { mkdir, writeFile } from "node:fs/promises";
+import { mkdir, readFile, rename, writeFile } from "node:fs/promises";
 import path from "node:path";
 import process from "node:process";
 import { pathToFileURL } from "node:url";
@@ -14,6 +14,8 @@ const IMPORT_LOG_SHEET_NAME = "_ScoreImportLog";
 
 function argumentsFrom(commandLine) {
   const apply = commandLine.includes("--apply");
+  const applyReportIndex = commandLine.indexOf("--apply-report");
+  const applyReport = applyReportIndex === -1 ? null : commandLine[applyReportIndex + 1]?.trim();
   const limitIndex = commandLine.indexOf("--limit");
   const limit = limitIndex === -1 ? Infinity : Number(commandLine[limitIndex + 1]);
   const fileIndex = commandLine.indexOf("--drive-file-id");
@@ -22,7 +24,11 @@ function argumentsFrom(commandLine) {
     throw new Error("--limit must be a positive integer.");
   }
   if (fileIndex !== -1 && !driveFileId) throw new Error("--drive-file-id requires a value.");
-  return { apply, limit, driveFileId };
+  if (applyReportIndex !== -1 && !applyReport) throw new Error("--apply-report requires a path.");
+  if (applyReport && (apply || limitIndex !== -1 || fileIndex !== -1)) {
+    throw new Error("--apply-report cannot be combined with audit options.");
+  }
+  return { apply, applyReport, limit, driveFileId };
 }
 
 function positiveInteger(value, fallback) {
@@ -44,7 +50,7 @@ function escapedSheetName(value) {
   return `'${value.replace(/'/g, "''")}'`;
 }
 
-function resolveScoreRow(record, scoreRows) {
+export function resolveScoreRow(record, scoreRows) {
   const fingerprintMatches = record.scoreFingerprint
     ? scoreRows.filter(({ score }) => scoreFingerprint(score) === record.scoreFingerprint)
     : [];
@@ -89,6 +95,43 @@ async function applyUpdates(results) {
   });
 }
 
+export function auditReport({ mode, candidateCount, results, complete = results.length === candidateCount }) {
+  return {
+    generatedAt: new Date().toISOString(),
+    mode,
+    complete,
+    promptVersion: SYNC_STATUS_AUDIT_PROMPT_VERSION,
+    candidateCount,
+    completedCount: results.length,
+    detectedBadgeCount: results.filter(({ detected }) => detected !== null).length,
+    recommendedUpdateCount: results.filter(({ shouldUpdate }) => shouldUpdate).length,
+    errorCount: results.filter(({ status }) => status === "error").length,
+    results,
+  };
+}
+
+async function writeReport(reportPath, report) {
+  await mkdir(path.dirname(reportPath), { recursive: true });
+  const temporaryPath = `${reportPath}.tmp`;
+  await writeFile(temporaryPath, `${JSON.stringify(report, null, 2)}\n`);
+  await rename(temporaryPath, reportPath);
+}
+
+async function applySavedReport(reportPath) {
+  const report = JSON.parse(await readFile(reportPath, "utf8"));
+  if (report.promptVersion !== SYNC_STATUS_AUDIT_PROMPT_VERSION) {
+    throw new Error("The saved audit report uses a different prompt version.");
+  }
+  if (!report.complete || report.completedCount !== report.candidateCount) {
+    throw new Error(
+      `Refusing to apply an incomplete audit report (${report.completedCount}/${report.candidateCount}).`,
+    );
+  }
+  await applyUpdates(report.results);
+  await writeReport(reportPath, { ...report, mode: "apply", appliedAt: new Date().toISOString() });
+  console.log(`Applied ${report.recommendedUpdateCount} saved recommendation(s).`);
+}
+
 async function auditSources() {
   const spreadsheetId = requiredEnvironment("GOOGLE_SPREADSHEET_ID");
   const processedFolderId = requiredEnvironment("GOOGLE_PROCESSED_FOLDER_ID");
@@ -131,7 +174,11 @@ async function auditSources() {
 }
 
 export async function main() {
-  const { apply, limit, driveFileId } = argumentsFrom(process.argv.slice(2));
+  const { apply, applyReport, limit, driveFileId } = argumentsFrom(process.argv.slice(2));
+  if (applyReport) {
+    await applySavedReport(path.resolve(applyReport));
+    return;
+  }
   const concurrency = positiveInteger(process.env.SYNC_AUDIT_CONCURRENCY, 4);
   const [sources, scoreRows] = await Promise.all([
     auditSources(),
@@ -158,12 +205,29 @@ export async function main() {
     throw new Error(`No legacy imported record was found for Drive file ${driveFileId}.`);
   }
 
+  const reportPath = path.join(process.cwd(), ".sync", "sync-status-audit.json");
+  const completedResults = [];
+  let reportWrites = Promise.resolve();
+  function checkpoint(results = completedResults) {
+    const snapshot = [...results].sort((left, right) => left.candidateIndex - right.candidateIndex);
+    reportWrites = reportWrites.then(() => writeReport(reportPath, auditReport({
+      mode: apply ? "apply" : "preview",
+      candidateCount: candidates.length,
+      results: snapshot,
+    })));
+    return reportWrites;
+  }
+  await checkpoint();
   console.log(`Auditing ${candidates.length} legacy imported image(s)${apply ? " with updates enabled" : " in preview mode"}.`);
   const results = await mapConcurrent(candidates, concurrency, async (record, index) => {
     const score = record.score;
     const base = {
       driveFileId: record.driveFileId,
       originalFilename: record.originalFilename,
+      canonicalTitle: record.canonicalTitle,
+      captureTime: record.captureTime,
+      scoreFingerprint: record.scoreFingerprint,
+      candidateIndex: index,
       spreadsheetRow: record.spreadsheetRow,
       current: score?.sync ?? null,
       positionState: null,
@@ -202,23 +266,14 @@ export async function main() {
       base.error = String(error?.message ?? error);
       console.error(`[${index + 1}/${candidates.length}] ${record.originalFilename}: ${base.error}`);
     }
+    completedResults.push(base);
+    await checkpoint();
     return base;
   });
 
+  await checkpoint(results);
+  const report = auditReport({ mode: apply ? "apply" : "preview", candidateCount: candidates.length, results });
   if (apply) await applyUpdates(results);
-  const report = {
-    generatedAt: new Date().toISOString(),
-    mode: apply ? "apply" : "preview",
-    promptVersion: SYNC_STATUS_AUDIT_PROMPT_VERSION,
-    candidateCount: candidates.length,
-    detectedBadgeCount: results.filter(({ detected }) => detected !== null).length,
-    recommendedUpdateCount: results.filter(({ shouldUpdate }) => shouldUpdate).length,
-    errorCount: results.filter(({ status }) => status === "error").length,
-    results,
-  };
-  const reportPath = path.join(process.cwd(), ".sync", "sync-status-audit.json");
-  await mkdir(path.dirname(reportPath), { recursive: true });
-  await writeFile(reportPath, `${JSON.stringify(report, null, 2)}\n`);
   console.log(`${apply ? "Applied" : "Previewed"} ${report.recommendedUpdateCount} recommended update(s).`);
 }
 
