@@ -27,6 +27,15 @@ example that accepts a `className` prop, allowing callers to extend it:
 Use utilities directly for one-off layouts. Extract a component when the same
 visual pattern appears more than once.
 
+## Asset caching
+
+The production build generates a service worker with `vite-plugin-pwa`.
+Vite-built JavaScript, CSS, fonts, frames, and icons are precached and updated
+automatically when their content hashes change. Jacket images use a separate
+Cache First runtime cache scoped to `VITE_JACKET_BASE_URL`, limited to 300
+images and 90 days; browser quota pressure may evict entries sooner. Service
+workers are not enabled by the normal Vite development server.
+
 ## Score archive, catalog, and jacket synchronization
 
 See [docs/data-model.md](docs/data-model.md) for the centralized reference for

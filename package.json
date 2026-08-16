@@ -43,6 +43,7 @@
     "openai": "^7.4.0",
     "sharp": "^0.35.3",
     "tailwindcss": "latest",
-    "typescript-eslint": "latest"
+    "typescript-eslint": "latest",
+    "vite-plugin-pwa": "^1.3.0"
   }
 }
