@@ -3,7 +3,7 @@
     "standalone": true,
     "id": "zen-sekai-kyoutsuu-rhythm-kan-test",
     "artist": "☆リズムに合わせてボタンを叩き達成率を競うゲームです☆",
-    "jacketKey": null,
+    "jacketKey": "jackets/rhythm-sense.webp",
     "titles": {
       "kana": [
         "ぜんせかいきょうつうりずむかんてすと",
