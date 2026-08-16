@@ -48,7 +48,17 @@ export function applyReviewCorrections(score, review) {
     Object.entries(judgmentHeaders).forEach(([judgmentLabel, judgment]) => {
       const header = `Corrected ${judgmentLabel} ${noteTypeLabel}`;
       const count = correctedCount(review.correctedJudgments?.[header], header);
-      if (count !== null) corrected.judgmentsByType[noteType][judgment] = count;
+      if (count !== null) {
+        corrected.judgmentsByType ??= {};
+        corrected.judgmentsByType[noteType] ??= {
+          criticalPerfect: null,
+          perfect: null,
+          great: null,
+          good: null,
+          miss: null,
+        };
+        corrected.judgmentsByType[noteType][judgment] = count;
+      }
     });
   });
   return corrected;

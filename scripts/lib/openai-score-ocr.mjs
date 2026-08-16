@@ -3,7 +3,7 @@ import OpenAI from "openai";
 import { requiredEnvironment } from "./google-auth.mjs";
 
 const maimaiScorePromptUrl = new URL("./maimai-score-prompt.md", import.meta.url);
-export const SCORE_OCR_PROMPT_VERSION = "2026-08-15-v5";
+export const SCORE_OCR_PROMPT_VERSION = "2026-08-15-v6";
 const SCORE_OCR_OPTIONS = Object.freeze({
   detail: "high",
   reasoningEffort: "low",
@@ -43,7 +43,7 @@ const SCORE_OCR_SCHEMA = {
     sync: { type: "string", enum: ["None", "FS", "FS+", "FDX", "FDX+"] },
     judgments: judgmentSetSchema,
     judgmentsByType: {
-      type: "object",
+      type: ["object", "null"],
       additionalProperties: false,
       properties: {
         tap: judgmentSetSchema,

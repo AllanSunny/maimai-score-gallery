@@ -16,7 +16,7 @@ The full-frame photograph normally contains two different physical displays. Tre
 - Return achievement from the lower touchscreen as the displayed percentage number, such as `100.5079`, without dividing by 100.
 - Read combo and sync badges from the lower touchscreen using only the allowed schema values.
 - Read overall CRITICAL PERFECT, PERFECT, GREAT, GOOD, and MISS totals from the lower touchscreen when visible. Return null for an obscured or absent total; do not infer it from the note-type table.
-- Read the TAP, HOLD, SLIDE, TOUCH, and BREAK breakdown table from the upper monitor. A displayed blank or dash is zero. Use null only when a value is obscured or genuinely unreadable.
+- Read the TAP, HOLD, SLIDE, TOUCH, and BREAK breakdown table from the upper monitor. If the entire table is outside the photo or unavailable, return `judgmentsByType` as null. Otherwise return the table object: a displayed blank or dash is zero, and an individual cell is null only when obscured or genuinely unreadable.
 - Older result layouts do not separate CRITICAL PERFECT from PERFECT for TAP, HOLD, SLIDE, or TOUCH. In that layout, return null—not zero—for those four missing `criticalPerfect` cells. BREAK still separates `criticalPerfect` and `perfect`.
 - In the older layout, when the overall PERFECT total is visible, verify it as: TAP PERFECT + HOLD PERFECT + SLIDE PERFECT + TOUCH PERFECT + BREAK PERFECT + BREAK CRITICAL PERFECT.
 - In the newer layout, where every note type has separate CRITICAL PERFECT and PERFECT cells, use a visible overall total only as a cross-check against the five note-type values.

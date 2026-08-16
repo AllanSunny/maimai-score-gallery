@@ -43,12 +43,19 @@ function judgmentSet(values, path) {
 }
 
 function legacyCriticalPerfectLayout(rawBreakdown) {
+  if (!rawBreakdown) return false;
   return ["tap", "hold", "slide", "touch"]
     .every((noteType) => rawBreakdown[noteType].criticalPerfect === null)
     && rawBreakdown.break.criticalPerfect !== null;
 }
 
 function derivedOverallJudgment(judgment, rawBreakdown, normalizedBreakdown) {
+  if (!rawBreakdown || !normalizedBreakdown) {
+    throw new ScoreValidationError(
+      "UNREADABLE_VALUE",
+      `judgments.${judgment} is unreadable and cannot be derived without a note-type breakdown.`,
+    );
+  }
   if (judgment === "criticalPerfect" && legacyCriticalPerfectLayout(rawBreakdown)) {
     return null;
   }
@@ -85,6 +92,7 @@ function overallJudgmentSet(values, rawBreakdown, normalizedBreakdown) {
 }
 
 function validateJudgmentSums(raw, normalized) {
+  if (!raw.judgmentsByType || !normalized.judgmentsByType) return;
   const legacyLayout = legacyCriticalPerfectLayout(raw.judgmentsByType);
 
   judgmentNames.forEach((judgment) => {
@@ -105,10 +113,12 @@ function validateJudgmentSums(raw, normalized) {
 }
 
 export function proposedScoreRecord({ ocr, resolution, capturedAt }) {
-  const judgmentsByType = Object.fromEntries(noteTypes.map((noteType) => [
-    noteType,
-    judgmentSet(ocr.judgmentsByType?.[noteType], `judgmentsByType.${noteType}`),
-  ]));
+  const judgmentsByType = ocr.judgmentsByType === null
+    ? null
+    : Object.fromEntries(noteTypes.map((noteType) => [
+      noteType,
+      judgmentSet(ocr.judgmentsByType?.[noteType], `judgmentsByType.${noteType}`),
+    ]));
   const record = {
     playedAt: capturedAt,
     songTitle: resolution.canonicalTitle,

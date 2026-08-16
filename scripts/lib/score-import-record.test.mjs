@@ -91,6 +91,24 @@ test("proposed score derives obscured overall totals from note-type counts", () 
   });
 });
 
+test("proposed score accepts overall totals when the note-type breakdown is unavailable", () => {
+  const input = validInput();
+  input.ocr.judgmentsByType = null;
+  const record = proposedScoreRecord(input);
+  assert.deepEqual(record.judgments, input.ocr.judgments);
+  assert.equal(record.judgmentsByType, null);
+});
+
+test("proposed score requires readable totals when the note-type breakdown is unavailable", () => {
+  const input = validInput();
+  input.ocr.judgmentsByType = null;
+  input.ocr.judgments.great = null;
+  assert.throws(
+    () => proposedScoreRecord(input),
+    /judgments.great is unreadable and cannot be derived without a note-type breakdown/,
+  );
+});
+
 test("proposed score defaults missing change and timing counts to zero", () => {
   const input = validInput();
   input.ocr.ratingChange = null;
