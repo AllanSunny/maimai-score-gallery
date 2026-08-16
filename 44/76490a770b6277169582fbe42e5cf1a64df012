@@ -1,0 +1,54 @@
+scripts/lib/sheet-scores.mjs
+  s_6d06bd4898dc7f::t_981ea9f3020d3f 108,134-136
+  s_6d06bd4898dc7f::t_4a4e5ef0f611e9 188-189
+scripts/lib/score-review-corrections.test.mjs
+  s_6d06bd4898dc7f::t_bfcaa55c64fd8c 79-102
+src/utils/data-validation.ts
+  s_6d06bd4898dc7f::t_4a4e5ef0f611e9 108-111
+  s_6d06bd4898dc7f::t_981ea9f3020d3f 113
+docs/data-model.md
+  s_6d06bd4898dc7f::t_0decda76f3f600 40-42
+scripts/lib/score-sheet-writer.test.mjs
+  s_6d06bd4898dc7f::t_4a4e5ef0f611e9 36-56
+scripts/lib/score-import-record.mjs
+  s_6d06bd4898dc7f::t_981ea9f3020d3f 76-78,104
+  s_6d06bd4898dc7f::t_4a4e5ef0f611e9 149-150
+scripts/lib/score-import-record.test.mjs
+  s_6d06bd4898dc7f::t_bfcaa55c64fd8c 127-142
+  s_6d06bd4898dc7f::t_4a4e5ef0f611e9 143,150-151
+scripts/lib/sheet-scores.test.mjs
+  s_6d06bd4898dc7f::t_4a4e5ef0f611e9 68-69
+  s_6d06bd4898dc7f::t_bfcaa55c64fd8c 66
+src/utils/types.ts
+  s_6d06bd4898dc7f::t_981ea9f3020d3f 75
+  s_6d06bd4898dc7f::t_4a4e5ef0f611e9 73-74
+scripts/lib/score-review-corrections.mjs
+  s_6d06bd4898dc7f::t_4a4e5ef0f611e9 122-123
+  s_6d06bd4898dc7f::t_981ea9f3020d3f 85,88-93,117-120
+scripts/lib/score-sheet-writer.mjs
+  s_6d06bd4898dc7f::t_981ea9f3020d3f 45
+  s_6d06bd4898dc7f::t_4a4e5ef0f611e9 65-66
+scripts/import-images.mjs
+  s_6d06bd4898dc7f::t_981ea9f3020d3f 165
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.22",
+  "base_commit_sha": "4476490a770b6277169582fbe42e5cf1a64df012",
+  "prompts": {},
+  "humans": {
+    "h_278fafc5c28027": {
+      "author": "Allan Sun <allansun@live.com>"
+    }
+  },
+  "sessions": {
+    "s_6d06bd4898dc7f": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019faca2-0a30-75f3-8a51-06f8e9067195",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Allan Sun <allansun@live.com>"
+    }
+  }
+}
