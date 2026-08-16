@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-16T23:40:15.693Z",
+  "updatedAt": "2026-08-16T23:57:32.706Z",
   "scores": [
     {
       "playedAt": "2025-11-10T02:30:43.000Z",
@@ -2829,7 +2829,7 @@
       "level": "11",
       "achievement": 99.2239,
       "combo": "FC",
-      "sync": "FS",
+      "sync": "Sync",
       "rating": 9179,
       "ratingChange": 30,
       "judgments": {
@@ -2889,7 +2889,7 @@
       "level": "11+",
       "achievement": 99.0992,
       "combo": "Clear",
-      "sync": null,
+      "sync": "Sync",
       "rating": 9231,
       "ratingChange": 43,
       "judgments": {
@@ -2949,7 +2949,7 @@
       "level": "10+",
       "achievement": 98.9118,
       "combo": "Clear",
-      "sync": null,
+      "sync": "Sync",
       "rating": 9231,
       "ratingChange": 0,
       "judgments": {
@@ -5313,7 +5313,7 @@
       "level": "11+",
       "achievement": 99.5799,
       "combo": "FC",
-      "sync": "FS+",
+      "sync": null,
       "rating": 10536,
       "ratingChange": 0,
       "judgments": {
@@ -7473,7 +7473,7 @@
       "level": "11+",
       "achievement": 99.5193,
       "combo": "FC",
-      "sync": "FS",
+      "sync": "Sync",
       "rating": 11438,
       "ratingChange": 0,
       "judgments": {
@@ -7533,7 +7533,7 @@
       "level": "9+",
       "achievement": 100.5186,
       "combo": "FC",
-      "sync": "FS",
+      "sync": "Sync",
       "rating": 11671,
       "ratingChange": 218,
       "judgments": {
@@ -7593,7 +7593,7 @@
       "level": "9+",
       "achievement": 100.5483,
       "combo": "FC",
-      "sync": "FS",
+      "sync": "Sync",
       "rating": 11671,
       "ratingChange": 0,
       "judgments": {
@@ -7653,7 +7653,7 @@
       "level": "12",
       "achievement": 98.903,
       "combo": "Clear",
-      "sync": "FS",
+      "sync": "Sync",
       "rating": 11677,
       "ratingChange": 6,
       "judgments": {
@@ -7713,7 +7713,7 @@
       "level": "12",
       "achievement": 100.6382,
       "combo": "FC",
-      "sync": "FS",
+      "sync": "Sync",
       "rating": 11688,
       "ratingChange": 11,
       "judgments": {
@@ -7833,7 +7833,7 @@
       "level": "9+",
       "achievement": 100.1054,
       "combo": "Clear",
-      "sync": null,
+      "sync": "Sync",
       "rating": 11688,
       "ratingChange": 0,
       "judgments": {
@@ -7893,7 +7893,7 @@
       "level": "10",
       "achievement": 100.7962,
       "combo": "FC+",
-      "sync": "FS",
+      "sync": "Sync",
       "rating": 11697,
       "ratingChange": 9,
       "judgments": {
@@ -7953,7 +7953,7 @@
       "level": "11",
       "achievement": 100.6938,
       "combo": "FC+",
-      "sync": "FS",
+      "sync": "Sync",
       "rating": 11707,
       "ratingChange": 10,
       "judgments": {
@@ -8013,7 +8013,7 @@
       "level": "11+",
       "achievement": 100.4551,
       "combo": "FC",
-      "sync": "FS",
+      "sync": "Sync",
       "rating": 11707,
       "ratingChange": 0,
       "judgments": {
@@ -8193,7 +8193,7 @@
       "level": "10+",
       "achievement": 99.5784,
       "combo": "Clear",
-      "sync": null,
+      "sync": "Sync",
       "rating": 11728,
       "ratingChange": 0,
       "judgments": {
@@ -9273,7 +9273,7 @@
       "level": "11+",
       "achievement": 99.3634,
       "combo": "FC",
-      "sync": "FS",
+      "sync": "Sync",
       "rating": 12122,
       "ratingChange": 0,
       "judgments": {
@@ -9333,7 +9333,7 @@
       "level": "13",
       "achievement": 93.6464,
       "combo": "Clear",
-      "sync": null,
+      "sync": "Sync",
       "rating": 12122,
       "ratingChange": 0,
       "judgments": {
@@ -9393,7 +9393,7 @@
       "level": "11+",
       "achievement": 98.6827,
       "combo": "Clear",
-      "sync": null,
+      "sync": "Sync",
       "rating": 12123,
       "ratingChange": 1,
       "judgments": {
@@ -9453,7 +9453,7 @@
       "level": "12",
       "achievement": 97.3792,
       "combo": "Clear",
-      "sync": null,
+      "sync": "Sync",
       "rating": 12123,
       "ratingChange": 0,
       "judgments": {
@@ -9513,7 +9513,7 @@
       "level": "10",
       "achievement": 100.5073,
       "combo": "Clear",
-      "sync": null,
+      "sync": "Sync",
       "rating": 12123,
       "ratingChange": 0,
       "judgments": {
@@ -9573,7 +9573,7 @@
       "level": "10+",
       "achievement": 100.137,
       "combo": "Clear",
-      "sync": null,
+      "sync": "Sync",
       "rating": 12123,
       "ratingChange": 0,
       "judgments": {
@@ -9633,7 +9633,7 @@
       "level": "10+",
       "achievement": 100.3235,
       "combo": "FC",
-      "sync": null,
+      "sync": "Sync",
       "rating": 12123,
       "ratingChange": 0,
       "judgments": {
@@ -9693,7 +9693,7 @@
       "level": "10",
       "achievement": 100.4724,
       "combo": "FC+",
-      "sync": "FS",
+      "sync": "Sync",
       "rating": 12123,
       "ratingChange": 0,
       "judgments": {
@@ -9753,7 +9753,7 @@
       "level": "11+",
       "achievement": 99.5987,
       "combo": "FC",
-      "sync": "FS",
+      "sync": "Sync",
       "rating": 12127,
       "ratingChange": 4,
       "judgments": {
@@ -9813,7 +9813,7 @@
       "level": "12+",
       "achievement": 97.2394,
       "combo": "Clear",
-      "sync": "FS",
+      "sync": "Sync",
       "rating": 12134,
       "ratingChange": 7,
       "judgments": {
@@ -9873,7 +9873,7 @@
       "level": "11+",
       "achievement": 99.507,
       "combo": "Clear",
-      "sync": "FS",
+      "sync": "Sync",
       "rating": 12141,
       "ratingChange": 7,
       "judgments": {
@@ -9933,7 +9933,7 @@
       "level": "9",
       "achievement": 100.682,
       "combo": "FC+",
-      "sync": "FS",
+      "sync": "Sync",
       "rating": 12141,
       "ratingChange": 0,
       "judgments": {
@@ -9993,7 +9993,7 @@
       "level": "8+",
       "achievement": 100.2489,
       "combo": "Clear",
-      "sync": null,
+      "sync": "Sync",
       "rating": 12141,
       "ratingChange": 0,
       "judgments": {
@@ -10053,7 +10053,7 @@
       "level": "9",
       "achievement": 100.6075,
       "combo": "FC+",
-      "sync": "FS",
+      "sync": "Sync",
       "rating": 12141,
       "ratingChange": 0,
       "judgments": {
@@ -10413,7 +10413,7 @@
       "level": "11",
       "achievement": 100.4187,
       "combo": "FC",
-      "sync": "FS",
+      "sync": "Sync",
       "rating": 12151,
       "ratingChange": 0,
       "judgments": {
@@ -10473,7 +10473,7 @@
       "level": "10+",
       "achievement": 100.5225,
       "combo": "FC",
-      "sync": "FS",
+      "sync": "Sync",
       "rating": 12168,
       "ratingChange": 0,
       "judgments": {
@@ -10533,7 +10533,7 @@
       "level": "11",
       "achievement": 100.8112,
       "combo": "FC+",
-      "sync": "FS",
+      "sync": "Sync",
       "rating": 12168,
       "ratingChange": 0,
       "judgments": {
@@ -11733,7 +11733,7 @@
       "level": "11",
       "achievement": 100.8618,
       "combo": "FC",
-      "sync": "FS",
+      "sync": "Sync",
       "rating": 12524,
       "ratingChange": 0,
       "judgments": {
@@ -11793,7 +11793,7 @@
       "level": "12",
       "achievement": 100.2753,
       "combo": "Clear",
-      "sync": "FS",
+      "sync": "Sync",
       "rating": 12524,
       "ratingChange": 0,
       "judgments": {
@@ -11853,7 +11853,7 @@
       "level": "12",
       "achievement": 99.6078,
       "combo": "Clear",
-      "sync": null,
+      "sync": "Sync",
       "rating": 12543,
       "ratingChange": 19,
       "judgments": {
@@ -11913,7 +11913,7 @@
       "level": "14",
       "achievement": 93.6665,
       "combo": "Clear",
-      "sync": null,
+      "sync": "Sync",
       "rating": 12543,
       "ratingChange": 0,
       "judgments": {
@@ -11973,7 +11973,7 @@
       "level": "13",
       "achievement": 96.2921,
       "combo": "Clear",
-      "sync": "FS",
+      "sync": "Sync",
       "rating": 12543,
       "ratingChange": 0,
       "judgments": {
@@ -12033,7 +12033,7 @@
       "level": "13",
       "achievement": 95.0473,
       "combo": "Clear",
-      "sync": "FS",
+      "sync": "Sync",
       "rating": 12543,
       "ratingChange": 0,
       "judgments": {
@@ -12693,7 +12693,7 @@
       "level": "11+",
       "achievement": 100.0873,
       "combo": "FC",
-      "sync": "FS",
+      "sync": "Sync",
       "rating": 12588,
       "ratingChange": 10,
       "judgments": {
@@ -12753,7 +12753,7 @@
       "level": "11+",
       "achievement": 99.1979,
       "combo": "FC",
-      "sync": "FS",
+      "sync": "Sync",
       "rating": 12588,
       "ratingChange": 0,
       "judgments": {
@@ -12813,7 +12813,7 @@
       "level": "11+",
       "achievement": 100.5867,
       "combo": "FC",
-      "sync": "FS",
+      "sync": "Sync",
       "rating": 12588,
       "ratingChange": 0,
       "judgments": {
@@ -12873,7 +12873,7 @@
       "level": "10+",
       "achievement": 100.6022,
       "combo": "FC+",
-      "sync": "FS",
+      "sync": "Sync",
       "rating": 12588,
       "ratingChange": 0,
       "judgments": {
@@ -12933,7 +12933,7 @@
       "level": "11",
       "achievement": 100.4162,
       "combo": "FC+",
-      "sync": "FS",
+      "sync": "Sync",
       "rating": 12588,
       "ratingChange": 0,
       "judgments": {
@@ -12993,7 +12993,7 @@
       "level": "11",
       "achievement": 100.4286,
       "combo": "FC+",
-      "sync": "FS",
+      "sync": "Sync",
       "rating": 12588,
       "ratingChange": 0,
       "judgments": {
@@ -13353,7 +13353,7 @@
       "level": "11",
       "achievement": 100.7593,
       "combo": "FC+",
-      "sync": "FS",
+      "sync": "Sync",
       "rating": 12623,
       "ratingChange": 2,
       "judgments": {
@@ -13413,7 +13413,7 @@
       "level": "12+",
       "achievement": 99.845,
       "combo": "Clear",
-      "sync": "FS",
+      "sync": "Sync",
       "rating": 12646,
       "ratingChange": 23,
       "judgments": {
@@ -13473,7 +13473,7 @@
       "level": "12+",
       "achievement": 98.4246,
       "combo": "Clear",
-      "sync": null,
+      "sync": "Sync",
       "rating": 12654,
       "ratingChange": 8,
       "judgments": {
@@ -13533,7 +13533,7 @@
       "level": "13",
       "achievement": 98.9041,
       "combo": "Clear",
-      "sync": null,
+      "sync": "Sync",
       "rating": 12672,
       "ratingChange": 18,
       "judgments": {
@@ -13593,7 +13593,7 @@
       "level": "11+",
       "achievement": 100.2509,
       "combo": "Clear",
-      "sync": "FS",
+      "sync": "Sync",
       "rating": 12678,
       "ratingChange": 6,
       "judgments": {
@@ -13653,7 +13653,7 @@
       "level": "12+",
       "achievement": 99.4426,
       "combo": "Clear",
-      "sync": "FS",
+      "sync": "Sync",
       "rating": 12690,
       "ratingChange": 12,
       "judgments": {
@@ -13713,7 +13713,7 @@
       "level": "12+",
       "achievement": 99.0831,
       "combo": "Clear",
-      "sync": null,
+      "sync": "Sync",
       "rating": 12702,
       "ratingChange": 12,
       "judgments": {
@@ -13833,7 +13833,7 @@
       "level": "12+",
       "achievement": 98.9287,
       "combo": "Clear",
-      "sync": "FS",
+      "sync": "Sync",
       "rating": 12718,
       "ratingChange": 8,
       "judgments": {
@@ -13893,7 +13893,7 @@
       "level": "12+",
       "achievement": 98.7536,
       "combo": "Clear",
-      "sync": "FS",
+      "sync": "Sync",
       "rating": 12725,
       "ratingChange": 7,
       "judgments": {
@@ -13953,7 +13953,7 @@
       "level": "12",
       "achievement": 99.957,
       "combo": "Clear",
-      "sync": null,
+      "sync": "Sync",
       "rating": 12726,
       "ratingChange": 1,
       "judgments": {
@@ -14013,7 +14013,7 @@
       "level": "12+",
       "achievement": 99.6349,
       "combo": "Clear",
-      "sync": null,
+      "sync": "Sync",
       "rating": 12744,
       "ratingChange": 18,
       "judgments": {
@@ -14073,7 +14073,7 @@
       "level": "12",
       "achievement": 99.1901,
       "combo": "Clear",
-      "sync": "FS",
+      "sync": "Sync",
       "rating": 12748,
       "ratingChange": 4,
       "judgments": {
@@ -14133,7 +14133,7 @@
       "level": "13",
       "achievement": 98.0935,
       "combo": "Clear",
-      "sync": "FS",
+      "sync": "Sync",
       "rating": 12759,
       "ratingChange": 11,
       "judgments": {
@@ -14193,7 +14193,7 @@
       "level": "12+",
       "achievement": 99.2462,
       "combo": "Clear",
-      "sync": null,
+      "sync": "Sync",
       "rating": 12807,
       "ratingChange": 48,
       "judgments": {
@@ -14253,7 +14253,7 @@
       "level": "13+",
       "achievement": 95.4027,
       "combo": "Clear",
-      "sync": "FS",
+      "sync": "Sync",
       "rating": 12808,
       "ratingChange": 1,
       "judgments": {
@@ -14313,7 +14313,7 @@
       "level": "12",
       "achievement": 100.4895,
       "combo": "FC",
-      "sync": "FS",
+      "sync": "FS+",
       "rating": 12850,
       "ratingChange": 42,
       "judgments": {
@@ -14433,7 +14433,7 @@
       "level": "12",
       "achievement": 99.8628,
       "combo": "FC",
-      "sync": "FS",
+      "sync": "Sync",
       "rating": 12942,
       "ratingChange": 37,
       "judgments": {
@@ -14493,7 +14493,7 @@
       "level": "11+",
       "achievement": 100.246,
       "combo": "FC",
-      "sync": "FS",
+      "sync": "Sync",
       "rating": 12971,
       "ratingChange": 29,
       "judgments": {
@@ -14613,7 +14613,7 @@
       "level": "12",
       "achievement": 99.814,
       "combo": "Clear",
-      "sync": "FS",
+      "sync": "Sync",
       "rating": 13020,
       "ratingChange": 9,
       "judgments": {
@@ -14673,7 +14673,7 @@
       "level": "12+",
       "achievement": 97.8326,
       "combo": "Clear",
-      "sync": null,
+      "sync": "Sync",
       "rating": 13020,
       "ratingChange": 0,
       "judgments": {
@@ -14733,7 +14733,7 @@
       "level": "12+",
       "achievement": 99.0837,
       "combo": "Clear",
-      "sync": null,
+      "sync": "Sync",
       "rating": 13030,
       "ratingChange": 10,
       "judgments": {
@@ -14793,7 +14793,7 @@
       "level": "13+",
       "achievement": 98.7842,
       "combo": "Clear",
-      "sync": null,
+      "sync": "Sync",
       "rating": 13031,
       "ratingChange": 1,
       "judgments": {
@@ -14853,7 +14853,7 @@
       "level": "12+",
       "achievement": 100.1846,
       "combo": "FC",
-      "sync": "FS",
+      "sync": "Sync",
       "rating": 13048,
       "ratingChange": 17,
       "judgments": {
@@ -14913,7 +14913,7 @@
       "level": "13+",
       "achievement": 90.2377,
       "combo": "Clear",
-      "sync": null,
+      "sync": "Sync",
       "rating": 13048,
       "ratingChange": 0,
       "judgments": {
@@ -14973,7 +14973,7 @@
       "level": "13",
       "achievement": 95.1246,
       "combo": "Clear",
-      "sync": null,
+      "sync": "Sync",
       "rating": 13048,
       "ratingChange": 0,
       "judgments": {
@@ -15033,7 +15033,7 @@
       "level": "13",
       "achievement": 92.8542,
       "combo": "Clear",
-      "sync": null,
+      "sync": "Sync",
       "rating": 13048,
       "ratingChange": 0,
       "judgments": {
@@ -15153,7 +15153,7 @@
       "level": "10",
       "achievement": 100.6511,
       "combo": "FC",
-      "sync": "FS",
+      "sync": "Sync",
       "rating": 13048,
       "ratingChange": 0,
       "judgments": {
@@ -15393,7 +15393,7 @@
       "level": "12",
       "achievement": 100.4073,
       "combo": "FC",
-      "sync": "FS",
+      "sync": "Sync",
       "rating": 13056,
       "ratingChange": 8,
       "judgments": {
@@ -15453,7 +15453,7 @@
       "level": "12+",
       "achievement": 99.9031,
       "combo": "Clear",
-      "sync": null,
+      "sync": "Sync",
       "rating": 13056,
       "ratingChange": 0,
       "judgments": {
@@ -15513,7 +15513,7 @@
       "level": "13",
       "achievement": 96.5885,
       "combo": "Clear",
-      "sync": "FS",
+      "sync": "Sync",
       "rating": 13056,
       "ratingChange": 0,
       "judgments": {
@@ -15573,7 +15573,7 @@
       "level": "13+",
       "achievement": 94.2219,
       "combo": "Clear",
-      "sync": "FS",
+      "sync": "Sync",
       "rating": 13056,
       "ratingChange": 0,
       "judgments": {
@@ -15633,7 +15633,7 @@
       "level": "13+",
       "achievement": 92.8013,
       "combo": "Clear",
-      "sync": null,
+      "sync": "Sync",
       "rating": 13056,
       "ratingChange": 0,
       "judgments": {
@@ -15693,7 +15693,7 @@
       "level": "12+",
       "achievement": 98.7502,
       "combo": "FC",
-      "sync": "FS",
+      "sync": "Sync",
       "rating": 13059,
       "ratingChange": 3,
       "judgments": {
@@ -15753,7 +15753,7 @@
       "level": "13",
       "achievement": 92.6705,
       "combo": "Clear",
-      "sync": "FS",
+      "sync": "Sync",
       "rating": 13059,
       "ratingChange": 0,
       "judgments": {
@@ -15813,7 +15813,7 @@
       "level": "12+",
       "achievement": 99.1669,
       "combo": "Clear",
-      "sync": null,
+      "sync": "Sync",
       "rating": 13082,
       "ratingChange": 23,
       "judgments": {
@@ -15873,7 +15873,7 @@
       "level": "12",
       "achievement": 100.1855,
       "combo": "FC",
-      "sync": "FS",
+      "sync": "Sync",
       "rating": 13114,
       "ratingChange": 32,
       "judgments": {
@@ -15933,7 +15933,7 @@
       "level": "10",
       "achievement": 100.5465,
       "combo": "FC+",
-      "sync": "FS",
+      "sync": "Sync",
       "rating": 13114,
       "ratingChange": 0,
       "judgments": {
@@ -15993,7 +15993,7 @@
       "level": "9+",
       "achievement": 100.734,
       "combo": "FC+",
-      "sync": "FDX+",
+      "sync": "FDX",
       "rating": 13114,
       "ratingChange": 0,
       "judgments": {
@@ -16053,7 +16053,7 @@
       "level": "12+",
       "achievement": 95.9565,
       "combo": "Clear",
-      "sync": null,
+      "sync": "Sync",
       "rating": 13114,
       "ratingChange": 0,
       "judgments": {
@@ -16113,7 +16113,7 @@
       "level": "12+",
       "achievement": 96.5842,
       "combo": "Clear",
-      "sync": null,
+      "sync": "Sync",
       "rating": 13114,
       "ratingChange": 0,
       "judgments": {
@@ -16173,7 +16173,7 @@
       "level": "12",
       "achievement": 99.9884,
       "combo": "Clear",
-      "sync": null,
+      "sync": "Sync",
       "rating": 13114,
       "ratingChange": 0,
       "judgments": {
@@ -16233,7 +16233,7 @@
       "level": "13",
       "achievement": 98.6318,
       "combo": "Clear",
-      "sync": null,
+      "sync": "Sync",
       "rating": 13119,
       "ratingChange": 5,
       "judgments": {
@@ -16293,7 +16293,7 @@
       "level": "12+",
       "achievement": 98.0095,
       "combo": "Clear",
-      "sync": "FS",
+      "sync": "Sync",
       "rating": 13119,
       "ratingChange": 0,
       "judgments": {
@@ -16353,7 +16353,7 @@
       "level": "12+",
       "achievement": 96.3046,
       "combo": "Clear",
-      "sync": "FS",
+      "sync": "Sync",
       "rating": 13119,
       "ratingChange": 0,
       "judgments": {
@@ -16413,7 +16413,7 @@
       "level": "12+",
       "achievement": 97.453,
       "combo": "Clear",
-      "sync": null,
+      "sync": "Sync",
       "rating": 13119,
       "ratingChange": 0,
       "judgments": {
@@ -16473,7 +16473,7 @@
       "level": "13",
       "achievement": 96.1013,
       "combo": "Clear",
-      "sync": null,
+      "sync": "Sync",
       "rating": 13119,
       "ratingChange": 0,
       "judgments": {
@@ -16533,7 +16533,7 @@
       "level": "13",
       "achievement": 95.74,
       "combo": "Clear",
-      "sync": "FS",
+      "sync": "Sync",
       "rating": 13119,
       "ratingChange": 0,
       "judgments": {
@@ -16593,7 +16593,7 @@
       "level": "12+",
       "achievement": 99.1362,
       "combo": "Clear",
-      "sync": "FS",
+      "sync": "Sync",
       "rating": 13124,
       "ratingChange": 5,
       "judgments": {
@@ -16653,7 +16653,7 @@
       "level": "12+",
       "achievement": 98.529,
       "combo": "Clear",
-      "sync": "FS",
+      "sync": "Sync",
       "rating": 13124,
       "ratingChange": 0,
       "judgments": {
@@ -16713,7 +16713,7 @@
       "level": "12+",
       "achievement": 99.8089,
       "combo": "Clear",
-      "sync": null,
+      "sync": "Sync",
       "rating": 13137,
       "ratingChange": 13,
       "judgments": {
@@ -16773,7 +16773,7 @@
       "level": "13",
       "achievement": 94.684,
       "combo": "Clear",
-      "sync": "FS",
+      "sync": "Sync",
       "rating": 13137,
       "ratingChange": 0,
       "judgments": {
@@ -16833,7 +16833,7 @@
       "level": "12",
       "achievement": 99.4568,
       "combo": "Clear",
-      "sync": null,
+      "sync": "Sync",
       "rating": 13145,
       "ratingChange": 0,
       "judgments": {
@@ -16893,7 +16893,7 @@
       "level": "13+",
       "achievement": 96.9726,
       "combo": "Clear",
-      "sync": null,
+      "sync": "Sync",
       "rating": 13179,
       "ratingChange": 0,
       "judgments": {
@@ -17013,7 +17013,7 @@
       "level": "13+",
       "achievement": 95.6947,
       "combo": "Clear",
-      "sync": null,
+      "sync": "Sync",
       "rating": 13189,
       "ratingChange": 0,
       "judgments": {
@@ -17073,7 +17073,7 @@
       "level": "12+",
       "achievement": 99.3145,
       "combo": "Clear",
-      "sync": "FS",
+      "sync": "Sync",
       "rating": 13246,
       "ratingChange": 6,
       "judgments": {
@@ -17133,7 +17133,7 @@
       "level": "13+",
       "achievement": 96.7292,
       "combo": "Clear",
-      "sync": null,
+      "sync": "Sync",
       "rating": 13246,
       "ratingChange": 0,
       "judgments": {
@@ -17253,7 +17253,7 @@
       "level": "13",
       "achievement": 99.2884,
       "combo": "Clear",
-      "sync": null,
+      "sync": "Sync",
       "rating": 13267,
       "ratingChange": 14,
       "judgments": {
@@ -17313,7 +17313,7 @@
       "level": "13+",
       "achievement": 97.2083,
       "combo": "Clear",
-      "sync": "FS",
+      "sync": "Sync",
       "rating": 13277,
       "ratingChange": 10,
       "judgments": {
@@ -17373,7 +17373,7 @@
       "level": "12+",
       "achievement": 99.9239,
       "combo": "Clear",
-      "sync": null,
+      "sync": "Sync",
       "rating": 13286,
       "ratingChange": 9,
       "judgments": {
@@ -17433,7 +17433,7 @@
       "level": "12+",
       "achievement": 99.4298,
       "combo": "FC",
-      "sync": "FS",
+      "sync": "Sync",
       "rating": 13290,
       "ratingChange": 4,
       "judgments": {
@@ -17493,7 +17493,7 @@
       "level": "12+",
       "achievement": 100.3124,
       "combo": "FC",
-      "sync": "FS",
+      "sync": "Sync",
       "rating": 13298,
       "ratingChange": 8,
       "judgments": {
@@ -17553,7 +17553,7 @@
       "level": "12",
       "achievement": 100.3159,
       "combo": "Clear",
-      "sync": null,
+      "sync": "Sync",
       "rating": 13305,
       "ratingChange": 7,
       "judgments": {
@@ -17613,7 +17613,7 @@
       "level": "12",
       "achievement": 100.5928,
       "combo": "Clear",
-      "sync": "FS",
+      "sync": "Sync",
       "rating": 13316,
       "ratingChange": 11,
       "judgments": {
@@ -17673,7 +17673,7 @@
       "level": "13",
       "achievement": 98.6208,
       "combo": "Clear",
-      "sync": null,
+      "sync": "Sync",
       "rating": 13318,
       "ratingChange": 2,
       "judgments": {
@@ -17733,7 +17733,7 @@
       "level": "13",
       "achievement": 97.1575,
       "combo": "Clear",
-      "sync": null,
+      "sync": "Sync",
       "rating": 13318,
       "ratingChange": 0,
       "judgments": {
@@ -17793,7 +17793,7 @@
       "level": "13",
       "achievement": 98.4887,
       "combo": "Clear",
-      "sync": "FS",
+      "sync": "Sync",
       "rating": 13318,
       "ratingChange": 0,
       "judgments": {
@@ -17853,7 +17853,7 @@
       "level": "12",
       "achievement": 97.939,
       "combo": "Clear",
-      "sync": null,
+      "sync": "Sync",
       "rating": 13318,
       "ratingChange": 0,
       "judgments": {
@@ -21033,7 +21033,7 @@
       "level": "13",
       "achievement": 98.7725,
       "combo": "Clear",
-      "sync": null,
+      "sync": "Sync",
       "rating": 13448,
       "ratingChange": 2,
       "judgments": {
@@ -21093,7 +21093,7 @@
       "level": "12+",
       "achievement": 99.9161,
       "combo": "Clear",
-      "sync": null,
+      "sync": "Sync",
       "rating": 13453,
       "ratingChange": 5,
       "judgments": {
@@ -21213,7 +21213,7 @@
       "level": "12+",
       "achievement": 99.0636,
       "combo": "Clear",
-      "sync": "FS",
+      "sync": "Sync",
       "rating": 13463,
       "ratingChange": 1,
       "judgments": {
@@ -21273,7 +21273,7 @@
       "level": "12+",
       "achievement": 98.9919,
       "combo": "Clear",
-      "sync": null,
+      "sync": "Sync",
       "rating": 13463,
       "ratingChange": 0,
       "judgments": {
@@ -21333,7 +21333,7 @@
       "level": "13",
       "achievement": 100.0803,
       "combo": "Clear",
-      "sync": null,
+      "sync": "Sync",
       "rating": 13485,
       "ratingChange": 22,
       "judgments": {
@@ -21393,7 +21393,7 @@
       "level": "12+",
       "achievement": 99.928,
       "combo": "FC+",
-      "sync": "FS",
+      "sync": "Sync",
       "rating": 13490,
       "ratingChange": 5,
       "judgments": {
@@ -21453,7 +21453,7 @@
       "level": "13",
       "achievement": 99.2477,
       "combo": "Clear",
-      "sync": null,
+      "sync": "Sync",
       "rating": 13494,
       "ratingChange": 4,
       "judgments": {
@@ -21513,7 +21513,7 @@
       "level": "12+",
       "achievement": 100.2899,
       "combo": "Clear",
-      "sync": null,
+      "sync": "Sync",
       "rating": 13502,
       "ratingChange": 8,
       "judgments": {
@@ -21573,7 +21573,7 @@
       "level": "13",
       "achievement": 100.0384,
       "combo": "FC+",
-      "sync": "FS",
+      "sync": "Sync",
       "rating": 13518,
       "ratingChange": 16,
       "judgments": {
@@ -21633,7 +21633,7 @@
       "level": "13",
       "achievement": 98.6,
       "combo": "Clear",
-      "sync": "FS",
+      "sync": "Sync",
       "rating": 13522,
       "ratingChange": 4,
       "judgments": {
@@ -21693,7 +21693,7 @@
       "level": "13",
       "achievement": 98.1522,
       "combo": "Clear",
-      "sync": "FS",
+      "sync": "Sync",
       "rating": 13524,
       "ratingChange": 2,
       "judgments": {
@@ -21753,7 +21753,7 @@
       "level": "13",
       "achievement": 95.6875,
       "combo": "Clear",
-      "sync": "FS",
+      "sync": "Sync",
       "rating": 13524,
       "ratingChange": 0,
       "judgments": {
@@ -21813,7 +21813,7 @@
       "level": "13",
       "achievement": 91.0613,
       "combo": "Clear",
-      "sync": "FS",
+      "sync": "Sync",
       "rating": 13524,
       "ratingChange": 0,
       "judgments": {
@@ -21873,7 +21873,7 @@
       "level": "13+",
       "achievement": 94.3288,
       "combo": "Clear",
-      "sync": null,
+      "sync": "Sync",
       "rating": 13524,
       "ratingChange": 0,
       "judgments": {
@@ -21933,7 +21933,7 @@
       "level": "13+",
       "achievement": 92.3873,
       "combo": "Clear",
-      "sync": null,
+      "sync": "Sync",
       "rating": 13524,
       "ratingChange": 0,
       "judgments": {
@@ -21993,7 +21993,7 @@
       "level": "13",
       "achievement": 98.8313,
       "combo": "Clear",
-      "sync": "FS",
+      "sync": "Sync",
       "rating": 13524,
       "ratingChange": 0,
       "judgments": {
@@ -22113,7 +22113,7 @@
       "level": "13",
       "achievement": 98.7097,
       "combo": "Clear",
-      "sync": null,
+      "sync": "Sync",
       "rating": 13529,
       "ratingChange": 1,
       "judgments": {
@@ -22173,7 +22173,7 @@
       "level": "12+",
       "achievement": 99.7473,
       "combo": "Clear",
-      "sync": null,
+      "sync": "Sync",
       "rating": 13539,
       "ratingChange": 10,
       "judgments": {
@@ -22233,7 +22233,7 @@
       "level": "12+",
       "achievement": 99.2151,
       "combo": "Clear",
-      "sync": "FS",
+      "sync": "Sync",
       "rating": 13539,
       "ratingChange": 0,
       "judgments": {
@@ -23253,7 +23253,7 @@
       "level": "13",
       "achievement": 98.8059,
       "combo": "FC",
-      "sync": "FS",
+      "sync": "Sync",
       "rating": 13571,
       "ratingChange": 0,
       "judgments": {
@@ -23313,7 +23313,7 @@
       "level": "13",
       "achievement": 95.5105,
       "combo": "Clear",
-      "sync": null,
+      "sync": "Sync",
       "rating": 13571,
       "ratingChange": 0,
       "judgments": {
@@ -23373,7 +23373,7 @@
       "level": "12+",
       "achievement": 99.2271,
       "combo": "Clear",
-      "sync": null,
+      "sync": "Sync",
       "rating": 13571,
       "ratingChange": 0,
       "judgments": {
@@ -23433,7 +23433,7 @@
       "level": "13+",
       "achievement": 98.251,
       "combo": "Clear",
-      "sync": "FS",
+      "sync": "Sync",
       "rating": 13579,
       "ratingChange": 8,
       "judgments": {
@@ -24273,7 +24273,7 @@
       "level": "11+",
       "achievement": 100.5647,
       "combo": "FC",
-      "sync": "FS",
+      "sync": "Sync",
       "rating": 13668,
       "ratingChange": 0,
       "judgments": {
@@ -24333,7 +24333,7 @@
       "level": "11+",
       "achievement": 100.5487,
       "combo": "Clear",
-      "sync": null,
+      "sync": "Sync",
       "rating": 13669,
       "ratingChange": 1,
       "judgments": {
@@ -24393,7 +24393,7 @@
       "level": "12",
       "achievement": 100.407,
       "combo": "FC",
-      "sync": "FS",
+      "sync": "Sync",
       "rating": 13669,
       "ratingChange": 0,
       "judgments": {
@@ -24453,7 +24453,7 @@
       "level": "13",
       "achievement": 97.2244,
       "combo": "Clear",
-      "sync": "FS",
+      "sync": "Sync",
       "rating": 13669,
       "ratingChange": 0,
       "judgments": {
@@ -24513,7 +24513,7 @@
       "level": "12",
       "achievement": 100.4856,
       "combo": "FC",
-      "sync": "FS",
+      "sync": "Sync",
       "rating": 13672,
       "ratingChange": 3,
       "judgments": {
@@ -24633,7 +24633,7 @@
       "level": "12",
       "achievement": 99.7941,
       "combo": "Clear",
-      "sync": null,
+      "sync": "Sync",
       "rating": 13672,
       "ratingChange": 0,
       "judgments": {
@@ -24693,7 +24693,7 @@
       "level": "12",
       "achievement": 99.6463,
       "combo": "FC",
-      "sync": "FS",
+      "sync": "Sync",
       "rating": 13672,
       "ratingChange": 0,
       "judgments": {
@@ -24753,7 +24753,7 @@
       "level": "13",
       "achievement": 97.6569,
       "combo": "Clear",
-      "sync": null,
+      "sync": "Sync",
       "rating": 13672,
       "ratingChange": 0,
       "judgments": {
@@ -24813,7 +24813,7 @@
       "level": "12",
       "achievement": 100.6725,
       "combo": "FC",
-      "sync": "FS",
+      "sync": "Sync",
       "rating": 13682,
       "ratingChange": 0,
       "judgments": {
@@ -25353,7 +25353,7 @@
       "level": "13+",
       "achievement": 96.2178,
       "combo": "Clear",
-      "sync": null,
+      "sync": "Sync",
       "rating": 13693,
       "ratingChange": 0,
       "judgments": {
@@ -25413,7 +25413,7 @@
       "level": "13+",
       "achievement": 97.6243,
       "combo": "Clear",
-      "sync": "FS",
+      "sync": "Sync",
       "rating": 13696,
       "ratingChange": 3,
       "judgments": {
@@ -25473,7 +25473,7 @@
       "level": "12+",
       "achievement": 99.9395,
       "combo": "Clear",
-      "sync": null,
+      "sync": "Sync",
       "rating": 13696,
       "ratingChange": 0,
       "judgments": {
@@ -25713,7 +25713,7 @@
       "level": "12+",
       "achievement": 98.68,
       "combo": "Clear",
-      "sync": null,
+      "sync": "Sync",
       "rating": 13714,
       "ratingChange": 0,
       "judgments": {
@@ -25773,7 +25773,7 @@
       "level": "12",
       "achievement": 100.6466,
       "combo": "FC",
-      "sync": "FS",
+      "sync": "Sync",
       "rating": 13719,
       "ratingChange": 5,
       "judgments": {
@@ -25833,7 +25833,7 @@
       "level": "13+",
       "achievement": 98.6518,
       "combo": "Clear",
-      "sync": null,
+      "sync": "Sync",
       "rating": 13724,
       "ratingChange": 5,
       "judgments": {
@@ -25893,7 +25893,7 @@
       "level": "13+",
       "achievement": 97.192,
       "combo": "Clear",
-      "sync": null,
+      "sync": "Sync",
       "rating": 13724,
       "ratingChange": 0,
       "judgments": {
@@ -25953,7 +25953,7 @@
       "level": "12",
       "achievement": 100.6246,
       "combo": "FC+",
-      "sync": "FS",
+      "sync": "Sync",
       "rating": 13734,
       "ratingChange": 10,
       "judgments": {
@@ -26013,7 +26013,7 @@
       "level": "13",
       "achievement": 97.5694,
       "combo": "Clear",
-      "sync": null,
+      "sync": "Sync",
       "rating": 13734,
       "ratingChange": 0,
       "judgments": {
@@ -26073,7 +26073,7 @@
       "level": "12+",
       "achievement": 99.1182,
       "combo": "Clear",
-      "sync": null,
+      "sync": "Sync",
       "rating": 13734,
       "ratingChange": 0,
       "judgments": {
@@ -26133,7 +26133,7 @@
       "level": "12+",
       "achievement": 99.215,
       "combo": "FC",
-      "sync": null,
+      "sync": "Sync",
       "rating": 13734,
       "ratingChange": 0,
       "judgments": {
@@ -26193,7 +26193,7 @@
       "level": "12",
       "achievement": 99.2699,
       "combo": "Clear",
-      "sync": null,
+      "sync": "Sync",
       "rating": 13734,
       "ratingChange": 0,
       "judgments": {
@@ -26253,7 +26253,7 @@
       "level": "12",
       "achievement": 100.3808,
       "combo": "Clear",
-      "sync": "FS",
+      "sync": "Sync",
       "rating": 13734,
       "ratingChange": 0,
       "judgments": {
@@ -26313,7 +26313,7 @@
       "level": "13",
       "achievement": 98.8589,
       "combo": "Clear",
-      "sync": null,
+      "sync": "Sync",
       "rating": 13734,
       "ratingChange": 0,
       "judgments": {
@@ -26373,7 +26373,7 @@
       "level": "12+",
       "achievement": 99.385,
       "combo": "Clear",
-      "sync": null,
+      "sync": "Sync",
       "rating": 13734,
       "ratingChange": 0,
       "judgments": {
@@ -26433,7 +26433,7 @@
       "level": "13",
       "achievement": 98.6374,
       "combo": "Clear",
-      "sync": null,
+      "sync": "Sync",
       "rating": 13734,
       "ratingChange": 0,
       "judgments": {
@@ -26493,7 +26493,7 @@
       "level": "13+",
       "achievement": 97.4066,
       "combo": "Clear",
-      "sync": null,
+      "sync": "Sync",
       "rating": 13734,
       "ratingChange": 0,
       "judgments": {
@@ -26553,7 +26553,7 @@
       "level": "11",
       "achievement": 100.6914,
       "combo": "FC",
-      "sync": "FS",
+      "sync": "Sync",
       "rating": 13734,
       "ratingChange": 0,
       "judgments": {
@@ -26613,7 +26613,7 @@
       "level": "12+",
       "achievement": 98.4398,
       "combo": "Clear",
-      "sync": null,
+      "sync": "Sync",
       "rating": 13734,
       "ratingChange": 0,
       "judgments": {
@@ -26673,7 +26673,7 @@
       "level": "13",
       "achievement": 100.0289,
       "combo": "FC",
-      "sync": "FS",
+      "sync": "Sync",
       "rating": 13746,
       "ratingChange": 12,
       "judgments": {
@@ -26793,7 +26793,7 @@
       "level": "13",
       "achievement": 98.0423,
       "combo": "Clear",
-      "sync": "FS",
+      "sync": "Sync",
       "rating": 13746,
       "ratingChange": 0,
       "judgments": {
@@ -26853,7 +26853,7 @@
       "level": "13",
       "achievement": 96.4631,
       "combo": "Clear",
-      "sync": null,
+      "sync": "Sync",
       "rating": 13746,
       "ratingChange": 0,
       "judgments": {
@@ -26913,7 +26913,7 @@
       "level": "12+",
       "achievement": 97.1731,
       "combo": "Clear",
-      "sync": "FS",
+      "sync": "Sync",
       "rating": 13746,
       "ratingChange": 0,
       "judgments": {
@@ -26973,7 +26973,7 @@
       "level": "12+",
       "achievement": 100.5057,
       "combo": "FC+",
-      "sync": null,
+      "sync": "Sync",
       "rating": 13768,
       "ratingChange": 22,
       "judgments": {
@@ -27033,7 +27033,7 @@
       "level": "12+",
       "achievement": 99.6821,
       "combo": "Clear",
-      "sync": null,
+      "sync": "Sync",
       "rating": 13770,
       "ratingChange": 2,
       "judgments": {
@@ -27093,7 +27093,7 @@
       "level": "12+",
       "achievement": 99.8416,
       "combo": "FC",
-      "sync": "FS",
+      "sync": "Sync",
       "rating": 13770,
       "ratingChange": 0,
       "judgments": {
@@ -27153,7 +27153,7 @@
       "level": "11+",
       "achievement": 100.5949,
       "combo": "FC",
-      "sync": "FS",
+      "sync": "Sync",
       "rating": 13770,
       "ratingChange": 0,
       "judgments": {
@@ -27213,7 +27213,7 @@
       "level": "13",
       "achievement": 97.3248,
       "combo": "Clear",
-      "sync": null,
+      "sync": "Sync",
       "rating": 13770,
       "ratingChange": 0,
       "judgments": {
@@ -27273,7 +27273,7 @@
       "level": "9",
       "achievement": 101,
       "combo": "AP+",
-      "sync": "FS",
+      "sync": "Sync",
       "rating": 13770,
       "ratingChange": 0,
       "judgments": {
@@ -27333,7 +27333,7 @@
       "level": "13+",
       "achievement": 98.3167,
       "combo": "Clear",
-      "sync": null,
+      "sync": "Sync",
       "rating": 13772,
       "ratingChange": 2,
       "judgments": {
@@ -27393,7 +27393,7 @@
       "level": "13+",
       "achievement": 99.9009,
       "combo": "Clear",
-      "sync": null,
+      "sync": "Sync",
       "rating": 13774,
       "ratingChange": 1,
       "judgments": {
@@ -27513,7 +27513,7 @@
       "level": "13",
       "achievement": 98.46,
       "combo": "Clear",
-      "sync": null,
+      "sync": "Sync",
       "rating": 13786,
       "ratingChange": 4,
       "judgments": {
@@ -27573,7 +27573,7 @@
       "level": "13+",
       "achievement": 98.7324,
       "combo": "Clear",
-      "sync": "FS",
+      "sync": "Sync",
       "rating": 13787,
       "ratingChange": 1,
       "judgments": {
@@ -27693,7 +27693,7 @@
       "level": "13",
       "achievement": 97.1424,
       "combo": "Clear",
-      "sync": null,
+      "sync": "Sync",
       "rating": 13787,
       "ratingChange": 0,
       "judgments": {
@@ -27753,7 +27753,7 @@
       "level": "12",
       "achievement": 99.9546,
       "combo": "FC",
-      "sync": "FS",
+      "sync": "Sync",
       "rating": 13787,
       "ratingChange": 0,
       "judgments": {
@@ -27813,7 +27813,7 @@
       "level": "12+",
       "achievement": 99.2713,
       "combo": "Clear",
-      "sync": "FS",
+      "sync": "Sync",
       "rating": 13788,
       "ratingChange": 1,
       "judgments": {
@@ -27873,7 +27873,7 @@
       "level": "12+",
       "achievement": 99.9297,
       "combo": "Clear",
-      "sync": "FS",
+      "sync": "Sync",
       "rating": 13788,
       "ratingChange": 0,
       "judgments": {
@@ -27933,7 +27933,7 @@
       "level": "12+",
       "achievement": 99.7944,
       "combo": "FC",
-      "sync": "FS",
+      "sync": "Sync",
       "rating": 13788,
       "ratingChange": 0,
       "judgments": {
@@ -27993,7 +27993,7 @@
       "level": "12+",
       "achievement": 99.5427,
       "combo": "Clear",
-      "sync": null,
+      "sync": "Sync",
       "rating": 13788,
       "ratingChange": 0,
       "judgments": {
@@ -28053,7 +28053,7 @@
       "level": "12+",
       "achievement": 99.8987,
       "combo": "Clear",
-      "sync": "FS",
+      "sync": "Sync",
       "rating": 13788,
       "ratingChange": 0,
       "judgments": {
@@ -28113,7 +28113,7 @@
       "level": "12+",
       "achievement": 100.1234,
       "combo": "Clear",
-      "sync": "FS",
+      "sync": "Sync",
       "rating": 13795,
       "ratingChange": 7,
       "judgments": {
@@ -28173,7 +28173,7 @@
       "level": "13+",
       "achievement": 98.3062,
       "combo": "Clear",
-      "sync": "FS",
+      "sync": "Sync",
       "rating": 13795,
       "ratingChange": 0,
       "judgments": {
@@ -28293,7 +28293,7 @@
       "level": "13",
       "achievement": 98.9648,
       "combo": "Clear",
-      "sync": "FS",
+      "sync": "Sync",
       "rating": 13795,
       "ratingChange": 0,
       "judgments": {
@@ -28353,7 +28353,7 @@
       "level": "13",
       "achievement": 97.1964,
       "combo": "Clear",
-      "sync": null,
+      "sync": "Sync",
       "rating": 13795,
       "ratingChange": 0,
       "judgments": {
@@ -28473,7 +28473,7 @@
       "level": "13+",
       "achievement": 98.5474,
       "combo": "Clear",
-      "sync": null,
+      "sync": "Sync",
       "rating": 13795,
       "ratingChange": 0,
       "judgments": {
@@ -28533,7 +28533,7 @@
       "level": "13",
       "achievement": 97.3637,
       "combo": "Clear",
-      "sync": null,
+      "sync": "Sync",
       "rating": 13795,
       "ratingChange": 0,
       "judgments": {
@@ -28593,7 +28593,7 @@
       "level": "13",
       "achievement": 98.2731,
       "combo": "Clear",
-      "sync": null,
+      "sync": "Sync",
       "rating": 13795,
       "ratingChange": 0,
       "judgments": {
@@ -28653,7 +28653,7 @@
       "level": "13",
       "achievement": 98.3979,
       "combo": "Clear",
-      "sync": null,
+      "sync": "Sync",
       "rating": 13795,
       "ratingChange": 0,
       "judgments": {
@@ -28713,7 +28713,7 @@
       "level": "13",
       "achievement": 97.4387,
       "combo": "Clear",
-      "sync": "FS",
+      "sync": "Sync",
       "rating": 13795,
       "ratingChange": 0,
       "judgments": {
@@ -28773,7 +28773,7 @@
       "level": "13+",
       "achievement": 99.2662,
       "combo": "Clear",
-      "sync": null,
+      "sync": "Sync",
       "rating": 13795,
       "ratingChange": 0,
       "judgments": {
@@ -28833,7 +28833,7 @@
       "level": "13+",
       "achievement": 94.0811,
       "combo": "Clear",
-      "sync": null,
+      "sync": "Sync",
       "rating": 13795,
       "ratingChange": 0,
       "judgments": {
@@ -28893,7 +28893,7 @@
       "level": "13+",
       "achievement": 96.4853,
       "combo": "Clear",
-      "sync": null,
+      "sync": "Sync",
       "rating": 13795,
       "ratingChange": 0,
       "judgments": {
@@ -28953,7 +28953,7 @@
       "level": "13+",
       "achievement": 93.9766,
       "combo": "Clear",
-      "sync": null,
+      "sync": "Sync",
       "rating": 13795,
       "ratingChange": 0,
       "judgments": {
@@ -29013,7 +29013,7 @@
       "level": "12+",
       "achievement": 97.9172,
       "combo": "Clear",
-      "sync": null,
+      "sync": "Sync",
       "rating": 13795,
       "ratingChange": 0,
       "judgments": {
@@ -29073,7 +29073,7 @@
       "level": "13+",
       "achievement": 93.9798,
       "combo": "Clear",
-      "sync": null,
+      "sync": "Sync",
       "rating": 13795,
       "ratingChange": 0,
       "judgments": {
@@ -29253,7 +29253,7 @@
       "level": "13",
       "achievement": 100.4398,
       "combo": "Clear",
-      "sync": "FS",
+      "sync": "Sync",
       "rating": 14271,
       "ratingChange": 27,
       "judgments": {
@@ -29313,7 +29313,7 @@
       "level": "13",
       "achievement": 98.3945,
       "combo": "Clear",
-      "sync": "FS",
+      "sync": "Sync",
       "rating": 13806,
       "ratingChange": 0,
       "judgments": {
@@ -29373,7 +29373,7 @@
       "level": "13",
       "achievement": 98.3896,
       "combo": "Clear",
-      "sync": null,
+      "sync": "Sync",
       "rating": 13806,
       "ratingChange": 0,
       "judgments": {
@@ -29433,7 +29433,7 @@
       "level": "12+",
       "achievement": 100.5428,
       "combo": "FC",
-      "sync": "FS",
+      "sync": "Sync",
       "rating": 13821,
       "ratingChange": 15,
       "judgments": {
@@ -29493,7 +29493,7 @@
       "level": "13+",
       "achievement": 100.0169,
       "combo": "Clear",
-      "sync": null,
+      "sync": "Sync",
       "rating": 14295,
       "ratingChange": 11,
       "judgments": {
@@ -29553,7 +29553,7 @@
       "level": "12+",
       "achievement": 100.1911,
       "combo": "FC",
-      "sync": "FS",
+      "sync": "Sync",
       "rating": 13829,
       "ratingChange": 8,
       "judgments": {
@@ -29613,7 +29613,7 @@
       "level": "13+",
       "achievement": 98.7524,
       "combo": "FC",
-      "sync": "FS",
+      "sync": "Sync",
       "rating": 13830,
       "ratingChange": 1,
       "judgments": {
@@ -29673,7 +29673,7 @@
       "level": "13+",
       "achievement": 96.7395,
       "combo": "Clear",
-      "sync": "FS",
+      "sync": "Sync",
       "rating": 13830,
       "ratingChange": 0,
       "judgments": {
@@ -29733,7 +29733,7 @@
       "level": "13",
       "achievement": 99.2888,
       "combo": "Clear",
-      "sync": "FS",
+      "sync": "Sync",
       "rating": 13830,
       "ratingChange": 0,
       "judgments": {
@@ -31173,7 +31173,7 @@
       "level": "13+",
       "achievement": 93.7137,
       "combo": "Clear",
-      "sync": "FS",
+      "sync": "Sync",
       "rating": 13956,
       "ratingChange": 0,
       "judgments": {
@@ -31233,7 +31233,7 @@
       "level": "12+",
       "achievement": 100.2731,
       "combo": "Clear",
-      "sync": "FS",
+      "sync": "Sync",
       "rating": 13957,
       "ratingChange": 1,
       "judgments": {
@@ -31293,7 +31293,7 @@
       "level": "13+",
       "achievement": 100.0358,
       "combo": "Clear",
-      "sync": null,
+      "sync": "Sync",
       "rating": 13965,
       "ratingChange": 8,
       "judgments": {
@@ -31353,7 +31353,7 @@
       "level": "13+",
       "achievement": 99.3349,
       "combo": "Clear",
-      "sync": "FS",
+      "sync": "Sync",
       "rating": 13973,
       "ratingChange": 8,
       "judgments": {
@@ -31953,7 +31953,7 @@
       "level": "13+",
       "achievement": 99.3548,
       "combo": "Clear",
-      "sync": null,
+      "sync": "Sync",
       "rating": 14601,
       "ratingChange": 2,
       "judgments": {
@@ -32253,7 +32253,7 @@
       "level": "13+",
       "achievement": 99.7244,
       "combo": "FC",
-      "sync": null,
+      "sync": "Sync",
       "rating": 14716,
       "ratingChange": 3,
       "judgments": {
@@ -32313,7 +32313,7 @@
       "level": "13+",
       "achievement": 100.174,
       "combo": "FC",
-      "sync": null,
+      "sync": "Sync",
       "rating": 14716,
       "ratingChange": 0,
       "judgments": {
@@ -34773,7 +34773,7 @@
       "level": "14+",
       "achievement": 95.8554,
       "combo": "Clear",
-      "sync": null,
+      "sync": "Sync",
       "rating": 15209,
       "ratingChange": 0,
       "judgments": {
@@ -34833,7 +34833,7 @@
       "level": "13+",
       "achievement": 100.729,
       "combo": "FC",
-      "sync": null,
+      "sync": "Sync",
       "rating": 15209,
       "ratingChange": 0,
       "judgments": {
@@ -34893,7 +34893,7 @@
       "level": "13+",
       "achievement": 100.2669,
       "combo": "FC",
-      "sync": null,
+      "sync": "Sync",
       "rating": 15209,
       "ratingChange": 0,
       "judgments": {
@@ -35013,7 +35013,7 @@
       "level": "10",
       "achievement": 100.95,
       "combo": "AP",
-      "sync": null,
+      "sync": "Sync",
       "rating": 15209,
       "ratingChange": 0,
       "judgments": {
@@ -35073,7 +35073,7 @@
       "level": "13+",
       "achievement": 100.6639,
       "combo": "FC+",
-      "sync": "FS",
+      "sync": "Sync",
       "rating": 15209,
       "ratingChange": -38,
       "judgments": {
@@ -35133,7 +35133,7 @@
       "level": "10",
       "achievement": 100.8321,
       "combo": "FC+",
-      "sync": null,
+      "sync": "Sync",
       "rating": 15209,
       "ratingChange": 0,
       "judgments": {
@@ -35193,7 +35193,7 @@
       "level": "13+",
       "achievement": 98.9338,
       "combo": "Clear",
-      "sync": null,
+      "sync": "Sync",
       "rating": 15209,
       "ratingChange": 0,
       "judgments": {
@@ -35253,7 +35253,7 @@
       "level": "13+",
       "achievement": 100.8612,
       "combo": "FC+",
-      "sync": null,
+      "sync": "Sync",
       "rating": 15209,
       "ratingChange": 0,
       "judgments": {
@@ -35313,7 +35313,7 @@
       "level": "13+",
       "achievement": 100.6435,
       "combo": "FC+",
-      "sync": null,
+      "sync": "Sync",
       "rating": 15209,
       "ratingChange": 0,
       "judgments": {
@@ -35373,7 +35373,7 @@
       "level": "14",
       "achievement": 98.5457,
       "combo": "Clear",
-      "sync": null,
+      "sync": "Sync",
       "rating": 15209,
       "ratingChange": 0,
       "judgments": {
@@ -35433,7 +35433,7 @@
       "level": "13+",
       "achievement": 100.7844,
       "combo": "FC+",
-      "sync": null,
+      "sync": "Sync",
       "rating": 15209,
       "ratingChange": 0,
       "judgments": {
@@ -35493,7 +35493,7 @@
       "level": "13+",
       "achievement": 99.1856,
       "combo": "Clear",
-      "sync": null,
+      "sync": "Sync",
       "rating": 15209,
       "ratingChange": 0,
       "judgments": {
@@ -35553,7 +35553,7 @@
       "level": "11+",
       "achievement": 100.8565,
       "combo": "FC+",
-      "sync": "FDX+",
+      "sync": "FDX",
       "rating": 15209,
       "ratingChange": 0,
       "judgments": {
