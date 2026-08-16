@@ -69,25 +69,35 @@ retried and are never written to the public catalog.
 
 ### GitHub configuration
 
-Under **Settings → Secrets and variables → Actions → Secrets**, add:
+The live repository uses the following **Actions secrets**:
 
-- `R2_ACCOUNT_ID`
-- `R2_ACCESS_KEY_ID`
-- `R2_SECRET_ACCESS_KEY`
-- `GOOGLE_SERVICE_ACCOUNT_JSON`
-- `OPENAI_API_KEY`
-- `DISCORD_WEBHOOK_URL`
+| Secret | Purpose |
+| --- | --- |
+| `GOOGLE_SERVICE_ACCOUNT_JSON` | Service-account credentials for Drive and Sheets |
+| `OPENAI_API_KEY` | Score OCR and missing-title enrichment |
+| `DISCORD_WEBHOOK_URL` | Review and workflow-failure notifications |
+| `R2_ACCOUNT_ID` | Cloudflare account containing the jacket bucket |
+| `R2_ACCESS_KEY_ID` | Jacket-bucket write credential |
+| `R2_SECRET_ACCESS_KEY` | Jacket-bucket write credential |
 
-Under **Actions → Variables**, add:
+The live repository uses the following **Actions variables**:
 
-- `R2_BUCKET_NAME`
-- `R2_PUBLIC_URL`
-- `GOOGLE_DRIVE_FOLDER_ID`
-- `GOOGLE_PROCESSED_FOLDER_ID`
-- `GOOGLE_SPREADSHEET_ID`
-- `GOOGLE_SHEET_NAME`
+| Variable | Purpose |
+| --- | --- |
+| `GOOGLE_DRIVE_FOLDER_ID` | Incoming score-image folder |
+| `GOOGLE_PROCESSED_FOLDER_ID` | Destination for successfully imported images |
+| `GOOGLE_SPREADSHEET_ID` | Score workbook and import-review workbook |
+| `GOOGLE_SHEET_NAME` | Main score sheet, currently `MainInfo` |
+| `OPENAI_OCR_MODEL` | Model shared by score OCR and title enrichment |
+| `SCORE_CAPTURE_TIME_ZONE` | Zone used only for capture timestamps that lack an explicit offset |
+| `SEGA_CATALOG_URL` | Authoritative SEGA song catalog endpoint |
+| `SEGA_JACKET_BASE_URL` | Base URL for authoritative SEGA jacket images |
+| `CHART_SUPPLEMENT_METADATA_URL` | Supplemental chart constants and charter names |
+| `R2_BUCKET_NAME` | Jacket object-storage bucket |
+| `R2_PUBLIC_URL` | Public jacket Worker base URL used by the frontend build |
 
-Optionally set `OPENAI_OCR_MODEL`; it defaults to `gpt-5.5`.
+These names are intentionally explicit and required; the workflows do not
+silently substitute endpoint, model, or timezone values.
 
 Generated catalog metadata stores only each jacket's R2 object key. The public
 R2 base URL is supplied to Vite at deployment time through `R2_PUBLIC_URL`;

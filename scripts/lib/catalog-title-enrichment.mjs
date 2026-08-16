@@ -3,6 +3,7 @@ import { toHiragana, toRomaji } from "wanakana";
 
 const JAPANESE_TEXT = /[ぁ-んァ-ヶ一-龯々〆ヵヶ]/u;
 const BATCH_SIZE = 10;
+const MAX_OUTPUT_TOKENS = 5000;
 
 const enrichmentSchema = {
   type: "object",
@@ -94,16 +95,10 @@ function requestFor(songs, { model, maxOutputTokens, reasoningEffort }) {
 }
 
 function options(environment = process.env) {
-  const maxOutputTokens = Number(environment.OPENAI_TITLE_MAX_OUTPUT_TOKENS?.trim() || 5000);
-  if (!Number.isInteger(maxOutputTokens) || maxOutputTokens < 500 || maxOutputTokens > 10000) {
-    throw new Error("OPENAI_TITLE_MAX_OUTPUT_TOKENS must be an integer from 500 through 10000.");
-  }
   return {
-    model: environment.OPENAI_TITLE_MODEL?.trim()
-      || environment.OPENAI_OCR_MODEL?.trim()
-      || "gpt-5.5",
-    maxOutputTokens,
-    reasoningEffort: environment.OPENAI_REASONING_EFFORT?.trim() || "low",
+    model: environment.OPENAI_OCR_MODEL?.trim() || "gpt-5.5",
+    maxOutputTokens: MAX_OUTPUT_TOKENS,
+    reasoningEffort: "low",
   };
 }
 

@@ -21,6 +21,9 @@ test("SEGA catalog loader downloads only once per process", async () => {
 });
 
 test("SEGA catalog loader rejects malformed catalog data", async () => {
-  const load = createSegaCatalogLoader({ async download() { return {}; } });
+  const load = createSegaCatalogLoader({
+    url: "https://example.test/catalog.json",
+    async download() { return {}; },
+  });
   await assert.rejects(load(), /must be an array/);
 });

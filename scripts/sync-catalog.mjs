@@ -13,10 +13,16 @@ const OVERRIDES_PATH = path.join(ROOT, "src", "data", "overrides.json");
 const GENERATED_PATH = path.join(ROOT, "src", "data", "generated-catalog.json");
 const SCORES_PATH = path.join(ROOT, "src", "data", "generated-scores.json");
 const REJECTED_SCORES_PATH = path.join(ROOT, ".sync", "rejected-scores.json");
-const SEGA_CATALOG_URL = process.env.SEGA_CATALOG_URL ?? "https://maimai.sega.jp/data/maimai_songs.json";
-const SEGA_JACKET_BASE_URL = process.env.SEGA_JACKET_BASE_URL ?? "https://maimaidx.jp/maimai-mobile/img/Music/";
-const DIVING_FISH_CATALOG_URL = process.env.DIVING_FISH_CATALOG_URL
-  ?? "https://www.diving-fish.com/api/maimaidxprober/music_data";
+
+function requiredEnvironment(name) {
+  const value = process.env[name]?.trim();
+  if (!value) throw new Error(`${name} is required.`);
+  return value;
+}
+
+const SEGA_CATALOG_URL = requiredEnvironment("SEGA_CATALOG_URL");
+const SEGA_JACKET_BASE_URL = requiredEnvironment("SEGA_JACKET_BASE_URL");
+const CHART_SUPPLEMENT_METADATA_URL = requiredEnvironment("CHART_SUPPLEMENT_METADATA_URL");
 
 const chartFields = [
   ["DX", "BASIC", "dx_lev_bas"],
@@ -174,7 +180,7 @@ function findCommunitySong(title, chartType, communitySongs) {
   const matches = communitySongs.get(communityChartKey(title, chartType)) ?? [];
   if (matches.length === 1) return matches[0];
   if (matches.length > 1) {
-    console.warn(`Ambiguous Diving-Fish match for ${title} (${chartType}); leaving chart metadata unchanged.`);
+    console.warn(`Ambiguous supplemental chart metadata match for ${title} (${chartType}); leaving chart metadata unchanged.`);
   }
   return null;
 }
@@ -365,13 +371,13 @@ async function main() {
   const missingArtistSongs = previous.songs.filter((song) =>
     typeof song.artist !== "string" || !song.artist.trim());
   console.log(`Found ${newTitles.length} new song(s) and ${missingArtistSongs.length} artist credit(s) to backfill.`);
-  const [officialSongs, divingFishSongs] = await Promise.all([
+  const [officialSongs, chartMetadataSongs] = await Promise.all([
     newTitles.length || missingArtistSongs.length
       ? fetchJson(SEGA_CATALOG_URL, "SEGA song catalog")
       : Promise.resolve([]),
-    fetchJson(DIVING_FISH_CATALOG_URL, "Diving-Fish chart metadata"),
+    fetchJson(CHART_SUPPLEMENT_METADATA_URL, "supplemental chart metadata"),
   ]);
-  const communitySongs = indexCommunityCharts(divingFishSongs);
+  const communitySongs = indexCommunityCharts(chartMetadataSongs);
   const songs = [...previous.songs];
   let songsChanged = enrichExistingCharts(songs, communitySongs, overrides);
 

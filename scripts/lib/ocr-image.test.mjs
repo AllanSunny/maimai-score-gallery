@@ -12,17 +12,6 @@ test("OCR image settings default to the parity-first values", () => {
   assert.deepEqual(ocrImageOptions({}), DEFAULT_OCR_IMAGE_OPTIONS);
 });
 
-test("OCR image settings reject unsafe values", () => {
-  assert.throws(
-    () => ocrImageOptions({ SCORE_IMAGE_MAX_EDGE: "256" }),
-    /SCORE_IMAGE_MAX_EDGE must be an integer from 512 through 8192/,
-  );
-  assert.throws(
-    () => ocrImageOptions({ SCORE_IMAGE_JPEG_QUALITY: "101" }),
-    /SCORE_IMAGE_JPEG_QUALITY must be an integer from 1 through 100/,
-  );
-});
-
 test("HEIC detection accepts MIME types and filename extensions", () => {
   assert.equal(isHeicImage({ mimeType: "image/heic" }), true);
   assert.equal(isHeicImage({ mimeType: "image/heif; charset=binary" }), true);

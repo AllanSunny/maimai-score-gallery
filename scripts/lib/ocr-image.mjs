@@ -17,19 +17,8 @@ function integerSetting(name, value, { minimum, maximum }) {
   return parsed;
 }
 
-export function ocrImageOptions(environment = process.env) {
-  return {
-    maxEdge: integerSetting(
-      "SCORE_IMAGE_MAX_EDGE",
-      environment.SCORE_IMAGE_MAX_EDGE ?? DEFAULT_OCR_IMAGE_OPTIONS.maxEdge,
-      { minimum: 512, maximum: 8192 },
-    ),
-    jpegQuality: integerSetting(
-      "SCORE_IMAGE_JPEG_QUALITY",
-      environment.SCORE_IMAGE_JPEG_QUALITY ?? DEFAULT_OCR_IMAGE_OPTIONS.jpegQuality,
-      { minimum: 1, maximum: 100 },
-    ),
-  };
+export function ocrImageOptions() {
+  return { ...DEFAULT_OCR_IMAGE_OPTIONS };
 }
 
 export function isHeicImage({ mimeType = "", fileName = "" }) {

@@ -76,7 +76,8 @@ function cachedScore(record, sourceHash) {
 
 async function main() {
   const { limit } = argumentsFrom(process.argv.slice(2));
-  const timeZone = process.env.SCORE_CAPTURE_TIME_ZONE?.trim() || "America/New_York";
+  const timeZone = process.env.SCORE_CAPTURE_TIME_ZONE?.trim();
+  if (!timeZone) throw new Error("SCORE_CAPTURE_TIME_ZONE is required.");
   const drive = await createDriveImageStore();
   const resolver = createSongTitleResolver();
   const [importLog, scoreWriter, reviewQueue, existingScoreRows] = await Promise.all([

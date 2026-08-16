@@ -4,8 +4,11 @@ import { requiredEnvironment } from "./google-auth.mjs";
 
 const maimaiScorePromptUrl = new URL("./maimai-score-prompt.md", import.meta.url);
 export const SCORE_OCR_PROMPT_VERSION = "2026-08-15-v5";
-const details = new Set(["low", "high", "auto", "original"]);
-const reasoningEfforts = new Set(["minimal", "low", "medium", "high"]);
+const SCORE_OCR_OPTIONS = Object.freeze({
+  detail: "high",
+  reasoningEffort: "low",
+  maxOutputTokens: 5000,
+});
 
 const nullableNumber = { type: ["number", "null"] };
 const judgmentProperties = {
@@ -63,32 +66,10 @@ const SCORE_OCR_SCHEMA = {
   ],
 };
 
-function integerSetting(name, value, { minimum, maximum }) {
-  const parsed = Number(value);
-  if (!Number.isInteger(parsed) || parsed < minimum || parsed > maximum) {
-    throw new Error(`${name} must be an integer from ${minimum} through ${maximum}.`);
-  }
-  return parsed;
-}
-
 export function scoreOcrOptions(environment = process.env) {
-  const detail = environment.OPENAI_IMAGE_DETAIL?.trim() || "high";
-  if (!details.has(detail)) {
-    throw new Error("OPENAI_IMAGE_DETAIL must be low, high, auto, or original.");
-  }
-  const reasoningEffort = environment.OPENAI_REASONING_EFFORT?.trim() || "low";
-  if (!reasoningEfforts.has(reasoningEffort)) {
-    throw new Error("OPENAI_REASONING_EFFORT must be minimal, low, medium, or high.");
-  }
   return {
+    ...SCORE_OCR_OPTIONS,
     model: environment.OPENAI_OCR_MODEL?.trim() || "gpt-5.5",
-    detail,
-    reasoningEffort,
-    maxOutputTokens: integerSetting(
-      "OPENAI_OCR_MAX_OUTPUT_TOKENS",
-      environment.OPENAI_OCR_MAX_OUTPUT_TOKENS?.trim() || 5000,
-      { minimum: 500, maximum: 10000 },
-    ),
   };
 }
 

@@ -2,7 +2,12 @@ import { execFile } from "node:child_process";
 import { promisify } from "node:util";
 
 const execFileAsync = promisify(execFile);
-const DEFAULT_SEGA_CATALOG_URL = "https://maimai.sega.jp/data/maimai_songs.json";
+
+function requiredEnvironment(name) {
+  const value = process.env[name]?.trim();
+  if (!value) throw new Error(`${name} is required.`);
+  return value;
+}
 
 async function downloadJson(url, label = "JSON") {
   let stdout;
@@ -29,7 +34,7 @@ async function downloadJson(url, label = "JSON") {
 }
 
 export function createSegaCatalogLoader({
-  url = process.env.SEGA_CATALOG_URL ?? DEFAULT_SEGA_CATALOG_URL,
+  url = requiredEnvironment("SEGA_CATALOG_URL"),
   download = downloadJson,
 } = {}) {
   let catalogPromise;
