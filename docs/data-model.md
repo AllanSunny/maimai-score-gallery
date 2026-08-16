@@ -34,7 +34,7 @@ interface ScoreRecord {
   chartConstant?: number;
   achievement: number;         // Percentage on a 0–101 scale
   combo: string;
-  sync: string;
+  sync: "Sync" | "FS" | "FS+" | "FDX" | "FDX+" | null;
   rating: number;
   ratingChange: number;
   fast: number | null;         // null when timing counts are unavailable

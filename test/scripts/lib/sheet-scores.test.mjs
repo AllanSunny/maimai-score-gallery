@@ -78,3 +78,15 @@ test("rounds achievement percentages to four decimal places", () => {
 
   assert.equal(score.achievement, 100.5);
 });
+
+test("normalizes missing and legacy None sync statuses to null", () => {
+  const base = {
+    "Date / Time": "2026-05-21T22:34:15.000Z",
+    "Song Title": "Monitoring",
+    "Achievement %": "100%",
+  };
+  const [blankSync] = parseScoreRows([headers, scoreRow(base)]);
+  const [legacyNone] = parseScoreRows([headers, scoreRow({ ...base, "Sync Status": "None" })]);
+  assert.equal(blankSync.sync, null);
+  assert.equal(legacyNone.sync, null);
+});

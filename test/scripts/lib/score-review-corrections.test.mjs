@@ -84,7 +84,6 @@ test("a manual score may omit all judgment counts", () => {
       "Corrected Difficulty": "EXPERT",
       "Corrected Achievement %": 97.5,
       "Corrected Combo Status": "Clear",
-      "Corrected Sync Status": "None",
       "Corrected Rating": 14000,
     },
     correctedJudgments: {},
@@ -107,4 +106,18 @@ test("review corrections reject invalid judgment counts", () => {
     }),
     /Corrected Great Slides must be a non-negative integer/,
   );
+});
+
+test("review corrections accept generic Sync Play", () => {
+  const corrected = applyReviewCorrections(score(), {
+    correctedScoreFields: { "Corrected Sync Status": "sync" },
+  });
+  assert.equal(corrected.sync, "Sync");
+});
+
+test("review corrections normalize legacy None to a null sync status", () => {
+  const corrected = applyReviewCorrections(score(), {
+    correctedScoreFields: { "Corrected Sync Status": "none" },
+  });
+  assert.equal(corrected.sync, null);
 });

@@ -45,6 +45,11 @@ function percentageValue(value) {
   return Number(percentage.toFixed(4));
 }
 
+function syncValue(value) {
+  const sync = String(value ?? "").trim();
+  return !sync || sync.toLocaleLowerCase() === "none" ? null : sync;
+}
+
 function timeZoneParts(date, timeZone) {
   const parts = new Intl.DateTimeFormat("en-US", {
     timeZone,
@@ -180,7 +185,7 @@ export function parseScoreRows(rows) {
       level: String(cell(row, headers, "Chart Level") || "").trim(),
       achievement,
       combo: String(cell(row, headers, "Combo Status") || "").trim(),
-      sync: String(cell(row, headers, "Sync Status") || "").trim(),
+      sync: syncValue(cell(row, headers, "Sync Status")),
       rating: numberValue(cell(row, headers, "Rating")),
       ratingChange: numberValue(cell(row, headers, "Rating Change")),
       judgments: judgmentSet(row, headers),

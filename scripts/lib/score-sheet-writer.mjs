@@ -59,7 +59,7 @@ export function scoreSheetValues(score) {
       score.level,
       score.achievement / 100,
     ],
-    statuses: [score.combo, score.sync, score.rating, score.ratingChange],
+    statuses: [score.combo, score.sync ?? "", score.rating, score.ratingChange],
     judgments: [
       ...judgmentValues(score.judgments),
       score.fast ?? "",

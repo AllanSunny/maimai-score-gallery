@@ -50,6 +50,14 @@ function correctedChoice(value, header, choices) {
   return match;
 }
 
+function correctedSync(value) {
+  if (blank(value)) return null;
+  const match = ["None", "Sync", "FS", "FS+", "FDX", "FDX+"]
+    .find((choice) => choice.toLocaleLowerCase() === String(value).trim().toLocaleLowerCase());
+  if (!match) throw new Error("Corrected Sync Status must be one of: None, Sync, FS, FS+, FDX, FDX+.");
+  return match === "None" ? null : match;
+}
+
 function correctedValue(review, header) {
   return review?.correctedScoreFields?.[header];
 }
@@ -79,7 +87,6 @@ export function manualScoreFromReview(review) {
     "Corrected Difficulty",
     "Corrected Achievement %",
     "Corrected Combo Status",
-    "Corrected Sync Status",
     "Corrected Rating",
   ];
   if (requiredHeaders.some((header) => blank(fields[header]))) return null;
@@ -109,9 +116,7 @@ export function manualScoreFromReview(review) {
     combo: correctedChoice(fields["Corrected Combo Status"], "Corrected Combo Status", [
       "AP+", "AP", "FC+", "FC", "Clear",
     ]),
-    sync: correctedChoice(fields["Corrected Sync Status"], "Corrected Sync Status", [
-      "None", "FS", "FS+", "FDX", "FDX+",
-    ]),
+    sync: correctedSync(fields["Corrected Sync Status"]),
     rating: correctedNumber(fields["Corrected Rating"], "Corrected Rating", { integer: true, minimum: 0 }),
     ratingChange: correctedNumber(fields["Corrected Rating Change"], "Corrected Rating Change", { integer: true }) ?? 0,
     judgments: Object.fromEntries(Object.values(judgmentHeaders).map((judgment, index) => [
@@ -140,14 +145,13 @@ export function applyReviewCorrections(score, review) {
   const combo = correctedChoice(fields["Corrected Combo Status"], "Corrected Combo Status", [
     "AP+", "AP", "FC+", "FC", "Clear",
   ]);
-  const sync = correctedChoice(fields["Corrected Sync Status"], "Corrected Sync Status", [
-    "None", "FS", "FS+", "FDX", "FDX+",
-  ]);
+  const hasSyncCorrection = !blank(fields["Corrected Sync Status"]);
+  const sync = correctedSync(fields["Corrected Sync Status"]);
   if (chartType) corrected.chartType = chartType;
   if (difficulty) corrected.difficulty = difficulty;
   if (!blank(fields["Corrected Chart Level"])) corrected.level = String(fields["Corrected Chart Level"]).trim();
   if (combo) corrected.combo = combo;
-  if (sync) corrected.sync = sync;
+  if (hasSyncCorrection) corrected.sync = sync;
   const numericCorrections = [
     ["Corrected Achievement %", "achievement", { minimum: 0, maximum: 101 }],
     ["Corrected Rating", "rating", { integer: true, minimum: 0 }],

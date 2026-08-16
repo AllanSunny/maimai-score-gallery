@@ -1,5 +1,6 @@
 export type Difficulty = "BASIC" | "ADVANCED" | "EXPERT" | "MASTER" | "Re:MASTER";
 export type ChartType = "DX" | "STD";
+export type SyncStatus = "Sync" | "FS" | "FS+" | "FDX" | "FDX+";
 
 export interface Chart {
   id: string;
@@ -67,7 +68,7 @@ export interface ScoreRecord {
   chartConstant?: number;
   achievement: number;
   combo: string;
-  sync: string;
+  sync: SyncStatus | null;
   rating: number;
   ratingChange: number;
   fast: number | null;
