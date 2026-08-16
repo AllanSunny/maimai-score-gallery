@@ -254,6 +254,26 @@ async function main() {
           await writeReport();
           return;
         }
+        if (latestImport?.status === "REJECTED" && !initialReview) {
+          let cachedTitle = "";
+          try {
+            cachedTitle = JSON.parse(latestImport.ocrJson || "null")?.visibleTitle ?? "";
+          } catch {
+            // A malformed old cache should not prevent recreating its review row.
+          }
+          await sheetWrite(() => reviewQueue.upsertRejection({
+            driveFileId: file.id,
+            filename: file.name,
+            error: latestImport.error || "The previous import attempt was rejected.",
+            ocrTitle: cachedTitle,
+          }));
+          result.status = "awaiting-review";
+          result.importLogRow = latestImport.rowNumber;
+          console.log("  Recreated the missing Score Import Review row; no OCR request made.");
+          results.push(result);
+          await writeReport();
+          return;
+        }
         if (latestImport?.status === "REJECTED" && !reviewQueue.shouldRetry(initialReview)) {
           result.status = "awaiting-review";
           result.importLogRow = latestImport.rowNumber;

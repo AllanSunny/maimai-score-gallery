@@ -1,5 +1,6 @@
 import { createGoogleClients, requiredEnvironment } from "./google-auth.mjs";
 import { IMPORT_LOG_SHEET_NAME } from "./import-log.mjs";
+import { ensureSheetRow } from "./sheet-grid.mjs";
 
 const SCORE_HEADERS = {
   first: ["Date / Time", "Song Title", "Chart Type", "Difficulty", "Chart Level", "Achievement %"],
@@ -90,7 +91,7 @@ export async function createScoreSheetWriter() {
   const { sheets } = await createGoogleClients();
   const metadata = await sheets.spreadsheets.get({
     spreadsheetId,
-    fields: "properties(timeZone),sheets.properties(sheetId,title)",
+    fields: "properties(timeZone),sheets.properties(sheetId,title,gridProperties.rowCount)",
   });
   const headerResponse = await sheets.spreadsheets.values.get({
     spreadsheetId,
@@ -112,11 +113,20 @@ export async function createScoreSheetWriter() {
     valueRenderOption: "FORMATTED_VALUE",
   });
   const rows = scoreResponse.data.values ?? [];
+  let rowCount = worksheet.properties.gridProperties?.rowCount ?? 0;
 
   return {
     async append(score, importedLog = null) {
       const rowNumber = firstAvailableScoreRow(rows);
       const values = scoreSheetValues(score);
+
+      rowCount = await ensureSheetRow({
+        sheets,
+        spreadsheetId,
+        sheetId: worksheet.properties.sheetId,
+        rowNumber,
+        rowCount,
+      });
 
       await sheets.spreadsheets.batchUpdate({
         spreadsheetId,

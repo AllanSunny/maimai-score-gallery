@@ -1,4 +1,5 @@
 import { createGoogleClients, requiredEnvironment } from "./google-auth.mjs";
+import { ensureSheetRow } from "./sheet-grid.mjs";
 
 const REVIEW_SHEET_NAME = "Score Import Review";
 export const REVIEW_STATUSES = Object.freeze({
@@ -50,6 +51,13 @@ export function isManualReviewEntry(entry) {
 
 export function isReusableReviewRow(entry) {
   return !entry.hasContent;
+}
+
+export function reviewRowHasContent(row) {
+  return row.some((cell, index) => {
+    if (index === headerIndexes.get("Retry")) return cell === true || String(cell).toLowerCase() === "true";
+    return cell !== "" && cell !== null && cell !== undefined;
+  });
 }
 
 function columnName(index) {
@@ -106,20 +114,43 @@ function record(row, index) {
       : Number(value(row, "Spreadsheet Row")),
     lastAttempted: String(value(row, "Last Attempted (UTC)")),
     driveFileId: String(value(row, "Drive File ID")),
-    hasContent: row.some((cell) => cell !== "" && cell !== null && cell !== undefined),
+    hasContent: reviewRowHasContent(row),
   };
 }
 
 export async function createReviewQueue() {
   const spreadsheetId = requiredEnvironment("GOOGLE_SPREADSHEET_ID");
   const { sheets } = await createGoogleClients();
-  const headerResponse = await sheets.spreadsheets.values.get({
-    spreadsheetId,
-    range: `${quotedSheetName()}!A1:${columnName(headers.length - 1)}1`,
-    valueRenderOption: "FORMATTED_VALUE",
-  });
+  const [headerResponse, metadata] = await Promise.all([
+    sheets.spreadsheets.values.get({
+      spreadsheetId,
+      range: `${quotedSheetName()}!A1:${columnName(headers.length - 1)}1`,
+      valueRenderOption: "FORMATTED_VALUE",
+    }),
+    sheets.spreadsheets.get({
+      spreadsheetId,
+      fields: "sheets.properties(sheetId,title,gridProperties.rowCount)",
+    }),
+  ]);
   if (JSON.stringify(headerResponse.data.values?.[0] ?? []) !== JSON.stringify(headers)) {
     throw new Error(`${REVIEW_SHEET_NAME} has an unexpected header structure.`);
+  }
+  const worksheet = metadata.data.sheets?.find(
+    ({ properties }) => properties?.title === REVIEW_SHEET_NAME,
+  );
+  if (worksheet?.properties?.sheetId === undefined) {
+    throw new Error(`${REVIEW_SHEET_NAME} was not found.`);
+  }
+  let rowCount = worksheet.properties.gridProperties?.rowCount ?? 0;
+
+  async function ensureRowExists(rowNumber) {
+    rowCount = await ensureSheetRow({
+      sheets,
+      spreadsheetId,
+      sheetId: worksheet.properties.sheetId,
+      rowNumber,
+      rowCount,
+    });
   }
 
   let recordCache = null;
@@ -195,6 +226,7 @@ export async function createReviewQueue() {
       const entries = await records();
       const empty = entries.find(isReusableReviewRow);
       const rowNumber = empty?.rowNumber ?? (entries.at(-1)?.rowNumber ?? 1) + 1;
+      await ensureRowExists(rowNumber);
       await sheets.spreadsheets.values.update({
         spreadsheetId,
         range: `${quotedSheetName()}!A${rowNumber}:${columnName(headers.length - 1)}${rowNumber}`,

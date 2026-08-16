@@ -3,6 +3,7 @@ import test from "node:test";
 import {
   isManualReviewEntry,
   isReusableReviewRow,
+  reviewRowHasContent,
 } from "./review-queue.mjs";
 
 test("a checked Review row without a Drive file is a manual import", () => {
@@ -29,4 +30,10 @@ test("a checked Review row without a Drive file is a manual import", () => {
 test("only a completely empty review row can be reused for an image rejection", () => {
   assert.equal(isReusableReviewRow({ driveFileId: "", hasContent: false }), true);
   assert.equal(isReusableReviewRow({ driveFileId: "", hasContent: true }), false);
+});
+
+test("an unchecked checkbox does not make a preallocated review row occupied", () => {
+  assert.equal(reviewRowHasContent(["", "", false]), false);
+  assert.equal(reviewRowHasContent(["", "", true]), true);
+  assert.equal(reviewRowHasContent(["Manual score", "Review", false]), true);
 });
