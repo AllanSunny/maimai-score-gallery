@@ -26,6 +26,10 @@ function finiteNumber(value, path, { integer = false, minimum, maximum } = {}) {
   return value;
 }
 
+function roundedAchievement(value) {
+  return Number(value.toFixed(4));
+}
+
 function judgmentSet(values, path) {
   if (!values || typeof values !== "object") {
     throw new ScoreValidationError("UNREADABLE_VALUE", `${path} is unreadable.`);
@@ -127,7 +131,9 @@ export function proposedScoreRecord({ ocr, resolution, capturedAt }) {
     chartType: resolution.chart.chartType,
     difficulty: resolution.chart.difficulty,
     level: resolution.chart.level,
-    achievement: finiteNumber(ocr.achievement, "achievement", { minimum: 0, maximum: 101 }),
+    achievement: roundedAchievement(
+      finiteNumber(ocr.achievement, "achievement", { minimum: 0, maximum: 101 }),
+    ),
     combo: ocr.combo,
     sync: ocr.sync,
     rating: finiteNumber(ocr.rating, "rating", { integer: true, minimum: 0 }),

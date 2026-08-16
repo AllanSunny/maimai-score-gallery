@@ -43,7 +43,12 @@ function storedScoreFingerprint(score) {
 }
 
 function storedScore(score, chartId) {
-  return { ...score, chartId, judgmentsByType: score.judgmentsByType ?? null };
+  return {
+    ...score,
+    achievement: Number(Number(score.achievement).toFixed(4)),
+    chartId,
+    judgmentsByType: score.judgmentsByType ?? null,
+  };
 }
 
 async function main() {

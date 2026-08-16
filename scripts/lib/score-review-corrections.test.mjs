@@ -25,7 +25,7 @@ test("review corrections override only populated judgment cells", () => {
     correctedTitle: "Correct Title",
     correctedArtist: "Correct Artist",
     correctedScoreFields: {
-      "Corrected Achievement %": 100.1234,
+      "Corrected Achievement %": 100.12344999999999,
       "Corrected Combo Status": "ap",
       "Corrected Rating Change": -2,
     },

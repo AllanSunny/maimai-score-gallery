@@ -39,6 +39,10 @@ function correctedNumber(value, header, { integer = false, minimum, maximum } = 
   return parsed;
 }
 
+function roundedAchievement(value) {
+  return Number(value.toFixed(4));
+}
+
 function correctedChoice(value, header, choices) {
   if (blank(value)) return null;
   const match = choices.find((choice) => choice.toLocaleLowerCase() === String(value).trim().toLocaleLowerCase());
@@ -94,10 +98,12 @@ export function manualScoreFromReview(review) {
       "BASIC", "ADVANCED", "EXPERT", "MASTER", "Re:MASTER",
     ]),
     level: String(fields["Corrected Chart Level"] ?? "").trim(),
-    achievement: correctedNumber(fields["Corrected Achievement %"], "Corrected Achievement %", {
-      minimum: 0,
-      maximum: 101,
-    }),
+    achievement: roundedAchievement(
+      correctedNumber(fields["Corrected Achievement %"], "Corrected Achievement %", {
+        minimum: 0,
+        maximum: 101,
+      }),
+    ),
     combo: correctedChoice(fields["Corrected Combo Status"], "Corrected Combo Status", [
       "AP+", "AP", "FC+", "FC", "Clear",
     ]),
@@ -150,7 +156,7 @@ export function applyReviewCorrections(score, review) {
   ];
   numericCorrections.forEach(([header, field, options]) => {
     const value = correctedNumber(fields[header], header, options);
-    if (value !== null) corrected[field] = value;
+    if (value !== null) corrected[field] = field === "achievement" ? roundedAchievement(value) : value;
   });
 
   Object.entries(judgmentHeaders).forEach(([label, judgment]) => {

@@ -41,7 +41,8 @@ function numberValue(value, fallback = 0) {
 function percentageValue(value) {
   const parsed = numberValue(value, Number.NaN);
   if (!Number.isFinite(parsed)) return null;
-  return parsed <= 2 ? Number((parsed * 100).toFixed(10)) : parsed;
+  const percentage = parsed <= 2 ? parsed * 100 : parsed;
+  return Number(percentage.toFixed(4));
 }
 
 function timeZoneParts(date, timeZone) {

@@ -65,3 +65,13 @@ test("omits a judgment breakdown when every note-type cell is blank", () => {
   assert.equal(score.achievement, 99.1234);
   assert.equal(score.judgmentsByType, null);
 });
+
+test("rounds achievement percentages to four decimal places", () => {
+  const [score] = parseScoreRows([headers, scoreRow({
+    "Date / Time": "2026-05-21T22:34:15.000Z",
+    "Song Title": "Monitoring",
+    "Achievement %": "1.005",
+  })]);
+
+  assert.equal(score.achievement, 100.5);
+});

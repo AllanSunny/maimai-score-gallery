@@ -40,6 +40,13 @@ test("proposed score uses canonical catalog identity and chart level", () => {
   assert.equal(record.playedAt, "2026-08-15T16:35:20.000Z");
 });
 
+test("rounds imported achievements to four decimal places", () => {
+  const input = validInput();
+  input.ocr.achievement = 100.49999999999999;
+
+  assert.equal(proposedScoreRecord(input).achievement, 100.5);
+});
+
 test("proposed score falls back from missing critical perfect to perfect", () => {
   const input = validInput();
   input.ocr.judgments.criticalPerfect = null;
