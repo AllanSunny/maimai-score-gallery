@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-16T06:28:31.334Z",
+  "updatedAt": "2026-08-16T14:44:40.789Z",
   "scores": [
     {
       "playedAt": "2025-11-10T02:30:43.000Z",
@@ -4163,6 +4163,30 @@
       "fast": 17,
       "slow": 0,
       "id": "ObaLyGhWqjNdYT9q-CiarXHRUyBuN1vpTS7K1ePPgvU",
+      "chartId": "song-21c8a54c340b-std-expert"
+    },
+    {
+      "playedAt": "2025-11-12T01:03:33.000Z",
+      "songTitle": "初音ミクの激唱",
+      "chartType": "STD",
+      "difficulty": "EXPERT",
+      "level": "12",
+      "achievement": 100.4022,
+      "combo": "FC+",
+      "sync": "None",
+      "rating": 10098,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 546,
+        "perfect": 546,
+        "great": 17,
+        "good": 0,
+        "miss": 0
+      },
+      "judgmentsByType": null,
+      "fast": 17,
+      "slow": 0,
+      "id": "yzLHlfx636HYfyVHh4yyPINh3lAo5pl-kNfIhrBZGWo",
       "chartId": "song-21c8a54c340b-std-expert"
     },
     {
@@ -25283,6 +25307,66 @@
       "fast": 9,
       "slow": 7,
       "id": "4lg9pGYgyiteQwjWsT5KmfHLNBH-Fv6Z1ZGlMGRwZNc",
+      "chartId": "song-1c2a0228b93f-dx-master"
+    },
+    {
+      "playedAt": "2026-01-01T00:13:00.000Z",
+      "songTitle": "ツギハギスタッカート",
+      "chartType": "DX",
+      "difficulty": "MASTER",
+      "level": "12+",
+      "achievement": 100.57,
+      "combo": "FC",
+      "sync": "FS+",
+      "rating": 13714,
+      "ratingChange": 18,
+      "judgments": {
+        "criticalPerfect": 437,
+        "perfect": 152,
+        "great": 7,
+        "good": 3,
+        "miss": 0
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 7,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 233,
+          "perfect": 134,
+          "great": 5,
+          "good": 3,
+          "miss": 0
+        },
+        "hold": {
+          "criticalPerfect": 30,
+          "perfect": 18,
+          "great": 1,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 66,
+          "perfect": 0,
+          "great": 1,
+          "good": 0,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 101,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 3,
+      "slow": 7,
+      "id": "oqi6T82lxgH8NkWQpq51zKJxttYUMeGTUULLiADEb_o",
       "chartId": "song-1c2a0228b93f-dx-master"
     },
     {
