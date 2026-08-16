@@ -18,13 +18,20 @@ function score(overrides = {}) {
 
 test("archive reconciliation replaces mutable score fields instead of appending a play", () => {
   const archived = score();
-  const corrected = score({ sync: "Sync", achievement: 97.3 });
+  const corrected = score({ sync: "Sync" });
   const result = reconcileScoreArchive([archived], [corrected], (value) => value);
   assert.equal(result.added, 0);
   assert.equal(result.updated, 1);
   assert.equal(result.scores.length, 1);
   assert.equal(result.scores[0].sync, "Sync");
-  assert.equal(result.scores[0].achievement, 97.3);
+});
+
+test("archive reconciliation preserves distinct achievements with colliding timestamps", () => {
+  const first = score({ achievement: 100.4 });
+  const second = score({ id: "second", achievement: 100.4022 });
+  const result = reconcileScoreArchive([first, second], [], (value) => value);
+  assert.equal(result.changed, false);
+  assert.equal(result.scores.length, 2);
 });
 
 test("archive reconciliation preserves historical plays absent from the sheet", () => {

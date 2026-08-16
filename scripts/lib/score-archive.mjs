@@ -12,6 +12,7 @@ export function archivedPlayIdentity(score) {
     normalizedIdentityPart(score.songTitle),
     String(score.chartType ?? "").trim().toUpperCase(),
     String(score.difficulty ?? "").trim().toUpperCase(),
+    Number(score.achievement).toFixed(4),
   ].join("|");
 }
 
