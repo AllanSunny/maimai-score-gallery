@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-16T15:06:07.481Z",
+  "updatedAt": "2026-08-16T23:26:18.000Z",
   "scores": [
     {
       "playedAt": "2025-11-10T02:30:43.000Z",
@@ -4080,30 +4080,6 @@
       "slow": 7,
       "id": "x0opCA5Nl3uT2CwZerlQvZZgfH943J-TYiU-owxG0fE",
       "chartId": "song-6d47ffabb20e-dx-expert"
-    },
-    {
-      "playedAt": "2025-11-12T01:03:33.000Z",
-      "songTitle": "初音ミクの激唱",
-      "chartType": "STD",
-      "difficulty": "EXPERT",
-      "level": "12",
-      "achievement": 100.4,
-      "combo": "FC+",
-      "sync": null,
-      "rating": 10098,
-      "ratingChange": 0,
-      "judgments": {
-        "criticalPerfect": 546,
-        "perfect": 546,
-        "great": 17,
-        "good": 0,
-        "miss": 0
-      },
-      "judgmentsByType": null,
-      "fast": 17,
-      "slow": 0,
-      "id": "ObaLyGhWqjNdYT9q-CiarXHRUyBuN1vpTS7K1ePPgvU",
-      "chartId": "song-21c8a54c340b-std-expert"
     },
     {
       "playedAt": "2025-11-12T01:03:33.000Z",
