@@ -1,0 +1,26 @@
+scripts/lib/maimai-score-prompt.md
+  s_b095ac8202e2ae::t_156453b2cb6d8b 14
+scripts/lib/openai-score-ocr.mjs
+  s_b095ac8202e2ae::t_156453b2cb6d8b 6
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.22",
+  "base_commit_sha": "7e80b8b63ddf0aefa6f328de8da1f70e7aa65e15",
+  "prompts": {},
+  "humans": {
+    "h_278fafc5c28027": {
+      "author": "Allan Sun <allansun@live.com>"
+    }
+  },
+  "sessions": {
+    "s_b095ac8202e2ae": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a00926-8e56-79c2-b8b8-f78f5453cf73",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Allan Sun <allansun@live.com>"
+    }
+  }
+}
