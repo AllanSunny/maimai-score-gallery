@@ -1,0 +1,14 @@
+src/data/overrides.json
+  h_278fafc5c28027 6
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.22",
+  "base_commit_sha": "bdc37f42d290d6ff1713f548f184f1c5d51bd637",
+  "prompts": {},
+  "humans": {
+    "h_278fafc5c28027": {
+      "author": "Allan Sun <allansun@live.com>"
+    }
+  }
+}
