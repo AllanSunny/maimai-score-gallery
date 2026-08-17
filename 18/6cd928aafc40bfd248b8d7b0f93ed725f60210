@@ -1,0 +1,30 @@
+.github/workflows/audit-legacy-sync-status.yml
+  s_2d266366fb3f9b::t_b8d3e758c87bb4 108
+scripts/validate-data.mjs
+  s_2d266366fb3f9b::t_b8d3e758c87bb4 9,21-28,30-31
+.github/workflows/import-new-scores.yml
+  s_2d266366fb3f9b::t_b8d3e758c87bb4 210,241
+package.json
+  s_2d266366fb3f9b::t_b8d3e758c87bb4 16
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.22",
+  "base_commit_sha": "186cd928aafc40bfd248b8d7b0f93ed725f60210",
+  "prompts": {},
+  "humans": {
+    "h_278fafc5c28027": {
+      "author": "Allan Sun <allansun@live.com>"
+    }
+  },
+  "sessions": {
+    "s_2d266366fb3f9b": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a00ddd-dd81-7e70-ad6c-e3e2c9ca9ef7",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Allan Sun <allansun@live.com>"
+    }
+  }
+}
