@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-17T00:17:01.617Z",
+  "generatedAt": "2026-08-17T03:58:44.470Z",
   "charts": {
     "song-00dec12931e6-std-expert": {
       "chartId": "song-00dec12931e6-std-expert",
@@ -227,21 +227,21 @@
     },
     "song-0ac24dd304e4-dx-master": {
       "chartId": "song-0ac24dd304e4-dx-master",
-      "playCount": 8,
+      "playCount": 7,
       "bestAchievement": {
-        "value": 100.0169,
-        "scoreId": "QzpsMmgw4NVBmZotUEF9SnUNOgd3I7SmW4pGdYbotrM",
-        "playedAt": "2026-01-07T18:08:48.000Z"
+        "value": 98.7324,
+        "scoreId": "kaaWfOySpspgbO8dq-Q25R3Lz7IM3W1Q-Aep_XU1hkU",
+        "playedAt": "2026-01-03T22:54:48.000Z"
       },
       "bestCombo": {
         "status": "Clear",
-        "scoreId": "QzpsMmgw4NVBmZotUEF9SnUNOgd3I7SmW4pGdYbotrM",
-        "playedAt": "2026-01-07T18:08:48.000Z"
+        "scoreId": "kaaWfOySpspgbO8dq-Q25R3Lz7IM3W1Q-Aep_XU1hkU",
+        "playedAt": "2026-01-03T22:54:48.000Z"
       },
       "bestSync": {
         "status": "Sync",
-        "scoreId": "QzpsMmgw4NVBmZotUEF9SnUNOgd3I7SmW4pGdYbotrM",
-        "playedAt": "2026-01-07T18:08:48.000Z"
+        "scoreId": "kaaWfOySpspgbO8dq-Q25R3Lz7IM3W1Q-Aep_XU1hkU",
+        "playedAt": "2026-01-03T22:54:48.000Z"
       },
       "historyChunks": [
         "2025-11",
@@ -4488,25 +4488,20 @@
     },
     "song-aa146dfca961-dx-re-master": {
       "chartId": "song-aa146dfca961-dx-re-master",
-      "playCount": 2,
+      "playCount": 1,
       "bestAchievement": {
-        "value": 100.4398,
-        "scoreId": "GVkPJ4nXcjLem0Sp5Gm6U0s1i0nl0XReA06_T9zbxfk",
-        "playedAt": "2026-01-07T17:45:15.000Z"
+        "value": 99.1941,
+        "scoreId": "CqxNpvz7G2v9ESW7gPxlEgLQhG9FAtQ4j5u0o7mlpYo",
+        "playedAt": "2025-12-31T18:47:01.000Z"
       },
       "bestCombo": {
         "status": "Clear",
-        "scoreId": "GVkPJ4nXcjLem0Sp5Gm6U0s1i0nl0XReA06_T9zbxfk",
-        "playedAt": "2026-01-07T17:45:15.000Z"
+        "scoreId": "CqxNpvz7G2v9ESW7gPxlEgLQhG9FAtQ4j5u0o7mlpYo",
+        "playedAt": "2025-12-31T18:47:01.000Z"
       },
-      "bestSync": {
-        "status": "Sync",
-        "scoreId": "GVkPJ4nXcjLem0Sp5Gm6U0s1i0nl0XReA06_T9zbxfk",
-        "playedAt": "2026-01-07T17:45:15.000Z"
-      },
+      "bestSync": null,
       "historyChunks": [
-        "2025-12",
-        "2026-01"
+        "2025-12"
       ]
     },
     "song-ab52aadc0f84-dx-master": {
