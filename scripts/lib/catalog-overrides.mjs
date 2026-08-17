@@ -54,6 +54,8 @@ export function standaloneCatalogSongs(overrides) {
     const song = {
       title,
       artist: nonempty(override.artist, `${title}.artist`),
+      catcode: nonempty(override.genre, `${title}.genre`),
+      version: override.version ?? null,
       image_url: null,
       matchTitles: titleValues(title, override),
       standaloneOverride: override,

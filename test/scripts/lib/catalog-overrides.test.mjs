@@ -8,6 +8,8 @@ test("standalone overrides become resolver-compatible catalog songs", () => {
       standalone: true,
       id: "removed-song",
       artist: "Former Artist",
+      genre: "Game & Variety",
+      version: null,
       jacketKey: null,
       titles: { english: ["archived song"], aliases: ["old song"] },
       charts: {
@@ -21,6 +23,8 @@ test("standalone overrides become resolver-compatible catalog songs", () => {
   assert.equal(songs.length, 1);
   assert.equal(songs[0].title, "Removed Song");
   assert.equal(songs[0].artist, "Former Artist");
+  assert.equal(songs[0].catcode, "Game & Variety");
+  assert.equal(songs[0].version, null);
   assert.equal(songs[0].lev_exp, "12");
   assert.equal(songs[0].lev_mas, "13+");
   assert.deepEqual(songs[0].matchTitles, ["Removed Song", "archived song", "old song"]);
@@ -39,7 +43,16 @@ test("standalone overrides require stable identity, artist, and chart levels", (
       standalone: true,
       id: "removed-song",
       artist: "Artist",
+      genre: "Game & Variety",
       charts: { "DX:MASTER": {} },
     },
   }), /level is required/);
+  assert.throws(() => standaloneCatalogSongs({
+    "Removed Song": {
+      standalone: true,
+      id: "removed-song",
+      artist: "Artist",
+      charts: { "DX:MASTER": { level: "13" } },
+    },
+  }), /genre is required/);
 });

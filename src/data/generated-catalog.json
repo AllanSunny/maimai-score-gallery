@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-16T15:21:09.190Z",
+  "generatedAt": "2026-08-17T00:52:48.585Z",
   "songs": [
     {
       "id": "song-550d332f837c",
@@ -47,7 +47,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "niconico＆ボーカロイド",
+      "introducedIn": {
+        "code": "16000",
+        "name": "PiNK"
+      }
     },
     {
       "id": "song-85572925973b",
@@ -101,7 +106,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "niconico＆ボーカロイド",
+      "introducedIn": {
+        "code": "24000",
+        "name": "BUDDiES"
+      }
     },
     {
       "id": "song-43c1df3f7239",
@@ -149,7 +159,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "オンゲキ＆CHUNITHM",
+      "introducedIn": {
+        "code": "22501",
+        "name": "UNiVERSE PLUS"
+      }
     },
     {
       "id": "song-fea7ee449c3a",
@@ -197,7 +212,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "ゲーム＆バラエティ",
+      "introducedIn": {
+        "code": "21505",
+        "name": "Splash PLUS"
+      }
     },
     {
       "id": "song-5e2b531bd3e7",
@@ -245,7 +265,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "ゲーム＆バラエティ",
+      "introducedIn": {
+        "code": "19910",
+        "name": "FiNALE"
+      }
     },
     {
       "id": "song-d7d117cd566e",
@@ -293,7 +318,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "ゲーム＆バラエティ",
+      "introducedIn": {
+        "code": "26503",
+        "name": "CiRCLE PLUS"
+      }
     },
     {
       "id": "song-5cd51939cf68",
@@ -341,7 +371,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "オンゲキ＆CHUNITHM",
+      "introducedIn": {
+        "code": "24008",
+        "name": "BUDDiES"
+      }
     },
     {
       "id": "song-be125cab7681",
@@ -389,7 +424,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "ゲーム＆バラエティ",
+      "introducedIn": {
+        "code": "14000",
+        "name": "ORANGE"
+      }
     },
     {
       "id": "song-bc39c978dd14",
@@ -437,7 +477,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "ゲーム＆バラエティ",
+      "introducedIn": {
+        "code": "13010",
+        "name": "GreeN PLUS"
+      }
     },
     {
       "id": "song-a33e7097af26",
@@ -491,7 +536,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "オンゲキ＆CHUNITHM",
+      "introducedIn": {
+        "code": "23506",
+        "name": "FESTiVAL PLUS"
+      }
     },
     {
       "id": "song-7fbb1100d70a",
@@ -539,7 +589,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "オンゲキ＆CHUNITHM",
+      "introducedIn": {
+        "code": "24513",
+        "name": "BUDDiES PLUS"
+      }
     },
     {
       "id": "song-66d5f29c249e",
@@ -594,7 +649,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "ゲーム＆バラエティ",
+      "introducedIn": {
+        "code": "10000",
+        "name": "maimai"
+      }
     },
     {
       "id": "song-1e31758513df",
@@ -676,7 +736,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "maimai",
+      "introducedIn": {
+        "code": "19999",
+        "name": "FiNALE"
+      }
     },
     {
       "id": "song-93cc6dbdb85f",
@@ -731,7 +796,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "maimai",
+      "introducedIn": {
+        "code": "20003",
+        "name": "maimai でらっくす"
+      }
     },
     {
       "id": "song-80f1e1dfff6a",
@@ -779,7 +849,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "ゲーム＆バラエティ",
+      "introducedIn": {
+        "code": "19501",
+        "name": "MiLK PLUS"
+      }
     },
     {
       "id": "song-6be6e1b4aabb",
@@ -861,7 +936,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "東方Project",
+      "introducedIn": {
+        "code": "18512",
+        "name": "MURASAKi PLUS"
+      }
     },
     {
       "id": "song-7a8b00a7d2e1",
@@ -909,7 +989,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "maimai",
+      "introducedIn": {
+        "code": "14010",
+        "name": "ORANGE"
+      }
     },
     {
       "id": "song-dc1a2f9d7bd7",
@@ -957,7 +1042,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "ゲーム＆バラエティ",
+      "introducedIn": {
+        "code": "20506",
+        "name": "maimai でらっくす PLUS"
+      }
     },
     {
       "id": "song-fde3e85e71b5",
@@ -1005,7 +1095,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "ゲーム＆バラエティ",
+      "introducedIn": {
+        "code": "25000",
+        "name": "PRiSM"
+      }
     },
     {
       "id": "song-6686d9819edf",
@@ -1053,7 +1148,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "オンゲキ＆CHUNITHM",
+      "introducedIn": {
+        "code": "21007",
+        "name": "Splash"
+      }
     },
     {
       "id": "song-fa9e1d22205a",
@@ -1135,7 +1235,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "ゲーム＆バラエティ",
+      "introducedIn": {
+        "code": "18007",
+        "name": "MURASAKi"
+      }
     },
     {
       "id": "song-cb6762dadd83",
@@ -1183,7 +1288,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "maimai",
+      "introducedIn": {
+        "code": "17005",
+        "name": "PiNK PLUS"
+      }
     },
     {
       "id": "song-2a6b24ad2872",
@@ -1231,7 +1341,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "ゲーム＆バラエティ",
+      "introducedIn": {
+        "code": "19006",
+        "name": "MiLK"
+      }
     },
     {
       "id": "song-90bd6c6ce50c",
@@ -1279,7 +1394,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "ゲーム＆バラエティ",
+      "introducedIn": {
+        "code": "21008",
+        "name": "Splash"
+      }
     },
     {
       "id": "song-18353f1aaac6",
@@ -1327,7 +1447,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "ゲーム＆バラエティ",
+      "introducedIn": {
+        "code": "24006",
+        "name": "BUDDiES"
+      }
     },
     {
       "id": "song-a6ab724eff33",
@@ -1375,7 +1500,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "ゲーム＆バラエティ",
+      "introducedIn": {
+        "code": "25503",
+        "name": "PRiSM PLUS"
+      }
     },
     {
       "id": "song-97019c4e4c6b",
@@ -1423,7 +1553,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "ゲーム＆バラエティ",
+      "introducedIn": {
+        "code": "25506",
+        "name": "PRiSM PLUS"
+      }
     },
     {
       "id": "song-8024e40b450a",
@@ -1471,7 +1606,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "maimai",
+      "introducedIn": {
+        "code": "25004",
+        "name": "PRiSM"
+      }
     },
     {
       "id": "song-dde93d54b099",
@@ -1519,7 +1659,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "東方Project",
+      "introducedIn": {
+        "code": "19011",
+        "name": "MiLK"
+      }
     },
     {
       "id": "song-dca63a8a0a36",
@@ -1567,7 +1712,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "オンゲキ＆CHUNITHM",
+      "introducedIn": {
+        "code": "23000",
+        "name": "FESTiVAL"
+      }
     },
     {
       "id": "song-2f697ac8734d",
@@ -1615,7 +1765,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "ゲーム＆バラエティ",
+      "introducedIn": {
+        "code": "22501",
+        "name": "UNiVERSE PLUS"
+      }
     },
     {
       "id": "song-ece5ea462465",
@@ -1663,7 +1818,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "オンゲキ＆CHUNITHM",
+      "introducedIn": {
+        "code": "25514",
+        "name": "PRiSM PLUS"
+      }
     },
     {
       "id": "song-e82460b7a2b0",
@@ -1711,7 +1871,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "maimai",
+      "introducedIn": {
+        "code": "23500",
+        "name": "FESTiVAL PLUS"
+      }
     },
     {
       "id": "song-b9490351376f",
@@ -1793,7 +1958,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "ゲーム＆バラエティ",
+      "introducedIn": {
+        "code": "19500",
+        "name": "MiLK PLUS"
+      }
     },
     {
       "id": "song-143365395f8e",
@@ -1841,7 +2011,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "maimai",
+      "introducedIn": {
+        "code": "25500",
+        "name": "PRiSM PLUS"
+      }
     },
     {
       "id": "song-eac73a117106",
@@ -1889,7 +2064,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "maimai",
+      "introducedIn": {
+        "code": "25500",
+        "name": "PRiSM PLUS"
+      }
     },
     {
       "id": "song-2fefafbb3dcb",
@@ -1937,7 +2117,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "ゲーム＆バラエティ",
+      "introducedIn": {
+        "code": "19511",
+        "name": "MiLK PLUS"
+      }
     },
     {
       "id": "song-561fa39d3376",
@@ -1985,7 +2170,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "ゲーム＆バラエティ",
+      "introducedIn": {
+        "code": "14004",
+        "name": "ORANGE"
+      }
     },
     {
       "id": "song-75803e67ee31",
@@ -2040,7 +2230,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "maimai",
+      "introducedIn": {
+        "code": "12005",
+        "name": "GreeN"
+      }
     },
     {
       "id": "song-0f7bea3dcbe6",
@@ -2088,7 +2283,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "maimai",
+      "introducedIn": {
+        "code": "22015",
+        "name": "UNiVERSE"
+      }
     },
     {
       "id": "song-4ffbb20786b9",
@@ -2136,7 +2336,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "maimai",
+      "introducedIn": {
+        "code": "16014",
+        "name": "PiNK"
+      }
     },
     {
       "id": "song-7f68f5daaab3",
@@ -2184,7 +2389,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "オンゲキ＆CHUNITHM",
+      "introducedIn": {
+        "code": "22501",
+        "name": "UNiVERSE PLUS"
+      }
     },
     {
       "id": "song-e36fa439473a",
@@ -2232,7 +2442,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "ゲーム＆バラエティ",
+      "introducedIn": {
+        "code": "19910",
+        "name": "FiNALE"
+      }
     },
     {
       "id": "song-2ffef18fba7f",
@@ -2314,7 +2529,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "ゲーム＆バラエティ",
+      "introducedIn": {
+        "code": "22501",
+        "name": "UNiVERSE PLUS"
+      }
     },
     {
       "id": "song-358d0951f9b6",
@@ -2362,7 +2582,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "東方Project",
+      "introducedIn": {
+        "code": "25506",
+        "name": "PRiSM PLUS"
+      }
     },
     {
       "id": "song-bdf8ca5b6c93",
@@ -2412,7 +2637,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "niconico＆ボーカロイド",
+      "introducedIn": {
+        "code": "24000",
+        "name": "BUDDiES"
+      }
     },
     {
       "id": "song-b055770c3a9e",
@@ -2460,7 +2690,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "maimai",
+      "introducedIn": {
+        "code": "25512",
+        "name": "PRiSM PLUS"
+      }
     },
     {
       "id": "song-22be81272e5f",
@@ -2508,7 +2743,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "ゲーム＆バラエティ",
+      "introducedIn": {
+        "code": "24506",
+        "name": "BUDDiES PLUS"
+      }
     },
     {
       "id": "song-a4ad0fb00a09",
@@ -2556,7 +2796,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "maimai",
+      "introducedIn": {
+        "code": "21000",
+        "name": "Splash"
+      }
     },
     {
       "id": "song-7211e50abce8",
@@ -2604,7 +2849,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "maimai",
+      "introducedIn": {
+        "code": "19012",
+        "name": "MiLK"
+      }
     },
     {
       "id": "song-5abbe57460d3",
@@ -2652,7 +2902,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "niconico＆ボーカロイド",
+      "introducedIn": {
+        "code": "21500",
+        "name": "Splash PLUS"
+      }
     },
     {
       "id": "song-d13162a1691c",
@@ -2700,7 +2955,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "ゲーム＆バラエティ",
+      "introducedIn": {
+        "code": "23500",
+        "name": "FESTiVAL PLUS"
+      }
     },
     {
       "id": "song-9e98bf4fc074",
@@ -2748,7 +3008,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "maimai",
+      "introducedIn": {
+        "code": "19503",
+        "name": "MiLK PLUS"
+      }
     },
     {
       "id": "song-eba8086f378f",
@@ -2796,7 +3061,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "オンゲキ＆CHUNITHM",
+      "introducedIn": {
+        "code": "23512",
+        "name": "FESTiVAL PLUS"
+      }
     },
     {
       "id": "song-39500c442baa",
@@ -2844,7 +3114,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "maimai",
+      "introducedIn": {
+        "code": "24002",
+        "name": "BUDDiES"
+      }
     },
     {
       "id": "song-9d4fa1b44975",
@@ -2892,7 +3167,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "ゲーム＆バラエティ",
+      "introducedIn": {
+        "code": "19502",
+        "name": "MiLK PLUS"
+      }
     },
     {
       "id": "song-7ba8a31c8012",
@@ -2946,7 +3226,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "ゲーム＆バラエティ",
+      "introducedIn": {
+        "code": "22506",
+        "name": "UNiVERSE PLUS"
+      }
     },
     {
       "id": "song-400e36d3b8d1",
@@ -2994,7 +3279,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "オンゲキ＆CHUNITHM",
+      "introducedIn": {
+        "code": "25511",
+        "name": "PRiSM PLUS"
+      }
     },
     {
       "id": "song-7f337c54121d",
@@ -3042,7 +3332,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "ゲーム＆バラエティ",
+      "introducedIn": {
+        "code": "25518",
+        "name": "PRiSM PLUS"
+      }
     },
     {
       "id": "song-a7a461d9d280",
@@ -3092,7 +3387,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "niconico＆ボーカロイド",
+      "introducedIn": {
+        "code": "25503",
+        "name": "PRiSM PLUS"
+      }
     },
     {
       "id": "magical-flavor",
@@ -3174,7 +3474,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "maimai",
+      "introducedIn": {
+        "code": "19000",
+        "name": "MiLK"
+      }
     },
     {
       "id": "song-c9c66e98867c",
@@ -3222,7 +3527,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "オンゲキ＆CHUNITHM",
+      "introducedIn": {
+        "code": "24500",
+        "name": "BUDDiES PLUS"
+      }
     },
     {
       "id": "song-8342d656fdb5",
@@ -3304,7 +3614,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "ゲーム＆バラエティ",
+      "introducedIn": {
+        "code": "18503",
+        "name": "MURASAKi PLUS"
+      }
     },
     {
       "id": "song-1950032fc7b5",
@@ -3352,7 +3667,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "niconico＆ボーカロイド",
+      "introducedIn": {
+        "code": "20004",
+        "name": "maimai でらっくす"
+      }
     },
     {
       "id": "song-35335e0f2151",
@@ -3400,7 +3720,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "niconico＆ボーカロイド",
+      "introducedIn": {
+        "code": "25516",
+        "name": "PRiSM PLUS"
+      }
     },
     {
       "id": "song-9125d2108267",
@@ -3448,7 +3773,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "オンゲキ＆CHUNITHM",
+      "introducedIn": {
+        "code": "19514",
+        "name": "MiLK PLUS"
+      }
     },
     {
       "id": "song-e55f5c1d041d",
@@ -3496,7 +3826,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "maimai",
+      "introducedIn": {
+        "code": "24001",
+        "name": "BUDDiES"
+      }
     },
     {
       "id": "song-31cb9c48577d",
@@ -3544,7 +3879,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "ゲーム＆バラエティ",
+      "introducedIn": {
+        "code": "25507",
+        "name": "PRiSM PLUS"
+      }
     },
     {
       "id": "song-ff485a6d8bed",
@@ -3599,7 +3939,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "maimai",
+      "introducedIn": {
+        "code": "21510",
+        "name": "Splash PLUS"
+      }
     },
     {
       "id": "song-44aa05a05ba6",
@@ -3647,7 +3992,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "ゲーム＆バラエティ",
+      "introducedIn": {
+        "code": "24500",
+        "name": "BUDDiES PLUS"
+      }
     },
     {
       "id": "song-9f9806500d04",
@@ -3695,7 +4045,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "ゲーム＆バラエティ",
+      "introducedIn": {
+        "code": "25518",
+        "name": "PRiSM PLUS"
+      }
     },
     {
       "id": "song-4d6db4f3afe0",
@@ -3743,7 +4098,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "東方Project",
+      "introducedIn": {
+        "code": "17012",
+        "name": "PiNK PLUS"
+      }
     },
     {
       "id": "song-325196ba308f",
@@ -3791,7 +4151,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "ゲーム＆バラエティ",
+      "introducedIn": {
+        "code": "24000",
+        "name": "BUDDiES"
+      }
     },
     {
       "id": "song-0ac24dd304e4",
@@ -3873,7 +4238,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "maimai",
+      "introducedIn": {
+        "code": "15007",
+        "name": "ORANGE PLUS"
+      }
     },
     {
       "id": "song-7e974c926826",
@@ -3921,7 +4291,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "maimai",
+      "introducedIn": {
+        "code": "18006",
+        "name": "MURASAKi"
+      }
     },
     {
       "id": "song-6dad40406ef0",
@@ -3969,7 +4344,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "ゲーム＆バラエティ",
+      "introducedIn": {
+        "code": "24502",
+        "name": "BUDDiES PLUS"
+      }
     },
     {
       "id": "song-dcb30aa11bd6",
@@ -4017,7 +4397,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "ゲーム＆バラエティ",
+      "introducedIn": {
+        "code": "25503",
+        "name": "PRiSM PLUS"
+      }
     },
     {
       "id": "song-04e9d7aeae9e",
@@ -4072,7 +4457,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "maimai",
+      "introducedIn": {
+        "code": "19998",
+        "name": "FiNALE"
+      }
     },
     {
       "id": "song-3d08dd4bc3b8",
@@ -4120,7 +4510,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "maimai",
+      "introducedIn": {
+        "code": "24000",
+        "name": "BUDDiES"
+      }
     },
     {
       "id": "song-215555e704fd",
@@ -4168,7 +4563,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "maimai",
+      "introducedIn": {
+        "code": "24004",
+        "name": "BUDDiES"
+      }
     },
     {
       "id": "song-2cdd6e0024e0",
@@ -4216,7 +4616,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "ゲーム＆バラエティ",
+      "introducedIn": {
+        "code": "24000",
+        "name": "BUDDiES"
+      }
     },
     {
       "id": "song-f9b67545230b",
@@ -4264,7 +4669,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "niconico＆ボーカロイド",
+      "introducedIn": {
+        "code": "24016",
+        "name": "BUDDiES"
+      }
     },
     {
       "id": "song-f3b52d4dee79",
@@ -4312,7 +4722,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "maimai",
+      "introducedIn": {
+        "code": "24500",
+        "name": "BUDDiES PLUS"
+      }
     },
     {
       "id": "song-c12dd6c10af2",
@@ -4367,7 +4782,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "maimai",
+      "introducedIn": {
+        "code": "19992",
+        "name": "FiNALE"
+      }
     },
     {
       "id": "song-804aeaf592b9",
@@ -4415,7 +4835,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "maimai",
+      "introducedIn": {
+        "code": "24008",
+        "name": "BUDDiES"
+      }
     },
     {
       "id": "song-32642cb2835b",
@@ -4463,7 +4888,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "ゲーム＆バラエティ",
+      "introducedIn": {
+        "code": "26504",
+        "name": "CiRCLE PLUS"
+      }
     },
     {
       "id": "song-65cbe1e19791",
@@ -4511,7 +4941,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "POPS＆アニメ",
+      "introducedIn": {
+        "code": "25509",
+        "name": "PRiSM PLUS"
+      }
     },
     {
       "id": "song-33f311b290e0",
@@ -4559,7 +4994,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "ゲーム＆バラエティ",
+      "introducedIn": {
+        "code": "25518",
+        "name": "PRiSM PLUS"
+      }
     },
     {
       "id": "song-5012c67acc23",
@@ -4607,7 +5047,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "ゲーム＆バラエティ",
+      "introducedIn": {
+        "code": "24014",
+        "name": "BUDDiES"
+      }
     },
     {
       "id": "song-98cf509c9323",
@@ -4655,7 +5100,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "ゲーム＆バラエティ",
+      "introducedIn": {
+        "code": "20506",
+        "name": "maimai でらっくす PLUS"
+      }
     },
     {
       "id": "song-8c64261afe55",
@@ -4703,7 +5153,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "ゲーム＆バラエティ",
+      "introducedIn": {
+        "code": "19900",
+        "name": "FiNALE"
+      }
     },
     {
       "id": "song-bcdd634d7a4b",
@@ -4757,7 +5212,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "niconico＆ボーカロイド",
+      "introducedIn": {
+        "code": "19500",
+        "name": "MiLK PLUS"
+      }
     },
     {
       "id": "song-7ac6cc6209bc",
@@ -4805,7 +5265,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "maimai",
+      "introducedIn": {
+        "code": "22501",
+        "name": "UNiVERSE PLUS"
+      }
     },
     {
       "id": "song-7d6adc8ac28d",
@@ -4860,7 +5325,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "ゲーム＆バラエティ",
+      "introducedIn": {
+        "code": "22001",
+        "name": "UNiVERSE"
+      }
     },
     {
       "id": "song-abf7a8f529b4",
@@ -4915,7 +5385,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "オンゲキ＆CHUNITHM",
+      "introducedIn": {
+        "code": "20002",
+        "name": "maimai でらっくす"
+      }
     },
     {
       "id": "song-4728d0b5c56d",
@@ -4963,7 +5438,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "ゲーム＆バラエティ",
+      "introducedIn": {
+        "code": "21505",
+        "name": "Splash PLUS"
+      }
     },
     {
       "id": "song-7dc41dc2ff71",
@@ -5011,7 +5491,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "maimai",
+      "introducedIn": {
+        "code": "22501",
+        "name": "UNiVERSE PLUS"
+      }
     },
     {
       "id": "song-b60884cdd97d",
@@ -5059,7 +5544,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "ゲーム＆バラエティ",
+      "introducedIn": {
+        "code": "23502",
+        "name": "FESTiVAL PLUS"
+      }
     },
     {
       "id": "song-ee631b95b7c2",
@@ -5114,7 +5604,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "niconico＆ボーカロイド",
+      "introducedIn": {
+        "code": "11003",
+        "name": "maimai PLUS"
+      }
     },
     {
       "id": "song-7fa77704b857",
@@ -5169,7 +5664,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "maimai",
+      "introducedIn": {
+        "code": "19997",
+        "name": "FiNALE"
+      }
     },
     {
       "id": "song-6729a76da051",
@@ -5217,7 +5717,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "オンゲキ＆CHUNITHM",
+      "introducedIn": {
+        "code": "18019",
+        "name": "MURASAKi"
+      }
     },
     {
       "id": "song-39393f382fcd",
@@ -5265,7 +5770,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "オンゲキ＆CHUNITHM",
+      "introducedIn": {
+        "code": "19900",
+        "name": "FiNALE"
+      }
     },
     {
       "id": "song-7281bec080e8",
@@ -5313,7 +5823,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "オンゲキ＆CHUNITHM",
+      "introducedIn": {
+        "code": "20009",
+        "name": "maimai でらっくす"
+      }
     },
     {
       "id": "song-bf95733511a4",
@@ -5361,7 +5876,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "オンゲキ＆CHUNITHM",
+      "introducedIn": {
+        "code": "22515",
+        "name": "UNiVERSE PLUS"
+      }
     },
     {
       "id": "song-c82f7c595d89",
@@ -5409,7 +5929,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "maimai",
+      "introducedIn": {
+        "code": "23000",
+        "name": "FESTiVAL"
+      }
     },
     {
       "id": "song-0166659bc4df",
@@ -5457,7 +5982,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "東方Project",
+      "introducedIn": {
+        "code": "25000",
+        "name": "PRiSM"
+      }
     },
     {
       "id": "song-6c387381d4d1",
@@ -5505,7 +6035,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "maimai",
+      "introducedIn": {
+        "code": "25505",
+        "name": "PRiSM PLUS"
+      }
     },
     {
       "id": "song-62ffd18e0b91",
@@ -5560,7 +6095,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "ゲーム＆バラエティ",
+      "introducedIn": {
+        "code": "26000",
+        "name": "CiRCLE"
+      }
     },
     {
       "id": "song-b397cf7c4753",
@@ -5608,7 +6148,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "maimai",
+      "introducedIn": {
+        "code": "20502",
+        "name": "maimai でらっくす PLUS"
+      }
     },
     {
       "id": "song-2739c333bc92",
@@ -5690,7 +6235,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "東方Project",
+      "introducedIn": {
+        "code": "19011",
+        "name": "MiLK"
+      }
     },
     {
       "id": "song-090f9090c411",
@@ -5738,7 +6288,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "maimai",
+      "introducedIn": {
+        "code": "22511",
+        "name": "UNiVERSE PLUS"
+      }
     },
     {
       "id": "song-c7c48540b093",
@@ -5793,7 +6348,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "ゲーム＆バラエティ",
+      "introducedIn": {
+        "code": "11002",
+        "name": "maimai PLUS"
+      }
     },
     {
       "id": "song-cf13dcb70370",
@@ -5841,7 +6401,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "オンゲキ＆CHUNITHM",
+      "introducedIn": {
+        "code": "24500",
+        "name": "BUDDiES PLUS"
+      }
     },
     {
       "id": "song-455da6cc1460",
@@ -5895,7 +6460,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "niconico＆ボーカロイド",
+      "introducedIn": {
+        "code": "25504",
+        "name": "PRiSM PLUS"
+      }
     },
     {
       "id": "song-dd8a4e36a251",
@@ -5949,7 +6519,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "niconico＆ボーカロイド",
+      "introducedIn": {
+        "code": "22003",
+        "name": "UNiVERSE"
+      }
     },
     {
       "id": "song-f2c87b9e487f",
@@ -6003,7 +6578,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "niconico＆ボーカロイド",
+      "introducedIn": {
+        "code": "20000",
+        "name": "maimai でらっくす"
+      }
     },
     {
       "id": "song-517240e03361",
@@ -6057,7 +6637,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "niconico＆ボーカロイド",
+      "introducedIn": {
+        "code": "23000",
+        "name": "FESTiVAL"
+      }
     },
     {
       "id": "song-371492138f3d",
@@ -6111,7 +6696,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "maimai",
+      "introducedIn": {
+        "code": "20013",
+        "name": "maimai でらっくす"
+      }
     },
     {
       "id": "song-952f9a4b765c",
@@ -6165,7 +6755,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "niconico＆ボーカロイド",
+      "introducedIn": {
+        "code": "25516",
+        "name": "PRiSM PLUS"
+      }
     },
     {
       "id": "song-9484ecffb2df",
@@ -6219,7 +6814,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "niconico＆ボーカロイド",
+      "introducedIn": {
+        "code": "16011",
+        "name": "PiNK"
+      }
     },
     {
       "id": "song-5b756cf5e565",
@@ -6273,7 +6873,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "niconico＆ボーカロイド",
+      "introducedIn": {
+        "code": "19000",
+        "name": "MiLK"
+      }
     },
     {
       "id": "song-f5211ec10f40",
@@ -6327,7 +6932,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "niconico＆ボーカロイド",
+      "introducedIn": {
+        "code": "14006",
+        "name": "ORANGE"
+      }
     },
     {
       "id": "song-6d47ffabb20e",
@@ -6381,7 +6991,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "niconico＆ボーカロイド",
+      "introducedIn": {
+        "code": "25001",
+        "name": "PRiSM"
+      }
     },
     {
       "id": "song-c2823057ae4f",
@@ -6435,7 +7050,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "ゲーム＆バラエティ",
+      "introducedIn": {
+        "code": "25014",
+        "name": "PRiSM"
+      }
     },
     {
       "id": "song-37a85d52844c",
@@ -6496,7 +7116,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "niconico＆ボーカロイド",
+      "introducedIn": {
+        "code": "22501",
+        "name": "UNiVERSE PLUS"
+      }
     },
     {
       "id": "song-1a06f741a9c3",
@@ -6557,7 +7182,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "niconico＆ボーカロイド",
+      "introducedIn": {
+        "code": "23000",
+        "name": "FESTiVAL"
+      }
     },
     {
       "id": "song-0ef6b31e7dd1",
@@ -6618,7 +7248,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "POPS＆アニメ",
+      "introducedIn": {
+        "code": "25509",
+        "name": "PRiSM PLUS"
+      }
     },
     {
       "id": "song-d9e77df8727b",
@@ -6672,7 +7307,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "maimai",
+      "introducedIn": {
+        "code": "25500",
+        "name": "PRiSM PLUS"
+      }
     },
     {
       "id": "song-9a2f2ad520e2",
@@ -6724,7 +7364,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "niconico＆ボーカロイド",
+      "introducedIn": {
+        "code": "15005",
+        "name": "ORANGE PLUS"
+      }
     },
     {
       "id": "song-9e3a000a6d8d",
@@ -6778,7 +7423,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "オンゲキ＆CHUNITHM",
+      "introducedIn": {
+        "code": "22515",
+        "name": "UNiVERSE PLUS"
+      }
     },
     {
       "id": "song-9bfeed61e9c0",
@@ -6832,7 +7482,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "niconico＆ボーカロイド",
+      "introducedIn": {
+        "code": "25007",
+        "name": "PRiSM"
+      }
     },
     {
       "id": "song-260908208d43",
@@ -6886,7 +7541,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "niconico＆ボーカロイド",
+      "introducedIn": {
+        "code": "18511",
+        "name": "MURASAKi PLUS"
+      }
     },
     {
       "id": "song-4f39f6af9e43",
@@ -6942,7 +7602,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "niconico＆ボーカロイド",
+      "introducedIn": {
+        "code": "22514",
+        "name": "UNiVERSE PLUS"
+      }
     },
     {
       "id": "song-c034ac69d6d8",
@@ -6997,7 +7662,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "ゲーム＆バラエティ",
+      "introducedIn": {
+        "code": "26001",
+        "name": "CiRCLE"
+      }
     },
     {
       "id": "song-14f005171f81",
@@ -7051,7 +7721,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "オンゲキ＆CHUNITHM",
+      "introducedIn": {
+        "code": "19010",
+        "name": "MiLK"
+      }
     },
     {
       "id": "song-487d0c975e16",
@@ -7106,7 +7781,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "niconico＆ボーカロイド",
+      "introducedIn": {
+        "code": "25007",
+        "name": "PRiSM"
+      }
     },
     {
       "id": "song-638e826988e6",
@@ -7158,7 +7838,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "niconico＆ボーカロイド",
+      "introducedIn": {
+        "code": "24503",
+        "name": "BUDDiES PLUS"
+      }
     },
     {
       "id": "song-6c1b87c59c13",
@@ -7212,7 +7897,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "niconico＆ボーカロイド",
+      "introducedIn": {
+        "code": "11000",
+        "name": "maimai PLUS"
+      }
     },
     {
       "id": "song-c30dfd1b462b",
@@ -7266,7 +7956,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "niconico＆ボーカロイド",
+      "introducedIn": {
+        "code": "25516",
+        "name": "PRiSM PLUS"
+      }
     },
     {
       "id": "song-1b7dee6afd62",
@@ -7327,7 +8022,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "niconico＆ボーカロイド",
+      "introducedIn": {
+        "code": "12000",
+        "name": "GreeN"
+      }
     },
     {
       "id": "song-88fd49fe9b34",
@@ -7388,7 +8088,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "niconico＆ボーカロイド",
+      "introducedIn": {
+        "code": "13009",
+        "name": "GreeN PLUS"
+      }
     },
     {
       "id": "song-5331d36bf069",
@@ -7443,7 +8148,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "niconico＆ボーカロイド",
+      "introducedIn": {
+        "code": "23013",
+        "name": "FESTiVAL"
+      }
     },
     {
       "id": "song-102f542a7217",
@@ -7495,7 +8205,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "POPS＆アニメ",
+      "introducedIn": {
+        "code": "25500",
+        "name": "PRiSM PLUS"
+      }
     },
     {
       "id": "song-8af1d8cc17a4",
@@ -7547,7 +8262,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "POPS＆アニメ",
+      "introducedIn": {
+        "code": "25500",
+        "name": "PRiSM PLUS"
+      }
     },
     {
       "id": "song-677cae4fdf5b",
@@ -7635,7 +8355,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "東方Project",
+      "introducedIn": {
+        "code": "15000",
+        "name": "ORANGE PLUS"
+      }
     },
     {
       "id": "song-9c9ebf4e7522",
@@ -7689,7 +8414,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "オンゲキ＆CHUNITHM",
+      "introducedIn": {
+        "code": "22512",
+        "name": "UNiVERSE PLUS"
+      }
     },
     {
       "id": "song-dd3b4f4af89b",
@@ -7777,7 +8507,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "ゲーム＆バラエティ",
+      "introducedIn": {
+        "code": "22506",
+        "name": "UNiVERSE PLUS"
+      }
     },
     {
       "id": "song-e92c47515940",
@@ -7831,7 +8566,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "niconico＆ボーカロイド",
+      "introducedIn": {
+        "code": "23000",
+        "name": "FESTiVAL"
+      }
     },
     {
       "id": "song-fc0e391a9a75",
@@ -7885,7 +8625,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "東方Project",
+      "introducedIn": {
+        "code": "23000",
+        "name": "FESTiVAL"
+      }
     },
     {
       "id": "song-2daae7273c21",
@@ -7939,7 +8684,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "niconico＆ボーカロイド",
+      "introducedIn": {
+        "code": "24510",
+        "name": "BUDDiES PLUS"
+      }
     },
     {
       "id": "song-49d8467cdee6",
@@ -7993,7 +8743,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "niconico＆ボーカロイド",
+      "introducedIn": {
+        "code": "25000",
+        "name": "PRiSM"
+      }
     },
     {
       "id": "song-f1d8c4af8108",
@@ -8047,7 +8802,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "ゲーム＆バラエティ",
+      "introducedIn": {
+        "code": "19900",
+        "name": "FiNALE"
+      }
     },
     {
       "id": "song-3b20b9fdc5ab",
@@ -8110,7 +8870,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "niconico＆ボーカロイド",
+      "introducedIn": {
+        "code": "26500",
+        "name": "CiRCLE PLUS"
+      }
     },
     {
       "id": "song-49cabed74b90",
@@ -8164,7 +8929,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "POPS＆アニメ",
+      "introducedIn": {
+        "code": "21501",
+        "name": "Splash PLUS"
+      }
     },
     {
       "id": "song-236effa17b4a",
@@ -8252,7 +9022,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "niconico＆ボーカロイド",
+      "introducedIn": {
+        "code": "19007",
+        "name": "MiLK"
+      }
     },
     {
       "id": "song-f992266c9245",
@@ -8313,7 +9088,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "niconico＆ボーカロイド",
+      "introducedIn": {
+        "code": "18017",
+        "name": "MURASAKi"
+      }
     },
     {
       "id": "song-1c2a0228b93f",
@@ -8367,7 +9147,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "niconico＆ボーカロイド",
+      "introducedIn": {
+        "code": "24014",
+        "name": "BUDDiES"
+      }
     },
     {
       "id": "song-58508b2f410c",
@@ -8430,7 +9215,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "niconico＆ボーカロイド",
+      "introducedIn": {
+        "code": "26000",
+        "name": "CiRCLE"
+      }
     },
     {
       "id": "song-eba222800d88",
@@ -8484,7 +9274,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "niconico＆ボーカロイド",
+      "introducedIn": {
+        "code": "25000",
+        "name": "PRiSM"
+      }
     },
     {
       "id": "song-231047e15640",
@@ -8538,7 +9333,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "maimai",
+      "introducedIn": {
+        "code": "20000",
+        "name": "maimai でらっくす"
+      }
     },
     {
       "id": "song-0dea4fbacbb7",
@@ -8591,7 +9391,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "niconico＆ボーカロイド",
+      "introducedIn": {
+        "code": "25006",
+        "name": "PRiSM"
+      }
     },
     {
       "id": "song-90d9ecb385bc",
@@ -8652,7 +9457,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "niconico＆ボーカロイド",
+      "introducedIn": {
+        "code": "22000",
+        "name": "UNiVERSE"
+      }
     },
     {
       "id": "song-5d05418c5b12",
@@ -8706,7 +9516,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "niconico＆ボーカロイド",
+      "introducedIn": {
+        "code": "15009",
+        "name": "ORANGE PLUS"
+      }
     },
     {
       "id": "song-2322d2fdf93d",
@@ -8758,7 +9573,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "POPS＆アニメ",
+      "introducedIn": {
+        "code": "26000",
+        "name": "CiRCLE"
+      }
     },
     {
       "id": "song-0cad2b7a0c5f",
@@ -8812,7 +9632,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "niconico＆ボーカロイド",
+      "introducedIn": {
+        "code": "24008",
+        "name": "BUDDiES"
+      }
     },
     {
       "id": "song-e8be0960fb5f",
@@ -8907,7 +9732,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "東方Project",
+      "introducedIn": {
+        "code": "12000",
+        "name": "GreeN"
+      }
     },
     {
       "id": "song-6e4d367df787",
@@ -8995,7 +9825,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "maimai",
+      "introducedIn": {
+        "code": "10000",
+        "name": "maimai"
+      }
     },
     {
       "id": "song-47dbc134f3d0",
@@ -9056,7 +9891,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "maimai",
+      "introducedIn": {
+        "code": "20000",
+        "name": "maimai でらっくす"
+      }
     },
     {
       "id": "song-aa146dfca961",
@@ -9117,7 +9957,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "POPS＆アニメ",
+      "introducedIn": {
+        "code": "25500",
+        "name": "PRiSM PLUS"
+      }
     },
     {
       "id": "song-65fb0872677f",
@@ -9171,7 +10016,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "niconico＆ボーカロイド",
+      "introducedIn": {
+        "code": "25504",
+        "name": "PRiSM PLUS"
+      }
     },
     {
       "id": "song-e85cc01874d0",
@@ -9225,7 +10075,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "ゲーム＆バラエティ",
+      "introducedIn": {
+        "code": "23009",
+        "name": "FESTiVAL"
+      }
     },
     {
       "id": "song-468944a150e8",
@@ -9286,7 +10141,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "niconico＆ボーカロイド",
+      "introducedIn": {
+        "code": "24000",
+        "name": "BUDDiES"
+      }
     },
     {
       "id": "song-9028eaf59903",
@@ -9347,7 +10207,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "POPS＆アニメ",
+      "introducedIn": {
+        "code": "25500",
+        "name": "PRiSM PLUS"
+      }
     },
     {
       "id": "song-d1db5684d205",
@@ -9401,7 +10266,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "POPS＆アニメ",
+      "introducedIn": {
+        "code": "18012",
+        "name": "MURASAKi"
+      }
     },
     {
       "id": "song-ef3aa6605987",
@@ -9455,7 +10325,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "POPS＆アニメ",
+      "introducedIn": {
+        "code": "19005",
+        "name": "MiLK"
+      }
     },
     {
       "id": "song-08f22014494d",
@@ -9517,7 +10392,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "niconico＆ボーカロイド",
+      "introducedIn": {
+        "code": "25500",
+        "name": "PRiSM PLUS"
+      }
     },
     {
       "id": "song-ad1a4ccb2620",
@@ -9571,7 +10451,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "niconico＆ボーカロイド",
+      "introducedIn": {
+        "code": "20000",
+        "name": "maimai でらっくす"
+      }
     },
     {
       "id": "song-461be4a49f43",
@@ -9625,7 +10510,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "niconico＆ボーカロイド",
+      "introducedIn": {
+        "code": "20000",
+        "name": "maimai でらっくす"
+      }
     },
     {
       "id": "song-940363864a61",
@@ -9677,7 +10567,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "maimai",
+      "introducedIn": {
+        "code": "20500",
+        "name": "maimai でらっくす PLUS"
+      }
     },
     {
       "id": "song-759a718763cf",
@@ -9765,7 +10660,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "niconico＆ボーカロイド",
+      "introducedIn": {
+        "code": "12009",
+        "name": "GreeN"
+      }
     },
     {
       "id": "song-52e03f4cfc5d",
@@ -9826,7 +10726,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "niconico＆ボーカロイド",
+      "introducedIn": {
+        "code": "26000",
+        "name": "CiRCLE"
+      }
     },
     {
       "id": "song-906fd0009f4d",
@@ -9876,7 +10781,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "ゲーム＆バラエティ",
+      "introducedIn": {
+        "code": "21500",
+        "name": "Splash PLUS"
+      }
     },
     {
       "id": "song-97aadb9a4e53",
@@ -9930,7 +10840,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "東方Project",
+      "introducedIn": {
+        "code": "25002",
+        "name": "PRiSM"
+      }
     },
     {
       "id": "song-0cedd756d872",
@@ -9984,7 +10899,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "niconico＆ボーカロイド",
+      "introducedIn": {
+        "code": "22014",
+        "name": "UNiVERSE"
+      }
     },
     {
       "id": "song-d47f70af5b17",
@@ -10045,7 +10965,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "niconico＆ボーカロイド",
+      "introducedIn": {
+        "code": "24500",
+        "name": "BUDDiES PLUS"
+      }
     },
     {
       "id": "song-48ebdafbb49f",
@@ -10099,7 +11024,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "niconico＆ボーカロイド",
+      "introducedIn": {
+        "code": "10000",
+        "name": "maimai"
+      }
     },
     {
       "id": "song-c172dfbe2a87",
@@ -10153,7 +11083,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "ゲーム＆バラエティ",
+      "introducedIn": {
+        "code": "13009",
+        "name": "GreeN PLUS"
+      }
     },
     {
       "id": "song-3ce7f814ff96",
@@ -10241,7 +11176,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "niconico＆ボーカロイド",
+      "introducedIn": {
+        "code": "12004",
+        "name": "GreeN"
+      }
     },
     {
       "id": "song-4bac2beaa7db",
@@ -10302,7 +11242,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "niconico＆ボーカロイド",
+      "introducedIn": {
+        "code": "15000",
+        "name": "ORANGE PLUS"
+      }
     },
     {
       "id": "song-86b237cecc19",
@@ -10363,7 +11308,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "niconico＆ボーカロイド",
+      "introducedIn": {
+        "code": "10000",
+        "name": "maimai"
+      }
     },
     {
       "id": "song-82cbf0e19945",
@@ -10417,7 +11367,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "niconico＆ボーカロイド",
+      "introducedIn": {
+        "code": "21000",
+        "name": "Splash"
+      }
     },
     {
       "id": "song-2f64638892ab",
@@ -10469,7 +11424,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "niconico＆ボーカロイド",
+      "introducedIn": {
+        "code": "25001",
+        "name": "PRiSM"
+      }
     },
     {
       "id": "song-ce34e49b7932",
@@ -10523,7 +11483,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "ゲーム＆バラエティ",
+      "introducedIn": {
+        "code": "18503",
+        "name": "MURASAKi PLUS"
+      }
     },
     {
       "id": "zen-sekai-kyoutsuu-rhythm-kan-test",
@@ -10580,7 +11545,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "maimai",
+      "introducedIn": {
+        "code": null,
+        "name": "Splash"
+      }
     },
     {
       "id": "song-15f02ac2e366",
@@ -10634,7 +11604,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "niconico＆ボーカロイド",
+      "introducedIn": {
+        "code": "21512",
+        "name": "Splash PLUS"
+      }
     },
     {
       "id": "song-2a3769b358c4",
@@ -10688,7 +11663,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "ゲーム＆バラエティ",
+      "introducedIn": {
+        "code": "23014",
+        "name": "FESTiVAL"
+      }
     },
     {
       "id": "song-3ec83d57c6cb",
@@ -10742,7 +11722,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "東方Project",
+      "introducedIn": {
+        "code": "15018",
+        "name": "ORANGE PLUS"
+      }
     },
     {
       "id": "song-438eaed9a234",
@@ -10830,7 +11815,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "niconico＆ボーカロイド",
+      "introducedIn": {
+        "code": "16000",
+        "name": "PiNK"
+      }
     },
     {
       "id": "song-21c8a54c340b",
@@ -10884,7 +11874,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "niconico＆ボーカロイド",
+      "introducedIn": {
+        "code": "19505",
+        "name": "MiLK PLUS"
+      }
     },
     {
       "id": "song-944c7317d74c",
@@ -10938,7 +11933,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "niconico＆ボーカロイド",
+      "introducedIn": {
+        "code": "22501",
+        "name": "UNiVERSE PLUS"
+      }
     },
     {
       "id": "song-93b02a334abf",
@@ -10992,7 +11992,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "niconico＆ボーカロイド",
+      "introducedIn": {
+        "code": "21009",
+        "name": "Splash"
+      }
     },
     {
       "id": "song-aa0d2367e56d",
@@ -11046,7 +12051,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "niconico＆ボーカロイド",
+      "introducedIn": {
+        "code": "24500",
+        "name": "BUDDiES PLUS"
+      }
     },
     {
       "id": "song-db821594b039",
@@ -11100,7 +12110,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "niconico＆ボーカロイド",
+      "introducedIn": {
+        "code": "26002",
+        "name": "CiRCLE"
+      }
     },
     {
       "id": "song-a337c728408b",
@@ -11161,7 +12176,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "POPS＆アニメ",
+      "introducedIn": {
+        "code": "25000",
+        "name": "PRiSM"
+      }
     },
     {
       "id": "song-d1bb8e44303e",
@@ -11215,7 +12235,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "niconico＆ボーカロイド",
+      "introducedIn": {
+        "code": "22009",
+        "name": "UNiVERSE"
+      }
     },
     {
       "id": "song-9455ce1cbd35",
@@ -11269,7 +12294,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "maimai",
+      "introducedIn": {
+        "code": "20512",
+        "name": "maimai でらっくす PLUS"
+      }
     },
     {
       "id": "song-18cc28f9f66d",
@@ -11323,7 +12353,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "niconico＆ボーカロイド",
+      "introducedIn": {
+        "code": "25517",
+        "name": "PRiSM PLUS"
+      }
     },
     {
       "id": "song-ab52aadc0f84",
@@ -11377,7 +12412,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "maimai",
+      "introducedIn": {
+        "code": "21000",
+        "name": "Splash"
+      }
     },
     {
       "id": "song-c852acb4e2c8",
@@ -11431,7 +12471,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "niconico＆ボーカロイド",
+      "introducedIn": {
+        "code": "18511",
+        "name": "MURASAKi PLUS"
+      }
     },
     {
       "id": "song-a5b31616c19b",
@@ -11485,7 +12530,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "niconico＆ボーカロイド",
+      "introducedIn": {
+        "code": "24500",
+        "name": "BUDDiES PLUS"
+      }
     },
     {
       "id": "song-2d3a3512bebf",
@@ -11539,7 +12589,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "maimai",
+      "introducedIn": {
+        "code": "25505",
+        "name": "PRiSM PLUS"
+      }
     },
     {
       "id": "song-067df9d0eb73",
@@ -11603,7 +12658,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "POPS＆アニメ",
+      "introducedIn": {
+        "code": "26500",
+        "name": "CiRCLE PLUS"
+      }
     },
     {
       "id": "song-69512f200441",
@@ -11657,7 +12717,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "niconico＆ボーカロイド",
+      "introducedIn": {
+        "code": "20006",
+        "name": "maimai でらっくす"
+      }
     },
     {
       "id": "song-ca970af3b5b0",
@@ -11711,7 +12776,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "niconico＆ボーカロイド",
+      "introducedIn": {
+        "code": "24002",
+        "name": "BUDDiES"
+      }
     },
     {
       "id": "song-a0369e1684d5",
@@ -11765,7 +12835,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "maimai",
+      "introducedIn": {
+        "code": "25505",
+        "name": "PRiSM PLUS"
+      }
     },
     {
       "id": "song-de8bb67fb249",
@@ -11826,7 +12901,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "niconico＆ボーカロイド",
+      "introducedIn": {
+        "code": "24000",
+        "name": "BUDDiES"
+      }
     },
     {
       "id": "song-00dec12931e6",
@@ -11880,7 +12960,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "オンゲキ＆CHUNITHM",
+      "introducedIn": {
+        "code": "18509",
+        "name": "MURASAKi PLUS"
+      }
     },
     {
       "id": "song-1806496bcb75",
@@ -11932,7 +13017,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "ゲーム＆バラエティ",
+      "introducedIn": {
+        "code": "23000",
+        "name": "FESTiVAL"
+      }
     },
     {
       "id": "song-5a12f15226f2",
@@ -11986,7 +13076,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "東方Project",
+      "introducedIn": {
+        "code": "19011",
+        "name": "MiLK"
+      }
     },
     {
       "id": "song-10696a7a7611",
@@ -12040,7 +13135,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "maimai",
+      "introducedIn": {
+        "code": "25512",
+        "name": "PRiSM PLUS"
+      }
     },
     {
       "id": "song-389f9829e427",
@@ -12101,7 +13201,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "niconico＆ボーカロイド",
+      "introducedIn": {
+        "code": "23500",
+        "name": "FESTiVAL PLUS"
+      }
     },
     {
       "id": "song-7e49fc53556f",
@@ -12155,7 +13260,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "niconico＆ボーカロイド",
+      "introducedIn": {
+        "code": "25516",
+        "name": "PRiSM PLUS"
+      }
     },
     {
       "id": "song-0ede0734dd4a",
@@ -12209,7 +13319,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "ゲーム＆バラエティ",
+      "introducedIn": {
+        "code": "22000",
+        "name": "UNiVERSE"
+      }
     },
     {
       "id": "tsunagite",
@@ -12272,7 +13387,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "maimai",
+      "introducedIn": {
+        "code": "24015",
+        "name": "BUDDiES"
+      }
     },
     {
       "id": "song-5c9caad4eb78",
@@ -12326,7 +13446,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "niconico＆ボーカロイド",
+      "introducedIn": {
+        "code": "21512",
+        "name": "Splash PLUS"
+      }
     },
     {
       "id": "song-7d1aab6a161f",
@@ -12380,7 +13505,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "niconico＆ボーカロイド",
+      "introducedIn": {
+        "code": "19912",
+        "name": "FiNALE"
+      }
     },
     {
       "id": "song-08f696c0d52c",
@@ -12434,7 +13564,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "niconico＆ボーカロイド",
+      "introducedIn": {
+        "code": "23511",
+        "name": "FESTiVAL PLUS"
+      }
     },
     {
       "id": "song-8206f73590c7",
@@ -12488,7 +13623,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "オンゲキ＆CHUNITHM",
+      "introducedIn": {
+        "code": "22000",
+        "name": "UNiVERSE"
+      }
     },
     {
       "id": "song-fed6fb43603f",
@@ -12576,7 +13716,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "niconico＆ボーカロイド",
+      "introducedIn": {
+        "code": "12000",
+        "name": "GreeN"
+      }
     },
     {
       "id": "song-c0b92a10414e",
@@ -12630,7 +13775,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "niconico＆ボーカロイド",
+      "introducedIn": {
+        "code": "23505",
+        "name": "FESTiVAL PLUS"
+      }
     },
     {
       "id": "song-5958b78766c8",
@@ -12684,7 +13834,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "niconico＆ボーカロイド",
+      "introducedIn": {
+        "code": "12006",
+        "name": "GreeN"
+      }
     },
     {
       "id": "song-71b522a20088",
@@ -12745,7 +13900,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "maimai",
+      "introducedIn": {
+        "code": "13006",
+        "name": "GreeN PLUS"
+      }
     },
     {
       "id": "song-54a85573247c",
@@ -12799,7 +13959,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "東方Project",
+      "introducedIn": {
+        "code": "25506",
+        "name": "PRiSM PLUS"
+      }
     },
     {
       "id": "song-f6f52240bd9a",
@@ -12860,7 +14025,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "POPS＆アニメ",
+      "introducedIn": {
+        "code": "23000",
+        "name": "FESTiVAL"
+      }
     },
     {
       "id": "song-a4cfa117d5d2",
@@ -12914,7 +14084,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "maimai",
+      "introducedIn": {
+        "code": "22013",
+        "name": "UNiVERSE"
+      }
     },
     {
       "id": "song-be9f120b07fb",
@@ -12968,7 +14143,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "niconico＆ボーカロイド",
+      "introducedIn": {
+        "code": "25006",
+        "name": "PRiSM"
+      }
     },
     {
       "id": "song-c3ab5ce385d0",
@@ -13029,7 +14209,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "niconico＆ボーカロイド",
+      "introducedIn": {
+        "code": "24500",
+        "name": "BUDDiES PLUS"
+      }
     },
     {
       "id": "song-4e9f398b9af8",
@@ -13083,7 +14268,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "maimai",
+      "introducedIn": {
+        "code": "25015",
+        "name": "PRiSM"
+      }
     },
     {
       "id": "song-5619c275b593",
@@ -13137,7 +14327,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "ゲーム＆バラエティ",
+      "introducedIn": {
+        "code": "13004",
+        "name": "GreeN PLUS"
+      }
     },
     {
       "id": "song-804d792a8a53",
@@ -13191,7 +14386,12 @@
             }
           ]
         }
-      ]
+      ],
+      "genre": "niconico＆ボーカロイド",
+      "introducedIn": {
+        "code": "20006",
+        "name": "maimai でらっくす"
+      }
     }
   ]
 }

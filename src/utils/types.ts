@@ -29,8 +29,15 @@ export interface Song {
   id: string;
   titles: SongTitles;
   artist: string;
+  genre: string;
+  introducedIn: MaimaiVersion | null;
   jacketKey: string | null;
   versions: SongVersion[];
+}
+
+export interface MaimaiVersion {
+  code: string | null;
+  name: string;
 }
 
 export interface CatalogSongView extends Omit<Song, "versions">, SongVersion {

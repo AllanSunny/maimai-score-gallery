@@ -9,6 +9,7 @@ import { standaloneCatalogSongs } from "./lib/catalog-overrides.mjs";
 import { catalogOutput } from "./lib/catalog-output.mjs";
 import { writeChartSummaries } from "./lib/chart-summaries.mjs";
 import { readMonthlyScoreArchive, writeMonthlyScoreArchive } from "./lib/monthly-score-archive.mjs";
+import { maimaiVersion, standaloneMaimaiVersion } from "./lib/maimai-version.mjs";
 
 const execFileAsync = promisify(execFile);
 
@@ -159,6 +160,33 @@ function songArtist(official, override = {}) {
   const artist = String(override.artist ?? official.artist ?? "").trim();
   if (!artist) throw new Error(`Official catalog entry is missing an artist: ${official.title}`);
   return artist;
+}
+
+function songGenre(source, override = {}) {
+  const genre = String(override.genre ?? source.catcode ?? "").trim();
+  if (!genre) throw new Error(`Catalog entry is missing a genre: ${source.title}`);
+  return genre;
+}
+
+function songIntroduction(source, override = {}) {
+  const code = override.version ?? source.version;
+  if (typeof code === "object" && code !== null) return standaloneMaimaiVersion(code);
+  if (code === null && source.image_url === null) return null;
+  if (code === null || code === undefined || String(code).trim() === "") {
+    throw new Error(`Official catalog entry is missing a version: ${source.title}`);
+  }
+  return maimaiVersion(code);
+}
+
+function refreshStandaloneMetadata(songs, standaloneSongs) {
+  standaloneSongs.forEach((sourceSong) => {
+    const song = songs.find((candidate) => isAlreadyCataloged(sourceSong.title, [candidate]));
+    if (!song) return;
+    const override = sourceSong.standaloneOverride;
+    song.artist = songArtist(sourceSong, override);
+    song.genre = songGenre(sourceSong, override);
+    song.introducedIn = songIntroduction(sourceSong, override);
+  });
 }
 
 function communityChartKey(title, chartType) {
@@ -378,9 +406,14 @@ async function main() {
   const newTitles = titles.filter((title) => !isAlreadyCataloged(title, previous.songs));
   const missingArtistSongs = previous.songs.filter((song) =>
     typeof song.artist !== "string" || !song.artist.trim());
-  console.log(`Found ${newTitles.length} new song(s) and ${missingArtistSongs.length} artist credit(s) to backfill.`);
+  const missingSourceMetadataSongs = previous.songs.filter((song) =>
+    typeof song.genre !== "string" || !song.genre.trim() || song.introducedIn === undefined);
+  const backfillSongs = [...new Map(
+    [...missingArtistSongs, ...missingSourceMetadataSongs].map((song) => [song.id, song]),
+  ).values()];
+  console.log(`Found ${newTitles.length} new song(s) and ${backfillSongs.length} catalog metadata record(s) to backfill.`);
   const [officialSongs, chartMetadataSongs] = await Promise.all([
-    newTitles.length || missingArtistSongs.length
+    newTitles.length || backfillSongs.length
       ? fetchJson(SEGA_CATALOG_URL, "SEGA song catalog")
       : Promise.resolve([]),
     fetchJson(CHART_SUPPLEMENT_METADATA_URL, "supplemental chart metadata"),
@@ -388,13 +421,20 @@ async function main() {
   const communitySongs = indexCommunityCharts(chartMetadataSongs);
   const songs = structuredClone(previous.songs);
   enrichExistingCharts(songs, communitySongs, overrides);
+  refreshStandaloneMetadata(songs, standaloneSongs);
 
-  missingArtistSongs.forEach((song) => {
+  backfillSongs.forEach((backfillSong) => {
+    const song = songs.find((candidate) => candidate.id === backfillSong.id);
+    if (!song) throw new Error(`Could not locate catalog record for metadata backfill: ${backfillSong.id}`);
     const canonicalTitle = song.titles.canonical;
     const official = findOfficialSong(canonicalTitle, officialSongs, overrides);
-    if (!official) throw new Error(`Could not backfill artist for: ${canonicalTitle}`);
-    const override = overrides[official.title] ?? {};
-    song.artist = songArtist(official, override);
+    const standalone = findStandaloneSong(canonicalTitle, standaloneSongs);
+    const sourceSong = official ?? standalone;
+    if (!sourceSong) throw new Error(`Could not backfill catalog metadata for: ${canonicalTitle}`);
+    const override = official ? (overrides[official.title] ?? {}) : standalone.standaloneOverride;
+    song.artist = songArtist(sourceSong, override);
+    song.genre = songGenre(sourceSong, override);
+    song.introducedIn = songIntroduction(sourceSong, override);
   });
 
   for (const requestedTitle of newTitles) {
@@ -434,6 +474,8 @@ async function main() {
       id: baseId,
       titles: createSongTitles(sourceSong.title, override),
       artist: songArtist(sourceSong, override),
+      genre: songGenre(sourceSong, override),
+      introducedIn: songIntroduction(sourceSong, override),
       jacketKey,
       versions,
     });

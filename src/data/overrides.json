@@ -3,6 +3,11 @@
     "standalone": true,
     "id": "zen-sekai-kyoutsuu-rhythm-kan-test",
     "artist": "☆リズムに合わせてボタンを叩き達成率を競うゲームです☆",
+    "genre": "maimai",
+    "version": {
+      "code": null,
+      "name": "Splash"
+    },
     "jacketKey": "jackets/rhythm-sense.webp",
     "titles": {
       "kana": [

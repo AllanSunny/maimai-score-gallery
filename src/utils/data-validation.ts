@@ -89,6 +89,12 @@ export function parseGeneratedCatalog(value: unknown): GeneratedCatalog {
     string(song.id, `${path}.id`);
     validateSongTitles(song.titles, `${path}.titles`);
     nonemptyString(song.artist, `${path}.artist`);
+    nonemptyString(song.genre, `${path}.genre`);
+    if (song.introducedIn !== null) {
+      const introducedIn = object(song.introducedIn, `${path}.introducedIn`);
+      if (introducedIn.code !== null) nonemptyString(introducedIn.code, `${path}.introducedIn.code`);
+      nonemptyString(introducedIn.name, `${path}.introducedIn.name`);
+    }
     nullableString(song.jacketKey, `${path}.jacketKey`);
     array(song.versions, `${path}.versions`).forEach((versionValue, versionIndex) => {
       const versionPath = `${path}.versions[${versionIndex}]`;

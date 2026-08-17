@@ -107,8 +107,15 @@ interface Song {
   id: string;                   // e.g. "magical-flavor"
   titles: SongTitles;
   artist: string;               // Artist credit from the SEGA catalog
+  genre: string;                // SEGA catcode, e.g. "maimai"
+  introducedIn: MaimaiVersion | null;
   jacketKey: string | null;     // R2 object key, never credentials or a full URL
   versions: SongVersion[];
+}
+
+interface MaimaiVersion {
+  code: string | null;          // Raw SEGA value, or null for a named standalone release
+  name: string;                 // Release family, e.g. "BUDDiES"
 }
 
 interface SongTitles {
@@ -132,6 +139,37 @@ interface Chart {
   chartConstant: number | null;
 }
 ```
+
+`introducedIn` deliberately differs from `versions`: `introducedIn` is the
+named game release in which SEGA associates the song, while `versions` contains
+the song's playable DX/STD chart variants. The numeric code is retained because
+its trailing digits identify SEGA content batches within a release family.
+
+The importer maps the observed SEGA ranges as follows:
+
+| Codes | Release | Codes | Release |
+| --- | --- | --- | --- |
+| 10000–10999 | maimai | 11000–11999 | maimai PLUS |
+| 12000–12999 | GreeN | 13000–13999 | GreeN PLUS |
+| 14000–14999 | ORANGE | 15000–15999 | ORANGE PLUS |
+| 16000–16999 | PiNK | 17000–17999 | PiNK PLUS |
+| 18000–18499 | MURASAKi | 18500–18999 | MURASAKi PLUS |
+| 19000–19499 | MiLK | 19500–19899 | MiLK PLUS |
+| 19900–19999 | FiNALE | 20000–20499 | maimai でらっくす |
+| 20500–20999 | maimai でらっくす PLUS | 21000–21499 | Splash |
+| 21500–21999 | Splash PLUS | 22000–22499 | UNiVERSE |
+| 22500–22999 | UNiVERSE PLUS | 23000–23499 | FESTiVAL |
+| 23500–23999 | FESTiVAL PLUS | 24000–24499 | BUDDiES |
+| 24500–24999 | BUDDiES PLUS | 25000–25499 | PRiSM |
+| 25500–25999 | PRiSM PLUS | 26000–26499 | CiRCLE |
+| 26500–26999 | CiRCLE PLUS | | |
+
+The ranges are derived by correlating the numeric `version` values in
+[SEGA's public song catalog](https://maimai.sega.jp/data/maimai_songs.json)
+with the documented chronological [maimai release list](https://en.wikipedia.org/wiki/Maimai_(video_game_series)#Versions).
+An unknown future range fails validation so it cannot be silently assigned to
+the wrong release. A standalone override can provide a verified release name
+with `code: null` when its exact historical SEGA batch code is unavailable.
 
 The browser derives `jacketUrl` at build time from `VITE_JACKET_BASE_URL` and
 the stored `jacketKey`. It is not part of the persisted catalog schema.
