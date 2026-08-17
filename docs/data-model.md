@@ -65,7 +65,7 @@ interface ScoreRecord {
 }
 
 interface JudgmentSet {
-  criticalPerfect: number;
+  criticalPerfect: number | null;
   perfect: number;
   great: number;
   good: number;
@@ -80,6 +80,13 @@ interface JudgmentBreakdown {
   touch: JudgmentSet;
 }
 ```
+
+`criticalPerfect: null` means that the value was not separately displayed or
+could not be read. Older result layouts combine CRITICAL PERFECT and PERFECT
+for TAP, HOLD, SLIDE, and TOUCH, so those legacy note types retain the combined
+count in `perfect` and store `criticalPerfect: null`. BREAK continues to store
+its separately displayed critical-perfect count. A numeric zero is reserved
+for a count that was actually shown as zero.
 
 Rank is derived in the frontend from `achievement`; it is not stored on each score record.
 

@@ -37,7 +37,7 @@ function judgmentSet(values, path) {
   const perfect = finiteNumber(values.perfect, `${path}.perfect`, { integer: true, minimum: 0 });
   return {
     criticalPerfect: values.criticalPerfect === null
-      ? perfect
+      ? null
       : finiteNumber(values.criticalPerfect, `${path}.criticalPerfect`, { integer: true, minimum: 0 }),
     perfect,
     great: finiteNumber(values.great, `${path}.great`, { integer: true, minimum: 0 }),
@@ -63,6 +63,10 @@ function derivedOverallJudgment(judgment, rawBreakdown, normalizedBreakdown) {
   if (judgment === "criticalPerfect" && legacyCriticalPerfectLayout(rawBreakdown)) {
     return null;
   }
+  if (judgment === "criticalPerfect"
+    && noteTypes.some((noteType) => rawBreakdown[noteType].criticalPerfect === null)) {
+    return null;
+  }
   const total = noteTypes.reduce((sum, noteType) => sum + normalizedBreakdown[noteType][judgment], 0);
   return total + (judgment === "perfect" && legacyCriticalPerfectLayout(rawBreakdown)
     ? normalizedBreakdown.break.criticalPerfect
@@ -85,8 +89,7 @@ function overallJudgmentSet(values, rawBreakdown, normalizedBreakdown) {
   resolved.criticalPerfect = values.criticalPerfect === null
     ? rawBreakdown
       ? derivedOverallJudgment("criticalPerfect", rawBreakdown, normalizedBreakdown)
-        ?? resolved.perfect
-      : resolved.perfect
+      : null
     : finiteNumber(values.criticalPerfect, "judgments.criticalPerfect", {
       integer: true,
       minimum: 0,

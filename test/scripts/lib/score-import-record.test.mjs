@@ -47,13 +47,13 @@ test("rounds imported achievements to four decimal places", () => {
   assert.equal(proposedScoreRecord(input).achievement, 100.5);
 });
 
-test("proposed score falls back from missing critical perfect to perfect", () => {
+test("proposed score preserves missing critical perfect counts as null", () => {
   const input = validInput();
   input.ocr.judgments.criticalPerfect = null;
   Object.values(input.ocr.judgmentsByType).forEach((set) => { set.criticalPerfect = null; });
   const record = proposedScoreRecord(input);
-  assert.equal(record.judgments.criticalPerfect, 10);
-  assert.ok(Object.values(record.judgmentsByType).every((set) => set.criticalPerfect === 2));
+  assert.equal(record.judgments.criticalPerfect, null);
+  assert.ok(Object.values(record.judgmentsByType).every((set) => set.criticalPerfect === null));
 });
 
 test("legacy judgment layouts include break critical perfect in the overall perfect total", () => {
@@ -67,7 +67,8 @@ test("legacy judgment layouts include break critical perfect in the overall perf
   const record = proposedScoreRecord(input);
   assert.equal(record.judgments.perfect, 20);
   assert.equal(record.judgmentsByType.break.criticalPerfect, 10);
-  assert.equal(record.judgmentsByType.tap.criticalPerfect, 2);
+  assert.equal(record.judgmentsByType.tap.criticalPerfect, null);
+  assert.equal(record.judgments.criticalPerfect, null);
 });
 
 test("proposed score rejects inconsistent judgment totals", () => {
@@ -106,12 +107,12 @@ test("proposed score accepts overall totals when the note-type breakdown is unav
   assert.equal(record.judgmentsByType, null);
 });
 
-test("totals-only scores fall back from missing critical perfect to perfect", () => {
+test("totals-only scores preserve a missing critical perfect as null", () => {
   const input = validInput();
   input.ocr.judgmentsByType = null;
   input.ocr.judgments.criticalPerfect = null;
   const record = proposedScoreRecord(input);
-  assert.equal(record.judgments.criticalPerfect, record.judgments.perfect);
+  assert.equal(record.judgments.criticalPerfect, null);
 });
 
 test("proposed score requires readable totals when the note-type breakdown is unavailable", () => {

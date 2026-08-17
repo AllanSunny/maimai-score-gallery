@@ -73,7 +73,10 @@ function validateChart(value: unknown, path: string) {
 
 function validateJudgments(value: unknown, path: string) {
   const judgments = object(value, path);
-  ["criticalPerfect", "perfect", "great", "good", "miss"].forEach((field) =>
+  if (judgments.criticalPerfect !== null) {
+    number(judgments.criticalPerfect, `${path}.criticalPerfect`);
+  }
+  ["perfect", "great", "good", "miss"].forEach((field) =>
     number(judgments[field], `${path}.${field}`));
 }
 

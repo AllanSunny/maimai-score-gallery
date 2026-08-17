@@ -43,7 +43,8 @@ function utcTimestamp(playedAt) {
 
 function judgmentValues(set) {
   if (!set) return ["", "", "", "", ""];
-  return [set.criticalPerfect, set.perfect, set.great, set.good, set.miss];
+  return [set.criticalPerfect, set.perfect, set.great, set.good, set.miss]
+    .map((value) => value ?? "");
 }
 
 export function scoreSheetValues(score) {

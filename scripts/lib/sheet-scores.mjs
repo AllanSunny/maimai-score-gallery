@@ -1,5 +1,6 @@
 import { createHash } from "node:crypto";
 import { createGoogleClients, GOOGLE_SCOPES, requiredEnvironment } from "./google-auth.mjs";
+import { normalizeLegacyCopiedCriticalPerfects } from "./legacy-judgments.mjs";
 
 const judgmentNames = ["criticalPerfect", "perfect", "great", "good", "miss"];
 const judgmentHeaders = {
@@ -112,7 +113,7 @@ function judgmentSet(row, headers, suffix = "") {
   ]));
   if (Object.values(values).every(isBlank)) return null;
   const criticalPerfect = isBlank(values.criticalPerfect)
-    ? numberValue(values.perfect)
+    ? null
     : numberValue(values.criticalPerfect);
   return {
     criticalPerfect,
@@ -193,6 +194,7 @@ export function parseScoreRows(rows) {
       fast: isBlank(cell(row, headers, "Fast")) ? null : numberValue(cell(row, headers, "Fast")),
       slow: isBlank(cell(row, headers, "Slow")) ? null : numberValue(cell(row, headers, "Slow")),
     };
+    normalizeLegacyCopiedCriticalPerfects(score);
     return [{ ...score, id: scoreId(score) }];
   });
 }

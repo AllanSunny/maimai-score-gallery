@@ -97,7 +97,6 @@ export function manualScoreFromReview(review) {
   const hasAnyTotal = correctedTotals.some((count) => count !== null);
   const hasAllRequiredTotals = correctedTotals.slice(1).every((count) => count !== null);
   if (hasAnyTotal && !hasAllRequiredTotals && judgmentsByType === null) return null;
-  const perfect = correctedTotals[1];
   return {
     visibleTitle: review.correctedTitle,
     visibleArtist: review.correctedArtist || null,
@@ -121,7 +120,7 @@ export function manualScoreFromReview(review) {
     ratingChange: correctedNumber(fields["Corrected Rating Change"], "Corrected Rating Change", { integer: true }) ?? 0,
     judgments: Object.fromEntries(Object.values(judgmentHeaders).map((judgment, index) => [
       judgment,
-      correctedTotals[index] ?? (judgment === "criticalPerfect" ? perfect : null),
+      correctedTotals[index],
     ])),
     judgmentsByType,
     fast: correctedNumber(fields["Corrected Fast"], "Corrected Fast", { integer: true, minimum: 0 }),

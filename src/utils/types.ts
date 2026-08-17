@@ -43,7 +43,7 @@ export interface GeneratedCatalog {
 }
 
 export interface JudgmentSet {
-  criticalPerfect: number;
+  criticalPerfect: number | null;
   perfect: number;
   great: number;
   good: number;

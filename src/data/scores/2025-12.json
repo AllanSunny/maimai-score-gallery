@@ -1573,7 +1573,7 @@
       "rating": 13361,
       "ratingChange": 0,
       "judgments": {
-        "criticalPerfect": 369,
+        "criticalPerfect": null,
         "perfect": 369,
         "great": 167,
         "good": 25,
@@ -1588,28 +1588,28 @@
           "miss": 1
         },
         "tap": {
-          "criticalPerfect": 214,
+          "criticalPerfect": null,
           "perfect": 214,
           "great": 135,
           "good": 0,
           "miss": 55
         },
         "hold": {
-          "criticalPerfect": 74,
+          "criticalPerfect": null,
           "perfect": 74,
           "great": 24,
           "good": 3,
           "miss": 0
         },
         "slide": {
-          "criticalPerfect": 18,
+          "criticalPerfect": null,
           "perfect": 18,
           "great": 8,
           "good": 8,
           "miss": 0
         },
         "touch": {
-          "criticalPerfect": 12,
+          "criticalPerfect": null,
           "perfect": 12,
           "great": 0,
           "good": 13,
@@ -1873,7 +1873,7 @@
       "rating": 13366,
       "ratingChange": 0,
       "judgments": {
-        "criticalPerfect": 324,
+        "criticalPerfect": null,
         "perfect": 324,
         "great": 18,
         "good": 15,
@@ -1888,28 +1888,28 @@
           "miss": 0
         },
         "tap": {
-          "criticalPerfect": 202,
+          "criticalPerfect": null,
           "perfect": 202,
           "great": 10,
           "good": 4,
           "miss": 1
         },
         "hold": {
-          "criticalPerfect": 19,
+          "criticalPerfect": null,
           "perfect": 19,
           "great": 8,
           "good": 6,
           "miss": 0
         },
         "slide": {
-          "criticalPerfect": 60,
+          "criticalPerfect": null,
           "perfect": 60,
           "great": 0,
           "good": 5,
           "miss": 1
         },
         "touch": {
-          "criticalPerfect": 28,
+          "criticalPerfect": null,
           "perfect": 28,
           "great": 0,
           "good": 0,

@@ -46,7 +46,7 @@ test("parses a score row with a UTC timestamp", () => {
   assert.equal(scores[0].achievement, 100.5079);
   assert.equal(scores[0].rating, 15149);
   assert.equal(scores[0].ratingChange, 11);
-  assert.equal(scores[0].judgments.criticalPerfect, 500);
+  assert.equal(scores[0].judgments.criticalPerfect, null);
   assert.equal(scores[0].judgmentsByType.tap.criticalPerfect, 300);
   assert.equal(scores[0].judgmentsByType.break.criticalPerfect, 0);
   assert.ok(scores[0].id);
@@ -67,6 +67,30 @@ test("omits a judgment breakdown when every note-type cell is blank", () => {
   assert.equal(score.judgmentsByType, null);
   assert.equal(score.fast, null);
   assert.equal(score.slow, null);
+});
+
+test("normalizes critical perfect values copied from legacy combined perfect columns", () => {
+  const values = {
+    "Date / Time": "2025-11-10T02:47:09.000Z",
+    "Song Title": "Legacy Song",
+    "Achievement %": "99%",
+    "Critical Perfect": "500",
+    Perfect: "500",
+    "Critical Perfect Breaks": "10",
+    "Perfect Breaks": "2",
+  };
+  ["Taps", "Holds", "Slides", "Touches"].forEach((noteType, index) => {
+    values[`Critical Perfect ${noteType}`] = String(100 + index);
+    values[`Perfect ${noteType}`] = String(100 + index);
+  });
+
+  const [score] = parseScoreRows([headers, scoreRow(values)]);
+
+  assert.equal(score.judgments.criticalPerfect, null);
+  assert.equal(score.judgmentsByType.break.criticalPerfect, 10);
+  ["tap", "hold", "slide", "touch"].forEach((noteType) => {
+    assert.equal(score.judgmentsByType[noteType].criticalPerfect, null);
+  });
 });
 
 test("rounds achievement percentages to four decimal places", () => {
