@@ -1,0 +1,485 @@
+{
+  "period": "2026-07",
+  "scores": [
+    {
+      "playedAt": "2026-07-03T03:02:37.000Z",
+      "songTitle": "エゴロック",
+      "chartType": "DX",
+      "difficulty": "MASTER",
+      "level": "13+",
+      "achievement": 100.683,
+      "combo": "FC",
+      "sync": "FS",
+      "rating": 15116,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 511,
+        "perfect": 165,
+        "great": 13,
+        "good": 1,
+        "miss": 0
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 50,
+          "perfect": 19,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 278,
+          "perfect": 133,
+          "great": 13,
+          "good": 1,
+          "miss": 0
+        },
+        "hold": {
+          "criticalPerfect": 35,
+          "perfect": 13,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 127,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 21,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 27,
+      "slow": 6,
+      "id": "-0JWEcs-f0PYKpFV4Fnii3-fWo3PprQbwjM9LyJ4SoA",
+      "chartId": "song-4f39f6af9e43-dx-master"
+    },
+    {
+      "playedAt": "2026-07-20T03:40:19.000Z",
+      "songTitle": "おくすり飲んで寝よう",
+      "chartType": "DX",
+      "difficulty": "EXPERT",
+      "level": "9+",
+      "achievement": 101,
+      "combo": "AP+",
+      "sync": "FDX+",
+      "rating": 15133,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 339,
+        "perfect": 98,
+        "great": 0,
+        "good": 0,
+        "miss": 0
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 9,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 233,
+          "perfect": 82,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "hold": {
+          "criticalPerfect": 38,
+          "perfect": 16,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 42,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 17,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 0,
+      "slow": 0,
+      "id": "Y2WuOucwOXI38xNLCS1KubFqrQy_SRVGfut3HShzLHw",
+      "chartId": "song-638e826988e6-dx-expert"
+    },
+    {
+      "playedAt": "2026-07-25T03:18:10.000Z",
+      "songTitle": "ダイダイダイダイダイキライ",
+      "chartType": "DX",
+      "difficulty": "MASTER",
+      "level": "11+",
+      "achievement": 100.9274,
+      "combo": "AP",
+      "sync": "Sync",
+      "rating": 15119,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 483,
+        "perfect": 151,
+        "great": 0,
+        "good": 0,
+        "miss": 0
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 23,
+          "perfect": 8,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 284,
+          "perfect": 115,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "hold": {
+          "criticalPerfect": 56,
+          "perfect": 28,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 89,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 31,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 0,
+      "slow": 8,
+      "id": "lUCJqZcPj3HPK-Zx-XijsB3z31dijxsX3BOjrKeBGxY",
+      "chartId": "song-3b20b9fdc5ab-dx-master"
+    },
+    {
+      "playedAt": "2026-07-25T03:25:30.000Z",
+      "songTitle": "どんぐりGAME",
+      "chartType": "DX",
+      "difficulty": "MASTER",
+      "level": "13+",
+      "achievement": 100.4673,
+      "combo": "FC",
+      "sync": "FS",
+      "rating": 15120,
+      "ratingChange": 1,
+      "judgments": {
+        "criticalPerfect": 444,
+        "perfect": 149,
+        "great": 12,
+        "good": 3,
+        "miss": 0
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 18,
+          "perfect": 5,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 172,
+          "perfect": 141,
+          "great": 11,
+          "good": 2,
+          "miss": 0
+        },
+        "hold": {
+          "criticalPerfect": 9,
+          "perfect": 3,
+          "great": 1,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 188,
+          "perfect": 0,
+          "great": 0,
+          "good": 1,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 57,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 18,
+      "slow": 2,
+      "id": "-71r92oYHcNPexI3QXCzjK5VaDuA4-diufmH4-qH0CI",
+      "chartId": "song-2322d2fdf93d-dx-master"
+    },
+    {
+      "playedAt": "2026-07-25T04:06:43.000Z",
+      "songTitle": "Mystic Parade",
+      "chartType": "DX",
+      "difficulty": "MASTER",
+      "level": "13",
+      "achievement": 100.0357,
+      "combo": "FC",
+      "sync": "FS",
+      "rating": 15120,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 530,
+        "perfect": 333,
+        "great": 32,
+        "good": 1,
+        "miss": 0
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 51,
+          "perfect": 9,
+          "great": 2,
+          "good": 1,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 352,
+          "perfect": 300,
+          "great": 29,
+          "good": 0,
+          "miss": 0
+        },
+        "hold": {
+          "criticalPerfect": 21,
+          "perfect": 24,
+          "great": 1,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 82,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 24,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 40,
+      "slow": 2,
+      "id": "H2oR9J0avjRLPN90nWcqN024aAWs2LiNlxgFjJ6CtX8",
+      "chartId": "song-e55f5c1d041d-dx-master"
+    },
+    {
+      "playedAt": "2026-07-25T04:25:41.000Z",
+      "songTitle": "どんぐりGAME",
+      "chartType": "DX",
+      "difficulty": "MASTER",
+      "level": "13+",
+      "achievement": 100.6323,
+      "combo": "FC",
+      "sync": null,
+      "rating": 15131,
+      "ratingChange": 11,
+      "judgments": {
+        "criticalPerfect": 466,
+        "perfect": 131,
+        "great": 10,
+        "good": 1,
+        "miss": 0
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 17,
+          "perfect": 6,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 197,
+          "perfect": 120,
+          "great": 8,
+          "good": 1,
+          "miss": 0
+        },
+        "hold": {
+          "criticalPerfect": 8,
+          "perfect": 5,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 187,
+          "perfect": 0,
+          "great": 2,
+          "good": 0,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 57,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 15,
+      "slow": 2,
+      "id": "k572JzER9qng03V2e-S4-0jzzYtOYbY2xcuSG-9Omv0",
+      "chartId": "song-2322d2fdf93d-dx-master"
+    },
+    {
+      "playedAt": "2026-07-25T05:34:16.000Z",
+      "songTitle": "愛♡スクリ～ム！",
+      "chartType": "DX",
+      "difficulty": "MASTER",
+      "level": "11",
+      "achievement": 100.9767,
+      "combo": "AP",
+      "sync": null,
+      "rating": 15138,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 458,
+        "perfect": 82,
+        "great": 0,
+        "good": 0,
+        "miss": 0
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 39,
+          "perfect": 4,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 258,
+          "perfect": 70,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "hold": {
+          "criticalPerfect": 28,
+          "perfect": 8,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 86,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 47,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 2,
+      "slow": 2,
+      "id": "wewQGh_a9n3hf8TWzNgZRCOdW4RGewQVxlvX0LCaYeI",
+      "chartId": "song-067df9d0eb73-dx-master"
+    },
+    {
+      "playedAt": "2026-07-28T02:00:07.000Z",
+      "songTitle": "系ぎて",
+      "chartType": "DX",
+      "difficulty": "EXPERT",
+      "level": "13+",
+      "achievement": 100.5079,
+      "combo": "FC",
+      "sync": null,
+      "rating": 15149,
+      "ratingChange": 11,
+      "judgments": {
+        "criticalPerfect": 512,
+        "perfect": 212,
+        "great": 14,
+        "good": 4,
+        "miss": 0
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 31,
+          "perfect": 8,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 317,
+          "perfect": 190,
+          "great": 14,
+          "good": 4,
+          "miss": 0
+        },
+        "hold": {
+          "criticalPerfect": 29,
+          "perfect": 14,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 82,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 53,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 21,
+      "slow": 5,
+      "id": "EgvB410utrDx7wJAo1Bl3WThDAKzVTUryT-b6sFpidQ",
+      "chartId": "tsunagite-dx-expert"
+    }
+  ]
+}

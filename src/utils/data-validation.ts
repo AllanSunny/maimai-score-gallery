@@ -2,7 +2,7 @@ import type {
   ChartType,
   Difficulty,
   GeneratedCatalog,
-  ScoresResponse,
+  ScoreChunk,
 } from "./types";
 
 const chartTypes = new Set<ChartType>(["DX", "STD"]);
@@ -95,28 +95,39 @@ export function parseGeneratedCatalog(value: unknown): GeneratedCatalog {
   return value as GeneratedCatalog;
 }
 
-export function parseScoresResponse(value: unknown): ScoresResponse {
-  const archive = object(value, "scoreArchive");
-  string(archive.updatedAt, "scoreArchive.updatedAt");
-  array(archive.scores, "scoreArchive.scores").forEach((scoreValue, index) => {
-    const path = `scoreArchive.scores[${index}]`;
-    const score = object(scoreValue, path);
-    ["id", "playedAt", "songTitle", "chartType", "difficulty", "level", "combo"].forEach((field) => string(score[field], `${path}.${field}`));
-    nullableString(score.sync, `${path}.sync`);
-    nonemptyString(score.chartId, `${path}.chartId`);
-    if (!chartTypes.has(score.chartType as ChartType)) throw new Error(`${path}.chartType is invalid.`);
-    if (!difficulties.has(score.difficulty as Difficulty)) throw new Error(`${path}.difficulty is invalid.`);
-    ["achievement", "rating", "ratingChange"].forEach((field) => number(score[field], `${path}.${field}`));
+function validateScores(value: unknown, path: string) {
+  array(value, path).forEach((scoreValue, index) => {
+    const scorePath = `${path}[${index}]`;
+    const score = object(scoreValue, scorePath);
+    ["id", "playedAt", "songTitle", "chartType", "difficulty", "level", "combo"].forEach((field) => string(score[field], `${scorePath}.${field}`));
+    nullableString(score.sync, `${scorePath}.sync`);
+    nonemptyString(score.chartId, `${scorePath}.chartId`);
+    if (!chartTypes.has(score.chartType as ChartType)) throw new Error(`${scorePath}.chartType is invalid.`);
+    if (!difficulties.has(score.difficulty as Difficulty)) throw new Error(`${scorePath}.difficulty is invalid.`);
+    ["achievement", "rating", "ratingChange"].forEach((field) => number(score[field], `${scorePath}.${field}`));
     ["fast", "slow"].forEach((field) => {
-      if (score[field] !== null) number(score[field], `${path}.${field}`);
+      if (score[field] !== null) number(score[field], `${scorePath}.${field}`);
     });
-    if (score.chartConstant !== undefined) number(score.chartConstant, `${path}.chartConstant`);
-    if (score.judgments !== null) validateJudgments(score.judgments, `${path}.judgments`);
+    if (score.chartConstant !== undefined) number(score.chartConstant, `${scorePath}.chartConstant`);
+    if (score.judgments !== null) validateJudgments(score.judgments, `${scorePath}.judgments`);
     if (score.judgmentsByType !== null) {
-      const breakdown = object(score.judgmentsByType, `${path}.judgmentsByType`);
+      const breakdown = object(score.judgmentsByType, `${scorePath}.judgmentsByType`);
       ["break", "tap", "hold", "slide", "touch"].forEach((noteType) =>
-        validateJudgments(breakdown[noteType], `${path}.judgmentsByType.${noteType}`));
+        validateJudgments(breakdown[noteType], `${scorePath}.judgmentsByType.${noteType}`));
     }
   });
-  return value as ScoresResponse;
+}
+
+export function parseScoreChunk(value: unknown): ScoreChunk {
+  const chunk = object(value, "scoreChunk");
+  string(chunk.period, "scoreChunk.period");
+  if (!/^\d{4}-\d{2}$/.test(chunk.period)) throw new Error("scoreChunk.period must use YYYY-MM.");
+  validateScores(chunk.scores, "scoreChunk.scores");
+  (chunk.scores as Record<string, unknown>[]).forEach((score, index) => {
+    const playedAt = score.playedAt as string;
+    if (playedAt.slice(0, 7) !== chunk.period) {
+      throw new Error(`scoreChunk.scores[${index}] does not belong to ${chunk.period}.`);
+    }
+  });
+  return value as ScoreChunk;
 }

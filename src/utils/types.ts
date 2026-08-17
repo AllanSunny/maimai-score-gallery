@@ -79,7 +79,7 @@ export interface ScoreRecord {
 
 export type Score = ScoreRecord;
 
-export interface ScoresResponse {
+export interface ScoreChunk {
+  period: string;
   scores: ScoreRecord[];
-  updatedAt: string;
 }

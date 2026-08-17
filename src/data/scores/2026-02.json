@@ -1,0 +1,125 @@
+{
+  "period": "2026-02",
+  "scores": [
+    {
+      "playedAt": "2026-02-24T18:20:07.000Z",
+      "songTitle": "テトリス",
+      "chartType": "DX",
+      "difficulty": "Re:MASTER",
+      "level": "13+",
+      "achievement": 100.2576,
+      "combo": "Clear",
+      "sync": null,
+      "rating": 14348,
+      "ratingChange": 8,
+      "judgments": {
+        "criticalPerfect": 700,
+        "perfect": 220,
+        "great": 14,
+        "good": 1,
+        "miss": 6
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 49,
+          "perfect": 10,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 403,
+          "perfect": 198,
+          "great": 10,
+          "good": 1,
+          "miss": 6
+        },
+        "hold": {
+          "criticalPerfect": 25,
+          "perfect": 12,
+          "great": 1,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 168,
+          "perfect": 0,
+          "great": 3,
+          "good": 0,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 55,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 17,
+      "slow": 8,
+      "id": "mVABb6PA6wEZYoY3SnCtUvnvQF8xzVuBqED2gHets7Q",
+      "chartId": "song-58508b2f410c-dx-re-master"
+    },
+    {
+      "playedAt": "2026-02-24T18:45:54.000Z",
+      "songTitle": "ウミユリ海底譚",
+      "chartType": "STD",
+      "difficulty": "MASTER",
+      "level": "13",
+      "achievement": 100.7797,
+      "combo": "FC+",
+      "sync": null,
+      "rating": 14358,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 547,
+        "perfect": 202,
+        "great": 10,
+        "good": 0,
+        "miss": 0
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 13,
+          "perfect": 1,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 442,
+          "perfect": 196,
+          "great": 10,
+          "good": 0,
+          "miss": 0
+        },
+        "hold": {
+          "criticalPerfect": 16,
+          "perfect": 5,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 76,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 0,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 9,
+      "slow": 2,
+      "id": "1Lon-_JV_c7jgzyjz8svACF7nYBfHP0czBXUVlRqGp8",
+      "chartId": "song-9a2f2ad520e2-std-master"
+    }
+  ]
+}

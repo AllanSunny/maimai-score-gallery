@@ -1,5 +1,11 @@
-import archivedScores from "../data/generated-scores.json";
-import { parseScoresResponse } from "./data-validation";
+import { parseScoreChunk } from "./data-validation";
+import type { ScoreChunk } from "./types";
 
-const scoreArchive = parseScoresResponse(archivedScores);
-export const scores = scoreArchive.scores;
+const modules = import.meta.glob<ScoreChunk>("../data/scores/*.json", {
+  eager: true,
+  import: "default",
+});
+
+export const scores = Object.entries(modules)
+  .sort(([a], [b]) => a.localeCompare(b))
+  .flatMap(([, chunk]) => parseScoreChunk(chunk).scores);

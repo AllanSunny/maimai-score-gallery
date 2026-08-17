@@ -1,0 +1,65 @@
+{
+  "period": "2026-06",
+  "scores": [
+    {
+      "playedAt": "2026-06-25T00:05:40.000Z",
+      "songTitle": "メズマライザー",
+      "chartType": "DX",
+      "difficulty": "EXPERT",
+      "level": "10",
+      "achievement": 101,
+      "combo": "AP+",
+      "sync": null,
+      "rating": 15075,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 392,
+        "perfect": 132,
+        "great": 0,
+        "good": 0,
+        "miss": 0
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 16,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 259,
+          "perfect": 120,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "hold": {
+          "criticalPerfect": 32,
+          "perfect": 12,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 56,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 29,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 0,
+      "slow": 0,
+      "id": "hLrTZQRyVgFqakt97igYp3rZOFtGIRRD7vIxlkds5mk",
+      "chartId": "song-08f22014494d-dx-expert"
+    }
+  ]
+}

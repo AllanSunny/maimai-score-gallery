@@ -1,9 +1,9 @@
-import { readFile, writeFile } from "node:fs/promises";
+import { readFile } from "node:fs/promises";
 import path from "node:path";
+import { readMonthlyScoreArchive, writeMonthlyScoreArchive } from "./lib/monthly-score-archive.mjs";
 import { reconcileScoreArchive } from "./lib/score-archive.mjs";
 import { readScoreSheet } from "./lib/sheet-scores.mjs";
 
-const ARCHIVE_PATH = path.join(process.cwd(), "src", "data", "generated-scores.json");
 const CATALOG_PATH = path.join(process.cwd(), "src", "data", "generated-catalog.json");
 
 function normalizeTitle(value) {
@@ -40,7 +40,7 @@ function storedScore(score, chartId) {
 
 async function main() {
   const [archive, catalog, sheetScores] = await Promise.all([
-    readFile(ARCHIVE_PATH, "utf8").then(JSON.parse),
+    readMonthlyScoreArchive(),
     readFile(CATALOG_PATH, "utf8").then(JSON.parse),
     readScoreSheet(),
   ]);
@@ -56,8 +56,7 @@ async function main() {
     return;
   }
 
-  const nextArchive = { updatedAt: new Date().toISOString(), scores: reconciliation.scores };
-  await writeFile(ARCHIVE_PATH, `${JSON.stringify(nextArchive, null, 2)}\n`);
+  await writeMonthlyScoreArchive(reconciliation.scores);
   console.log(
     `Archived ${reconciliation.added} new play(s), updated ${reconciliation.updated}, `
     + `removed ${reconciliation.duplicatesRemoved} duplicate(s); ${reconciliation.scores.length} total.`,

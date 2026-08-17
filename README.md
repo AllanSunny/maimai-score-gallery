@@ -43,7 +43,7 @@ stored score, song-version, chart, jacket, and unmatched-title structures.
 
 The **Import New Scores** GitHub workflow processes incoming Drive images, writes
 accepted plays to Google Sheets, archives the sheet in
-`src/data/generated-scores.json`, and then imports metadata only for songs not
+monthly archives under `src/data/scores/`, and then imports metadata only for songs not
 already present in `src/data/generated-catalog.json`. New jackets are uploaded
 to Cloudflare R2 and manual corrections come from `src/data/overrides.json`.
 

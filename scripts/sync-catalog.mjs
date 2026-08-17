@@ -7,13 +7,13 @@ import { promisify } from "node:util";
 import { enrichMissingSongTitles } from "./lib/catalog-title-enrichment.mjs";
 import { standaloneCatalogSongs } from "./lib/catalog-overrides.mjs";
 import { catalogOutput } from "./lib/catalog-output.mjs";
+import { readMonthlyScoreArchive, writeMonthlyScoreArchive } from "./lib/monthly-score-archive.mjs";
 
 const execFileAsync = promisify(execFile);
 
 const ROOT = process.cwd();
 const OVERRIDES_PATH = path.join(ROOT, "src", "data", "overrides.json");
 const GENERATED_PATH = path.join(ROOT, "src", "data", "generated-catalog.json");
-const SCORES_PATH = path.join(ROOT, "src", "data", "generated-scores.json");
 const REJECTED_SCORES_PATH = path.join(ROOT, ".sync", "rejected-scores.json");
 
 function requiredEnvironment(name) {
@@ -124,8 +124,7 @@ async function fetchJson(url, label) {
 }
 
 async function requestedSongs() {
-  const archive = await readJson(SCORES_PATH);
-  if (!Array.isArray(archive.scores)) throw new Error("Score archive must contain a scores array.");
+  const archive = await readMonthlyScoreArchive();
   const requested = new Map();
   archive.scores.forEach((score) => {
     const key = normalizeTitle(score.songTitle);
@@ -268,7 +267,7 @@ function findChartId(score, songs) {
 }
 
 async function linkArchivedScores(songs, unmatchedSongs) {
-  const archive = await readJson(SCORES_PATH);
+  const archive = await readMonthlyScoreArchive();
   let changed = false;
   const rejectedByTitle = new Map();
   const acceptedScores = [];
@@ -306,9 +305,7 @@ async function linkArchivedScores(songs, unmatchedSongs) {
   }, null, 2)}\n`);
 
   if (changed) {
-    archive.scores = acceptedScores;
-    archive.updatedAt = new Date().toISOString();
-    await writeFile(SCORES_PATH, `${JSON.stringify(archive, null, 2)}\n`);
+    await writeMonthlyScoreArchive(acceptedScores);
     console.log(`Updated score-to-chart associations; rejected ${rejectedScoreCount} unknown-title play(s).`);
   }
 }

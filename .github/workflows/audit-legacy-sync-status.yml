@@ -109,14 +109,14 @@ jobs:
       - name: Commit corrected sync statuses
         id: commit
         run: |
-          if git diff --quiet -- src/data/generated-scores.json; then
+          if git diff --quiet -- src/data/scores; then
             echo "No archived sync statuses changed."
             echo "changed=false" >> "$GITHUB_OUTPUT"
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add src/data/generated-scores.json
+          git add src/data/scores
           git commit -m "Reconcile legacy sync statuses"
           git pull --rebase origin main
           git push

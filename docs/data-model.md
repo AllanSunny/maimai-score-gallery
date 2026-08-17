@@ -5,7 +5,7 @@ corresponding compile-time definitions live in `src/utils/types.ts`.
 
 ```mermaid
 flowchart LR
-  Sheet[Google Sheet] --> ScoreArchive[generated-scores.json]
+  Sheet[Google Sheet] --> ScoreArchive[Monthly score archives]
   ScoreArchive -->|chartId| Charts
   Catalog[generated-catalog.json] --> Song
   Song --> Version[Song version: DX or STD]
@@ -15,11 +15,12 @@ flowchart LR
 
 ## Score archive
 
-`src/data/generated-scores.json` is the append-only public score archive.
+`src/data/scores/YYYY-MM.json` files form the public score archive. Plays are
+partitioned by the UTC month of `playedAt`; an unchanged month is not rewritten.
 
 ```ts
-interface ScoresResponse {
-  updatedAt: string; // ISO 8601 timestamp of the last archive change
+interface ScoreChunk {
+  period: string; // UTC YYYY-MM, matching the filename
   scores: ScoreRecord[];
 }
 
@@ -130,7 +131,7 @@ or add an override, then rerun the score archive workflow to retry them.
 
 ## Enforcement
 
-`src/utils/data-validation.ts` validates both generated JSON files at runtime. The
+`src/utils/data-validation.ts` validates the generated catalog and every monthly score file at runtime. The
 same validation runs in catalog synchronization and GitHub Pages deployment
 through `npm run data:validate`; invalid data stops the workflow before commit
 or deployment.

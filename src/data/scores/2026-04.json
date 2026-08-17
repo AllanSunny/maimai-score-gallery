@@ -1,0 +1,545 @@
+{
+  "period": "2026-04",
+  "scores": [
+    {
+      "playedAt": "2026-04-04T22:52:40.000Z",
+      "songTitle": "オーバーライド",
+      "chartType": "DX",
+      "difficulty": "MASTER",
+      "level": "13",
+      "achievement": 99.7116,
+      "combo": "FC",
+      "sync": "FS",
+      "rating": 14713,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 590,
+        "perfect": 267,
+        "great": 15,
+        "good": 7,
+        "miss": 0
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 24,
+          "perfect": 10,
+          "great": 4,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 386,
+          "perfect": 238,
+          "great": 9,
+          "good": 5,
+          "miss": 0
+        },
+        "hold": {
+          "criticalPerfect": 20,
+          "perfect": 19,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 151,
+          "perfect": 0,
+          "great": 2,
+          "good": 2,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 9,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 27,
+      "slow": 5,
+      "id": "udkoRIv0YXNRajmgtpa6bSohrX8Ra0xL4JmbgCd-iTA",
+      "chartId": "song-487d0c975e16-dx-master"
+    },
+    {
+      "playedAt": "2026-04-04T23:00:13.000Z",
+      "songTitle": "Baqeela",
+      "chartType": "DX",
+      "difficulty": "MASTER",
+      "level": "13+",
+      "achievement": 99.7244,
+      "combo": "FC",
+      "sync": "Sync",
+      "rating": 14716,
+      "ratingChange": 3,
+      "judgments": {
+        "criticalPerfect": 614,
+        "perfect": 326,
+        "great": 36,
+        "good": 6,
+        "miss": 0
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 21,
+          "perfect": 21,
+          "great": 2,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 355,
+          "perfect": 284,
+          "great": 28,
+          "good": 6,
+          "miss": 0
+        },
+        "hold": {
+          "criticalPerfect": 26,
+          "perfect": 21,
+          "great": 3,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 72,
+          "perfect": 0,
+          "great": 3,
+          "good": 0,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 140,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 42,
+      "slow": 21,
+      "id": "q9rpR8wCxXCeLOj0iuIuXrBYTEkvnKFj62JM0G2gYlk",
+      "chartId": "song-7fbb1100d70a-dx-master"
+    },
+    {
+      "playedAt": "2026-04-04T23:06:32.000Z",
+      "songTitle": "どんぐりGAME",
+      "chartType": "DX",
+      "difficulty": "MASTER",
+      "level": "13+",
+      "achievement": 100.174,
+      "combo": "FC",
+      "sync": "Sync",
+      "rating": 14716,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 460,
+        "perfect": 134,
+        "great": 7,
+        "good": 7,
+        "miss": 0
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 19,
+          "perfect": 4,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 190,
+          "perfect": 128,
+          "great": 3,
+          "good": 5,
+          "miss": 0
+        },
+        "hold": {
+          "criticalPerfect": 10,
+          "perfect": 2,
+          "great": 1,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 184,
+          "perfect": 0,
+          "great": 3,
+          "good": 2,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 57,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 14,
+      "slow": 4,
+      "id": "yvXqudo7lIi26kpjJCuqPYCYesMFXwMvlO6EIVIZtMU",
+      "chartId": "song-2322d2fdf93d-dx-master"
+    },
+    {
+      "playedAt": "2026-04-18T00:40:30.000Z",
+      "songTitle": "Baqeela",
+      "chartType": "DX",
+      "difficulty": "MASTER",
+      "level": "13+",
+      "achievement": 100.2139,
+      "combo": "Clear",
+      "sync": null,
+      "rating": 14745,
+      "ratingChange": 6,
+      "judgments": {
+        "criticalPerfect": 671,
+        "perfect": 286,
+        "great": 20,
+        "good": 3,
+        "miss": 2
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 29,
+          "perfect": 14,
+          "great": 1,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 406,
+          "perfect": 247,
+          "great": 16,
+          "good": 3,
+          "miss": 1
+        },
+        "hold": {
+          "criticalPerfect": 23,
+          "perfect": 25,
+          "great": 2,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 74,
+          "perfect": 0,
+          "great": 1,
+          "good": 0,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 139,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 1
+        }
+      },
+      "fast": 23,
+      "slow": 14,
+      "id": "iquHGbStY4RTyZ_3yCCbQvuCC4aZaMNV7t12Xv-x1HU",
+      "chartId": "song-7fbb1100d70a-dx-master"
+    },
+    {
+      "playedAt": "2026-04-18T00:44:00.000Z",
+      "songTitle": "Baqeela",
+      "chartType": "DX",
+      "difficulty": "MASTER",
+      "level": "13+",
+      "achievement": 100.4026,
+      "combo": "Clear",
+      "sync": null,
+      "rating": 14746,
+      "ratingChange": 1,
+      "judgments": {
+        "criticalPerfect": 690,
+        "perfect": 266,
+        "great": 24,
+        "good": 0,
+        "miss": 2
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 29,
+          "perfect": 15,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 420,
+          "perfect": 229,
+          "great": 24,
+          "good": 0,
+          "miss": 0
+        },
+        "hold": {
+          "criticalPerfect": 28,
+          "perfect": 22,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 75,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 138,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 2
+        }
+      },
+      "fast": 26,
+      "slow": 13,
+      "id": "Vkeh2JixUE3QBtuLyTBuZNVP6U5fc4lAbiMdsZ9MqSg",
+      "chartId": "song-7fbb1100d70a-dx-master"
+    },
+    {
+      "playedAt": "2026-04-18T01:28:53.000Z",
+      "songTitle": "Baqeela",
+      "chartType": "DX",
+      "difficulty": "MASTER",
+      "level": "13+",
+      "achievement": 100.67,
+      "combo": "Clear",
+      "sync": null,
+      "rating": 14757,
+      "ratingChange": 11,
+      "judgments": {
+        "criticalPerfect": 697,
+        "perfect": 274,
+        "great": 10,
+        "good": 0,
+        "miss": 1
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 32,
+          "perfect": 12,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 425,
+          "perfect": 239,
+          "great": 9,
+          "good": 0,
+          "miss": 0
+        },
+        "hold": {
+          "criticalPerfect": 27,
+          "perfect": 23,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 74,
+          "perfect": 0,
+          "great": 1,
+          "good": 0,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 139,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 1
+        }
+      },
+      "fast": 10,
+      "slow": 12,
+      "id": "cC6Hs7qJmgLPXkoden9-WeRWEWlvbhkNc-MfJVhlehA",
+      "chartId": "song-7fbb1100d70a-dx-master"
+    },
+    {
+      "playedAt": "2026-04-18T18:54:15.000Z",
+      "songTitle": "テトリス",
+      "chartType": "DX",
+      "difficulty": "Re:MASTER",
+      "level": "13+",
+      "achievement": 100.1725,
+      "combo": "FC",
+      "sync": null,
+      "rating": 14803,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 637,
+        "perfect": 271,
+        "great": 31,
+        "good": 2,
+        "miss": 0
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 50,
+          "perfect": 8,
+          "great": 1,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 346,
+          "perfect": 248,
+          "great": 22,
+          "good": 2,
+          "miss": 0
+        },
+        "hold": {
+          "criticalPerfect": 22,
+          "perfect": 15,
+          "great": 1,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 164,
+          "perfect": 0,
+          "great": 7,
+          "good": 0,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 55,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 38,
+      "slow": 3,
+      "id": "fLe2WdEntZKMyNVHgH1ljeuvvvNFOh69cCNe3w-ms8w",
+      "chartId": "song-58508b2f410c-dx-re-master"
+    },
+    {
+      "playedAt": "2026-04-18T23:07:19.000Z",
+      "songTitle": "Mystic Parade",
+      "chartType": "DX",
+      "difficulty": "MASTER",
+      "level": "13",
+      "achievement": 98.9826,
+      "combo": "Clear",
+      "sync": null,
+      "rating": 14803,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 530,
+        "perfect": 310,
+        "great": 51,
+        "good": 2,
+        "miss": 3
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 38,
+          "perfect": 17,
+          "great": 7,
+          "good": 1,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 364,
+          "perfect": 272,
+          "great": 41,
+          "good": 1,
+          "miss": 3
+        },
+        "hold": {
+          "criticalPerfect": 23,
+          "perfect": 21,
+          "great": 2,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 81,
+          "perfect": 0,
+          "great": 1,
+          "good": 0,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 24,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 41,
+      "slow": 29,
+      "id": "f0x8KYtTVk6XEIuwubTExp54mr0eP7JlvtzWIFKGQcI",
+      "chartId": "song-e55f5c1d041d-dx-master"
+    },
+    {
+      "playedAt": "2026-04-18T23:10:45.000Z",
+      "songTitle": "Mystic Parade",
+      "chartType": "DX",
+      "difficulty": "MASTER",
+      "level": "13",
+      "achievement": 99.2963,
+      "combo": "Clear",
+      "sync": null,
+      "rating": 14803,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 565,
+        "perfect": 290,
+        "great": 36,
+        "good": 3,
+        "miss": 2
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 36,
+          "perfect": 20,
+          "great": 6,
+          "good": 1,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 406,
+          "perfect": 246,
+          "great": 26,
+          "good": 2,
+          "miss": 1
+        },
+        "hold": {
+          "criticalPerfect": 20,
+          "perfect": 24,
+          "great": 2,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 80,
+          "perfect": 0,
+          "great": 2,
+          "good": 0,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 23,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 1
+        }
+      },
+      "fast": 41,
+      "slow": 18,
+      "id": "niHh9SLPitD3eZzq78JcfRIa_NrU2emr9IFJ8Gb5sSc",
+      "chartId": "song-e55f5c1d041d-dx-master"
+    }
+  ]
+}
