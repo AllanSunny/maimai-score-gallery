@@ -3902,66 +3902,6 @@
       "chartId": "song-d47f70af5b17-dx-re-master"
     },
     {
-      "playedAt": "2026-01-07T17:45:15.000Z",
-      "songTitle": "はいよろこんで",
-      "chartType": "DX",
-      "difficulty": "Re:MASTER",
-      "level": "13",
-      "achievement": 100.4398,
-      "combo": "Clear",
-      "sync": "Sync",
-      "rating": 14271,
-      "ratingChange": 27,
-      "judgments": {
-        "criticalPerfect": 724,
-        "perfect": 106,
-        "great": 4,
-        "good": 1,
-        "miss": 3
-      },
-      "judgmentsByType": {
-        "break": {
-          "criticalPerfect": 31,
-          "perfect": 9,
-          "great": 0,
-          "good": 0,
-          "miss": 0
-        },
-        "tap": {
-          "criticalPerfect": 498,
-          "perfect": 83,
-          "great": 4,
-          "good": 1,
-          "miss": 2
-        },
-        "hold": {
-          "criticalPerfect": 64,
-          "perfect": 14,
-          "great": 0,
-          "good": 0,
-          "miss": 0
-        },
-        "slide": {
-          "criticalPerfect": 94,
-          "perfect": 0,
-          "great": 0,
-          "good": 0,
-          "miss": 1
-        },
-        "touch": {
-          "criticalPerfect": 37,
-          "perfect": 0,
-          "great": 0,
-          "good": 0,
-          "miss": 0
-        }
-      },
-      "fast": 54,
-      "slow": 57,
-      "id": "GVkPJ4nXcjLem0Sp5Gm6U0s1i0nl0XReA06_T9zbxfk",
-      "chartId": "song-aa146dfca961-dx-re-master"
-    },
-    {
       "playedAt": "2026-01-07T17:49:26.000Z",
       "songTitle": "Southern Cross",
       "chartType": "DX",
@@ -4140,66 +4080,6 @@
       "slow": 8,
       "id": "ux_p0SK2Fhy2jJFin_eAqLN6cGpuZrX8sl9LAo3pL_Q",
       "chartId": "song-44aa05a05ba6-dx-expert"
-    },
-    {
-      "playedAt": "2026-01-07T18:08:48.000Z",
-      "songTitle": "Oshama Scramble!",
-      "chartType": "DX",
-      "difficulty": "MASTER",
-      "level": "13+",
-      "achievement": 100.0169,
-      "combo": "Clear",
-      "sync": "Sync",
-      "rating": 14295,
-      "ratingChange": 11,
-      "judgments": {
-        "criticalPerfect": 856,
-        "perfect": 128,
-        "great": 5,
-        "good": 5,
-        "miss": 6
-      },
-      "judgmentsByType": {
-        "break": {
-          "criticalPerfect": 70,
-          "perfect": 27,
-          "great": 2,
-          "good": 0,
-          "miss": 0
-        },
-        "tap": {
-          "criticalPerfect": 640,
-          "perfect": 100,
-          "great": 2,
-          "good": 4,
-          "miss": 1
-        },
-        "hold": {
-          "criticalPerfect": 20,
-          "perfect": 1,
-          "great": 0,
-          "good": 0,
-          "miss": 0
-        },
-        "slide": {
-          "criticalPerfect": 50,
-          "perfect": 0,
-          "great": 1,
-          "good": 1,
-          "miss": 0
-        },
-        "touch": {
-          "criticalPerfect": 76,
-          "perfect": 0,
-          "great": 0,
-          "good": 0,
-          "miss": 5
-        }
-      },
-      "fast": 81,
-      "slow": 57,
-      "id": "QzpsMmgw4NVBmZotUEF9SnUNOgd3I7SmW4pGdYbotrM",
-      "chartId": "song-0ac24dd304e4-dx-master"
     },
     {
       "playedAt": "2026-01-07T18:17:53.000Z",
