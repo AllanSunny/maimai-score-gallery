@@ -1,0 +1,14 @@
+src/data/scores/2025-11.json
+  h_278fafc5c28027 2767
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.22",
+  "base_commit_sha": "0b6c03b0f16ca20ffe81b8f0d5f6df3c495c5e49",
+  "prompts": {},
+  "humans": {
+    "h_278fafc5c28027": {
+      "author": "Allan Sun <allansun@live.com>"
+    }
+  }
+}
