@@ -1,0 +1,54 @@
+src/utils/scores.ts
+  s_6d06bd4898dc7f::t_c08cfab73589e0 4
+scripts/lib/chart-summaries.mjs
+  s_6d06bd4898dc7f::t_4fcbef1ddd08ef 1-100
+.github/workflows/audit-legacy-sync-status.yml
+  s_6d06bd4898dc7f::t_9f148f2bb1b77d 108-109
+scripts/sync-chart-summaries.mjs
+  s_6d06bd4898dc7f::t_9f148f2bb1b77d 1-10
+src/data/scores/chart-summaries.json
+  s_6d06bd4898dc7f::t_e5ad9f819d5f46 1-6365
+test/scripts/lib/chart-summaries.test.mjs
+  s_6d06bd4898dc7f::t_b4221b4deced2f 1-48
+scripts/validate-data.mjs
+  s_6d06bd4898dc7f::t_b4221b4deced2f 4,8,14,18
+  s_6d06bd4898dc7f::t_292a760d3bb87f 2,15-17
+src/utils/data-validation.ts
+  s_6d06bd4898dc7f::t_b4221b4deced2f 3,140-164
+  s_6d06bd4898dc7f::t_7fb2226d7e3cf3 4,11-12,108-109
+  s_6d06bd4898dc7f::t_dc6c17994d7cba 165
+package.json
+  s_6d06bd4898dc7f::t_9f148f2bb1b77d 20
+.github/workflows/import-new-scores.yml
+  s_6d06bd4898dc7f::t_292a760d3bb87f 157
+docs/data-model.md
+  s_6d06bd4898dc7f::t_292a760d3bb87f 21-23,27,34-44
+  s_6d06bd4898dc7f::t_9f148f2bb1b77d 24-26
+  s_6d06bd4898dc7f::t_b2ff55948bf803 45-46
+scripts/sync-catalog.mjs
+  s_6d06bd4898dc7f::t_4fcbef1ddd08ef 10,312
+src/utils/types.ts
+  s_6d06bd4898dc7f::t_7fb2226d7e3cf3 3,71,104
+  s_6d06bd4898dc7f::t_4fcbef1ddd08ef 87-103,105-112
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.22",
+  "base_commit_sha": "62039a0ef16dc0aa766014e3884917c64fdc6d5e",
+  "prompts": {},
+  "humans": {
+    "h_278fafc5c28027": {
+      "author": "Allan Sun <allansun@live.com>"
+    }
+  },
+  "sessions": {
+    "s_6d06bd4898dc7f": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019faca2-0a30-75f3-8a51-06f8e9067195",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Allan Sun <allansun@live.com>"
+    }
+  }
+}
