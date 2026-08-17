@@ -7,7 +7,6 @@ import { promisify } from "node:util";
 import { enrichMissingSongTitles } from "./lib/catalog-title-enrichment.mjs";
 import { standaloneCatalogSongs } from "./lib/catalog-overrides.mjs";
 import { catalogOutput } from "./lib/catalog-output.mjs";
-import { writeChartSummaries } from "./lib/chart-summaries.mjs";
 import { readMonthlyScoreArchive, writeMonthlyScoreArchive } from "./lib/monthly-score-archive.mjs";
 import { maimaiVersion, standaloneMaimaiVersion } from "./lib/maimai-version.mjs";
 
@@ -337,7 +336,6 @@ async function linkArchivedScores(songs, unmatchedSongs) {
     await writeMonthlyScoreArchive(acceptedScores);
     console.log(`Updated score-to-chart associations; rejected ${rejectedScoreCount} unknown-title play(s).`);
   }
-  await writeChartSummaries(acceptedScores);
 }
 
 function contentExtension(contentType, sourceUrl) {

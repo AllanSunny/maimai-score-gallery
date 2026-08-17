@@ -6,7 +6,7 @@ import { parseChartSummaries, parseGeneratedCatalog, parseScoreChunk } from "../
 
 const catalog = JSON.parse(await readFile("src/data/generated-catalog.json", "utf8"));
 const archive = await readMonthlyScoreArchive();
-const summaries = JSON.parse(await readFile("src/data/scores/chart-summaries.json", "utf8"));
+const shouldValidateChartSummaries = !process.argv.includes("--skip-chart-summaries");
 
 parseGeneratedCatalog(catalog);
 catalog.songs.forEach((song) => {
@@ -18,8 +18,14 @@ catalog.songs.forEach((song) => {
 for (const name of archive.files) {
   parseScoreChunk(JSON.parse(await readFile(`src/data/scores/${name}`, "utf8")));
 }
-parseChartSummaries(summaries);
-if (JSON.stringify(summaries.charts) !== JSON.stringify(buildChartSummaries(archive.scores))) {
-  throw new Error("Chart summaries do not match the monthly score archive.");
+let summaryCount = null;
+if (shouldValidateChartSummaries) {
+  const summaries = JSON.parse(await readFile("src/data/scores/chart-summaries.json", "utf8"));
+  parseChartSummaries(summaries);
+  if (JSON.stringify(summaries.charts) !== JSON.stringify(buildChartSummaries(archive.scores))) {
+    throw new Error("Chart summaries do not match the monthly score archive.");
+  }
+  summaryCount = Object.keys(summaries.charts).length;
 }
-console.log(`Validated ${catalog.songs.length} songs, ${archive.scores.length} score records across ${archive.files.length} month(s), and ${Object.keys(summaries.charts).length} chart summaries.`);
+const summaryMessage = summaryCount === null ? "chart summaries skipped" : `${summaryCount} chart summaries`;
+console.log(`Validated ${catalog.songs.length} songs, ${archive.scores.length} score records across ${archive.files.length} month(s), and ${summaryMessage}.`);

@@ -105,9 +105,7 @@ jobs:
           GOOGLE_SPREADSHEET_ID: ${{ vars.GOOGLE_SPREADSHEET_ID }}
           GOOGLE_SHEET_NAME: ${{ vars.GOOGLE_SHEET_NAME }}
         run: npm run scores:sync
-      - name: Regenerate chart summaries
-        run: npm run scores:summarize
-      - run: npm run data:validate
+      - run: npm run data:validate:source
       - name: Commit corrected sync statuses
         id: commit
         run: |

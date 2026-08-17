@@ -207,7 +207,7 @@ jobs:
             "\n\nCorrect the review/spreadsheet data, then rerun **Import New Scores**.")[0:1900],
             allowed_mentions: {parse: []}}' .sync/rejected-scores.json | curl --fail --silent --show-error \
             --header "Content-Type: application/json" --data-binary @- "$DISCORD_WEBHOOK_URL"
-      - run: npm run data:validate
+      - run: npm run data:validate:source
       - uses: actions/upload-artifact@v4
         with:
           name: generated-data
@@ -238,7 +238,7 @@ jobs:
           node-version: 24.14.1
           cache: npm
       - run: npm ci
-      - run: npm run data:validate
+      - run: npm run data:validate:source
       - name: Commit score and catalog data once
         id: commit
         run: |
