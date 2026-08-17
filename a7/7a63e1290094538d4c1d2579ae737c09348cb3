@@ -1,0 +1,24 @@
+.github/workflows/deploy-pages.yml
+  s_2d266366fb3f9b::t_bfba1cf6ee6035 30
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.22",
+  "base_commit_sha": "a77a63e1290094538d4c1d2579ae737c09348cb3",
+  "prompts": {},
+  "humans": {
+    "h_278fafc5c28027": {
+      "author": "Allan Sun <allansun@live.com>"
+    }
+  },
+  "sessions": {
+    "s_2d266366fb3f9b": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a00ddd-dd81-7e70-ad6c-e3e2c9ca9ef7",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Allan Sun <allansun@live.com>"
+    }
+  }
+}
