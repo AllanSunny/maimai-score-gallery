@@ -1,6 +1,28 @@
 {
-  "generatedAt": "2026-08-17T03:58:44.470Z",
+  "generatedAt": "2026-08-17T04:12:49.180Z",
   "charts": {
+    "song-00493f7d7088-dx-master": {
+      "chartId": "song-00493f7d7088-dx-master",
+      "playCount": 3,
+      "bestAchievement": {
+        "value": 100.6664,
+        "scoreId": "lrNdESSX9haFMEapzCc0gB_7lvEMvp6JYh9hrqhl-2Q",
+        "playedAt": "2026-05-22T00:42:31.000Z"
+      },
+      "bestCombo": {
+        "status": "FC+",
+        "scoreId": "lrNdESSX9haFMEapzCc0gB_7lvEMvp6JYh9hrqhl-2Q",
+        "playedAt": "2026-05-22T00:42:31.000Z"
+      },
+      "bestSync": {
+        "status": "Sync",
+        "scoreId": "lwP9hWr3RnNcz9-Vh9YlMv63KrjY2ksG6I-_q4B2Lj4",
+        "playedAt": "2026-05-21T22:25:48.000Z"
+      },
+      "historyChunks": [
+        "2026-05"
+      ]
+    },
     "song-00dec12931e6-std-expert": {
       "chartId": "song-00dec12931e6-std-expert",
       "playCount": 1,
@@ -145,6 +167,28 @@
         "2025-11"
       ]
     },
+    "song-08f22014494d-dx-re-master": {
+      "chartId": "song-08f22014494d-dx-re-master",
+      "playCount": 1,
+      "bestAchievement": {
+        "value": 91.3079,
+        "scoreId": "VhgI14S_A8nUh0IY19xK4ujPDK8paYj4fbpXgRJg2qM",
+        "playedAt": "2025-12-06T05:18:33.000Z"
+      },
+      "bestCombo": {
+        "status": "Clear",
+        "scoreId": "VhgI14S_A8nUh0IY19xK4ujPDK8paYj4fbpXgRJg2qM",
+        "playedAt": "2025-12-06T05:18:33.000Z"
+      },
+      "bestSync": {
+        "status": "Sync",
+        "scoreId": "VhgI14S_A8nUh0IY19xK4ujPDK8paYj4fbpXgRJg2qM",
+        "playedAt": "2025-12-06T05:18:33.000Z"
+      },
+      "historyChunks": [
+        "2025-12"
+      ]
+    },
     "song-08f696c0d52c-dx-expert": {
       "chartId": "song-08f696c0d52c-dx-expert",
       "playCount": 1,
@@ -249,9 +293,31 @@
         "2026-01"
       ]
     },
+    "song-0c18775b603e-dx-master": {
+      "chartId": "song-0c18775b603e-dx-master",
+      "playCount": 1,
+      "bestAchievement": {
+        "value": 100.4653,
+        "scoreId": "lkToU7bVkeHOWhV7tm44dg3kGvtzBDdBAycmN74F58E",
+        "playedAt": "2026-05-21T23:04:25.000Z"
+      },
+      "bestCombo": {
+        "status": "Clear",
+        "scoreId": "lkToU7bVkeHOWhV7tm44dg3kGvtzBDdBAycmN74F58E",
+        "playedAt": "2026-05-21T23:04:25.000Z"
+      },
+      "bestSync": {
+        "status": "Sync",
+        "scoreId": "lkToU7bVkeHOWhV7tm44dg3kGvtzBDdBAycmN74F58E",
+        "playedAt": "2026-05-21T23:04:25.000Z"
+      },
+      "historyChunks": [
+        "2026-05"
+      ]
+    },
     "song-0cad2b7a0c5f-dx-expert": {
       "chartId": "song-0cad2b7a0c5f-dx-expert",
-      "playCount": 1,
+      "playCount": 2,
       "bestAchievement": {
         "value": 100.9625,
         "scoreId": "cBzLYvCxVl0X11A48eJBM_lniJQSLZRvJMopJguuzFw",
@@ -264,25 +330,8 @@
       },
       "bestSync": null,
       "historyChunks": [
+        "2025-11",
         "2026-01"
-      ]
-    },
-    "song-0cad2b7a0c5f-std-expert": {
-      "chartId": "song-0cad2b7a0c5f-std-expert",
-      "playCount": 1,
-      "bestAchievement": {
-        "value": 100.3058,
-        "scoreId": "OtgwQAkGuxHzFXLcoXKpsvkuRAm6AuLlGD6Nquq4sXI",
-        "playedAt": "2025-11-11T22:46:59.000Z"
-      },
-      "bestCombo": {
-        "status": "FC+",
-        "scoreId": "OtgwQAkGuxHzFXLcoXKpsvkuRAm6AuLlGD6Nquq4sXI",
-        "playedAt": "2025-11-11T22:46:59.000Z"
-      },
-      "bestSync": null,
-      "historyChunks": [
-        "2025-11"
       ]
     },
     "song-0cedd756d872-dx-master": {
@@ -554,16 +603,16 @@
     },
     "song-1806496bcb75-dx-expert": {
       "chartId": "song-1806496bcb75-dx-expert",
-      "playCount": 1,
+      "playCount": 2,
       "bestAchievement": {
-        "value": 98.903,
-        "scoreId": "CTPBORVgGE-5i_pEd--_L7BNtGrClBADxbJXxwOVlLo",
-        "playedAt": "2025-11-20T03:07:02.000Z"
+        "value": 99.0735,
+        "scoreId": "NiSK-_zv84HFMwBo-twSEMk7_5LflD8amI8uTh28lQU",
+        "playedAt": "2026-05-22T02:18:30.000Z"
       },
       "bestCombo": {
         "status": "Clear",
-        "scoreId": "CTPBORVgGE-5i_pEd--_L7BNtGrClBADxbJXxwOVlLo",
-        "playedAt": "2025-11-20T03:07:02.000Z"
+        "scoreId": "NiSK-_zv84HFMwBo-twSEMk7_5LflD8amI8uTh28lQU",
+        "playedAt": "2026-05-22T02:18:30.000Z"
       },
       "bestSync": {
         "status": "Sync",
@@ -571,7 +620,8 @@
         "playedAt": "2025-11-20T03:07:02.000Z"
       },
       "historyChunks": [
-        "2025-11"
+        "2025-11",
+        "2026-05"
       ]
     },
     "song-18353f1aaac6-dx-master": {
@@ -616,7 +666,7 @@
     },
     "song-18cc28f9f66d-dx-master": {
       "chartId": "song-18cc28f9f66d-dx-master",
-      "playCount": 4,
+      "playCount": 6,
       "bestAchievement": {
         "value": 99.8987,
         "scoreId": "Rfdy4cpf8hPXh3r3mPrwL2zOAg1529jeOh-xx_ZIcvo",
@@ -1011,18 +1061,40 @@
         "2026-01"
       ]
     },
-    "song-2cdd6e0024e0-dx-expert": {
-      "chartId": "song-2cdd6e0024e0-dx-expert",
-      "playCount": 2,
+    "song-2ab3391ec93e-dx-expert": {
+      "chartId": "song-2ab3391ec93e-dx-expert",
+      "playCount": 1,
       "bestAchievement": {
-        "value": 99.0636,
-        "scoreId": "OOeFl-bCnNG83TChGg0yZ5SJRr6lrU3_uSij8VeHWKk",
-        "playedAt": "2025-12-26T02:45:28.000Z"
+        "value": 100.775,
+        "scoreId": "bjUsMPIyD70f9eYdsZzMBq6RyH9dLp5n511MIZrZUgs",
+        "playedAt": "2025-12-06T05:30:05.000Z"
       },
       "bestCombo": {
-        "status": "Clear",
-        "scoreId": "OOeFl-bCnNG83TChGg0yZ5SJRr6lrU3_uSij8VeHWKk",
-        "playedAt": "2025-12-26T02:45:28.000Z"
+        "status": "FC+",
+        "scoreId": "bjUsMPIyD70f9eYdsZzMBq6RyH9dLp5n511MIZrZUgs",
+        "playedAt": "2025-12-06T05:30:05.000Z"
+      },
+      "bestSync": {
+        "status": "FDX",
+        "scoreId": "bjUsMPIyD70f9eYdsZzMBq6RyH9dLp5n511MIZrZUgs",
+        "playedAt": "2025-12-06T05:30:05.000Z"
+      },
+      "historyChunks": [
+        "2025-12"
+      ]
+    },
+    "song-2cdd6e0024e0-dx-expert": {
+      "chartId": "song-2cdd6e0024e0-dx-expert",
+      "playCount": 4,
+      "bestAchievement": {
+        "value": 100.4748,
+        "scoreId": "5IKuZiJKl4m5t-F_mD3H4SYtXrIqtG_xl_51YCiDM5E",
+        "playedAt": "2026-05-22T00:27:06.000Z"
+      },
+      "bestCombo": {
+        "status": "FC+",
+        "scoreId": "DyXeg2iLnt_FkdjmpO9zBwQo8IWEaNcg8vgdVAZFKGM",
+        "playedAt": "2026-05-22T00:31:21.000Z"
       },
       "bestSync": {
         "status": "Sync",
@@ -1031,7 +1103,8 @@
       },
       "historyChunks": [
         "2025-11",
-        "2025-12"
+        "2025-12",
+        "2026-05"
       ]
     },
     "song-2d3a3512bebf-dx-expert": {
@@ -1315,6 +1388,28 @@
         "2025-12"
       ]
     },
+    "song-33f419858168-dx-expert": {
+      "chartId": "song-33f419858168-dx-expert",
+      "playCount": 1,
+      "bestAchievement": {
+        "value": 98.4362,
+        "scoreId": "gTgsbovmm_gxfGnMh1g69nl8Q6UBzzfCyhj6X8iMN3M",
+        "playedAt": "2025-12-06T06:19:27.000Z"
+      },
+      "bestCombo": {
+        "status": "FC",
+        "scoreId": "gTgsbovmm_gxfGnMh1g69nl8Q6UBzzfCyhj6X8iMN3M",
+        "playedAt": "2025-12-06T06:19:27.000Z"
+      },
+      "bestSync": {
+        "status": "Sync",
+        "scoreId": "gTgsbovmm_gxfGnMh1g69nl8Q6UBzzfCyhj6X8iMN3M",
+        "playedAt": "2025-12-06T06:19:27.000Z"
+      },
+      "historyChunks": [
+        "2025-12"
+      ]
+    },
     "song-35335e0f2151-dx-master": {
       "chartId": "song-35335e0f2151-dx-master",
       "playCount": 6,
@@ -1332,6 +1427,28 @@
         "status": "Sync",
         "scoreId": "_jR5PsKbeguqwkIdTUcD64zjifv9ptBmkwPGK9L31W0",
         "playedAt": "2025-12-26T03:09:54.000Z"
+      },
+      "historyChunks": [
+        "2025-12"
+      ]
+    },
+    "song-358d0951f9b6-dx-expert": {
+      "chartId": "song-358d0951f9b6-dx-expert",
+      "playCount": 1,
+      "bestAchievement": {
+        "value": 100.8584,
+        "scoreId": "nB4OH3r82oCRFRqpZYbsHgQMtDfRnlnEmTP89lXEci0",
+        "playedAt": "2025-12-06T04:31:06.000Z"
+      },
+      "bestCombo": {
+        "status": "FC+",
+        "scoreId": "nB4OH3r82oCRFRqpZYbsHgQMtDfRnlnEmTP89lXEci0",
+        "playedAt": "2025-12-06T04:31:06.000Z"
+      },
+      "bestSync": {
+        "status": "FDX",
+        "scoreId": "nB4OH3r82oCRFRqpZYbsHgQMtDfRnlnEmTP89lXEci0",
+        "playedAt": "2025-12-06T04:31:06.000Z"
       },
       "historyChunks": [
         "2025-12"
@@ -1576,7 +1693,7 @@
     },
     "song-3ce7f814ff96-std-master": {
       "chartId": "song-3ce7f814ff96-std-master",
-      "playCount": 1,
+      "playCount": 2,
       "bestAchievement": {
         "value": 98.3896,
         "scoreId": "noHaHAtCqZhE7651Q3Xqj5CP-BZE9dcZoBIfBUzaSn8",
@@ -1593,6 +1710,7 @@
         "playedAt": "2026-01-07T17:52:37.000Z"
       },
       "historyChunks": [
+        "2025-12",
         "2026-01"
       ]
     },
@@ -1693,6 +1811,24 @@
       "bestSync": null,
       "historyChunks": [
         "2025-11"
+      ]
+    },
+    "song-438eaed9a234-std-master": {
+      "chartId": "song-438eaed9a234-std-master",
+      "playCount": 1,
+      "bestAchievement": {
+        "value": 94.6702,
+        "scoreId": "zG-0Cg_2HmhLQOAXLMBBx_RoGZfykt90xvU1EEuunxA",
+        "playedAt": "2026-05-22T02:23:10.000Z"
+      },
+      "bestCombo": {
+        "status": "Clear",
+        "scoreId": "zG-0Cg_2HmhLQOAXLMBBx_RoGZfykt90xvU1EEuunxA",
+        "playedAt": "2026-05-22T02:23:10.000Z"
+      },
+      "bestSync": null,
+      "historyChunks": [
+        "2026-05"
       ]
     },
     "song-43c1df3f7239-dx-expert": {
@@ -1805,20 +1941,25 @@
     },
     "song-461be4a49f43-dx-master": {
       "chartId": "song-461be4a49f43-dx-master",
-      "playCount": 1,
+      "playCount": 2,
       "bestAchievement": {
-        "value": 97.0042,
-        "scoreId": "QL6_wP5_TSgRA-06iqWba4LlQtWicvtCOCQXDyT3140",
-        "playedAt": "2025-11-14T04:36:31.000Z"
+        "value": 99.2907,
+        "scoreId": "43pv4JbFBV3BkECEdcc8XCS3PNKHEBRib5h9s0t6RCc",
+        "playedAt": "2025-12-06T04:56:05.000Z"
       },
       "bestCombo": {
-        "status": "Clear",
-        "scoreId": "QL6_wP5_TSgRA-06iqWba4LlQtWicvtCOCQXDyT3140",
-        "playedAt": "2025-11-14T04:36:31.000Z"
+        "status": "FC",
+        "scoreId": "43pv4JbFBV3BkECEdcc8XCS3PNKHEBRib5h9s0t6RCc",
+        "playedAt": "2025-12-06T04:56:05.000Z"
       },
-      "bestSync": null,
+      "bestSync": {
+        "status": "Sync",
+        "scoreId": "43pv4JbFBV3BkECEdcc8XCS3PNKHEBRib5h9s0t6RCc",
+        "playedAt": "2025-12-06T04:56:05.000Z"
+      },
       "historyChunks": [
-        "2025-11"
+        "2025-11",
+        "2025-12"
       ]
     },
     "song-468944a150e8-dx-expert": {
@@ -1921,11 +2062,11 @@
     },
     "song-487d0c975e16-dx-master": {
       "chartId": "song-487d0c975e16-dx-master",
-      "playCount": 4,
+      "playCount": 6,
       "bestAchievement": {
-        "value": 99.7116,
-        "scoreId": "udkoRIv0YXNRajmgtpa6bSohrX8Ra0xL4JmbgCd-iTA",
-        "playedAt": "2026-04-04T22:52:40.000Z"
+        "value": 100.5139,
+        "scoreId": "xQtjTRYYdIEqHQp4QQPicevxG9YIWBJyZWds3yIPa9c",
+        "playedAt": "2026-05-21T23:52:54.000Z"
       },
       "bestCombo": {
         "status": "FC",
@@ -1940,7 +2081,8 @@
       "historyChunks": [
         "2025-11",
         "2025-12",
-        "2026-04"
+        "2026-04",
+        "2026-05"
       ]
     },
     "song-48ebdafbb49f-std-master": {
@@ -2212,18 +2354,22 @@
     },
     "song-52e03f4cfc5d-dx-re-master": {
       "chartId": "song-52e03f4cfc5d-dx-re-master",
-      "playCount": 1,
+      "playCount": 3,
       "bestAchievement": {
         "value": 100.5,
-        "scoreId": "aopYj4gzXnV1oWvlROb737NQ2CtgEW-OBRDGvm42hUA",
-        "playedAt": "2026-05-21T22:34:15.000Z"
+        "scoreId": "uFL_-RU7A5D9SlFSUgdkFwBZkWMuQu8MVPWpdyYpFQg",
+        "playedAt": "2026-05-21T23:34:15.000Z"
       },
       "bestCombo": {
         "status": "FC",
-        "scoreId": "aopYj4gzXnV1oWvlROb737NQ2CtgEW-OBRDGvm42hUA",
-        "playedAt": "2026-05-21T22:34:15.000Z"
+        "scoreId": "uFL_-RU7A5D9SlFSUgdkFwBZkWMuQu8MVPWpdyYpFQg",
+        "playedAt": "2026-05-21T23:34:15.000Z"
       },
-      "bestSync": null,
+      "bestSync": {
+        "status": "FS",
+        "scoreId": "E5FHDiG9QbWKbmwSnTdxca4_sYz9h828gFD3gdxD-Uk",
+        "playedAt": "2026-05-21T22:19:29.000Z"
+      },
       "historyChunks": [
         "2026-05"
       ]
@@ -2314,6 +2460,28 @@
         "2025-11"
       ]
     },
+    "song-553e96cd15c3-dx-master": {
+      "chartId": "song-553e96cd15c3-dx-master",
+      "playCount": 1,
+      "bestAchievement": {
+        "value": 100.5366,
+        "scoreId": "S7EcwAdHOEBv8n-TITKLUJqBSas1pQGkxtgyOwtWcY0",
+        "playedAt": "2026-05-21T22:16:09.000Z"
+      },
+      "bestCombo": {
+        "status": "FC",
+        "scoreId": "S7EcwAdHOEBv8n-TITKLUJqBSas1pQGkxtgyOwtWcY0",
+        "playedAt": "2026-05-21T22:16:09.000Z"
+      },
+      "bestSync": {
+        "status": "Sync",
+        "scoreId": "S7EcwAdHOEBv8n-TITKLUJqBSas1pQGkxtgyOwtWcY0",
+        "playedAt": "2026-05-21T22:16:09.000Z"
+      },
+      "historyChunks": [
+        "2026-05"
+      ]
+    },
     "song-5619c275b593-std-expert": {
       "chartId": "song-5619c275b593-std-expert",
       "playCount": 1,
@@ -2356,6 +2524,24 @@
       },
       "historyChunks": [
         "2025-11"
+      ]
+    },
+    "song-5836d24bd19a-std-expert": {
+      "chartId": "song-5836d24bd19a-std-expert",
+      "playCount": 1,
+      "bestAchievement": {
+        "value": 98.2028,
+        "scoreId": "KRFCxx_bHhJ3qVY0KsdPZqQWrp5XzaQdRfJCr52tbKY",
+        "playedAt": "2026-05-22T01:18:15.000Z"
+      },
+      "bestCombo": {
+        "status": "Clear",
+        "scoreId": "KRFCxx_bHhJ3qVY0KsdPZqQWrp5XzaQdRfJCr52tbKY",
+        "playedAt": "2026-05-22T01:18:15.000Z"
+      },
+      "bestSync": null,
+      "historyChunks": [
+        "2026-05"
       ]
     },
     "song-58508b2f410c-dx-re-master": {
@@ -2596,6 +2782,50 @@
         "2026-03"
       ]
     },
+    "song-5faa713a75d7-dx-expert": {
+      "chartId": "song-5faa713a75d7-dx-expert",
+      "playCount": 1,
+      "bestAchievement": {
+        "value": 99.1699,
+        "scoreId": "0NLHKNZyE3uPTaMoeaneJABcNg9JhT3qoT_ochnj1mw",
+        "playedAt": "2025-12-06T06:16:12.000Z"
+      },
+      "bestCombo": {
+        "status": "Clear",
+        "scoreId": "0NLHKNZyE3uPTaMoeaneJABcNg9JhT3qoT_ochnj1mw",
+        "playedAt": "2025-12-06T06:16:12.000Z"
+      },
+      "bestSync": {
+        "status": "Sync",
+        "scoreId": "0NLHKNZyE3uPTaMoeaneJABcNg9JhT3qoT_ochnj1mw",
+        "playedAt": "2025-12-06T06:16:12.000Z"
+      },
+      "historyChunks": [
+        "2025-12"
+      ]
+    },
+    "song-614d62f68589-dx-master": {
+      "chartId": "song-614d62f68589-dx-master",
+      "playCount": 1,
+      "bestAchievement": {
+        "value": 96.5873,
+        "scoreId": "s11h9okR6sSjLm1ZxnQbyc6bzvKi5LMtLT1cF6NZDws",
+        "playedAt": "2025-12-06T05:45:14.000Z"
+      },
+      "bestCombo": {
+        "status": "Clear",
+        "scoreId": "s11h9okR6sSjLm1ZxnQbyc6bzvKi5LMtLT1cF6NZDws",
+        "playedAt": "2025-12-06T05:45:14.000Z"
+      },
+      "bestSync": {
+        "status": "Sync",
+        "scoreId": "s11h9okR6sSjLm1ZxnQbyc6bzvKi5LMtLT1cF6NZDws",
+        "playedAt": "2025-12-06T05:45:14.000Z"
+      },
+      "historyChunks": [
+        "2025-12"
+      ]
+    },
     "song-62ffd18e0b91-dx-expert": {
       "chartId": "song-62ffd18e0b91-dx-expert",
       "playCount": 1,
@@ -2788,6 +3018,28 @@
         "2026-01"
       ]
     },
+    "song-68438afa8ff3-dx-master": {
+      "chartId": "song-68438afa8ff3-dx-master",
+      "playCount": 1,
+      "bestAchievement": {
+        "value": 98.6903,
+        "scoreId": "agKu5L1g237WYagkWyrS_x7WC-ltR3LDWD53VPembas",
+        "playedAt": "2025-12-06T06:01:20.000Z"
+      },
+      "bestCombo": {
+        "status": "Clear",
+        "scoreId": "agKu5L1g237WYagkWyrS_x7WC-ltR3LDWD53VPembas",
+        "playedAt": "2025-12-06T06:01:20.000Z"
+      },
+      "bestSync": {
+        "status": "Sync",
+        "scoreId": "agKu5L1g237WYagkWyrS_x7WC-ltR3LDWD53VPembas",
+        "playedAt": "2025-12-06T06:01:20.000Z"
+      },
+      "historyChunks": [
+        "2025-12"
+      ]
+    },
     "song-69512f200441-dx-expert": {
       "chartId": "song-69512f200441-dx-expert",
       "playCount": 1,
@@ -2826,6 +3078,28 @@
       },
       "historyChunks": [
         "2026-01"
+      ]
+    },
+    "song-6c0d8fb0f484-dx-expert": {
+      "chartId": "song-6c0d8fb0f484-dx-expert",
+      "playCount": 1,
+      "bestAchievement": {
+        "value": 100.4516,
+        "scoreId": "ZAykTNv4jE4Y2yCqGlVIFpqm0Ax5BSAwB6z8E7uJzdw",
+        "playedAt": "2025-12-06T04:52:25.000Z"
+      },
+      "bestCombo": {
+        "status": "FC",
+        "scoreId": "ZAykTNv4jE4Y2yCqGlVIFpqm0Ax5BSAwB6z8E7uJzdw",
+        "playedAt": "2025-12-06T04:52:25.000Z"
+      },
+      "bestSync": {
+        "status": "Sync",
+        "scoreId": "ZAykTNv4jE4Y2yCqGlVIFpqm0Ax5BSAwB6z8E7uJzdw",
+        "playedAt": "2025-12-06T04:52:25.000Z"
+      },
+      "historyChunks": [
+        "2025-12"
       ]
     },
     "song-6c1b87c59c13-std-master": {
@@ -2892,20 +3166,21 @@
     },
     "song-6d47ffabb20e-dx-master": {
       "chartId": "song-6d47ffabb20e-dx-master",
-      "playCount": 1,
+      "playCount": 2,
       "bestAchievement": {
-        "value": 95.524,
-        "scoreId": "idgkXJSXnmcM2ttYccWluhxmrq4my-XE-6isesqElXM",
-        "playedAt": "2026-01-15T05:47:59.000Z"
+        "value": 98.2733,
+        "scoreId": "5WafkKyEyxGcc_BUN_rhgT4rirJTjoLNve7EOOaQ2EQ",
+        "playedAt": "2026-05-21T23:58:36.000Z"
       },
       "bestCombo": {
         "status": "Clear",
-        "scoreId": "idgkXJSXnmcM2ttYccWluhxmrq4my-XE-6isesqElXM",
-        "playedAt": "2026-01-15T05:47:59.000Z"
+        "scoreId": "5WafkKyEyxGcc_BUN_rhgT4rirJTjoLNve7EOOaQ2EQ",
+        "playedAt": "2026-05-21T23:58:36.000Z"
       },
       "bestSync": null,
       "historyChunks": [
-        "2026-01"
+        "2026-01",
+        "2026-05"
       ]
     },
     "song-6dad40406ef0-dx-expert": {
@@ -3408,6 +3683,24 @@
         "2025-11"
       ]
     },
+    "song-8091d36e9e71-dx-master": {
+      "chartId": "song-8091d36e9e71-dx-master",
+      "playCount": 1,
+      "bestAchievement": {
+        "value": 98.884,
+        "scoreId": "THCR62RXQMXumolNdH1PKTBL4su5Uik5DBLidyhtLAQ",
+        "playedAt": "2026-05-22T00:12:14.000Z"
+      },
+      "bestCombo": {
+        "status": "Clear",
+        "scoreId": "THCR62RXQMXumolNdH1PKTBL4su5Uik5DBLidyhtLAQ",
+        "playedAt": "2026-05-22T00:12:14.000Z"
+      },
+      "bestSync": null,
+      "historyChunks": [
+        "2026-05"
+      ]
+    },
     "song-80f1e1dfff6a-std-expert": {
       "chartId": "song-80f1e1dfff6a-std-expert",
       "playCount": 3,
@@ -3575,7 +3868,7 @@
     },
     "song-8af1d8cc17a4-dx-expert": {
       "chartId": "song-8af1d8cc17a4-dx-expert",
-      "playCount": 2,
+      "playCount": 3,
       "bestAchievement": {
         "value": 100.6306,
         "scoreId": "oKwGf-0Kcpf4c_BwFfddopIicGoOJbT6faUphM98Ryk",
@@ -3657,7 +3950,7 @@
     },
     "song-9028eaf59903-dx-re-master": {
       "chartId": "song-9028eaf59903-dx-re-master",
-      "playCount": 5,
+      "playCount": 6,
       "bestAchievement": {
         "value": 99.3904,
         "scoreId": "UJQcRaNVpIYMNTwsxQuRlat0XDuukVCJsrvTuzee0cU",
@@ -3920,6 +4213,46 @@
         "2025-12"
       ]
     },
+    "song-959b65ed7e53-dx-expert": {
+      "chartId": "song-959b65ed7e53-dx-expert",
+      "playCount": 1,
+      "bestAchievement": {
+        "value": 100.9336,
+        "scoreId": "nu7kVGxVD_1eP92FERjVcOxfVDTXE5SIJtQ6a4mN744",
+        "playedAt": "2026-05-21T22:52:02.000Z"
+      },
+      "bestCombo": {
+        "status": "FC+",
+        "scoreId": "nu7kVGxVD_1eP92FERjVcOxfVDTXE5SIJtQ6a4mN744",
+        "playedAt": "2026-05-21T22:52:02.000Z"
+      },
+      "bestSync": {
+        "status": "Sync",
+        "scoreId": "nu7kVGxVD_1eP92FERjVcOxfVDTXE5SIJtQ6a4mN744",
+        "playedAt": "2026-05-21T22:52:02.000Z"
+      },
+      "historyChunks": [
+        "2026-05"
+      ]
+    },
+    "song-959b65ed7e53-dx-master": {
+      "chartId": "song-959b65ed7e53-dx-master",
+      "playCount": 1,
+      "bestAchievement": {
+        "value": 98.3155,
+        "scoreId": "KAYfJLyy1zrmMxOY4yR09SV1b4kcT4Q_GWJaYMd54ys",
+        "playedAt": "2026-05-22T02:29:37.000Z"
+      },
+      "bestCombo": {
+        "status": "Clear",
+        "scoreId": "KAYfJLyy1zrmMxOY4yR09SV1b4kcT4Q_GWJaYMd54ys",
+        "playedAt": "2026-05-22T02:29:37.000Z"
+      },
+      "bestSync": null,
+      "historyChunks": [
+        "2026-05"
+      ]
+    },
     "song-97019c4e4c6b-dx-expert": {
       "chartId": "song-97019c4e4c6b-dx-expert",
       "playCount": 1,
@@ -3980,6 +4313,24 @@
       },
       "historyChunks": [
         "2025-11"
+      ]
+    },
+    "song-9a0951094d3b-dx-expert": {
+      "chartId": "song-9a0951094d3b-dx-expert",
+      "playCount": 2,
+      "bestAchievement": {
+        "value": 100.1778,
+        "scoreId": "yEQDxSqBLXfw0IlAh-F4CXMsJDoSKufLj56TX6GrVdg",
+        "playedAt": "2026-05-22T01:15:06.000Z"
+      },
+      "bestCombo": {
+        "status": "Clear",
+        "scoreId": "yEQDxSqBLXfw0IlAh-F4CXMsJDoSKufLj56TX6GrVdg",
+        "playedAt": "2026-05-22T01:15:06.000Z"
+      },
+      "bestSync": null,
+      "historyChunks": [
+        "2026-05"
       ]
     },
     "song-9a2f2ad520e2-std-expert": {
@@ -4191,6 +4542,28 @@
         "2025-11"
       ]
     },
+    "song-a220dd49213c-dx-expert": {
+      "chartId": "song-a220dd49213c-dx-expert",
+      "playCount": 1,
+      "bestAchievement": {
+        "value": 99.284,
+        "scoreId": "lh9quVNOAMsOMzj4YWUZVSYEX3BS086fhubFK8v1Gnk",
+        "playedAt": "2025-12-06T05:38:33.000Z"
+      },
+      "bestCombo": {
+        "status": "FC",
+        "scoreId": "lh9quVNOAMsOMzj4YWUZVSYEX3BS086fhubFK8v1Gnk",
+        "playedAt": "2025-12-06T05:38:33.000Z"
+      },
+      "bestSync": {
+        "status": "Sync",
+        "scoreId": "lh9quVNOAMsOMzj4YWUZVSYEX3BS086fhubFK8v1Gnk",
+        "playedAt": "2025-12-06T05:38:33.000Z"
+      },
+      "historyChunks": [
+        "2025-12"
+      ]
+    },
     "song-a337c728408b-dx-expert": {
       "chartId": "song-a337c728408b-dx-expert",
       "playCount": 1,
@@ -4377,7 +4750,7 @@
     },
     "song-a7a461d9d280-dx-master": {
       "chartId": "song-a7a461d9d280-dx-master",
-      "playCount": 10,
+      "playCount": 11,
       "bestAchievement": {
         "value": 100.5531,
         "scoreId": "NevUgNc6HvKGnEipHhk2iS02yf58KGfv8BvcQjSw-6g",
@@ -4488,7 +4861,7 @@
     },
     "song-aa146dfca961-dx-re-master": {
       "chartId": "song-aa146dfca961-dx-re-master",
-      "playCount": 1,
+      "playCount": 2,
       "bestAchievement": {
         "value": 99.1941,
         "scoreId": "CqxNpvz7G2v9ESW7gPxlEgLQhG9FAtQ4j5u0o7mlpYo",
@@ -4499,7 +4872,11 @@
         "scoreId": "CqxNpvz7G2v9ESW7gPxlEgLQhG9FAtQ4j5u0o7mlpYo",
         "playedAt": "2025-12-31T18:47:01.000Z"
       },
-      "bestSync": null,
+      "bestSync": {
+        "status": "Sync",
+        "scoreId": "ucJ7saCRoZWZ5MOYQiYldp5lIMBfMCiIucl1enBrlr4",
+        "playedAt": "2025-12-06T05:58:28.000Z"
+      },
       "historyChunks": [
         "2025-12"
       ]
@@ -4592,21 +4969,21 @@
     },
     "song-ad1a4ccb2620-dx-master": {
       "chartId": "song-ad1a4ccb2620-dx-master",
-      "playCount": 6,
+      "playCount": 7,
       "bestAchievement": {
         "value": 100.5487,
         "scoreId": "1g1ja9mRNdxVgSpjm2XBl555gUYGLPT-90St1MBpxhI",
         "playedAt": "2025-12-31T22:28:21.000Z"
       },
       "bestCombo": {
-        "status": "Clear",
-        "scoreId": "1g1ja9mRNdxVgSpjm2XBl555gUYGLPT-90St1MBpxhI",
-        "playedAt": "2025-12-31T22:28:21.000Z"
+        "status": "FC",
+        "scoreId": "Cl23bdapEb_3X6bszysyuli5_eOZCKn0bFSD2hK4Tqk",
+        "playedAt": "2025-12-06T06:29:51.000Z"
       },
       "bestSync": {
-        "status": "Sync",
-        "scoreId": "1g1ja9mRNdxVgSpjm2XBl555gUYGLPT-90St1MBpxhI",
-        "playedAt": "2025-12-31T22:28:21.000Z"
+        "status": "FS+",
+        "scoreId": "Cl23bdapEb_3X6bszysyuli5_eOZCKn0bFSD2hK4Tqk",
+        "playedAt": "2025-12-06T06:29:51.000Z"
       },
       "historyChunks": [
         "2025-11",
@@ -4721,6 +5098,28 @@
         "2025-12"
       ]
     },
+    "song-b99c9e9718b2-dx-expert": {
+      "chartId": "song-b99c9e9718b2-dx-expert",
+      "playCount": 1,
+      "bestAchievement": {
+        "value": 100.7954,
+        "scoreId": "dxIEkEJBLU01lLRx7pKK040d2KZEhOdZ5cRyra8noRA",
+        "playedAt": "2025-12-06T06:12:29.000Z"
+      },
+      "bestCombo": {
+        "status": "FC",
+        "scoreId": "dxIEkEJBLU01lLRx7pKK040d2KZEhOdZ5cRyra8noRA",
+        "playedAt": "2025-12-06T06:12:29.000Z"
+      },
+      "bestSync": {
+        "status": "FS+",
+        "scoreId": "dxIEkEJBLU01lLRx7pKK040d2KZEhOdZ5cRyra8noRA",
+        "playedAt": "2025-12-06T06:12:29.000Z"
+      },
+      "historyChunks": [
+        "2025-12"
+      ]
+    },
     "song-bc39c978dd14-std-master": {
       "chartId": "song-bc39c978dd14-std-master",
       "playCount": 1,
@@ -4765,9 +5164,31 @@
         "2025-11"
       ]
     },
+    "song-bdf8ca5b6c93-dx-expert": {
+      "chartId": "song-bdf8ca5b6c93-dx-expert",
+      "playCount": 1,
+      "bestAchievement": {
+        "value": 100.514,
+        "scoreId": "-CljOGGeHou67_caVlaQhr0OHw4GeUD3RteQCUBK7OM",
+        "playedAt": "2025-12-06T05:09:27.000Z"
+      },
+      "bestCombo": {
+        "status": "FC+",
+        "scoreId": "-CljOGGeHou67_caVlaQhr0OHw4GeUD3RteQCUBK7OM",
+        "playedAt": "2025-12-06T05:09:27.000Z"
+      },
+      "bestSync": {
+        "status": "FDX",
+        "scoreId": "-CljOGGeHou67_caVlaQhr0OHw4GeUD3RteQCUBK7OM",
+        "playedAt": "2025-12-06T05:09:27.000Z"
+      },
+      "historyChunks": [
+        "2025-12"
+      ]
+    },
     "song-bdf8ca5b6c93-dx-master": {
       "chartId": "song-bdf8ca5b6c93-dx-master",
-      "playCount": 5,
+      "playCount": 6,
       "bestAchievement": {
         "value": 100.5977,
         "scoreId": "fYw-UYQk8v3BKd1m2I0aQ66gun82_VgeKN8Qnsnb6lY",
@@ -5244,6 +5665,28 @@
         "2026-01"
       ]
     },
+    "song-d13162a1691c-dx-expert": {
+      "chartId": "song-d13162a1691c-dx-expert",
+      "playCount": 1,
+      "bestAchievement": {
+        "value": 100.7363,
+        "scoreId": "IiwOWNef5yazabSl4Ivo5s85Y0K8_cgadYQrXwGflwE",
+        "playedAt": "2025-12-06T06:40:16.000Z"
+      },
+      "bestCombo": {
+        "status": "FC",
+        "scoreId": "IiwOWNef5yazabSl4Ivo5s85Y0K8_cgadYQrXwGflwE",
+        "playedAt": "2025-12-06T06:40:16.000Z"
+      },
+      "bestSync": {
+        "status": "Sync",
+        "scoreId": "IiwOWNef5yazabSl4Ivo5s85Y0K8_cgadYQrXwGflwE",
+        "playedAt": "2025-12-06T06:40:16.000Z"
+      },
+      "historyChunks": [
+        "2025-12"
+      ]
+    },
     "song-d13162a1691c-dx-master": {
       "chartId": "song-d13162a1691c-dx-master",
       "playCount": 1,
@@ -5348,26 +5791,27 @@
     },
     "song-d47f70af5b17-dx-re-master": {
       "chartId": "song-d47f70af5b17-dx-re-master",
-      "playCount": 3,
+      "playCount": 4,
       "bestAchievement": {
-        "value": 98.234,
-        "scoreId": "aeqfjDhJGA7X4Md_7OvR6hceiM3H78t_ttCjtY7LTms",
-        "playedAt": "2026-01-07T17:36:29.000Z"
+        "value": 99.4419,
+        "scoreId": "xSlTTmWjZfki-OEPPM2eH7F4Ui7uHUU4c7zdJgnu9N8",
+        "playedAt": "2026-05-21T23:13:06.000Z"
       },
       "bestCombo": {
         "status": "Clear",
-        "scoreId": "aeqfjDhJGA7X4Md_7OvR6hceiM3H78t_ttCjtY7LTms",
-        "playedAt": "2026-01-07T17:36:29.000Z"
+        "scoreId": "xSlTTmWjZfki-OEPPM2eH7F4Ui7uHUU4c7zdJgnu9N8",
+        "playedAt": "2026-05-21T23:13:06.000Z"
       },
       "bestSync": {
         "status": "Sync",
-        "scoreId": "tClTT2BiN4aNej6eMy-73RgKtyuF-sJQslru3HkV0jI",
-        "playedAt": "2025-11-26T01:57:52.000Z"
+        "scoreId": "xSlTTmWjZfki-OEPPM2eH7F4Ui7uHUU4c7zdJgnu9N8",
+        "playedAt": "2026-05-21T23:13:06.000Z"
       },
       "historyChunks": [
         "2025-11",
         "2025-12",
-        "2026-01"
+        "2026-01",
+        "2026-05"
       ]
     },
     "song-d7d117cd566e-dx-master": {
@@ -5584,6 +6028,24 @@
         "2025-12"
       ]
     },
+    "song-e1026c14404b-dx-master": {
+      "chartId": "song-e1026c14404b-dx-master",
+      "playCount": 1,
+      "bestAchievement": {
+        "value": 98.2965,
+        "scoreId": "DGt4-H4-EMQOAnt8t7n_W2fh55pKMwBzqXWF8k4WK5I",
+        "playedAt": "2026-05-22T02:26:14.000Z"
+      },
+      "bestCombo": {
+        "status": "Clear",
+        "scoreId": "DGt4-H4-EMQOAnt8t7n_W2fh55pKMwBzqXWF8k4WK5I",
+        "playedAt": "2026-05-22T02:26:14.000Z"
+      },
+      "bestSync": null,
+      "historyChunks": [
+        "2026-05"
+      ]
+    },
     "song-e36fa439473a-std-expert": {
       "chartId": "song-e36fa439473a-std-expert",
       "playCount": 2,
@@ -5630,6 +6092,28 @@
         "2026-05",
         "2026-07",
         "2026-08"
+      ]
+    },
+    "song-e5c1f223a7a8-dx-master": {
+      "chartId": "song-e5c1f223a7a8-dx-master",
+      "playCount": 1,
+      "bestAchievement": {
+        "value": 98.0342,
+        "scoreId": "SZFHJdVhVLe2_MCj93CNr18-RRv-QBGNVdxwNlQ3fUA",
+        "playedAt": "2025-12-06T04:44:42.000Z"
+      },
+      "bestCombo": {
+        "status": "Clear",
+        "scoreId": "SZFHJdVhVLe2_MCj93CNr18-RRv-QBGNVdxwNlQ3fUA",
+        "playedAt": "2025-12-06T04:44:42.000Z"
+      },
+      "bestSync": {
+        "status": "Sync",
+        "scoreId": "SZFHJdVhVLe2_MCj93CNr18-RRv-QBGNVdxwNlQ3fUA",
+        "playedAt": "2025-12-06T04:44:42.000Z"
+      },
+      "historyChunks": [
+        "2025-12"
       ]
     },
     "song-e82460b7a2b0-dx-master": {
@@ -5804,16 +6288,16 @@
     },
     "song-eba222800d88-dx-master": {
       "chartId": "song-eba222800d88-dx-master",
-      "playCount": 5,
+      "playCount": 6,
       "bestAchievement": {
-        "value": 100.3454,
-        "scoreId": "3n28tuem5Nl0wpCbqbs9VHV4BZblD9zgO9ZhicuLlSs",
-        "playedAt": "2026-01-03T22:48:53.000Z"
+        "value": 100.7457,
+        "scoreId": "XLrJv3FruOUMG9A9sBntqaftsUhXaURl-_3sCdBrpJY",
+        "playedAt": "2026-05-21T22:57:32.000Z"
       },
       "bestCombo": {
         "status": "FC",
-        "scoreId": "3n28tuem5Nl0wpCbqbs9VHV4BZblD9zgO9ZhicuLlSs",
-        "playedAt": "2026-01-03T22:48:53.000Z"
+        "scoreId": "XLrJv3FruOUMG9A9sBntqaftsUhXaURl-_3sCdBrpJY",
+        "playedAt": "2026-05-21T22:57:32.000Z"
       },
       "bestSync": {
         "status": "FS",
@@ -5822,7 +6306,8 @@
       },
       "historyChunks": [
         "2025-12",
-        "2026-01"
+        "2026-01",
+        "2026-05"
       ]
     },
     "song-eba8086f378f-dx-expert": {
@@ -5974,6 +6459,28 @@
         "2025-11"
       ]
     },
+    "song-f33644b27e4c-dx-expert": {
+      "chartId": "song-f33644b27e4c-dx-expert",
+      "playCount": 1,
+      "bestAchievement": {
+        "value": 100.3861,
+        "scoreId": "nnkHWcjSdwfbG8FD5XRImHUMxJeAiOPuDrxocHOkw14",
+        "playedAt": "2025-12-06T02:49:43.000Z"
+      },
+      "bestCombo": {
+        "status": "FC",
+        "scoreId": "nnkHWcjSdwfbG8FD5XRImHUMxJeAiOPuDrxocHOkw14",
+        "playedAt": "2025-12-06T02:49:43.000Z"
+      },
+      "bestSync": {
+        "status": "Sync",
+        "scoreId": "nnkHWcjSdwfbG8FD5XRImHUMxJeAiOPuDrxocHOkw14",
+        "playedAt": "2025-12-06T02:49:43.000Z"
+      },
+      "historyChunks": [
+        "2025-12"
+      ]
+    },
     "song-f3b52d4dee79-dx-expert": {
       "chartId": "song-f3b52d4dee79-dx-expert",
       "playCount": 4,
@@ -6031,6 +6538,24 @@
       "bestSync": null,
       "historyChunks": [
         "2025-11"
+      ]
+    },
+    "song-f8ba7d3709c4-dx-master": {
+      "chartId": "song-f8ba7d3709c4-dx-master",
+      "playCount": 1,
+      "bestAchievement": {
+        "value": 100.7418,
+        "scoreId": "NN-KxegpMqCnGqsxEN0QDq1axNc3-ayFMioB8nAJvYM",
+        "playedAt": "2026-05-22T02:14:54.000Z"
+      },
+      "bestCombo": {
+        "status": "Clear",
+        "scoreId": "NN-KxegpMqCnGqsxEN0QDq1axNc3-ayFMioB8nAJvYM",
+        "playedAt": "2026-05-22T02:14:54.000Z"
+      },
+      "bestSync": null,
+      "historyChunks": [
+        "2026-05"
       ]
     },
     "song-f992266c9245-std-master": {
@@ -6117,6 +6642,28 @@
         "2025-11"
       ]
     },
+    "song-fa9e1d22205a-dx-master": {
+      "chartId": "song-fa9e1d22205a-dx-master",
+      "playCount": 1,
+      "bestAchievement": {
+        "value": 96.7884,
+        "scoreId": "zYDaYEh1JEQJ9SLUQSETjsHPE7NyYZM60BwIz0rzlOA",
+        "playedAt": "2025-12-06T06:37:01.000Z"
+      },
+      "bestCombo": {
+        "status": "Clear",
+        "scoreId": "zYDaYEh1JEQJ9SLUQSETjsHPE7NyYZM60BwIz0rzlOA",
+        "playedAt": "2025-12-06T06:37:01.000Z"
+      },
+      "bestSync": {
+        "status": "Sync",
+        "scoreId": "zYDaYEh1JEQJ9SLUQSETjsHPE7NyYZM60BwIz0rzlOA",
+        "playedAt": "2025-12-06T06:37:01.000Z"
+      },
+      "historyChunks": [
+        "2025-12"
+      ]
+    },
     "song-fa9e1d22205a-std-expert": {
       "chartId": "song-fa9e1d22205a-std-expert",
       "playCount": 1,
@@ -6181,6 +6728,28 @@
       },
       "historyChunks": [
         "2025-11",
+        "2025-12"
+      ]
+    },
+    "song-fe04643bda33-dx-master": {
+      "chartId": "song-fe04643bda33-dx-master",
+      "playCount": 1,
+      "bestAchievement": {
+        "value": 98.7444,
+        "scoreId": "5_kJsVTWtNv7EzO34vPSHLVk4Y3rr1dJgReCRRoHKCM",
+        "playedAt": "2025-12-06T06:33:13.000Z"
+      },
+      "bestCombo": {
+        "status": "Clear",
+        "scoreId": "5_kJsVTWtNv7EzO34vPSHLVk4Y3rr1dJgReCRRoHKCM",
+        "playedAt": "2025-12-06T06:33:13.000Z"
+      },
+      "bestSync": {
+        "status": "Sync",
+        "scoreId": "5_kJsVTWtNv7EzO34vPSHLVk4Y3rr1dJgReCRRoHKCM",
+        "playedAt": "2025-12-06T06:33:13.000Z"
+      },
+      "historyChunks": [
         "2025-12"
       ]
     },
@@ -6340,7 +6909,7 @@
     },
     "zen-sekai-kyoutsuu-rhythm-kan-test-std-master": {
       "chartId": "zen-sekai-kyoutsuu-rhythm-kan-test-std-master",
-      "playCount": 1,
+      "playCount": 4,
       "bestAchievement": {
         "value": 100.9263,
         "scoreId": "q1vO8TaktoO4tPHplRFxk5EWB53m-Wvaomik2G8QZp4",
@@ -6351,7 +6920,11 @@
         "scoreId": "q1vO8TaktoO4tPHplRFxk5EWB53m-Wvaomik2G8QZp4",
         "playedAt": "2025-11-20T04:46:15.000Z"
       },
-      "bestSync": null,
+      "bestSync": {
+        "status": "FDX",
+        "scoreId": "iSYPyVKty5fH5B6--aoEIbi2XFgFcuzL5K3w6WgzwVY",
+        "playedAt": "2025-11-20T04:39:08.000Z"
+      },
       "historyChunks": [
         "2025-11"
       ]

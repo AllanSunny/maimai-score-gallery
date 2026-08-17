@@ -2819,7 +2819,7 @@
       "fast": 11,
       "slow": 2,
       "id": "OtgwQAkGuxHzFXLcoXKpsvkuRAm6AuLlGD6Nquq4sXI",
-      "chartId": "song-0cad2b7a0c5f-std-expert"
+      "chartId": "song-0cad2b7a0c5f-dx-expert"
     },
     {
       "playedAt": "2025-11-11T23:14:01.000Z",
@@ -8244,6 +8244,186 @@
       "slow": 7,
       "id": "XLPtswfRpi6u49acMgMY7fCgw-X0xqgLvio5YuDF7Bs",
       "chartId": "song-bcdd634d7a4b-std-expert"
+    },
+    {
+      "playedAt": "2025-11-20T03:58:12.000Z",
+      "songTitle": "全世界共通リズム感テスト",
+      "chartType": "STD",
+      "difficulty": "MASTER",
+      "level": "12",
+      "achievement": 93.4387,
+      "combo": "Clear",
+      "sync": "Sync",
+      "rating": 11728,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": null,
+        "perfect": 110,
+        "great": 11,
+        "good": 4,
+        "miss": 4
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 44,
+          "perfect": 66,
+          "great": 11,
+          "good": 4,
+          "miss": 4
+        },
+        "tap": {
+          "criticalPerfect": null,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "hold": {
+          "criticalPerfect": null,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": null,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": null,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 8,
+      "slow": 7,
+      "id": "0lSu1JEqJvPT9nV6W9qCCWODc_Ap2h9bDuIbPG1evM8",
+      "chartId": "zen-sekai-kyoutsuu-rhythm-kan-test-std-master"
+    },
+    {
+      "playedAt": "2025-11-20T04:39:08.000Z",
+      "songTitle": "全世界共通リズム感テスト",
+      "chartType": "STD",
+      "difficulty": "MASTER",
+      "level": "12",
+      "achievement": 100.724,
+      "combo": "FC+",
+      "sync": "FDX",
+      "rating": 11763,
+      "ratingChange": 35,
+      "judgments": {
+        "criticalPerfect": null,
+        "perfect": 128,
+        "great": 1,
+        "good": 0,
+        "miss": 0
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 78,
+          "perfect": 50,
+          "great": 1,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": null,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "hold": {
+          "criticalPerfect": null,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": null,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": null,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 1,
+      "slow": 0,
+      "id": "iSYPyVKty5fH5B6--aoEIbi2XFgFcuzL5K3w6WgzwVY",
+      "chartId": "zen-sekai-kyoutsuu-rhythm-kan-test-std-master"
+    },
+    {
+      "playedAt": "2025-11-20T04:44:01.000Z",
+      "songTitle": "全世界共通リズム感テスト",
+      "chartType": "STD",
+      "difficulty": "MASTER",
+      "level": "12",
+      "achievement": 100.8934,
+      "combo": "AP",
+      "sync": null,
+      "rating": 11763,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": null,
+        "perfect": 129,
+        "great": 0,
+        "good": 0,
+        "miss": 0
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 86,
+          "perfect": 43,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": null,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "hold": {
+          "criticalPerfect": null,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": null,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": null,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 0,
+      "slow": 0,
+      "id": "2g40iwYym5L2Qyk5x9KhZvy3SGdusHfXSpMO9tH2HxY",
+      "chartId": "zen-sekai-kyoutsuu-rhythm-kan-test-std-master"
     },
     {
       "playedAt": "2025-11-20T04:46:15.000Z",

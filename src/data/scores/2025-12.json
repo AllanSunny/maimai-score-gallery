@@ -2,6 +2,186 @@
   "period": "2025-12",
   "scores": [
     {
+      "playedAt": "2025-12-06T02:49:43.000Z",
+      "songTitle": "folern",
+      "chartType": "DX",
+      "difficulty": "EXPERT",
+      "level": "12",
+      "achievement": 100.3861,
+      "combo": "FC",
+      "sync": "Sync",
+      "rating": 13145,
+      "ratingChange": 8,
+      "judgments": {
+        "criticalPerfect": 450,
+        "perfect": 197,
+        "great": 18,
+        "good": 2,
+        "miss": 0
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 10,
+          "perfect": 5,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 293,
+          "perfect": 172,
+          "great": 18,
+          "good": 2,
+          "miss": 0
+        },
+        "hold": {
+          "criticalPerfect": 36,
+          "perfect": 20,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 42,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 69,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 2,
+      "slow": 18,
+      "id": "nnkHWcjSdwfbG8FD5XRImHUMxJeAiOPuDrxocHOkw14",
+      "chartId": "song-f33644b27e4c-dx-expert"
+    },
+    {
+      "playedAt": "2025-12-06T02:56:39.000Z",
+      "songTitle": "きゅびびびびずむ",
+      "chartType": "DX",
+      "difficulty": "EXPERT",
+      "level": "12",
+      "achievement": 100.4802,
+      "combo": "FC",
+      "sync": "FS+",
+      "rating": 13145,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 485,
+        "perfect": 166,
+        "great": 14,
+        "good": 1,
+        "miss": 0
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 102,
+          "perfect": 20,
+          "great": 2,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 208,
+          "perfect": 107,
+          "great": 8,
+          "good": 0,
+          "miss": 0
+        },
+        "hold": {
+          "criticalPerfect": 85,
+          "perfect": 39,
+          "great": 4,
+          "good": 1,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 41,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 49,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 9,
+      "slow": 6,
+      "id": "hNheNf5nWlTiVUVlQc0lbFUlnJXonY7s0ct1LQN4aYw",
+      "chartId": "song-8af1d8cc17a4-dx-expert"
+    },
+    {
+      "playedAt": "2025-12-06T02:59:53.000Z",
+      "songTitle": "ローリンガール",
+      "chartType": "STD",
+      "difficulty": "MASTER",
+      "level": "13",
+      "achievement": 96.4265,
+      "combo": "Clear",
+      "sync": "Sync",
+      "rating": 13145,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 275,
+        "perfect": 202,
+        "great": 43,
+        "good": 15,
+        "miss": 8
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 4,
+          "perfect": 3,
+          "great": 2,
+          "good": 1,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 158,
+          "perfect": 168,
+          "great": 34,
+          "good": 11,
+          "miss": 7
+        },
+        "hold": {
+          "criticalPerfect": 39,
+          "perfect": 31,
+          "great": 4,
+          "good": 1,
+          "miss": 1
+        },
+        "slide": {
+          "criticalPerfect": 74,
+          "perfect": 0,
+          "great": 3,
+          "good": 2,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 0,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 37,
+      "slow": 21,
+      "id": "shhk1jMKF6ghVAf_GmddKKfMDVIEtl0yBvhPyAah8-k",
+      "chartId": "song-3ce7f814ff96-std-master"
+    },
+    {
       "playedAt": "2025-12-06T03:35:05.000Z",
       "songTitle": "熱異常",
       "chartType": "DX",
@@ -60,6 +240,246 @@
       "slow": 12,
       "id": "IRnzllLPtsTgBUn5cJVvtf5E53sc_I6E6wrQfoXym0M",
       "chartId": "song-de8bb67fb249-dx-master"
+    },
+    {
+      "playedAt": "2025-12-06T04:31:06.000Z",
+      "songTitle": "Help me, ERINNNNNN!!",
+      "chartType": "DX",
+      "difficulty": "EXPERT",
+      "level": "10+",
+      "achievement": 100.8584,
+      "combo": "FC+",
+      "sync": "FDX",
+      "rating": 13145,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 428,
+        "perfect": 152,
+        "great": 1,
+        "good": 0,
+        "miss": 0
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 9,
+          "perfect": 4,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 338,
+          "perfect": 132,
+          "great": 1,
+          "good": 0,
+          "miss": 0
+        },
+        "hold": {
+          "criticalPerfect": 32,
+          "perfect": 16,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 41,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 8,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 0,
+      "slow": 1,
+      "id": "nB4OH3r82oCRFRqpZYbsHgQMtDfRnlnEmTP89lXEci0",
+      "chartId": "song-358d0951f9b6-dx-expert"
+    },
+    {
+      "playedAt": "2025-12-06T04:44:42.000Z",
+      "songTitle": "ももいろの鍵",
+      "chartType": "DX",
+      "difficulty": "MASTER",
+      "level": "12+",
+      "achievement": 98.0342,
+      "combo": "Clear",
+      "sync": "Sync",
+      "rating": 13154,
+      "ratingChange": 9,
+      "judgments": {
+        "criticalPerfect": 381,
+        "perfect": 202,
+        "great": 44,
+        "good": 7,
+        "miss": 6
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 26,
+          "perfect": 1,
+          "great": 3,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 203,
+          "perfect": 159,
+          "great": 23,
+          "good": 4,
+          "miss": 6
+        },
+        "hold": {
+          "criticalPerfect": 37,
+          "perfect": 42,
+          "great": 11,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 79,
+          "perfect": 0,
+          "great": 7,
+          "good": 3,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 36,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 30,
+      "slow": 21,
+      "id": "SZFHJdVhVLe2_MCj93CNr18-RRv-QBGNVdxwNlQ3fUA",
+      "chartId": "song-e5c1f223a7a8-dx-master"
+    },
+    {
+      "playedAt": "2025-12-06T04:52:25.000Z",
+      "songTitle": "三日月ステップ 2023",
+      "chartType": "DX",
+      "difficulty": "EXPERT",
+      "level": "10",
+      "achievement": 100.4516,
+      "combo": "FC",
+      "sync": "Sync",
+      "rating": 13154,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 363,
+        "perfect": 187,
+        "great": 7,
+        "good": 2,
+        "miss": 0
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 15,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 247,
+          "perfect": 176,
+          "great": 4,
+          "good": 1,
+          "miss": 0
+        },
+        "hold": {
+          "criticalPerfect": 26,
+          "perfect": 11,
+          "great": 2,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 52,
+          "perfect": 0,
+          "great": 1,
+          "good": 1,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 23,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 5,
+      "slow": 4,
+      "id": "ZAykTNv4jE4Y2yCqGlVIFpqm0Ax5BSAwB6z8E7uJzdw",
+      "chartId": "song-6c0d8fb0f484-dx-expert"
+    },
+    {
+      "playedAt": "2025-12-06T04:56:05.000Z",
+      "songTitle": "メルト",
+      "chartType": "DX",
+      "difficulty": "MASTER",
+      "level": "11+",
+      "achievement": 99.2907,
+      "combo": "FC",
+      "sync": "Sync",
+      "rating": 13154,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 365,
+        "perfect": 204,
+        "great": 23,
+        "good": 5,
+        "miss": 0
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 1,
+          "perfect": 4,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 219,
+          "perfect": 170,
+          "great": 15,
+          "good": 2,
+          "miss": 0
+        },
+        "hold": {
+          "criticalPerfect": 28,
+          "perfect": 30,
+          "great": 1,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 86,
+          "perfect": 0,
+          "great": 7,
+          "good": 3,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 31,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 19,
+      "slow": 9,
+      "id": "43pv4JbFBV3BkECEdcc8XCS3PNKHEBRib5h9s0t6RCc",
+      "chartId": "song-461be4a49f43-dx-master"
     },
     {
       "playedAt": "2025-12-06T05:05:05.000Z",
@@ -122,6 +542,246 @@
       "chartId": "song-a7a461d9d280-dx-master"
     },
     {
+      "playedAt": "2025-12-06T05:05:48.000Z",
+      "songTitle": "少女レイ",
+      "chartType": "DX",
+      "difficulty": "MASTER",
+      "level": "12+",
+      "achievement": 97.6445,
+      "combo": "FC",
+      "sync": "Sync",
+      "rating": 13159,
+      "ratingChange": 5,
+      "judgments": {
+        "criticalPerfect": 314,
+        "perfect": 248,
+        "great": 44,
+        "good": 16,
+        "miss": 0
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 21,
+          "perfect": 7,
+          "great": 3,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 159,
+          "perfect": 221,
+          "great": 26,
+          "good": 11,
+          "miss": 0
+        },
+        "hold": {
+          "criticalPerfect": 22,
+          "perfect": 20,
+          "great": 5,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 89,
+          "perfect": 0,
+          "great": 10,
+          "good": 5,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 23,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 43,
+      "slow": 17,
+      "id": "XM-hDblqBriBdxJcaoao6mH_IonYbseuVeiORAz0n5k",
+      "chartId": "song-18cc28f9f66d-dx-master"
+    },
+    {
+      "playedAt": "2025-12-06T05:09:27.000Z",
+      "songTitle": "IMAWANOKIWA",
+      "chartType": "DX",
+      "difficulty": "EXPERT",
+      "level": "10+",
+      "achievement": 100.514,
+      "combo": "FC+",
+      "sync": "FDX",
+      "rating": 13159,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 348,
+        "perfect": 186,
+        "great": 8,
+        "good": 0,
+        "miss": 0
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 33,
+          "perfect": 7,
+          "great": 1,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 225,
+          "perfect": 158,
+          "great": 2,
+          "good": 0,
+          "miss": 0
+        },
+        "hold": {
+          "criticalPerfect": 33,
+          "perfect": 21,
+          "great": 4,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 43,
+          "perfect": 0,
+          "great": 1,
+          "good": 0,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 14,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 7,
+      "slow": 1,
+      "id": "-CljOGGeHou67_caVlaQhr0OHw4GeUD3RteQCUBK7OM",
+      "chartId": "song-bdf8ca5b6c93-dx-expert"
+    },
+    {
+      "playedAt": "2025-12-06T05:12:47.000Z",
+      "songTitle": "IMAWANOKIWA",
+      "chartType": "DX",
+      "difficulty": "MASTER",
+      "level": "13+",
+      "achievement": 95.8833,
+      "combo": "Clear",
+      "sync": "Sync",
+      "rating": 13159,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 427,
+        "perfect": 337,
+        "great": 80,
+        "good": 29,
+        "miss": 12
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 15,
+          "perfect": 9,
+          "great": 2,
+          "good": 1,
+          "miss": 1
+        },
+        "tap": {
+          "criticalPerfect": 261,
+          "perfect": 261,
+          "great": 56,
+          "good": 22,
+          "miss": 8
+        },
+        "hold": {
+          "criticalPerfect": 66,
+          "perfect": 67,
+          "great": 18,
+          "good": 5,
+          "miss": 2
+        },
+        "slide": {
+          "criticalPerfect": 64,
+          "perfect": 0,
+          "great": 4,
+          "good": 1,
+          "miss": 1
+        },
+        "touch": {
+          "criticalPerfect": 21,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 64,
+      "slow": 45,
+      "id": "RD43cIQTalVbCIkb-QfCk_grjeaCnm3SXJZS7i1wQ-M",
+      "chartId": "song-bdf8ca5b6c93-dx-master"
+    },
+    {
+      "playedAt": "2025-12-06T05:18:33.000Z",
+      "songTitle": "メズマライザー",
+      "chartType": "DX",
+      "difficulty": "Re:MASTER",
+      "level": "13+",
+      "achievement": 91.3079,
+      "combo": "Clear",
+      "sync": "Sync",
+      "rating": 13159,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 534,
+        "perfect": 247,
+        "great": 119,
+        "good": 86,
+        "miss": 14
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 94,
+          "perfect": 25,
+          "great": 19,
+          "good": 15,
+          "miss": 2
+        },
+        "tap": {
+          "criticalPerfect": 244,
+          "perfect": 211,
+          "great": 82,
+          "good": 64,
+          "miss": 12
+        },
+        "hold": {
+          "criticalPerfect": 26,
+          "perfect": 11,
+          "great": 1,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 59,
+          "perfect": 0,
+          "great": 17,
+          "good": 7,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 111,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 140,
+      "slow": 65,
+      "id": "VhgI14S_A8nUh0IY19xK4ujPDK8paYj4fbpXgRJg2qM",
+      "chartId": "song-08f22014494d-dx-re-master"
+    },
+    {
       "playedAt": "2025-12-06T05:23:19.000Z",
       "songTitle": "M@GICAL☆CURE! LOVE ♥ SHOT!",
       "chartType": "DX",
@@ -182,6 +842,666 @@
       "chartId": "song-a7a461d9d280-dx-master"
     },
     {
+      "playedAt": "2025-12-06T05:26:24.000Z",
+      "songTitle": "ビビデバ",
+      "chartType": "DX",
+      "difficulty": "Re:MASTER",
+      "level": "13",
+      "achievement": 95.7362,
+      "combo": "Clear",
+      "sync": "Sync",
+      "rating": 13159,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 458,
+        "perfect": 260,
+        "great": 77,
+        "good": 14,
+        "miss": 16
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 7,
+          "perfect": 10,
+          "great": 0,
+          "good": 1,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 314,
+          "perfect": 232,
+          "great": 49,
+          "good": 6,
+          "miss": 15
+        },
+        "hold": {
+          "criticalPerfect": 21,
+          "perfect": 18,
+          "great": 1,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 74,
+          "perfect": 0,
+          "great": 27,
+          "good": 6,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 42,
+          "perfect": 0,
+          "great": 0,
+          "good": 1,
+          "miss": 1
+        }
+      },
+      "fast": 68,
+      "slow": 23,
+      "id": "ajlyVDa8UdidDELCZLDKxtBkprSwIv4jNnQmBB1R-EM",
+      "chartId": "song-9028eaf59903-dx-re-master"
+    },
+    {
+      "playedAt": "2025-12-06T05:30:05.000Z",
+      "songTitle": "もういいよ",
+      "chartType": "DX",
+      "difficulty": "EXPERT",
+      "level": "9+",
+      "achievement": 100.775,
+      "combo": "FC+",
+      "sync": "FDX",
+      "rating": 13159,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 336,
+        "perfect": 209,
+        "great": 1,
+        "good": 0,
+        "miss": 0
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 6,
+          "perfect": 9,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 206,
+          "perfect": 151,
+          "great": 1,
+          "good": 0,
+          "miss": 0
+        },
+        "hold": {
+          "criticalPerfect": 70,
+          "perfect": 49,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 38,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 16,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 1,
+      "slow": 0,
+      "id": "bjUsMPIyD70f9eYdsZzMBq6RyH9dLp5n511MIZrZUgs",
+      "chartId": "song-2ab3391ec93e-dx-expert"
+    },
+    {
+      "playedAt": "2025-12-06T05:38:33.000Z",
+      "songTitle": "Synthesis.",
+      "chartType": "DX",
+      "difficulty": "EXPERT",
+      "level": "12+",
+      "achievement": 99.284,
+      "combo": "FC",
+      "sync": "Sync",
+      "rating": 13172,
+      "ratingChange": 13,
+      "judgments": {
+        "criticalPerfect": 372,
+        "perfect": 237,
+        "great": 34,
+        "good": 2,
+        "miss": 0
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 11,
+          "perfect": 6,
+          "great": 3,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 198,
+          "perfect": 179,
+          "great": 23,
+          "good": 0,
+          "miss": 0
+        },
+        "hold": {
+          "criticalPerfect": 69,
+          "perfect": 52,
+          "great": 7,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 62,
+          "perfect": 0,
+          "great": 1,
+          "good": 2,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 32,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 28,
+      "slow": 8,
+      "id": "lh9quVNOAMsOMzj4YWUZVSYEX3BS086fhubFK8v1Gnk",
+      "chartId": "song-a220dd49213c-dx-expert"
+    },
+    {
+      "playedAt": "2025-12-06T05:45:14.000Z",
+      "songTitle": "ロータスイーター",
+      "chartType": "DX",
+      "difficulty": "MASTER",
+      "level": "13",
+      "achievement": 96.5873,
+      "combo": "Clear",
+      "sync": "Sync",
+      "rating": 13172,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 470,
+        "perfect": 240,
+        "great": 64,
+        "good": 20,
+        "miss": 12
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 4,
+          "perfect": 2,
+          "great": 1,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 275,
+          "perfect": 210,
+          "great": 43,
+          "good": 13,
+          "miss": 12
+        },
+        "hold": {
+          "criticalPerfect": 44,
+          "perfect": 28,
+          "great": 4,
+          "good": 3,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 91,
+          "perfect": 0,
+          "great": 16,
+          "good": 4,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 56,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 49,
+      "slow": 35,
+      "id": "s11h9okR6sSjLm1ZxnQbyc6bzvKi5LMtLT1cF6NZDws",
+      "chartId": "song-614d62f68589-dx-master"
+    },
+    {
+      "playedAt": "2025-12-06T05:54:23.000Z",
+      "songTitle": "少女レイ",
+      "chartType": "DX",
+      "difficulty": "MASTER",
+      "level": "12+",
+      "achievement": 98.5365,
+      "combo": "Clear",
+      "sync": "Sync",
+      "rating": 13179,
+      "ratingChange": 7,
+      "judgments": {
+        "criticalPerfect": 413,
+        "perfect": 170,
+        "great": 24,
+        "good": 9,
+        "miss": 6
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 25,
+          "perfect": 5,
+          "great": 1,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 252,
+          "perfect": 141,
+          "great": 13,
+          "good": 6,
+          "miss": 5
+        },
+        "hold": {
+          "criticalPerfect": 22,
+          "perfect": 24,
+          "great": 1,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 92,
+          "perfect": 0,
+          "great": 9,
+          "good": 3,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 22,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 1
+        }
+      },
+      "fast": 23,
+      "slow": 10,
+      "id": "umi0smmm6qq1M_BETj0thSIDGHwf7wJbd_7fI8qTv94",
+      "chartId": "song-18cc28f9f66d-dx-master"
+    },
+    {
+      "playedAt": "2025-12-06T05:58:28.000Z",
+      "songTitle": "はいよろこんで",
+      "chartType": "DX",
+      "difficulty": "Re:MASTER",
+      "level": "13",
+      "achievement": 95.9958,
+      "combo": "Clear",
+      "sync": "Sync",
+      "rating": 13179,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 471,
+        "perfect": 275,
+        "great": 54,
+        "good": 23,
+        "miss": 15
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 23,
+          "perfect": 12,
+          "great": 3,
+          "good": 1,
+          "miss": 1
+        },
+        "tap": {
+          "criticalPerfect": 299,
+          "perfect": 224,
+          "great": 36,
+          "good": 16,
+          "miss": 13
+        },
+        "hold": {
+          "criticalPerfect": 35,
+          "perfect": 37,
+          "great": 4,
+          "good": 1,
+          "miss": 1
+        },
+        "slide": {
+          "criticalPerfect": 79,
+          "perfect": 0,
+          "great": 11,
+          "good": 5,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 35,
+          "perfect": 2,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 56,
+      "slow": 21,
+      "id": "ucJ7saCRoZWZ5MOYQiYldp5lIMBfMCiIucl1enBrlr4",
+      "chartId": "song-aa146dfca961-dx-re-master"
+    },
+    {
+      "playedAt": "2025-12-06T06:01:20.000Z",
+      "songTitle": "キャットラビング",
+      "chartType": "DX",
+      "difficulty": "MASTER",
+      "level": "12+",
+      "achievement": 98.6903,
+      "combo": "Clear",
+      "sync": "Sync",
+      "rating": 13179,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 463,
+        "perfect": 117,
+        "great": 27,
+        "good": 13,
+        "miss": 5
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 23,
+          "perfect": 5,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 262,
+          "perfect": 100,
+          "great": 22,
+          "good": 10,
+          "miss": 5
+        },
+        "hold": {
+          "criticalPerfect": 21,
+          "perfect": 12,
+          "great": 2,
+          "good": 3,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 51,
+          "perfect": 0,
+          "great": 3,
+          "good": 0,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 106,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 28,
+      "slow": 12,
+      "id": "agKu5L1g237WYagkWyrS_x7WC-ltR3LDWD53VPembas",
+      "chartId": "song-68438afa8ff3-dx-master"
+    },
+    {
+      "playedAt": "2025-12-06T06:05:04.000Z",
+      "songTitle": "M@GICAL☆CURE! LOVE ♥ SHOT!",
+      "chartType": "DX",
+      "difficulty": "MASTER",
+      "level": "13+",
+      "achievement": 96.9726,
+      "combo": "Clear",
+      "sync": "Sync",
+      "rating": 13179,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 549,
+        "perfect": 268,
+        "great": 94,
+        "good": 31,
+        "miss": 5
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 23,
+          "perfect": 3,
+          "great": 3,
+          "good": 0,
+          "miss": 1
+        },
+        "tap": {
+          "criticalPerfect": 320,
+          "perfect": 235,
+          "great": 80,
+          "good": 28,
+          "miss": 3
+        },
+        "hold": {
+          "criticalPerfect": 32,
+          "perfect": 29,
+          "great": 3,
+          "good": 1,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 129,
+          "perfect": 0,
+          "great": 8,
+          "good": 2,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 45,
+          "perfect": 1,
+          "great": 0,
+          "good": 0,
+          "miss": 1
+        }
+      },
+      "fast": 79,
+      "slow": 46,
+      "id": "atJ_sKFkx922ESv1SjsTkna1RUoI3DyaP2wTDWkgVzQ",
+      "chartId": "song-a7a461d9d280-dx-master"
+    },
+    {
+      "playedAt": "2025-12-06T06:12:29.000Z",
+      "songTitle": "終焉逃避行",
+      "chartType": "DX",
+      "difficulty": "EXPERT",
+      "level": "9+",
+      "achievement": 100.7954,
+      "combo": "FC",
+      "sync": "FS+",
+      "rating": 13179,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 331,
+        "perfect": 155,
+        "great": 1,
+        "good": 2,
+        "miss": 0
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 8,
+          "perfect": 1,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 234,
+          "perfect": 134,
+          "great": 1,
+          "good": 2,
+          "miss": 0
+        },
+        "hold": {
+          "criticalPerfect": 28,
+          "perfect": 20,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 53,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 8,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 3,
+      "slow": 0,
+      "id": "dxIEkEJBLU01lLRx7pKK040d2KZEhOdZ5cRyra8noRA",
+      "chartId": "song-b99c9e9718b2-dx-expert"
+    },
+    {
+      "playedAt": "2025-12-06T06:16:12.000Z",
+      "songTitle": "Sage",
+      "chartType": "DX",
+      "difficulty": "EXPERT",
+      "level": "12+",
+      "achievement": 99.1699,
+      "combo": "Clear",
+      "sync": "Sync",
+      "rating": 13189,
+      "ratingChange": 10,
+      "judgments": {
+        "criticalPerfect": 384,
+        "perfect": 220,
+        "great": 32,
+        "good": 4,
+        "miss": 1
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 22,
+          "perfect": 18,
+          "great": 0,
+          "good": 0,
+          "miss": 1
+        },
+        "tap": {
+          "criticalPerfect": 256,
+          "perfect": 180,
+          "great": 24,
+          "good": 2,
+          "miss": 0
+        },
+        "hold": {
+          "criticalPerfect": 34,
+          "perfect": 22,
+          "great": 6,
+          "good": 2,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 52,
+          "perfect": 0,
+          "great": 1,
+          "good": 0,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 20,
+          "perfect": 0,
+          "great": 1,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 23,
+      "slow": 13,
+      "id": "0NLHKNZyE3uPTaMoeaneJABcNg9JhT3qoT_ochnj1mw",
+      "chartId": "song-5faa713a75d7-dx-expert"
+    },
+    {
+      "playedAt": "2025-12-06T06:19:27.000Z",
+      "songTitle": "Zitronectar",
+      "chartType": "DX",
+      "difficulty": "EXPERT",
+      "level": "12",
+      "achievement": 98.4362,
+      "combo": "FC",
+      "sync": "Sync",
+      "rating": 13189,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 366,
+        "perfect": 153,
+        "great": 18,
+        "good": 9,
+        "miss": 0
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 13,
+          "perfect": 18,
+          "great": 6,
+          "good": 2,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 229,
+          "perfect": 110,
+          "great": 11,
+          "good": 7,
+          "miss": 0
+        },
+        "hold": {
+          "criticalPerfect": 38,
+          "perfect": 25,
+          "great": 1,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 55,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 31,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 13,
+      "slow": 14,
+      "id": "gTgsbovmm_gxfGnMh1g69nl8Q6UBzzfCyhj6X8iMN3M",
+      "chartId": "song-33f419858168-dx-expert"
+    },
+    {
       "playedAt": "2025-12-06T06:23:19.000Z",
       "songTitle": "M@GICAL☆CURE! LOVE ♥ SHOT!",
       "chartType": "DX",
@@ -240,6 +1560,246 @@
       "slow": 65,
       "id": "W5FIw4XdQeGVLS9ax4cUu4oEwKg1aY7-Vq_tztrAdEo",
       "chartId": "song-a7a461d9d280-dx-master"
+    },
+    {
+      "playedAt": "2025-12-06T06:29:51.000Z",
+      "songTitle": "メルティランドナイトメア",
+      "chartType": "DX",
+      "difficulty": "MASTER",
+      "level": "11+",
+      "achievement": 99.8432,
+      "combo": "FC",
+      "sync": "FS+",
+      "rating": 13189,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 356,
+        "perfect": 196,
+        "great": 18,
+        "good": 3,
+        "miss": 0
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 1,
+          "perfect": 2,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 234,
+          "perfect": 188,
+          "great": 16,
+          "good": 2,
+          "miss": 0
+        },
+        "hold": {
+          "criticalPerfect": 14,
+          "perfect": 6,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 75,
+          "perfect": 0,
+          "great": 2,
+          "good": 1,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 32,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 17,
+      "slow": 4,
+      "id": "Cl23bdapEb_3X6bszysyuli5_eOZCKn0bFSD2hK4Tqk",
+      "chartId": "song-ad1a4ccb2620-dx-master"
+    },
+    {
+      "playedAt": "2025-12-06T06:33:13.000Z",
+      "songTitle": "月に叢雲華に風",
+      "chartType": "DX",
+      "difficulty": "MASTER",
+      "level": "12+",
+      "achievement": 98.7444,
+      "combo": "Clear",
+      "sync": "Sync",
+      "rating": 13189,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 294,
+        "perfect": 110,
+        "great": 20,
+        "good": 8,
+        "miss": 1
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 1,
+          "perfect": 7,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 140,
+          "perfect": 79,
+          "great": 18,
+          "good": 8,
+          "miss": 0
+        },
+        "hold": {
+          "criticalPerfect": 17,
+          "perfect": 24,
+          "great": 1,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 43,
+          "perfect": 0,
+          "great": 1,
+          "good": 0,
+          "miss": 1
+        },
+        "touch": {
+          "criticalPerfect": 93,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 19,
+      "slow": 9,
+      "id": "5_kJsVTWtNv7EzO34vPSHLVk4Y3rr1dJgReCRRoHKCM",
+      "chartId": "song-fe04643bda33-dx-master"
+    },
+    {
+      "playedAt": "2025-12-06T06:37:01.000Z",
+      "songTitle": "conflict",
+      "chartType": "DX",
+      "difficulty": "MASTER",
+      "level": "13",
+      "achievement": 96.7884,
+      "combo": "Clear",
+      "sync": "Sync",
+      "rating": 13189,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 571,
+        "perfect": 229,
+        "great": 63,
+        "good": 26,
+        "miss": 11
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 5,
+          "perfect": 9,
+          "great": 5,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 306,
+          "perfect": 193,
+          "great": 52,
+          "good": 22,
+          "miss": 10
+        },
+        "hold": {
+          "criticalPerfect": 25,
+          "perfect": 25,
+          "great": 5,
+          "good": 3,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 63,
+          "perfect": 0,
+          "great": 1,
+          "good": 1,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 172,
+          "perfect": 2,
+          "great": 0,
+          "good": 0,
+          "miss": 1
+        }
+      },
+      "fast": 47,
+      "slow": 42,
+      "id": "zYDaYEh1JEQJ9SLUQSETjsHPE7NyYZM60BwIz0rzlOA",
+      "chartId": "song-fa9e1d22205a-dx-master"
+    },
+    {
+      "playedAt": "2025-12-06T06:40:16.000Z",
+      "songTitle": "Knight Rider",
+      "chartType": "DX",
+      "difficulty": "EXPERT",
+      "level": "11",
+      "achievement": 100.7363,
+      "combo": "FC",
+      "sync": "Sync",
+      "rating": 13189,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 404,
+        "perfect": 164,
+        "great": 3,
+        "good": 2,
+        "miss": 0
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 27,
+          "perfect": 2,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 248,
+          "perfect": 128,
+          "great": 0,
+          "good": 2,
+          "miss": 0
+        },
+        "hold": {
+          "criticalPerfect": 57,
+          "perfect": 34,
+          "great": 3,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 55,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 17,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 5,
+      "slow": 0,
+      "id": "IiwOWNef5yazabSl4Ivo5s85Y0K8_cgadYQrXwGflwE",
+      "chartId": "song-d13162a1691c-dx-expert"
     },
     {
       "playedAt": "2025-12-21T04:28:10.000Z",
