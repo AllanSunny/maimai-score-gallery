@@ -154,7 +154,7 @@ jobs:
       - name: Verify archived scores were restored
         run: |
           test -n "$(find src/data/scores -name '*.json' -print -quit)"
-          echo "Catalog sync received $(jq -s '[.[].scores[]] | length' src/data/scores/*.json) archived scores."
+          echo "Catalog sync received $(jq -s '[.[].scores[]] | length' src/data/scores/????-??.json) archived scores."
       - uses: actions/setup-node@v4
         with:
           node-version: 24.14.1

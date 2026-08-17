@@ -1,7 +1,7 @@
 import { parseScoreChunk } from "./data-validation";
 import type { ScoreChunk } from "./types";
 
-const modules = import.meta.glob<ScoreChunk>("../data/scores/*.json", {
+const modules = import.meta.glob<ScoreChunk>("../data/scores/????-??.json", {
   eager: true,
   import: "default",
 });

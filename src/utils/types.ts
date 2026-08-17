@@ -1,5 +1,6 @@
 export type Difficulty = "BASIC" | "ADVANCED" | "EXPERT" | "MASTER" | "Re:MASTER";
 export type ChartType = "DX" | "STD";
+export type ComboStatus = "Clear" | "FC" | "FC+" | "AP" | "AP+";
 export type SyncStatus = "Sync" | "FS" | "FS+" | "FDX" | "FDX+";
 
 export interface Chart {
@@ -67,7 +68,7 @@ export interface ScoreRecord {
   level: string;
   chartConstant?: number;
   achievement: number;
-  combo: string;
+  combo: ComboStatus;
   sync: SyncStatus | null;
   rating: number;
   ratingChange: number;
@@ -82,4 +83,30 @@ export type Score = ScoreRecord;
 export interface ScoreChunk {
   period: string;
   scores: ScoreRecord[];
+}
+
+export interface BestAchievement {
+  value: number;
+  scoreId: string;
+  playedAt: string;
+}
+
+export interface BestStatus<T extends string> {
+  status: T;
+  scoreId: string;
+  playedAt: string;
+}
+
+export interface ChartRecordSummary {
+  chartId: string;
+  playCount: number;
+  bestAchievement: BestAchievement;
+  bestCombo: BestStatus<ComboStatus>;
+  bestSync: BestStatus<SyncStatus> | null;
+  historyChunks: string[];
+}
+
+export interface ChartSummaries {
+  generatedAt: string;
+  charts: Record<string, ChartRecordSummary>;
 }

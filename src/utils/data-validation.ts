@@ -1,11 +1,15 @@
 import type {
   ChartType,
+  ChartSummaries,
+  ComboStatus,
   Difficulty,
   GeneratedCatalog,
   ScoreChunk,
 } from "./types";
 
 const chartTypes = new Set<ChartType>(["DX", "STD"]);
+const comboStatuses = new Set<ComboStatus>(["Clear", "FC", "FC+", "AP", "AP+"]);
+const syncStatuses = new Set(["Sync", "FS", "FS+", "FDX", "FDX+"]);
 const difficulties = new Set<Difficulty>(["BASIC", "ADVANCED", "EXPERT", "MASTER", "Re:MASTER"]);
 
 function object(value: unknown, path: string): Record<string, unknown> {
@@ -101,6 +105,8 @@ function validateScores(value: unknown, path: string) {
     const score = object(scoreValue, scorePath);
     ["id", "playedAt", "songTitle", "chartType", "difficulty", "level", "combo"].forEach((field) => string(score[field], `${scorePath}.${field}`));
     nullableString(score.sync, `${scorePath}.sync`);
+    if (!comboStatuses.has(score.combo as ComboStatus)) throw new Error(`${scorePath}.combo is invalid.`);
+    if (score.sync !== null && !syncStatuses.has(score.sync as string)) throw new Error(`${scorePath}.sync is invalid.`);
     nonemptyString(score.chartId, `${scorePath}.chartId`);
     if (!chartTypes.has(score.chartType as ChartType)) throw new Error(`${scorePath}.chartType is invalid.`);
     if (!difficulties.has(score.difficulty as Difficulty)) throw new Error(`${scorePath}.difficulty is invalid.`);
@@ -130,4 +136,30 @@ export function parseScoreChunk(value: unknown): ScoreChunk {
     }
   });
   return value as ScoreChunk;
+}
+
+export function parseChartSummaries(value: unknown): ChartSummaries {
+  const summary = object(value, "chartSummaries");
+  string(summary.generatedAt, "chartSummaries.generatedAt");
+  const charts = object(summary.charts, "chartSummaries.charts");
+  Object.entries(charts).forEach(([chartId, summaryValue]) => {
+    const path = `chartSummaries.charts.${chartId}`;
+    const chart = object(summaryValue, path);
+    if (chart.chartId !== chartId) throw new Error(`${path}.chartId must match its object key.`);
+    number(chart.playCount, `${path}.playCount`);
+    const achievement = object(chart.bestAchievement, `${path}.bestAchievement`);
+    number(achievement.value, `${path}.bestAchievement.value`);
+    ["scoreId", "playedAt"].forEach((field) => nonemptyString(achievement[field], `${path}.bestAchievement.${field}`));
+    const combo = object(chart.bestCombo, `${path}.bestCombo`);
+    ["status", "scoreId", "playedAt"].forEach((field) => nonemptyString(combo[field], `${path}.bestCombo.${field}`));
+    if (chart.bestSync !== null) {
+      const sync = object(chart.bestSync, `${path}.bestSync`);
+      ["status", "scoreId", "playedAt"].forEach((field) => nonemptyString(sync[field], `${path}.bestSync.${field}`));
+    }
+    array(chart.historyChunks, `${path}.historyChunks`).forEach((period, index) => {
+      string(period, `${path}.historyChunks[${index}]`);
+      if (!/^\d{4}-\d{2}$/.test(period)) throw new Error(`${path}.historyChunks[${index}] must use YYYY-MM.`);
+    });
+  });
+  return value as ChartSummaries;
 }

@@ -17,6 +17,7 @@
     "scores:check": "node --env-file-if-exists=.env.local scripts/check-score-sheet.mjs",
     "scores:import": "node --env-file-if-exists=.env.local scripts/import-images.mjs",
     "scores:sync": "NODE_EXTRA_CA_CERTS=${NODE_EXTRA_CA_CERTS:-/etc/ssl/cert.pem} node --env-file-if-exists=.env.local scripts/sync-scores.mjs",
+    "scores:summarize": "node scripts/sync-chart-summaries.mjs",
     "catalog:sync": "NODE_EXTRA_CA_CERTS=${NODE_EXTRA_CA_CERTS:-/etc/ssl/cert.pem} node --env-file-if-exists=.env.local scripts/sync-catalog.mjs"
   },
   "dependencies": {

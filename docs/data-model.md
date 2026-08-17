@@ -18,10 +18,30 @@ flowchart LR
 `src/data/scores/YYYY-MM.json` files form the public score archive. Plays are
 partitioned by the UTC month of `playedAt`; an unchanged month is not rewritten.
 
+`src/data/scores/chart-summaries.json` contains the lightweight cumulative
+records used for song-list filtering and sorting. Its achievement, combo, and
+sync bests are selected independently and point back to their source plays.
+The normal import pipeline regenerates it once, after catalog synchronization
+has assigned final chart IDs. Maintenance workflows that edit archived scores
+without running catalog synchronization invoke `npm run scores:summarize`.
+
 ```ts
 interface ScoreChunk {
   period: string; // UTC YYYY-MM, matching the filename
   scores: ScoreRecord[];
+}
+
+interface ChartRecordSummary {
+  chartId: string;
+  playCount: number;
+  bestAchievement: { value: number; scoreId: string; playedAt: string };
+  bestCombo: { status: string; scoreId: string; playedAt: string };
+  bestSync: {
+    status: "Sync" | "FS" | "FS+" | "FDX" | "FDX+";
+    scoreId: string;
+    playedAt: string;
+  } | null;
+  historyChunks: string[]; // UTC YYYY-MM files containing this chart's plays
 }
 
 interface ScoreRecord {
