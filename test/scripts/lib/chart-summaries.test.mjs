@@ -21,6 +21,7 @@ test("chart summaries retain independent achievement, combo, and sync bests", ()
     score({ id: "sync", achievement: 98, combo: "FC", sync: "FDX+" }),
   ]);
 
+  assert.equal("chartId" in charts["song-dx-expert"], false);
   assert.deepEqual(charts["song-dx-expert"].bestAchievement, {
     value: 100.5,
     scoreId: "achievement",

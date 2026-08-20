@@ -154,7 +154,6 @@ export function parseChartSummaries(value: unknown): ChartSummaries {
   Object.entries(charts).forEach(([chartId, summaryValue]) => {
     const path = `chartSummaries.charts.${chartId}`;
     const chart = object(summaryValue, path);
-    if (chart.chartId !== chartId) throw new Error(`${path}.chartId must match its object key.`);
     number(chart.playCount, `${path}.playCount`);
     const achievement = object(chart.bestAchievement, `${path}.bestAchievement`);
     number(achievement.value, `${path}.bestAchievement.value`);

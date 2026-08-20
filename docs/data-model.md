@@ -32,7 +32,6 @@ interface ScoreChunk {
 }
 
 interface ChartRecordSummary {
-  chartId: string;
   playCount: number;
   bestAchievement: { value: number; scoreId: string; playedAt: string };
   bestCombo: { status: string; scoreId: string; playedAt: string };

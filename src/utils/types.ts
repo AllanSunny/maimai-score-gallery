@@ -105,7 +105,6 @@ export interface BestStatus<T extends string> {
 }
 
 export interface ChartRecordSummary {
-  chartId: string;
   playCount: number;
   bestAchievement: BestAchievement;
   bestCombo: BestStatus<ComboStatus>;

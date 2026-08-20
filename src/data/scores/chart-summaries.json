@@ -1,8 +1,7 @@
 {
-  "generatedAt": "2026-08-17T04:12:49.180Z",
+  "generatedAt": "2026-08-20T16:22:25.123Z",
   "charts": {
     "song-00493f7d7088-dx-master": {
-      "chartId": "song-00493f7d7088-dx-master",
       "playCount": 3,
       "bestAchievement": {
         "value": 100.6664,
@@ -24,7 +23,6 @@
       ]
     },
     "song-00dec12931e6-std-expert": {
-      "chartId": "song-00dec12931e6-std-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 100.1846,
@@ -46,7 +44,6 @@
       ]
     },
     "song-0166659bc4df-dx-expert": {
-      "chartId": "song-0166659bc4df-dx-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 100.5562,
@@ -64,7 +61,6 @@
       ]
     },
     "song-0166659bc4df-dx-master": {
-      "chartId": "song-0166659bc4df-dx-master",
       "playCount": 1,
       "bestAchievement": {
         "value": 96.4853,
@@ -86,7 +82,6 @@
       ]
     },
     "song-04e9d7aeae9e-std-expert": {
-      "chartId": "song-04e9d7aeae9e-std-expert",
       "playCount": 2,
       "bestAchievement": {
         "value": 93.6017,
@@ -109,7 +104,6 @@
       ]
     },
     "song-067df9d0eb73-dx-master": {
-      "chartId": "song-067df9d0eb73-dx-master",
       "playCount": 1,
       "bestAchievement": {
         "value": 100.9767,
@@ -127,7 +121,6 @@
       ]
     },
     "song-08f22014494d-dx-expert": {
-      "chartId": "song-08f22014494d-dx-expert",
       "playCount": 5,
       "bestAchievement": {
         "value": 101,
@@ -150,7 +143,6 @@
       ]
     },
     "song-08f22014494d-dx-master": {
-      "chartId": "song-08f22014494d-dx-master",
       "playCount": 6,
       "bestAchievement": {
         "value": 100.7902,
@@ -168,7 +160,6 @@
       ]
     },
     "song-08f22014494d-dx-re-master": {
-      "chartId": "song-08f22014494d-dx-re-master",
       "playCount": 1,
       "bestAchievement": {
         "value": 91.3079,
@@ -190,7 +181,6 @@
       ]
     },
     "song-08f696c0d52c-dx-expert": {
-      "chartId": "song-08f696c0d52c-dx-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 100.8693,
@@ -212,7 +202,6 @@
       ]
     },
     "song-090f9090c411-dx-expert": {
-      "chartId": "song-090f9090c411-dx-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 96.3046,
@@ -234,7 +223,6 @@
       ]
     },
     "song-0ac24dd304e4-dx-advanced": {
-      "chartId": "song-0ac24dd304e4-dx-advanced",
       "playCount": 1,
       "bestAchievement": {
         "value": 100.7724,
@@ -252,7 +240,6 @@
       ]
     },
     "song-0ac24dd304e4-dx-expert": {
-      "chartId": "song-0ac24dd304e4-dx-expert",
       "playCount": 3,
       "bestAchievement": {
         "value": 99.2491,
@@ -270,7 +257,6 @@
       ]
     },
     "song-0ac24dd304e4-dx-master": {
-      "chartId": "song-0ac24dd304e4-dx-master",
       "playCount": 7,
       "bestAchievement": {
         "value": 98.7324,
@@ -294,7 +280,6 @@
       ]
     },
     "song-0c18775b603e-dx-master": {
-      "chartId": "song-0c18775b603e-dx-master",
       "playCount": 1,
       "bestAchievement": {
         "value": 100.4653,
@@ -316,7 +301,6 @@
       ]
     },
     "song-0cad2b7a0c5f-dx-expert": {
-      "chartId": "song-0cad2b7a0c5f-dx-expert",
       "playCount": 2,
       "bestAchievement": {
         "value": 100.9625,
@@ -335,7 +319,6 @@
       ]
     },
     "song-0cedd756d872-dx-master": {
-      "chartId": "song-0cedd756d872-dx-master",
       "playCount": 1,
       "bestAchievement": {
         "value": 98.8313,
@@ -357,7 +340,6 @@
       ]
     },
     "song-0dea4fbacbb7-dx-expert": {
-      "chartId": "song-0dea4fbacbb7-dx-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 100.951,
@@ -375,7 +357,6 @@
       ]
     },
     "song-0dea4fbacbb7-dx-master": {
-      "chartId": "song-0dea4fbacbb7-dx-master",
       "playCount": 2,
       "bestAchievement": {
         "value": 99.236,
@@ -393,7 +374,6 @@
       ]
     },
     "song-0ede0734dd4a-dx-expert": {
-      "chartId": "song-0ede0734dd4a-dx-expert",
       "playCount": 3,
       "bestAchievement": {
         "value": 100.4173,
@@ -411,7 +391,6 @@
       ]
     },
     "song-0ede0734dd4a-dx-master": {
-      "chartId": "song-0ede0734dd4a-dx-master",
       "playCount": 1,
       "bestAchievement": {
         "value": 93.6665,
@@ -433,7 +412,6 @@
       ]
     },
     "song-0ef6b31e7dd1-dx-expert": {
-      "chartId": "song-0ef6b31e7dd1-dx-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 100.5559,
@@ -455,7 +433,6 @@
       ]
     },
     "song-0f7bea3dcbe6-dx-advanced": {
-      "chartId": "song-0f7bea3dcbe6-dx-advanced",
       "playCount": 1,
       "bestAchievement": {
         "value": 100.6746,
@@ -473,7 +450,6 @@
       ]
     },
     "song-0f7bea3dcbe6-dx-expert": {
-      "chartId": "song-0f7bea3dcbe6-dx-expert",
       "playCount": 2,
       "bestAchievement": {
         "value": 98.8059,
@@ -495,7 +471,6 @@
       ]
     },
     "song-102f542a7217-dx-master": {
-      "chartId": "song-102f542a7217-dx-master",
       "playCount": 1,
       "bestAchievement": {
         "value": 99.2713,
@@ -517,7 +492,6 @@
       ]
     },
     "song-10696a7a7611-dx-expert": {
-      "chartId": "song-10696a7a7611-dx-expert",
       "playCount": 2,
       "bestAchievement": {
         "value": 100.389,
@@ -540,7 +514,6 @@
       ]
     },
     "song-143365395f8e-dx-expert": {
-      "chartId": "song-143365395f8e-dx-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 100.3912,
@@ -562,7 +535,6 @@
       ]
     },
     "song-14f005171f81-std-expert": {
-      "chartId": "song-14f005171f81-std-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 99.9239,
@@ -584,7 +556,6 @@
       ]
     },
     "song-15f02ac2e366-dx-master": {
-      "chartId": "song-15f02ac2e366-dx-master",
       "playCount": 3,
       "bestAchievement": {
         "value": 99.6143,
@@ -602,7 +573,6 @@
       ]
     },
     "song-1806496bcb75-dx-expert": {
-      "chartId": "song-1806496bcb75-dx-expert",
       "playCount": 2,
       "bestAchievement": {
         "value": 99.0735,
@@ -625,7 +595,6 @@
       ]
     },
     "song-18353f1aaac6-dx-master": {
-      "chartId": "song-18353f1aaac6-dx-master",
       "playCount": 1,
       "bestAchievement": {
         "value": 94.0811,
@@ -647,7 +616,6 @@
       ]
     },
     "song-18cc28f9f66d-dx-expert": {
-      "chartId": "song-18cc28f9f66d-dx-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 100.736,
@@ -665,7 +633,6 @@
       ]
     },
     "song-18cc28f9f66d-dx-master": {
-      "chartId": "song-18cc28f9f66d-dx-master",
       "playCount": 6,
       "bestAchievement": {
         "value": 99.8987,
@@ -688,7 +655,6 @@
       ]
     },
     "song-1950032fc7b5-dx-expert": {
-      "chartId": "song-1950032fc7b5-dx-expert",
       "playCount": 2,
       "bestAchievement": {
         "value": 100.813,
@@ -706,7 +672,6 @@
       ]
     },
     "song-1950032fc7b5-dx-master": {
-      "chartId": "song-1950032fc7b5-dx-master",
       "playCount": 1,
       "bestAchievement": {
         "value": 98.7197,
@@ -724,7 +689,6 @@
       ]
     },
     "song-1a06f741a9c3-dx-re-master": {
-      "chartId": "song-1a06f741a9c3-dx-re-master",
       "playCount": 1,
       "bestAchievement": {
         "value": 96.1013,
@@ -746,7 +710,6 @@
       ]
     },
     "song-1b7dee6afd62-std-expert": {
-      "chartId": "song-1b7dee6afd62-std-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 100.3563,
@@ -764,7 +727,6 @@
       ]
     },
     "song-1c2a0228b93f-dx-master": {
-      "chartId": "song-1c2a0228b93f-dx-master",
       "playCount": 3,
       "bestAchievement": {
         "value": 100.57,
@@ -786,7 +748,6 @@
       ]
     },
     "song-1e31758513df-std-master": {
-      "chartId": "song-1e31758513df-std-master",
       "playCount": 1,
       "bestAchievement": {
         "value": 95.6875,
@@ -808,7 +769,6 @@
       ]
     },
     "song-215555e704fd-dx-master": {
-      "chartId": "song-215555e704fd-dx-master",
       "playCount": 1,
       "bestAchievement": {
         "value": 98.9338,
@@ -830,7 +790,6 @@
       ]
     },
     "song-21c8a54c340b-std-expert": {
-      "chartId": "song-21c8a54c340b-std-expert",
       "playCount": 5,
       "bestAchievement": {
         "value": 100.6382,
@@ -852,7 +811,6 @@
       ]
     },
     "song-22be81272e5f-dx-expert": {
-      "chartId": "song-22be81272e5f-dx-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 98.6374,
@@ -874,7 +832,6 @@
       ]
     },
     "song-231047e15640-dx-master": {
-      "chartId": "song-231047e15640-dx-master",
       "playCount": 1,
       "bestAchievement": {
         "value": 96.5842,
@@ -896,7 +853,6 @@
       ]
     },
     "song-2322d2fdf93d-dx-expert": {
-      "chartId": "song-2322d2fdf93d-dx-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 100.95,
@@ -918,7 +874,6 @@
       ]
     },
     "song-2322d2fdf93d-dx-master": {
-      "chartId": "song-2322d2fdf93d-dx-master",
       "playCount": 4,
       "bestAchievement": {
         "value": 100.729,
@@ -942,7 +897,6 @@
       ]
     },
     "song-236effa17b4a-dx-expert": {
-      "chartId": "song-236effa17b4a-dx-expert",
       "playCount": 2,
       "bestAchievement": {
         "value": 100.6471,
@@ -960,7 +914,6 @@
       ]
     },
     "song-236effa17b4a-dx-master": {
-      "chartId": "song-236effa17b4a-dx-master",
       "playCount": 2,
       "bestAchievement": {
         "value": 96.4787,
@@ -978,7 +931,6 @@
       ]
     },
     "song-260908208d43-std-expert": {
-      "chartId": "song-260908208d43-std-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 100.6776,
@@ -996,7 +948,6 @@
       ]
     },
     "song-2739c333bc92-dx-expert": {
-      "chartId": "song-2739c333bc92-dx-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 100.1054,
@@ -1018,7 +969,6 @@
       ]
     },
     "song-2a3769b358c4-dx-expert": {
-      "chartId": "song-2a3769b358c4-dx-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 99.3145,
@@ -1040,7 +990,6 @@
       ]
     },
     "song-2a6b24ad2872-std-expert": {
-      "chartId": "song-2a6b24ad2872-std-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 96.4631,
@@ -1062,7 +1011,6 @@
       ]
     },
     "song-2ab3391ec93e-dx-expert": {
-      "chartId": "song-2ab3391ec93e-dx-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 100.775,
@@ -1084,7 +1032,6 @@
       ]
     },
     "song-2cdd6e0024e0-dx-expert": {
-      "chartId": "song-2cdd6e0024e0-dx-expert",
       "playCount": 4,
       "bestAchievement": {
         "value": 100.4748,
@@ -1108,7 +1055,6 @@
       ]
     },
     "song-2d3a3512bebf-dx-expert": {
-      "chartId": "song-2d3a3512bebf-dx-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 99.5381,
@@ -1126,7 +1072,6 @@
       ]
     },
     "song-2daae7273c21-dx-expert": {
-      "chartId": "song-2daae7273c21-dx-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 100.7593,
@@ -1148,7 +1093,6 @@
       ]
     },
     "song-2f64638892ab-dx-expert": {
-      "chartId": "song-2f64638892ab-dx-expert",
       "playCount": 3,
       "bestAchievement": {
         "value": 100.7907,
@@ -1167,7 +1111,6 @@
       ]
     },
     "song-2f64638892ab-dx-master": {
-      "chartId": "song-2f64638892ab-dx-master",
       "playCount": 6,
       "bestAchievement": {
         "value": 100.6093,
@@ -1188,7 +1131,6 @@
       ]
     },
     "song-2f697ac8734d-dx-expert": {
-      "chartId": "song-2f697ac8734d-dx-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 99.2271,
@@ -1210,7 +1152,6 @@
       ]
     },
     "song-2fefafbb3dcb-std-expert": {
-      "chartId": "song-2fefafbb3dcb-std-expert",
       "playCount": 2,
       "bestAchievement": {
         "value": 100.633,
@@ -1228,7 +1169,6 @@
       ]
     },
     "song-2fefafbb3dcb-std-master": {
-      "chartId": "song-2fefafbb3dcb-std-master",
       "playCount": 1,
       "bestAchievement": {
         "value": 88.0445,
@@ -1246,7 +1186,6 @@
       ]
     },
     "song-2ffef18fba7f-dx-expert": {
-      "chartId": "song-2ffef18fba7f-dx-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 98.4606,
@@ -1264,7 +1203,6 @@
       ]
     },
     "song-2ffef18fba7f-dx-master": {
-      "chartId": "song-2ffef18fba7f-dx-master",
       "playCount": 1,
       "bestAchievement": {
         "value": 97.2244,
@@ -1286,7 +1224,6 @@
       ]
     },
     "song-31cb9c48577d-dx-expert": {
-      "chartId": "song-31cb9c48577d-dx-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 99.2462,
@@ -1308,7 +1245,6 @@
       ]
     },
     "song-325196ba308f-dx-expert": {
-      "chartId": "song-325196ba308f-dx-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 100.1172,
@@ -1326,7 +1262,6 @@
       ]
     },
     "song-325196ba308f-dx-master": {
-      "chartId": "song-325196ba308f-dx-master",
       "playCount": 4,
       "bestAchievement": {
         "value": 100.8612,
@@ -1349,7 +1284,6 @@
       ]
     },
     "song-32642cb2835b-dx-master": {
-      "chartId": "song-32642cb2835b-dx-master",
       "playCount": 1,
       "bestAchievement": {
         "value": 100.5672,
@@ -1371,7 +1305,6 @@
       ]
     },
     "song-33f311b290e0-dx-expert": {
-      "chartId": "song-33f311b290e0-dx-expert",
       "playCount": 3,
       "bestAchievement": {
         "value": 100.16,
@@ -1389,7 +1322,6 @@
       ]
     },
     "song-33f419858168-dx-expert": {
-      "chartId": "song-33f419858168-dx-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 98.4362,
@@ -1411,7 +1343,6 @@
       ]
     },
     "song-35335e0f2151-dx-master": {
-      "chartId": "song-35335e0f2151-dx-master",
       "playCount": 6,
       "bestAchievement": {
         "value": 100.3702,
@@ -1433,7 +1364,6 @@
       ]
     },
     "song-358d0951f9b6-dx-expert": {
-      "chartId": "song-358d0951f9b6-dx-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 100.8584,
@@ -1455,7 +1385,6 @@
       ]
     },
     "song-358d0951f9b6-dx-master": {
-      "chartId": "song-358d0951f9b6-dx-master",
       "playCount": 2,
       "bestAchievement": {
         "value": 98.46,
@@ -1478,7 +1407,6 @@
       ]
     },
     "song-371492138f3d-dx-expert": {
-      "chartId": "song-371492138f3d-dx-expert",
       "playCount": 3,
       "bestAchievement": {
         "value": 97.939,
@@ -1501,7 +1429,6 @@
       ]
     },
     "song-37a85d52844c-dx-master": {
-      "chartId": "song-37a85d52844c-dx-master",
       "playCount": 1,
       "bestAchievement": {
         "value": 99.5193,
@@ -1523,7 +1450,6 @@
       ]
     },
     "song-389f9829e427-dx-expert": {
-      "chartId": "song-389f9829e427-dx-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 98.3724,
@@ -1541,7 +1467,6 @@
       ]
     },
     "song-389f9829e427-dx-master": {
-      "chartId": "song-389f9829e427-dx-master",
       "playCount": 3,
       "bestAchievement": {
         "value": 100.2509,
@@ -1563,7 +1488,6 @@
       ]
     },
     "song-389f9829e427-dx-re-master": {
-      "chartId": "song-389f9829e427-dx-re-master",
       "playCount": 1,
       "bestAchievement": {
         "value": 97.1831,
@@ -1581,7 +1505,6 @@
       ]
     },
     "song-39393f382fcd-std-expert": {
-      "chartId": "song-39393f382fcd-std-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 92.8542,
@@ -1603,7 +1526,6 @@
       ]
     },
     "song-39500c442baa-dx-expert": {
-      "chartId": "song-39500c442baa-dx-expert",
       "playCount": 2,
       "bestAchievement": {
         "value": 98.0095,
@@ -1626,7 +1548,6 @@
       ]
     },
     "song-3b20b9fdc5ab-dx-master": {
-      "chartId": "song-3b20b9fdc5ab-dx-master",
       "playCount": 1,
       "bestAchievement": {
         "value": 100.9274,
@@ -1648,7 +1569,6 @@
       ]
     },
     "song-3ce7f814ff96-dx-master": {
-      "chartId": "song-3ce7f814ff96-dx-master",
       "playCount": 1,
       "bestAchievement": {
         "value": 97.1424,
@@ -1670,7 +1590,6 @@
       ]
     },
     "song-3ce7f814ff96-std-expert": {
-      "chartId": "song-3ce7f814ff96-std-expert",
       "playCount": 2,
       "bestAchievement": {
         "value": 100.5483,
@@ -1692,7 +1611,6 @@
       ]
     },
     "song-3ce7f814ff96-std-master": {
-      "chartId": "song-3ce7f814ff96-std-master",
       "playCount": 2,
       "bestAchievement": {
         "value": 98.3896,
@@ -1715,7 +1633,6 @@
       ]
     },
     "song-3d08dd4bc3b8-dx-expert": {
-      "chartId": "song-3d08dd4bc3b8-dx-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 100.8565,
@@ -1737,7 +1654,6 @@
       ]
     },
     "song-3ec83d57c6cb-std-expert": {
-      "chartId": "song-3ec83d57c6cb-std-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 99.3621,
@@ -1755,7 +1671,6 @@
       ]
     },
     "song-400e36d3b8d1-dx-master": {
-      "chartId": "song-400e36d3b8d1-dx-master",
       "playCount": 3,
       "bestAchievement": {
         "value": 100.6435,
@@ -1778,7 +1693,6 @@
       ]
     },
     "song-438eaed9a234-dx-expert": {
-      "chartId": "song-438eaed9a234-dx-expert",
       "playCount": 6,
       "bestAchievement": {
         "value": 100.2981,
@@ -1796,7 +1710,6 @@
       ]
     },
     "song-438eaed9a234-dx-master": {
-      "chartId": "song-438eaed9a234-dx-master",
       "playCount": 2,
       "bestAchievement": {
         "value": 92.8107,
@@ -1814,7 +1727,6 @@
       ]
     },
     "song-438eaed9a234-std-master": {
-      "chartId": "song-438eaed9a234-std-master",
       "playCount": 1,
       "bestAchievement": {
         "value": 94.6702,
@@ -1832,7 +1744,6 @@
       ]
     },
     "song-43c1df3f7239-dx-expert": {
-      "chartId": "song-43c1df3f7239-dx-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 100.2731,
@@ -1854,7 +1765,6 @@
       ]
     },
     "song-43c1df3f7239-dx-master": {
-      "chartId": "song-43c1df3f7239-dx-master",
       "playCount": 1,
       "bestAchievement": {
         "value": 93.9766,
@@ -1876,7 +1786,6 @@
       ]
     },
     "song-44aa05a05ba6-dx-expert": {
-      "chartId": "song-44aa05a05ba6-dx-expert",
       "playCount": 2,
       "bestAchievement": {
         "value": 100.5428,
@@ -1899,7 +1808,6 @@
       ]
     },
     "song-455da6cc1460-dx-expert": {
-      "chartId": "song-455da6cc1460-dx-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 100.7837,
@@ -1917,7 +1825,6 @@
       ]
     },
     "song-461be4a49f43-dx-expert": {
-      "chartId": "song-461be4a49f43-dx-expert",
       "playCount": 2,
       "bestAchievement": {
         "value": 100.8792,
@@ -1940,7 +1847,6 @@
       ]
     },
     "song-461be4a49f43-dx-master": {
-      "chartId": "song-461be4a49f43-dx-master",
       "playCount": 2,
       "bestAchievement": {
         "value": 99.2907,
@@ -1963,7 +1869,6 @@
       ]
     },
     "song-468944a150e8-dx-expert": {
-      "chartId": "song-468944a150e8-dx-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 100.8928,
@@ -1981,7 +1886,6 @@
       ]
     },
     "song-468944a150e8-dx-master": {
-      "chartId": "song-468944a150e8-dx-master",
       "playCount": 1,
       "bestAchievement": {
         "value": 100.7014,
@@ -1999,7 +1903,6 @@
       ]
     },
     "song-4728d0b5c56d-dx-expert": {
-      "chartId": "song-4728d0b5c56d-dx-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 98.9118,
@@ -2021,7 +1924,6 @@
       ]
     },
     "song-47dbc134f3d0-dx-master": {
-      "chartId": "song-47dbc134f3d0-dx-master",
       "playCount": 1,
       "bestAchievement": {
         "value": 93.9798,
@@ -2043,7 +1945,6 @@
       ]
     },
     "song-487d0c975e16-dx-expert": {
-      "chartId": "song-487d0c975e16-dx-expert",
       "playCount": 3,
       "bestAchievement": {
         "value": 100.8818,
@@ -2061,7 +1962,6 @@
       ]
     },
     "song-487d0c975e16-dx-master": {
-      "chartId": "song-487d0c975e16-dx-master",
       "playCount": 6,
       "bestAchievement": {
         "value": 100.5139,
@@ -2086,7 +1986,6 @@
       ]
     },
     "song-48ebdafbb49f-std-master": {
-      "chartId": "song-48ebdafbb49f-std-master",
       "playCount": 1,
       "bestAchievement": {
         "value": 98.7485,
@@ -2104,7 +2003,6 @@
       ]
     },
     "song-49cabed74b90-dx-expert": {
-      "chartId": "song-49cabed74b90-dx-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 100.6075,
@@ -2126,7 +2024,6 @@
       ]
     },
     "song-49d8467cdee6-dx-expert": {
-      "chartId": "song-49d8467cdee6-dx-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 100.6511,
@@ -2148,7 +2045,6 @@
       ]
     },
     "song-4bac2beaa7db-std-expert": {
-      "chartId": "song-4bac2beaa7db-std-expert",
       "playCount": 2,
       "bestAchievement": {
         "value": 99.8913,
@@ -2166,7 +2062,6 @@
       ]
     },
     "song-4bac2beaa7db-std-master": {
-      "chartId": "song-4bac2beaa7db-std-master",
       "playCount": 1,
       "bestAchievement": {
         "value": 99.3841,
@@ -2184,7 +2079,6 @@
       ]
     },
     "song-4d6db4f3afe0-std-expert": {
-      "chartId": "song-4d6db4f3afe0-std-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 100.4286,
@@ -2206,7 +2100,6 @@
       ]
     },
     "song-4e9f398b9af8-dx-expert": {
-      "chartId": "song-4e9f398b9af8-dx-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 99.001,
@@ -2224,7 +2117,6 @@
       ]
     },
     "song-4f39f6af9e43-dx-expert": {
-      "chartId": "song-4f39f6af9e43-dx-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 100.8321,
@@ -2246,7 +2138,6 @@
       ]
     },
     "song-4f39f6af9e43-dx-master": {
-      "chartId": "song-4f39f6af9e43-dx-master",
       "playCount": 1,
       "bestAchievement": {
         "value": 100.683,
@@ -2268,7 +2159,6 @@
       ]
     },
     "song-4ffbb20786b9-std-expert": {
-      "chartId": "song-4ffbb20786b9-std-expert",
       "playCount": 3,
       "bestAchievement": {
         "value": 98.0423,
@@ -2291,7 +2181,6 @@
       ]
     },
     "song-5012c67acc23-dx-expert": {
-      "chartId": "song-5012c67acc23-dx-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 100.3863,
@@ -2313,7 +2202,6 @@
       ]
     },
     "song-517240e03361-dx-expert": {
-      "chartId": "song-517240e03361-dx-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 100.208,
@@ -2331,7 +2219,6 @@
       ]
     },
     "song-517240e03361-dx-master": {
-      "chartId": "song-517240e03361-dx-master",
       "playCount": 1,
       "bestAchievement": {
         "value": 93.6464,
@@ -2353,7 +2240,6 @@
       ]
     },
     "song-52e03f4cfc5d-dx-re-master": {
-      "chartId": "song-52e03f4cfc5d-dx-re-master",
       "playCount": 3,
       "bestAchievement": {
         "value": 100.5,
@@ -2375,7 +2261,6 @@
       ]
     },
     "song-5331d36bf069-dx-expert": {
-      "chartId": "song-5331d36bf069-dx-expert",
       "playCount": 3,
       "bestAchievement": {
         "value": 100.7228,
@@ -2393,7 +2278,6 @@
       ]
     },
     "song-5331d36bf069-dx-master": {
-      "chartId": "song-5331d36bf069-dx-master",
       "playCount": 7,
       "bestAchievement": {
         "value": 100.6193,
@@ -2417,7 +2301,6 @@
       ]
     },
     "song-54a85573247c-dx-expert": {
-      "chartId": "song-54a85573247c-dx-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 99.1669,
@@ -2439,7 +2322,6 @@
       ]
     },
     "song-550d332f837c-std-expert": {
-      "chartId": "song-550d332f837c-std-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 100.5225,
@@ -2461,7 +2343,6 @@
       ]
     },
     "song-553e96cd15c3-dx-master": {
-      "chartId": "song-553e96cd15c3-dx-master",
       "playCount": 1,
       "bestAchievement": {
         "value": 100.5366,
@@ -2483,7 +2364,6 @@
       ]
     },
     "song-5619c275b593-std-expert": {
-      "chartId": "song-5619c275b593-std-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 100.682,
@@ -2505,7 +2385,6 @@
       ]
     },
     "song-561fa39d3376-std-expert": {
-      "chartId": "song-561fa39d3376-std-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 99.0992,
@@ -2527,7 +2406,6 @@
       ]
     },
     "song-5836d24bd19a-std-expert": {
-      "chartId": "song-5836d24bd19a-std-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 98.2028,
@@ -2545,7 +2423,6 @@
       ]
     },
     "song-58508b2f410c-dx-re-master": {
-      "chartId": "song-58508b2f410c-dx-re-master",
       "playCount": 2,
       "bestAchievement": {
         "value": 100.2576,
@@ -2564,7 +2441,6 @@
       ]
     },
     "song-5958b78766c8-std-expert": {
-      "chartId": "song-5958b78766c8-std-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 98.4238,
@@ -2582,7 +2458,6 @@
       ]
     },
     "song-5a12f15226f2-std-expert": {
-      "chartId": "song-5a12f15226f2-std-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 100.5949,
@@ -2604,7 +2479,6 @@
       ]
     },
     "song-5abbe57460d3-dx-expert": {
-      "chartId": "song-5abbe57460d3-dx-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 100.8309,
@@ -2622,7 +2496,6 @@
       ]
     },
     "song-5abbe57460d3-dx-master": {
-      "chartId": "song-5abbe57460d3-dx-master",
       "playCount": 1,
       "bestAchievement": {
         "value": 95.1246,
@@ -2644,7 +2517,6 @@
       ]
     },
     "song-5b756cf5e565-std-master": {
-      "chartId": "song-5b756cf5e565-std-master",
       "playCount": 1,
       "bestAchievement": {
         "value": 98.2731,
@@ -2666,7 +2538,6 @@
       ]
     },
     "song-5c9caad4eb78-dx-master": {
-      "chartId": "song-5c9caad4eb78-dx-master",
       "playCount": 2,
       "bestAchievement": {
         "value": 99.9546,
@@ -2689,7 +2560,6 @@
       ]
     },
     "song-5cd51939cf68-dx-expert": {
-      "chartId": "song-5cd51939cf68-dx-expert",
       "playCount": 2,
       "bestAchievement": {
         "value": 99.5967,
@@ -2707,7 +2577,6 @@
       ]
     },
     "song-5d05418c5b12-std-expert": {
-      "chartId": "song-5d05418c5b12-std-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 98.7216,
@@ -2725,7 +2594,6 @@
       ]
     },
     "song-5d05418c5b12-std-master": {
-      "chartId": "song-5d05418c5b12-std-master",
       "playCount": 1,
       "bestAchievement": {
         "value": 95.5487,
@@ -2743,7 +2611,6 @@
       ]
     },
     "song-5e2b531bd3e7-std-expert": {
-      "chartId": "song-5e2b531bd3e7-std-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 100.4952,
@@ -2765,7 +2632,6 @@
       ]
     },
     "song-5e2b531bd3e7-std-master": {
-      "chartId": "song-5e2b531bd3e7-std-master",
       "playCount": 1,
       "bestAchievement": {
         "value": 100.6194,
@@ -2783,7 +2649,6 @@
       ]
     },
     "song-5faa713a75d7-dx-expert": {
-      "chartId": "song-5faa713a75d7-dx-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 99.1699,
@@ -2805,7 +2670,6 @@
       ]
     },
     "song-614d62f68589-dx-master": {
-      "chartId": "song-614d62f68589-dx-master",
       "playCount": 1,
       "bestAchievement": {
         "value": 96.5873,
@@ -2827,7 +2691,6 @@
       ]
     },
     "song-62ffd18e0b91-dx-expert": {
-      "chartId": "song-62ffd18e0b91-dx-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 100.8653,
@@ -2845,7 +2708,6 @@
       ]
     },
     "song-62ffd18e0b91-dx-re-master": {
-      "chartId": "song-62ffd18e0b91-dx-re-master",
       "playCount": 1,
       "bestAchievement": {
         "value": 98.5457,
@@ -2867,7 +2729,6 @@
       ]
     },
     "song-638e826988e6-dx-expert": {
-      "chartId": "song-638e826988e6-dx-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 101,
@@ -2889,7 +2750,6 @@
       ]
     },
     "song-65cbe1e19791-dx-expert": {
-      "chartId": "song-65cbe1e19791-dx-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 100.5186,
@@ -2911,7 +2771,6 @@
       ]
     },
     "song-65fb0872677f-dx-expert": {
-      "chartId": "song-65fb0872677f-dx-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 100.1506,
@@ -2929,7 +2788,6 @@
       ]
     },
     "song-6686d9819edf-dx-expert": {
-      "chartId": "song-6686d9819edf-dx-expert",
       "playCount": 2,
       "bestAchievement": {
         "value": 99.6463,
@@ -2952,7 +2810,6 @@
       ]
     },
     "song-66d5f29c249e-std-master": {
-      "chartId": "song-66d5f29c249e-std-master",
       "playCount": 1,
       "bestAchievement": {
         "value": 99.6078,
@@ -2974,7 +2831,6 @@
       ]
     },
     "song-6729a76da051-std-expert": {
-      "chartId": "song-6729a76da051-std-expert",
       "playCount": 2,
       "bestAchievement": {
         "value": 98.7725,
@@ -2997,7 +2853,6 @@
       ]
     },
     "song-677cae4fdf5b-std-master": {
-      "chartId": "song-677cae4fdf5b-std-master",
       "playCount": 1,
       "bestAchievement": {
         "value": 97.3637,
@@ -3019,7 +2874,6 @@
       ]
     },
     "song-68438afa8ff3-dx-master": {
-      "chartId": "song-68438afa8ff3-dx-master",
       "playCount": 1,
       "bestAchievement": {
         "value": 98.6903,
@@ -3041,7 +2895,6 @@
       ]
     },
     "song-69512f200441-dx-expert": {
-      "chartId": "song-69512f200441-dx-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 100.1222,
@@ -3059,7 +2912,6 @@
       ]
     },
     "song-6be6e1b4aabb-std-expert": {
-      "chartId": "song-6be6e1b4aabb-std-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 99.6821,
@@ -3081,7 +2933,6 @@
       ]
     },
     "song-6c0d8fb0f484-dx-expert": {
-      "chartId": "song-6c0d8fb0f484-dx-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 100.4516,
@@ -3103,7 +2954,6 @@
       ]
     },
     "song-6c1b87c59c13-std-master": {
-      "chartId": "song-6c1b87c59c13-std-master",
       "playCount": 2,
       "bestAchievement": {
         "value": 99.3349,
@@ -3125,7 +2975,6 @@
       ]
     },
     "song-6c387381d4d1-dx-expert": {
-      "chartId": "song-6c387381d4d1-dx-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 99.0599,
@@ -3143,7 +2992,6 @@
       ]
     },
     "song-6d47ffabb20e-dx-expert": {
-      "chartId": "song-6d47ffabb20e-dx-expert",
       "playCount": 5,
       "bestAchievement": {
         "value": 100.8618,
@@ -3165,7 +3013,6 @@
       ]
     },
     "song-6d47ffabb20e-dx-master": {
-      "chartId": "song-6d47ffabb20e-dx-master",
       "playCount": 2,
       "bestAchievement": {
         "value": 98.2733,
@@ -3184,7 +3031,6 @@
       ]
     },
     "song-6dad40406ef0-dx-expert": {
-      "chartId": "song-6dad40406ef0-dx-expert",
       "playCount": 2,
       "bestAchievement": {
         "value": 100.4073,
@@ -3206,7 +3052,6 @@
       ]
     },
     "song-6e4d367df787-std-master": {
-      "chartId": "song-6e4d367df787-std-master",
       "playCount": 1,
       "bestAchievement": {
         "value": 97.2394,
@@ -3228,7 +3073,6 @@
       ]
     },
     "song-71b522a20088-std-expert": {
-      "chartId": "song-71b522a20088-std-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 100.5296,
@@ -3246,7 +3090,6 @@
       ]
     },
     "song-7211e50abce8-std-expert": {
-      "chartId": "song-7211e50abce8-std-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 97.453,
@@ -3268,7 +3111,6 @@
       ]
     },
     "song-7281bec080e8-dx-expert": {
-      "chartId": "song-7281bec080e8-dx-expert",
       "playCount": 3,
       "bestAchievement": {
         "value": 99.2563,
@@ -3287,7 +3129,6 @@
       ]
     },
     "song-75803e67ee31-std-expert": {
-      "chartId": "song-75803e67ee31-std-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 98.6208,
@@ -3309,7 +3150,6 @@
       ]
     },
     "song-759a718763cf-dx-expert": {
-      "chartId": "song-759a718763cf-dx-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 99.4829,
@@ -3327,7 +3167,6 @@
       ]
     },
     "song-7a8b00a7d2e1-std-expert": {
-      "chartId": "song-7a8b00a7d2e1-std-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 97.1731,
@@ -3349,7 +3188,6 @@
       ]
     },
     "song-7ac6cc6209bc-dx-expert": {
-      "chartId": "song-7ac6cc6209bc-dx-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 94.9774,
@@ -3367,7 +3205,6 @@
       ]
     },
     "song-7ba8a31c8012-dx-expert": {
-      "chartId": "song-7ba8a31c8012-dx-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 100.0289,
@@ -3389,7 +3226,6 @@
       ]
     },
     "song-7d1aab6a161f-std-expert": {
-      "chartId": "song-7d1aab6a161f-std-expert",
       "playCount": 2,
       "bestAchievement": {
         "value": 100.6246,
@@ -3412,7 +3248,6 @@
       ]
     },
     "song-7d6adc8ac28d-dx-expert": {
-      "chartId": "song-7d6adc8ac28d-dx-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 99.1664,
@@ -3430,7 +3265,6 @@
       ]
     },
     "song-7d6adc8ac28d-dx-master": {
-      "chartId": "song-7d6adc8ac28d-dx-master",
       "playCount": 2,
       "bestAchievement": {
         "value": 98.3945,
@@ -3453,7 +3287,6 @@
       ]
     },
     "song-7dc41dc2ff71-dx-expert": {
-      "chartId": "song-7dc41dc2ff71-dx-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 98.9041,
@@ -3475,7 +3308,6 @@
       ]
     },
     "song-7e49fc53556f-dx-master": {
-      "chartId": "song-7e49fc53556f-dx-master",
       "playCount": 4,
       "bestAchievement": {
         "value": 100.1911,
@@ -3498,7 +3330,6 @@
       ]
     },
     "song-7e974c926826-std-expert": {
-      "chartId": "song-7e974c926826-std-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 97.5694,
@@ -3520,7 +3351,6 @@
       ]
     },
     "song-7f337c54121d-dx-expert": {
-      "chartId": "song-7f337c54121d-dx-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 100.3877,
@@ -3538,7 +3368,6 @@
       ]
     },
     "song-7f68f5daaab3-dx-expert": {
-      "chartId": "song-7f68f5daaab3-dx-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 99.2699,
@@ -3560,7 +3389,6 @@
       ]
     },
     "song-7fa77704b857-std-advanced": {
-      "chartId": "song-7fa77704b857-std-advanced",
       "playCount": 2,
       "bestAchievement": {
         "value": 100.4415,
@@ -3579,7 +3407,6 @@
       ]
     },
     "song-7fa77704b857-std-expert": {
-      "chartId": "song-7fa77704b857-std-expert",
       "playCount": 6,
       "bestAchievement": {
         "value": 99.2474,
@@ -3598,7 +3425,6 @@
       ]
     },
     "song-7fbb1100d70a-dx-master": {
-      "chartId": "song-7fbb1100d70a-dx-master",
       "playCount": 5,
       "bestAchievement": {
         "value": 100.67,
@@ -3621,7 +3447,6 @@
       ]
     },
     "song-8024e40b450a-dx-expert": {
-      "chartId": "song-8024e40b450a-dx-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 98.7502,
@@ -3643,7 +3468,6 @@
       ]
     },
     "song-804aeaf592b9-dx-expert": {
-      "chartId": "song-804aeaf592b9-dx-expert",
       "playCount": 3,
       "bestAchievement": {
         "value": 99.1518,
@@ -3666,7 +3490,6 @@
       ]
     },
     "song-804d792a8a53-dx-expert": {
-      "chartId": "song-804d792a8a53-dx-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 99.6071,
@@ -3684,7 +3507,6 @@
       ]
     },
     "song-8091d36e9e71-dx-master": {
-      "chartId": "song-8091d36e9e71-dx-master",
       "playCount": 1,
       "bestAchievement": {
         "value": 98.884,
@@ -3702,7 +3524,6 @@
       ]
     },
     "song-80f1e1dfff6a-std-expert": {
-      "chartId": "song-80f1e1dfff6a-std-expert",
       "playCount": 3,
       "bestAchievement": {
         "value": 100.5867,
@@ -3724,7 +3545,6 @@
       ]
     },
     "song-80f1e1dfff6a-std-master": {
-      "chartId": "song-80f1e1dfff6a-std-master",
       "playCount": 4,
       "bestAchievement": {
         "value": 98.6963,
@@ -3747,7 +3567,6 @@
       ]
     },
     "song-8206f73590c7-dx-expert": {
-      "chartId": "song-8206f73590c7-dx-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 99.1182,
@@ -3769,7 +3588,6 @@
       ]
     },
     "song-82cbf0e19945-dx-master": {
-      "chartId": "song-82cbf0e19945-dx-master",
       "playCount": 1,
       "bestAchievement": {
         "value": 98.6233,
@@ -3787,7 +3605,6 @@
       ]
     },
     "song-8342d656fdb5-std-expert": {
-      "chartId": "song-8342d656fdb5-std-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 99.845,
@@ -3809,7 +3626,6 @@
       ]
     },
     "song-85572925973b-dx-master": {
-      "chartId": "song-85572925973b-dx-master",
       "playCount": 2,
       "bestAchievement": {
         "value": 100.5258,
@@ -3827,7 +3643,6 @@
       ]
     },
     "song-86b237cecc19-std-expert": {
-      "chartId": "song-86b237cecc19-std-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 100.1689,
@@ -3845,7 +3660,6 @@
       ]
     },
     "song-88fd49fe9b34-std-master": {
-      "chartId": "song-88fd49fe9b34-std-master",
       "playCount": 1,
       "bestAchievement": {
         "value": 99.385,
@@ -3867,7 +3681,6 @@
       ]
     },
     "song-8af1d8cc17a4-dx-expert": {
-      "chartId": "song-8af1d8cc17a4-dx-expert",
       "playCount": 3,
       "bestAchievement": {
         "value": 100.6306,
@@ -3890,7 +3703,6 @@
       ]
     },
     "song-8c64261afe55-std-expert": {
-      "chartId": "song-8c64261afe55-std-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 99.4888,
@@ -3912,7 +3724,6 @@
       ]
     },
     "song-9028eaf59903-dx-expert": {
-      "chartId": "song-9028eaf59903-dx-expert",
       "playCount": 2,
       "bestAchievement": {
         "value": 100.9502,
@@ -3931,7 +3742,6 @@
       ]
     },
     "song-9028eaf59903-dx-master": {
-      "chartId": "song-9028eaf59903-dx-master",
       "playCount": 5,
       "bestAchievement": {
         "value": 100.3528,
@@ -3949,7 +3759,6 @@
       ]
     },
     "song-9028eaf59903-dx-re-master": {
-      "chartId": "song-9028eaf59903-dx-re-master",
       "playCount": 6,
       "bestAchievement": {
         "value": 99.3904,
@@ -3973,7 +3782,6 @@
       ]
     },
     "song-906fd0009f4d-dx-expert": {
-      "chartId": "song-906fd0009f4d-dx-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 94.2729,
@@ -3991,7 +3799,6 @@
       ]
     },
     "song-90bd6c6ce50c-dx-expert": {
-      "chartId": "song-90bd6c6ce50c-dx-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 97.8442,
@@ -4009,7 +3816,6 @@
       ]
     },
     "song-90d9ecb385bc-dx-master": {
-      "chartId": "song-90d9ecb385bc-dx-master",
       "playCount": 1,
       "bestAchievement": {
         "value": 100.5647,
@@ -4031,7 +3837,6 @@
       ]
     },
     "song-9125d2108267-std-expert": {
-      "chartId": "song-9125d2108267-std-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 98.529,
@@ -4053,7 +3858,6 @@
       ]
     },
     "song-93b02a334abf-dx-master": {
-      "chartId": "song-93b02a334abf-dx-master",
       "playCount": 1,
       "bestAchievement": {
         "value": 97.1199,
@@ -4071,7 +3875,6 @@
       ]
     },
     "song-93cc6dbdb85f-dx-master": {
-      "chartId": "song-93cc6dbdb85f-dx-master",
       "playCount": 1,
       "bestAchievement": {
         "value": 96.7395,
@@ -4093,7 +3896,6 @@
       ]
     },
     "song-940363864a61-dx-expert": {
-      "chartId": "song-940363864a61-dx-expert",
       "playCount": 2,
       "bestAchievement": {
         "value": 99.7941,
@@ -4116,7 +3918,6 @@
       ]
     },
     "song-944c7317d74c-dx-expert": {
-      "chartId": "song-944c7317d74c-dx-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 100.4162,
@@ -4138,7 +3939,6 @@
       ]
     },
     "song-9455ce1cbd35-dx-expert": {
-      "chartId": "song-9455ce1cbd35-dx-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 97.3805,
@@ -4156,7 +3956,6 @@
       ]
     },
     "song-9484ecffb2df-std-expert": {
-      "chartId": "song-9484ecffb2df-std-expert",
       "playCount": 2,
       "bestAchievement": {
         "value": 100.0788,
@@ -4174,7 +3973,6 @@
       ]
     },
     "song-9484ecffb2df-std-master": {
-      "chartId": "song-9484ecffb2df-std-master",
       "playCount": 1,
       "bestAchievement": {
         "value": 99.4751,
@@ -4192,7 +3990,6 @@
       ]
     },
     "song-952f9a4b765c-dx-master": {
-      "chartId": "song-952f9a4b765c-dx-master",
       "playCount": 1,
       "bestAchievement": {
         "value": 94.3288,
@@ -4214,7 +4011,6 @@
       ]
     },
     "song-959b65ed7e53-dx-expert": {
-      "chartId": "song-959b65ed7e53-dx-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 100.9336,
@@ -4236,7 +4032,6 @@
       ]
     },
     "song-959b65ed7e53-dx-master": {
-      "chartId": "song-959b65ed7e53-dx-master",
       "playCount": 1,
       "bestAchievement": {
         "value": 98.3155,
@@ -4254,7 +4049,6 @@
       ]
     },
     "song-97019c4e4c6b-dx-expert": {
-      "chartId": "song-97019c4e4c6b-dx-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 100.1855,
@@ -4276,7 +4070,6 @@
       ]
     },
     "song-97aadb9a4e53-dx-master": {
-      "chartId": "song-97aadb9a4e53-dx-master",
       "playCount": 2,
       "bestAchievement": {
         "value": 100.8053,
@@ -4294,7 +4087,6 @@
       ]
     },
     "song-98cf509c9323-dx-expert": {
-      "chartId": "song-98cf509c9323-dx-expert",
       "playCount": 2,
       "bestAchievement": {
         "value": 100.5073,
@@ -4316,7 +4108,6 @@
       ]
     },
     "song-9a0951094d3b-dx-expert": {
-      "chartId": "song-9a0951094d3b-dx-expert",
       "playCount": 2,
       "bestAchievement": {
         "value": 100.1778,
@@ -4334,7 +4125,6 @@
       ]
     },
     "song-9a2f2ad520e2-std-expert": {
-      "chartId": "song-9a2f2ad520e2-std-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 100.8719,
@@ -4352,7 +4142,6 @@
       ]
     },
     "song-9a2f2ad520e2-std-master": {
-      "chartId": "song-9a2f2ad520e2-std-master",
       "playCount": 8,
       "bestAchievement": {
         "value": 100.7797,
@@ -4376,7 +4165,6 @@
       ]
     },
     "song-9bfeed61e9c0-dx-expert": {
-      "chartId": "song-9bfeed61e9c0-dx-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 100.6872,
@@ -4394,7 +4182,6 @@
       ]
     },
     "song-9bfeed61e9c0-dx-master": {
-      "chartId": "song-9bfeed61e9c0-dx-master",
       "playCount": 2,
       "bestAchievement": {
         "value": 97.5378,
@@ -4417,7 +4204,6 @@
       ]
     },
     "song-9c9ebf4e7522-dx-expert": {
-      "chartId": "song-9c9ebf4e7522-dx-expert",
       "playCount": 2,
       "bestAchievement": {
         "value": 100.6022,
@@ -4439,7 +4225,6 @@
       ]
     },
     "song-9d4fa1b44975-std-expert": {
-      "chartId": "song-9d4fa1b44975-std-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 100.137,
@@ -4461,7 +4246,6 @@
       ]
     },
     "song-9e3a000a6d8d-dx-expert": {
-      "chartId": "song-9e3a000a6d8d-dx-expert",
       "playCount": 2,
       "bestAchievement": {
         "value": 100.3808,
@@ -4484,7 +4268,6 @@
       ]
     },
     "song-9e98bf4fc074-std-expert": {
-      "chartId": "song-9e98bf4fc074-std-expert",
       "playCount": 2,
       "bestAchievement": {
         "value": 99.0938,
@@ -4503,7 +4286,6 @@
       ]
     },
     "song-9f9806500d04-dx-expert": {
-      "chartId": "song-9f9806500d04-dx-expert",
       "playCount": 2,
       "bestAchievement": {
         "value": 100.6725,
@@ -4525,7 +4307,6 @@
       ]
     },
     "song-a0369e1684d5-dx-expert": {
-      "chartId": "song-a0369e1684d5-dx-expert",
       "playCount": 2,
       "bestAchievement": {
         "value": 100.5249,
@@ -4543,7 +4324,6 @@
       ]
     },
     "song-a220dd49213c-dx-expert": {
-      "chartId": "song-a220dd49213c-dx-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 99.284,
@@ -4565,7 +4345,6 @@
       ]
     },
     "song-a337c728408b-dx-expert": {
-      "chartId": "song-a337c728408b-dx-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 100.3983,
@@ -4583,7 +4362,6 @@
       ]
     },
     "song-a337c728408b-dx-master": {
-      "chartId": "song-a337c728408b-dx-master",
       "playCount": 2,
       "bestAchievement": {
         "value": 99.0417,
@@ -4601,7 +4379,6 @@
       ]
     },
     "song-a33e7097af26-dx-expert": {
-      "chartId": "song-a33e7097af26-dx-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 99.8918,
@@ -4619,7 +4396,6 @@
       ]
     },
     "song-a4ad0fb00a09-dx-expert": {
-      "chartId": "song-a4ad0fb00a09-dx-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 99.1979,
@@ -4641,7 +4417,6 @@
       ]
     },
     "song-a4cfa117d5d2-dx-expert": {
-      "chartId": "song-a4cfa117d5d2-dx-expert",
       "playCount": 3,
       "bestAchievement": {
         "value": 99.2477,
@@ -4664,7 +4439,6 @@
       ]
     },
     "song-a5b31616c19b-dx-expert": {
-      "chartId": "song-a5b31616c19b-dx-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 100.8205,
@@ -4682,7 +4456,6 @@
       ]
     },
     "song-a5b31616c19b-dx-master": {
-      "chartId": "song-a5b31616c19b-dx-master",
       "playCount": 5,
       "bestAchievement": {
         "value": 100.6291,
@@ -4705,7 +4478,6 @@
       ]
     },
     "song-a6ab724eff33-dx-expert": {
-      "chartId": "song-a6ab724eff33-dx-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 100.246,
@@ -4727,7 +4499,6 @@
       ]
     },
     "song-a7a461d9d280-dx-expert": {
-      "chartId": "song-a7a461d9d280-dx-expert",
       "playCount": 4,
       "bestAchievement": {
         "value": 100.8112,
@@ -4749,7 +4520,6 @@
       ]
     },
     "song-a7a461d9d280-dx-master": {
-      "chartId": "song-a7a461d9d280-dx-master",
       "playCount": 11,
       "bestAchievement": {
         "value": 100.5531,
@@ -4774,7 +4544,6 @@
       ]
     },
     "song-aa0d2367e56d-dx-expert": {
-      "chartId": "song-aa0d2367e56d-dx-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 100.734,
@@ -4796,7 +4565,6 @@
       ]
     },
     "song-aa0d2367e56d-dx-master": {
-      "chartId": "song-aa0d2367e56d-dx-master",
       "playCount": 4,
       "bestAchievement": {
         "value": 99.8573,
@@ -4820,7 +4588,6 @@
       ]
     },
     "song-aa146dfca961-dx-expert": {
-      "chartId": "song-aa146dfca961-dx-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 100.2352,
@@ -4838,7 +4605,6 @@
       ]
     },
     "song-aa146dfca961-dx-master": {
-      "chartId": "song-aa146dfca961-dx-master",
       "playCount": 4,
       "bestAchievement": {
         "value": 100.6767,
@@ -4860,7 +4626,6 @@
       ]
     },
     "song-aa146dfca961-dx-re-master": {
-      "chartId": "song-aa146dfca961-dx-re-master",
       "playCount": 2,
       "bestAchievement": {
         "value": 99.1941,
@@ -4882,7 +4647,6 @@
       ]
     },
     "song-ab52aadc0f84-dx-master": {
-      "chartId": "song-ab52aadc0f84-dx-master",
       "playCount": 1,
       "bestAchievement": {
         "value": 98.4398,
@@ -4904,7 +4668,6 @@
       ]
     },
     "song-abf7a8f529b4-dx-master": {
-      "chartId": "song-abf7a8f529b4-dx-master",
       "playCount": 8,
       "bestAchievement": {
         "value": 100.5009,
@@ -4927,7 +4690,6 @@
       ]
     },
     "song-abf7a8f529b4-dx-re-master": {
-      "chartId": "song-abf7a8f529b4-dx-re-master",
       "playCount": 6,
       "bestAchievement": {
         "value": 100.6187,
@@ -4950,7 +4712,6 @@
       ]
     },
     "song-ad1a4ccb2620-dx-expert": {
-      "chartId": "song-ad1a4ccb2620-dx-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 100.844,
@@ -4968,7 +4729,6 @@
       ]
     },
     "song-ad1a4ccb2620-dx-master": {
-      "chartId": "song-ad1a4ccb2620-dx-master",
       "playCount": 7,
       "bestAchievement": {
         "value": 100.5487,
@@ -4991,7 +4751,6 @@
       ]
     },
     "song-b055770c3a9e-dx-expert": {
-      "chartId": "song-b055770c3a9e-dx-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 99.5962,
@@ -5009,7 +4768,6 @@
       ]
     },
     "song-b397cf7c4753-dx-expert": {
-      "chartId": "song-b397cf7c4753-dx-expert",
       "playCount": 3,
       "bestAchievement": {
         "value": 99.2888,
@@ -5033,7 +4791,6 @@
       ]
     },
     "song-b60884cdd97d-dx-expert": {
-      "chartId": "song-b60884cdd97d-dx-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 100.9044,
@@ -5055,7 +4812,6 @@
       ]
     },
     "song-b60884cdd97d-dx-master": {
-      "chartId": "song-b60884cdd97d-dx-master",
       "playCount": 1,
       "bestAchievement": {
         "value": 98.68,
@@ -5077,7 +4833,6 @@
       ]
     },
     "song-b9490351376f-std-expert": {
-      "chartId": "song-b9490351376f-std-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 100.0384,
@@ -5099,7 +4854,6 @@
       ]
     },
     "song-b99c9e9718b2-dx-expert": {
-      "chartId": "song-b99c9e9718b2-dx-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 100.7954,
@@ -5121,7 +4875,6 @@
       ]
     },
     "song-bc39c978dd14-std-master": {
-      "chartId": "song-bc39c978dd14-std-master",
       "playCount": 1,
       "bestAchievement": {
         "value": 92.3873,
@@ -5143,7 +4896,6 @@
       ]
     },
     "song-bcdd634d7a4b-std-expert": {
-      "chartId": "song-bcdd634d7a4b-std-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 99.5784,
@@ -5165,7 +4917,6 @@
       ]
     },
     "song-bdf8ca5b6c93-dx-expert": {
-      "chartId": "song-bdf8ca5b6c93-dx-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 100.514,
@@ -5187,7 +4938,6 @@
       ]
     },
     "song-bdf8ca5b6c93-dx-master": {
-      "chartId": "song-bdf8ca5b6c93-dx-master",
       "playCount": 6,
       "bestAchievement": {
         "value": 100.5977,
@@ -5211,7 +4961,6 @@
       ]
     },
     "song-be125cab7681-std-expert": {
-      "chartId": "song-be125cab7681-std-expert",
       "playCount": 5,
       "bestAchievement": {
         "value": 99.2932,
@@ -5234,7 +4983,6 @@
       ]
     },
     "song-be9f120b07fb-dx-expert": {
-      "chartId": "song-be9f120b07fb-dx-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 100.8825,
@@ -5252,7 +5000,6 @@
       ]
     },
     "song-be9f120b07fb-dx-master": {
-      "chartId": "song-be9f120b07fb-dx-master",
       "playCount": 1,
       "bestAchievement": {
         "value": 93.6515,
@@ -5270,7 +5017,6 @@
       ]
     },
     "song-bf95733511a4-dx-master": {
-      "chartId": "song-bf95733511a4-dx-master",
       "playCount": 2,
       "bestAchievement": {
         "value": 93.7561,
@@ -5292,7 +5038,6 @@
       ]
     },
     "song-c034ac69d6d8-dx-master": {
-      "chartId": "song-c034ac69d6d8-dx-master",
       "playCount": 3,
       "bestAchievement": {
         "value": 100.6601,
@@ -5311,7 +5056,6 @@
       ]
     },
     "song-c0b92a10414e-dx-master": {
-      "chartId": "song-c0b92a10414e-dx-master",
       "playCount": 1,
       "bestAchievement": {
         "value": 99.226,
@@ -5329,7 +5073,6 @@
       ]
     },
     "song-c12dd6c10af2-std-expert": {
-      "chartId": "song-c12dd6c10af2-std-expert",
       "playCount": 2,
       "bestAchievement": {
         "value": 98.8589,
@@ -5352,7 +5095,6 @@
       ]
     },
     "song-c172dfbe2a87-std-master": {
-      "chartId": "song-c172dfbe2a87-std-master",
       "playCount": 1,
       "bestAchievement": {
         "value": 97.1964,
@@ -5374,7 +5116,6 @@
       ]
     },
     "song-c2823057ae4f-dx-expert": {
-      "chartId": "song-c2823057ae4f-dx-expert",
       "playCount": 2,
       "bestAchievement": {
         "value": 100.3235,
@@ -5396,7 +5137,6 @@
       ]
     },
     "song-c2823057ae4f-dx-master": {
-      "chartId": "song-c2823057ae4f-dx-master",
       "playCount": 3,
       "bestAchievement": {
         "value": 98.6878,
@@ -5419,7 +5159,6 @@
       ]
     },
     "song-c30dfd1b462b-dx-master": {
-      "chartId": "song-c30dfd1b462b-dx-master",
       "playCount": 3,
       "bestAchievement": {
         "value": 98.9648,
@@ -5442,7 +5181,6 @@
       ]
     },
     "song-c3ab5ce385d0-dx-expert": {
-      "chartId": "song-c3ab5ce385d0-dx-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 100.3548,
@@ -5460,7 +5198,6 @@
       ]
     },
     "song-c3ab5ce385d0-dx-master": {
-      "chartId": "song-c3ab5ce385d0-dx-master",
       "playCount": 2,
       "bestAchievement": {
         "value": 99.5799,
@@ -5478,7 +5215,6 @@
       ]
     },
     "song-c7c48540b093-std-expert": {
-      "chartId": "song-c7c48540b093-std-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 98.6318,
@@ -5500,7 +5236,6 @@
       ]
     },
     "song-c82f7c595d89-dx-expert": {
-      "chartId": "song-c82f7c595d89-dx-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 100.7285,
@@ -5522,7 +5257,6 @@
       ]
     },
     "song-c852acb4e2c8-std-expert": {
-      "chartId": "song-c852acb4e2c8-std-expert",
       "playCount": 2,
       "bestAchievement": {
         "value": 100.0513,
@@ -5540,7 +5274,6 @@
       ]
     },
     "song-c9c66e98867c-dx-expert": {
-      "chartId": "song-c9c66e98867c-dx-expert",
       "playCount": 3,
       "bestAchievement": {
         "value": 99.9031,
@@ -5563,7 +5296,6 @@
       ]
     },
     "song-ca970af3b5b0-dx-expert": {
-      "chartId": "song-ca970af3b5b0-dx-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 100.8231,
@@ -5581,7 +5313,6 @@
       ]
     },
     "song-ca970af3b5b0-dx-master": {
-      "chartId": "song-ca970af3b5b0-dx-master",
       "playCount": 1,
       "bestAchievement": {
         "value": 93.7137,
@@ -5603,7 +5334,6 @@
       ]
     },
     "song-cb6762dadd83-std-expert": {
-      "chartId": "song-cb6762dadd83-std-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 98.1666,
@@ -5621,7 +5351,6 @@
       ]
     },
     "song-ce34e49b7932-std-expert": {
-      "chartId": "song-ce34e49b7932-std-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 100.0803,
@@ -5643,7 +5372,6 @@
       ]
     },
     "song-cf13dcb70370-dx-expert": {
-      "chartId": "song-cf13dcb70370-dx-expert",
       "playCount": 5,
       "bestAchievement": {
         "value": 100.6942,
@@ -5666,7 +5394,6 @@
       ]
     },
     "song-d13162a1691c-dx-expert": {
-      "chartId": "song-d13162a1691c-dx-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 100.7363,
@@ -5688,7 +5415,6 @@
       ]
     },
     "song-d13162a1691c-dx-master": {
-      "chartId": "song-d13162a1691c-dx-master",
       "playCount": 1,
       "bestAchievement": {
         "value": 96.2178,
@@ -5710,7 +5436,6 @@
       ]
     },
     "song-d1bb8e44303e-dx-expert": {
-      "chartId": "song-d1bb8e44303e-dx-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 100.5465,
@@ -5732,7 +5457,6 @@
       ]
     },
     "song-d1db5684d205-std-expert": {
-      "chartId": "song-d1db5684d205-std-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 100.8437,
@@ -5750,7 +5474,6 @@
       ]
     },
     "song-d47f70af5b17-dx-expert": {
-      "chartId": "song-d47f70af5b17-dx-expert",
       "playCount": 2,
       "bestAchievement": {
         "value": 100.9168,
@@ -5768,7 +5491,6 @@
       ]
     },
     "song-d47f70af5b17-dx-master": {
-      "chartId": "song-d47f70af5b17-dx-master",
       "playCount": 5,
       "bestAchievement": {
         "value": 100.4825,
@@ -5790,7 +5512,6 @@
       ]
     },
     "song-d47f70af5b17-dx-re-master": {
-      "chartId": "song-d47f70af5b17-dx-re-master",
       "playCount": 4,
       "bestAchievement": {
         "value": 99.4419,
@@ -5815,7 +5536,6 @@
       ]
     },
     "song-d7d117cd566e-dx-master": {
-      "chartId": "song-d7d117cd566e-dx-master",
       "playCount": 1,
       "bestAchievement": {
         "value": 95.8554,
@@ -5837,7 +5557,6 @@
       ]
     },
     "song-d9e77df8727b-dx-expert": {
-      "chartId": "song-d9e77df8727b-dx-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 100.6914,
@@ -5859,7 +5578,6 @@
       ]
     },
     "song-db821594b039-dx-master": {
-      "chartId": "song-db821594b039-dx-master",
       "playCount": 1,
       "bestAchievement": {
         "value": 99.1856,
@@ -5881,7 +5599,6 @@
       ]
     },
     "song-dc1a2f9d7bd7-dx-expert": {
-      "chartId": "song-dc1a2f9d7bd7-dx-expert",
       "playCount": 3,
       "bestAchievement": {
         "value": 99.6191,
@@ -5903,7 +5620,6 @@
       ]
     },
     "song-dca63a8a0a36-dx-expert": {
-      "chartId": "song-dca63a8a0a36-dx-expert",
       "playCount": 4,
       "bestAchievement": {
         "value": 100.1234,
@@ -5927,7 +5643,6 @@
       ]
     },
     "song-dcb30aa11bd6-dx-expert": {
-      "chartId": "song-dcb30aa11bd6-dx-expert",
       "playCount": 2,
       "bestAchievement": {
         "value": 100.4473,
@@ -5945,7 +5660,6 @@
       ]
     },
     "song-dd3b4f4af89b-dx-expert": {
-      "chartId": "song-dd3b4f4af89b-dx-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 100.0873,
@@ -5967,7 +5681,6 @@
       ]
     },
     "song-dd8a4e36a251-dx-expert": {
-      "chartId": "song-dd8a4e36a251-dx-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 100.5411,
@@ -5985,7 +5698,6 @@
       ]
     },
     "song-dde93d54b099-std-expert": {
-      "chartId": "song-dde93d54b099-std-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 100.6466,
@@ -6007,7 +5719,6 @@
       ]
     },
     "song-de8bb67fb249-dx-master": {
-      "chartId": "song-de8bb67fb249-dx-master",
       "playCount": 3,
       "bestAchievement": {
         "value": 100.5928,
@@ -6029,7 +5740,6 @@
       ]
     },
     "song-e1026c14404b-dx-master": {
-      "chartId": "song-e1026c14404b-dx-master",
       "playCount": 1,
       "bestAchievement": {
         "value": 98.2965,
@@ -6047,7 +5757,6 @@
       ]
     },
     "song-e36fa439473a-std-expert": {
-      "chartId": "song-e36fa439473a-std-expert",
       "playCount": 2,
       "bestAchievement": {
         "value": 100.5057,
@@ -6070,7 +5779,6 @@
       ]
     },
     "song-e55f5c1d041d-dx-master": {
-      "chartId": "song-e55f5c1d041d-dx-master",
       "playCount": 9,
       "bestAchievement": {
         "value": 100.7416,
@@ -6095,7 +5803,6 @@
       ]
     },
     "song-e5c1f223a7a8-dx-master": {
-      "chartId": "song-e5c1f223a7a8-dx-master",
       "playCount": 1,
       "bestAchievement": {
         "value": 98.0342,
@@ -6117,7 +5824,6 @@
       ]
     },
     "song-e82460b7a2b0-dx-master": {
-      "chartId": "song-e82460b7a2b0-dx-master",
       "playCount": 3,
       "bestAchievement": {
         "value": 100.6639,
@@ -6140,7 +5846,6 @@
       ]
     },
     "song-e85cc01874d0-dx-expert": {
-      "chartId": "song-e85cc01874d0-dx-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 97.3792,
@@ -6162,7 +5867,6 @@
       ]
     },
     "song-e8be0960fb5f-dx-expert": {
-      "chartId": "song-e8be0960fb5f-dx-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 97.9918,
@@ -6180,7 +5884,6 @@
       ]
     },
     "song-e8be0960fb5f-dx-master": {
-      "chartId": "song-e8be0960fb5f-dx-master",
       "playCount": 1,
       "bestAchievement": {
         "value": 97.3248,
@@ -6202,7 +5905,6 @@
       ]
     },
     "song-e8be0960fb5f-std-expert": {
-      "chartId": "song-e8be0960fb5f-std-expert",
       "playCount": 2,
       "bestAchievement": {
         "value": 100.407,
@@ -6225,7 +5927,6 @@
       ]
     },
     "song-e92c47515940-dx-expert": {
-      "chartId": "song-e92c47515940-dx-expert",
       "playCount": 2,
       "bestAchievement": {
         "value": 100.4724,
@@ -6247,7 +5948,6 @@
       ]
     },
     "song-eac73a117106-dx-expert": {
-      "chartId": "song-eac73a117106-dx-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 100.5507,
@@ -6269,7 +5969,6 @@
       ]
     },
     "song-eba222800d88-dx-expert": {
-      "chartId": "song-eba222800d88-dx-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 100.9687,
@@ -6287,7 +5986,6 @@
       ]
     },
     "song-eba222800d88-dx-master": {
-      "chartId": "song-eba222800d88-dx-master",
       "playCount": 6,
       "bestAchievement": {
         "value": 100.7457,
@@ -6311,7 +6009,6 @@
       ]
     },
     "song-eba8086f378f-dx-expert": {
-      "chartId": "song-eba8086f378f-dx-expert",
       "playCount": 3,
       "bestAchievement": {
         "value": 100.3159,
@@ -6334,7 +6031,6 @@
       ]
     },
     "song-eba8086f378f-dx-master": {
-      "chartId": "song-eba8086f378f-dx-master",
       "playCount": 3,
       "bestAchievement": {
         "value": 100.7844,
@@ -6358,7 +6054,6 @@
       ]
     },
     "song-ece5ea462465-dx-expert": {
-      "chartId": "song-ece5ea462465-dx-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 99.8628,
@@ -6380,7 +6075,6 @@
       ]
     },
     "song-ee631b95b7c2-std-master": {
-      "chartId": "song-ee631b95b7c2-std-master",
       "playCount": 1,
       "bestAchievement": {
         "value": 98.0629,
@@ -6398,7 +6092,6 @@
       ]
     },
     "song-ef3aa6605987-std-expert": {
-      "chartId": "song-ef3aa6605987-std-expert",
       "playCount": 2,
       "bestAchievement": {
         "value": 100.6633,
@@ -6420,7 +6113,6 @@
       ]
     },
     "song-f1d8c4af8108-std-expert": {
-      "chartId": "song-f1d8c4af8108-std-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 99.4426,
@@ -6442,7 +6134,6 @@
       ]
     },
     "song-f2c87b9e487f-dx-expert": {
-      "chartId": "song-f2c87b9e487f-dx-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 100.6195,
@@ -6460,7 +6151,6 @@
       ]
     },
     "song-f33644b27e4c-dx-expert": {
-      "chartId": "song-f33644b27e4c-dx-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 100.3861,
@@ -6482,7 +6172,6 @@
       ]
     },
     "song-f3b52d4dee79-dx-expert": {
-      "chartId": "song-f3b52d4dee79-dx-expert",
       "playCount": 4,
       "bestAchievement": {
         "value": 100.6391,
@@ -6505,7 +6194,6 @@
       ]
     },
     "song-f5211ec10f40-std-expert": {
-      "chartId": "song-f5211ec10f40-std-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 100.2162,
@@ -6523,7 +6211,6 @@
       ]
     },
     "song-f6f52240bd9a-dx-master": {
-      "chartId": "song-f6f52240bd9a-dx-master",
       "playCount": 2,
       "bestAchievement": {
         "value": 100.8405,
@@ -6541,7 +6228,6 @@
       ]
     },
     "song-f8ba7d3709c4-dx-master": {
-      "chartId": "song-f8ba7d3709c4-dx-master",
       "playCount": 1,
       "bestAchievement": {
         "value": 100.7418,
@@ -6559,7 +6245,6 @@
       ]
     },
     "song-f992266c9245-std-master": {
-      "chartId": "song-f992266c9245-std-master",
       "playCount": 1,
       "bestAchievement": {
         "value": 99.957,
@@ -6581,7 +6266,6 @@
       ]
     },
     "song-f9b67545230b-dx-expert": {
-      "chartId": "song-f9b67545230b-dx-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 100.9414,
@@ -6603,7 +6287,6 @@
       ]
     },
     "song-f9b67545230b-dx-master": {
-      "chartId": "song-f9b67545230b-dx-master",
       "playCount": 2,
       "bestAchievement": {
         "value": 100.2031,
@@ -6625,7 +6308,6 @@
       ]
     },
     "song-fa9e1d22205a-dx-expert": {
-      "chartId": "song-fa9e1d22205a-dx-expert",
       "playCount": 2,
       "bestAchievement": {
         "value": 97.8717,
@@ -6643,7 +6325,6 @@
       ]
     },
     "song-fa9e1d22205a-dx-master": {
-      "chartId": "song-fa9e1d22205a-dx-master",
       "playCount": 1,
       "bestAchievement": {
         "value": 96.7884,
@@ -6665,7 +6346,6 @@
       ]
     },
     "song-fa9e1d22205a-std-expert": {
-      "chartId": "song-fa9e1d22205a-std-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 99.0831,
@@ -6687,7 +6367,6 @@
       ]
     },
     "song-fc0e391a9a75-dx-expert": {
-      "chartId": "song-fc0e391a9a75-dx-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 101,
@@ -6709,7 +6388,6 @@
       ]
     },
     "song-fde3e85e71b5-dx-expert": {
-      "chartId": "song-fde3e85e71b5-dx-expert",
       "playCount": 3,
       "bestAchievement": {
         "value": 99.5796,
@@ -6732,7 +6410,6 @@
       ]
     },
     "song-fe04643bda33-dx-master": {
-      "chartId": "song-fe04643bda33-dx-master",
       "playCount": 1,
       "bestAchievement": {
         "value": 98.7444,
@@ -6754,7 +6431,6 @@
       ]
     },
     "song-fea7ee449c3a-dx-expert": {
-      "chartId": "song-fea7ee449c3a-dx-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 99.2239,
@@ -6776,7 +6452,6 @@
       ]
     },
     "song-fed6fb43603f-dx-expert": {
-      "chartId": "song-fed6fb43603f-dx-expert",
       "playCount": 1,
       "bestAchievement": {
         "value": 99.1353,
@@ -6794,7 +6469,6 @@
       ]
     },
     "song-fed6fb43603f-std-master": {
-      "chartId": "song-fed6fb43603f-std-master",
       "playCount": 1,
       "bestAchievement": {
         "value": 99.265,
@@ -6812,7 +6486,6 @@
       ]
     },
     "song-ff485a6d8bed-dx-re-master": {
-      "chartId": "song-ff485a6d8bed-dx-re-master",
       "playCount": 6,
       "bestAchievement": {
         "value": 100.5278,
@@ -6830,7 +6503,6 @@
       ]
     },
     "tsunagite-dx-advanced": {
-      "chartId": "tsunagite-dx-advanced",
       "playCount": 1,
       "bestAchievement": {
         "value": 100.6409,
@@ -6848,7 +6520,6 @@
       ]
     },
     "tsunagite-dx-expert": {
-      "chartId": "tsunagite-dx-expert",
       "playCount": 11,
       "bestAchievement": {
         "value": 100.5079,
@@ -6872,7 +6543,6 @@
       ]
     },
     "tsunagite-dx-master": {
-      "chartId": "tsunagite-dx-master",
       "playCount": 2,
       "bestAchievement": {
         "value": 87.6828,
@@ -6890,7 +6560,6 @@
       ]
     },
     "tsunagite-dx-re-master": {
-      "chartId": "tsunagite-dx-re-master",
       "playCount": 2,
       "bestAchievement": {
         "value": 78.1718,
@@ -6908,7 +6577,6 @@
       ]
     },
     "zen-sekai-kyoutsuu-rhythm-kan-test-std-master": {
-      "chartId": "zen-sekai-kyoutsuu-rhythm-kan-test-std-master",
       "playCount": 4,
       "bestAchievement": {
         "value": 100.9263,

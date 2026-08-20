@@ -60,7 +60,6 @@ export function buildChartSummaries(scores) {
       (syncRanks.get(left.sync) ?? -1) - (syncRanks.get(right.sync) ?? -1));
 
     charts[chartId] = {
-      chartId,
       playCount: entries.length,
       bestAchievement: {
         value: Number(bestAchievementScore.achievement),
