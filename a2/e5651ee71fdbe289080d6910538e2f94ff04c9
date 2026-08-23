@@ -1,0 +1,96 @@
+src/components/song/SongDetailFrame.tsx
+  s_6d06bd4898dc7f::t_452111ae368bb3 86-92,99-106,184,187
+  s_6d06bd4898dc7f::t_277b8afd369d0f 11-32,60-62,66-85,93-98,107-108,122-124,170-172,174-183,185-186,188
+  s_6d06bd4898dc7f::t_6b1c9f8a033dcd 33,162,168
+  h_278fafc5c28027 158,163,173
+src/utils/scores.ts
+  s_6d06bd4898dc7f::t_42f4df8040abe6 1-2,13-14
+src/pages/ChartDetailPage.tsx
+  s_6d06bd4898dc7f::t_42f4df8040abe6 1,18-20,42
+  s_6d06bd4898dc7f::t_196d62f9f59eb8 53-56
+  s_6d06bd4898dc7f::t_5aa13537db3711 27-29
+  h_278fafc5c28027 6,21,50,57-69,72,74,79-80
+  s_6d06bd4898dc7f::t_0cbc30649a39d7 2,10,13-17,34-41,73
+  s_6d06bd4898dc7f::t_c7840f70b0f3dc 7
+  s_6d06bd4898dc7f::t_277b8afd369d0f 43-45
+  s_6d06bd4898dc7f::t_66c6225eb09780 33,49,51-52
+  s_6d06bd4898dc7f::t_0a4144b5eeab58 23-25
+  s_6d06bd4898dc7f::t_f8618b05d4def6 26
+  s_6d06bd4898dc7f::t_76bcf3c68c55ec 46-47
+  h_278fafc5c28027 75-78,81-82
+src/App.tsx
+  s_6d06bd4898dc7f::t_0cbc30649a39d7 8,17,31,33
+src/components/song/SongInfo.tsx
+  s_6d06bd4898dc7f::t_0cbc30649a39d7 6,49
+  h_278fafc5c28027 39,42,62,65,72,77,81,86
+src/pages/ProfilePage.tsx
+  h_278fafc5c28027 18-20
+src/pages/ScoreListPage.tsx
+  s_6d06bd4898dc7f::t_0cbc30649a39d7 73,171
+  h_278fafc5c28027 167,174,177
+src/styles.css
+  s_6d06bd4898dc7f::t_147943b91621d4 101,106,128,132
+  s_6d06bd4898dc7f::t_fae08fdebee96c 107,112
+  s_6d06bd4898dc7f::t_01ba09d0ddec81 196
+  s_6d06bd4898dc7f::t_196d62f9f59eb8 77
+  s_6d06bd4898dc7f::t_6b1c9f8a033dcd 73-76
+  s_6d06bd4898dc7f::t_506166ffbeaac5 3-8,81-84,86-88,103,108-110,113-115,117-123,127,129-131,133,137
+  s_6d06bd4898dc7f::t_c7840f70b0f3dc 65-67,69-72,78-80,89-96,98-100,102,104-105,124,126,134,139-142,147,149-152,215
+  s_6d06bd4898dc7f::t_352b94f8ac4cbc 111,116,136
+  s_6d06bd4898dc7f::t_7c18ec27c0b09f 43
+  s_6d06bd4898dc7f::t_227720753b8549 194,214
+  s_6d06bd4898dc7f::t_e96f93d68dfa44 97,125,135,138,143-146
+  s_6d06bd4898dc7f::t_3d6c2d2a84c0e7 85,148
+  s_6d06bd4898dc7f::t_66c6225eb09780 68
+  h_278fafc5c28027 33-42,44-64,154-166,168-169,177,195,197-205,207-213,216-243
+  h_278fafc5c28027 206
+src/components/ui/OverflowMarquee.tsx
+  s_6d06bd4898dc7f::t_6b1c9f8a033dcd 7,15-19,47
+  s_6d06bd4898dc7f::t_c7840f70b0f3dc 1-6,8-14,20-46,48-55
+src/components/ui/PageHeading.tsx
+  h_278fafc5c28027 12
+src/components/SiteLayout.tsx
+  h_278fafc5c28027 17-18,24,32,34
+  s_6d06bd4898dc7f::t_0cbc30649a39d7 23
+src/components/ui/NavigationCard.tsx
+  h_278fafc5c28027 15
+src/utils/rank.ts
+  s_6d06bd4898dc7f::t_277b8afd369d0f 1
+src/pages/HomePage.tsx
+  h_278fafc5c28027 27
+src/components/song/SongDetailFrame.css
+  s_6d06bd4898dc7f::t_277b8afd369d0f 129-131,134-138,140,142-143,145-162,165-170,173-175,177-179,181-182
+  h_278fafc5c28027 132-133,139,141,144,163-164,171-172,176,180
+  s_6d06bd4898dc7f::t_a7a2268fe9bd55 194,198,202,206,210
+src/utils/catalog.ts
+  s_6d06bd4898dc7f::t_0cbc30649a39d7 4,24,34-36,42-44
+  s_6d06bd4898dc7f::t_dda24247bf4f63 45
+src/pages/Top50Page.tsx
+  h_278fafc5c28027 11
+src/components/ui/ContentCard.tsx
+  h_278fafc5c28027 1-9,11-14
+  s_6d06bd4898dc7f::t_66c6225eb09780 10
+src/utils/types.ts
+  s_6d06bd4898dc7f::t_0cbc30649a39d7 47-51
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.23",
+  "base_commit_sha": "a2e5651ee71fdbe289080d6910538e2f94ff04c9",
+  "prompts": {},
+  "humans": {
+    "h_278fafc5c28027": {
+      "author": "Allan Sun <allansun@live.com>"
+    }
+  },
+  "sessions": {
+    "s_6d06bd4898dc7f": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019faca2-0a30-75f3-8a51-06f8e9067195",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Allan Sun <allansun@live.com>"
+    }
+  }
+}
