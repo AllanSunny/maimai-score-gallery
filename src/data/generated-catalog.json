@@ -7244,7 +7244,7 @@
               "id": "song-c7c48540b093-std-re-master",
               "difficulty": "Re:MASTER",
               "level": "14",
-              "chartConstant": null,
+              "chartConstant": 14.4,
               "charter": null
             }
           ]

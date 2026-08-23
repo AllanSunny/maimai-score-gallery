@@ -57,6 +57,13 @@
     },
     "charts": {}
   },
+  "YA･DA･YO [Reborn]": {
+    "charts": {
+      "STD:Re:MASTER": {
+        "chartConstant": 14.4
+      }
+    }
+  },
   "系ぎて": {
     "id": "tsunagite",
     "titles": {
