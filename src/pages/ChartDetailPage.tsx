@@ -1,64 +1,85 @@
-import { useMemo } from "react";
-import { scores } from "../utils/scores";
-import { findCatalogSong } from "../utils/catalog";
+import { chartSummaries, scores } from "../utils/scores";
+import { findCatalogChart } from "../utils/catalog";
 import { SongDetailFrame } from "../components/song/SongDetailFrame";
-import { PageHeading } from "../components/ui/PageHeading";
 import { formatEasternDateTime } from "../utils/date-time";
 import { achievementRank } from "../utils/rank";
-import type { ChartType, Difficulty, Score } from "../utils/types";
+import { ContentCard } from "../components/ui/ContentCard";
+import { OverflowMarquee } from "../components/ui/OverflowMarquee";
 
 interface ChartDetailPageProps {
-  songName: string;
-  chartType: ChartType;
-  difficulty: Difficulty;
+  chartId: string;
 }
 
-export function ChartDetailPage({ songName, chartType, difficulty }: ChartDetailPageProps) {
-  const metadata = findCatalogSong(songName, chartType);
-  const chartMetadata = metadata?.charts.find((chart) => chart.difficulty === difficulty);
+export function ChartDetailPage({ chartId }: ChartDetailPageProps) {
+  const catalogEntry = findCatalogChart(chartId);
+  const metadata = catalogEntry?.song;
+  const chartMetadata = catalogEntry?.chart;
+  const chartSummary = chartSummaries[chartId];
+  const achievement = chartSummary?.bestAchievement.value;
+  const bestCombo = chartSummary?.bestCombo.status;
+  const bestSync = chartSummary?.bestSync?.status ?? null;
+  const isBelowS = achievement != null && achievement < 97;
 
-  const history = useMemo(() => {
-    const chartId = chartMetadata?.id;
-    return chartId ? scores
-      .filter((score) => score.chartId === chartId)
-      .sort((a, b) => b.playedAt.localeCompare(a.playedAt))
-      : [];
-  }, [chartMetadata?.id]);
-  const record = history.reduce<Score | undefined>((best, score) => !best || score.achievement > best.achievement ? score : best, undefined);
+  const history = scores
+    .filter((score) => score.chartId === chartId)
+    .sort((a, b) => b.playedAt.localeCompare(a.playedAt));
+
+  const accentColor = chartMetadata
+    ? chartMetadata.difficulty.replace(":", "").toLowerCase()
+    : "primary";
 
   return (
     <div>
-      <a href="#/scores" className="mb-8 inline-block text-sm text-muted hover:text-ink">← All scores</a>
-      <PageHeading eyebrow={`${difficulty} · ${chartType}`} title={songName} description="Detailed chart statistics and score progression over time." />
+      <section className="grid items-start gap-8 lg:grid-cols-[minmax(0,20rem)_minmax(0,1fr)]">
+        {metadata?.jacketUrl && chartMetadata && (
+          <SongDetailFrame
+            title={metadata.titles.canonical}
+            artist={metadata.artist}
+            jacketUrl={metadata.jacketUrl}
+            chartType={metadata.chartType}
+            difficulty={chartMetadata.difficulty}
+            level={chartMetadata.level}
+            achievement={achievement}
+            combo={bestCombo}
+            sync={bestSync}
+            className="mx-auto w-full max-w-80 lg:mx-0"
+          />
+        )}
 
-      <>
-          <section className="mt-12 grid items-start gap-8 lg:grid-cols-[minmax(0,20rem)_1fr]">
-            {metadata?.jacketUrl && (
-              <SongDetailFrame
-                title={metadata.titles.canonical}
-                artist={metadata.artist}
-                jacketUrl={metadata.jacketUrl}
-                chartType={chartType}
-                difficulty={difficulty}
-                level={chartMetadata?.level ?? record?.level ?? "?"}
-                className="mx-auto w-full max-w-80 lg:mx-0"
-              />
-            )}
-            <div className="grid gap-4 sm:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3">
-              <div className="rounded-2xl border border-line bg-white/60 p-5"><p className="text-xs uppercase tracking-wider text-muted">Current record</p><p className="mt-2 text-2xl font-semibold tabular-nums">{record ? `${record.achievement.toFixed(4)}%` : "—"}</p>{record && <p className="mt-1 text-sm font-semibold text-muted">{achievementRank(record.achievement)}</p>}</div>
-              <div className="rounded-2xl border border-line bg-white/60 p-5"><p className="text-xs uppercase tracking-wider text-muted">Level</p><p className="mt-2 text-2xl font-semibold">{chartMetadata?.level ?? record?.level ?? "—"}</p></div>
-              <div className="rounded-2xl border border-line bg-white/60 p-5"><p className="text-xs uppercase tracking-wider text-muted">Chart constant</p><p className="mt-2 text-2xl font-semibold">{chartMetadata?.chartConstant?.toFixed(1) ?? record?.chartConstant?.toFixed(1) ?? "—"}</p></div>
+        {metadata && chartMetadata && <div className={"mt-3 min-w-0"}>
+          <ContentCard accentColor={accentColor}>
+            <div className={"flex min-w-0 flex-col"}>
+              <div className={"flex min-w-0"} style={{ color: `var(--color-${accentColor})`}}>
+                <OverflowMarquee className="w-full px-1 text-[2.5rem]">
+                  {metadata.titles.canonical}
+                </OverflowMarquee>
+              </div>
+              <div className={""}>
+                <p className={"ml-1 text-[1.5rem] text-dark"}>Achievement</p>
+                {achievement != null && (
+                  <span
+                    className={[
+                      "text-[2.5rem] achievement-value",
+                      isBelowS && "achievement-value--below-s",
+                    ].filter(Boolean).join(" ")}
+                  >
+                  {`${achievement.toFixed(4)}%`}
+                </span>
+                )}
+              </div>
             </div>
-          </section>
 
-          <section className="mt-12">
-            <h2 className="text-xl font-semibold tracking-tight">Score progression</h2>
-            <div className="mt-5 overflow-hidden rounded-2xl border border-line bg-white/60">
-              {history.map((score) => <div key={score.id} className="flex justify-between border-b border-line p-5 text-sm last:border-0"><time className="text-muted">{formatEasternDateTime(score.playedAt)}</time><span className="text-right"><span className="block font-semibold tabular-nums">{score.achievement.toFixed(4)}%</span><span className="mt-1 block text-xs font-semibold text-muted">{achievementRank(score.achievement)}</span></span></div>)}
-              {!history.length && <p className="p-10 text-center text-sm text-muted">No plays recorded for this chart yet.</p>}
-            </div>
-          </section>
-      </>
+          </ContentCard>
+        </div>}
+      </section>
+
+      <section className="mt-12">
+        <h2 className="text-xl font-semibold tracking-tight">Score progression</h2>
+        <div className="mt-5 overflow-hidden rounded-2xl border border-line bg-white/60">
+          {history.map((score) => <div key={score.id} className="flex justify-between border-b border-line p-5 text-sm last:border-0"><time className="text-lightest">{formatEasternDateTime(score.playedAt)}</time><span className="text-right"><span className="block font-semibold tabular-nums">{score.achievement.toFixed(4)}%</span><span className="mt-1 block text-xs font-semibold text-lightest">{achievementRank(score.achievement)}</span></span></div>)}
+          {!history.length && <p className="p-10 text-center text-sm text-lightest">No plays recorded for this chart yet.</p>}
+        </div>
+      </section>
     </div>
   );
 }

@@ -1,4 +1,4 @@
-type AchievementRank =
+export type AchievementRank =
   | "SSS+"
   | "SSS"
   | "SS+"

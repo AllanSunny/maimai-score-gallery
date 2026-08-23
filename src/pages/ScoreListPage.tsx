@@ -70,6 +70,7 @@ function groupScoresBySong(scores: Score[]): SongSummary[] {
       (chart) => chart.difficulty === score.difficulty,
     );
     const chart: SongChartSummary = {
+      id: metadataChart?.id ?? score.chartId,
       difficulty: score.difficulty,
       chartType: score.chartType,
       level: metadataChart?.level ?? score.level,
@@ -163,17 +164,17 @@ export function ScoreListPage() {
 
       <label className="mt-10 block max-w-lg">
         <span className="sr-only">Search by song title</span>
-        <input type="search" value={query} onChange={(event) => handleSearch(event.target.value)} placeholder="Search by song title…" className="w-full rounded-xl border border-line bg-white px-4 py-3 text-sm outline-none transition placeholder:text-muted/70 focus:border-coral focus:ring-3 focus:ring-coral/10" />
+        <input type="search" value={query} onChange={(event) => handleSearch(event.target.value)} placeholder="Search by song title…" className="w-full rounded-xl border border-line bg-white px-4 py-3 text-sm outline-none transition placeholder:text-lightest/70 focus:border-coral focus:ring-3 focus:ring-coral/10" />
       </label>
 
       <div className="mt-8 grid gap-4" onClickCapture={(event) => {
-          if ((event.target as HTMLElement).closest('a[href^="#/songs/"]')) preserveListPosition();
+          if ((event.target as HTMLElement).closest('a[href^="#/charts/"]')) preserveListPosition();
         }}>
           {visibleSongs.map((song) => <SongInfo key={`${song.titles.canonical}-${song.chartType}`} {...song} />)}
-          {!songs.length && <p className="rounded-2xl border border-line p-10 text-center text-sm text-muted">No matching songs.</p>}
+          {!songs.length && <p className="rounded-2xl border border-line p-10 text-center text-sm text-lightest">No matching songs.</p>}
           {songs.length > 0 && (
             <div ref={loadMoreRef} className="py-4 text-center">
-              <p className="mb-3 text-xs text-muted">
+              <p className="mb-3 text-xs text-lightest">
                 Showing {visibleSongs.length} of {songs.length} songs
               </p>
               {hasMoreSongs && (

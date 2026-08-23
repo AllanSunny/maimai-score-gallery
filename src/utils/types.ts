@@ -44,6 +44,11 @@ export interface CatalogSongView extends Omit<Song, "versions">, SongVersion {
   jacketUrl: string | null;
 }
 
+export interface CatalogChartView {
+  song: CatalogSongView;
+  chart: Chart;
+}
+
 export interface GeneratedCatalog {
   generatedAt: string;
   songs: Song[];

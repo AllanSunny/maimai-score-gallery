@@ -8,7 +8,29 @@ import basicStdFrame from "../../assets/jacket_frames/std/basic.png";
 import expertStdFrame from "../../assets/jacket_frames/std/expert.png";
 import masterStdFrame from "../../assets/jacket_frames/std/master.png";
 import remasterStdFrame from "../../assets/jacket_frames/std/remaster.png";
-import type { ChartType, Difficulty } from "../../utils/types";
+import apIcon from "../../assets/achievements/small/combo/ap.png";
+import apPlusIcon from "../../assets/achievements/small/combo/ap_plus.png";
+import fcIcon from "../../assets/achievements/small/combo/fc.png";
+import fcPlusIcon from "../../assets/achievements/small/combo/fc_plus.png";
+import aRankIcon from "../../assets/achievements/small/rank/a.png";
+import aaRankIcon from "../../assets/achievements/small/rank/aa.png";
+import aaaRankIcon from "../../assets/achievements/small/rank/aaa.png";
+import clearRankIcon from "../../assets/achievements/small/rank/clear.png";
+import sRankIcon from "../../assets/achievements/small/rank/s.png";
+import sPlusRankIcon from "../../assets/achievements/small/rank/s_plus.png";
+import ssRankIcon from "../../assets/achievements/small/rank/ss.png";
+import ssPlusRankIcon from "../../assets/achievements/small/rank/ss_plus.png";
+import sssRankIcon from "../../assets/achievements/small/rank/sss.png";
+import sssPlusRankIcon from "../../assets/achievements/small/rank/sss_plus.png";
+import fdxIcon from "../../assets/achievements/small/sync/fdx.png";
+import fdxPlusIcon from "../../assets/achievements/small/sync/fdx_plus.png";
+import fsIcon from "../../assets/achievements/small/sync/fs.png";
+import fsPlusIcon from "../../assets/achievements/small/sync/fs_plus.png";
+import syncIcon from "../../assets/achievements/small/sync/sync.png";
+import { achievementRank } from "../../utils/rank";
+import type { AchievementRank } from "../../utils/rank";
+import type { ChartType, ComboStatus, Difficulty, SyncStatus } from "../../utils/types";
+import { OverflowMarquee } from "../ui/OverflowMarquee";
 import "./SongDetailFrame.css";
 
 const frames: Record<ChartType, Record<Difficulty, string>> = {
@@ -35,8 +57,54 @@ interface SongDetailFrameProps {
   chartType: ChartType;
   difficulty: Difficulty;
   level: string;
+  achievement?: number;
+  combo?: ComboStatus;
+  sync?: SyncStatus | null;
   className?: string;
 }
+
+const rankIcons: Record<AchievementRank, string> = {
+  Failed: clearRankIcon,
+  A: aRankIcon,
+  AA: aaRankIcon,
+  AAA: aaaRankIcon,
+  S: sRankIcon,
+  "S+": sPlusRankIcon,
+  SS: ssRankIcon,
+  "SS+": ssPlusRankIcon,
+  SSS: sssRankIcon,
+  "SSS+": sssPlusRankIcon,
+};
+
+const comboIcons: Partial<Record<ComboStatus, string>> = {
+  FC: fcIcon,
+  "FC+": fcPlusIcon,
+  AP: apIcon,
+  "AP+": apPlusIcon,
+};
+
+const comboLabels: Partial<Record<ComboStatus, string>> = {
+  FC: "Full combo",
+  "FC+": "Full combo plus",
+  AP: "All perfect",
+  "AP+": "All perfect plus",
+};
+
+const syncIcons: Record<SyncStatus, string> = {
+  Sync: syncIcon,
+  FS: fsIcon,
+  "FS+": fsPlusIcon,
+  FDX: fdxIcon,
+  "FDX+": fdxPlusIcon,
+};
+
+const syncLabels: Record<SyncStatus, string> = {
+  Sync: "Sync play",
+  FS: "Full sync",
+  "FS+": "Full sync plus",
+  FDX: "Full sync DX",
+  "FDX+": "Full sync DX plus",
+};
 
 function fittedTextSize(text: string, normal: number, medium: number, small: number) {
   if (text.length > 28) return `${small}cqw`;
@@ -51,6 +119,9 @@ export function SongDetailFrame({
   chartType,
   difficulty,
   level,
+  achievement,
+  combo,
+  sync,
   className = "",
 }: SongDetailFrameProps) {
   const normalizedLevel = level.trim();
@@ -84,18 +155,37 @@ export function SongDetailFrame({
         </span>
       </div>
 
-      <div
+      <header
         className="song-detail-frame__title"
         style={{ fontSize: fittedTextSize(title, 4.5, 3.8, 3.15) }}
       >
-        {title}
-      </div>
+        <OverflowMarquee centerWhenFit>{title}</OverflowMarquee>
+      </header>
       <div
         className="song-detail-frame__artist"
         style={{ fontSize: fittedTextSize(artist, 3.5, 3.05, 2.6) }}
       >
-        {artist}
+        <OverflowMarquee centerWhenFit>{artist}</OverflowMarquee>
       </div>
+
+      {achievement != null && (
+        <div className="song-detail-frame__achievement">
+          {`${achievement.toFixed(4)}%`}
+        </div>
+      )}
+      {achievement != null && (
+        <img
+          className="song-detail-frame__rank"
+          src={rankIcons[achievementRank(achievement)]}
+          alt={`${achievementRank(achievement)} rank`}
+        />
+      )}
+      {combo && comboIcons[combo] && (
+        <img className="song-detail-frame__combo" src={comboIcons[combo]} alt={comboLabels[combo]} />
+      )}
+      {sync && (
+        <img className="song-detail-frame__sync" src={syncIcons[sync]} alt={syncLabels[sync]} />
+      )}
     </article>
   );
 }

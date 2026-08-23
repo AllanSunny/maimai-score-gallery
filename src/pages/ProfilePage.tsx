@@ -15,9 +15,9 @@ export function ProfilePage() {
           {playerProfile.iconUrl ? <img className="size-full rounded-full object-cover" src={playerProfile.iconUrl} alt="Player icon" /> : playerProfile.name.charAt(0)}
         </div>
         <div className="grid gap-6 sm:grid-cols-3 sm:items-center">
-          <div><p className="text-xs uppercase tracking-wider text-muted">Player</p><p className="mt-1 text-xl font-semibold">{playerProfile.name}</p></div>
-          <div><p className="text-xs uppercase tracking-wider text-muted">Overall rating</p><p className="mt-1 text-xl font-semibold">—</p></div>
-          <div><p className="text-xs uppercase tracking-wider text-muted">Current title</p><p className="mt-1 text-xl font-semibold">{playerProfile.title}</p></div>
+          <div><p className="text-xs uppercase tracking-wider text-lightest">Player</p><p className="mt-1 text-xl font-semibold">{playerProfile.name}</p></div>
+          <div><p className="text-xs uppercase tracking-wider text-lightest">Overall rating</p><p className="mt-1 text-xl font-semibold">—</p></div>
+          <div><p className="text-xs uppercase tracking-wider text-lightest">Current title</p><p className="mt-1 text-xl font-semibold">{playerProfile.title}</p></div>
         </div>
       </section>
     </div>

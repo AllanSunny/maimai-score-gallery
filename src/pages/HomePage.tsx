@@ -24,7 +24,7 @@ export function HomePage() {
       <section className="max-w-2xl">
         <p className="mb-4 text-xs font-semibold uppercase tracking-[0.18em] text-coral">Personal tracker</p>
         <h1 className="text-5xl font-semibold leading-tight tracking-tight sm:text-6xl">maimai score gallery</h1>
-        <p className="mt-6 text-lg leading-8 text-muted">
+        <p className="mt-6 text-lg leading-8 text-lightest">
           A quiet record of my maimai progress—from current stats to favorite scores and every play in between.
         </p>
       </section>

@@ -3,6 +3,7 @@ import { displayedAlternateTitles } from "../../utils/song-titles";
 import type { ChartType, Difficulty, SongTitles } from "../../utils/types";
 
 export interface SongChartSummary {
+  id: string;
   difficulty: Difficulty;
   chartType: ChartType;
   level: string;
@@ -35,17 +36,17 @@ export function SongInfo({ titles, chartType, jacketUrl, charts }: SongInfoProps
         <div className="min-w-0 flex-1">
           <h2 className="text-lg font-semibold tracking-tight">{name}</h2>
           {alternateTitles.length > 0 && (
-            <p className="mt-1 text-sm text-muted">{alternateTitles.join(" · ")}</p>
+            <p className="mt-1 text-sm text-lightest">{alternateTitles.join(" · ")}</p>
           )}
         </div>
-        <span className="shrink-0 rounded-full border border-line bg-cream px-3 py-1 text-xs font-semibold tracking-wider text-muted">
+        <span className="shrink-0 rounded-full border border-line bg-cream px-3 py-1 text-xs font-semibold tracking-wider text-lightest">
           {chartType}
         </span>
       </header>
 
       <div className="divide-y divide-line">
         {charts.map((chart) => {
-          const chartRoute = `#/songs/${encodeURIComponent(name)}/${encodeURIComponent(chart.chartType)}/${encodeURIComponent(chart.difficulty)}`;
+          const chartRoute = `#/charts/${encodeURIComponent(chart.id)}`;
 
           return (
             <a
@@ -58,31 +59,31 @@ export function SongInfo({ titles, chartType, jacketUrl, charts }: SongInfoProps
               </div>
 
               <div className="hidden sm:block">
-                <p className="text-xs uppercase tracking-wider text-muted">Level</p>
+                <p className="text-xs uppercase tracking-wider text-lightest">Level</p>
                 <p className="mt-0.5 font-semibold tabular-nums">
                   {chart.level}
-                  <span className="ml-2 text-xs font-normal text-muted">
+                  <span className="ml-2 text-xs font-normal text-lightest">
                     {chart.chartConstant && chart.chartConstant.toFixed(1)}
                   </span>
                 </p>
               </div>
 
               <div className="text-right sm:text-left">
-                <p className="text-xs uppercase tracking-wider text-muted sm:block">Record</p>
+                <p className="text-xs uppercase tracking-wider text-lightest sm:block">Record</p>
                 <p className="mt-0.5 font-semibold tabular-nums">
                   {chart.achievement == null ? "—" : `${chart.achievement.toFixed(4)}%`}
                 </p>
                 {chart.achievement != null && (
-                  <p className="mt-1 text-xs font-semibold text-muted">
+                  <p className="mt-1 text-xs font-semibold text-lightest">
                     {achievementRank(chart.achievement)}
                   </p>
                 )}
-                <p className="mt-1 text-xs text-muted sm:hidden">
+                <p className="mt-1 text-xs text-lightest sm:hidden">
                   {chart.chartConstant && chart.chartConstant.toFixed(1)}
                 </p>
               </div>
 
-              <span aria-hidden="true" className="hidden text-muted transition-transform group-hover:translate-x-1 group-hover:text-ink sm:block">→</span>
+              <span aria-hidden="true" className="hidden text-lightest transition-transform group-hover:translate-x-1 group-hover:text-ink sm:block">→</span>
             </a>
           );
         })}
