@@ -9,6 +9,7 @@ import { standaloneCatalogSongs } from "./lib/catalog-overrides.mjs";
 import { catalogOutput } from "./lib/catalog-output.mjs";
 import { readMonthlyScoreArchive, writeMonthlyScoreArchive } from "./lib/monthly-score-archive.mjs";
 import { maimaiVersion, standaloneMaimaiVersion } from "./lib/maimai-version.mjs";
+import { indexZetarakuChartMetadata } from "./lib/zetaraku-chart-metadata.mjs";
 
 const execFileAsync = promisify(execFile);
 
@@ -39,13 +40,6 @@ const chartFields = [
   ["STD", "MASTER", "lev_mas"],
   ["STD", "Re:MASTER", "lev_remas"],
 ];
-const difficultyIndexes = new Map([
-  ["BASIC", 0],
-  ["ADVANCED", 1],
-  ["EXPERT", 2],
-  ["MASTER", 3],
-  ["Re:MASTER", 4],
-]);
 
 function normalizeTitle(value) {
   return String(value ?? "").normalize("NFKC").replace(/\s+/g, " ").trim().toLocaleLowerCase();
@@ -121,7 +115,12 @@ async function download(url, label) {
 
 async function fetchJson(url, label) {
   console.log(`Fetching ${label}: ${url}`);
-  return JSON.parse((await download(url, label)).toString("utf8"));
+  const body = (await download(url, label)).toString("utf8");
+  try {
+    return JSON.parse(body);
+  } catch (error) {
+    throw new Error(`${label} returned malformed JSON.`, { cause: error });
+  }
 }
 
 async function requestedSongs() {
@@ -188,65 +187,15 @@ function refreshStandaloneMetadata(songs, standaloneSongs) {
   });
 }
 
-function communityChartKey(title, chartType) {
-  return `${normalizeTitle(title)}|${chartType}`;
-}
-
-function communityChartType(type) {
-  if (type === "DX") return "DX";
-  if (type === "SD" || type === "STD") return "STD";
-  return null;
-}
-
-function indexCommunityCharts(songs) {
-  const index = new Map();
-  songs.forEach((song) => {
-    const chartType = communityChartType(song.type);
-    if (!chartType) return;
-    const key = communityChartKey(song.title, chartType);
-    const entries = index.get(key) ?? [];
-    entries.push(song);
-    index.set(key, entries);
-  });
-  return index;
-}
-
-function findCommunitySong(title, chartType, communitySongs) {
-  const matches = communitySongs.get(communityChartKey(title, chartType)) ?? [];
-  if (matches.length === 1) return matches[0];
-  if (matches.length > 1) {
-    console.warn(`Ambiguous supplemental chart metadata match for ${title} (${chartType}); leaving chart metadata unchanged.`);
-  }
-  return null;
-}
-
-function communityChartMetadata(song, index) {
-  if (!song) return {};
-  const chart = Array.isArray(song.charts) ? song.charts[index] : null;
-  const chartConstant = Array.isArray(song.ds) && Number.isFinite(song.ds[index])
-    ? song.ds[index]
-    : null;
-  const rawCharter = String(chart?.charter ?? "").trim();
-  return {
-    chartConstant,
-    charter: rawCharter && rawCharter !== "-" ? rawCharter : null,
-  };
-}
-
-function extractChartVersions(song, override, communitySongs) {
+function extractChartVersions(song, override, supplementalCharts) {
   const versions = new Map();
-  const matches = new Map();
 
   chartFields.forEach(([chartType, difficulty, field]) => {
     const level = song[field];
     if (!level) return;
     const correction = override.charts?.[`${chartType}:${difficulty}`] ?? {};
     const charts = versions.get(chartType) ?? [];
-    if (!matches.has(chartType)) {
-      matches.set(chartType, findCommunitySong(song.title, chartType, communitySongs));
-    }
-    const communitySong = matches.get(chartType);
-    const metadata = communityChartMetadata(communitySong, difficultyIndexes.get(difficulty));
+    const metadata = supplementalCharts.metadata(song.title, song.artist, chartType, difficulty);
     charts.push({
       difficulty,
       level: String(level),
@@ -259,16 +208,15 @@ function extractChartVersions(song, override, communitySongs) {
   return [...versions].map(([chartType, charts]) => ({ chartType, charts }));
 }
 
-function enrichExistingCharts(songs, communitySongs, overrides) {
+function enrichExistingCharts(songs, supplementalCharts, overrides) {
   let changed = false;
   songs.forEach((song) => {
     const canonicalTitle = song.titles.canonical;
     const override = overrides[canonicalTitle] ?? {};
     song.versions.forEach((version) => {
-      const communitySong = findCommunitySong(canonicalTitle, version.chartType, communitySongs);
       version.charts.forEach((chart) => {
         const correction = override.charts?.[`${version.chartType}:${chart.difficulty}`] ?? {};
-        const metadata = communityChartMetadata(communitySong, difficultyIndexes.get(chart.difficulty));
+        const metadata = supplementalCharts.metadata(canonicalTitle, song.artist, version.chartType, chart.difficulty);
         const chartConstant = correction.chartConstant ?? metadata.chartConstant ?? chart.chartConstant ?? null;
         const charter = correction.charter ?? metadata.charter ?? chart.charter ?? null;
         if (chart.chartConstant !== chartConstant || chart.charter !== charter) {
@@ -416,9 +364,10 @@ async function main() {
       : Promise.resolve([]),
     fetchJson(CHART_SUPPLEMENT_METADATA_URL, "supplemental chart metadata"),
   ]);
-  const communitySongs = indexCommunityCharts(chartMetadataSongs);
+  const supplementalCharts = indexZetarakuChartMetadata(chartMetadataSongs);
+  console.log(`Validated supplemental chart metadata updated ${supplementalCharts.updateTime}.`);
   const songs = structuredClone(previous.songs);
-  enrichExistingCharts(songs, communitySongs, overrides);
+  enrichExistingCharts(songs, supplementalCharts, overrides);
   refreshStandaloneMetadata(songs, standaloneSongs);
 
   backfillSongs.forEach((backfillSong) => {
@@ -456,7 +405,7 @@ async function main() {
     const jacketKey = official
       ? await uploadJacket(baseId, new URL(sourceSong.image_url, SEGA_JACKET_BASE_URL).toString())
       : (override.jacketKey ?? null);
-    const versions = extractChartVersions(sourceSong, override, communitySongs).map(({ chartType, charts }) => {
+    const versions = extractChartVersions(sourceSong, override, supplementalCharts).map(({ chartType, charts }) => {
       const versionId = `${baseId}-${chartType.toLowerCase()}`;
       return {
         id: versionId,

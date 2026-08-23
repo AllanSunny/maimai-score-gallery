@@ -146,12 +146,19 @@ The live repository uses the following **Actions variables**:
 | `SCORE_CAPTURE_TIME_ZONE` | Zone used only for capture timestamps that lack an explicit offset |
 | `SEGA_CATALOG_URL` | Authoritative SEGA song catalog endpoint |
 | `SEGA_JACKET_BASE_URL` | Base URL for authoritative SEGA jacket images |
-| `CHART_SUPPLEMENT_METADATA_URL` | Supplemental chart constants and charter names |
+| `CHART_SUPPLEMENT_METADATA_URL` | Zetaraku supplemental chart constants and charter names dataset |
 | `R2_BUCKET_NAME` | Jacket object-storage bucket |
 | `R2_PUBLIC_URL` | Public jacket Worker base URL used by the frontend build |
 
 These names are intentionally explicit and required; the workflows do not
 silently substitute endpoint, model, or timezone values.
+
+Catalog synchronization downloads the supplemental dataset once per run. It
+accepts only exact `internalLevel` constants, preserves existing last-known
+constants when that field is unavailable, and applies local overrides last.
+An unavailable source, unexpected schema, ambiguous chart, or major coverage
+regression stops the workflow before generated data is written, allowing the
+normal workflow-failure Discord notification to report the problem.
 
 Generated catalog metadata stores only each jacket's R2 object key. The public
 R2 base URL is supplied to Vite at deployment time through `R2_PUBLIC_URL`;

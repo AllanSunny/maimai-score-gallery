@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-23T04:34:46.531Z",
+  "generatedAt": "2026-08-23T22:45:06.104Z",
   "songs": [
     {
       "id": "song-550d332f837c",
@@ -152,15 +152,15 @@
               "id": "song-799a9c7a154c-dx-expert",
               "difficulty": "EXPERT",
               "level": "12+",
-              "chartConstant": null,
-              "charter": null
+              "chartConstant": 12.8,
+              "charter": "サファ太"
             },
             {
               "id": "song-799a9c7a154c-dx-master",
               "difficulty": "MASTER",
               "level": "14+",
-              "chartConstant": null,
-              "charter": null
+              "chartConstant": 14.9,
+              "charter": "KOP7th -FiNAL BATTLE- by 7.3GHz"
             }
           ]
         }
@@ -258,15 +258,15 @@
               "id": "song-1220ce85afc9-dx-expert",
               "difficulty": "EXPERT",
               "level": "12",
-              "chartConstant": null,
-              "charter": null
+              "chartConstant": 12.4,
+              "charter": "サファ太"
             },
             {
               "id": "song-1220ce85afc9-dx-master",
               "difficulty": "MASTER",
               "level": "14",
-              "chartConstant": null,
-              "charter": null
+              "chartConstant": 14.4,
+              "charter": "サファ太"
             }
           ]
         }
@@ -412,15 +412,15 @@
               "id": "song-d7d117cd566e-dx-expert",
               "difficulty": "EXPERT",
               "level": "12+",
-              "chartConstant": null,
-              "charter": null
+              "chartConstant": 12.9,
+              "charter": "はっぴー"
             },
             {
               "id": "song-d7d117cd566e-dx-master",
               "difficulty": "MASTER",
               "level": "14+",
-              "chartConstant": null,
-              "charter": null
+              "chartConstant": 14.7,
+              "charter": "Safazhel"
             }
           ]
         }
@@ -850,14 +850,14 @@
               "difficulty": "EXPERT",
               "level": "9+",
               "chartConstant": null,
-              "charter": null
+              "charter": "Jack"
             },
             {
               "id": "song-1e31758513df-dx-master",
               "difficulty": "MASTER",
               "level": "13",
-              "chartConstant": null,
-              "charter": null
+              "chartConstant": 13,
+              "charter": "チャン@DP皆伝"
             }
           ]
         },
@@ -1190,14 +1190,14 @@
               "difficulty": "EXPERT",
               "level": "11+",
               "chartConstant": null,
-              "charter": null
+              "charter": "Jack"
             },
             {
               "id": "song-dc1a2f9d7bd7-dx-master",
               "difficulty": "MASTER",
               "level": "13+",
-              "chartConstant": null,
-              "charter": null
+              "chartConstant": 13.9,
+              "charter": "小鳥遊さん"
             }
           ]
         }
@@ -1707,7 +1707,7 @@
               "id": "song-97019c4e4c6b-dx-master",
               "difficulty": "MASTER",
               "level": "14",
-              "chartConstant": 14.2,
+              "chartConstant": 14.3,
               "charter": "ぴちネコ"
             }
           ]
@@ -1965,15 +1965,15 @@
               "id": "song-ece5ea462465-dx-expert",
               "difficulty": "EXPERT",
               "level": "12",
-              "chartConstant": null,
-              "charter": null
+              "chartConstant": 12.2,
+              "charter": "鳩ホルダー"
             },
             {
               "id": "song-ece5ea462465-dx-master",
               "difficulty": "MASTER",
               "level": "13+",
-              "chartConstant": null,
-              "charter": null
+              "chartConstant": 13.6,
+              "charter": "アマリリス"
             }
           ]
         }
@@ -2944,14 +2944,14 @@
               "difficulty": "EXPERT",
               "level": "11",
               "chartConstant": null,
-              "charter": null
+              "charter": "サファ太"
             },
             {
               "id": "song-b055770c3a9e-dx-master",
               "difficulty": "MASTER",
               "level": "14",
-              "chartConstant": null,
-              "charter": null
+              "chartConstant": 14.1,
+              "charter": "きょむりん vs Luxizhel"
             }
           ]
         }
@@ -3586,14 +3586,14 @@
               "difficulty": "EXPERT",
               "level": "10+",
               "chartConstant": null,
-              "charter": null
+              "charter": "鳩ホルダー"
             },
             {
               "id": "song-400e36d3b8d1-dx-master",
               "difficulty": "MASTER",
               "level": "13+",
-              "chartConstant": null,
-              "charter": null
+              "chartConstant": 13.7,
+              "charter": "Jack"
             }
           ]
         }
@@ -3639,14 +3639,14 @@
               "difficulty": "EXPERT",
               "level": "11",
               "chartConstant": null,
-              "charter": null
+              "charter": "サファ太"
             },
             {
               "id": "song-7f337c54121d-dx-master",
               "difficulty": "MASTER",
               "level": "13+",
-              "chartConstant": null,
-              "charter": null
+              "chartConstant": 13.8,
+              "charter": "Jack"
             }
           ]
         }
@@ -3700,7 +3700,7 @@
               "id": "song-a7a461d9d280-dx-master",
               "difficulty": "MASTER",
               "level": "13+",
-              "chartConstant": 13.7,
+              "chartConstant": 13.6,
               "charter": "はっぴー"
             }
           ]
@@ -3747,14 +3747,14 @@
               "difficulty": "EXPERT",
               "level": "10",
               "chartConstant": null,
-              "charter": null
+              "charter": "サファ太"
             },
             {
               "id": "magical-flavor-dx-master",
               "difficulty": "MASTER",
               "level": "13",
-              "chartConstant": null,
-              "charter": null
+              "chartConstant": 13.2,
+              "charter": "きょむりん"
             }
           ]
         },
@@ -4027,14 +4027,14 @@
               "difficulty": "EXPERT",
               "level": "9",
               "chartConstant": null,
-              "charter": null
+              "charter": "カマボコ君"
             },
             {
               "id": "song-35335e0f2151-dx-master",
               "difficulty": "MASTER",
               "level": "12+",
-              "chartConstant": null,
-              "charter": null
+              "chartConstant": 12.9,
+              "charter": "サファ太"
             }
           ]
         }
@@ -4238,15 +4238,15 @@
               "id": "song-31cb9c48577d-dx-expert",
               "difficulty": "EXPERT",
               "level": "12+",
-              "chartConstant": null,
-              "charter": null
+              "chartConstant": 12.9,
+              "charter": "Luxizhel"
             },
             {
               "id": "song-31cb9c48577d-dx-master",
               "difficulty": "MASTER",
               "level": "14",
-              "chartConstant": null,
-              "charter": null
+              "chartConstant": 14.5,
+              "charter": "サファ太 Vs. Safari Vs. Saf Vs. モリモリさふぁた"
             }
           ]
         }
@@ -4404,15 +4404,15 @@
               "id": "song-9f9806500d04-dx-expert",
               "difficulty": "EXPERT",
               "level": "12",
-              "chartConstant": null,
-              "charter": null
+              "chartConstant": 12,
+              "charter": "Jack"
             },
             {
               "id": "song-9f9806500d04-dx-master",
               "difficulty": "MASTER",
               "level": "13+",
-              "chartConstant": null,
-              "charter": null
+              "chartConstant": 13.9,
+              "charter": "鳩ホルダー＆Luxizhel"
             }
           ]
         }
@@ -4622,14 +4622,14 @@
               "difficulty": "EXPERT",
               "level": "11",
               "chartConstant": null,
-              "charter": null
+              "charter": "サファ太"
             },
             {
               "id": "song-6689faf8a257-dx-master",
               "difficulty": "MASTER",
               "level": "13",
-              "chartConstant": null,
-              "charter": null
+              "chartConstant": 13.4,
+              "charter": "アマリリス"
             }
           ]
         }
@@ -4922,7 +4922,7 @@
               "id": "song-dcb30aa11bd6-dx-master",
               "difficulty": "MASTER",
               "level": "14",
-              "chartConstant": 14.1,
+              "chartConstant": 14.2,
               "charter": "Jack"
             }
           ]
@@ -5361,7 +5361,7 @@
               "difficulty": "MASTER",
               "level": "14+",
               "chartConstant": 14.9,
-              "charter": "project raputa"
+              "charter": "project_raputa"
             }
           ]
         }
@@ -5407,14 +5407,14 @@
               "difficulty": "EXPERT",
               "level": "10+",
               "chartConstant": null,
-              "charter": null
+              "charter": "せめんともり"
             },
             {
               "id": "song-32642cb2835b-dx-master",
               "difficulty": "MASTER",
               "level": "13+",
-              "chartConstant": null,
-              "charter": null
+              "chartConstant": 13.7,
+              "charter": "はっぴー"
             }
           ]
         }
@@ -5460,14 +5460,14 @@
               "difficulty": "EXPERT",
               "level": "9+",
               "chartConstant": null,
-              "charter": null
+              "charter": "はっぴー"
             },
             {
               "id": "song-65cbe1e19791-dx-master",
               "difficulty": "MASTER",
               "level": "13",
-              "chartConstant": null,
-              "charter": null
+              "chartConstant": 13.3,
+              "charter": "サファ太"
             }
           ]
         }
@@ -5512,15 +5512,15 @@
               "id": "song-33f311b290e0-dx-expert",
               "difficulty": "EXPERT",
               "level": "13",
-              "chartConstant": null,
-              "charter": null
+              "chartConstant": 13,
+              "charter": "はっぴー"
             },
             {
               "id": "song-33f311b290e0-dx-master",
               "difficulty": "MASTER",
               "level": "14",
-              "chartConstant": null,
-              "charter": null
+              "chartConstant": 14.4,
+              "charter": "サファ太"
             }
           ]
         }
@@ -5725,14 +5725,14 @@
               "difficulty": "EXPERT",
               "level": "10",
               "chartConstant": null,
-              "charter": null
+              "charter": "小鳥遊さん"
             },
             {
               "id": "song-98cf509c9323-dx-master",
               "difficulty": "MASTER",
               "level": "12+",
-              "chartConstant": null,
-              "charter": null
+              "chartConstant": 12.7,
+              "charter": "すきやき奉行"
             }
           ]
         }
@@ -6174,14 +6174,14 @@
               "difficulty": "EXPERT",
               "level": "10+",
               "chartConstant": null,
-              "charter": null
+              "charter": "Luxizhel"
             },
             {
               "id": "song-8219882421ef-dx-master",
               "difficulty": "MASTER",
               "level": "13",
-              "chartConstant": null,
-              "charter": null
+              "chartConstant": 13.3,
+              "charter": "サファ太"
             }
           ]
         }
@@ -6386,14 +6386,14 @@
               "difficulty": "EXPERT",
               "level": "10+",
               "chartConstant": null,
-              "charter": null
+              "charter": "アマリリス"
             },
             {
               "id": "song-433483d20c40-dx-master",
               "difficulty": "MASTER",
               "level": "13+",
-              "chartConstant": null,
-              "charter": null
+              "chartConstant": 13.8,
+              "charter": "シチミヘルツ"
             }
           ]
         }
@@ -6925,20 +6925,20 @@
               "difficulty": "EXPERT",
               "level": "10+",
               "chartConstant": null,
-              "charter": null
+              "charter": "Luxizhel"
             },
             {
               "id": "song-62ffd18e0b91-dx-master",
               "difficulty": "MASTER",
               "level": "12",
-              "chartConstant": null,
-              "charter": null
+              "chartConstant": 12.2,
+              "charter": "緑風 犬三郎"
             },
             {
               "id": "song-62ffd18e0b91-dx-re-master",
               "difficulty": "Re:MASTER",
               "level": "14",
-              "chartConstant": null,
+              "chartConstant": 14.1,
               "charter": null
             }
           ]
@@ -7182,15 +7182,15 @@
               "id": "song-22bed98325d3-dx-expert",
               "difficulty": "EXPERT",
               "level": "13",
-              "chartConstant": null,
-              "charter": null
+              "chartConstant": 13.1,
+              "charter": "Luxizhel"
             },
             {
               "id": "song-22bed98325d3-dx-master",
               "difficulty": "MASTER",
               "level": "14+",
-              "chartConstant": null,
-              "charter": null
+              "chartConstant": 14.9,
+              "charter": "7sRef -DOVE-"
             }
           ]
         }
@@ -7245,7 +7245,7 @@
               "difficulty": "Re:MASTER",
               "level": "14",
               "chartConstant": 14.4,
-              "charter": null
+              "charter": "Safata.Hz"
             }
           ]
         }
@@ -7302,7 +7302,7 @@
               "id": "song-33f419858168-dx-master",
               "difficulty": "MASTER",
               "level": "14",
-              "chartConstant": 14.3,
+              "chartConstant": 14.4,
               "charter": "サファ太"
             }
           ]
@@ -7698,14 +7698,14 @@
               "difficulty": "EXPERT",
               "level": "10",
               "chartConstant": null,
-              "charter": null
+              "charter": "はっぴー"
             },
             {
               "id": "song-952f9a4b765c-dx-master",
               "difficulty": "MASTER",
               "level": "13+",
-              "chartConstant": null,
-              "charter": null
+              "chartConstant": 13.7,
+              "charter": "鳩ホルダー"
             }
           ]
         }
@@ -8124,7 +8124,7 @@
               "id": "song-1a06f741a9c3-dx-master",
               "difficulty": "MASTER",
               "level": "11+",
-              "chartConstant": 11.9,
+              "chartConstant": 11.8,
               "charter": "緑風 犬三郎"
             },
             {
@@ -8184,21 +8184,21 @@
               "difficulty": "EXPERT",
               "level": "10",
               "chartConstant": null,
-              "charter": null
+              "charter": "サファ太"
             },
             {
               "id": "song-0ef6b31e7dd1-dx-master",
               "difficulty": "MASTER",
               "level": "13",
-              "chartConstant": null,
-              "charter": null
+              "chartConstant": 13,
+              "charter": "Luxizhel"
             },
             {
               "id": "song-0ef6b31e7dd1-dx-re-master",
               "difficulty": "Re:MASTER",
               "level": "13+",
-              "chartConstant": null,
-              "charter": null
+              "chartConstant": 13.7,
+              "charter": "三枝明那とはっぴー"
             }
           ]
         }
@@ -8611,7 +8611,7 @@
               "id": "song-c034ac69d6d8-dx-master",
               "difficulty": "MASTER",
               "level": "13+",
-              "chartConstant": 13.7,
+              "chartConstant": 13.6,
               "charter": "サファ太"
             }
           ]
@@ -8788,14 +8788,14 @@
               "difficulty": "EXPERT",
               "level": "11",
               "chartConstant": null,
-              "charter": null
+              "charter": "せめんともり"
             },
             {
               "id": "song-fbb9f54a35e8-dx-master",
               "difficulty": "MASTER",
               "level": "13",
-              "chartConstant": null,
-              "charter": null
+              "chartConstant": 13.3,
+              "charter": "Luxizhel"
             }
           ]
         }
@@ -8958,14 +8958,14 @@
               "difficulty": "EXPERT",
               "level": "10",
               "chartConstant": null,
-              "charter": null
+              "charter": "きょむりん"
             },
             {
               "id": "song-c30dfd1b462b-dx-master",
               "difficulty": "MASTER",
               "level": "13",
-              "chartConstant": null,
-              "charter": null
+              "chartConstant": 13,
+              "charter": "アマリリス"
             }
           ]
         }
@@ -9664,14 +9664,14 @@
               "difficulty": "EXPERT",
               "level": "10",
               "chartConstant": null,
-              "charter": null
+              "charter": "はっぴー"
             },
             {
               "id": "song-553e96cd15c3-dx-master",
               "difficulty": "MASTER",
               "level": "13",
-              "chartConstant": null,
-              "charter": null
+              "chartConstant": 13,
+              "charter": "サファ太"
             }
           ]
         }
@@ -9994,7 +9994,7 @@
               "id": "song-49d8467cdee6-dx-master",
               "difficulty": "MASTER",
               "level": "13+",
-              "chartConstant": 13.8,
+              "chartConstant": 13.7,
               "charter": "ぴちネコ"
             }
           ]
@@ -10108,15 +10108,15 @@
               "id": "song-7b0f372bbf9c-dx-expert",
               "difficulty": "EXPERT",
               "level": "12",
-              "chartConstant": null,
-              "charter": null
+              "chartConstant": 12,
+              "charter": "シチミヘルツ"
             },
             {
               "id": "song-7b0f372bbf9c-dx-master",
               "difficulty": "MASTER",
               "level": "14",
-              "chartConstant": null,
-              "charter": null
+              "chartConstant": 14.1,
+              "charter": "サファ太"
             }
           ]
         }
@@ -10165,21 +10165,21 @@
               "difficulty": "EXPERT",
               "level": "10",
               "chartConstant": null,
-              "charter": null
+              "charter": "Jack"
             },
             {
               "id": "song-3b20b9fdc5ab-dx-master",
               "difficulty": "MASTER",
               "level": "11+",
-              "chartConstant": null,
-              "charter": null
+              "chartConstant": 11.8,
+              "charter": "緑風　犬三郎"
             },
             {
               "id": "song-3b20b9fdc5ab-dx-re-master",
               "difficulty": "Re:MASTER",
               "level": "13+",
-              "chartConstant": null,
-              "charter": null
+              "chartConstant": 13.6,
+              "charter": "サファ太"
             }
           ]
         }
@@ -10510,21 +10510,21 @@
               "difficulty": "EXPERT",
               "level": "10+",
               "chartConstant": null,
-              "charter": null
+              "charter": "サファ太"
             },
             {
               "id": "song-58508b2f410c-dx-master",
               "difficulty": "MASTER",
               "level": "12",
-              "chartConstant": null,
-              "charter": null
+              "chartConstant": 12,
+              "charter": "緑風 犬三郎"
             },
             {
               "id": "song-58508b2f410c-dx-re-master",
               "difficulty": "Re:MASTER",
               "level": "13+",
-              "chartConstant": null,
-              "charter": null
+              "chartConstant": 13.7,
+              "charter": "Luxizhel"
             }
           ]
         }
@@ -10875,14 +10875,14 @@
               "difficulty": "EXPERT",
               "level": "10",
               "chartConstant": null,
-              "charter": null
+              "charter": "サファ太"
             },
             {
               "id": "song-2322d2fdf93d-dx-master",
               "difficulty": "MASTER",
               "level": "13+",
-              "chartConstant": null,
-              "charter": null
+              "chartConstant": 13.6,
+              "charter": "はっぴー"
             }
           ]
         }
@@ -11318,7 +11318,7 @@
               "difficulty": "MASTER",
               "level": "11+",
               "chartConstant": 11.6,
-              "charter": "緑風 犬三郎"
+              "charter": "緑川 犬三郎"
             },
             {
               "id": "song-aa146dfca961-dx-re-master",
@@ -11568,7 +11568,7 @@
               "difficulty": "MASTER",
               "level": "11+",
               "chartConstant": 11.8,
-              "charter": "緑風 犬三郎"
+              "charter": "緑川 犬三郎"
             },
             {
               "id": "song-9028eaf59903-dx-re-master",
@@ -12198,21 +12198,21 @@
               "difficulty": "EXPERT",
               "level": "10+",
               "chartConstant": null,
-              "charter": null
+              "charter": "Jack"
             },
             {
               "id": "song-52e03f4cfc5d-dx-master",
               "difficulty": "MASTER",
               "level": "11+",
-              "chartConstant": null,
-              "charter": null
+              "chartConstant": 11.8,
+              "charter": "緑風 犬三郎"
             },
             {
               "id": "song-52e03f4cfc5d-dx-re-master",
               "difficulty": "Re:MASTER",
               "level": "13",
-              "chartConstant": null,
-              "charter": null
+              "chartConstant": 13.4,
+              "charter": "カマボコ君"
             }
           ]
         }
@@ -12382,15 +12382,15 @@
               "id": "song-9a0951094d3b-dx-expert",
               "difficulty": "EXPERT",
               "level": "12+",
-              "chartConstant": null,
-              "charter": null
+              "chartConstant": 12.6,
+              "charter": "はっぴー"
             },
             {
               "id": "song-9a0951094d3b-dx-master",
               "difficulty": "MASTER",
               "level": "14",
-              "chartConstant": null,
-              "charter": null
+              "chartConstant": 14.5,
+              "charter": "サファ太"
             }
           ]
         }
@@ -12443,8 +12443,8 @@
               "id": "song-97aadb9a4e53-dx-master",
               "difficulty": "MASTER",
               "level": "13+",
-              "chartConstant": 13.7,
-              "charter": "7.3Hz＋Jack"
+              "chartConstant": 13.6,
+              "charter": "7.3Hz+Jack"
             }
           ]
         }
@@ -12798,14 +12798,14 @@
               "difficulty": "EXPERT",
               "level": "10+",
               "chartConstant": null,
-              "charter": null
+              "charter": "サファ太"
             },
             {
               "id": "song-3ce7f814ff96-dx-master",
               "difficulty": "MASTER",
               "level": "13",
-              "chartConstant": null,
-              "charter": null
+              "chartConstant": 13.3,
+              "charter": "Luxizhel"
             }
           ]
         },
@@ -13094,14 +13094,14 @@
               "difficulty": "EXPERT",
               "level": "10",
               "chartConstant": null,
-              "charter": null
+              "charter": "鳩ホルダー"
             },
             {
               "id": "song-6c0d8fb0f484-dx-master",
               "difficulty": "MASTER",
               "level": "13",
-              "chartConstant": null,
-              "charter": null
+              "chartConstant": 13,
+              "charter": "サファ太"
             }
           ]
         }
@@ -13508,14 +13508,14 @@
               "difficulty": "EXPERT",
               "level": "11",
               "chartConstant": null,
-              "charter": null
+              "charter": "サファ太"
             },
             {
               "id": "song-f46e2f4ed830-dx-master",
               "difficulty": "MASTER",
               "level": "13+",
-              "chartConstant": null,
-              "charter": null
+              "chartConstant": 13.8,
+              "charter": "Luxizhel"
             }
           ]
         }
@@ -14009,14 +14009,14 @@
               "difficulty": "EXPERT",
               "level": "11",
               "chartConstant": null,
-              "charter": null
+              "charter": "Jack"
             },
             {
               "id": "song-db821594b039-dx-master",
               "difficulty": "MASTER",
               "level": "13+",
-              "chartConstant": null,
-              "charter": null
+              "chartConstant": 13.6,
+              "charter": "はっぴー"
             }
           ]
         }
@@ -14345,14 +14345,14 @@
               "difficulty": "EXPERT",
               "level": "9+",
               "chartConstant": null,
-              "charter": null
+              "charter": "鳩ホルダー"
             },
             {
               "id": "song-18cc28f9f66d-dx-master",
               "difficulty": "MASTER",
               "level": "12+",
-              "chartConstant": null,
-              "charter": null
+              "chartConstant": 12.9,
+              "charter": "Luxizhel"
             }
           ]
         }
@@ -14643,21 +14643,21 @@
               "difficulty": "EXPERT",
               "level": "9",
               "chartConstant": null,
-              "charter": null
+              "charter": "まぐランド"
             },
             {
               "id": "song-067df9d0eb73-dx-master",
               "difficulty": "MASTER",
               "level": "11",
-              "chartConstant": null,
-              "charter": null
+              "chartConstant": 11.5,
+              "charter": "緑風 犬三郎"
             },
             {
               "id": "song-067df9d0eb73-dx-re-master",
               "difficulty": "Re:MASTER",
               "level": "13",
-              "chartConstant": null,
-              "charter": null
+              "chartConstant": 13.4,
+              "charter": "ぴちネコ"
             }
           ]
         }
@@ -14714,14 +14714,14 @@
               "difficulty": "EXPERT",
               "level": "9",
               "chartConstant": null,
-              "charter": null
+              "charter": "はっぴー"
             },
             {
               "id": "song-00493f7d7088-dx-master",
               "difficulty": "MASTER",
               "level": "13",
-              "chartConstant": null,
-              "charter": null
+              "chartConstant": 13,
+              "charter": "Jack"
             }
           ]
         }
@@ -15338,14 +15338,14 @@
               "difficulty": "EXPERT",
               "level": "11",
               "chartConstant": null,
-              "charter": null
+              "charter": "鳩ホルダー"
             },
             {
               "id": "song-10696a7a7611-dx-master",
               "difficulty": "MASTER",
               "level": "14",
-              "chartConstant": null,
-              "charter": null
+              "chartConstant": 14,
+              "charter": "サファ太"
             }
           ]
         }
@@ -15463,14 +15463,14 @@
               "difficulty": "EXPERT",
               "level": "9+",
               "chartConstant": null,
-              "charter": null
+              "charter": "Luxizhel"
             },
             {
               "id": "song-7e49fc53556f-dx-master",
               "difficulty": "MASTER",
               "level": "12+",
-              "chartConstant": null,
-              "charter": null
+              "chartConstant": 12.8,
+              "charter": "はっぴー"
             }
           ]
         }
@@ -15597,7 +15597,7 @@
               "difficulty": "Re:MASTER",
               "level": "15",
               "chartConstant": 15,
-              "charter": "BEYOND THE MEMORiES"
+              "charter": "BEYOND THE MEMORIES"
             }
           ]
         }
@@ -16411,7 +16411,7 @@
               "id": "song-be9f120b07fb-dx-master",
               "difficulty": "MASTER",
               "level": "13",
-              "chartConstant": 13.1,
+              "chartConstant": 13.2,
               "charter": "きょむりん"
             }
           ]
@@ -16536,7 +16536,7 @@
               "id": "song-4e9f398b9af8-dx-master",
               "difficulty": "MASTER",
               "level": "14+",
-              "chartConstant": 14.7,
+              "chartConstant": 14.6,
               "charter": "サファ太 vs Luxizhel"
             }
           ]
