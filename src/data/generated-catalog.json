@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-17T04:12:49.051Z",
+  "generatedAt": "2026-08-23T04:34:46.531Z",
   "songs": [
     {
       "id": "song-550d332f837c",
@@ -114,6 +114,59 @@
       }
     },
     {
+      "id": "song-799a9c7a154c",
+      "titles": {
+        "canonical": "7 Wonders",
+        "kana": [],
+        "romaji": [],
+        "english": [],
+        "aliases": []
+      },
+      "artist": "削除",
+      "genre": "maimai",
+      "introducedIn": {
+        "code": "26016",
+        "name": "CiRCLE"
+      },
+      "jacketKey": "jackets/song-799a9c7a154c-ddb1c6ce7f1c.png",
+      "versions": [
+        {
+          "id": "song-799a9c7a154c-dx",
+          "chartType": "DX",
+          "charts": [
+            {
+              "id": "song-799a9c7a154c-dx-basic",
+              "difficulty": "BASIC",
+              "level": "6",
+              "chartConstant": null,
+              "charter": null
+            },
+            {
+              "id": "song-799a9c7a154c-dx-advanced",
+              "difficulty": "ADVANCED",
+              "level": "8",
+              "chartConstant": null,
+              "charter": null
+            },
+            {
+              "id": "song-799a9c7a154c-dx-expert",
+              "difficulty": "EXPERT",
+              "level": "12+",
+              "chartConstant": null,
+              "charter": null
+            },
+            {
+              "id": "song-799a9c7a154c-dx-master",
+              "difficulty": "MASTER",
+              "level": "14+",
+              "chartConstant": null,
+              "charter": null
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "song-43c1df3f7239",
       "titles": {
         "canonical": "8-EM",
@@ -165,6 +218,59 @@
         "code": "22501",
         "name": "UNiVERSE PLUS"
       }
+    },
+    {
+      "id": "song-1220ce85afc9",
+      "titles": {
+        "canonical": "AiAe",
+        "kana": [],
+        "romaji": [],
+        "english": [],
+        "aliases": []
+      },
+      "artist": "DJ'TEKINA//SOMETHING a.k.a ゆよゆっぺ",
+      "genre": "ゲーム＆バラエティ",
+      "introducedIn": {
+        "code": "26500",
+        "name": "CiRCLE PLUS"
+      },
+      "jacketKey": "jackets/song-1220ce85afc9-ed8a7a665ad9.png",
+      "versions": [
+        {
+          "id": "song-1220ce85afc9-dx",
+          "chartType": "DX",
+          "charts": [
+            {
+              "id": "song-1220ce85afc9-dx-basic",
+              "difficulty": "BASIC",
+              "level": "5",
+              "chartConstant": null,
+              "charter": null
+            },
+            {
+              "id": "song-1220ce85afc9-dx-advanced",
+              "difficulty": "ADVANCED",
+              "level": "8",
+              "chartConstant": null,
+              "charter": null
+            },
+            {
+              "id": "song-1220ce85afc9-dx-expert",
+              "difficulty": "EXPERT",
+              "level": "12",
+              "chartConstant": null,
+              "charter": null
+            },
+            {
+              "id": "song-1220ce85afc9-dx-master",
+              "difficulty": "MASTER",
+              "level": "14",
+              "chartConstant": null,
+              "charter": null
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "song-fea7ee449c3a",
@@ -542,6 +648,59 @@
         "code": "23506",
         "name": "FESTiVAL PLUS"
       }
+    },
+    {
+      "id": "song-501ed4e9e621",
+      "titles": {
+        "canonical": "BANG!",
+        "kana": [],
+        "romaji": [],
+        "english": [],
+        "aliases": []
+      },
+      "artist": "Shoichiro Hirata feat.Sana",
+      "genre": "ゲーム＆バラエティ",
+      "introducedIn": {
+        "code": "22506",
+        "name": "UNiVERSE PLUS"
+      },
+      "jacketKey": "jackets/song-501ed4e9e621-e703c44798a0.png",
+      "versions": [
+        {
+          "id": "song-501ed4e9e621-dx",
+          "chartType": "DX",
+          "charts": [
+            {
+              "id": "song-501ed4e9e621-dx-basic",
+              "difficulty": "BASIC",
+              "level": "2",
+              "chartConstant": 2,
+              "charter": null
+            },
+            {
+              "id": "song-501ed4e9e621-dx-advanced",
+              "difficulty": "ADVANCED",
+              "level": "6",
+              "chartConstant": 6.5,
+              "charter": null
+            },
+            {
+              "id": "song-501ed4e9e621-dx-expert",
+              "difficulty": "EXPERT",
+              "level": "10+",
+              "chartConstant": 10.8,
+              "charter": "Jack"
+            },
+            {
+              "id": "song-501ed4e9e621-dx-master",
+              "difficulty": "MASTER",
+              "level": "13",
+              "chartConstant": 13.1,
+              "charter": "Techno Kitchen"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "song-7fbb1100d70a",
@@ -3175,6 +3334,59 @@
       }
     },
     {
+      "id": "song-c1934e2f2839",
+      "titles": {
+        "canonical": "Last Samurai",
+        "kana": [],
+        "romaji": [],
+        "english": [],
+        "aliases": []
+      },
+      "artist": "Street",
+      "genre": "maimai",
+      "introducedIn": {
+        "code": "21508",
+        "name": "Splash PLUS"
+      },
+      "jacketKey": "jackets/song-c1934e2f2839-be8ab2e98f05.png",
+      "versions": [
+        {
+          "id": "song-c1934e2f2839-dx",
+          "chartType": "DX",
+          "charts": [
+            {
+              "id": "song-c1934e2f2839-dx-basic",
+              "difficulty": "BASIC",
+              "level": "4",
+              "chartConstant": 4,
+              "charter": null
+            },
+            {
+              "id": "song-c1934e2f2839-dx-advanced",
+              "difficulty": "ADVANCED",
+              "level": "8",
+              "chartConstant": 8,
+              "charter": null
+            },
+            {
+              "id": "song-c1934e2f2839-dx-expert",
+              "difficulty": "EXPERT",
+              "level": "12",
+              "chartConstant": 12,
+              "charter": "はっぴー"
+            },
+            {
+              "id": "song-c1934e2f2839-dx-master",
+              "difficulty": "MASTER",
+              "level": "13+",
+              "chartConstant": 13.9,
+              "charter": "サファ太"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "song-39500c442baa",
       "titles": {
         "canonical": "Latent Kingdom",
@@ -3834,6 +4046,59 @@
       }
     },
     {
+      "id": "song-e0d6f4f05f61",
+      "titles": {
+        "canonical": "MORNINGLOOM",
+        "kana": [],
+        "romaji": [],
+        "english": [],
+        "aliases": []
+      },
+      "artist": "saaa",
+      "genre": "ゲーム＆バラエティ",
+      "introducedIn": {
+        "code": "25012",
+        "name": "PRiSM"
+      },
+      "jacketKey": "jackets/song-e0d6f4f05f61-b86cf708bd7d.png",
+      "versions": [
+        {
+          "id": "song-e0d6f4f05f61-dx",
+          "chartType": "DX",
+          "charts": [
+            {
+              "id": "song-e0d6f4f05f61-dx-basic",
+              "difficulty": "BASIC",
+              "level": "4",
+              "chartConstant": 4,
+              "charter": null
+            },
+            {
+              "id": "song-e0d6f4f05f61-dx-advanced",
+              "difficulty": "ADVANCED",
+              "level": "8",
+              "chartConstant": 8.2,
+              "charter": null
+            },
+            {
+              "id": "song-e0d6f4f05f61-dx-expert",
+              "difficulty": "EXPERT",
+              "level": "11",
+              "chartConstant": 11.5,
+              "charter": "鳩ホルダー"
+            },
+            {
+              "id": "song-e0d6f4f05f61-dx-master",
+              "difficulty": "MASTER",
+              "level": "13+",
+              "chartConstant": 13.7,
+              "charter": "アマリリス"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "song-9125d2108267",
       "titles": {
         "canonical": "My First Phone",
@@ -4316,6 +4581,59 @@
         "code": "24000",
         "name": "BUDDiES"
       }
+    },
+    {
+      "id": "song-6689faf8a257",
+      "titles": {
+        "canonical": "Operation☆DOTABATA!",
+        "kana": [],
+        "romaji": [],
+        "english": [],
+        "aliases": []
+      },
+      "artist": "Mitsukiyo「ブルーアーカイブ -Blue Archive-」",
+      "genre": "ゲーム＆バラエティ",
+      "introducedIn": {
+        "code": "26504",
+        "name": "CiRCLE PLUS"
+      },
+      "jacketKey": "jackets/song-6689faf8a257-c548eca443ae.png",
+      "versions": [
+        {
+          "id": "song-6689faf8a257-dx",
+          "chartType": "DX",
+          "charts": [
+            {
+              "id": "song-6689faf8a257-dx-basic",
+              "difficulty": "BASIC",
+              "level": "3",
+              "chartConstant": null,
+              "charter": null
+            },
+            {
+              "id": "song-6689faf8a257-dx-advanced",
+              "difficulty": "ADVANCED",
+              "level": "6",
+              "chartConstant": null,
+              "charter": null
+            },
+            {
+              "id": "song-6689faf8a257-dx-expert",
+              "difficulty": "EXPERT",
+              "level": "11",
+              "chartConstant": null,
+              "charter": null
+            },
+            {
+              "id": "song-6689faf8a257-dx-master",
+              "difficulty": "MASTER",
+              "level": "13",
+              "chartConstant": null,
+              "charter": null
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "song-0ac24dd304e4",
@@ -5214,6 +5532,59 @@
       }
     },
     {
+      "id": "song-93e1dbb9bcec",
+      "titles": {
+        "canonical": "Rodeo Machine",
+        "kana": [],
+        "romaji": [],
+        "english": [],
+        "aliases": []
+      },
+      "artist": "HALFBY",
+      "genre": "POPS＆アニメ",
+      "introducedIn": {
+        "code": "19502",
+        "name": "MiLK PLUS"
+      },
+      "jacketKey": "jackets/song-93e1dbb9bcec-b84a5fb7454c.png",
+      "versions": [
+        {
+          "id": "song-93e1dbb9bcec-std",
+          "chartType": "STD",
+          "charts": [
+            {
+              "id": "song-93e1dbb9bcec-std-basic",
+              "difficulty": "BASIC",
+              "level": "3",
+              "chartConstant": 3,
+              "charter": null
+            },
+            {
+              "id": "song-93e1dbb9bcec-std-advanced",
+              "difficulty": "ADVANCED",
+              "level": "7",
+              "chartConstant": 7.3,
+              "charter": null
+            },
+            {
+              "id": "song-93e1dbb9bcec-std-expert",
+              "difficulty": "EXPERT",
+              "level": "11",
+              "chartConstant": 11.1,
+              "charter": "サファ太"
+            },
+            {
+              "id": "song-93e1dbb9bcec-std-master",
+              "difficulty": "MASTER",
+              "level": "13+",
+              "chartConstant": 13.8,
+              "charter": "はっぴー"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "song-5012c67acc23",
       "titles": {
         "canonical": "Rush-Hour",
@@ -5764,6 +6135,59 @@
       }
     },
     {
+      "id": "song-8219882421ef",
+      "titles": {
+        "canonical": "STRAY",
+        "kana": [],
+        "romaji": [],
+        "english": [],
+        "aliases": []
+      },
+      "artist": "umigame",
+      "genre": "maimai",
+      "introducedIn": {
+        "code": "26505",
+        "name": "CiRCLE PLUS"
+      },
+      "jacketKey": "jackets/song-8219882421ef-7bc69ea4acbe.png",
+      "versions": [
+        {
+          "id": "song-8219882421ef-dx",
+          "chartType": "DX",
+          "charts": [
+            {
+              "id": "song-8219882421ef-dx-basic",
+              "difficulty": "BASIC",
+              "level": "3",
+              "chartConstant": null,
+              "charter": null
+            },
+            {
+              "id": "song-8219882421ef-dx-advanced",
+              "difficulty": "ADVANCED",
+              "level": "6",
+              "chartConstant": null,
+              "charter": null
+            },
+            {
+              "id": "song-8219882421ef-dx-expert",
+              "difficulty": "EXPERT",
+              "level": "10+",
+              "chartConstant": null,
+              "charter": null
+            },
+            {
+              "id": "song-8219882421ef-dx-master",
+              "difficulty": "MASTER",
+              "level": "13",
+              "chartConstant": null,
+              "charter": null
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "song-7dc41dc2ff71",
       "titles": {
         "canonical": "Strive against fate",
@@ -5921,6 +6345,59 @@
         "code": "23502",
         "name": "FESTiVAL PLUS"
       }
+    },
+    {
+      "id": "song-433483d20c40",
+      "titles": {
+        "canonical": "TECHNOPOLIS 2085",
+        "kana": [],
+        "romaji": [],
+        "english": [],
+        "aliases": []
+      },
+      "artist": "PRASTIK DANCEFLOOR",
+      "genre": "オンゲキ＆CHUNITHM",
+      "introducedIn": {
+        "code": "26500",
+        "name": "CiRCLE PLUS"
+      },
+      "jacketKey": "jackets/song-433483d20c40-896647877ccd.png",
+      "versions": [
+        {
+          "id": "song-433483d20c40-dx",
+          "chartType": "DX",
+          "charts": [
+            {
+              "id": "song-433483d20c40-dx-basic",
+              "difficulty": "BASIC",
+              "level": "4",
+              "chartConstant": null,
+              "charter": null
+            },
+            {
+              "id": "song-433483d20c40-dx-advanced",
+              "difficulty": "ADVANCED",
+              "level": "6",
+              "chartConstant": null,
+              "charter": null
+            },
+            {
+              "id": "song-433483d20c40-dx-expert",
+              "difficulty": "EXPERT",
+              "level": "10+",
+              "chartConstant": null,
+              "charter": null
+            },
+            {
+              "id": "song-433483d20c40-dx-master",
+              "difficulty": "MASTER",
+              "level": "13+",
+              "chartConstant": null,
+              "charter": null
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "song-ee631b95b7c2",
@@ -6665,6 +7142,59 @@
         "code": "22511",
         "name": "UNiVERSE PLUS"
       }
+    },
+    {
+      "id": "song-22bed98325d3",
+      "titles": {
+        "canonical": "World's end BLACKBOX",
+        "kana": [],
+        "romaji": [],
+        "english": [],
+        "aliases": []
+      },
+      "artist": "打打だいず",
+      "genre": "maimai",
+      "introducedIn": {
+        "code": "25512",
+        "name": "PRiSM PLUS"
+      },
+      "jacketKey": "jackets/song-22bed98325d3-9b7a4a10f145.png",
+      "versions": [
+        {
+          "id": "song-22bed98325d3-dx",
+          "chartType": "DX",
+          "charts": [
+            {
+              "id": "song-22bed98325d3-dx-basic",
+              "difficulty": "BASIC",
+              "level": "7+",
+              "chartConstant": null,
+              "charter": null
+            },
+            {
+              "id": "song-22bed98325d3-dx-advanced",
+              "difficulty": "ADVANCED",
+              "level": "10",
+              "chartConstant": null,
+              "charter": null
+            },
+            {
+              "id": "song-22bed98325d3-dx-expert",
+              "difficulty": "EXPERT",
+              "level": "13",
+              "chartConstant": null,
+              "charter": null
+            },
+            {
+              "id": "song-22bed98325d3-dx-master",
+              "difficulty": "MASTER",
+              "level": "14+",
+              "chartConstant": null,
+              "charter": null
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "song-c7c48540b093",
@@ -8213,6 +8743,65 @@
       }
     },
     {
+      "id": "song-fbb9f54a35e8",
+      "titles": {
+        "canonical": "オールマスター",
+        "kana": [
+          "おおる ますたあ"
+        ],
+        "romaji": [
+          "ooru masutaa"
+        ],
+        "english": [
+          "all master"
+        ],
+        "aliases": []
+      },
+      "artist": "大漠波新 feat.ヲタみん",
+      "genre": "maimai",
+      "introducedIn": {
+        "code": "26505",
+        "name": "CiRCLE PLUS"
+      },
+      "jacketKey": "jackets/song-fbb9f54a35e8-acff391a99eb.png",
+      "versions": [
+        {
+          "id": "song-fbb9f54a35e8-dx",
+          "chartType": "DX",
+          "charts": [
+            {
+              "id": "song-fbb9f54a35e8-dx-basic",
+              "difficulty": "BASIC",
+              "level": "4",
+              "chartConstant": null,
+              "charter": null
+            },
+            {
+              "id": "song-fbb9f54a35e8-dx-advanced",
+              "difficulty": "ADVANCED",
+              "level": "6",
+              "chartConstant": null,
+              "charter": null
+            },
+            {
+              "id": "song-fbb9f54a35e8-dx-expert",
+              "difficulty": "EXPERT",
+              "level": "11",
+              "chartConstant": null,
+              "charter": null
+            },
+            {
+              "id": "song-fbb9f54a35e8-dx-master",
+              "difficulty": "MASTER",
+              "level": "13",
+              "chartConstant": null,
+              "charter": null
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "song-638e826988e6",
       "titles": {
         "canonical": "おくすり飲んで寝よう",
@@ -9477,6 +10066,63 @@
       }
     },
     {
+      "id": "song-7b0f372bbf9c",
+      "titles": {
+        "canonical": "ソテリア",
+        "kana": [
+          "そてりあ"
+        ],
+        "romaji": [
+          "soteria"
+        ],
+        "english": [],
+        "aliases": []
+      },
+      "artist": "Rafutsuri feat.桜あおい",
+      "genre": "maimai",
+      "introducedIn": {
+        "code": "26500",
+        "name": "CiRCLE PLUS"
+      },
+      "jacketKey": "jackets/song-7b0f372bbf9c-c45f912da801.png",
+      "versions": [
+        {
+          "id": "song-7b0f372bbf9c-dx",
+          "chartType": "DX",
+          "charts": [
+            {
+              "id": "song-7b0f372bbf9c-dx-basic",
+              "difficulty": "BASIC",
+              "level": "4",
+              "chartConstant": null,
+              "charter": null
+            },
+            {
+              "id": "song-7b0f372bbf9c-dx-advanced",
+              "difficulty": "ADVANCED",
+              "level": "8",
+              "chartConstant": null,
+              "charter": null
+            },
+            {
+              "id": "song-7b0f372bbf9c-dx-expert",
+              "difficulty": "EXPERT",
+              "level": "12",
+              "chartConstant": null,
+              "charter": null
+            },
+            {
+              "id": "song-7b0f372bbf9c-dx-master",
+              "difficulty": "MASTER",
+              "level": "14",
+              "chartConstant": null,
+              "charter": null
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "song-3b20b9fdc5ab",
       "titles": {
         "canonical": "ダイダイダイダイダイキライ",
@@ -10407,6 +11053,65 @@
       }
     },
     {
+      "id": "song-d6cec4f5ed59",
+      "titles": {
+        "canonical": "ナンセンス文学",
+        "kana": [
+          "なんせんす ぶんがく"
+        ],
+        "romaji": [
+          "nansensu bungaku"
+        ],
+        "english": [
+          "nonsense literature"
+        ],
+        "aliases": []
+      },
+      "artist": "Eve",
+      "genre": "niconico＆ボーカロイド",
+      "introducedIn": {
+        "code": "19006",
+        "name": "MiLK"
+      },
+      "jacketKey": "jackets/song-d6cec4f5ed59-d75e9d21e196.png",
+      "versions": [
+        {
+          "id": "song-d6cec4f5ed59-std",
+          "chartType": "STD",
+          "charts": [
+            {
+              "id": "song-d6cec4f5ed59-std-basic",
+              "difficulty": "BASIC",
+              "level": "5",
+              "chartConstant": 5,
+              "charter": null
+            },
+            {
+              "id": "song-d6cec4f5ed59-std-advanced",
+              "difficulty": "ADVANCED",
+              "level": "7+",
+              "chartConstant": 7.8,
+              "charter": null
+            },
+            {
+              "id": "song-d6cec4f5ed59-std-expert",
+              "difficulty": "EXPERT",
+              "level": "11+",
+              "chartConstant": 11.7,
+              "charter": "サファ太"
+            },
+            {
+              "id": "song-d6cec4f5ed59-std-master",
+              "difficulty": "MASTER",
+              "level": "13+",
+              "chartConstant": 13.6,
+              "charter": "はっぴー"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "song-6e4d367df787",
       "titles": {
         "canonical": "ネコ日和。",
@@ -10939,6 +11644,65 @@
         "code": "18012",
         "name": "MURASAKi"
       }
+    },
+    {
+      "id": "song-526728b712fd",
+      "titles": {
+        "canonical": "マネマネサイコトロピック",
+        "kana": [
+          "まねまね さいことろぴっく"
+        ],
+        "romaji": [
+          "manemane saikotoropikku"
+        ],
+        "english": [
+          "copycat psychotropic"
+        ],
+        "aliases": []
+      },
+      "artist": "かいりきベア feat.GUMI",
+      "genre": "niconico＆ボーカロイド",
+      "introducedIn": {
+        "code": "21005",
+        "name": "Splash"
+      },
+      "jacketKey": "jackets/song-526728b712fd-7c7d99b56705.png",
+      "versions": [
+        {
+          "id": "song-526728b712fd-dx",
+          "chartType": "DX",
+          "charts": [
+            {
+              "id": "song-526728b712fd-dx-basic",
+              "difficulty": "BASIC",
+              "level": "5",
+              "chartConstant": 5,
+              "charter": null
+            },
+            {
+              "id": "song-526728b712fd-dx-advanced",
+              "difficulty": "ADVANCED",
+              "level": "7",
+              "chartConstant": 7.2,
+              "charter": null
+            },
+            {
+              "id": "song-526728b712fd-dx-expert",
+              "difficulty": "EXPERT",
+              "level": "10+",
+              "chartConstant": 10.7,
+              "charter": "Jack"
+            },
+            {
+              "id": "song-526728b712fd-dx-master",
+              "difficulty": "MASTER",
+              "level": "13+",
+              "chartConstant": 13.7,
+              "charter": "はっぴー"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "song-ef3aa6605987",
@@ -12219,6 +12983,72 @@
       }
     },
     {
+      "id": "song-1e56a964e6b2",
+      "titles": {
+        "canonical": "一か罰",
+        "kana": [
+          "いちか ばち"
+        ],
+        "romaji": [
+          "ichika bachi"
+        ],
+        "english": [
+          "do or be punished"
+        ],
+        "aliases": []
+      },
+      "artist": "豚乙女",
+      "genre": "maimai",
+      "introducedIn": {
+        "code": "20008",
+        "name": "maimai でらっくす"
+      },
+      "jacketKey": "jackets/song-1e56a964e6b2-e6c3266f53fd.png",
+      "versions": [
+        {
+          "id": "song-1e56a964e6b2-dx",
+          "chartType": "DX",
+          "charts": [
+            {
+              "id": "song-1e56a964e6b2-dx-basic",
+              "difficulty": "BASIC",
+              "level": "5",
+              "chartConstant": 5,
+              "charter": null
+            },
+            {
+              "id": "song-1e56a964e6b2-dx-advanced",
+              "difficulty": "ADVANCED",
+              "level": "7+",
+              "chartConstant": 7.8,
+              "charter": null
+            },
+            {
+              "id": "song-1e56a964e6b2-dx-expert",
+              "difficulty": "EXPERT",
+              "level": "11",
+              "chartConstant": 11.4,
+              "charter": "シチミヘルツ"
+            },
+            {
+              "id": "song-1e56a964e6b2-dx-master",
+              "difficulty": "MASTER",
+              "level": "12+",
+              "chartConstant": 12.8,
+              "charter": "華火職人"
+            },
+            {
+              "id": "song-1e56a964e6b2-dx-re-master",
+              "difficulty": "Re:MASTER",
+              "level": "14",
+              "chartConstant": 14,
+              "charter": "サファ太"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "song-6c0d8fb0f484",
       "titles": {
         "canonical": "三日月ステップ 2023",
@@ -12633,6 +13463,65 @@
       }
     },
     {
+      "id": "song-f46e2f4ed830",
+      "titles": {
+        "canonical": "最愛人生ランナー",
+        "kana": [
+          "さいあい じんせい らんなあ"
+        ],
+        "romaji": [
+          "saiai jinsei rannaa"
+        ],
+        "english": [
+          "beloved life runner"
+        ],
+        "aliases": []
+      },
+      "artist": "かいりきベア",
+      "genre": "niconico＆ボーカロイド",
+      "introducedIn": {
+        "code": "26006",
+        "name": "CiRCLE"
+      },
+      "jacketKey": "jackets/song-f46e2f4ed830-ce636664b972.png",
+      "versions": [
+        {
+          "id": "song-f46e2f4ed830-dx",
+          "chartType": "DX",
+          "charts": [
+            {
+              "id": "song-f46e2f4ed830-dx-basic",
+              "difficulty": "BASIC",
+              "level": "4",
+              "chartConstant": null,
+              "charter": null
+            },
+            {
+              "id": "song-f46e2f4ed830-dx-advanced",
+              "difficulty": "ADVANCED",
+              "level": "7+",
+              "chartConstant": null,
+              "charter": null
+            },
+            {
+              "id": "song-f46e2f4ed830-dx-expert",
+              "difficulty": "EXPERT",
+              "level": "11",
+              "chartConstant": null,
+              "charter": null
+            },
+            {
+              "id": "song-f46e2f4ed830-dx-master",
+              "difficulty": "MASTER",
+              "level": "13+",
+              "chartConstant": null,
+              "charter": null
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "song-3ec83d57c6cb",
       "titles": {
         "canonical": "最終鬼畜妹・一部声",
@@ -12903,6 +13792,65 @@
       }
     },
     {
+      "id": "song-525c8108ee65",
+      "titles": {
+        "canonical": "前衛的Landscape",
+        "kana": [
+          "ぜんえいてき らんどすけえぷ"
+        ],
+        "romaji": [
+          "zen'eiteki randosukeepu"
+        ],
+        "english": [
+          "avant-garde landscape"
+        ],
+        "aliases": []
+      },
+      "artist": "HiTECH NINJA feat. RANASOL",
+      "genre": "maimai",
+      "introducedIn": {
+        "code": "22013",
+        "name": "UNiVERSE"
+      },
+      "jacketKey": "jackets/song-525c8108ee65-8af86029c23f.png",
+      "versions": [
+        {
+          "id": "song-525c8108ee65-dx",
+          "chartType": "DX",
+          "charts": [
+            {
+              "id": "song-525c8108ee65-dx-basic",
+              "difficulty": "BASIC",
+              "level": "4",
+              "chartConstant": 4,
+              "charter": null
+            },
+            {
+              "id": "song-525c8108ee65-dx-advanced",
+              "difficulty": "ADVANCED",
+              "level": "8",
+              "chartConstant": 8,
+              "charter": null
+            },
+            {
+              "id": "song-525c8108ee65-dx-expert",
+              "difficulty": "EXPERT",
+              "level": "11",
+              "chartConstant": 11.4,
+              "charter": "翠楼屋"
+            },
+            {
+              "id": "song-525c8108ee65-dx-master",
+              "difficulty": "MASTER",
+              "level": "13+",
+              "chartConstant": 13.8,
+              "charter": "シチミヘルツ"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "song-93b02a334abf",
       "titles": {
         "canonical": "劣等上等",
@@ -13144,6 +14092,99 @@
         "code": "25000",
         "name": "PRiSM"
       }
+    },
+    {
+      "id": "song-2462fcdbebad",
+      "titles": {
+        "canonical": "天ノ弱",
+        "kana": [
+          "あまのじゃく"
+        ],
+        "romaji": [
+          "amanojaku"
+        ],
+        "english": [
+          "a born coward"
+        ],
+        "aliases": []
+      },
+      "artist": "164",
+      "genre": "niconico＆ボーカロイド",
+      "introducedIn": {
+        "code": "12009",
+        "name": "GreeN"
+      },
+      "jacketKey": "jackets/song-2462fcdbebad-fb1886fd2e90.png",
+      "versions": [
+        {
+          "id": "song-2462fcdbebad-dx",
+          "chartType": "DX",
+          "charts": [
+            {
+              "id": "song-2462fcdbebad-dx-basic",
+              "difficulty": "BASIC",
+              "level": "3",
+              "chartConstant": 3,
+              "charter": null
+            },
+            {
+              "id": "song-2462fcdbebad-dx-advanced",
+              "difficulty": "ADVANCED",
+              "level": "7",
+              "chartConstant": 7.2,
+              "charter": null
+            },
+            {
+              "id": "song-2462fcdbebad-dx-expert",
+              "difficulty": "EXPERT",
+              "level": "10",
+              "chartConstant": 10,
+              "charter": "小鳥遊さん"
+            },
+            {
+              "id": "song-2462fcdbebad-dx-master",
+              "difficulty": "MASTER",
+              "level": "12+",
+              "chartConstant": 12.8,
+              "charter": "シチミヘルツ"
+            }
+          ]
+        },
+        {
+          "id": "song-2462fcdbebad-std",
+          "chartType": "STD",
+          "charts": [
+            {
+              "id": "song-2462fcdbebad-std-basic",
+              "difficulty": "BASIC",
+              "level": "4",
+              "chartConstant": 4,
+              "charter": null
+            },
+            {
+              "id": "song-2462fcdbebad-std-advanced",
+              "difficulty": "ADVANCED",
+              "level": "8",
+              "chartConstant": 8.4,
+              "charter": null
+            },
+            {
+              "id": "song-2462fcdbebad-std-expert",
+              "difficulty": "EXPERT",
+              "level": "11",
+              "chartConstant": 11,
+              "charter": "譜面-100号"
+            },
+            {
+              "id": "song-2462fcdbebad-std-master",
+              "difficulty": "MASTER",
+              "level": "13",
+              "chartConstant": 13.3,
+              "charter": "mai-Starとはっぴー"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "song-d1bb8e44303e",
@@ -13892,6 +14933,65 @@
               "level": "13",
               "chartConstant": 13.2,
               "charter": "mai-Star"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "song-2e434c0b0e8e",
+      "titles": {
+        "canonical": "有明/Ariake",
+        "kana": [
+          "ありあけ"
+        ],
+        "romaji": [
+          "ariake"
+        ],
+        "english": [
+          "daybreak"
+        ],
+        "aliases": []
+      },
+      "artist": "SIINCA",
+      "genre": "maimai",
+      "introducedIn": {
+        "code": "25009",
+        "name": "PRiSM"
+      },
+      "jacketKey": "jackets/song-2e434c0b0e8e-0281f81f25a6.png",
+      "versions": [
+        {
+          "id": "song-2e434c0b0e8e-dx",
+          "chartType": "DX",
+          "charts": [
+            {
+              "id": "song-2e434c0b0e8e-dx-basic",
+              "difficulty": "BASIC",
+              "level": "5",
+              "chartConstant": 5,
+              "charter": null
+            },
+            {
+              "id": "song-2e434c0b0e8e-dx-advanced",
+              "difficulty": "ADVANCED",
+              "level": "8",
+              "chartConstant": 8.5,
+              "charter": null
+            },
+            {
+              "id": "song-2e434c0b0e8e-dx-expert",
+              "difficulty": "EXPERT",
+              "level": "12",
+              "chartConstant": 12.4,
+              "charter": "サファ太"
+            },
+            {
+              "id": "song-2e434c0b0e8e-dx-master",
+              "difficulty": "MASTER",
+              "level": "14",
+              "chartConstant": 14.4,
+              "charter": "BLaCK rOSE dIsEASe pATiENT"
             }
           ]
         }
