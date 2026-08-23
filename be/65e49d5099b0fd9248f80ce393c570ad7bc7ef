@@ -1,0 +1,25 @@
+index.html
+  h_278fafc5c28027 6-7,9
+  s_6d06bd4898dc7f::t_591addc80d2e2b 8
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.23",
+  "base_commit_sha": "be65e49d5099b0fd9248f80ce393c570ad7bc7ef",
+  "prompts": {},
+  "humans": {
+    "h_278fafc5c28027": {
+      "author": "Allan Sun <allansun@live.com>"
+    }
+  },
+  "sessions": {
+    "s_6d06bd4898dc7f": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019faca2-0a30-75f3-8a51-06f8e9067195",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Allan Sun <allansun@live.com>"
+    }
+  }
+}
