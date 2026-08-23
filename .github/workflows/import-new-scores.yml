@@ -238,7 +238,9 @@ jobs:
           node-version: 24.14.1
           cache: npm
       - run: npm ci
-      - run: npm run data:validate:source
+      - name: Regenerate chart summaries
+        run: npm run scores:summarize
+      - run: npm run data:validate
       - name: Commit score and catalog data once
         id: commit
         run: |

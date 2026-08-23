@@ -27,7 +27,6 @@ jobs:
           node-version: 24.14.1
           cache: npm
       - run: npm ci
-      - run: npm run scores:summarize
       - run: npm run data:validate
       - run: npm run build
         env:
