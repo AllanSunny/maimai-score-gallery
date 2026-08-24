@@ -46,12 +46,6 @@ interface SongDetailFrameProps {
   className?: string;
 }
 
-function fittedTextSize(text: string, normal: number, medium: number, small: number) {
-  if (text.length > 28) return `${small}cqw`;
-  if (text.length > 18) return `${medium}cqw`;
-  return `${normal}cqw`;
-}
-
 export function SongDetailFrame({
   title,
   artist,
@@ -95,16 +89,10 @@ export function SongDetailFrame({
         </span>
       </div>
 
-      <header
-        className="song-detail-frame__title"
-        style={{ fontSize: fittedTextSize(title, 4.5, 3.8, 3.15) }}
-      >
+      <header className="song-detail-frame__title">
         <OverflowMarquee centerWhenFit>{title}</OverflowMarquee>
       </header>
-      <div
-        className="song-detail-frame__artist"
-        style={{ fontSize: fittedTextSize(artist, 3.5, 3.05, 2.6) }}
-      >
+      <div className="song-detail-frame__artist">
         <OverflowMarquee centerWhenFit>{artist}</OverflowMarquee>
       </div>
 

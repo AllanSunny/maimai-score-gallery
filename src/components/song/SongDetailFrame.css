@@ -19,9 +19,9 @@
 
 .song-detail-frame__jacket {
   z-index: 0;
-  top: 14.6%;
-  left: 12.8%;
-  width: 73.9%;
+  top: 14.1%;
+  left: 9.6%;
+  width: 81%;
   aspect-ratio: 1;
   object-fit: cover;
 }
@@ -47,12 +47,12 @@
 }
 
 .song-detail-frame__difficulty {
-  top: 60.5%;
-  left: 5.8%;
+  top: 64.7%;
+  left: 3%;
   width: 55.5%;
   height: 8.7%;
   font-family: var(--font-rodin-bold);
-  font-size: 7cqw;
+  font-size: 7.2cqw;
   font-weight: 800;
   letter-spacing: -0.055em;
   -webkit-text-stroke: 0.12em var(--difficulty-color);
@@ -61,13 +61,13 @@
 }
 
 .song-detail-frame__level {
-  top: 59%;
-  left: 64.2%;
+  top: 63.3%;
+  left: 67%;
   width: 26.5%;
   height: 8.7%;
   color: white;
   font-family: var(--font-rodin-bold);
-  font-size: 12cqw;
+  font-size: 13cqw;
   font-weight: 800;
   letter-spacing: -0.075em;
 }
@@ -117,27 +117,28 @@
 }
 
 .song-detail-frame__title {
-  top: 68.5%;
-  left: 5.1%;
-  width: 89.4%;
+  top: 73.6%;
+  left: 1%;
+  width: 98%;
   height: 7.5%;
   padding: 0 4%;
   font-weight: 600;
+  font-size: 6.2cqw;
   text-shadow: 0 0.06em 0.08em rgb(0 0 0 / 45%);
 }
 
 .song-detail-frame__achievement {
   position: absolute;
   z-index: 2;
-  top: 82.1%;
-  left: 5.9%;
+  top: 88.2%;
+  left: 3.5%;
   width: 39.2%;
   height: 5.1%;
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--color-dark);
-  font-size: 5.2cqw;
+  font-size: 5.7cqw;
   font-weight: 700;
   line-height: 1;
   white-space: nowrap;
@@ -160,33 +161,34 @@
 }
 
 .song-detail-frame__rank {
-  top: 82.2%;
-  left: 44.3%;
-  width: 19.2%;
-  height: 4.6%;
+  top: 88.2%;
+  left: 44.8%;
+  width: 19.4%;
+  height: 5.2%;
 }
 
 .song-detail-frame__combo,
 .song-detail-frame__sync {
-  top: 81.4%;
-  width: 19%;
+  top: 87.3%;
+  width: 20.3%;
 }
 
 .song-detail-frame__combo {
-  left: 61.1%;
+  left: 63.1%;
 }
 
 .song-detail-frame__sync {
-  left: 76.9%;
+  left: 80.3%;
 }
 
 .song-detail-frame__artist {
-  top: 76%;
-  left: 5.1%;
-  width: 89.4%;
+  top: 81.5%;
+  left: 1%;
+  width: 98%;
   height: 5.7%;
   padding: 0 4%;
   font-weight: 600;
+  font-size: 4.2cqw;
   text-shadow: 0 0.06em 0.08em rgb(0 0 0 / 45%);
 }
 
