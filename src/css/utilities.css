@@ -19,14 +19,19 @@
     outline: 2px solid var(--color-light);
     outline-offset: 2px;
   }
+
+  &:disabled {
+    opacity: 0.3;
+    cursor: default;
+  }
 }
 
 @utility btn-primary {
   color: var(--color-darker);
-  background-color: var(--color-primary);
+  background-color: var(--btn-background, var(--color-primary));
 
-  &:hover {
-    background-color: var(--color-lightest);
+  &:not(:disabled):hover {
+    background-color: var(--btn-hover-background, var(--color-light));
   }
 }
 

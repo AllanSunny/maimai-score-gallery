@@ -27,6 +27,7 @@ export function ChartDetailPage({ chartId }: ChartDetailPageProps) {
   const bestSync = chartSummary?.bestSync?.status ?? null;
   const isBelowS = achievement != null && achievement < 97;
   const alternateTitles = metadata ? displayedAlternateTitles(metadata.titles) : [];
+  const difficultyCharts = metadata?.charts ?? [];
 
   const history = scores
     .filter((score) => score.chartId === chartId)
@@ -109,7 +110,7 @@ export function ChartDetailPage({ chartId }: ChartDetailPageProps) {
                     </span>
                     <RankDisplay
                       className="flex h-6 lg:h-7"
-                      status={achievement == null ? null : achievementRank(achievement)}
+                      status={achievementRank(achievement)}
                       size="large"
                     />
                   </div>
@@ -123,6 +124,43 @@ export function ChartDetailPage({ chartId }: ChartDetailPageProps) {
               </div>
             </div>
           </ContentCard>
+
+          {difficultyCharts.length > 0 && (
+            <nav className="mt-6 justify-center flex flex-wrap gap-5" aria-label="Chart difficulties">
+              {difficultyCharts.map((chart) => {
+                const difficultyColor = chart.difficulty.replace(":", "").toLowerCase();
+                const buttonStyle = {
+                  "--btn-background": `var(--color-${difficultyColor})`,
+                } as CSSProperties;
+
+                if (chart.id === chartId) {
+                  return (
+                    <button
+                      key={chart.id}
+                      type="button"
+                      className="btn btn-primary"
+                      style={buttonStyle}
+                      disabled
+                      aria-current="page"
+                    >
+                      {chart.difficulty}
+                    </button>
+                  );
+                }
+
+                return (
+                  <a
+                    key={chart.id}
+                    href={`#/charts/${encodeURIComponent(chart.id)}`}
+                    className="btn btn-primary"
+                    style={buttonStyle}
+                  >
+                    {chart.difficulty}
+                  </a>
+                );
+              })}
+            </nav>
+          )}
         </div>}
       </section>
 
