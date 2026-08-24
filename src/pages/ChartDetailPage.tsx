@@ -42,24 +42,25 @@ export function ChartDetailPage({ chartId }: ChartDetailPageProps) {
 
   return (
     <div>
-      <section className="grid items-start gap-8 lg:grid-cols-[minmax(0,20rem)_minmax(0,1fr)]">
+      <section className="grid items-start gap-2 sm:gap-4 lg:grid-cols-[minmax(0,20rem)_minmax(0,1fr)] lg:gap-8">
         {metadata?.jacketUrl && chartMetadata && (
-          <SongDetailFrame
-            title={metadata.titles.canonical}
-            artist={metadata.artist}
-            jacketUrl={metadata.jacketUrl}
-            chartType={metadata.chartType}
-            difficulty={chartMetadata.difficulty}
-            level={chartMetadata.level}
-            achievement={achievement}
-            combo={bestCombo}
-            sync={bestSync}
-            className="mx-auto w-full max-w-80 lg:mx-0"
-          />
+          <div className="mx-auto w-[250px] lg:mx-0 lg:w-full lg:max-w-80">
+            <SongDetailFrame
+              title={metadata.titles.canonical}
+              artist={metadata.artist}
+              jacketUrl={metadata.jacketUrl}
+              chartType={metadata.chartType}
+              difficulty={chartMetadata.difficulty}
+              level={chartMetadata.level}
+              achievement={achievement}
+              combo={bestCombo}
+              sync={bestSync}
+            />
+          </div>
         )}
 
         {metadata && chartMetadata && <div className={"mt-3 min-w-0 self-center"}>
-          <ContentCard accentColor={accentColor}>
+          <ContentCard accentColor={accentColor} className="hidden lg:block">
             <div className={"flex min-w-0 flex-col"}>
               <h1 className={"flex min-w-0 text-lightest text-stroke [--text-stroke-color:var(--color-primary)]"}>
                 <OverflowMarquee className="w-full px-1 font-semibold text-[1.8rem] sm:text-[2rem] lg:text-[2.5rem]">
@@ -126,7 +127,7 @@ export function ChartDetailPage({ chartId }: ChartDetailPageProps) {
           </ContentCard>
 
           {difficultyCharts.length > 0 && (
-            <nav className="mt-6 justify-center flex flex-wrap gap-5" aria-label="Chart difficulties">
+            <nav className="lg:mt-6 justify-center flex flex-wrap gap-2 sm:gap-3 md:gap-5" aria-label="Chart difficulties">
               {difficultyCharts.map((chart) => {
                 const difficultyColor = chart.difficulty.replace(":", "").toLowerCase();
                 const buttonStyle = {
@@ -164,7 +165,7 @@ export function ChartDetailPage({ chartId }: ChartDetailPageProps) {
         </div>}
       </section>
 
-      <section className="mt-12">
+      <section className="mt-10 md:mt-12">
         <h2 className="text-3xl font-semibold tracking-tight">Score History</h2>
         <ScoreHistory scores={history} accentColor={accentColor} />
       </section>

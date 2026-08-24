@@ -69,6 +69,7 @@ body {
 @layer base {
   html {
     font-family: var(--font-rodin);
+    overscroll-behavior-x: none;
     overscroll-behavior-y: none;
   }
 

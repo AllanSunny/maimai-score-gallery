@@ -25,7 +25,7 @@ export function SiteLayout({ children, route }: SiteLayoutProps) {
           <img className="h-14" src={favicon} alt="favicon" />
         </a>
 
-        <nav aria-label="Main navigation" className="ml-auto flex gap-2 text-sm sm:gap-5">
+        <nav aria-label="Main navigation" className="ml-auto text-sm flex gap-2 sm:gap-3 md:gap-5">
           {links.map((link) => (
             <a
               key={link.route}
@@ -39,7 +39,7 @@ export function SiteLayout({ children, route }: SiteLayoutProps) {
         </nav>
       </header>
 
-      <main className="flex-1 py-8 sm:py-12">{children}</main>
+      <main className="flex-1 py-4 sm:py-12">{children}</main>
 
       <footer className="flex flex-col gap-2 border-t border-lightest py-8 text-xs sm:flex-row sm:justify-between">
         <span>Unofficial fan project—not affiliated with SEGA.</span>
