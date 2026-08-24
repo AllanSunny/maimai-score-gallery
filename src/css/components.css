@@ -1,0 +1,120 @@
+@property --marquee-edge {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0px;
+}
+
+@layer components {
+  .overflow-marquee {
+    position: relative;
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-align: left;
+  }
+
+  .overflow-marquee[data-center-when-fit="true"][data-overflowing="false"] {
+    text-align: center;
+  }
+
+  .overflow-marquee[data-overflowing="true"] {
+    mask-image: linear-gradient(
+      to right,
+      transparent,
+      black var(--marquee-edge),
+      black calc(100% - 1rem),
+      transparent
+    );
+    animation: overflow-marquee-edges var(--marquee-duration) linear infinite;
+  }
+
+  .overflow-marquee__text {
+    display: inline-block;
+    min-width: max-content;
+  }
+
+  .overflow-marquee[data-overflowing="true"] .overflow-marquee__text {
+    animation: overflow-marquee-pan var(--marquee-duration) linear infinite;
+  }
+
+  .achievement-value {
+    --achievement-top: #fffbd0;
+    --achievement-middle: #ffe83d;
+    --achievement-bottom: #eda800;
+    --achievement-outline: #8a6100;
+    --text-stroke-color: var(--achievement-outline);
+    --text-stroke-width: 0.03em;
+
+    background: linear-gradient(
+      to bottom,
+      var(--achievement-top),
+      var(--achievement-middle) 45%,
+      var(--achievement-bottom)
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .achievement-value--below-s {
+    --achievement-top: #fff1ed;
+    --achievement-middle: #ff6884;
+    --achievement-bottom: #d92f57;
+    --achievement-outline: #8e2840;
+  }
+
+  @keyframes overflow-marquee-pan {
+    0%, 28.8% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+
+    82.8%, 90% {
+      transform: translateX(calc(var(--marquee-distance) - 1rem));
+      opacity: 1;
+    }
+
+    95% {
+      transform: translateX(calc(var(--marquee-distance) - 1rem));
+      opacity: 0;
+    }
+
+    95.01%, 97% {
+      transform: translateX(0);
+      opacity: 0;
+    }
+
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes overflow-marquee-edges {
+    0%, 26.8% {
+      --marquee-edge: 0px;
+    }
+
+    30.8%, 90% {
+      --marquee-edge: 1rem;
+    }
+
+    95%, 100% {
+      --marquee-edge: 0px;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .overflow-marquee[data-overflowing="true"] .overflow-marquee__text {
+      animation: none;
+    }
+
+    .overflow-marquee[data-overflowing="true"] {
+      animation: none;
+      --marquee-edge: 0px;
+    }
+  }
+}
