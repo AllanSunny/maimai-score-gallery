@@ -1,0 +1,14 @@
+src/css/components.css
+  h_278fafc5c28027 65
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.23",
+  "base_commit_sha": "a81e8b8504075cc5f9b665ad1cba98eb99315543",
+  "prompts": {},
+  "humans": {
+    "h_278fafc5c28027": {
+      "author": "Allan Sun <allansun@live.com>"
+    }
+  }
+}
