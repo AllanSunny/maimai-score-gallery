@@ -1,0 +1,38 @@
+src/utils/chart-level.ts
+  s_6d06bd4898dc7f::t_af2eee1ef6cd39 1-3
+test/src/utils/rating.test.mjs
+  s_6d06bd4898dc7f::t_d5c9f7211280db 33-40
+  s_6d06bd4898dc7f::t_14c63b0b482e86 1-32,41-47
+src/utils/rating.ts
+  s_6d06bd4898dc7f::t_d5c9f7211280db 6
+  s_6d06bd4898dc7f::t_14c63b0b482e86 1-5,7-47
+test/src/utils/chart-level.test.mjs
+  s_6d06bd4898dc7f::t_af2eee1ef6cd39 1-15
+src/pages/ChartDetailPage.tsx
+  h_278fafc5c28027 1,75-83,86,91,97,110
+  s_6d06bd4898dc7f::t_0dcd111beb4ae2 12,37-38,84-85,87-90,92-93
+  s_6d06bd4898dc7f::t_af2eee1ef6cd39 11,94
+  s_6d06bd4898dc7f::t_d5c9f7211280db 36
+  s_6d06bd4898dc7f::t_be71b18e865ca2 95
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.23",
+  "base_commit_sha": "8b2dd9989a7117ed102abad3bc8566c0a9285bca",
+  "prompts": {},
+  "humans": {
+    "h_278fafc5c28027": {
+      "author": "Allan Sun <allansun@live.com>"
+    }
+  },
+  "sessions": {
+    "s_6d06bd4898dc7f": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019faca2-0a30-75f3-8a51-06f8e9067195",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Allan Sun <allansun@live.com>"
+    }
+  }
+}
