@@ -123,7 +123,7 @@
   height: 7.5%;
   padding: 0 4%;
   font-weight: 600;
-  font-size: 6.2cqw;
+  font-size: 6cqw;
   text-shadow: 0 0.06em 0.08em rgb(0 0 0 / 45%);
 }
 
@@ -169,16 +169,16 @@
 
 .song-detail-frame__combo,
 .song-detail-frame__sync {
-  top: 87.3%;
-  width: 20.3%;
+  top: 87.1%;
+  width: 20.8%;
 }
 
 .song-detail-frame__combo {
-  left: 63.1%;
+  left: 62.9%;
 }
 
 .song-detail-frame__sync {
-  left: 80.3%;
+  left: 80.1%;
 }
 
 .song-detail-frame__artist {
