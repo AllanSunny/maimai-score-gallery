@@ -40,30 +40,32 @@
   }
 
   .achievement-value {
-    --achievement-top: #fffbd0;
-    --achievement-middle: #ffe83d;
-    --achievement-bottom: #eda800;
-    --achievement-outline: #8a6100;
+    --achievement-top: #fffeea;
+    --achievement-middle: #fff75f;
+    --achievement-bottom: #ff600a;
+    --achievement-outline: #d34500;
     --text-stroke-color: var(--achievement-outline);
     --text-stroke-width: 0.03em;
 
     background: linear-gradient(
       to bottom,
       var(--achievement-top),
-      var(--achievement-middle) 45%,
+      var(--achievement-middle) 42%,
       var(--achievement-bottom)
     );
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
     -webkit-text-fill-color: transparent;
+    letter-spacing: 0.024em;
+    filter: drop-shadow(0 0.06em 0 var(--color-darkest));
   }
 
   .achievement-value--below-s {
-    --achievement-top: #fff1ed;
-    --achievement-middle: #ff6884;
-    --achievement-bottom: #da4266;
-    --achievement-outline: #8e2840;
+    --achievement-top: #fffdf0;
+    --achievement-middle: #ffceae;
+    --achievement-bottom: #ff0b00;
+    --achievement-outline: #aa001f;
   }
 
   @keyframes overflow-marquee-pan {

@@ -97,7 +97,12 @@ export function SongDetailFrame({
       </div>
 
       {achievement != null && (
-        <div className="song-detail-frame__achievement">
+        <div
+          className={[
+            "song-detail-frame__achievement achievement-value text-stroke",
+            achievement < 97 && "achievement-value--below-s",
+          ].filter(Boolean).join(" ")}
+        >
           {`${achievement.toFixed(4)}%`}
         </div>
       )}
