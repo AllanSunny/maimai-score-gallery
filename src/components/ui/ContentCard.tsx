@@ -10,7 +10,7 @@ interface ContentCardProps {
 }
 
 const variantClasses: Record<ContentCardVariant, string> = {
-  primary: "rounded-3xl border-2 p-6 sm:p-8 shadow-[0_0px_10px_var(--color-darkest)]",
+  primary: "rounded-3xl border-2 p-4 sm:p-8 shadow-[0_0px_10px_var(--color-darkest)]",
   secondary: "overflow-hidden rounded-2xl border shadow-[0_0px_5px_var(--color-primary)]",
 };
 

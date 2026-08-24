@@ -61,7 +61,7 @@ export function ChartDetailPage({ chartId }: ChartDetailPageProps) {
           <ContentCard accentColor={accentColor}>
             <div className={"flex min-w-0 flex-col"}>
               <h1 className={"flex min-w-0 text-lightest text-stroke [--text-stroke-color:var(--color-primary)]"}>
-                <OverflowMarquee className="w-full px-1 text-[1.7rem] sm:text-[2rem] lg:text-[2.5rem]">
+                <OverflowMarquee className="w-full px-1 font-semibold text-[1.8rem] sm:text-[2rem] lg:text-[2.5rem]">
                   {metadata.titles.canonical}
                 </OverflowMarquee>
               </h1>
@@ -70,11 +70,11 @@ export function ChartDetailPage({ chartId }: ChartDetailPageProps) {
                   {alternateTitles.join(" · ")}
                 </div>
               )}
-              <div className={"ml-1 mt-1 text-[1.2rem] text-dark"}>
+              <div className={"ml-1 mt-1 text-[1rem] sm:text-[1.2rem] text-dark"}>
                 {metadata.artist}
               </div>
 
-              <div className={"ml-1 mt-3 text-[1.5rem]"}>
+              <div className={"ml-1 mt-3 text-[1.2rem] sm:text-[1.5rem]"}>
                 <span
                   className="text-darker text-stroke"
                   style={{
@@ -85,7 +85,7 @@ export function ChartDetailPage({ chartId }: ChartDetailPageProps) {
                 </span>
                 {playRating != null && (
                   <span
-                    className="text-darker text-stroke"
+                    className="text-darker text-stroke whitespace-nowrap"
                     style={{
                       "--text-stroke-color": `var(--color-${accentColor})`,
                     } as CSSProperties}
@@ -96,19 +96,19 @@ export function ChartDetailPage({ chartId }: ChartDetailPageProps) {
               </div>
 
               <div className={"mt-8"}>
-                <p className={"ml-1 sm:text-[1.25rem] lg:text-[1.8rem] text-darkest"}>Achievement</p>
+                <p className={"ml-1 text-[1rem] sm:text-[1.25rem] text-darkest"}>Achievement</p>
                 {achievement != null && (
-                  <div className={"flex flex-row gap-6 items-center"}>
+                  <div className={"flex flex-row gap-4 sm:gap-6 items-center"}>
                     <span
                       className={[
-                        "flex lg:text-[2.5rem] achievement-value text-stroke",
+                        "flex text-[1.6rem] sm:text-[2rem] lg:text-[2.3rem] achievement-value text-stroke font-bold",
                         isBelowS && "achievement-value--below-s",
                       ].filter(Boolean).join(" ")}
                     >
                       {`${achievement.toFixed(4)}%`}
                     </span>
                     <RankDisplay
-                      className="flex h-8"
+                      className="flex h-6 lg:h-7"
                       status={achievement == null ? null : achievementRank(achievement)}
                       size="large"
                     />
@@ -116,9 +116,9 @@ export function ChartDetailPage({ chartId }: ChartDetailPageProps) {
                 )}
                 {achievement == null && (<div className={"ml-1 mt-2 text-dark"}>{'—'}</div>)}
 
-                <div className={"ml-1 mt-2 flex flex-row gap-6"}>
-                  <ComboDisplay className="h-10" status={bestCombo} size="large" />
-                  <SyncDisplay className="h-10" status={bestSync} size="large" />
+                <div className={"ml-1 flex flex-row gap-6"}>
+                  <ComboDisplay className="h-8 sm:h-9 lg:h-10" status={bestCombo} size="large" />
+                  <SyncDisplay className="h-8 sm:h-9 lg:h-10" status={bestSync} size="large" />
                 </div>
               </div>
             </div>
