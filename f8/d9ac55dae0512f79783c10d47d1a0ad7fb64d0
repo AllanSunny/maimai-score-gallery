@@ -1,0 +1,18 @@
+src/pages/ChartDetailPage.tsx
+  h_278fafc5c28027 45,47,62
+src/components/song/SongDetailFrame.tsx
+  h_278fafc5c28027 92,95
+src/components/song/SongDetailFrame.css
+  h_278fafc5c28027 22-24,50-51,55,64-65,70,120-122,126,133-134,141,164-165,172-173,177,181,185-187,191
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.24",
+  "base_commit_sha": "f8d9ac55dae0512f79783c10d47d1a0ad7fb64d0",
+  "prompts": {},
+  "humans": {
+    "h_278fafc5c28027": {
+      "author": "Allan Sun <allansun@live.com>"
+    }
+  }
+}
