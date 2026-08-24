@@ -62,6 +62,12 @@
   }
 }
 
+@utility text-stroke {
+  -webkit-text-stroke: var(--text-stroke-width, 0.08em)
+    var(--text-stroke-color, currentColor);
+  paint-order: stroke fill;
+}
+
 @layer components {
   .overflow-marquee {
     position: relative;
@@ -151,9 +157,8 @@
 }
 
 @theme {
-  /*--color-lightest: #faf8f4;*/
   --color-lightest: #e3f6ff;
-  --color-light: #c1edff;
+  --color-light: #b0edff;
   --color-primary: #5bcbfb;
   --color-dark: #0e5078;
   --color-darker: #0e2939;
@@ -220,6 +225,8 @@ body {
     --achievement-middle: #ffe83d;
     --achievement-bottom: #eda800;
     --achievement-outline: #8a6100;
+    --text-stroke-color: var(--achievement-outline);
+    --text-stroke-width: 0.03em;
 
     background: linear-gradient(
       to bottom,
@@ -231,8 +238,6 @@ body {
     -webkit-background-clip: text;
     color: transparent;
     -webkit-text-fill-color: transparent;
-    -webkit-text-stroke: 0.03em var(--achievement-outline);
-    paint-order: stroke fill;
   }
 
   .achievement-value--below-s {

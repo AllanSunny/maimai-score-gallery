@@ -49,7 +49,7 @@ export function ChartDetailPage({ chartId }: ChartDetailPageProps) {
         {metadata && chartMetadata && <div className={"mt-3 min-w-0"}>
           <ContentCard accentColor={accentColor}>
             <div className={"flex min-w-0 flex-col"}>
-              <div className={"flex min-w-0"} style={{ color: `var(--color-${accentColor})`}}>
+              <div className={"flex min-w-0 text-lightest text-stroke [--text-stroke-color:var(--color-primary)]"}>
                 <OverflowMarquee className="w-full px-1 text-[2.5rem]">
                   {metadata.titles.canonical}
                 </OverflowMarquee>
@@ -59,7 +59,7 @@ export function ChartDetailPage({ chartId }: ChartDetailPageProps) {
                 {achievement != null && (
                   <span
                     className={[
-                      "text-[2.5rem] achievement-value",
+                      "text-[2.5rem] achievement-value text-stroke",
                       isBelowS && "achievement-value--below-s",
                     ].filter(Boolean).join(" ")}
                   >
@@ -74,9 +74,17 @@ export function ChartDetailPage({ chartId }: ChartDetailPageProps) {
       </section>
 
       <section className="mt-12">
-        <h2 className="text-xl font-semibold tracking-tight">Score progression</h2>
-        <div className="mt-5 overflow-hidden rounded-2xl border border-line bg-white/60">
-          {history.map((score) => <div key={score.id} className="flex justify-between border-b border-line p-5 text-sm last:border-0"><time className="text-lightest">{formatEasternDateTime(score.playedAt)}</time><span className="text-right"><span className="block font-semibold tabular-nums">{score.achievement.toFixed(4)}%</span><span className="mt-1 block text-xs font-semibold text-lightest">{achievementRank(score.achievement)}</span></span></div>)}
+        <h2 className="text-xl font-semibold tracking-tight">Score History</h2>
+        <div className="mt-5 overflow-hidden rounded-2xl border shadow-[0_0px_5px_var(--color-primary)]" style={{ borderColor: `var(--color-${accentColor})`, backgroundColor: `color-mix(
+          in srgb,
+          color-mix(
+            in srgb,
+            var(--color-${accentColor}) 30%,
+            var(--color-darkest)
+          ) 40%,
+          transparent
+        )` }}>
+          {history.map((score) => <div key={score.id} className="flex justify-between border-b p-5 text-sm last:border-0" style={{ borderColor: `var(--color-${accentColor})` }}><time className="text-lightest">{formatEasternDateTime(score.playedAt)}</time><span className="text-right"><span className="block font-semibold tabular-nums">{score.achievement.toFixed(4)}%</span><span className="mt-1 block text-xs font-semibold text-lightest">{achievementRank(score.achievement)}</span></span></div>)}
           {!history.length && <p className="p-10 text-center text-sm text-lightest">No plays recorded for this chart yet.</p>}
         </div>
       </section>

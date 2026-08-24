@@ -15,7 +15,7 @@ const links = [
 export function SiteLayout({ children, route }: SiteLayoutProps) {
   return (
     <div className="mx-auto flex min-h-screen w-full max-w-5xl flex-col px-5 sm:px-8">
-      <header className="flex h-20 items-center justify-between border-b border-light">
+      <header className="flex h-20 items-center justify-between border-b border-lightest">
         <a
           href="#/"
           aria-label="Home"
@@ -41,7 +41,7 @@ export function SiteLayout({ children, route }: SiteLayoutProps) {
 
       <main className="flex-1 py-8 sm:py-12">{children}</main>
 
-      <footer className="flex flex-col gap-2 border-t border-light py-8 text-xs sm:flex-row sm:justify-between">
+      <footer className="flex flex-col gap-2 border-t border-lightest py-8 text-xs sm:flex-row sm:justify-between">
         <span>Unofficial fan project—not affiliated with SEGA.</span>
         <a className="hover:text-ink" href="https://github.com/AllanSunny/maimai-score-gallery">
           View source on GitHub ↗
