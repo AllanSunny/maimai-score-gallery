@@ -1,0 +1,14 @@
+src/components/song/SongDetailFrame.css
+  h_278fafc5c28027 164
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.24",
+  "base_commit_sha": "ed67570dc13ef87e2eede1d910e3209e3b9bd3a3",
+  "prompts": {},
+  "humans": {
+    "h_278fafc5c28027": {
+      "author": "Allan Sun <allansun@live.com>"
+    }
+  }
+}
