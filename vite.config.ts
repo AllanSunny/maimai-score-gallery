@@ -19,15 +19,19 @@ export default defineConfig(({ mode }) => {
       tailwindcss(),
       VitePWA({
         registerType: "autoUpdate",
-        injectRegister: false,
+        injectRegister: "auto",
         manifest: false,
         workbox: {
           cleanupOutdatedCaches: true,
-          globPatterns: ["**/*.{js,css,html,ico,png,svg,webp,woff,woff2,otf}"],
+          globPatterns: ["**/*.{js,css,ico,png,svg,webp,woff,woff2,otf}"],
           maximumFileSizeToCacheInBytes: 4 * 1024 * 1024,
-          runtimeCaching: jacketBaseUrl ? [{
+          navigateFallback: null,
+          runtimeCaching: [{
+            urlPattern: ({ request }) => request.mode === "navigate",
+            handler: "NetworkOnly" as const,
+          }, ...(jacketBaseUrl ? [{
             urlPattern: new RegExp(`^${escapedPattern(jacketBaseUrl)}/`),
-            handler: "CacheFirst",
+            handler: "CacheFirst" as const,
             options: {
               cacheName: "maimai-jackets",
               cacheableResponse: { statuses: [0, 200] },
@@ -37,7 +41,7 @@ export default defineConfig(({ mode }) => {
                 purgeOnQuotaError: true,
               },
             },
-          }] : [],
+          }] : [])],
         },
       }),
     ],
