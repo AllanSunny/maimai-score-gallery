@@ -1,0 +1,26 @@
+vite.config.ts
+  s_6d06bd4898dc7f::t_0d7d9dafc6ba73 22,31
+  s_6d06bd4898dc7f::t_0d5bd11234cb9b 34,44
+  s_6d06bd4898dc7f::t_2a1376ad4430a1 26,28-30,32
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.24",
+  "base_commit_sha": "a5f03f1e0115b28555df6e4bc820008908081572",
+  "prompts": {},
+  "humans": {
+    "h_278fafc5c28027": {
+      "author": "Allan Sun <allansun@live.com>"
+    }
+  },
+  "sessions": {
+    "s_6d06bd4898dc7f": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019faca2-0a30-75f3-8a51-06f8e9067195",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Allan Sun <allansun@live.com>"
+    }
+  }
+}
