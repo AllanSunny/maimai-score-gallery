@@ -19,7 +19,7 @@ export default defineConfig(({ mode }) => {
       tailwindcss(),
       VitePWA({
         registerType: "autoUpdate",
-        injectRegister: "auto",
+        injectRegister: false,
         manifest: false,
         workbox: {
           cleanupOutdatedCaches: true,
@@ -42,5 +42,14 @@ export default defineConfig(({ mode }) => {
       }),
     ],
     base: "/maimai-score-gallery/",
+    build: {
+      rollupOptions: {
+        output: {
+          assetFileNames: (assetInfo) => assetInfo.name === "favicon.png"
+            ? "assets/favicon.png"
+            : "assets/[name]-[hash][extname]",
+        },
+      },
+    },
   };
 });
