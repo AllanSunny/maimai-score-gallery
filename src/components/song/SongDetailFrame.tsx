@@ -8,10 +8,6 @@ import basicStdFrame from "../../assets/jacket_frames/std/basic.png";
 import expertStdFrame from "../../assets/jacket_frames/std/expert.png";
 import masterStdFrame from "../../assets/jacket_frames/std/master.png";
 import remasterStdFrame from "../../assets/jacket_frames/std/remaster.png";
-import apIcon from "../../assets/achievements/small/combo/ap.png";
-import apPlusIcon from "../../assets/achievements/small/combo/ap_plus.png";
-import fcIcon from "../../assets/achievements/small/combo/fc.png";
-import fcPlusIcon from "../../assets/achievements/small/combo/fc_plus.png";
 import aRankIcon from "../../assets/achievements/small/rank/a.png";
 import aaRankIcon from "../../assets/achievements/small/rank/aa.png";
 import aaaRankIcon from "../../assets/achievements/small/rank/aaa.png";
@@ -22,15 +18,12 @@ import ssRankIcon from "../../assets/achievements/small/rank/ss.png";
 import ssPlusRankIcon from "../../assets/achievements/small/rank/ss_plus.png";
 import sssRankIcon from "../../assets/achievements/small/rank/sss.png";
 import sssPlusRankIcon from "../../assets/achievements/small/rank/sss_plus.png";
-import fdxIcon from "../../assets/achievements/small/sync/fdx.png";
-import fdxPlusIcon from "../../assets/achievements/small/sync/fdx_plus.png";
-import fsIcon from "../../assets/achievements/small/sync/fs.png";
-import fsPlusIcon from "../../assets/achievements/small/sync/fs_plus.png";
-import syncIcon from "../../assets/achievements/small/sync/sync.png";
 import { achievementRank } from "../../utils/rank";
 import type { AchievementRank } from "../../utils/rank";
 import type { ChartType, ComboStatus, Difficulty, SyncStatus } from "../../utils/types";
 import { OverflowMarquee } from "../ui/OverflowMarquee";
+import { ComboDisplay } from "../score/ComboDisplay";
+import { SyncDisplay } from "../score/SyncDisplay";
 import "./SongDetailFrame.css";
 
 const frames: Record<ChartType, Record<Difficulty, string>> = {
@@ -74,36 +67,6 @@ const rankIcons: Record<AchievementRank, string> = {
   "SS+": ssPlusRankIcon,
   SSS: sssRankIcon,
   "SSS+": sssPlusRankIcon,
-};
-
-const comboIcons: Partial<Record<ComboStatus, string>> = {
-  FC: fcIcon,
-  "FC+": fcPlusIcon,
-  AP: apIcon,
-  "AP+": apPlusIcon,
-};
-
-const comboLabels: Partial<Record<ComboStatus, string>> = {
-  FC: "Full combo",
-  "FC+": "Full combo plus",
-  AP: "All perfect",
-  "AP+": "All perfect plus",
-};
-
-const syncIcons: Record<SyncStatus, string> = {
-  Sync: syncIcon,
-  FS: fsIcon,
-  "FS+": fsPlusIcon,
-  FDX: fdxIcon,
-  "FDX+": fdxPlusIcon,
-};
-
-const syncLabels: Record<SyncStatus, string> = {
-  Sync: "Sync play",
-  FS: "Full sync",
-  "FS+": "Full sync plus",
-  FDX: "Full sync DX",
-  "FDX+": "Full sync DX plus",
 };
 
 function fittedTextSize(text: string, normal: number, medium: number, small: number) {
@@ -180,12 +143,8 @@ export function SongDetailFrame({
           alt={`${achievementRank(achievement)} rank`}
         />
       )}
-      {combo && comboIcons[combo] && (
-        <img className="song-detail-frame__combo" src={comboIcons[combo]} alt={comboLabels[combo]} />
-      )}
-      {sync && (
-        <img className="song-detail-frame__sync" src={syncIcons[sync]} alt={syncLabels[sync]} />
-      )}
+      <ComboDisplay className="song-detail-frame__combo" status={combo} size="small" />
+      <SyncDisplay className="song-detail-frame__sync" status={sync} size="small" />
     </article>
   );
 }

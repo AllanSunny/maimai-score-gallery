@@ -1,10 +1,12 @@
 import { chartSummaries, scores } from "../utils/scores";
 import { findCatalogChart } from "../utils/catalog";
 import { SongDetailFrame } from "../components/song/SongDetailFrame";
-import { formatEasternDateTime } from "../utils/date-time";
-import { achievementRank } from "../utils/rank";
 import { ContentCard } from "../components/ui/ContentCard";
 import { OverflowMarquee } from "../components/ui/OverflowMarquee";
+import { ScoreHistory } from "../components/score/ScoreHistory";
+import { displayedAlternateTitles } from "../utils/song-titles";
+import { ComboDisplay } from "../components/score/ComboDisplay";
+import { SyncDisplay } from "../components/score/SyncDisplay";
 
 interface ChartDetailPageProps {
   chartId: string;
@@ -16,9 +18,10 @@ export function ChartDetailPage({ chartId }: ChartDetailPageProps) {
   const chartMetadata = catalogEntry?.chart;
   const chartSummary = chartSummaries[chartId];
   const achievement = chartSummary?.bestAchievement.value;
-  const bestCombo = chartSummary?.bestCombo.status;
+  const bestCombo = chartSummary?.bestCombo.status ?? null;
   const bestSync = chartSummary?.bestSync?.status ?? null;
   const isBelowS = achievement != null && achievement < 97;
+  const alternateTitles = metadata ? displayedAlternateTitles(metadata.titles) : [];
 
   const history = scores
     .filter((score) => score.chartId === chartId)
@@ -46,47 +49,50 @@ export function ChartDetailPage({ chartId }: ChartDetailPageProps) {
           />
         )}
 
-        {metadata && chartMetadata && <div className={"mt-3 min-w-0"}>
+        {metadata && chartMetadata && <div className={"mt-3 min-w-0 self-center"}>
           <ContentCard accentColor={accentColor}>
             <div className={"flex min-w-0 flex-col"}>
-              <div className={"flex min-w-0 text-lightest text-stroke [--text-stroke-color:var(--color-primary)]"}>
-                <OverflowMarquee className="w-full px-1 text-[2.5rem]">
+              <h1 className={"flex min-w-0 text-lightest text-stroke [--text-stroke-color:var(--color-primary)]"}>
+                <OverflowMarquee className="w-full px-1 text-[1.7rem] sm:text-[2rem] lg:text-[2.5rem]">
                   {metadata.titles.canonical}
                 </OverflowMarquee>
+              </h1>
+              {alternateTitles.length > 0 && (
+                <div className="ml-1 text-[1rem] text-darkest/50">
+                  {alternateTitles.join(" · ")}
+                </div>
+              )}
+              <div className={"ml-1 mt-1 text-[1.2rem] text-dark"}>
+                {metadata.artist}
               </div>
-              <div className={""}>
-                <p className={"ml-1 text-[1.5rem] text-dark"}>Achievement</p>
+
+              <div className={"mt-8"}>
+                <p className={"ml-1 sm:text-[1.25rem] lg:text-[1.7rem] text-darkest"}>Achievement</p>
                 {achievement != null && (
                   <span
                     className={[
-                      "text-[2.5rem] achievement-value text-stroke",
+                      "lg:text-[2.5rem] achievement-value text-stroke",
                       isBelowS && "achievement-value--below-s",
                     ].filter(Boolean).join(" ")}
                   >
-                  {`${achievement.toFixed(4)}%`}
-                </span>
+                    {`${achievement.toFixed(4)}%`}
+                  </span>
                 )}
+                {achievement == null && (<div className={"ml-1 mt-2 text-dark"}>{'—'}</div>)}
+
+                <div className={"ml-1 flex flex-row gap-3"}>
+                  <ComboDisplay className="h-10" status={bestCombo} size="large" />
+                  <SyncDisplay className="h-10" status={bestSync} size="large" />
+                </div>
               </div>
             </div>
-
           </ContentCard>
         </div>}
       </section>
 
       <section className="mt-12">
-        <h2 className="text-xl font-semibold tracking-tight">Score History</h2>
-        <div className="mt-5 overflow-hidden rounded-2xl border shadow-[0_0px_5px_var(--color-primary)]" style={{ borderColor: `var(--color-${accentColor})`, backgroundColor: `color-mix(
-          in srgb,
-          color-mix(
-            in srgb,
-            var(--color-${accentColor}) 30%,
-            var(--color-darkest)
-          ) 40%,
-          transparent
-        )` }}>
-          {history.map((score) => <div key={score.id} className="flex justify-between border-b p-5 text-sm last:border-0" style={{ borderColor: `var(--color-${accentColor})` }}><time className="text-lightest">{formatEasternDateTime(score.playedAt)}</time><span className="text-right"><span className="block font-semibold tabular-nums">{score.achievement.toFixed(4)}%</span><span className="mt-1 block text-xs font-semibold text-lightest">{achievementRank(score.achievement)}</span></span></div>)}
-          {!history.length && <p className="p-10 text-center text-sm text-lightest">No plays recorded for this chart yet.</p>}
-        </div>
+        <h2 className="text-3xl font-semibold tracking-tight">Score History</h2>
+        <ScoreHistory scores={history} accentColor={accentColor} />
       </section>
     </div>
   );
