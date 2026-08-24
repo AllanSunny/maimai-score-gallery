@@ -1,0 +1,26 @@
+test/utils/chart-level.test.mjs
+  s_6d06bd4898dc7f::t_b23302e92c8798 3
+test/utils/rating.test.mjs
+  s_6d06bd4898dc7f::t_b23302e92c8798 3
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.23",
+  "base_commit_sha": "3908ad8e48d14595697bf30f5a077290eacba508",
+  "prompts": {},
+  "humans": {
+    "h_278fafc5c28027": {
+      "author": "Allan Sun <allansun@live.com>"
+    }
+  },
+  "sessions": {
+    "s_6d06bd4898dc7f": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019faca2-0a30-75f3-8a51-06f8e9067195",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Allan Sun <allansun@live.com>"
+    }
+  }
+}
