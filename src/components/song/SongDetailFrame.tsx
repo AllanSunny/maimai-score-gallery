@@ -8,22 +8,12 @@ import basicStdFrame from "../../assets/jacket_frames/std/basic.png";
 import expertStdFrame from "../../assets/jacket_frames/std/expert.png";
 import masterStdFrame from "../../assets/jacket_frames/std/master.png";
 import remasterStdFrame from "../../assets/jacket_frames/std/remaster.png";
-import aRankIcon from "../../assets/achievements/small/rank/a.png";
-import aaRankIcon from "../../assets/achievements/small/rank/aa.png";
-import aaaRankIcon from "../../assets/achievements/small/rank/aaa.png";
-import clearRankIcon from "../../assets/achievements/small/rank/clear.png";
-import sRankIcon from "../../assets/achievements/small/rank/s.png";
-import sPlusRankIcon from "../../assets/achievements/small/rank/s_plus.png";
-import ssRankIcon from "../../assets/achievements/small/rank/ss.png";
-import ssPlusRankIcon from "../../assets/achievements/small/rank/ss_plus.png";
-import sssRankIcon from "../../assets/achievements/small/rank/sss.png";
-import sssPlusRankIcon from "../../assets/achievements/small/rank/sss_plus.png";
 import { achievementRank } from "../../utils/rank";
-import type { AchievementRank } from "../../utils/rank";
 import type { ChartType, ComboStatus, Difficulty, SyncStatus } from "../../utils/types";
 import { OverflowMarquee } from "../ui/OverflowMarquee";
 import { ComboDisplay } from "../score/ComboDisplay";
 import { SyncDisplay } from "../score/SyncDisplay";
+import { RankDisplay } from "../score/RankDisplay";
 import "./SongDetailFrame.css";
 
 const frames: Record<ChartType, Record<Difficulty, string>> = {
@@ -55,19 +45,6 @@ interface SongDetailFrameProps {
   sync?: SyncStatus | null;
   className?: string;
 }
-
-const rankIcons: Record<AchievementRank, string> = {
-  Failed: clearRankIcon,
-  A: aRankIcon,
-  AA: aaRankIcon,
-  AAA: aaaRankIcon,
-  S: sRankIcon,
-  "S+": sPlusRankIcon,
-  SS: ssRankIcon,
-  "SS+": ssPlusRankIcon,
-  SSS: sssRankIcon,
-  "SSS+": sssPlusRankIcon,
-};
 
 function fittedTextSize(text: string, normal: number, medium: number, small: number) {
   if (text.length > 28) return `${small}cqw`;
@@ -136,13 +113,11 @@ export function SongDetailFrame({
           {`${achievement.toFixed(4)}%`}
         </div>
       )}
-      {achievement != null && (
-        <img
-          className="song-detail-frame__rank"
-          src={rankIcons[achievementRank(achievement)]}
-          alt={`${achievementRank(achievement)} rank`}
-        />
-      )}
+      <RankDisplay
+        className="song-detail-frame__rank"
+        status={achievement == null ? null : achievementRank(achievement)}
+        size="small"
+      />
       <ComboDisplay className="song-detail-frame__combo" status={combo} size="small" />
       <SyncDisplay className="song-detail-frame__sync" status={sync} size="small" />
     </article>

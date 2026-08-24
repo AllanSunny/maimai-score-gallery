@@ -10,6 +10,8 @@ import { ComboDisplay } from "../components/score/ComboDisplay";
 import { SyncDisplay } from "../components/score/SyncDisplay";
 import { displayedChartLevel } from "../utils/chart-level";
 import { calculatePlayRating } from "../utils/rating";
+import { RankDisplay } from "../components/score/RankDisplay";
+import { achievementRank } from "../utils/rank";
 
 interface ChartDetailPageProps {
   chartId: string;
@@ -96,18 +98,25 @@ export function ChartDetailPage({ chartId }: ChartDetailPageProps) {
               <div className={"mt-8"}>
                 <p className={"ml-1 sm:text-[1.25rem] lg:text-[1.8rem] text-darkest"}>Achievement</p>
                 {achievement != null && (
-                  <span
-                    className={[
-                      "lg:text-[2.5rem] achievement-value text-stroke",
-                      isBelowS && "achievement-value--below-s",
-                    ].filter(Boolean).join(" ")}
-                  >
-                    {`${achievement.toFixed(4)}%`}
-                  </span>
+                  <div className={"flex flex-row gap-6 items-center"}>
+                    <span
+                      className={[
+                        "flex lg:text-[2.5rem] achievement-value text-stroke",
+                        isBelowS && "achievement-value--below-s",
+                      ].filter(Boolean).join(" ")}
+                    >
+                      {`${achievement.toFixed(4)}%`}
+                    </span>
+                    <RankDisplay
+                      className="flex h-8"
+                      status={achievement == null ? null : achievementRank(achievement)}
+                      size="large"
+                    />
+                  </div>
                 )}
                 {achievement == null && (<div className={"ml-1 mt-2 text-dark"}>{'—'}</div>)}
 
-                <div className={"ml-1 flex flex-row gap-8"}>
+                <div className={"ml-1 mt-2 flex flex-row gap-6"}>
                   <ComboDisplay className="h-10" status={bestCombo} size="large" />
                   <SyncDisplay className="h-10" status={bestSync} size="large" />
                 </div>

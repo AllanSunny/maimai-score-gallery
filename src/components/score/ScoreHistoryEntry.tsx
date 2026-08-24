@@ -3,6 +3,7 @@ import { achievementRank } from "../../utils/rank";
 import type { JudgmentSet, ScoreRecord } from "../../utils/types";
 import { ComboDisplay } from "./ComboDisplay";
 import { SyncDisplay } from "./SyncDisplay";
+import { RankDisplay } from "./RankDisplay";
 
 interface ScoreHistoryEntryProps {
   score: ScoreRecord;
@@ -39,7 +40,11 @@ export function ScoreHistoryEntry({ score, accentColor }: ScoreHistoryEntryProps
         </div>
         <span className="shrink-0 text-right">
           <span className="block font-semibold tabular-nums">{score.achievement.toFixed(4)}%</span>
-          <span className="mt-1 block text-xs font-semibold text-lightest">{achievementRank(score.achievement)}</span>
+          <RankDisplay
+            className="ml-auto mt-1 h-5 max-w-full object-contain object-right"
+            status={achievementRank(score.achievement)}
+            size="large"
+          />
         </span>
       </summary>
 
