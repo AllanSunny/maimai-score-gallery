@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { displayedChartLevel } from "../../../src/utils/chart-level.ts";
+import { displayedChartLevel } from "../../src/utils/chart-level.ts";
 
 test("prefers the exact chart constant", () => {
   assert.equal(displayedChartLevel("13+", 13.8), "13.8");

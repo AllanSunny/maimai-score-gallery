@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { calculatePlayRating } from "../../../src/utils/rating.ts";
+import { calculatePlayRating } from "../../src/utils/rating.ts";
 
 test("calculates an SSS+ play using the CiRCLE PLUS coefficient", () => {
   assert.equal(calculatePlayRating({ achievement: 100.5, chartConstant: 13, combo: "FC+" }), 292);
