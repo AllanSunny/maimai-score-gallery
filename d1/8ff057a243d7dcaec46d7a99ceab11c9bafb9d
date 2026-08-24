@@ -1,0 +1,18 @@
+src/css/utilities.css
+  h_278fafc5c28027 6-10
+src/pages/ChartDetailPage.tsx
+  h_278fafc5c28027 64,73,77,88,99,101,104,111,119-121
+src/components/ui/ContentCard.tsx
+  h_278fafc5c28027 13
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.24",
+  "base_commit_sha": "d18ff057a243d7dcaec46d7a99ceab11c9bafb9d",
+  "prompts": {},
+  "humans": {
+    "h_278fafc5c28027": {
+      "author": "Allan Sun <allansun@live.com>"
+    }
+  }
+}
