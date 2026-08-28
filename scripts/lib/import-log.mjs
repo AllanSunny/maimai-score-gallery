@@ -168,10 +168,10 @@ export async function createImportLog() {
       });
     },
 
-    async markDuplicate(rowNumber, duplicate, sourceHash) {
-      const duplicateDescription = duplicate.driveFileId
+    async markDuplicate(rowNumber, duplicate, sourceHash, reason = null) {
+      const duplicateDescription = reason ?? (duplicate.driveFileId
         ? `Duplicate of Drive file ${duplicate.driveFileId}`
-        : `Duplicate of existing spreadsheet row ${duplicate.spreadsheetRow}`;
+        : `Duplicate of existing spreadsheet row ${duplicate.spreadsheetRow}`);
       await sheets.spreadsheets.values.update({
         spreadsheetId,
         range: `${quotedSheetName()}!C${rowNumber}:J${rowNumber}`,

@@ -1,6 +1,24 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { scoreFingerprint, sourceFingerprint } from "../../../scripts/lib/import-fingerprints.mjs";
+import {
+  normalizedCaptureTimestamp,
+  scoreFingerprint,
+  sourceFingerprint,
+} from "../../../scripts/lib/import-fingerprints.mjs";
+
+test("capture timestamps normalize equivalent UTC offsets to the same instant", () => {
+  assert.equal(
+    normalizedCaptureTimestamp("2026-08-15T12:35:20-04:00"),
+    normalizedCaptureTimestamp("2026-08-15T16:35:20Z"),
+  );
+});
+
+test("capture timestamps remain distinct when they differ by one second", () => {
+  assert.notEqual(
+    normalizedCaptureTimestamp("2026-08-15T16:35:20Z"),
+    normalizedCaptureTimestamp("2026-08-15T16:35:21Z"),
+  );
+});
 
 test("source fingerprint is stable and content-sensitive", () => {
   assert.equal(sourceFingerprint(Buffer.from("same")), sourceFingerprint(Buffer.from("same")));

@@ -3,7 +3,11 @@ import path from "node:path";
 import process from "node:process";
 import { selectCaptureTime } from "./lib/capture-time.mjs";
 import { createDriveImageStore } from "./lib/drive-images.mjs";
-import { scoreFingerprint, sourceFingerprint } from "./lib/import-fingerprints.mjs";
+import {
+  normalizedCaptureTimestamp,
+  scoreFingerprint,
+  sourceFingerprint,
+} from "./lib/import-fingerprints.mjs";
 import { createImportLog } from "./lib/import-log.mjs";
 import { createSerialQueue, mapConcurrent } from "./lib/import-concurrency.mjs";
 import { resolveLiveScoreReference } from "./lib/logged-score-reference.mjs";
@@ -126,6 +130,15 @@ async function main() {
       scoreFingerprint: fingerprint,
     }];
   }));
+  const existingScoresByCaptureTimestamp = new Map(existingScoreRows.map(({ rowNumber, score }) => {
+    const fingerprint = scoreFingerprint(score);
+    return [normalizedCaptureTimestamp(score.playedAt), {
+      canonicalTitle: score.songTitle,
+      captureTime: score.playedAt,
+      spreadsheetRow: rowNumber,
+      scoreFingerprint: fingerprint,
+    }];
+  }));
   const files = await drive.listIncoming();
   const results = [];
   let actionCount = 0;
@@ -201,6 +214,15 @@ async function main() {
           spreadsheetRow: result.spreadsheetRow,
           scoreFingerprint: fingerprint,
         });
+        existingScoresByCaptureTimestamp.set(
+          normalizedCaptureTimestamp(proposedScore.playedAt),
+          {
+            canonicalTitle: proposedScore.songTitle,
+            captureTime: proposedScore.playedAt,
+            spreadsheetRow: result.spreadsheetRow,
+            scoreFingerprint: fingerprint,
+          },
+        );
         await sheetWrite(() => reviewQueue.markRowImported(review.rowNumber, result.spreadsheetRow));
         result.status = "imported";
         console.log(
@@ -342,6 +364,35 @@ async function main() {
         if (reviewQueue.shouldRetry(initialReview)) {
           await sheetWrite(() => reviewQueue.markRetryStarted(initialReview.rowNumber));
         }
+        const listedCaptureTime = selectCaptureTime({ embedded: {}, driveFile: file, timeZone });
+        if (listedCaptureTime.source === "drive-image-metadata") {
+          const duplicate = existingScoresByCaptureTimestamp.get(
+            normalizedCaptureTimestamp(listedCaptureTime.capturedAt),
+          );
+          if (duplicate) {
+            result.captureTime = listedCaptureTime;
+            await sheetWrite(() => importLog.markDuplicate(
+              result.importLogRow,
+              duplicate,
+              "",
+              "duplicate capture timestamp",
+            ));
+            committed = true;
+            result.spreadsheetRow = duplicate.spreadsheetRow;
+            result.processedDriveFile = await serial(() => drive.moveToDuplicates(file, {
+              canonicalTitle: duplicate.canonicalTitle,
+              capturedAt: duplicate.captureTime,
+            }));
+            result.status = "duplicate";
+            await sheetWrite(() => reviewQueue.markImported(file.id, duplicate.spreadsheetRow));
+            console.log(
+              `  Duplicate capture timestamp for spreadsheet row ${duplicate.spreadsheetRow}; no download or OCR request made.`,
+            );
+            results.push(result);
+            await writeReport();
+            return;
+          }
+        }
       const original = await drive.download(file.id);
       const sourceHash = sourceFingerprint(original);
       result.sourceHash = sourceHash;
@@ -375,6 +426,33 @@ async function main() {
         }
       }
       result.captureTime = captureTime;
+      if (captureTime.source === "exif") {
+        const duplicate = existingScoresByCaptureTimestamp.get(
+          normalizedCaptureTimestamp(captureTime.capturedAt),
+        );
+        if (duplicate) {
+          await sheetWrite(() => importLog.markDuplicate(
+            result.importLogRow,
+            duplicate,
+            sourceHash,
+            "duplicate capture timestamp",
+          ));
+          committed = true;
+          result.spreadsheetRow = duplicate.spreadsheetRow;
+          result.processedDriveFile = await serial(() => drive.moveToDuplicates(file, {
+            canonicalTitle: duplicate.canonicalTitle,
+            capturedAt: duplicate.captureTime,
+          }));
+          result.status = "duplicate";
+          await sheetWrite(() => reviewQueue.markImported(file.id, duplicate.spreadsheetRow));
+          console.log(
+            `  Duplicate capture timestamp for spreadsheet row ${duplicate.spreadsheetRow}; no OCR request made.`,
+          );
+          results.push(result);
+          await writeReport();
+          return;
+        }
+      }
       const latest = await serial(() => importLog.latest(file.id));
       const review = await serial(() => reviewQueue.find(file.id));
       let rawOcr = manualScoreFromReview(review);
@@ -450,6 +528,15 @@ async function main() {
             spreadsheetRow,
             scoreFingerprint: fingerprint,
           });
+          existingScoresByCaptureTimestamp.set(
+            normalizedCaptureTimestamp(proposedScore.playedAt),
+            {
+              canonicalTitle: proposedScore.songTitle,
+              captureTime: proposedScore.playedAt,
+              spreadsheetRow,
+              scoreFingerprint: fingerprint,
+            },
+          );
           return { duplicate: null, spreadsheetRow };
         });
         result.spreadsheetRow = commit.spreadsheetRow;

@@ -4,6 +4,14 @@ export function sourceFingerprint(buffer) {
   return createHash("sha256").update(buffer).digest("hex");
 }
 
+export function normalizedCaptureTimestamp(value) {
+  const capturedAt = new Date(value);
+  if (Number.isNaN(capturedAt.getTime())) {
+    throw new Error(`Invalid capture timestamp: ${JSON.stringify(value)}.`);
+  }
+  return capturedAt.toISOString();
+}
+
 export function scoreFingerprint(score) {
   const playedAt = new Date(score.playedAt);
   if (Number.isNaN(playedAt.getTime())) {
