@@ -62,6 +62,66 @@
       "chartId": "song-553e96cd15c3-dx-expert"
     },
     {
+      "playedAt": "2026-06-19T05:15:56.000Z",
+      "songTitle": "シエルブルーマルシェ",
+      "chartType": "DX",
+      "difficulty": "Re:MASTER",
+      "level": "13+",
+      "achievement": 98.0165,
+      "combo": null,
+      "sync": "Sync",
+      "rating": 15043,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 296,
+        "perfect": 83,
+        "great": 33,
+        "good": 5,
+        "miss": 6
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 5,
+          "perfect": 1,
+          "great": 1,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 89,
+          "perfect": 82,
+          "great": 21,
+          "good": 0,
+          "miss": 6
+        },
+        "hold": {
+          "criticalPerfect": 1,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 200,
+          "perfect": 0,
+          "great": 11,
+          "good": 5,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 1,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 24,
+      "slow": 15,
+      "id": "uoE6r_EPeHHP_szb5MqH42fgpnoItI6RChjAfY9jzl8",
+      "chartId": "song-dbe1053f9d94-dx-re-master"
+    },
+    {
       "playedAt": "2026-06-23T02:42:27.000Z",
       "songTitle": "テトリス",
       "chartType": "DX",

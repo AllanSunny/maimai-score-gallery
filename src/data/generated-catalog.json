@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-28T08:59:56.716Z",
+  "generatedAt": "2026-08-28T16:42:44.148Z",
   "songs": [
     {
       "id": "song-550d332f837c",
@@ -9822,6 +9822,72 @@
         "code": "22506",
         "name": "UNiVERSE PLUS"
       }
+    },
+    {
+      "id": "song-dbe1053f9d94",
+      "titles": {
+        "canonical": "シエルブルーマルシェ",
+        "kana": [
+          "しえる ぶるう まるしぇ"
+        ],
+        "romaji": [
+          "shieru buruu marushe"
+        ],
+        "english": [
+          "sky blue market"
+        ],
+        "aliases": []
+      },
+      "artist": "OSTER project feat. かなたん",
+      "genre": "maimai",
+      "introducedIn": {
+        "code": "20505",
+        "name": "maimai でらっくす PLUS"
+      },
+      "jacketKey": "jackets/song-dbe1053f9d94-f4a0546ade69.png",
+      "versions": [
+        {
+          "id": "song-dbe1053f9d94-dx",
+          "chartType": "DX",
+          "charts": [
+            {
+              "id": "song-dbe1053f9d94-dx-basic",
+              "difficulty": "BASIC",
+              "level": "3",
+              "chartConstant": null,
+              "charter": null
+            },
+            {
+              "id": "song-dbe1053f9d94-dx-advanced",
+              "difficulty": "ADVANCED",
+              "level": "7",
+              "chartConstant": null,
+              "charter": null
+            },
+            {
+              "id": "song-dbe1053f9d94-dx-expert",
+              "difficulty": "EXPERT",
+              "level": "10",
+              "chartConstant": null,
+              "charter": "某S氏"
+            },
+            {
+              "id": "song-dbe1053f9d94-dx-master",
+              "difficulty": "MASTER",
+              "level": "12+",
+              "chartConstant": 12.8,
+              "charter": "はっぴー"
+            },
+            {
+              "id": "song-dbe1053f9d94-dx-re-master",
+              "difficulty": "Re:MASTER",
+              "level": "13+",
+              "chartConstant": 13.7,
+              "charter": "はっぴー"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "song-e92c47515940",

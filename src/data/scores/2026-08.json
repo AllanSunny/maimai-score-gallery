@@ -3902,6 +3902,126 @@
       "chartId": "song-d6cec4f5ed59-std-master"
     },
     {
+      "playedAt": "2026-08-26T01:33:46.000Z",
+      "songTitle": "シエルブルーマルシェ",
+      "chartType": "DX",
+      "difficulty": "Re:MASTER",
+      "level": "13+",
+      "achievement": 100.1236,
+      "combo": null,
+      "sync": null,
+      "rating": 15237,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 339,
+        "perfect": 69,
+        "great": 10,
+        "good": 4,
+        "miss": 1
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 4,
+          "perfect": 3,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 120,
+          "perfect": 66,
+          "great": 8,
+          "good": 3,
+          "miss": 1
+        },
+        "hold": {
+          "criticalPerfect": 1,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 213,
+          "perfect": 0,
+          "great": 2,
+          "good": 1,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 1,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 14,
+      "slow": 3,
+      "id": "JrghA3jRuCY4JFilUwBBJ9QpRiPmEFCx9hccOOPw4No",
+      "chartId": "song-dbe1053f9d94-dx-re-master"
+    },
+    {
+      "playedAt": "2026-08-26T01:36:35.000Z",
+      "songTitle": "シエルブルーマルシェ",
+      "chartType": "DX",
+      "difficulty": "Re:MASTER",
+      "level": "13+",
+      "achievement": 100.557,
+      "combo": "FC",
+      "sync": null,
+      "rating": 15244,
+      "ratingChange": 7,
+      "judgments": {
+        "criticalPerfect": 355,
+        "perfect": 60,
+        "great": 6,
+        "good": 2,
+        "miss": 0
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 6,
+          "perfect": 1,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 133,
+          "perfect": 59,
+          "great": 5,
+          "good": 1,
+          "miss": 0
+        },
+        "hold": {
+          "criticalPerfect": 1,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 214,
+          "perfect": 0,
+          "great": 1,
+          "good": 1,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 1,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 7,
+      "slow": 2,
+      "id": "Y3aZKlGpIAs62P1iTh7K3rGtpk2qaacHOIPvUde5PYo",
+      "chartId": "song-dbe1053f9d94-dx-re-master"
+    },
+    {
       "playedAt": "2026-08-26T03:01:58.000Z",
       "songTitle": "ULTRA SYNERGY MATRIX",
       "chartType": "DX",
