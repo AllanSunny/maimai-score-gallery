@@ -2,6 +2,66 @@
   "period": "2026-06",
   "scores": [
     {
+      "playedAt": "2026-06-19T01:21:48.000Z",
+      "songTitle": "サイエンス",
+      "chartType": "DX",
+      "difficulty": "EXPERT",
+      "level": "10",
+      "achievement": 100.869,
+      "combo": "FC+",
+      "sync": null,
+      "rating": 15043,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 366,
+        "perfect": 165,
+        "great": 1,
+        "good": 0,
+        "miss": 0
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 9,
+          "perfect": 3,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 222,
+          "perfect": 136,
+          "great": 1,
+          "good": 0,
+          "miss": 0
+        },
+        "hold": {
+          "criticalPerfect": 46,
+          "perfect": 26,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 47,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 42,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 0,
+      "slow": 4,
+      "id": "q6lWnpXvvo0HhxUvtU4rD2tkJHrsD2CyRhku-jrhDwU",
+      "chartId": "song-553e96cd15c3-dx-expert"
+    },
+    {
       "playedAt": "2026-06-23T02:42:27.000Z",
       "songTitle": "テトリス",
       "chartType": "DX",
@@ -182,6 +242,186 @@
       "chartId": "song-08f22014494d-dx-expert"
     },
     {
+      "playedAt": "2026-06-25T00:08:51.000Z",
+      "songTitle": "サイエンス",
+      "chartType": "DX",
+      "difficulty": "EXPERT",
+      "level": "10",
+      "achievement": 100.9166,
+      "combo": "AP",
+      "sync": null,
+      "rating": 15075,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 426,
+        "perfect": 106,
+        "great": 0,
+        "good": 0,
+        "miss": 0
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 8,
+          "perfect": 4,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 277,
+          "perfect": 82,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "hold": {
+          "criticalPerfect": 52,
+          "perfect": 20,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 47,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 42,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 4,
+      "slow": 0,
+      "id": "3LFxdzrtsuEN8hW5o-I_E6oCEeaQsQoyJLTOTBuleqY",
+      "chartId": "song-553e96cd15c3-dx-expert"
+    },
+    {
+      "playedAt": "2026-06-25T00:16:55.000Z",
+      "songTitle": "テトリス",
+      "chartType": "DX",
+      "difficulty": "EXPERT",
+      "level": "10+",
+      "achievement": 100.9843,
+      "combo": "AP",
+      "sync": null,
+      "rating": 15075,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 420,
+        "perfect": 141,
+        "great": 0,
+        "good": 0,
+        "miss": 0
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 61,
+          "perfect": 3,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 224,
+          "perfect": 122,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "hold": {
+          "criticalPerfect": 49,
+          "perfect": 16,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 60,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 26,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 3,
+      "slow": 0,
+      "id": "cOHLiktCNSEThzjCyhH-QqIcWMj3Nxs7xkyDDgLEWZc",
+      "chartId": "song-58508b2f410c-dx-expert"
+    },
+    {
+      "playedAt": "2026-06-25T00:24:43.000Z",
+      "songTitle": "強風オールバック",
+      "chartType": "DX",
+      "difficulty": "MASTER",
+      "level": "12+",
+      "achievement": 100.8236,
+      "combo": "FC+",
+      "sync": null,
+      "rating": 15075,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 438,
+        "perfect": 137,
+        "great": 5,
+        "good": 0,
+        "miss": 0
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 25,
+          "perfect": 6,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 244,
+          "perfect": 115,
+          "great": 4,
+          "good": 0,
+          "miss": 0
+        },
+        "hold": {
+          "criticalPerfect": 21,
+          "perfect": 16,
+          "great": 1,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 98,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 50,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 6,
+      "slow": 5,
+      "id": "JUrIOta6wOhFNOcb5irs2ocDppCXZwRaQP_T3XkzHx4",
+      "chartId": "song-a5b31616c19b-dx-master"
+    },
+    {
       "playedAt": "2026-06-25T00:54:47.000Z",
       "songTitle": "テトリス",
       "chartType": "DX",
@@ -240,6 +480,186 @@
       "slow": 3,
       "id": "AfnJG6AbyoE5EAZjwjWuhbM2GPqBKxAld6pOczFQlx0",
       "chartId": "song-58508b2f410c-dx-re-master"
+    },
+    {
+      "playedAt": "2026-06-25T01:09:17.000Z",
+      "songTitle": "Transcend Lights",
+      "chartType": "DX",
+      "difficulty": "MASTER",
+      "level": "13",
+      "achievement": 100.7251,
+      "combo": "FC+",
+      "sync": null,
+      "rating": 15075,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 457,
+        "perfect": 146,
+        "great": 6,
+        "good": 0,
+        "miss": 0
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 10,
+          "perfect": 5,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 299,
+          "perfect": 138,
+          "great": 5,
+          "good": 0,
+          "miss": 0
+        },
+        "hold": {
+          "criticalPerfect": 5,
+          "perfect": 3,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 118,
+          "perfect": 0,
+          "great": 1,
+          "good": 0,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 25,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 6,
+      "slow": 5,
+      "id": "Gstwwl_hPVvANA0A67kPx5-6rsZJx59HGUHmAZX3D5U",
+      "chartId": "song-bf95733511a4-dx-master"
+    },
+    {
+      "playedAt": "2026-06-25T01:18:05.000Z",
+      "songTitle": "1000年生きてる",
+      "chartType": "DX",
+      "difficulty": "EXPERT",
+      "level": "9",
+      "achievement": 100.95,
+      "combo": "AP",
+      "sync": null,
+      "rating": 15075,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 319,
+        "perfect": 68,
+        "great": 0,
+        "good": 0,
+        "miss": 0
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 20,
+          "perfect": 5,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 209,
+          "perfect": 62,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "hold": {
+          "criticalPerfect": 30,
+          "perfect": 1,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 10,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 50,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 2,
+      "slow": 3,
+      "id": "uZWnVDfXO-iEkUIRwUkXA0fB25AdAbVJdTKEkfCOLlM",
+      "chartId": "song-85572925973b-dx-expert"
+    },
+    {
+      "playedAt": "2026-06-26T16:48:48.000Z",
+      "songTitle": "チルノのパーフェクトさんすう教室",
+      "chartType": "DX",
+      "difficulty": "EXPERT",
+      "level": "9+",
+      "achievement": 101,
+      "combo": "AP",
+      "sync": null,
+      "rating": 15075,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 303,
+        "perfect": 59,
+        "great": 0,
+        "good": 0,
+        "miss": 0
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 9,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 151,
+          "perfect": 35,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "hold": {
+          "criticalPerfect": 98,
+          "perfect": 24,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 19,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 26,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 0,
+      "slow": 0,
+      "id": "k1JIncG3hHKOygYTEjSVn27CtPNoFMa3E0euxUKF2Nw",
+      "chartId": "song-3a859319aa19-dx-expert"
     },
     {
       "playedAt": "2026-06-26T17:51:09.000Z",

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-28T08:27:20.100Z",
+  "generatedAt": "2026-08-28T08:59:56.716Z",
   "songs": [
     {
       "id": "song-550d332f837c",
@@ -10462,6 +10462,99 @@
       }
     },
     {
+      "id": "song-3a859319aa19",
+      "titles": {
+        "canonical": "チルノのパーフェクトさんすう教室",
+        "kana": [
+          "ちるの の ぱあふぇくと さんすう きょうしつ"
+        ],
+        "romaji": [
+          "chiruno no paafyekuto sansuu kyoushitsu"
+        ],
+        "english": [
+          "cirno's perfect math class"
+        ],
+        "aliases": []
+      },
+      "artist": "ARM＋夕野ヨシミ(IOSYS)feat. miko",
+      "genre": "東方Project",
+      "introducedIn": {
+        "code": "12000",
+        "name": "GreeN"
+      },
+      "jacketKey": "jackets/song-3a859319aa19-429ade258991.png",
+      "versions": [
+        {
+          "id": "song-3a859319aa19-dx",
+          "chartType": "DX",
+          "charts": [
+            {
+              "id": "song-3a859319aa19-dx-basic",
+              "difficulty": "BASIC",
+              "level": "3",
+              "chartConstant": null,
+              "charter": null
+            },
+            {
+              "id": "song-3a859319aa19-dx-advanced",
+              "difficulty": "ADVANCED",
+              "level": "6",
+              "chartConstant": null,
+              "charter": null
+            },
+            {
+              "id": "song-3a859319aa19-dx-expert",
+              "difficulty": "EXPERT",
+              "level": "9+",
+              "chartConstant": null,
+              "charter": "サファ太"
+            },
+            {
+              "id": "song-3a859319aa19-dx-master",
+              "difficulty": "MASTER",
+              "level": "13",
+              "chartConstant": 13,
+              "charter": "まぐランド"
+            }
+          ]
+        },
+        {
+          "id": "song-3a859319aa19-std",
+          "chartType": "STD",
+          "charts": [
+            {
+              "id": "song-3a859319aa19-std-basic",
+              "difficulty": "BASIC",
+              "level": "3",
+              "chartConstant": null,
+              "charter": null
+            },
+            {
+              "id": "song-3a859319aa19-std-advanced",
+              "difficulty": "ADVANCED",
+              "level": "7",
+              "chartConstant": null,
+              "charter": null
+            },
+            {
+              "id": "song-3a859319aa19-std-expert",
+              "difficulty": "EXPERT",
+              "level": "10",
+              "chartConstant": null,
+              "charter": "はっぴー"
+            },
+            {
+              "id": "song-3a859319aa19-std-master",
+              "difficulty": "MASTER",
+              "level": "13",
+              "chartConstant": 13.3,
+              "charter": "某S氏"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "song-1c2a0228b93f",
       "titles": {
         "canonical": "ツギハギスタッカート",
@@ -13393,6 +13486,65 @@
         "code": "18503",
         "name": "MURASAKi PLUS"
       }
+    },
+    {
+      "id": "song-074874814374",
+      "titles": {
+        "canonical": "僕の和風本当上手",
+        "kana": [
+          "ぼく の わふう ほんとう じょうず"
+        ],
+        "romaji": [
+          "boku no wafuu hontou jouzu"
+        ],
+        "english": [
+          "i'm really good at japanese style"
+        ],
+        "aliases": []
+      },
+      "artist": "ボス",
+      "genre": "ゲーム＆バラエティ",
+      "introducedIn": {
+        "code": "23502",
+        "name": "FESTiVAL PLUS"
+      },
+      "jacketKey": "jackets/song-074874814374-aaf2d0543965.png",
+      "versions": [
+        {
+          "id": "song-074874814374-dx",
+          "chartType": "DX",
+          "charts": [
+            {
+              "id": "song-074874814374-dx-basic",
+              "difficulty": "BASIC",
+              "level": "5",
+              "chartConstant": null,
+              "charter": null
+            },
+            {
+              "id": "song-074874814374-dx-advanced",
+              "difficulty": "ADVANCED",
+              "level": "8",
+              "chartConstant": null,
+              "charter": null
+            },
+            {
+              "id": "song-074874814374-dx-expert",
+              "difficulty": "EXPERT",
+              "level": "12",
+              "chartConstant": 12,
+              "charter": "はっぴー"
+            },
+            {
+              "id": "song-074874814374-dx-master",
+              "difficulty": "MASTER",
+              "level": "14",
+              "chartConstant": 14,
+              "charter": "僕の檸檬本当上手"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "zen-sekai-kyoutsuu-rhythm-kan-test",

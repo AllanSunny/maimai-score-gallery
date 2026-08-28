@@ -722,6 +722,366 @@
       "chartId": "song-a7a461d9d280-dx-master"
     },
     {
+      "playedAt": "2026-05-12T03:07:21.000Z",
+      "songTitle": "モニタリング",
+      "chartType": "DX",
+      "difficulty": "Re:MASTER",
+      "level": "13",
+      "achievement": 100.029,
+      "combo": "Clear",
+      "sync": null,
+      "rating": 14946,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 456,
+        "perfect": 166,
+        "great": 20,
+        "good": 1,
+        "miss": 3
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 24,
+          "perfect": 7,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 273,
+          "perfect": 146,
+          "great": 17,
+          "good": 0,
+          "miss": 3
+        },
+        "hold": {
+          "criticalPerfect": 28,
+          "perfect": 13,
+          "great": 2,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 100,
+          "perfect": 0,
+          "great": 1,
+          "good": 1,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 31,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 15,
+      "slow": 13,
+      "id": "DGj2G9Gmk2qQcN44p5v4jPkHGQrwReBJExRoBwzm-uM",
+      "chartId": "song-52e03f4cfc5d-dx-re-master"
+    },
+    {
+      "playedAt": "2026-05-12T03:10:09.000Z",
+      "songTitle": "モニタリング",
+      "chartType": "DX",
+      "difficulty": "Re:MASTER",
+      "level": "13",
+      "achievement": 100.3223,
+      "combo": "Clear",
+      "sync": null,
+      "rating": 14946,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 429,
+        "perfect": 199,
+        "great": 14,
+        "good": 2,
+        "miss": 2
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 26,
+          "perfect": 5,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 244,
+          "perfect": 179,
+          "great": 12,
+          "good": 2,
+          "miss": 2
+        },
+        "hold": {
+          "criticalPerfect": 27,
+          "perfect": 15,
+          "great": 1,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 101,
+          "perfect": 0,
+          "great": 1,
+          "good": 0,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 31,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 15,
+      "slow": 6,
+      "id": "1mND4EMhC0aV3Phbzzm9ZkBVW4rSueMnbnMfOPsC_pY",
+      "chartId": "song-52e03f4cfc5d-dx-re-master"
+    },
+    {
+      "playedAt": "2026-05-12T03:13:00.000Z",
+      "songTitle": "モニタリング",
+      "chartType": "DX",
+      "difficulty": "Re:MASTER",
+      "level": "13",
+      "achievement": 100.3303,
+      "combo": "Clear",
+      "sync": null,
+      "rating": 14946,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 453,
+        "perfect": 175,
+        "great": 14,
+        "good": 3,
+        "miss": 1
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 26,
+          "perfect": 5,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 265,
+          "perfect": 159,
+          "great": 12,
+          "good": 2,
+          "miss": 1
+        },
+        "hold": {
+          "criticalPerfect": 30,
+          "perfect": 11,
+          "great": 1,
+          "good": 1,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 101,
+          "perfect": 0,
+          "great": 1,
+          "good": 0,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 31,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 15,
+      "slow": 7,
+      "id": "w26SMKvoxn0EIPzcaoiloU15BZHXjbAuAb3wSn7XPZg",
+      "chartId": "song-52e03f4cfc5d-dx-re-master"
+    },
+    {
+      "playedAt": "2026-05-12T03:23:18.000Z",
+      "songTitle": "モニタリング",
+      "chartType": "DX",
+      "difficulty": "Re:MASTER",
+      "level": "13",
+      "achievement": 100.0248,
+      "combo": "FC",
+      "sync": null,
+      "rating": 14946,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 476,
+        "perfect": 156,
+        "great": 11,
+        "good": 3,
+        "miss": 0
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 22,
+          "perfect": 8,
+          "great": 1,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 291,
+          "perfect": 139,
+          "great": 9,
+          "good": 0,
+          "miss": 0
+        },
+        "hold": {
+          "criticalPerfect": 34,
+          "perfect": 9,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 98,
+          "perfect": 0,
+          "great": 1,
+          "good": 3,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 31,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 11,
+      "slow": 11,
+      "id": "S4GRZeSJyR9CfBuLXUhIrJxZZVQ4R_TW9kq_7MlL1LM",
+      "chartId": "song-52e03f4cfc5d-dx-re-master"
+    },
+    {
+      "playedAt": "2026-05-12T03:30:46.000Z",
+      "songTitle": "モニタリング",
+      "chartType": "DX",
+      "difficulty": "Re:MASTER",
+      "level": "13",
+      "achievement": 100.2197,
+      "combo": "FC",
+      "sync": null,
+      "rating": 14946,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 474,
+        "perfect": 162,
+        "great": 6,
+        "good": 4,
+        "miss": 0
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 23,
+          "perfect": 7,
+          "great": 1,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 290,
+          "perfect": 142,
+          "great": 5,
+          "good": 2,
+          "miss": 0
+        },
+        "hold": {
+          "criticalPerfect": 30,
+          "perfect": 13,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 100,
+          "perfect": 0,
+          "great": 0,
+          "good": 2,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 31,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 10,
+      "slow": 7,
+      "id": "I46NUbWZEQqP8jrrQMk1n6qeYkcc8GaahkefGEWkLck",
+      "chartId": "song-52e03f4cfc5d-dx-re-master"
+    },
+    {
+      "playedAt": "2026-05-12T03:34:10.000Z",
+      "songTitle": "メズマライザー",
+      "chartType": "DX",
+      "difficulty": "Re:MASTER",
+      "level": "13+",
+      "achievement": 98.6347,
+      "combo": "Clear",
+      "sync": null,
+      "rating": 14946,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 656,
+        "perfect": 276,
+        "great": 52,
+        "good": 7,
+        "miss": 9
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 110,
+          "perfect": 39,
+          "great": 3,
+          "good": 1,
+          "miss": 2
+        },
+        "tap": {
+          "criticalPerfect": 334,
+          "perfect": 220,
+          "great": 48,
+          "good": 5,
+          "miss": 6
+        },
+        "hold": {
+          "criticalPerfect": 21,
+          "perfect": 17,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 80,
+          "perfect": 0,
+          "great": 1,
+          "good": 1,
+          "miss": 1
+        },
+        "touch": {
+          "criticalPerfect": 111,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 69,
+      "slow": 29,
+      "id": "Q7YycKNeDPjMRte14Z7wwNn_tRXlKYrmlbpr9noQsZ4",
+      "chartId": "song-08f22014494d-dx-re-master"
+    },
+    {
       "playedAt": "2026-05-14T00:40:19.000Z",
       "songTitle": "Lover's Trick",
       "chartType": "DX",
@@ -960,6 +1320,66 @@
       "slow": 6,
       "id": "zVyI7S-HMAfjgoB34F4fi66v075eFZbKXI9O-Mbjlco",
       "chartId": "song-85572925973b-dx-master"
+    },
+    {
+      "playedAt": "2026-05-14T02:55:46.000Z",
+      "songTitle": "テトリス",
+      "chartType": "DX",
+      "difficulty": "MASTER",
+      "level": "12",
+      "achievement": 100.8076,
+      "combo": "FC",
+      "sync": null,
+      "rating": 15009,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 575,
+        "perfect": 162,
+        "great": 3,
+        "good": 1,
+        "miss": 0
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 16,
+          "perfect": 5,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 392,
+          "perfect": 150,
+          "great": 2,
+          "good": 1,
+          "miss": 0
+        },
+        "hold": {
+          "criticalPerfect": 13,
+          "perfect": 7,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 141,
+          "perfect": 0,
+          "great": 1,
+          "good": 0,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 13,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 4,
+      "slow": 5,
+      "id": "EDFRi_GIbbXQGY69HM-n17JnDNEY9zfgzDa9RlMZsWA",
+      "chartId": "song-58508b2f410c-dx-master"
     },
     {
       "playedAt": "2026-05-21T22:16:09.000Z",

@@ -2,6 +2,126 @@
   "period": "2026-07",
   "scores": [
     {
+      "playedAt": "2026-07-02T23:12:05.000Z",
+      "songTitle": "サイエンス",
+      "chartType": "DX",
+      "difficulty": "EXPERT",
+      "level": "10",
+      "achievement": 100.9791,
+      "combo": "AP",
+      "sync": null,
+      "rating": 15116,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 449,
+        "perfect": 83,
+        "great": 0,
+        "good": 0,
+        "miss": 0
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 11,
+          "perfect": 1,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 297,
+          "perfect": 62,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "hold": {
+          "criticalPerfect": 52,
+          "perfect": 20,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 47,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 42,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 1,
+      "slow": 0,
+      "id": "AaYCjaMUopTZAg4Hhq6klclw7IcJWkwGsRUDnC_7MWA",
+      "chartId": "song-553e96cd15c3-dx-expert"
+    },
+    {
+      "playedAt": "2026-07-02T23:43:29.000Z",
+      "songTitle": "M@GICAL☆CURE! LOVE ♥ SHOT!",
+      "chartType": "DX",
+      "difficulty": "EXPERT",
+      "level": "11",
+      "achievement": 100.9357,
+      "combo": "AP",
+      "sync": null,
+      "rating": 15116,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 471,
+        "perfect": 152,
+        "great": 0,
+        "good": 0,
+        "miss": 0
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 28,
+          "perfect": 7,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 321,
+          "perfect": 132,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "hold": {
+          "criticalPerfect": 37,
+          "perfect": 13,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 44,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 41,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 5,
+      "slow": 2,
+      "id": "LE4QmSY1261Qo6njPswJdXDjqks9K66HhG2f4hd6v-U",
+      "chartId": "song-a7a461d9d280-dx-expert"
+    },
+    {
       "playedAt": "2026-07-03T03:02:37.000Z",
       "songTitle": "エゴロック",
       "chartType": "DX",
@@ -62,6 +182,186 @@
       "chartId": "song-4f39f6af9e43-dx-master"
     },
     {
+      "playedAt": "2026-07-18T01:59:56.000Z",
+      "songTitle": "メルト",
+      "chartType": "DX",
+      "difficulty": "EXPERT",
+      "level": "8+",
+      "achievement": 100.8939,
+      "combo": "FC+",
+      "sync": null,
+      "rating": 15128,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 342,
+        "perfect": 153,
+        "great": 2,
+        "good": 0,
+        "miss": 0
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 13,
+          "perfect": 1,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 235,
+          "perfect": 132,
+          "great": 1,
+          "good": 0,
+          "miss": 0
+        },
+        "hold": {
+          "criticalPerfect": 28,
+          "perfect": 20,
+          "great": 1,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 39,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 27,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 2,
+      "slow": 1,
+      "id": "Rd3UUZv2Ta0HUcIW9GhRB7G0YlEiakIZ_plJ3gYSmFE",
+      "chartId": "song-461be4a49f43-dx-expert"
+    },
+    {
+      "playedAt": "2026-07-18T02:04:12.000Z",
+      "songTitle": "メルト",
+      "chartType": "DX",
+      "difficulty": "EXPERT",
+      "level": "8+",
+      "achievement": 100.9285,
+      "combo": "AP",
+      "sync": null,
+      "rating": 15128,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 340,
+        "perfect": 157,
+        "great": 0,
+        "good": 0,
+        "miss": 0
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 10,
+          "perfect": 4,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 238,
+          "perfect": 130,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "hold": {
+          "criticalPerfect": 26,
+          "perfect": 23,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 39,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 27,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 4,
+      "slow": 0,
+      "id": "63vsgdQdg8A20rFBMMda4zeYQ-dFO1SJLaTU7j5nAFU",
+      "chartId": "song-461be4a49f43-dx-expert"
+    },
+    {
+      "playedAt": "2026-07-18T03:00:46.000Z",
+      "songTitle": "メルト",
+      "chartType": "DX",
+      "difficulty": "EXPERT",
+      "level": "8+",
+      "achievement": 100.9821,
+      "combo": "AP",
+      "sync": null,
+      "rating": 15128,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 376,
+        "perfect": 121,
+        "great": 0,
+        "good": 0,
+        "miss": 0
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 13,
+          "perfect": 1,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 268,
+          "perfect": 100,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "hold": {
+          "criticalPerfect": 29,
+          "perfect": 20,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 39,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 27,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 1,
+      "slow": 0,
+      "id": "8tLnSGBtY_yTWgds4B_4pwViBLqVxqr-0UKbR7kdQA8",
+      "chartId": "song-461be4a49f43-dx-expert"
+    },
+    {
       "playedAt": "2026-07-20T03:40:19.000Z",
       "songTitle": "おくすり飲んで寝よう",
       "chartType": "DX",
@@ -120,6 +420,126 @@
       "slow": 0,
       "id": "Y2WuOucwOXI38xNLCS1KubFqrQy_SRVGfut3HShzLHw",
       "chartId": "song-638e826988e6-dx-expert"
+    },
+    {
+      "playedAt": "2026-07-25T02:43:05.000Z",
+      "songTitle": "RE Aoharu",
+      "chartType": "DX",
+      "difficulty": "EXPERT",
+      "level": "10+",
+      "achievement": 100.9767,
+      "combo": "AP",
+      "sync": null,
+      "rating": 15119,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 434,
+        "perfect": 103,
+        "great": 0,
+        "good": 0,
+        "miss": 0
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 39,
+          "perfect": 4,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 314,
+          "perfect": 91,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "hold": {
+          "criticalPerfect": 32,
+          "perfect": 8,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 44,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 5,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 3,
+      "slow": 1,
+      "id": "RLpXvmcTTt-UkLqgpNTbdsYRc-Y4K9kJLn5A5e7jtZw",
+      "chartId": "song-32642cb2835b-dx-expert"
+    },
+    {
+      "playedAt": "2026-07-25T03:14:19.000Z",
+      "songTitle": "僕の和風本当上手",
+      "chartType": "DX",
+      "difficulty": "EXPERT",
+      "level": "12",
+      "achievement": 100.94,
+      "combo": "AP",
+      "sync": "Sync",
+      "rating": 15119,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 529,
+        "perfect": 121,
+        "great": 0,
+        "good": 0,
+        "miss": 0
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 19,
+          "perfect": 6,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 375,
+          "perfect": 102,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "hold": {
+          "criticalPerfect": 44,
+          "perfect": 13,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 46,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 45,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 5,
+      "slow": 1,
+      "id": "6Iart6eFJJV418M-ad8eqJ8EbBZufuSMPuYUowzBxxs",
+      "chartId": "song-074874814374-dx-expert"
     },
     {
       "playedAt": "2026-07-25T03:18:10.000Z",
@@ -480,6 +900,66 @@
       "slow": 5,
       "id": "EgvB410utrDx7wJAo1Bl3WThDAKzVTUryT-b6sFpidQ",
       "chartId": "tsunagite-dx-expert"
+    },
+    {
+      "playedAt": "2026-07-28T02:53:29.000Z",
+      "songTitle": "raputa",
+      "chartType": "DX",
+      "difficulty": "EXPERT",
+      "level": "13+",
+      "achievement": 100.6812,
+      "combo": "FC",
+      "sync": null,
+      "rating": 15158,
+      "ratingChange": 9,
+      "judgments": {
+        "criticalPerfect": 598,
+        "perfect": 276,
+        "great": 13,
+        "good": 1,
+        "miss": 0
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 46,
+          "perfect": 17,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 367,
+          "perfect": 231,
+          "great": 13,
+          "good": 1,
+          "miss": 0
+        },
+        "hold": {
+          "criticalPerfect": 61,
+          "perfect": 28,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 33,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 91,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 18,
+      "slow": 13,
+      "id": "S_0keCSTX0gt82_DZkiq7ptgEm09Xd2fuo9DmYLQARE",
+      "chartId": "song-804aeaf592b9-dx-expert"
     },
     {
       "playedAt": "2026-07-30T23:43:25.000Z",
