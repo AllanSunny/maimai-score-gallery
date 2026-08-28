@@ -27,19 +27,19 @@ test("sync-only OCR inspects the full image with a narrowly scoped schema", () =
 });
 
 test("legacy sync reconciliation applies only conservative changes", () => {
-  assert.deepEqual(syncAuditDecision(null, { positionState: "badge", sync: "Sync" }, "Clear"), {
+  assert.deepEqual(syncAuditDecision(null, { positionState: "badge", sync: "Sync" }, null), {
     apply: true, value: "Sync",
   });
   assert.deepEqual(syncAuditDecision("FS", { positionState: "badge", sync: "FDX" }, "FC"), {
     apply: true, value: "FDX",
   });
-  assert.deepEqual(syncAuditDecision("FS", { positionState: "empty", sync: null }, "Clear"), {
+  assert.deepEqual(syncAuditDecision("FS", { positionState: "empty", sync: null }, null), {
     apply: true, value: null,
   });
-  assert.deepEqual(syncAuditDecision("FS", { positionState: "unreadable", sync: null }, "Clear"), {
+  assert.deepEqual(syncAuditDecision("FS", { positionState: "unreadable", sync: null }, null), {
     apply: false, value: "FS",
   });
-  assert.deepEqual(syncAuditDecision(null, { positionState: "badge", sync: "FS" }, "Clear"), {
+  assert.deepEqual(syncAuditDecision(null, { positionState: "badge", sync: "FS" }, null), {
     apply: false, value: null,
   });
 });

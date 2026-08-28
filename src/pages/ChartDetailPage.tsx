@@ -23,7 +23,7 @@ export function ChartDetailPage({ chartId }: ChartDetailPageProps) {
   const chartMetadata = catalogEntry?.chart;
   const chartSummary = chartSummaries[chartId];
   const achievement = chartSummary?.bestAchievement.value;
-  const bestCombo = chartSummary?.bestCombo.status ?? null;
+  const bestCombo = chartSummary?.bestCombo?.status ?? null;
   const bestSync = chartSummary?.bestSync?.status ?? null;
   const isBelowS = achievement != null && achievement < 97;
   const alternateTitles = metadata ? displayedAlternateTitles(metadata.titles) : [];

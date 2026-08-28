@@ -25,6 +25,7 @@ test("score OCR request sends a high-detail JPEG through a strict schema", () =>
   assert.deepEqual(request.text.format.schema.properties.sync.enum, [
     null, "Sync", "FS", "FS+", "FDX", "FDX+",
   ]);
+  assert.equal(request.text.format.schema.properties.combo, undefined);
   assert.deepEqual(request.reasoning, { effort: "low", summary: "auto" });
   assert.equal(image.detail, "high");
   assert.equal(image.image_url, "data:image/jpeg;base64,aW1hZ2U=");

@@ -26,7 +26,6 @@ test("review corrections override only populated judgment cells", () => {
     correctedArtist: "Correct Artist",
     correctedScoreFields: {
       "Corrected Achievement %": 100.12344999999999,
-      "Corrected Combo Status": "ap",
       "Corrected Rating Change": -2,
     },
     correctedJudgments: {
@@ -39,7 +38,6 @@ test("review corrections override only populated judgment cells", () => {
   assert.equal(corrected.visibleArtist, "Correct Artist");
   assert.equal(corrected.ratingChange, -2);
   assert.equal(corrected.achievement, 100.1234);
-  assert.equal(corrected.combo, "AP");
   assert.equal(corrected.judgments.great, 7);
   assert.equal(corrected.judgmentsByType.break.miss, 3);
   assert.equal(corrected.judgmentsByType.tap.perfect, 2);
@@ -54,7 +52,6 @@ test("a complete review row creates a manual score without OCR", () => {
       "Corrected Chart Type": "dx",
       "Corrected Difficulty": "master",
       "Corrected Achievement %": 99.5,
-      "Corrected Combo Status": "fc+",
       "Corrected Sync Status": "none",
       "Corrected Rating": 15000,
       "Corrected Rating Change": 2,
@@ -72,7 +69,6 @@ test("a complete review row creates a manual score without OCR", () => {
   assert.equal(manual.visibleTitle, "Manual Song");
   assert.equal(manual.chartType, "DX");
   assert.equal(manual.difficulty, "MASTER");
-  assert.equal(manual.combo, "FC+");
   assert.equal(manual.judgmentsByType, null);
 });
 
@@ -83,7 +79,6 @@ test("a manual score may omit all judgment counts", () => {
       "Corrected Chart Type": "STD",
       "Corrected Difficulty": "EXPERT",
       "Corrected Achievement %": 97.5,
-      "Corrected Combo Status": "Clear",
       "Corrected Rating": 14000,
     },
     correctedJudgments: {},

@@ -1,6 +1,7 @@
 import { createHash } from "node:crypto";
 import { createGoogleClients, GOOGLE_SCOPES, requiredEnvironment } from "./google-auth.mjs";
 import { normalizeLegacyCopiedCriticalPerfects } from "./legacy-judgments.mjs";
+import { derivedComboStatus } from "./combo-status.mjs";
 
 const judgmentNames = ["criticalPerfect", "perfect", "great", "good", "miss"];
 const judgmentHeaders = {
@@ -49,6 +50,11 @@ function percentageValue(value) {
 function syncValue(value) {
   const sync = String(value ?? "").trim();
   return !sync || sync.toLocaleLowerCase() === "none" ? null : sync;
+}
+
+function comboValue(value) {
+  const combo = String(value ?? "").trim();
+  return combo || null;
 }
 
 function timeZoneParts(date, timeZone) {
@@ -178,6 +184,7 @@ export function parseScoreRows(rows) {
     const achievement = percentageValue(cell(row, headers, "Achievement %"));
     if (achievement === null) throw new Error(`Invalid achievement on sheet row ${rowIndex + 2}.`);
 
+    const judgments = judgmentSet(row, headers);
     const score = {
       playedAt: utcDateTimeIso(date),
       songTitle: title,
@@ -185,11 +192,15 @@ export function parseScoreRows(rows) {
       difficulty: String(cell(row, headers, "Difficulty") || "").trim(),
       level: String(cell(row, headers, "Chart Level") || "").trim(),
       achievement,
-      combo: String(cell(row, headers, "Combo Status") || "").trim(),
+      combo: derivedComboStatus({
+        achievement,
+        judgments,
+        fallback: comboValue(cell(row, headers, "Combo Status")),
+      }),
       sync: syncValue(cell(row, headers, "Sync Status")),
       rating: numberValue(cell(row, headers, "Rating")),
       ratingChange: numberValue(cell(row, headers, "Rating Change")),
-      judgments: judgmentSet(row, headers),
+      judgments,
       judgmentsByType: judgmentBreakdown(row, headers),
       fast: isBlank(cell(row, headers, "Fast")) ? null : numberValue(cell(row, headers, "Fast")),
       slow: isBlank(cell(row, headers, "Slow")) ? null : numberValue(cell(row, headers, "Slow")),

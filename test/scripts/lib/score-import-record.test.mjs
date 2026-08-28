@@ -15,7 +15,6 @@ function validInput() {
     },
     ocr: {
       achievement: 100.5,
-      combo: "FC",
       sync: "None",
       rating: 16000,
       ratingChange: 4,
@@ -45,6 +44,43 @@ test("rounds imported achievements to four decimal places", () => {
   input.ocr.achievement = 100.49999999999999;
 
   assert.equal(proposedScoreRecord(input).achievement, 100.5);
+});
+
+test("stores no combo status for a score with misses", () => {
+  const input = validInput();
+  input.ocr.judgments.miss = 1;
+  input.ocr.judgmentsByType.break.miss = 1;
+
+  assert.equal(proposedScoreRecord(input).combo, null);
+});
+
+test("classifies a score without misses as a full combo", () => {
+  const input = validInput();
+  input.ocr.judgments.good = 1;
+  input.ocr.judgmentsByType.break.good = 1;
+
+  assert.equal(proposedScoreRecord(input).combo, "FC");
+});
+
+test("classifies a score without misses or goods as a full combo plus", () => {
+  assert.equal(proposedScoreRecord(validInput()).combo, "FC+");
+});
+
+test("classifies a score without greats, goods, or misses as all perfect", () => {
+  const input = validInput();
+  input.ocr.judgments.great = 0;
+  Object.values(input.ocr.judgmentsByType).forEach((set) => { set.great = 0; });
+
+  assert.equal(proposedScoreRecord(input).combo, "AP");
+});
+
+test("classifies a 101 percent score as all perfect plus", () => {
+  const input = validInput();
+  input.ocr.achievement = 101;
+  input.ocr.judgments.great = 0;
+  Object.values(input.ocr.judgmentsByType).forEach((set) => { set.great = 0; });
+
+  assert.equal(proposedScoreRecord(input).combo, "AP+");
 });
 
 test("proposed score preserves missing critical perfect counts as null", () => {
@@ -154,12 +190,20 @@ test("proposed score defaults a missing rating change to zero and preserves unkn
 
 test("proposed score rejects FS-family statuses without a full combo", () => {
   const input = validInput();
-  input.ocr.combo = "Clear";
+  input.ocr.judgments.miss = 1;
+  input.ocr.judgmentsByType.break.miss = 1;
   input.ocr.sync = "FS";
   assert.throws(
     () => proposedScoreRecord(input),
     (error) => error.code === "INVALID_SYNC_STATUS",
   );
+});
+
+test("proposed score accepts generic sync status without a full combo", () => {
+  const input = validInput();
+  input.ocr.judgments.miss = 1;
+  input.ocr.judgmentsByType.break.miss = 1;
   input.ocr.sync = "Sync";
+
   assert.equal(proposedScoreRecord(input).sync, "Sync");
 });

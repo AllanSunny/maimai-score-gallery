@@ -50,7 +50,7 @@ export function ScoreHistoryEntry({ score, accentColor }: ScoreHistoryEntryProps
 
       <div className="border-t px-5 py-5 text-sm" style={{ borderColor: `var(--color-${accentColor})` }}>
         <dl className="grid grid-cols-2 gap-4 sm:grid-cols-4">
-          <div><dt className="text-xs text-light">Combo</dt><dd className="mt-1 min-h-6 text-lightest"><ComboDisplay className="h-6 max-w-full object-contain object-left" status={score.combo} size="large" />{score.combo === "Clear" && "Clear"}</dd></div>
+          <div><dt className="text-xs text-light">Combo</dt><dd className="mt-1 min-h-6 text-lightest"><ComboDisplay className="h-6 max-w-full object-contain object-left" status={score.combo} size="large" />{score.combo === null && "—"}</dd></div>
           <div><dt className="text-xs text-light">Sync</dt><dd className="mt-1 min-h-6 text-lightest"><SyncDisplay className="h-6 max-w-full object-contain object-left" status={score.sync} size="large" />{score.sync == null && "—"}</dd></div>
           <div><dt className="text-xs text-light">Rating</dt><dd className="mt-1 tabular-nums text-lightest">{score.rating}</dd></div>
           <div><dt className="text-xs text-light">Rating change</dt><dd className="mt-1 tabular-nums text-lightest">{score.ratingChange > 0 ? "+" : ""}{score.ratingChange}</dd></div>

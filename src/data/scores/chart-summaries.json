@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-28T09:00:19.109Z",
+  "generatedAt": "2026-08-28T16:26:20.376Z",
   "charts": {
     "song-00493f7d7088-dx-master": {
       "playCount": 3,
@@ -67,11 +67,7 @@
         "scoreId": "W5O7z3wJs82d_aAdjpIl_i9qTp7byZXQZBJf2Jd2Y2s",
         "playedAt": "2026-01-04T01:43:14.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "W5O7z3wJs82d_aAdjpIl_i9qTp7byZXQZBJf2Jd2Y2s",
-        "playedAt": "2026-01-04T01:43:14.000Z"
-      },
+      "bestCombo": null,
       "bestSync": {
         "status": "Sync",
         "scoreId": "W5O7z3wJs82d_aAdjpIl_i9qTp7byZXQZBJf2Jd2Y2s",
@@ -88,11 +84,7 @@
         "scoreId": "mGm3siKw-YxFuMQtAyo_xT5TKKRazmbH6aYv7hvSdL8",
         "playedAt": "2025-12-23T05:04:24.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "mGm3siKw-YxFuMQtAyo_xT5TKKRazmbH6aYv7hvSdL8",
-        "playedAt": "2025-12-23T05:04:24.000Z"
-      },
+      "bestCombo": null,
       "bestSync": {
         "status": "Sync",
         "scoreId": "Ukuxm-_pKs4vdS20oEjaibVmVe2LsuUzHxu1vbHRJkA",
@@ -110,11 +102,7 @@
         "scoreId": "Li9suYnM-iImgGxILF2Zco14qPu6w2oG0_Lco39Bqoo",
         "playedAt": "2026-08-20T04:53:51.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "Li9suYnM-iImgGxILF2Zco14qPu6w2oG0_Lco39Bqoo",
-        "playedAt": "2026-08-20T04:53:51.000Z"
-      },
+      "bestCombo": null,
       "bestSync": {
         "status": "Sync",
         "scoreId": "Li9suYnM-iImgGxILF2Zco14qPu6w2oG0_Lco39Bqoo",
@@ -208,11 +196,7 @@
         "scoreId": "Q7YycKNeDPjMRte14Z7wwNn_tRXlKYrmlbpr9noQsZ4",
         "playedAt": "2026-05-12T03:34:10.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "Q7YycKNeDPjMRte14Z7wwNn_tRXlKYrmlbpr9noQsZ4",
-        "playedAt": "2026-05-12T03:34:10.000Z"
-      },
+      "bestCombo": null,
       "bestSync": {
         "status": "Sync",
         "scoreId": "1iuxLg96CQ50kXBVVGPYLV56Vs3xVt5my_iE6vKOowE",
@@ -252,11 +236,7 @@
         "scoreId": "67jfBclVVFh5I1zd7rfIe4p2P94sFxQJtqAJQfEp_VM",
         "playedAt": "2025-11-28T02:10:51.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "67jfBclVVFh5I1zd7rfIe4p2P94sFxQJtqAJQfEp_VM",
-        "playedAt": "2025-11-28T02:10:51.000Z"
-      },
+      "bestCombo": null,
       "bestSync": {
         "status": "Sync",
         "scoreId": "67jfBclVVFh5I1zd7rfIe4p2P94sFxQJtqAJQfEp_VM",
@@ -290,11 +270,7 @@
         "scoreId": "i2ioPPbEY24Z35zJdDWhTsnTeQQDrOv9X6by6A68A2k",
         "playedAt": "2025-11-16T02:48:45.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "i2ioPPbEY24Z35zJdDWhTsnTeQQDrOv9X6by6A68A2k",
-        "playedAt": "2025-11-16T02:48:45.000Z"
-      },
+      "bestCombo": null,
       "bestSync": null,
       "historyChunks": [
         "2025-11"
@@ -307,11 +283,7 @@
         "scoreId": "kaaWfOySpspgbO8dq-Q25R3Lz7IM3W1Q-Aep_XU1hkU",
         "playedAt": "2026-01-03T22:54:48.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "kaaWfOySpspgbO8dq-Q25R3Lz7IM3W1Q-Aep_XU1hkU",
-        "playedAt": "2026-01-03T22:54:48.000Z"
-      },
+      "bestCombo": null,
       "bestSync": {
         "status": "Sync",
         "scoreId": "kaaWfOySpspgbO8dq-Q25R3Lz7IM3W1Q-Aep_XU1hkU",
@@ -330,11 +302,7 @@
         "scoreId": "lkToU7bVkeHOWhV7tm44dg3kGvtzBDdBAycmN74F58E",
         "playedAt": "2026-05-21T23:04:25.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "lkToU7bVkeHOWhV7tm44dg3kGvtzBDdBAycmN74F58E",
-        "playedAt": "2026-05-21T23:04:25.000Z"
-      },
+      "bestCombo": null,
       "bestSync": {
         "status": "Sync",
         "scoreId": "lkToU7bVkeHOWhV7tm44dg3kGvtzBDdBAycmN74F58E",
@@ -369,11 +337,7 @@
         "scoreId": "2Z7wRJRBIYHD4r8h4YE_ozI_CSpNRnsPz_FtQPFN8yo",
         "playedAt": "2026-08-22T03:25:46.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "2Z7wRJRBIYHD4r8h4YE_ozI_CSpNRnsPz_FtQPFN8yo",
-        "playedAt": "2026-08-22T03:25:46.000Z"
-      },
+      "bestCombo": null,
       "bestSync": null,
       "historyChunks": [
         "2026-08"
@@ -386,11 +350,7 @@
         "scoreId": "Q7f17Zvgr-zCPxS5zLEKW5wmL8W6PzbCi3tMzxJZPNw",
         "playedAt": "2025-12-26T03:47:27.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "Q7f17Zvgr-zCPxS5zLEKW5wmL8W6PzbCi3tMzxJZPNw",
-        "playedAt": "2025-12-26T03:47:27.000Z"
-      },
+      "bestCombo": null,
       "bestSync": {
         "status": "Sync",
         "scoreId": "Q7f17Zvgr-zCPxS5zLEKW5wmL8W6PzbCi3tMzxJZPNw",
@@ -424,11 +384,7 @@
         "scoreId": "DcPCNK7osc9OvgdxAggnPVdGK1D7XjvDt_NSkcM-HCE",
         "playedAt": "2026-01-15T05:35:28.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "DcPCNK7osc9OvgdxAggnPVdGK1D7XjvDt_NSkcM-HCE",
-        "playedAt": "2026-01-15T05:35:28.000Z"
-      },
+      "bestCombo": null,
       "bestSync": null,
       "historyChunks": [
         "2026-01"
@@ -458,11 +414,7 @@
         "scoreId": "-nA98idLvCXgdorsPiOe0fSK84X6IJDNHma1SAQbvhg",
         "playedAt": "2026-08-20T03:06:25.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "-nA98idLvCXgdorsPiOe0fSK84X6IJDNHma1SAQbvhg",
-        "playedAt": "2026-08-20T03:06:25.000Z"
-      },
+      "bestCombo": null,
       "bestSync": {
         "status": "Sync",
         "scoreId": "-nA98idLvCXgdorsPiOe0fSK84X6IJDNHma1SAQbvhg",
@@ -539,11 +491,7 @@
         "scoreId": "wLY28JDawQMt9WYr2r0oiq8f-mJtbOa-lJwCuz2z0Mk",
         "playedAt": "2026-01-03T23:28:12.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "wLY28JDawQMt9WYr2r0oiq8f-mJtbOa-lJwCuz2z0Mk",
-        "playedAt": "2026-01-03T23:28:12.000Z"
-      },
+      "bestCombo": null,
       "bestSync": {
         "status": "Sync",
         "scoreId": "wLY28JDawQMt9WYr2r0oiq8f-mJtbOa-lJwCuz2z0Mk",
@@ -582,11 +530,7 @@
         "scoreId": "WCC7Ud4KrOzLXuZMp9cqOzxoIQ_0BwCsP7duMtXfpso",
         "playedAt": "2026-08-20T04:03:47.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "WCC7Ud4KrOzLXuZMp9cqOzxoIQ_0BwCsP7duMtXfpso",
-        "playedAt": "2026-08-20T04:03:47.000Z"
-      },
+      "bestCombo": null,
       "bestSync": {
         "status": "Sync",
         "scoreId": "WCC7Ud4KrOzLXuZMp9cqOzxoIQ_0BwCsP7duMtXfpso",
@@ -624,11 +568,7 @@
         "scoreId": "U-VyYRY_YlmDhsfnTMN7a57hZkihxWh047D4fcRoY44",
         "playedAt": "2025-12-21T05:14:28.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "U-VyYRY_YlmDhsfnTMN7a57hZkihxWh047D4fcRoY44",
-        "playedAt": "2025-12-21T05:14:28.000Z"
-      },
+      "bestCombo": null,
       "bestSync": {
         "status": "Sync",
         "scoreId": "U-VyYRY_YlmDhsfnTMN7a57hZkihxWh047D4fcRoY44",
@@ -645,11 +585,7 @@
         "scoreId": "auLwBHacIFajNPEum1ZBv85CEeZi8sFW6QioyLdnx8I",
         "playedAt": "2025-11-23T02:08:09.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "auLwBHacIFajNPEum1ZBv85CEeZi8sFW6QioyLdnx8I",
-        "playedAt": "2025-11-23T02:08:09.000Z"
-      },
+      "bestCombo": null,
       "bestSync": null,
       "historyChunks": [
         "2025-11"
@@ -662,11 +598,7 @@
         "scoreId": "NiSK-_zv84HFMwBo-twSEMk7_5LflD8amI8uTh28lQU",
         "playedAt": "2026-05-22T02:18:30.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "NiSK-_zv84HFMwBo-twSEMk7_5LflD8amI8uTh28lQU",
-        "playedAt": "2026-05-22T02:18:30.000Z"
-      },
+      "bestCombo": null,
       "bestSync": {
         "status": "Sync",
         "scoreId": "CTPBORVgGE-5i_pEd--_L7BNtGrClBADxbJXxwOVlLo",
@@ -684,11 +616,7 @@
         "scoreId": "dQIXMAav7x92B3nEJvi6qiC2eOLuZJyDNNjQsCVsfNU",
         "playedAt": "2026-01-04T01:37:10.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "dQIXMAav7x92B3nEJvi6qiC2eOLuZJyDNNjQsCVsfNU",
-        "playedAt": "2026-01-04T01:37:10.000Z"
-      },
+      "bestCombo": null,
       "bestSync": {
         "status": "Sync",
         "scoreId": "dQIXMAav7x92B3nEJvi6qiC2eOLuZJyDNNjQsCVsfNU",
@@ -746,8 +674,8 @@
       },
       "bestCombo": {
         "status": "FC+",
-        "scoreId": "Kwm6-ebVWesM5VGxFIQOf9vukDqPpOaMmBzQWhoghqg",
-        "playedAt": "2025-12-26T00:42:12.000Z"
+        "scoreId": "2xUYPvOxyBIm2kyEPxHiIwirIgrK8-9FTT74HZCOF4k",
+        "playedAt": "2025-12-31T23:53:10.000Z"
       },
       "bestSync": null,
       "historyChunks": [
@@ -761,11 +689,7 @@
         "scoreId": "upoM3Uih-UN8zqwviMvNewXmQymGd7Qds0EwujGfeBw",
         "playedAt": "2025-12-26T00:45:08.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "upoM3Uih-UN8zqwviMvNewXmQymGd7Qds0EwujGfeBw",
-        "playedAt": "2025-12-26T00:45:08.000Z"
-      },
+      "bestCombo": null,
       "bestSync": null,
       "historyChunks": [
         "2025-12"
@@ -778,11 +702,7 @@
         "scoreId": "N6Qxp4u1ZcPuj-aSG53iRTMFAt68xi5VGOZAVXxW0tU",
         "playedAt": "2025-11-28T02:26:11.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "N6Qxp4u1ZcPuj-aSG53iRTMFAt68xi5VGOZAVXxW0tU",
-        "playedAt": "2025-11-28T02:26:11.000Z"
-      },
+      "bestCombo": null,
       "bestSync": {
         "status": "Sync",
         "scoreId": "N6Qxp4u1ZcPuj-aSG53iRTMFAt68xi5VGOZAVXxW0tU",
@@ -837,11 +757,7 @@
         "scoreId": "R87UKRWp1ygincmj7uQjgWzi0RoMXm2eB4mCmBdJLYU",
         "playedAt": "2025-12-26T03:28:39.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "R87UKRWp1ygincmj7uQjgWzi0RoMXm2eB4mCmBdJLYU",
-        "playedAt": "2025-12-26T03:28:39.000Z"
-      },
+      "bestCombo": null,
       "bestSync": {
         "status": "Sync",
         "scoreId": "R87UKRWp1ygincmj7uQjgWzi0RoMXm2eB4mCmBdJLYU",
@@ -858,11 +774,7 @@
         "scoreId": "jjSEZLwW-0O3uBdf_j308nQa0jB5VgnBc1oUuytfbM4",
         "playedAt": "2026-08-20T04:37:27.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "jjSEZLwW-0O3uBdf_j308nQa0jB5VgnBc1oUuytfbM4",
-        "playedAt": "2026-08-20T04:37:27.000Z"
-      },
+      "bestCombo": null,
       "bestSync": {
         "status": "Sync",
         "scoreId": "jjSEZLwW-0O3uBdf_j308nQa0jB5VgnBc1oUuytfbM4",
@@ -879,11 +791,7 @@
         "scoreId": "N83NH6q1dHOQw95-jXLjrTA4OppRhuC5gkVBZoJM6zE",
         "playedAt": "2026-08-15T01:45:37.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "N83NH6q1dHOQw95-jXLjrTA4OppRhuC5gkVBZoJM6zE",
-        "playedAt": "2026-08-15T01:45:37.000Z"
-      },
+      "bestCombo": null,
       "bestSync": {
         "status": "Sync",
         "scoreId": "N83NH6q1dHOQw95-jXLjrTA4OppRhuC5gkVBZoJM6zE",
@@ -902,8 +810,8 @@
       },
       "bestCombo": {
         "status": "FC+",
-        "scoreId": "yzLHlfx636HYfyVHh4yyPINh3lAo5pl-kNfIhrBZGWo",
-        "playedAt": "2025-11-12T01:03:33.000Z"
+        "scoreId": "02mk5pSIXXwbvCrXqmi8asuFL29sZO-_gqjI0sUt85E",
+        "playedAt": "2025-11-20T03:10:43.000Z"
       },
       "bestSync": {
         "status": "Sync",
@@ -921,11 +829,7 @@
         "scoreId": "AmxBWVYsKDMWFE2PGjFDUq2H-kmUQ5q9P3Gr_at-edc",
         "playedAt": "2026-01-01T01:57:41.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "AmxBWVYsKDMWFE2PGjFDUq2H-kmUQ5q9P3Gr_at-edc",
-        "playedAt": "2026-01-01T01:57:41.000Z"
-      },
+      "bestCombo": null,
       "bestSync": {
         "status": "Sync",
         "scoreId": "AmxBWVYsKDMWFE2PGjFDUq2H-kmUQ5q9P3Gr_at-edc",
@@ -959,11 +863,7 @@
         "scoreId": "h0QYxfn_KNB3Zy1h9HCvtYwMgZYVCCGt5YB9vWL6kus",
         "playedAt": "2025-11-28T01:46:46.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "h0QYxfn_KNB3Zy1h9HCvtYwMgZYVCCGt5YB9vWL6kus",
-        "playedAt": "2025-11-28T01:46:46.000Z"
-      },
+      "bestCombo": null,
       "bestSync": {
         "status": "Sync",
         "scoreId": "h0QYxfn_KNB3Zy1h9HCvtYwMgZYVCCGt5YB9vWL6kus",
@@ -1041,11 +941,7 @@
         "scoreId": "Edr0qE2EwOwNrFZAkYMyCbJw-oPHPEU57_BKXPnfKrE",
         "playedAt": "2025-11-26T05:30:21.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "Edr0qE2EwOwNrFZAkYMyCbJw-oPHPEU57_BKXPnfKrE",
-        "playedAt": "2025-11-26T05:30:21.000Z"
-      },
+      "bestCombo": null,
       "bestSync": null,
       "historyChunks": [
         "2025-11"
@@ -1092,11 +988,7 @@
         "scoreId": "UxecxMbbhjMTXl5dl0ychgcRbZ1v8w2XXRr2cbF8Kd8",
         "playedAt": "2025-11-20T03:24:50.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "UxecxMbbhjMTXl5dl0ychgcRbZ1v8w2XXRr2cbF8Kd8",
-        "playedAt": "2025-11-20T03:24:50.000Z"
-      },
+      "bestCombo": null,
       "bestSync": {
         "status": "Sync",
         "scoreId": "UxecxMbbhjMTXl5dl0ychgcRbZ1v8w2XXRr2cbF8Kd8",
@@ -1113,11 +1005,7 @@
         "scoreId": "DfmDfjIZfY4RjTQJTy8EB7sgEpuiVTSkJ_OhGKt2iB8",
         "playedAt": "2025-12-21T04:28:10.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "DfmDfjIZfY4RjTQJTy8EB7sgEpuiVTSkJ_OhGKt2iB8",
-        "playedAt": "2025-12-21T04:28:10.000Z"
-      },
+      "bestCombo": null,
       "bestSync": {
         "status": "Sync",
         "scoreId": "DfmDfjIZfY4RjTQJTy8EB7sgEpuiVTSkJ_OhGKt2iB8",
@@ -1134,11 +1022,7 @@
         "scoreId": "_OeTUAnlTve9B6Hiwo6zwzgujs_NhCk5uuWl7gByqkY",
         "playedAt": "2026-01-01T02:44:34.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "_OeTUAnlTve9B6Hiwo6zwzgujs_NhCk5uuWl7gByqkY",
-        "playedAt": "2026-01-01T02:44:34.000Z"
-      },
+      "bestCombo": null,
       "bestSync": {
         "status": "Sync",
         "scoreId": "_OeTUAnlTve9B6Hiwo6zwzgujs_NhCk5uuWl7gByqkY",
@@ -1199,11 +1083,7 @@
         "scoreId": "6UscJNhLl7GHCAJNPinPbasb-ktfF8O0FErlEIVehiE",
         "playedAt": "2025-11-23T01:48:31.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "6UscJNhLl7GHCAJNPinPbasb-ktfF8O0FErlEIVehiE",
-        "playedAt": "2025-11-23T01:48:31.000Z"
-      },
+      "bestCombo": null,
       "bestSync": null,
       "historyChunks": [
         "2025-11"
@@ -1237,11 +1117,7 @@
         "scoreId": "tAyCi0AhFF4D9-MilHoJkCGSI0w4fAXjB6_22QPiU50",
         "playedAt": "2026-08-20T04:26:58.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "tAyCi0AhFF4D9-MilHoJkCGSI0w4fAXjB6_22QPiU50",
-        "playedAt": "2026-08-20T04:26:58.000Z"
-      },
+      "bestCombo": null,
       "bestSync": {
         "status": "Sync",
         "scoreId": "tAyCi0AhFF4D9-MilHoJkCGSI0w4fAXjB6_22QPiU50",
@@ -1296,11 +1172,7 @@
         "scoreId": "aIBas8el9OyzvjBilIkO6l9GmFzgmcOWS-V6X-P7WBg",
         "playedAt": "2025-12-29T18:44:18.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "aIBas8el9OyzvjBilIkO6l9GmFzgmcOWS-V6X-P7WBg",
-        "playedAt": "2025-12-29T18:44:18.000Z"
-      },
+      "bestCombo": null,
       "bestSync": {
         "status": "Sync",
         "scoreId": "aIBas8el9OyzvjBilIkO6l9GmFzgmcOWS-V6X-P7WBg",
@@ -1334,11 +1206,7 @@
         "scoreId": "7hxWiGkF5PM6CtVenVfP6gT9QbIj47ltMVj93pB9XXs",
         "playedAt": "2025-11-26T02:55:18.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "7hxWiGkF5PM6CtVenVfP6gT9QbIj47ltMVj93pB9XXs",
-        "playedAt": "2025-11-26T02:55:18.000Z"
-      },
+      "bestCombo": null,
       "bestSync": null,
       "historyChunks": [
         "2025-11"
@@ -1351,11 +1219,7 @@
         "scoreId": "I5Dhggaj0gksNTAvc5cSbKE_zDtKduprxOeZ0APCDNY",
         "playedAt": "2025-11-10T05:20:23.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "I5Dhggaj0gksNTAvc5cSbKE_zDtKduprxOeZ0APCDNY",
-        "playedAt": "2025-11-10T05:20:23.000Z"
-      },
+      "bestCombo": null,
       "bestSync": null,
       "historyChunks": [
         "2025-11"
@@ -1368,11 +1232,7 @@
         "scoreId": "Op_9mYp4r-AjT06Tk4krrulkFbLtSbIU9p6vpFCeZlo",
         "playedAt": "2025-12-31T22:46:59.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "Op_9mYp4r-AjT06Tk4krrulkFbLtSbIU9p6vpFCeZlo",
-        "playedAt": "2025-12-31T22:46:59.000Z"
-      },
+      "bestCombo": null,
       "bestSync": {
         "status": "Sync",
         "scoreId": "Op_9mYp4r-AjT06Tk4krrulkFbLtSbIU9p6vpFCeZlo",
@@ -1389,11 +1249,7 @@
         "scoreId": "NRbvyFU-rc5iBu7qgDFbb0m5MqbvhANZ0N5-iirJ9_4",
         "playedAt": "2025-11-27T17:51:11.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "NRbvyFU-rc5iBu7qgDFbb0m5MqbvhANZ0N5-iirJ9_4",
-        "playedAt": "2025-11-27T17:51:11.000Z"
-      },
+      "bestCombo": null,
       "bestSync": {
         "status": "Sync",
         "scoreId": "NRbvyFU-rc5iBu7qgDFbb0m5MqbvhANZ0N5-iirJ9_4",
@@ -1568,11 +1424,7 @@
         "scoreId": "mLcWsHRfNhzYUQPT3fQVkjIQQBclM4H2BfZViv6iXuk",
         "playedAt": "2026-01-03T22:51:57.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "mLcWsHRfNhzYUQPT3fQVkjIQQBclM4H2BfZViv6iXuk",
-        "playedAt": "2026-01-03T22:51:57.000Z"
-      },
+      "bestCombo": null,
       "bestSync": {
         "status": "Sync",
         "scoreId": "mLcWsHRfNhzYUQPT3fQVkjIQQBclM4H2BfZViv6iXuk",
@@ -1590,11 +1442,7 @@
         "scoreId": "tcBFRDOKIreaIFr_v1XOlbjQ-4zA9xqh4e8pFqtW4wA",
         "playedAt": "2025-12-21T05:58:03.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "tcBFRDOKIreaIFr_v1XOlbjQ-4zA9xqh4e8pFqtW4wA",
-        "playedAt": "2025-12-21T05:58:03.000Z"
-      },
+      "bestCombo": null,
       "bestSync": {
         "status": "Sync",
         "scoreId": "tcBFRDOKIreaIFr_v1XOlbjQ-4zA9xqh4e8pFqtW4wA",
@@ -1633,11 +1481,7 @@
         "scoreId": "9VQllmitzNcdNhPPRbqtE1vxeP-BkjlwWbTtwH2vx80",
         "playedAt": "2025-11-10T04:33:34.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "9VQllmitzNcdNhPPRbqtE1vxeP-BkjlwWbTtwH2vx80",
-        "playedAt": "2025-11-10T04:33:34.000Z"
-      },
+      "bestCombo": null,
       "bestSync": null,
       "historyChunks": [
         "2025-11"
@@ -1671,11 +1515,7 @@
         "scoreId": "jJRF9Q5A8AGzf1Lyy0wIoUz76m8RX9LNmslrcthxUW8",
         "playedAt": "2025-12-23T05:07:01.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "jJRF9Q5A8AGzf1Lyy0wIoUz76m8RX9LNmslrcthxUW8",
-        "playedAt": "2025-12-23T05:07:01.000Z"
-      },
+      "bestCombo": null,
       "bestSync": null,
       "historyChunks": [
         "2025-12"
@@ -1688,11 +1528,7 @@
         "scoreId": "DbN76XYNnff9rZlcWauFbOsZhjWpyiCxqnlCm6TwnHU",
         "playedAt": "2025-11-27T18:59:36.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "DbN76XYNnff9rZlcWauFbOsZhjWpyiCxqnlCm6TwnHU",
-        "playedAt": "2025-11-27T18:59:36.000Z"
-      },
+      "bestCombo": null,
       "bestSync": {
         "status": "Sync",
         "scoreId": "DbN76XYNnff9rZlcWauFbOsZhjWpyiCxqnlCm6TwnHU",
@@ -1709,11 +1545,7 @@
         "scoreId": "SzFzwtppomxZd1qNM_hp7v5OgqnaGXKEcdz-idZL2-s",
         "playedAt": "2025-11-28T02:07:28.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "SzFzwtppomxZd1qNM_hp7v5OgqnaGXKEcdz-idZL2-s",
-        "playedAt": "2025-11-28T02:07:28.000Z"
-      },
+      "bestCombo": null,
       "bestSync": {
         "status": "Sync",
         "scoreId": "SzFzwtppomxZd1qNM_hp7v5OgqnaGXKEcdz-idZL2-s",
@@ -1732,7 +1564,7 @@
         "playedAt": "2026-06-26T16:48:48.000Z"
       },
       "bestCombo": {
-        "status": "AP",
+        "status": "AP+",
         "scoreId": "k1JIncG3hHKOygYTEjSVn27CtPNoFMa3E0euxUKF2Nw",
         "playedAt": "2026-06-26T16:48:48.000Z"
       },
@@ -1786,11 +1618,7 @@
         "scoreId": "66kLGrox1XWf-ts8efzNeUDKntma9Ub4i4_9ueNEKmQ",
         "playedAt": "2026-01-03T23:14:47.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "66kLGrox1XWf-ts8efzNeUDKntma9Ub4i4_9ueNEKmQ",
-        "playedAt": "2026-01-03T23:14:47.000Z"
-      },
+      "bestCombo": null,
       "bestSync": {
         "status": "Sync",
         "scoreId": "66kLGrox1XWf-ts8efzNeUDKntma9Ub4i4_9ueNEKmQ",
@@ -1828,11 +1656,7 @@
         "scoreId": "noHaHAtCqZhE7651Q3Xqj5CP-BZE9dcZoBIfBUzaSn8",
         "playedAt": "2026-01-07T17:52:37.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "noHaHAtCqZhE7651Q3Xqj5CP-BZE9dcZoBIfBUzaSn8",
-        "playedAt": "2026-01-07T17:52:37.000Z"
-      },
+      "bestCombo": null,
       "bestSync": {
         "status": "Sync",
         "scoreId": "noHaHAtCqZhE7651Q3Xqj5CP-BZE9dcZoBIfBUzaSn8",
@@ -1871,11 +1695,7 @@
         "scoreId": "GHpHekmWS674rvcUjXzqplDgAQzTWQI0oAtcOluvQuQ",
         "playedAt": "2025-11-23T01:33:06.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "GHpHekmWS674rvcUjXzqplDgAQzTWQI0oAtcOluvQuQ",
-        "playedAt": "2025-11-23T01:33:06.000Z"
-      },
+      "bestCombo": null,
       "bestSync": null,
       "historyChunks": [
         "2025-11"
@@ -1910,11 +1730,7 @@
         "scoreId": "R5A8gF4SqW6XIqQwNgqJofrdmigqHOH8tF2Jhpa1Plw",
         "playedAt": "2026-08-22T03:38:25.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "R5A8gF4SqW6XIqQwNgqJofrdmigqHOH8tF2Jhpa1Plw",
-        "playedAt": "2026-08-22T03:38:25.000Z"
-      },
+      "bestCombo": null,
       "bestSync": null,
       "historyChunks": [
         "2026-08"
@@ -1944,11 +1760,7 @@
         "scoreId": "oAozinTgkmaFO_Ez4WG0jQvnvaf9JX4FyQJsfI3PTRE",
         "playedAt": "2025-11-26T02:52:06.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "oAozinTgkmaFO_Ez4WG0jQvnvaf9JX4FyQJsfI3PTRE",
-        "playedAt": "2025-11-26T02:52:06.000Z"
-      },
+      "bestCombo": null,
       "bestSync": null,
       "historyChunks": [
         "2025-11"
@@ -1961,11 +1773,7 @@
         "scoreId": "zG-0Cg_2HmhLQOAXLMBBx_RoGZfykt90xvU1EEuunxA",
         "playedAt": "2026-05-22T02:23:10.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "zG-0Cg_2HmhLQOAXLMBBx_RoGZfykt90xvU1EEuunxA",
-        "playedAt": "2026-05-22T02:23:10.000Z"
-      },
+      "bestCombo": null,
       "bestSync": null,
       "historyChunks": [
         "2026-05"
@@ -1978,11 +1786,7 @@
         "scoreId": "OGJ_K3zhUosBtrZaGD5d_HS_nvgjvlAOrslpXXaKSng",
         "playedAt": "2026-01-19T18:42:25.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "OGJ_K3zhUosBtrZaGD5d_HS_nvgjvlAOrslpXXaKSng",
-        "playedAt": "2026-01-19T18:42:25.000Z"
-      },
+      "bestCombo": null,
       "bestSync": {
         "status": "Sync",
         "scoreId": "OGJ_K3zhUosBtrZaGD5d_HS_nvgjvlAOrslpXXaKSng",
@@ -1999,11 +1803,7 @@
         "scoreId": "f7-hKCqGOW1sNSKNjKFeaJKeMzgq0JBNxZ0woCHYr4U",
         "playedAt": "2026-01-04T01:48:02.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "f7-hKCqGOW1sNSKNjKFeaJKeMzgq0JBNxZ0woCHYr4U",
-        "playedAt": "2026-01-04T01:48:02.000Z"
-      },
+      "bestCombo": null,
       "bestSync": {
         "status": "Sync",
         "scoreId": "f7-hKCqGOW1sNSKNjKFeaJKeMzgq0JBNxZ0woCHYr4U",
@@ -2122,7 +1922,7 @@
         "playedAt": "2025-12-23T01:56:15.000Z"
       },
       "bestCombo": {
-        "status": "FC",
+        "status": "FC+",
         "scoreId": "5fbndUeCCCUgm1y0VzoyYPGFuNCW1A6-g9YSIyrV-qM",
         "playedAt": "2025-12-23T01:56:15.000Z"
       },
@@ -2138,11 +1938,7 @@
         "scoreId": "8kHacST0Fyv37Rl5PHjGQvBC-jSXMhhzNHcxy5dCjsk",
         "playedAt": "2025-11-11T23:35:35.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "8kHacST0Fyv37Rl5PHjGQvBC-jSXMhhzNHcxy5dCjsk",
-        "playedAt": "2025-11-11T23:35:35.000Z"
-      },
+      "bestCombo": null,
       "bestSync": {
         "status": "Sync",
         "scoreId": "8kHacST0Fyv37Rl5PHjGQvBC-jSXMhhzNHcxy5dCjsk",
@@ -2159,11 +1955,7 @@
         "scoreId": "xF1732QTfU7ue_v9w8Hk76jS-Zpn0R_QygwpJ5U3Bl4",
         "playedAt": "2026-01-04T01:55:52.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "xF1732QTfU7ue_v9w8Hk76jS-Zpn0R_QygwpJ5U3Bl4",
-        "playedAt": "2026-01-04T01:55:52.000Z"
-      },
+      "bestCombo": null,
       "bestSync": {
         "status": "Sync",
         "scoreId": "xF1732QTfU7ue_v9w8Hk76jS-Zpn0R_QygwpJ5U3Bl4",
@@ -2221,11 +2013,7 @@
         "scoreId": "SoVAoqQKzhsrSpWINrv-vO6fkOV8ULKgLnnZAG-762A",
         "playedAt": "2025-11-14T04:43:00.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "SoVAoqQKzhsrSpWINrv-vO6fkOV8ULKgLnnZAG-762A",
-        "playedAt": "2025-11-14T04:43:00.000Z"
-      },
+      "bestCombo": null,
       "bestSync": null,
       "historyChunks": [
         "2025-11"
@@ -2260,7 +2048,7 @@
         "playedAt": "2025-11-28T00:07:03.000Z"
       },
       "bestCombo": {
-        "status": "FC",
+        "status": "FC+",
         "scoreId": "Ei6qCR0FV3WMhK-6-SVBrRKIZNRf6BMZq3qCpg2bv8w",
         "playedAt": "2025-11-28T00:07:03.000Z"
       },
@@ -2280,11 +2068,7 @@
         "scoreId": "hPK2CSYz8ycrZOVuAU35Y7FTPDDmQwIZ1ZETf_a7PAM",
         "playedAt": "2025-11-11T23:48:03.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "hPK2CSYz8ycrZOVuAU35Y7FTPDDmQwIZ1ZETf_a7PAM",
-        "playedAt": "2025-11-11T23:48:03.000Z"
-      },
+      "bestCombo": null,
       "bestSync": null,
       "historyChunks": [
         "2025-11"
@@ -2297,11 +2081,7 @@
         "scoreId": "5T0lJQS0bh_hdVZ17TgjLhsu1hQSM_Cll8R1LkyCbgs",
         "playedAt": "2025-12-31T17:39:04.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "5T0lJQS0bh_hdVZ17TgjLhsu1hQSM_Cll8R1LkyCbgs",
-        "playedAt": "2025-12-31T17:39:04.000Z"
-      },
+      "bestCombo": null,
       "bestSync": null,
       "historyChunks": [
         "2025-12"
@@ -2335,11 +2115,7 @@
         "scoreId": "XL3_TVBf-8yUDvkanq5uKg9J_iXEfWgBCIkuRaV3PDY",
         "playedAt": "2026-01-19T17:31:07.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "XL3_TVBf-8yUDvkanq5uKg9J_iXEfWgBCIkuRaV3PDY",
-        "playedAt": "2026-01-19T17:31:07.000Z"
-      },
+      "bestCombo": null,
       "bestSync": null,
       "historyChunks": [
         "2026-01"
@@ -2396,11 +2172,7 @@
         "scoreId": "0Il3_9G87eXsJezEXnR9XrColQpTOU3RczBTyP_hceE",
         "playedAt": "2026-01-01T02:42:07.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "0Il3_9G87eXsJezEXnR9XrColQpTOU3RczBTyP_hceE",
-        "playedAt": "2026-01-01T02:42:07.000Z"
-      },
+      "bestCombo": null,
       "bestSync": {
         "status": "Sync",
         "scoreId": "0Il3_9G87eXsJezEXnR9XrColQpTOU3RczBTyP_hceE",
@@ -2439,11 +2211,7 @@
         "scoreId": "vaO7i5Vt_DBogrfYYDFQGDCAfNiSLFG2uWQqLUGYctw",
         "playedAt": "2026-08-22T03:57:42.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "vaO7i5Vt_DBogrfYYDFQGDCAfNiSLFG2uWQqLUGYctw",
-        "playedAt": "2026-08-22T03:57:42.000Z"
-      },
+      "bestCombo": null,
       "bestSync": null,
       "historyChunks": [
         "2026-08"
@@ -2456,11 +2224,7 @@
         "scoreId": "gLONP3G46knW9L37QuoCHMUYHZNcRiW4ZEmUEvFUIqI",
         "playedAt": "2025-11-10T03:55:25.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "gLONP3G46knW9L37QuoCHMUYHZNcRiW4ZEmUEvFUIqI",
-        "playedAt": "2025-11-10T03:55:25.000Z"
-      },
+      "bestCombo": null,
       "bestSync": null,
       "historyChunks": [
         "2025-11"
@@ -2473,11 +2237,7 @@
         "scoreId": "ZbiPn80zSnCcRf9yvvE0C8_z9LgtB1Fx_XhHooG_EkQ",
         "playedAt": "2025-11-22T23:16:25.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "ZbiPn80zSnCcRf9yvvE0C8_z9LgtB1Fx_XhHooG_EkQ",
-        "playedAt": "2025-11-22T23:16:25.000Z"
-      },
+      "bestCombo": null,
       "bestSync": {
         "status": "Sync",
         "scoreId": "ZbiPn80zSnCcRf9yvvE0C8_z9LgtB1Fx_XhHooG_EkQ",
@@ -2494,11 +2254,7 @@
         "scoreId": "qHqAkjsqs2YNm_Gt21JwqQfPguIgIGsZO_AXxakFvGk",
         "playedAt": "2026-08-20T04:20:35.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "qHqAkjsqs2YNm_Gt21JwqQfPguIgIGsZO_AXxakFvGk",
-        "playedAt": "2026-08-20T04:20:35.000Z"
-      },
+      "bestCombo": null,
       "bestSync": {
         "status": "Sync",
         "scoreId": "qHqAkjsqs2YNm_Gt21JwqQfPguIgIGsZO_AXxakFvGk",
@@ -2515,11 +2271,7 @@
         "scoreId": "Zw4yE6kQeRp70YM4jopuenHKAimXR8QZ1KU91vb2q1Y",
         "playedAt": "2026-08-20T04:44:07.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "Zw4yE6kQeRp70YM4jopuenHKAimXR8QZ1KU91vb2q1Y",
-        "playedAt": "2026-08-20T04:44:07.000Z"
-      },
+      "bestCombo": null,
       "bestSync": {
         "status": "Sync",
         "scoreId": "Zw4yE6kQeRp70YM4jopuenHKAimXR8QZ1KU91vb2q1Y",
@@ -2598,11 +2350,7 @@
         "scoreId": "61jhqNPwUnCqLPTp7TqkbDppwSo2Y-Tsm0enUgj7TXQ",
         "playedAt": "2025-11-28T01:23:40.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "61jhqNPwUnCqLPTp7TqkbDppwSo2Y-Tsm0enUgj7TXQ",
-        "playedAt": "2025-11-28T01:23:40.000Z"
-      },
+      "bestCombo": null,
       "bestSync": {
         "status": "Sync",
         "scoreId": "61jhqNPwUnCqLPTp7TqkbDppwSo2Y-Tsm0enUgj7TXQ",
@@ -2700,11 +2448,7 @@
         "scoreId": "jYPX9XySeXhJbePliXxJovwwd9EotXWxa6hcKUjkY94",
         "playedAt": "2025-11-11T23:32:05.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "jYPX9XySeXhJbePliXxJovwwd9EotXWxa6hcKUjkY94",
-        "playedAt": "2025-11-11T23:32:05.000Z"
-      },
+      "bestCombo": null,
       "bestSync": {
         "status": "Sync",
         "scoreId": "jYPX9XySeXhJbePliXxJovwwd9EotXWxa6hcKUjkY94",
@@ -2721,11 +2465,7 @@
         "scoreId": "KRFCxx_bHhJ3qVY0KsdPZqQWrp5XzaQdRfJCr52tbKY",
         "playedAt": "2026-05-22T01:18:15.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "KRFCxx_bHhJ3qVY0KsdPZqQWrp5XzaQdRfJCr52tbKY",
-        "playedAt": "2026-05-22T01:18:15.000Z"
-      },
+      "bestCombo": null,
       "bestSync": null,
       "historyChunks": [
         "2026-05"
@@ -2807,11 +2547,7 @@
         "scoreId": "3Nb_fSP3_lf-9I97Ev4i5P_JdSFDzZ8VpmtoOMTUnr8",
         "playedAt": "2025-11-10T03:38:42.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "3Nb_fSP3_lf-9I97Ev4i5P_JdSFDzZ8VpmtoOMTUnr8",
-        "playedAt": "2025-11-10T03:38:42.000Z"
-      },
+      "bestCombo": null,
       "bestSync": null,
       "historyChunks": [
         "2025-11"
@@ -2862,11 +2598,7 @@
         "scoreId": "2HyJgLNh00e97gg1zb3nLxwyGeKpJQi1_JoASfe3VR4",
         "playedAt": "2025-11-27T18:56:05.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "2HyJgLNh00e97gg1zb3nLxwyGeKpJQi1_JoASfe3VR4",
-        "playedAt": "2025-11-27T18:56:05.000Z"
-      },
+      "bestCombo": null,
       "bestSync": {
         "status": "Sync",
         "scoreId": "2HyJgLNh00e97gg1zb3nLxwyGeKpJQi1_JoASfe3VR4",
@@ -2883,11 +2615,7 @@
         "scoreId": "Ek9vK820wsDczDypF4to4dLFlTnSyXrNKvowjoVXIt8",
         "playedAt": "2026-01-04T01:19:49.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "Ek9vK820wsDczDypF4to4dLFlTnSyXrNKvowjoVXIt8",
-        "playedAt": "2026-01-04T01:19:49.000Z"
-      },
+      "bestCombo": null,
       "bestSync": {
         "status": "Sync",
         "scoreId": "Ek9vK820wsDczDypF4to4dLFlTnSyXrNKvowjoVXIt8",
@@ -2926,11 +2654,7 @@
         "scoreId": "ZDAlfSPPH85by8Eugu38lnUtcLx5v1--v5lnHoVYS1E",
         "playedAt": "2026-01-15T06:05:42.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "ZDAlfSPPH85by8Eugu38lnUtcLx5v1--v5lnHoVYS1E",
-        "playedAt": "2026-01-15T06:05:42.000Z"
-      },
+      "bestCombo": null,
       "bestSync": null,
       "historyChunks": [
         "2026-01"
@@ -2943,11 +2667,7 @@
         "scoreId": "Ew6hbKsTeHEPWxfe7kyKbklgRElmevrbhehvl-ISD5I",
         "playedAt": "2025-11-28T00:25:43.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "Ew6hbKsTeHEPWxfe7kyKbklgRElmevrbhehvl-ISD5I",
-        "playedAt": "2025-11-28T00:25:43.000Z"
-      },
+      "bestCombo": null,
       "bestSync": null,
       "historyChunks": [
         "2025-11"
@@ -2960,11 +2680,7 @@
         "scoreId": "c7uE9oUhpcwQnm3xbnwYqorVKws8ffK4tr5wetR4HiM",
         "playedAt": "2026-01-01T02:34:10.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "c7uE9oUhpcwQnm3xbnwYqorVKws8ffK4tr5wetR4HiM",
-        "playedAt": "2026-01-01T02:34:10.000Z"
-      },
+      "bestCombo": null,
       "bestSync": null,
       "historyChunks": [
         "2026-01"
@@ -3021,11 +2737,7 @@
         "scoreId": "0NLHKNZyE3uPTaMoeaneJABcNg9JhT3qoT_ochnj1mw",
         "playedAt": "2025-12-06T06:16:12.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "0NLHKNZyE3uPTaMoeaneJABcNg9JhT3qoT_ochnj1mw",
-        "playedAt": "2025-12-06T06:16:12.000Z"
-      },
+      "bestCombo": null,
       "bestSync": {
         "status": "Sync",
         "scoreId": "0NLHKNZyE3uPTaMoeaneJABcNg9JhT3qoT_ochnj1mw",
@@ -3042,11 +2754,7 @@
         "scoreId": "s11h9okR6sSjLm1ZxnQbyc6bzvKi5LMtLT1cF6NZDws",
         "playedAt": "2025-12-06T05:45:14.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "s11h9okR6sSjLm1ZxnQbyc6bzvKi5LMtLT1cF6NZDws",
-        "playedAt": "2025-12-06T05:45:14.000Z"
-      },
+      "bestCombo": null,
       "bestSync": {
         "status": "Sync",
         "scoreId": "s11h9okR6sSjLm1ZxnQbyc6bzvKi5LMtLT1cF6NZDws",
@@ -3080,11 +2788,7 @@
         "scoreId": "oXwhOIlU-H90abc4qz8tIuqEfveZwJpdo5tS3MRQLo0",
         "playedAt": "2026-08-15T02:32:44.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "oXwhOIlU-H90abc4qz8tIuqEfveZwJpdo5tS3MRQLo0",
-        "playedAt": "2026-08-15T02:32:44.000Z"
-      },
+      "bestCombo": null,
       "bestSync": {
         "status": "Sync",
         "scoreId": "oXwhOIlU-H90abc4qz8tIuqEfveZwJpdo5tS3MRQLo0",
@@ -3123,7 +2827,7 @@
         "playedAt": "2025-11-20T03:00:18.000Z"
       },
       "bestCombo": {
-        "status": "FC",
+        "status": "FC+",
         "scoreId": "ey2wgO9IVoROD0Oa-Vllpu2LmkI26UZPmA7OjLOzV24",
         "playedAt": "2025-11-20T03:00:18.000Z"
       },
@@ -3143,11 +2847,7 @@
         "scoreId": "kIKNr-S4CNKKhx9PjLAf54dJlL1tGi_Lrl29Z0nydUI",
         "playedAt": "2025-11-11T23:44:18.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "kIKNr-S4CNKKhx9PjLAf54dJlL1tGi_Lrl29Z0nydUI",
-        "playedAt": "2025-11-11T23:44:18.000Z"
-      },
+      "bestCombo": null,
       "bestSync": null,
       "historyChunks": [
         "2025-11"
@@ -3220,11 +2920,7 @@
         "scoreId": "NdAOPdVzzyKAQq5Ttn0Z3JYeD3-c6dzbPk5_F81pRzc",
         "playedAt": "2025-11-26T01:48:26.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "NdAOPdVzzyKAQq5Ttn0Z3JYeD3-c6dzbPk5_F81pRzc",
-        "playedAt": "2025-11-26T01:48:26.000Z"
-      },
+      "bestCombo": null,
       "bestSync": {
         "status": "Sync",
         "scoreId": "NdAOPdVzzyKAQq5Ttn0Z3JYeD3-c6dzbPk5_F81pRzc",
@@ -3241,11 +2937,7 @@
         "scoreId": "E-iEji2ah8-jY2L_8bCK7ni82_PySUxqPc2uhehDyg4",
         "playedAt": "2025-12-26T02:23:01.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "E-iEji2ah8-jY2L_8bCK7ni82_PySUxqPc2uhehDyg4",
-        "playedAt": "2025-12-26T02:23:01.000Z"
-      },
+      "bestCombo": null,
       "bestSync": {
         "status": "Sync",
         "scoreId": "E-iEji2ah8-jY2L_8bCK7ni82_PySUxqPc2uhehDyg4",
@@ -3263,11 +2955,7 @@
         "scoreId": "2XOMsVWX-fglW0KrBwdSXYAVpguZZwpF958g77HRchM",
         "playedAt": "2026-01-04T01:15:50.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "2XOMsVWX-fglW0KrBwdSXYAVpguZZwpF958g77HRchM",
-        "playedAt": "2026-01-04T01:15:50.000Z"
-      },
+      "bestCombo": null,
       "bestSync": {
         "status": "Sync",
         "scoreId": "2XOMsVWX-fglW0KrBwdSXYAVpguZZwpF958g77HRchM",
@@ -3306,11 +2994,7 @@
         "scoreId": "8R-K8lnmsg3ZQKVLzdBVHpzu78u3ad14VrF93DeBt5Q",
         "playedAt": "2025-11-13T22:18:02.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "8R-K8lnmsg3ZQKVLzdBVHpzu78u3ad14VrF93DeBt5Q",
-        "playedAt": "2025-11-13T22:18:02.000Z"
-      },
+      "bestCombo": null,
       "bestSync": null,
       "historyChunks": [
         "2025-11"
@@ -3323,11 +3007,7 @@
         "scoreId": "Yn4W_PHw6lMqm4l9ut0wUVnI8Yb7RuK4_iwxQMHGAn0",
         "playedAt": "2026-01-01T02:55:51.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "Yn4W_PHw6lMqm4l9ut0wUVnI8Yb7RuK4_iwxQMHGAn0",
-        "playedAt": "2026-01-01T02:55:51.000Z"
-      },
+      "bestCombo": null,
       "bestSync": {
         "status": "Sync",
         "scoreId": "Yn4W_PHw6lMqm4l9ut0wUVnI8Yb7RuK4_iwxQMHGAn0",
@@ -3365,11 +3045,7 @@
         "scoreId": "TnApeViDLp__Da16Nq2xwFJC5mJzwkF_xOdMHVpy_OA",
         "playedAt": "2026-01-19T18:52:03.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "TnApeViDLp__Da16Nq2xwFJC5mJzwkF_xOdMHVpy_OA",
-        "playedAt": "2026-01-19T18:52:03.000Z"
-      },
+      "bestCombo": null,
       "bestSync": {
         "status": "Sync",
         "scoreId": "TnApeViDLp__Da16Nq2xwFJC5mJzwkF_xOdMHVpy_OA",
@@ -3386,11 +3062,7 @@
         "scoreId": "to7SDWL66qXoeIz6l4Z0Ofn8Fv6vMEsMWc19yRZyj30",
         "playedAt": "2025-11-16T03:23:52.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "to7SDWL66qXoeIz6l4Z0Ofn8Fv6vMEsMWc19yRZyj30",
-        "playedAt": "2025-11-16T03:23:52.000Z"
-      },
+      "bestCombo": null,
       "bestSync": null,
       "historyChunks": [
         "2025-11"
@@ -3424,11 +3096,7 @@
         "scoreId": "5WafkKyEyxGcc_BUN_rhgT4rirJTjoLNve7EOOaQ2EQ",
         "playedAt": "2026-05-21T23:58:36.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "5WafkKyEyxGcc_BUN_rhgT4rirJTjoLNve7EOOaQ2EQ",
-        "playedAt": "2026-05-21T23:58:36.000Z"
-      },
+      "bestCombo": null,
       "bestSync": null,
       "historyChunks": [
         "2026-01",
@@ -3463,11 +3131,7 @@
         "scoreId": "EyBSNzxVvKwtZnfSDXsq1KmBUDIR1reouWlYohUHAhg",
         "playedAt": "2025-11-22T23:57:20.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "EyBSNzxVvKwtZnfSDXsq1KmBUDIR1reouWlYohUHAhg",
-        "playedAt": "2025-11-22T23:57:20.000Z"
-      },
+      "bestCombo": null,
       "bestSync": {
         "status": "Sync",
         "scoreId": "EyBSNzxVvKwtZnfSDXsq1KmBUDIR1reouWlYohUHAhg",
@@ -3501,11 +3165,7 @@
         "scoreId": "gjTuf4BT7FGrvw7Ex_Y9pzsPT708SMIXXdbLKMmt8p4",
         "playedAt": "2025-11-28T02:17:09.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "gjTuf4BT7FGrvw7Ex_Y9pzsPT708SMIXXdbLKMmt8p4",
-        "playedAt": "2025-11-28T02:17:09.000Z"
-      },
+      "bestCombo": null,
       "bestSync": {
         "status": "Sync",
         "scoreId": "gjTuf4BT7FGrvw7Ex_Y9pzsPT708SMIXXdbLKMmt8p4",
@@ -3540,11 +3200,7 @@
         "scoreId": "3ZicAo56gQwOY5gEQFXtmLNn4wYfObisN0QOM6WUI_Q",
         "playedAt": "2025-12-21T05:46:08.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "3ZicAo56gQwOY5gEQFXtmLNn4wYfObisN0QOM6WUI_Q",
-        "playedAt": "2025-12-21T05:46:08.000Z"
-      },
+      "bestCombo": null,
       "bestSync": {
         "status": "Sync",
         "scoreId": "3ZicAo56gQwOY5gEQFXtmLNn4wYfObisN0QOM6WUI_Q",
@@ -3561,11 +3217,7 @@
         "scoreId": "K3_83-oCMGbq92JCGb6wmdsSMDBAcJd15yEC5298ynI",
         "playedAt": "2025-11-10T06:03:16.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "K3_83-oCMGbq92JCGb6wmdsSMDBAcJd15yEC5298ynI",
-        "playedAt": "2025-11-10T06:03:16.000Z"
-      },
+      "bestCombo": null,
       "bestSync": null,
       "historyChunks": [
         "2025-11"
@@ -3578,11 +3230,7 @@
         "scoreId": "mBmcogI4Q2lAscq01hAESreHq9jPBd1LNK4gIzzTLZg",
         "playedAt": "2026-08-22T04:29:58.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "mBmcogI4Q2lAscq01hAESreHq9jPBd1LNK4gIzzTLZg",
-        "playedAt": "2026-08-22T04:29:58.000Z"
-      },
+      "bestCombo": null,
       "bestSync": null,
       "historyChunks": [
         "2026-08"
@@ -3595,11 +3243,7 @@
         "scoreId": "lh20_WEHo2IVkoZOJmZ6SP3CvBozks85jZq-QJU19p4",
         "playedAt": "2026-01-01T02:47:39.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "lh20_WEHo2IVkoZOJmZ6SP3CvBozks85jZq-QJU19p4",
-        "playedAt": "2026-01-01T02:47:39.000Z"
-      },
+      "bestCombo": null,
       "bestSync": {
         "status": "Sync",
         "scoreId": "lh20_WEHo2IVkoZOJmZ6SP3CvBozks85jZq-QJU19p4",
@@ -3616,11 +3260,7 @@
         "scoreId": "O5WByuci3HfXzYFpnMZ22PnPQ0fGdEpyCukion5pxSQ",
         "playedAt": "2025-12-23T02:35:09.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "O5WByuci3HfXzYFpnMZ22PnPQ0fGdEpyCukion5pxSQ",
-        "playedAt": "2025-12-23T02:35:09.000Z"
-      },
+      "bestCombo": null,
       "bestSync": null,
       "historyChunks": [
         "2025-12"
@@ -3633,11 +3273,7 @@
         "scoreId": "HY75sSk_VIokhzSs1zB2MSEIu8Ij8uSfFM9LZzKhQeQ",
         "playedAt": "2026-08-20T03:10:10.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "HY75sSk_VIokhzSs1zB2MSEIu8Ij8uSfFM9LZzKhQeQ",
-        "playedAt": "2026-08-20T03:10:10.000Z"
-      },
+      "bestCombo": null,
       "bestSync": {
         "status": "Sync",
         "scoreId": "HY75sSk_VIokhzSs1zB2MSEIu8Ij8uSfFM9LZzKhQeQ",
@@ -3714,11 +3350,7 @@
         "scoreId": "zL0uM0G2h61tj8dFUex6vPBbNGn3fNmpzByQg_SeiI8",
         "playedAt": "2026-01-07T17:49:26.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "zL0uM0G2h61tj8dFUex6vPBbNGn3fNmpzByQg_SeiI8",
-        "playedAt": "2026-01-07T17:49:26.000Z"
-      },
+      "bestCombo": null,
       "bestSync": {
         "status": "Sync",
         "scoreId": "zL0uM0G2h61tj8dFUex6vPBbNGn3fNmpzByQg_SeiI8",
@@ -3736,11 +3368,7 @@
         "scoreId": "wC5v7QIoWLa73TSWzNV-wU5QA5VdbD4EQ1h7O6N0Bvg",
         "playedAt": "2025-11-27T16:56:49.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "wC5v7QIoWLa73TSWzNV-wU5QA5VdbD4EQ1h7O6N0Bvg",
-        "playedAt": "2025-11-27T16:56:49.000Z"
-      },
+      "bestCombo": null,
       "bestSync": {
         "status": "Sync",
         "scoreId": "wC5v7QIoWLa73TSWzNV-wU5QA5VdbD4EQ1h7O6N0Bvg",
@@ -3779,11 +3407,7 @@
         "scoreId": "Uaw_K6p6jW8ZfjpLWsKJPGNw7U7Bfsa_efgH-AJuwOs",
         "playedAt": "2026-01-01T01:06:36.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "Uaw_K6p6jW8ZfjpLWsKJPGNw7U7Bfsa_efgH-AJuwOs",
-        "playedAt": "2026-01-01T01:06:36.000Z"
-      },
+      "bestCombo": null,
       "bestSync": {
         "status": "Sync",
         "scoreId": "Uaw_K6p6jW8ZfjpLWsKJPGNw7U7Bfsa_efgH-AJuwOs",
@@ -3817,11 +3441,7 @@
         "scoreId": "y2rza8zmiXFTnX5qCTwzOQSHHxiAo3VSrPFJ3-votfc",
         "playedAt": "2026-01-01T01:35:45.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "y2rza8zmiXFTnX5qCTwzOQSHHxiAo3VSrPFJ3-votfc",
-        "playedAt": "2026-01-01T01:35:45.000Z"
-      },
+      "bestCombo": null,
       "bestSync": {
         "status": "Sync",
         "scoreId": "y2rza8zmiXFTnX5qCTwzOQSHHxiAo3VSrPFJ3-votfc",
@@ -3856,11 +3476,7 @@
         "scoreId": "Th_E8O-CACK2zaQzkccQbMmnF9KwhPngNFPWMOgXrBc",
         "playedAt": "2025-12-29T17:33:46.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "Th_E8O-CACK2zaQzkccQbMmnF9KwhPngNFPWMOgXrBc",
-        "playedAt": "2025-12-29T17:33:46.000Z"
-      },
+      "bestCombo": null,
       "bestSync": null,
       "historyChunks": [
         "2025-11",
@@ -3941,11 +3557,7 @@
         "scoreId": "Kc6vZ5RhaqjgnIE2cVtsJPID2IafW6Nqo6Ri64LgyjU",
         "playedAt": "2025-11-16T04:42:43.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "Kc6vZ5RhaqjgnIE2cVtsJPID2IafW6Nqo6Ri64LgyjU",
-        "playedAt": "2025-11-16T04:42:43.000Z"
-      },
+      "bestCombo": null,
       "bestSync": null,
       "historyChunks": [
         "2025-11"
@@ -3958,11 +3570,7 @@
         "scoreId": "THCR62RXQMXumolNdH1PKTBL4su5Uik5DBLidyhtLAQ",
         "playedAt": "2026-05-22T00:12:14.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "THCR62RXQMXumolNdH1PKTBL4su5Uik5DBLidyhtLAQ",
-        "playedAt": "2026-05-22T00:12:14.000Z"
-      },
+      "bestCombo": null,
       "bestSync": null,
       "historyChunks": [
         "2026-05"
@@ -3996,11 +3604,7 @@
         "scoreId": "lGQwOghj7xW4iwglFZyB_tGdZU8MWZKORml98cecm8A",
         "playedAt": "2025-12-26T02:00:06.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "lGQwOghj7xW4iwglFZyB_tGdZU8MWZKORml98cecm8A",
-        "playedAt": "2025-12-26T02:00:06.000Z"
-      },
+      "bestCombo": null,
       "bestSync": {
         "status": "Sync",
         "scoreId": "X9R1CeP4t_s3CD9VVxZrg2cy2XmJaqATqPQHDUexpOM",
@@ -4018,11 +3622,7 @@
         "scoreId": "L0BkQnmgZXBaD5BOcvkkk2ZulussWDLw_lUbXrJjOp4",
         "playedAt": "2026-01-01T01:29:39.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "L0BkQnmgZXBaD5BOcvkkk2ZulussWDLw_lUbXrJjOp4",
-        "playedAt": "2026-01-01T01:29:39.000Z"
-      },
+      "bestCombo": null,
       "bestSync": {
         "status": "Sync",
         "scoreId": "L0BkQnmgZXBaD5BOcvkkk2ZulussWDLw_lUbXrJjOp4",
@@ -4090,11 +3690,7 @@
         "scoreId": "1ZxW7UYYs0IcLsxqMNVqWhGIbri5aJdVHJ646tX9Igw",
         "playedAt": "2025-11-27T16:50:47.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "1ZxW7UYYs0IcLsxqMNVqWhGIbri5aJdVHJ646tX9Igw",
-        "playedAt": "2025-11-27T16:50:47.000Z"
-      },
+      "bestCombo": null,
       "bestSync": {
         "status": "Sync",
         "scoreId": "1ZxW7UYYs0IcLsxqMNVqWhGIbri5aJdVHJ646tX9Igw",
@@ -4162,11 +3758,7 @@
         "scoreId": "UzW5JQ9y3wRIYF0BGJC0N38YmJScx8P_XK4g9NQHjco",
         "playedAt": "2026-01-01T01:54:26.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "UzW5JQ9y3wRIYF0BGJC0N38YmJScx8P_XK4g9NQHjco",
-        "playedAt": "2026-01-01T01:54:26.000Z"
-      },
+      "bestCombo": null,
       "bestSync": {
         "status": "Sync",
         "scoreId": "UzW5JQ9y3wRIYF0BGJC0N38YmJScx8P_XK4g9NQHjco",
@@ -4261,11 +3853,7 @@
         "scoreId": "UJQcRaNVpIYMNTwsxQuRlat0XDuukVCJsrvTuzee0cU",
         "playedAt": "2026-01-19T17:47:47.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "UJQcRaNVpIYMNTwsxQuRlat0XDuukVCJsrvTuzee0cU",
-        "playedAt": "2026-01-19T17:47:47.000Z"
-      },
+      "bestCombo": null,
       "bestSync": {
         "status": "Sync",
         "scoreId": "CJuKyRlj6aeina7z70Kz0VRBxZwmo0AJkyvP3gwV7H8",
@@ -4301,11 +3889,7 @@
         "scoreId": "y8FNfawQ20tPBoHKiXUgHw5j5a5_nNRIc9D0sc8bQgA",
         "playedAt": "2025-11-27T16:40:15.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "y8FNfawQ20tPBoHKiXUgHw5j5a5_nNRIc9D0sc8bQgA",
-        "playedAt": "2025-11-27T16:40:15.000Z"
-      },
+      "bestCombo": null,
       "bestSync": null,
       "historyChunks": [
         "2025-11"
@@ -4339,11 +3923,7 @@
         "scoreId": "vstQUYLi93xlX7SS17Li0IbuDtML1-_efyiuZ6u-lnY",
         "playedAt": "2025-11-28T02:35:11.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "vstQUYLi93xlX7SS17Li0IbuDtML1-_efyiuZ6u-lnY",
-        "playedAt": "2025-11-28T02:35:11.000Z"
-      },
+      "bestCombo": null,
       "bestSync": {
         "status": "Sync",
         "scoreId": "vstQUYLi93xlX7SS17Li0IbuDtML1-_efyiuZ6u-lnY",
@@ -4360,11 +3940,7 @@
         "scoreId": "-Pb44JW0C9PyRZ6IJ_dVLDaic8x7xqUftDyyA3MT8yI",
         "playedAt": "2026-08-22T04:44:31.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "-Pb44JW0C9PyRZ6IJ_dVLDaic8x7xqUftDyyA3MT8yI",
-        "playedAt": "2026-08-22T04:44:31.000Z"
-      },
+      "bestCombo": null,
       "bestSync": {
         "status": "Sync",
         "scoreId": "RAlxDaAWLuSQ-jWAdHKEW5Mrg8N6HPjEqMH6oO35s-A",
@@ -4381,11 +3957,7 @@
         "scoreId": "e2RWZtTIUm1aJ8UbmIbIyYSpkQoTjuTBW4rktlSj1zs",
         "playedAt": "2025-12-29T17:44:39.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "e2RWZtTIUm1aJ8UbmIbIyYSpkQoTjuTBW4rktlSj1zs",
-        "playedAt": "2025-12-29T17:44:39.000Z"
-      },
+      "bestCombo": null,
       "bestSync": null,
       "historyChunks": [
         "2025-12"
@@ -4398,11 +3970,7 @@
         "scoreId": "VYae_2ALvGJmTltT-WpPGvK9PW4WZRI1Qb8giPTPjcU",
         "playedAt": "2026-01-07T18:38:13.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "VYae_2ALvGJmTltT-WpPGvK9PW4WZRI1Qb8giPTPjcU",
-        "playedAt": "2026-01-07T18:38:13.000Z"
-      },
+      "bestCombo": null,
       "bestSync": {
         "status": "Sync",
         "scoreId": "VYae_2ALvGJmTltT-WpPGvK9PW4WZRI1Qb8giPTPjcU",
@@ -4457,11 +4025,7 @@
         "scoreId": "ZM4uQ4JWOQydYvtyY-R6zjnLioa0SQnbHkj-cxOfYvM",
         "playedAt": "2025-12-31T22:57:36.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "ZM4uQ4JWOQydYvtyY-R6zjnLioa0SQnbHkj-cxOfYvM",
-        "playedAt": "2025-12-31T22:57:36.000Z"
-      },
+      "bestCombo": null,
       "bestSync": {
         "status": "Sync",
         "scoreId": "ZM4uQ4JWOQydYvtyY-R6zjnLioa0SQnbHkj-cxOfYvM",
@@ -4500,11 +4064,7 @@
         "scoreId": "2T6baxk-H9cX5HjJrOCtAzNXfIXMXBXaz-faTkF4CjI",
         "playedAt": "2025-12-23T05:00:59.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "2T6baxk-H9cX5HjJrOCtAzNXfIXMXBXaz-faTkF4CjI",
-        "playedAt": "2025-12-23T05:00:59.000Z"
-      },
+      "bestCombo": null,
       "bestSync": null,
       "historyChunks": [
         "2025-12"
@@ -4557,11 +4117,7 @@
         "scoreId": "hjvas-Pj_2AGN45H44LabjzD3j9KHUdsCgwWf8IYcnE",
         "playedAt": "2025-12-26T03:40:41.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "hjvas-Pj_2AGN45H44LabjzD3j9KHUdsCgwWf8IYcnE",
-        "playedAt": "2025-12-26T03:40:41.000Z"
-      },
+      "bestCombo": null,
       "bestSync": {
         "status": "Sync",
         "scoreId": "hjvas-Pj_2AGN45H44LabjzD3j9KHUdsCgwWf8IYcnE",
@@ -4599,11 +4155,7 @@
         "scoreId": "KAYfJLyy1zrmMxOY4yR09SV1b4kcT4Q_GWJaYMd54ys",
         "playedAt": "2026-05-22T02:29:37.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "KAYfJLyy1zrmMxOY4yR09SV1b4kcT4Q_GWJaYMd54ys",
-        "playedAt": "2026-05-22T02:29:37.000Z"
-      },
+      "bestCombo": null,
       "bestSync": null,
       "historyChunks": [
         "2026-05"
@@ -4675,11 +4227,7 @@
         "scoreId": "yEQDxSqBLXfw0IlAh-F4CXMsJDoSKufLj56TX6GrVdg",
         "playedAt": "2026-05-22T01:15:06.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "yEQDxSqBLXfw0IlAh-F4CXMsJDoSKufLj56TX6GrVdg",
-        "playedAt": "2026-05-22T01:15:06.000Z"
-      },
+      "bestCombo": null,
       "bestSync": null,
       "historyChunks": [
         "2026-05"
@@ -4749,11 +4297,7 @@
         "scoreId": "TwjZJXL0z6apiDTcGrb8hRnVKUsp3k2PuEao3O9khlk",
         "playedAt": "2025-12-23T02:54:52.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "TwjZJXL0z6apiDTcGrb8hRnVKUsp3k2PuEao3O9khlk",
-        "playedAt": "2025-12-23T02:54:52.000Z"
-      },
+      "bestCombo": null,
       "bestSync": {
         "status": "Sync",
         "scoreId": "GY8ou6RzDsX5ecEdOpKHUMK-8KfbC-Wppr4-nm4yI8w",
@@ -4792,11 +4336,7 @@
         "scoreId": "_bS11QJLUCZDwy1pWOecqS29cuX8RPLyCeKVs0KL6aA",
         "playedAt": "2025-11-22T23:37:01.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "_bS11QJLUCZDwy1pWOecqS29cuX8RPLyCeKVs0KL6aA",
-        "playedAt": "2025-11-22T23:37:01.000Z"
-      },
+      "bestCombo": null,
       "bestSync": {
         "status": "Sync",
         "scoreId": "_bS11QJLUCZDwy1pWOecqS29cuX8RPLyCeKVs0KL6aA",
@@ -4835,11 +4375,7 @@
         "scoreId": "6CGNFEdiMirmpHh6M64Oku_B4L4icohRvJmgkwSJZfE",
         "playedAt": "2025-12-31T23:42:13.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "6CGNFEdiMirmpHh6M64Oku_B4L4icohRvJmgkwSJZfE",
-        "playedAt": "2025-12-31T23:42:13.000Z"
-      },
+      "bestCombo": null,
       "bestSync": null,
       "historyChunks": [
         "2025-11",
@@ -4929,11 +4465,7 @@
         "scoreId": "KUSdQH-__p4BNimGMIF2rbv-hCKuFLjU9JlUayLDW8U",
         "playedAt": "2025-11-20T04:56:35.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "KUSdQH-__p4BNimGMIF2rbv-hCKuFLjU9JlUayLDW8U",
-        "playedAt": "2025-11-20T04:56:35.000Z"
-      },
+      "bestCombo": null,
       "bestSync": null,
       "historyChunks": [
         "2025-11"
@@ -5195,11 +4727,7 @@
         "scoreId": "CqxNpvz7G2v9ESW7gPxlEgLQhG9FAtQ4j5u0o7mlpYo",
         "playedAt": "2025-12-31T18:47:01.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "CqxNpvz7G2v9ESW7gPxlEgLQhG9FAtQ4j5u0o7mlpYo",
-        "playedAt": "2025-12-31T18:47:01.000Z"
-      },
+      "bestCombo": null,
       "bestSync": {
         "status": "Sync",
         "scoreId": "ucJ7saCRoZWZ5MOYQiYldp5lIMBfMCiIucl1enBrlr4",
@@ -5216,11 +4744,7 @@
         "scoreId": "dKLi0Iwa07SGeZLjay3OHxJHlfGs4K-pUwi_zteGM9o",
         "playedAt": "2026-01-01T02:12:25.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "dKLi0Iwa07SGeZLjay3OHxJHlfGs4K-pUwi_zteGM9o",
-        "playedAt": "2026-01-01T02:12:25.000Z"
-      },
+      "bestCombo": null,
       "bestSync": {
         "status": "Sync",
         "scoreId": "dKLi0Iwa07SGeZLjay3OHxJHlfGs4K-pUwi_zteGM9o",
@@ -5337,11 +4861,7 @@
         "scoreId": "roMAEBQPGmV9deP-5CyZ5RwCKKejsPRoivupwj5nV0o",
         "playedAt": "2026-01-07T18:41:54.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "roMAEBQPGmV9deP-5CyZ5RwCKKejsPRoivupwj5nV0o",
-        "playedAt": "2026-01-07T18:41:54.000Z"
-      },
+      "bestCombo": null,
       "bestSync": {
         "status": "Sync",
         "scoreId": "roMAEBQPGmV9deP-5CyZ5RwCKKejsPRoivupwj5nV0o",
@@ -5381,11 +4901,7 @@
         "scoreId": "7gSkMPoz9DszsXJPYj1zE00mcnCqHxCRptH6sUACa_Y",
         "playedAt": "2026-01-01T00:29:20.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "7gSkMPoz9DszsXJPYj1zE00mcnCqHxCRptH6sUACa_Y",
-        "playedAt": "2026-01-01T00:29:20.000Z"
-      },
+      "bestCombo": null,
       "bestSync": {
         "status": "Sync",
         "scoreId": "7gSkMPoz9DszsXJPYj1zE00mcnCqHxCRptH6sUACa_Y",
@@ -5444,11 +4960,7 @@
         "scoreId": "3_k1ndXtdy4Cikj60bUTbbmu6_AdGSDTLO3MBSpjOu8",
         "playedAt": "2025-12-26T03:43:36.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "3_k1ndXtdy4Cikj60bUTbbmu6_AdGSDTLO3MBSpjOu8",
-        "playedAt": "2025-12-26T03:43:36.000Z"
-      },
+      "bestCombo": null,
       "bestSync": {
         "status": "Sync",
         "scoreId": "3_k1ndXtdy4Cikj60bUTbbmu6_AdGSDTLO3MBSpjOu8",
@@ -5465,11 +4977,7 @@
         "scoreId": "XLPtswfRpi6u49acMgMY7fCgw-X0xqgLvio5YuDF7Bs",
         "playedAt": "2025-11-20T03:56:06.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "XLPtswfRpi6u49acMgMY7fCgw-X0xqgLvio5YuDF7Bs",
-        "playedAt": "2025-11-20T03:56:06.000Z"
-      },
+      "bestCombo": null,
       "bestSync": {
         "status": "Sync",
         "scoreId": "XLPtswfRpi6u49acMgMY7fCgw-X0xqgLvio5YuDF7Bs",
@@ -5569,11 +5077,7 @@
         "scoreId": "3jEuXX-mKPuRf9CuGpNRaORlk4Q2RfHh2yxXctz0XPo",
         "playedAt": "2025-12-23T02:51:41.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "3jEuXX-mKPuRf9CuGpNRaORlk4Q2RfHh2yxXctz0XPo",
-        "playedAt": "2025-12-23T02:51:41.000Z"
-      },
+      "bestCombo": null,
       "bestSync": null,
       "historyChunks": [
         "2025-12"
@@ -5654,11 +5158,7 @@
         "scoreId": "5_BNBHd3MJVFHysdqSOPIBa2At77hU405EA3cSf5ohE",
         "playedAt": "2026-01-01T01:50:01.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "5_BNBHd3MJVFHysdqSOPIBa2At77hU405EA3cSf5ohE",
-        "playedAt": "2026-01-01T01:50:01.000Z"
-      },
+      "bestCombo": null,
       "bestSync": {
         "status": "Sync",
         "scoreId": "5_BNBHd3MJVFHysdqSOPIBa2At77hU405EA3cSf5ohE",
@@ -5676,11 +5176,7 @@
         "scoreId": "atJ-7n9C0Om3GkVqyKUdjo5kxtFjTtaDnsPpWLVkGb0",
         "playedAt": "2026-01-04T01:00:29.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "atJ-7n9C0Om3GkVqyKUdjo5kxtFjTtaDnsPpWLVkGb0",
-        "playedAt": "2026-01-04T01:00:29.000Z"
-      },
+      "bestCombo": null,
       "bestSync": {
         "status": "Sync",
         "scoreId": "atJ-7n9C0Om3GkVqyKUdjo5kxtFjTtaDnsPpWLVkGb0",
@@ -5697,11 +5193,7 @@
         "scoreId": "h6DWXraVYqgW4wNmTpiy2Vc6dyAJUXveT2MmBGm04zI",
         "playedAt": "2026-08-20T04:50:17.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "h6DWXraVYqgW4wNmTpiy2Vc6dyAJUXveT2MmBGm04zI",
-        "playedAt": "2026-08-20T04:50:17.000Z"
-      },
+      "bestCombo": null,
       "bestSync": {
         "status": "Sync",
         "scoreId": "h6DWXraVYqgW4wNmTpiy2Vc6dyAJUXveT2MmBGm04zI",
@@ -5719,7 +5211,7 @@
         "playedAt": "2025-11-22T23:40:40.000Z"
       },
       "bestCombo": {
-        "status": "FC",
+        "status": "FC+",
         "scoreId": "c_81vKv3HACszU7HCrWY3gKXI7H6Oju41c13_DvVYcA",
         "playedAt": "2025-11-22T23:40:40.000Z"
       },
@@ -5739,11 +5231,7 @@
         "scoreId": "KmrACiSZnpfdK7LJsmJYNRaoV4wDYDc1Rm8Kn76v2A4",
         "playedAt": "2025-12-29T18:02:38.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "KmrACiSZnpfdK7LJsmJYNRaoV4wDYDc1Rm8Kn76v2A4",
-        "playedAt": "2025-12-29T18:02:38.000Z"
-      },
+      "bestCombo": null,
       "bestSync": {
         "status": "Sync",
         "scoreId": "W1jHt-AatY6rrDeZgIBlh1m-4STrUMAZDFr7EKDn_KA",
@@ -5761,11 +5249,7 @@
         "scoreId": "f-M5b8zOQveDp9SaYNn0OhbHOynx-1JKnmstEpttQxQ",
         "playedAt": "2026-01-04T00:56:11.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "f-M5b8zOQveDp9SaYNn0OhbHOynx-1JKnmstEpttQxQ",
-        "playedAt": "2026-01-04T00:56:11.000Z"
-      },
+      "bestCombo": null,
       "bestSync": {
         "status": "Sync",
         "scoreId": "f-M5b8zOQveDp9SaYNn0OhbHOynx-1JKnmstEpttQxQ",
@@ -5817,11 +5301,7 @@
         "scoreId": "4WKNAveqzl6zjYVysrRecS_ds1NG5Hc-gD_0C2V8hTA",
         "playedAt": "2025-11-28T02:01:47.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "4WKNAveqzl6zjYVysrRecS_ds1NG5Hc-gD_0C2V8hTA",
-        "playedAt": "2025-11-28T02:01:47.000Z"
-      },
+      "bestCombo": null,
       "bestSync": {
         "status": "Sync",
         "scoreId": "4WKNAveqzl6zjYVysrRecS_ds1NG5Hc-gD_0C2V8hTA",
@@ -5839,7 +5319,7 @@
         "playedAt": "2025-11-20T03:49:37.000Z"
       },
       "bestCombo": {
-        "status": "FC",
+        "status": "FC+",
         "scoreId": "TGA8c1pr_FwsREE3XQvq8vpHIUHIwlHKoP832HxG21s",
         "playedAt": "2025-11-20T03:49:37.000Z"
       },
@@ -5859,11 +5339,7 @@
         "scoreId": "rpjgrfshX-2dL-1EjVY-C9ReecprgdrTBqGUErI6JPk",
         "playedAt": "2025-11-23T01:39:44.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "rpjgrfshX-2dL-1EjVY-C9ReecprgdrTBqGUErI6JPk",
-        "playedAt": "2025-11-23T01:39:44.000Z"
-      },
+      "bestCombo": null,
       "bestSync": null,
       "historyChunks": [
         "2025-11"
@@ -5915,11 +5391,7 @@
         "scoreId": "xxPXqmrLQi-2y5xbw5kFK122y1S56ahtRIbgTWVhQ7s",
         "playedAt": "2026-01-19T18:32:39.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "xxPXqmrLQi-2y5xbw5kFK122y1S56ahtRIbgTWVhQ7s",
-        "playedAt": "2026-01-19T18:32:39.000Z"
-      },
+      "bestCombo": null,
       "bestSync": {
         "status": "Sync",
         "scoreId": "xxPXqmrLQi-2y5xbw5kFK122y1S56ahtRIbgTWVhQ7s",
@@ -5936,11 +5408,7 @@
         "scoreId": "yu1IKBKZHTngFoCUjq1pTqF0GcyNxLrgyR1NSSg3WfY",
         "playedAt": "2025-12-23T04:41:54.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "yu1IKBKZHTngFoCUjq1pTqF0GcyNxLrgyR1NSSg3WfY",
-        "playedAt": "2025-12-23T04:41:54.000Z"
-      },
+      "bestCombo": null,
       "bestSync": null,
       "historyChunks": [
         "2025-12"
@@ -5953,11 +5421,7 @@
         "scoreId": "6KxvdWQbt8R2oSQrcWXTsHWUHHAqe1s6EyN7a-Gtvko",
         "playedAt": "2025-12-26T02:57:00.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "6KxvdWQbt8R2oSQrcWXTsHWUHHAqe1s6EyN7a-Gtvko",
-        "playedAt": "2025-12-26T02:57:00.000Z"
-      },
+      "bestCombo": null,
       "bestSync": {
         "status": "Sync",
         "scoreId": "6KxvdWQbt8R2oSQrcWXTsHWUHHAqe1s6EyN7a-Gtvko",
@@ -6017,11 +5481,7 @@
         "scoreId": "bfIooUtwYy6qtGTCC-nwyYNyTNQ6_04QiFrFvJbN8PM",
         "playedAt": "2026-01-01T00:01:45.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "bfIooUtwYy6qtGTCC-nwyYNyTNQ6_04QiFrFvJbN8PM",
-        "playedAt": "2026-01-01T00:01:45.000Z"
-      },
+      "bestCombo": null,
       "bestSync": {
         "status": "Sync",
         "scoreId": "bfIooUtwYy6qtGTCC-nwyYNyTNQ6_04QiFrFvJbN8PM",
@@ -6089,11 +5549,7 @@
         "scoreId": "krIXd2qatH7twhtncLaHaXiFNnjW0PLkRlZzXbVnWrE",
         "playedAt": "2026-08-26T05:19:47.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "krIXd2qatH7twhtncLaHaXiFNnjW0PLkRlZzXbVnWrE",
-        "playedAt": "2026-08-26T05:19:47.000Z"
-      },
+      "bestCombo": null,
       "bestSync": {
         "status": "Sync",
         "scoreId": "fKgeClxte8cjRwcYEl6453kMz-rK2m8ua7fgmjQ4wrs",
@@ -6188,11 +5644,7 @@
         "scoreId": "xSlTTmWjZfki-OEPPM2eH7F4Ui7uHUU4c7zdJgnu9N8",
         "playedAt": "2026-05-21T23:13:06.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "xSlTTmWjZfki-OEPPM2eH7F4Ui7uHUU4c7zdJgnu9N8",
-        "playedAt": "2026-05-21T23:13:06.000Z"
-      },
+      "bestCombo": null,
       "bestSync": {
         "status": "Sync",
         "scoreId": "xSlTTmWjZfki-OEPPM2eH7F4Ui7uHUU4c7zdJgnu9N8",
@@ -6233,11 +5685,7 @@
         "scoreId": "aI600g9X4VO7RK5B6hDDU_xWQ-8ii1BnCzaXQLcsilI",
         "playedAt": "2026-08-15T00:28:32.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "aI600g9X4VO7RK5B6hDDU_xWQ-8ii1BnCzaXQLcsilI",
-        "playedAt": "2026-08-15T00:28:32.000Z"
-      },
+      "bestCombo": null,
       "bestSync": {
         "status": "Sync",
         "scoreId": "aI600g9X4VO7RK5B6hDDU_xWQ-8ii1BnCzaXQLcsilI",
@@ -6275,11 +5723,7 @@
         "scoreId": "VfGgrVRmI2FxO6_z64i7F9nGYuIzuFqKzOs7KZpFtbk",
         "playedAt": "2026-08-15T02:55:24.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "VfGgrVRmI2FxO6_z64i7F9nGYuIzuFqKzOs7KZpFtbk",
-        "playedAt": "2026-08-15T02:55:24.000Z"
-      },
+      "bestCombo": null,
       "bestSync": {
         "status": "Sync",
         "scoreId": "VfGgrVRmI2FxO6_z64i7F9nGYuIzuFqKzOs7KZpFtbk",
@@ -6458,11 +5902,7 @@
         "scoreId": "DfolatmBgqRrUMaztZDl8GBEWK1RUZpoLOrcfEmSqB0",
         "playedAt": "2026-08-22T03:11:31.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "DfolatmBgqRrUMaztZDl8GBEWK1RUZpoLOrcfEmSqB0",
-        "playedAt": "2026-08-22T03:11:31.000Z"
-      },
+      "bestCombo": null,
       "bestSync": null,
       "historyChunks": [
         "2026-08"
@@ -6475,11 +5915,7 @@
         "scoreId": "DGt4-H4-EMQOAnt8t7n_W2fh55pKMwBzqXWF8k4WK5I",
         "playedAt": "2026-05-22T02:26:14.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "DGt4-H4-EMQOAnt8t7n_W2fh55pKMwBzqXWF8k4WK5I",
-        "playedAt": "2026-05-22T02:26:14.000Z"
-      },
+      "bestCombo": null,
       "bestSync": null,
       "historyChunks": [
         "2026-05"
@@ -6559,11 +5995,7 @@
         "scoreId": "SZFHJdVhVLe2_MCj93CNr18-RRv-QBGNVdxwNlQ3fUA",
         "playedAt": "2025-12-06T04:44:42.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "SZFHJdVhVLe2_MCj93CNr18-RRv-QBGNVdxwNlQ3fUA",
-        "playedAt": "2025-12-06T04:44:42.000Z"
-      },
+      "bestCombo": null,
       "bestSync": {
         "status": "Sync",
         "scoreId": "SZFHJdVhVLe2_MCj93CNr18-RRv-QBGNVdxwNlQ3fUA",
@@ -6603,11 +6035,7 @@
         "scoreId": "1MfWHVr1E1GWp1GeOVmdOc3rhnRZJ8HTvQSKpV5Y0lg",
         "playedAt": "2025-11-22T23:29:11.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "1MfWHVr1E1GWp1GeOVmdOc3rhnRZJ8HTvQSKpV5Y0lg",
-        "playedAt": "2025-11-22T23:29:11.000Z"
-      },
+      "bestCombo": null,
       "bestSync": {
         "status": "Sync",
         "scoreId": "1MfWHVr1E1GWp1GeOVmdOc3rhnRZJ8HTvQSKpV5Y0lg",
@@ -6624,11 +6052,7 @@
         "scoreId": "QqjDyBSMHiWXJmOEgo5Au73rmVoX2FlffLY1G9JGbhU",
         "playedAt": "2025-11-10T03:31:47.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "QqjDyBSMHiWXJmOEgo5Au73rmVoX2FlffLY1G9JGbhU",
-        "playedAt": "2025-11-10T03:31:47.000Z"
-      },
+      "bestCombo": null,
       "bestSync": null,
       "historyChunks": [
         "2025-11"
@@ -6641,11 +6065,7 @@
         "scoreId": "7dD9rHMW36RghdpRv4K9mz0a2XgMEP3JDhnf7mKtDlk",
         "playedAt": "2026-01-03T22:23:20.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "7dD9rHMW36RghdpRv4K9mz0a2XgMEP3JDhnf7mKtDlk",
-        "playedAt": "2026-01-03T22:23:20.000Z"
-      },
+      "bestCombo": null,
       "bestSync": {
         "status": "Sync",
         "scoreId": "7dD9rHMW36RghdpRv4K9mz0a2XgMEP3JDhnf7mKtDlk",
@@ -6663,7 +6083,7 @@
         "playedAt": "2025-12-31T22:31:27.000Z"
       },
       "bestCombo": {
-        "status": "FC",
+        "status": "FC+",
         "scoreId": "5TY8QJ_pnrAlqkmq44QiEJzKdhevKJZhDkkiyws65Aw",
         "playedAt": "2025-12-31T22:31:27.000Z"
       },
@@ -6767,11 +6187,7 @@
         "scoreId": "t1fJU7x4iXCFAFW7luYDtDDJvKmixzfuAO2yd-ZWlXM",
         "playedAt": "2025-12-21T05:35:41.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "t1fJU7x4iXCFAFW7luYDtDDJvKmixzfuAO2yd-ZWlXM",
-        "playedAt": "2025-12-21T05:35:41.000Z"
-      },
+      "bestCombo": null,
       "bestSync": {
         "status": "Sync",
         "scoreId": "t1fJU7x4iXCFAFW7luYDtDDJvKmixzfuAO2yd-ZWlXM",
@@ -6867,11 +6283,7 @@
         "scoreId": "bbMU5tPHZwHKpV5WsocP6Wlx99F8FWbd92TxIORov2o",
         "playedAt": "2025-11-12T00:17:05.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "bbMU5tPHZwHKpV5WsocP6Wlx99F8FWbd92TxIORov2o",
-        "playedAt": "2025-11-12T00:17:05.000Z"
-      },
+      "bestCombo": null,
       "bestSync": null,
       "historyChunks": [
         "2025-11"
@@ -6905,11 +6317,7 @@
         "scoreId": "h3gQqGz3avI6g2W92OdDUBJ7s1_Sf6V5dOorH5-aauo",
         "playedAt": "2025-11-27T17:11:20.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "h3gQqGz3avI6g2W92OdDUBJ7s1_Sf6V5dOorH5-aauo",
-        "playedAt": "2025-11-27T17:11:20.000Z"
-      },
+      "bestCombo": null,
       "bestSync": {
         "status": "Sync",
         "scoreId": "h3gQqGz3avI6g2W92OdDUBJ7s1_Sf6V5dOorH5-aauo",
@@ -6926,11 +6334,7 @@
         "scoreId": "_s60wYCCFoPSr3USgUlBNTf_h4GcNS85KUrirvk1sUM",
         "playedAt": "2025-11-20T06:01:27.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "_s60wYCCFoPSr3USgUlBNTf_h4GcNS85KUrirvk1sUM",
-        "playedAt": "2025-11-20T06:01:27.000Z"
-      },
+      "bestCombo": null,
       "bestSync": null,
       "historyChunks": [
         "2025-11"
@@ -6986,11 +6390,7 @@
         "scoreId": "JwfUtXiP36oKzL0gGlNUfzUb5OY0272eGLDfFlyCp_8",
         "playedAt": "2026-08-20T03:35:27.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "JwfUtXiP36oKzL0gGlNUfzUb5OY0272eGLDfFlyCp_8",
-        "playedAt": "2026-08-20T03:35:27.000Z"
-      },
+      "bestCombo": null,
       "bestSync": {
         "status": "Sync",
         "scoreId": "JwfUtXiP36oKzL0gGlNUfzUb5OY0272eGLDfFlyCp_8",
@@ -7030,7 +6430,7 @@
         "playedAt": "2025-11-14T03:37:31.000Z"
       },
       "bestCombo": {
-        "status": "FC",
+        "status": "FC+",
         "scoreId": "frM7W5pOWWjPLEmNd1h_M7QLhh6WrTyx3gqk0svqxAg",
         "playedAt": "2025-11-14T03:37:31.000Z"
       },
@@ -7046,11 +6446,7 @@
         "scoreId": "NN-KxegpMqCnGqsxEN0QDq1axNc3-ayFMioB8nAJvYM",
         "playedAt": "2026-05-22T02:14:54.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "NN-KxegpMqCnGqsxEN0QDq1axNc3-ayFMioB8nAJvYM",
-        "playedAt": "2026-05-22T02:14:54.000Z"
-      },
+      "bestCombo": null,
       "bestSync": null,
       "historyChunks": [
         "2026-05"
@@ -7063,11 +6459,7 @@
         "scoreId": "wYEwu2IICYVotp45Ke8WhKrmKDG4Xetr8IvFZO8861A",
         "playedAt": "2025-11-27T17:32:07.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "wYEwu2IICYVotp45Ke8WhKrmKDG4Xetr8IvFZO8861A",
-        "playedAt": "2025-11-27T17:32:07.000Z"
-      },
+      "bestCombo": null,
       "bestSync": {
         "status": "Sync",
         "scoreId": "wYEwu2IICYVotp45Ke8WhKrmKDG4Xetr8IvFZO8861A",
@@ -7085,7 +6477,7 @@
         "playedAt": "2025-11-28T00:03:04.000Z"
       },
       "bestCombo": {
-        "status": "FC",
+        "status": "FC+",
         "scoreId": "r9KenymH2NPk1eCnYR0IY222ubXKoEG3KStVNGZQKnw",
         "playedAt": "2025-11-28T00:03:04.000Z"
       },
@@ -7126,11 +6518,7 @@
         "scoreId": "N1d-xR_VXK-z3Fl1AwL09vk5viHA1zwQiRXVFY3EWjo",
         "playedAt": "2025-11-16T02:44:01.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "N1d-xR_VXK-z3Fl1AwL09vk5viHA1zwQiRXVFY3EWjo",
-        "playedAt": "2025-11-16T02:44:01.000Z"
-      },
+      "bestCombo": null,
       "bestSync": null,
       "historyChunks": [
         "2025-11"
@@ -7143,11 +6531,7 @@
         "scoreId": "zYDaYEh1JEQJ9SLUQSETjsHPE7NyYZM60BwIz0rzlOA",
         "playedAt": "2025-12-06T06:37:01.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "zYDaYEh1JEQJ9SLUQSETjsHPE7NyYZM60BwIz0rzlOA",
-        "playedAt": "2025-12-06T06:37:01.000Z"
-      },
+      "bestCombo": null,
       "bestSync": {
         "status": "Sync",
         "scoreId": "zYDaYEh1JEQJ9SLUQSETjsHPE7NyYZM60BwIz0rzlOA",
@@ -7164,11 +6548,7 @@
         "scoreId": "2sajZnI2BrQrcgrn4QrB0bjjMp-ySqKf9gV2Won9gHw",
         "playedAt": "2025-11-27T17:16:16.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "2sajZnI2BrQrcgrn4QrB0bjjMp-ySqKf9gV2Won9gHw",
-        "playedAt": "2025-11-27T17:16:16.000Z"
-      },
+      "bestCombo": null,
       "bestSync": {
         "status": "Sync",
         "scoreId": "2sajZnI2BrQrcgrn4QrB0bjjMp-ySqKf9gV2Won9gHw",
@@ -7185,11 +6565,7 @@
         "scoreId": "1YcLu3Irfr1cgBl0masnUDA-Zn5PTuBeKo8FWEwStXI",
         "playedAt": "2026-08-22T02:32:07.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "1YcLu3Irfr1cgBl0masnUDA-Zn5PTuBeKo8FWEwStXI",
-        "playedAt": "2026-08-22T02:32:07.000Z"
-      },
+      "bestCombo": null,
       "bestSync": null,
       "historyChunks": [
         "2026-08"
@@ -7223,11 +6599,7 @@
         "scoreId": "qNjIgwOts4lgPBt_KKX2gc3Gj2h2N42wO_Mg6dLknrY",
         "playedAt": "2025-12-23T03:53:58.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "qNjIgwOts4lgPBt_KKX2gc3Gj2h2N42wO_Mg6dLknrY",
-        "playedAt": "2025-12-23T03:53:58.000Z"
-      },
+      "bestCombo": null,
       "bestSync": {
         "status": "Sync",
         "scoreId": "kO5tXNCfcG2kLi2af6f4iQMK_Tqac2WbQwCrZehpw4A",
@@ -7245,11 +6617,7 @@
         "scoreId": "5_kJsVTWtNv7EzO34vPSHLVk4Y3rr1dJgReCRRoHKCM",
         "playedAt": "2025-12-06T06:33:13.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "5_kJsVTWtNv7EzO34vPSHLVk4Y3rr1dJgReCRRoHKCM",
-        "playedAt": "2025-12-06T06:33:13.000Z"
-      },
+      "bestCombo": null,
       "bestSync": {
         "status": "Sync",
         "scoreId": "5_kJsVTWtNv7EzO34vPSHLVk4Y3rr1dJgReCRRoHKCM",
@@ -7287,11 +6655,7 @@
         "scoreId": "zpgWE83YMACYsGF7peHCNrtlTT_iWpBueFW5F_WcumU",
         "playedAt": "2025-11-28T00:28:51.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "zpgWE83YMACYsGF7peHCNrtlTT_iWpBueFW5F_WcumU",
-        "playedAt": "2025-11-28T00:28:51.000Z"
-      },
+      "bestCombo": null,
       "bestSync": null,
       "historyChunks": [
         "2025-11"
@@ -7305,7 +6669,7 @@
         "playedAt": "2025-12-23T01:28:46.000Z"
       },
       "bestCombo": {
-        "status": "FC",
+        "status": "FC+",
         "scoreId": "2S-G1u4yHVTwLyahKNk83ZxoWt1HE2T5LtEDfaQYqRw",
         "playedAt": "2025-12-23T01:28:46.000Z"
       },
@@ -7378,11 +6742,7 @@
         "scoreId": "6-_ixDTNl3WdUuKArB9jjbGUPJ1xWnMPMAyCKRBFBoM",
         "playedAt": "2025-12-23T01:18:24.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "6-_ixDTNl3WdUuKArB9jjbGUPJ1xWnMPMAyCKRBFBoM",
-        "playedAt": "2025-12-23T01:18:24.000Z"
-      },
+      "bestCombo": null,
       "bestSync": null,
       "historyChunks": [
         "2025-12"
@@ -7395,11 +6755,7 @@
         "scoreId": "nO4cvTM6gKiKbmchizLmbWlHNct6bkhNlFSlD7H49lA",
         "playedAt": "2025-12-23T01:37:06.000Z"
       },
-      "bestCombo": {
-        "status": "Clear",
-        "scoreId": "nO4cvTM6gKiKbmchizLmbWlHNct6bkhNlFSlD7H49lA",
-        "playedAt": "2025-12-23T01:37:06.000Z"
-      },
+      "bestCombo": null,
       "bestSync": null,
       "historyChunks": [
         "2025-12"

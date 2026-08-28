@@ -53,7 +53,7 @@ interface ScoreRecord {
   level: string;               // Display level, e.g. "13+"
   chartConstant?: number;
   achievement: number;         // Percentage on a 0–101 scale
-  combo: string;
+  combo: string | null; // null when no full combo or all perfect was achieved
   sync: "Sync" | "FS" | "FS+" | "FDX" | "FDX+" | null;
   rating: number;
   ratingChange: number;

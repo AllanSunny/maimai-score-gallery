@@ -10,7 +10,7 @@ function score(overrides = {}) {
     chartType: "DX",
     difficulty: "MASTER",
     achievement: 97.2244,
-    combo: "Clear",
+    combo: null,
     sync: "FS",
     ...overrides,
   };

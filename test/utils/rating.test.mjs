@@ -43,5 +43,5 @@ test("returns null when the chart constant is unavailable", () => {
 });
 
 test("rejects a negative achievement", () => {
-  assert.throws(() => calculatePlayRating({ achievement: -1, chartConstant: 13, combo: "Clear" }), RangeError);
+  assert.throws(() => calculatePlayRating({ achievement: -1, chartConstant: 13, combo: null }), RangeError);
 });

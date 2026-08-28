@@ -8,7 +8,7 @@ import type {
 } from "./types";
 
 const chartTypes = new Set<ChartType>(["DX", "STD"]);
-const comboStatuses = new Set<ComboStatus>(["Clear", "FC", "FC+", "AP", "AP+"]);
+const comboStatuses = new Set<ComboStatus>(["FC", "FC+", "AP", "AP+"]);
 const syncStatuses = new Set(["Sync", "FS", "FS+", "FDX", "FDX+"]);
 const difficulties = new Set<Difficulty>(["BASIC", "ADVANCED", "EXPERT", "MASTER", "Re:MASTER"]);
 
@@ -112,9 +112,12 @@ function validateScores(value: unknown, path: string) {
   array(value, path).forEach((scoreValue, index) => {
     const scorePath = `${path}[${index}]`;
     const score = object(scoreValue, scorePath);
-    ["id", "playedAt", "songTitle", "chartType", "difficulty", "level", "combo"].forEach((field) => string(score[field], `${scorePath}.${field}`));
+    ["id", "playedAt", "songTitle", "chartType", "difficulty", "level"].forEach((field) => string(score[field], `${scorePath}.${field}`));
+    nullableString(score.combo, `${scorePath}.combo`);
     nullableString(score.sync, `${scorePath}.sync`);
-    if (!comboStatuses.has(score.combo as ComboStatus)) throw new Error(`${scorePath}.combo is invalid.`);
+    if (score.combo !== null && !comboStatuses.has(score.combo as ComboStatus)) {
+      throw new Error(`${scorePath}.combo is invalid.`);
+    }
     if (score.sync !== null && !syncStatuses.has(score.sync as string)) throw new Error(`${scorePath}.sync is invalid.`);
     nonemptyString(score.chartId, `${scorePath}.chartId`);
     if (!chartTypes.has(score.chartType as ChartType)) throw new Error(`${scorePath}.chartType is invalid.`);
@@ -158,8 +161,11 @@ export function parseChartSummaries(value: unknown): ChartSummaries {
     const achievement = object(chart.bestAchievement, `${path}.bestAchievement`);
     number(achievement.value, `${path}.bestAchievement.value`);
     ["scoreId", "playedAt"].forEach((field) => nonemptyString(achievement[field], `${path}.bestAchievement.${field}`));
-    const combo = object(chart.bestCombo, `${path}.bestCombo`);
-    ["status", "scoreId", "playedAt"].forEach((field) => nonemptyString(combo[field], `${path}.bestCombo.${field}`));
+    if (chart.bestCombo !== null) {
+      const combo = object(chart.bestCombo, `${path}.bestCombo`);
+      ["status", "scoreId", "playedAt"].forEach((field) => nonemptyString(combo[field], `${path}.bestCombo.${field}`));
+      if (!comboStatuses.has(combo.status as ComboStatus)) throw new Error(`${path}.bestCombo.status is invalid.`);
+    }
     if (chart.bestSync !== null) {
       const sync = object(chart.bestSync, `${path}.bestSync`);
       ["status", "scoreId", "playedAt"].forEach((field) => nonemptyString(sync[field], `${path}.bestSync.${field}`));

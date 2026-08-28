@@ -7,11 +7,10 @@ export const CHART_SUMMARIES_PATH = path.join(
 );
 
 const comboRanks = new Map([
-  ["Clear", 0],
-  ["FC", 1],
-  ["FC+", 2],
-  ["AP", 3],
-  ["AP+", 4],
+  ["FC", 0],
+  ["FC+", 1],
+  ["AP", 2],
+  ["AP+", 3],
 ]);
 const syncRanks = new Map([
   ["Sync", 1],
@@ -53,7 +52,8 @@ export function buildChartSummaries(scores) {
   [...byChart].sort(([a], [b]) => a.localeCompare(b)).forEach(([chartId, entries]) => {
     const bestAchievementScore = bestScore(entries, (left, right) =>
       Number(left.achievement) - Number(right.achievement));
-    const bestComboScore = bestScore(entries, (left, right) =>
+    const comboScores = entries.filter((score) => score.combo !== null);
+    const bestComboScore = bestScore(comboScores, (left, right) =>
       (comboRanks.get(left.combo) ?? -1) - (comboRanks.get(right.combo) ?? -1));
     const syncScores = entries.filter((score) => score.sync !== null);
     const bestSyncScore = bestScore(syncScores, (left, right) =>
@@ -65,10 +65,10 @@ export function buildChartSummaries(scores) {
         value: Number(bestAchievementScore.achievement),
         ...scoreReference(bestAchievementScore),
       },
-      bestCombo: {
+      bestCombo: bestComboScore ? {
         status: bestComboScore.combo,
         ...scoreReference(bestComboScore),
-      },
+      } : null,
       bestSync: bestSyncScore ? {
         status: bestSyncScore.sync,
         ...scoreReference(bestSyncScore),

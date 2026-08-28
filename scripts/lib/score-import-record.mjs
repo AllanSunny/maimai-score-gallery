@@ -1,3 +1,5 @@
+import { derivedComboStatus } from "./combo-status.mjs";
+
 const judgmentNames = ["criticalPerfect", "perfect", "great", "good", "miss"];
 const noteTypes = ["break", "tap", "hold", "slide", "touch"];
 
@@ -125,39 +127,41 @@ function validateJudgmentSums(raw, normalized) {
 }
 
 export function proposedScoreRecord({ ocr, resolution, capturedAt }) {
-  if (["FS", "FS+", "FDX", "FDX+"].includes(ocr.sync) && ocr.combo === "Clear") {
-    throw new ScoreValidationError(
-      "INVALID_SYNC_STATUS",
-      `${ocr.sync} is incompatible with a Clear combo; use Sync for a generic sync play.`,
-    );
-  }
   const judgmentsByType = ocr.judgmentsByType === null
     ? null
     : Object.fromEntries(noteTypes.map((noteType) => [
       noteType,
       judgmentSet(ocr.judgmentsByType?.[noteType], `judgmentsByType.${noteType}`),
     ]));
+  const achievement = roundedAchievement(
+    finiteNumber(ocr.achievement, "achievement", { minimum: 0, maximum: 101 }),
+  );
+  const judgments = overallJudgmentSet(ocr.judgments, ocr.judgmentsByType, judgmentsByType);
   const record = {
     playedAt: capturedAt,
     songTitle: resolution.canonicalTitle,
     chartType: resolution.chart.chartType,
     difficulty: resolution.chart.difficulty,
     level: resolution.chart.level,
-    achievement: roundedAchievement(
-      finiteNumber(ocr.achievement, "achievement", { minimum: 0, maximum: 101 }),
-    ),
-    combo: ocr.combo,
+    achievement,
+    combo: derivedComboStatus({ achievement, judgments }),
     sync: ocr.sync,
     rating: finiteNumber(ocr.rating, "rating", { integer: true, minimum: 0 }),
     // An absent or unreadable change means no recorded change.
     ratingChange: ocr.ratingChange === null
       ? 0
       : finiteNumber(ocr.ratingChange, "ratingChange", { integer: true }),
-    judgments: overallJudgmentSet(ocr.judgments, ocr.judgmentsByType, judgmentsByType),
+    judgments,
     judgmentsByType,
     fast: ocr.fast === null ? null : finiteNumber(ocr.fast, "fast", { integer: true, minimum: 0 }),
     slow: ocr.slow === null ? null : finiteNumber(ocr.slow, "slow", { integer: true, minimum: 0 }),
   };
+  if (["FS", "FS+", "FDX", "FDX+"].includes(record.sync) && record.combo === null) {
+    throw new ScoreValidationError(
+      "INVALID_SYNC_STATUS",
+      `${record.sync} requires a full combo; use Sync for a generic sync play.`,
+    );
+  }
   validateJudgmentSums(ocr, record);
   return record;
 }

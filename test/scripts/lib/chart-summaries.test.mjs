@@ -8,7 +8,7 @@ function score(overrides) {
     chartId: "song-dx-expert",
     playedAt: "2026-01-01T00:00:00.000Z",
     achievement: 90,
-    combo: "Clear",
+    combo: null,
     sync: null,
     ...overrides,
   };
@@ -46,4 +46,10 @@ test("same-status bests prefer the highest achievement and collect UTC history m
 
 test("scores without a chart ID are omitted until catalog linking completes", () => {
   assert.deepEqual(buildChartSummaries([score({ chartId: null })]), {});
+});
+
+test("charts without a combo achievement have no best combo", () => {
+  const charts = buildChartSummaries([score({ combo: null })]);
+
+  assert.equal(charts["song-dx-expert"].bestCombo, null);
 });

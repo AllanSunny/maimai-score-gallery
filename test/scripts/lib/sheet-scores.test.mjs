@@ -103,6 +103,31 @@ test("rounds achievement percentages to four decimal places", () => {
   assert.equal(score.achievement, 100.5);
 });
 
+test("normalizes a missing combo status to null", () => {
+  const [score] = parseScoreRows([headers, scoreRow({
+    "Date / Time": "2026-05-21T22:34:15.000Z",
+    "Song Title": "Monitoring",
+    "Achievement %": "97%",
+  })]);
+
+  assert.equal(score.combo, null);
+});
+
+test("derives combo status from judgments instead of the stored value", () => {
+  const [score] = parseScoreRows([headers, scoreRow({
+    "Date / Time": "2026-05-21T22:34:15.000Z",
+    "Song Title": "Monitoring",
+    "Achievement %": "99%",
+    "Combo Status": "AP",
+    Perfect: 500,
+    Great: 1,
+    Good: 0,
+    Miss: 0,
+  })]);
+
+  assert.equal(score.combo, "FC+");
+});
+
 test("normalizes missing and legacy None sync statuses to null", () => {
   const base = {
     "Date / Time": "2026-05-21T22:34:15.000Z",

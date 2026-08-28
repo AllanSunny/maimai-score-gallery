@@ -20,7 +20,6 @@ const scoreCorrectionHeaders = [
   "Corrected Difficulty",
   "Corrected Chart Level",
   "Corrected Achievement %",
-  "Corrected Combo Status",
   "Corrected Sync Status",
   "Corrected Rating",
   "Corrected Rating Change",

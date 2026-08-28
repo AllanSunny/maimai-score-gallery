@@ -86,7 +86,6 @@ export function manualScoreFromReview(review) {
     "Corrected Chart Type",
     "Corrected Difficulty",
     "Corrected Achievement %",
-    "Corrected Combo Status",
     "Corrected Rating",
   ];
   if (requiredHeaders.some((header) => blank(fields[header]))) return null;
@@ -112,9 +111,6 @@ export function manualScoreFromReview(review) {
         maximum: 101,
       }),
     ),
-    combo: correctedChoice(fields["Corrected Combo Status"], "Corrected Combo Status", [
-      "AP+", "AP", "FC+", "FC", "Clear",
-    ]),
     sync: correctedSync(fields["Corrected Sync Status"]),
     rating: correctedNumber(fields["Corrected Rating"], "Corrected Rating", { integer: true, minimum: 0 }),
     ratingChange: correctedNumber(fields["Corrected Rating Change"], "Corrected Rating Change", { integer: true }) ?? 0,
@@ -141,15 +137,11 @@ export function applyReviewCorrections(score, review) {
   const difficulty = correctedChoice(fields["Corrected Difficulty"], "Corrected Difficulty", [
     "BASIC", "ADVANCED", "EXPERT", "MASTER", "Re:MASTER",
   ]);
-  const combo = correctedChoice(fields["Corrected Combo Status"], "Corrected Combo Status", [
-    "AP+", "AP", "FC+", "FC", "Clear",
-  ]);
   const hasSyncCorrection = !blank(fields["Corrected Sync Status"]);
   const sync = correctedSync(fields["Corrected Sync Status"]);
   if (chartType) corrected.chartType = chartType;
   if (difficulty) corrected.difficulty = difficulty;
   if (!blank(fields["Corrected Chart Level"])) corrected.level = String(fields["Corrected Chart Level"]).trim();
-  if (combo) corrected.combo = combo;
   if (hasSyncCorrection) corrected.sync = sync;
   const numericCorrections = [
     ["Corrected Achievement %", "achievement", { minimum: 0, maximum: 101 }],

@@ -41,7 +41,7 @@ interface SongDetailFrameProps {
   difficulty: Difficulty;
   level: string;
   achievement?: number;
-  combo?: ComboStatus;
+  combo?: ComboStatus | null;
   sync?: SyncStatus | null;
   className?: string;
 }

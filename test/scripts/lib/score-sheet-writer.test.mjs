@@ -41,7 +41,7 @@ test("leaves all unavailable judgment and timing cells blank", () => {
     difficulty: "MASTER",
     level: "13",
     achievement: 97,
-    combo: "Clear",
+    combo: null,
     sync: "None",
     rating: 15202,
     ratingChange: 0,
@@ -52,6 +52,27 @@ test("leaves all unavailable judgment and timing cells blank", () => {
   });
 
   assert.ok(values.judgments.every((value) => value === ""));
+});
+
+test("leaves an unavailable combo status blank", () => {
+  const values = scoreSheetValues({
+    playedAt: "2026-08-08T04:20:39.000Z",
+    songTitle: "Mystic Parade",
+    chartType: "DX",
+    difficulty: "MASTER",
+    level: "13",
+    achievement: 97,
+    combo: null,
+    sync: null,
+    rating: 15202,
+    ratingChange: 0,
+    judgments: null,
+    judgmentsByType: null,
+    fast: null,
+    slow: null,
+  });
+
+  assert.equal(values.statuses[0], "");
 });
 
 test("selects only a row whose importer-managed cells are all empty", () => {

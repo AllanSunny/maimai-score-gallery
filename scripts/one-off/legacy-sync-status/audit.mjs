@@ -40,7 +40,7 @@ function positiveInteger(value, fallback) {
 export function syncAuditDecision(current, { positionState, sync }, combo) {
   if (positionState === "unreadable") return { apply: false, value: current };
   const value = positionState === "empty" ? null : sync;
-  if (combo === "Clear" && value !== null && value !== "Sync") {
+  if (combo === null && value !== null && value !== "Sync") {
     return { apply: false, value: current };
   }
   return { apply: value !== current, value };
