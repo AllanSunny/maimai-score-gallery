@@ -1,0 +1,33 @@
+scripts/lib/import-log.mjs
+  s_0dad53e9e81869::t_7420b8d5b20a22 171-172,174
+scripts/import-images.mjs
+  s_0dad53e9e81869::t_7420b8d5b20a22 6-10,133-135,429-447,451-455,531-539
+  s_0dad53e9e81869::t_131072186a9c35 217-225,367-395,448-450
+  s_0dad53e9e81869::t_d8b025fe81e7ac 136-138
+  s_0dad53e9e81869::t_262c1c518e1a72 139-141
+test/scripts/lib/import-fingerprints.test.mjs
+  s_0dad53e9e81869::t_7420b8d5b20a22 3-21
+scripts/lib/import-fingerprints.mjs
+  s_0dad53e9e81869::t_7420b8d5b20a22 7-14
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.0",
+  "base_commit_sha": "70c7defd49b2676e29b847902fed24525868f9c1",
+  "prompts": {},
+  "humans": {
+    "h_278fafc5c28027": {
+      "author": "Allan Sun <allansun@live.com>"
+    }
+  },
+  "sessions": {
+    "s_0dad53e9e81869": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a046fe-a5c2-7fb2-a44f-bd1fa524c7d2",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Allan Sun <allansun@live.com>"
+    }
+  }
+}
