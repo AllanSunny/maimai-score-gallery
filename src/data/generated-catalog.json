@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-23T22:45:06.104Z",
+  "generatedAt": "2026-08-28T06:18:31.789Z",
   "songs": [
     {
       "id": "song-550d332f837c",
@@ -6836,6 +6836,59 @@
         "code": "25000",
         "name": "PRiSM"
       }
+    },
+    {
+      "id": "song-d14d96fc150e",
+      "titles": {
+        "canonical": "ULTRA SYNERGY MATRIX",
+        "kana": [],
+        "romaji": [],
+        "english": [],
+        "aliases": []
+      },
+      "artist": "Tanchiky",
+      "genre": "ゲーム＆バラエティ",
+      "introducedIn": {
+        "code": "23508",
+        "name": "FESTiVAL PLUS"
+      },
+      "jacketKey": "jackets/song-d14d96fc150e-92cdebab68e7.png",
+      "versions": [
+        {
+          "id": "song-d14d96fc150e-dx",
+          "chartType": "DX",
+          "charts": [
+            {
+              "id": "song-d14d96fc150e-dx-basic",
+              "difficulty": "BASIC",
+              "level": "5",
+              "chartConstant": null,
+              "charter": null
+            },
+            {
+              "id": "song-d14d96fc150e-dx-advanced",
+              "difficulty": "ADVANCED",
+              "level": "7",
+              "chartConstant": null,
+              "charter": null
+            },
+            {
+              "id": "song-d14d96fc150e-dx-expert",
+              "difficulty": "EXPERT",
+              "level": "12",
+              "chartConstant": 12,
+              "charter": "Jack"
+            },
+            {
+              "id": "song-d14d96fc150e-dx-master",
+              "difficulty": "MASTER",
+              "level": "14",
+              "chartConstant": 14,
+              "charter": "サファ太"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "song-6c387381d4d1",

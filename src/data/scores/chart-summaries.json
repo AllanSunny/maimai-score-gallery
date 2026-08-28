@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-23T04:45:03.520Z",
+  "generatedAt": "2026-08-28T06:19:01.503Z",
   "charts": {
     "song-00493f7d7088-dx-master": {
       "playCount": 3,
@@ -5863,6 +5863,23 @@
       },
       "historyChunks": [
         "2026-01"
+      ]
+    },
+    "song-d14d96fc150e-dx-master": {
+      "playCount": 1,
+      "bestAchievement": {
+        "value": 100.5048,
+        "scoreId": "krIXd2qatH7twhtncLaHaXiFNnjW0PLkRlZzXbVnWrE",
+        "playedAt": "2026-08-26T05:19:47.000Z"
+      },
+      "bestCombo": {
+        "status": "Clear",
+        "scoreId": "krIXd2qatH7twhtncLaHaXiFNnjW0PLkRlZzXbVnWrE",
+        "playedAt": "2026-08-26T05:19:47.000Z"
+      },
+      "bestSync": null,
+      "historyChunks": [
+        "2026-08"
       ]
     },
     "song-d1bb8e44303e-dx-expert": {
