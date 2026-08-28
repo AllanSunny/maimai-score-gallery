@@ -6002,6 +6002,66 @@
       "chartId": "song-9a2f2ad520e2-std-master"
     },
     {
+      "playedAt": "2026-01-28T05:12:48.000Z",
+      "songTitle": "Altale",
+      "chartType": "STD",
+      "difficulty": "MASTER",
+      "level": "13+",
+      "achievement": 92.0214,
+      "combo": "Clear",
+      "sync": "Sync",
+      "rating": 14045,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 233,
+        "perfect": 172,
+        "great": 44,
+        "good": 22,
+        "miss": 16
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 15,
+          "perfect": 6,
+          "great": 5,
+          "good": 2,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 164,
+          "perfect": 161,
+          "great": 25,
+          "good": 6,
+          "miss": 15
+        },
+        "hold": {
+          "criticalPerfect": 1,
+          "perfect": 5,
+          "great": 1,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 53,
+          "perfect": 0,
+          "great": 13,
+          "good": 14,
+          "miss": 1
+        },
+        "touch": {
+          "criticalPerfect": 0,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 40,
+      "slow": 32,
+      "id": "vEEZwmUQrlKP64ad91kLQd9KCR0jmonk41K_zLHbSY8",
+      "chartId": "song-5e2b531bd3e7-std-master"
+    },
+    {
       "playedAt": "2026-01-31T01:48:44.000Z",
       "songTitle": "ウミユリ海底譚",
       "chartType": "STD",
@@ -6060,6 +6120,66 @@
       "slow": 5,
       "id": "eUVxlumHsWxoftWg3RuUya9YXton95-jPceszZrQ7Gc",
       "chartId": "song-9a2f2ad520e2-std-master"
+    },
+    {
+      "playedAt": "2026-01-31T03:56:17.000Z",
+      "songTitle": "エンジェル ドリーム",
+      "chartType": "DX",
+      "difficulty": "MASTER",
+      "level": "13+",
+      "achievement": 97.6408,
+      "combo": "Clear",
+      "sync": "Sync",
+      "rating": 14096,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 452,
+        "perfect": 302,
+        "great": 56,
+        "good": 18,
+        "miss": 6
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 26,
+          "perfect": 29,
+          "great": 4,
+          "good": 1,
+          "miss": 1
+        },
+        "tap": {
+          "criticalPerfect": 278,
+          "perfect": 250,
+          "great": 44,
+          "good": 15,
+          "miss": 5
+        },
+        "hold": {
+          "criticalPerfect": 27,
+          "perfect": 23,
+          "great": 6,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 97,
+          "perfect": 0,
+          "great": 2,
+          "good": 2,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 24,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 71,
+      "slow": 32,
+      "id": "7BypHwNe96vW6HfE-LA7N9NrovjcADxCP5aSZ5ai9Fc",
+      "chartId": "song-c034ac69d6d8-dx-master"
     }
   ]
 }

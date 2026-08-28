@@ -2,6 +2,126 @@
   "period": "2026-06",
   "scores": [
     {
+      "playedAt": "2026-06-23T02:42:27.000Z",
+      "songTitle": "テトリス",
+      "chartType": "DX",
+      "difficulty": "Re:MASTER",
+      "level": "13+",
+      "achievement": 100.4993,
+      "combo": "Clear",
+      "sync": "Sync",
+      "rating": 15049,
+      "ratingChange": 1,
+      "judgments": {
+        "criticalPerfect": 707,
+        "perfect": 217,
+        "great": 11,
+        "good": 4,
+        "miss": 2
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 53,
+          "perfect": 6,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 407,
+          "perfect": 197,
+          "great": 8,
+          "good": 4,
+          "miss": 2
+        },
+        "hold": {
+          "criticalPerfect": 24,
+          "perfect": 14,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 168,
+          "perfect": 0,
+          "great": 3,
+          "good": 0,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 55,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 16,
+      "slow": 5,
+      "id": "q9VQQiM89xkZOy2AJgOsdJQ_YfVkw0NlUkBVlmS18qg",
+      "chartId": "song-58508b2f410c-dx-re-master"
+    },
+    {
+      "playedAt": "2026-06-23T02:57:56.000Z",
+      "songTitle": "テトリス",
+      "chartType": "DX",
+      "difficulty": "Re:MASTER",
+      "level": "13+",
+      "achievement": 100.5784,
+      "combo": "Clear",
+      "sync": null,
+      "rating": 15060,
+      "ratingChange": 11,
+      "judgments": {
+        "criticalPerfect": 707,
+        "perfect": 219,
+        "great": 10,
+        "good": 3,
+        "miss": 2
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 55,
+          "perfect": 4,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 404,
+          "perfect": 201,
+          "great": 8,
+          "good": 3,
+          "miss": 2
+        },
+        "hold": {
+          "criticalPerfect": 24,
+          "perfect": 14,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 169,
+          "perfect": 0,
+          "great": 2,
+          "good": 0,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 55,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 11,
+      "slow": 6,
+      "id": "3KSBzRkq-nnqBoSvszLf9UVfHWponNUubsp7ng4hxmQ",
+      "chartId": "song-58508b2f410c-dx-re-master"
+    },
+    {
       "playedAt": "2026-06-25T00:05:40.000Z",
       "songTitle": "メズマライザー",
       "chartType": "DX",
@@ -60,6 +180,306 @@
       "slow": 0,
       "id": "hLrTZQRyVgFqakt97igYp3rZOFtGIRRD7vIxlkds5mk",
       "chartId": "song-08f22014494d-dx-expert"
+    },
+    {
+      "playedAt": "2026-06-25T00:54:47.000Z",
+      "songTitle": "テトリス",
+      "chartType": "DX",
+      "difficulty": "Re:MASTER",
+      "level": "13+",
+      "achievement": 100.4828,
+      "combo": "FC",
+      "sync": null,
+      "rating": 15075,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 615,
+        "perfect": 302,
+        "great": 23,
+        "good": 1,
+        "miss": 0
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 50,
+          "perfect": 8,
+          "great": 1,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 320,
+          "perfect": 279,
+          "great": 18,
+          "good": 1,
+          "miss": 0
+        },
+        "hold": {
+          "criticalPerfect": 22,
+          "perfect": 15,
+          "great": 1,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 168,
+          "perfect": 0,
+          "great": 3,
+          "good": 0,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 55,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 29,
+      "slow": 3,
+      "id": "AfnJG6AbyoE5EAZjwjWuhbM2GPqBKxAld6pOczFQlx0",
+      "chartId": "song-58508b2f410c-dx-re-master"
+    },
+    {
+      "playedAt": "2026-06-26T17:51:09.000Z",
+      "songTitle": "エゴロック",
+      "chartType": "DX",
+      "difficulty": "MASTER",
+      "level": "13+",
+      "achievement": 100.3761,
+      "combo": "FC",
+      "sync": null,
+      "rating": 15078,
+      "ratingChange": 3,
+      "judgments": {
+        "criticalPerfect": 514,
+        "perfect": 155,
+        "great": 16,
+        "good": 5,
+        "miss": 0
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 49,
+          "perfect": 20,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 283,
+          "perfect": 123,
+          "great": 15,
+          "good": 4,
+          "miss": 0
+        },
+        "hold": {
+          "criticalPerfect": 35,
+          "perfect": 12,
+          "great": 1,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 126,
+          "perfect": 0,
+          "great": 0,
+          "good": 1,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 21,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 23,
+      "slow": 18,
+      "id": "CFfr3GKilD4DWmIXFERWprAhTULNlSrcGKwW4elWqMM",
+      "chartId": "song-4f39f6af9e43-dx-master"
+    },
+    {
+      "playedAt": "2026-06-26T17:53:38.000Z",
+      "songTitle": "エゴロック",
+      "chartType": "DX",
+      "difficulty": "MASTER",
+      "level": "13+",
+      "achievement": 100.4464,
+      "combo": "FC",
+      "sync": null,
+      "rating": 15078,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 523,
+        "perfect": 156,
+        "great": 5,
+        "good": 6,
+        "miss": 0
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 52,
+          "perfect": 17,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 286,
+          "perfect": 132,
+          "great": 3,
+          "good": 4,
+          "miss": 0
+        },
+        "hold": {
+          "criticalPerfect": 39,
+          "perfect": 7,
+          "great": 1,
+          "good": 1,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 125,
+          "perfect": 0,
+          "great": 1,
+          "good": 1,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 21,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 14,
+      "slow": 14,
+      "id": "4k6PQ04JwKO9qlTSWQVM08zrohH2FBJ0uIAWFQzX0RA",
+      "chartId": "song-4f39f6af9e43-dx-master"
+    },
+    {
+      "playedAt": "2026-06-26T22:42:23.000Z",
+      "songTitle": "エゴロック",
+      "chartType": "DX",
+      "difficulty": "MASTER",
+      "level": "13+",
+      "achievement": 100.5123,
+      "combo": "Clear",
+      "sync": null,
+      "rating": 15089,
+      "ratingChange": 11,
+      "judgments": {
+        "criticalPerfect": 528,
+        "perfect": 147,
+        "great": 12,
+        "good": 2,
+        "miss": 1
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 52,
+          "perfect": 16,
+          "great": 1,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 296,
+          "perfect": 115,
+          "great": 11,
+          "good": 2,
+          "miss": 1
+        },
+        "hold": {
+          "criticalPerfect": 32,
+          "perfect": 16,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 127,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 21,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 19,
+      "slow": 11,
+      "id": "mPd6qjyeZOLTMw2qWRAwGOr99aThTEzPPIj8DDte1VY",
+      "chartId": "song-4f39f6af9e43-dx-master"
+    },
+    {
+      "playedAt": "2026-06-26T22:53:46.000Z",
+      "songTitle": "テトリス",
+      "chartType": "DX",
+      "difficulty": "Re:MASTER",
+      "level": "13+",
+      "achievement": 100.6513,
+      "combo": "Clear",
+      "sync": null,
+      "rating": 15089,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 711,
+        "perfect": 217,
+        "great": 11,
+        "good": 1,
+        "miss": 1
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 51,
+          "perfect": 8,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 412,
+          "perfect": 196,
+          "great": 8,
+          "good": 1,
+          "miss": 1
+        },
+        "hold": {
+          "criticalPerfect": 25,
+          "perfect": 13,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 168,
+          "perfect": 0,
+          "great": 3,
+          "good": 0,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 55,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 16,
+      "slow": 4,
+      "id": "edY2UQwZUkhRBFlEJVf0mkLAcuDPQ3kzYYP1gWHb-9M",
+      "chartId": "song-58508b2f410c-dx-re-master"
     }
   ]
 }

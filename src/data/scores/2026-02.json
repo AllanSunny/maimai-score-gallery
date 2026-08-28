@@ -2,6 +2,666 @@
   "period": "2026-02",
   "scores": [
     {
+      "playedAt": "2026-02-05T05:04:23.000Z",
+      "songTitle": "Mystic Parade",
+      "chartType": "DX",
+      "difficulty": "EXPERT",
+      "level": "10",
+      "achievement": 100.9581,
+      "combo": "FC+",
+      "sync": "FDX",
+      "rating": 14138,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 435,
+        "perfect": 146,
+        "great": 1,
+        "good": 0,
+        "miss": 0
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 48,
+          "perfect": 2,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 296,
+          "perfect": 132,
+          "great": 1,
+          "good": 0,
+          "miss": 0
+        },
+        "hold": {
+          "criticalPerfect": 32,
+          "perfect": 12,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 44,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 15,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 3,
+      "slow": 0,
+      "id": "HqKXA5mMsn0SFewuoX5JAessuKLmEfRxdQFr6OyQ0cI",
+      "chartId": "song-e55f5c1d041d-dx-expert"
+    },
+    {
+      "playedAt": "2026-02-20T05:29:36.000Z",
+      "songTitle": "ヒアソビ",
+      "chartType": "DX",
+      "difficulty": "EXPERT",
+      "level": "10",
+      "achievement": 100.6441,
+      "combo": "FC",
+      "sync": null,
+      "rating": 14258,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 381,
+        "perfect": 131,
+        "great": 6,
+        "good": 1,
+        "miss": 0
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 18,
+          "perfect": 7,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 237,
+          "perfect": 89,
+          "great": 5,
+          "good": 1,
+          "miss": 0
+        },
+        "hold": {
+          "criticalPerfect": 66,
+          "perfect": 35,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 34,
+          "perfect": 0,
+          "great": 1,
+          "good": 0,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 26,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 6,
+      "slow": 8,
+      "id": "VQfW7dxnLFz8xi7Kv8lW01KRboKb_TiYa63GBlCBk68",
+      "chartId": "song-edd2f284a739-dx-expert"
+    },
+    {
+      "playedAt": "2026-02-20T05:33:23.000Z",
+      "songTitle": "ヒアソビ",
+      "chartType": "DX",
+      "difficulty": "MASTER",
+      "level": "13+",
+      "achievement": 98.0437,
+      "combo": "Clear",
+      "sync": null,
+      "rating": 14258,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 558,
+        "perfect": 293,
+        "great": 49,
+        "good": 15,
+        "miss": 9
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 58,
+          "perfect": 42,
+          "great": 6,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 336,
+          "perfect": 220,
+          "great": 33,
+          "good": 7,
+          "miss": 9
+        },
+        "hold": {
+          "criticalPerfect": 51,
+          "perfect": 31,
+          "great": 2,
+          "good": 1,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 84,
+          "perfect": 0,
+          "great": 8,
+          "good": 7,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 29,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 23,
+      "slow": 83,
+      "id": "PY92YqfA2oymmQagJCbMxsLoopqtJyvJuQWV8Secrro",
+      "chartId": "song-edd2f284a739-dx-master"
+    },
+    {
+      "playedAt": "2026-02-20T05:41:18.000Z",
+      "songTitle": "ヒアソビ",
+      "chartType": "DX",
+      "difficulty": "MASTER",
+      "level": "13+",
+      "achievement": 99.1724,
+      "combo": "Clear",
+      "sync": null,
+      "rating": 14266,
+      "ratingChange": 8,
+      "judgments": {
+        "criticalPerfect": 620,
+        "perfect": 258,
+        "great": 33,
+        "good": 10,
+        "miss": 3
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 63,
+          "perfect": 38,
+          "great": 4,
+          "good": 1,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 376,
+          "perfect": 201,
+          "great": 21,
+          "good": 4,
+          "miss": 3
+        },
+        "hold": {
+          "criticalPerfect": 63,
+          "perfect": 19,
+          "great": 2,
+          "good": 1,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 89,
+          "perfect": 0,
+          "great": 6,
+          "good": 4,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 29,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 32,
+      "slow": 49,
+      "id": "PO0uVpX4a-j3saDp4EtoOSdzeea8e3Bxcc6M0tyGmhc",
+      "chartId": "song-edd2f284a739-dx-master"
+    },
+    {
+      "playedAt": "2026-02-20T06:00:48.000Z",
+      "songTitle": "ヒアソビ",
+      "chartType": "DX",
+      "difficulty": "MASTER",
+      "level": "13+",
+      "achievement": 100.4462,
+      "combo": "Clear",
+      "sync": null,
+      "rating": 14289,
+      "ratingChange": 14,
+      "judgments": {
+        "criticalPerfect": 641,
+        "perfect": 266,
+        "great": 13,
+        "good": 3,
+        "miss": 1
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 71,
+          "perfect": 35,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 382,
+          "perfect": 209,
+          "great": 12,
+          "good": 1,
+          "miss": 1
+        },
+        "hold": {
+          "criticalPerfect": 62,
+          "perfect": 22,
+          "great": 1,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 97,
+          "perfect": 0,
+          "great": 0,
+          "good": 2,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 29,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 23,
+      "slow": 28,
+      "id": "NAwv8yZk-0C94orNFkDRWZp570khUYIT2rNmy6WibRI",
+      "chartId": "song-edd2f284a739-dx-master"
+    },
+    {
+      "playedAt": "2026-02-20T06:05:39.000Z",
+      "songTitle": "ヒアソビ",
+      "chartType": "DX",
+      "difficulty": "MASTER",
+      "level": "13+",
+      "achievement": 100.4392,
+      "combo": "FC",
+      "sync": null,
+      "rating": 14289,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 650,
+        "perfect": 259,
+        "great": 13,
+        "good": 2,
+        "miss": 0
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 67,
+          "perfect": 37,
+          "great": 1,
+          "good": 1,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 394,
+          "perfect": 199,
+          "great": 11,
+          "good": 1,
+          "miss": 0
+        },
+        "hold": {
+          "criticalPerfect": 61,
+          "perfect": 23,
+          "great": 1,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 99,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 29,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 36,
+      "slow": 16,
+      "id": "kkd3qMJi_ALXVG88QeARfT6aO24keIsZiaYvVz1Z6kQ",
+      "chartId": "song-edd2f284a739-dx-master"
+    },
+    {
+      "playedAt": "2026-02-20T06:08:52.000Z",
+      "songTitle": "ヒアソビ",
+      "chartType": "DX",
+      "difficulty": "MASTER",
+      "level": "13+",
+      "achievement": 100.5495,
+      "combo": "Clear",
+      "sync": null,
+      "rating": 14300,
+      "ratingChange": 11,
+      "judgments": {
+        "criticalPerfect": 650,
+        "perfect": 260,
+        "great": 9,
+        "good": 4,
+        "miss": 1
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 78,
+          "perfect": 28,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 387,
+          "perfect": 206,
+          "great": 8,
+          "good": 3,
+          "miss": 1
+        },
+        "hold": {
+          "criticalPerfect": 58,
+          "perfect": 26,
+          "great": 1,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 98,
+          "perfect": 0,
+          "great": 0,
+          "good": 1,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 29,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 27,
+      "slow": 14,
+      "id": "58fWpkhuCPQoMN1gwaIl03NSNalKnjC6olt_pgTdn7s",
+      "chartId": "song-edd2f284a739-dx-master"
+    },
+    {
+      "playedAt": "2026-02-20T06:12:06.000Z",
+      "songTitle": "ヒアソビ",
+      "chartType": "DX",
+      "difficulty": "MASTER",
+      "level": "13+",
+      "achievement": 100.6,
+      "combo": "FC",
+      "sync": null,
+      "rating": 14300,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 643,
+        "perfect": 270,
+        "great": 10,
+        "good": 1,
+        "miss": 0
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 70,
+          "perfect": 35,
+          "great": 1,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 386,
+          "perfect": 210,
+          "great": 8,
+          "good": 1,
+          "miss": 0
+        },
+        "hold": {
+          "criticalPerfect": 60,
+          "perfect": 25,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 98,
+          "perfect": 0,
+          "great": 1,
+          "good": 0,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 29,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 34,
+      "slow": 12,
+      "id": "CN47eqlw0YwbLkD6xZP1l07vQUQCIw_PV-FLh2wryLA",
+      "chartId": "song-edd2f284a739-dx-master"
+    },
+    {
+      "playedAt": "2026-02-20T22:38:53.000Z",
+      "songTitle": "ヒアソビ",
+      "chartType": "DX",
+      "difficulty": "EXPERT",
+      "level": "10",
+      "achievement": 100.7827,
+      "combo": "FC+",
+      "sync": null,
+      "rating": 14313,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 402,
+        "perfect": 112,
+        "great": 5,
+        "good": 0,
+        "miss": 0
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 21,
+          "perfect": 4,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 252,
+          "perfect": 76,
+          "great": 4,
+          "good": 0,
+          "miss": 0
+        },
+        "hold": {
+          "criticalPerfect": 69,
+          "perfect": 32,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 34,
+          "perfect": 0,
+          "great": 1,
+          "good": 0,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 26,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 2,
+      "slow": 7,
+      "id": "-rTUH6e2X-JFYb5Z2j_GpP_p-0yhrmTGMbFI4v_bGVo",
+      "chartId": "song-edd2f284a739-dx-expert"
+    },
+    {
+      "playedAt": "2026-02-22T04:12:28.000Z",
+      "songTitle": "Transcend Lights",
+      "chartType": "DX",
+      "difficulty": "MASTER",
+      "level": "13",
+      "achievement": 100.3218,
+      "combo": "FC",
+      "sync": null,
+      "rating": 14320,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 435,
+        "perfect": 160,
+        "great": 11,
+        "good": 3,
+        "miss": 0
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 13,
+          "perfect": 2,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 278,
+          "perfect": 154,
+          "great": 8,
+          "good": 2,
+          "miss": 0
+        },
+        "hold": {
+          "criticalPerfect": 4,
+          "perfect": 4,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 115,
+          "perfect": 0,
+          "great": 3,
+          "good": 1,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 25,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 10,
+      "slow": 6,
+      "id": "UcvxlurTxljHsgMKOhgw8d1m3GDTeeeFc0GvLpUxhrs",
+      "chartId": "song-bf95733511a4-dx-master"
+    },
+    {
+      "playedAt": "2026-02-22T04:17:36.000Z",
+      "songTitle": "Transcend Lights",
+      "chartType": "DX",
+      "difficulty": "MASTER",
+      "level": "13",
+      "achievement": 100.5669,
+      "combo": "Clear",
+      "sync": null,
+      "rating": 14331,
+      "ratingChange": 11,
+      "judgments": {
+        "criticalPerfect": 456,
+        "perfect": 146,
+        "great": 6,
+        "good": 0,
+        "miss": 1
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 11,
+          "perfect": 4,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 299,
+          "perfect": 139,
+          "great": 3,
+          "good": 0,
+          "miss": 1
+        },
+        "hold": {
+          "criticalPerfect": 4,
+          "perfect": 3,
+          "great": 1,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 117,
+          "perfect": 0,
+          "great": 2,
+          "good": 0,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 25,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 7,
+      "slow": 3,
+      "id": "HrDUS2OnvdKsPOi_Bp4B5g2Yxd1ljFNFIOGns13e97U",
+      "chartId": "song-bf95733511a4-dx-master"
+    },
+    {
       "playedAt": "2026-02-24T18:20:07.000Z",
       "songTitle": "テトリス",
       "chartType": "DX",
@@ -60,6 +720,246 @@
       "slow": 8,
       "id": "mVABb6PA6wEZYoY3SnCtUvnvQF8xzVuBqED2gHets7Q",
       "chartId": "song-58508b2f410c-dx-re-master"
+    },
+    {
+      "playedAt": "2026-02-24T18:28:04.000Z",
+      "songTitle": "enchanted wanderer",
+      "chartType": "DX",
+      "difficulty": "MASTER",
+      "level": "13+",
+      "achievement": 98.3604,
+      "combo": "Clear",
+      "sync": null,
+      "rating": 14348,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 426,
+        "perfect": 128,
+        "great": 24,
+        "good": 10,
+        "miss": 6
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 19,
+          "perfect": 8,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 172,
+          "perfect": 88,
+          "great": 17,
+          "good": 3,
+          "miss": 5
+        },
+        "hold": {
+          "criticalPerfect": 30,
+          "perfect": 31,
+          "great": 1,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 95,
+          "perfect": 0,
+          "great": 5,
+          "good": 7,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 110,
+          "perfect": 1,
+          "great": 1,
+          "good": 0,
+          "miss": 1
+        }
+      },
+      "fast": 16,
+      "slow": 26,
+      "id": "8bR5fD8EuDbUpuOkZXIquZcoJZDTogZde4J5uNPDyCg",
+      "chartId": "song-e82460b7a2b0-dx-master"
+    },
+    {
+      "playedAt": "2026-02-24T18:31:29.000Z",
+      "songTitle": "enchanted wanderer",
+      "chartType": "DX",
+      "difficulty": "MASTER",
+      "level": "13+",
+      "achievement": 99.3701,
+      "combo": "Clear",
+      "sync": null,
+      "rating": 14354,
+      "ratingChange": 6,
+      "judgments": {
+        "criticalPerfect": 437,
+        "perfect": 127,
+        "great": 24,
+        "good": 4,
+        "miss": 2
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 14,
+          "perfect": 13,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 173,
+          "perfect": 93,
+          "great": 16,
+          "good": 1,
+          "miss": 2
+        },
+        "hold": {
+          "criticalPerfect": 40,
+          "perfect": 21,
+          "great": 1,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 98,
+          "perfect": 0,
+          "great": 6,
+          "good": 3,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 112,
+          "perfect": 0,
+          "great": 1,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 18,
+      "slow": 23,
+      "id": "RIhwOPwd_yAw6rE2R5KEdehxINmZHLZ1OIP2HQ41qs4",
+      "chartId": "song-e82460b7a2b0-dx-master"
+    },
+    {
+      "playedAt": "2026-02-24T18:34:39.000Z",
+      "songTitle": "enchanted wanderer",
+      "chartType": "DX",
+      "difficulty": "MASTER",
+      "level": "13+",
+      "achievement": 99.58,
+      "combo": "Clear",
+      "sync": null,
+      "rating": 14358,
+      "ratingChange": 4,
+      "judgments": {
+        "criticalPerfect": 449,
+        "perfect": 120,
+        "great": 19,
+        "good": 4,
+        "miss": 2
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 17,
+          "perfect": 10,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 182,
+          "perfect": 87,
+          "great": 13,
+          "good": 1,
+          "miss": 2
+        },
+        "hold": {
+          "criticalPerfect": 39,
+          "perfect": 21,
+          "great": 2,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 100,
+          "perfect": 0,
+          "great": 4,
+          "good": 3,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 111,
+          "perfect": 2,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 17,
+      "slow": 16,
+      "id": "S4U80ayRtr1XoCcVDrsKGTqUrF8NObh6v90eC5rYfOk",
+      "chartId": "song-e82460b7a2b0-dx-master"
+    },
+    {
+      "playedAt": "2026-02-24T18:42:56.000Z",
+      "songTitle": "Transcend Lights",
+      "chartType": "DX",
+      "difficulty": "MASTER",
+      "level": "13",
+      "achievement": 100.5284,
+      "combo": "FC",
+      "sync": null,
+      "rating": 14358,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 467,
+        "perfect": 134,
+        "great": 6,
+        "good": 2,
+        "miss": 0
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 9,
+          "perfect": 6,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 313,
+          "perfect": 124,
+          "great": 3,
+          "good": 2,
+          "miss": 0
+        },
+        "hold": {
+          "criticalPerfect": 4,
+          "perfect": 4,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 116,
+          "perfect": 0,
+          "great": 3,
+          "good": 0,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 25,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 9,
+      "slow": 5,
+      "id": "LNmkVyUwt888y0XfwOgaLy4A0-FPEsEMPO9Ypq6g-aE",
+      "chartId": "song-bf95733511a4-dx-master"
     },
     {
       "playedAt": "2026-02-24T18:45:54.000Z",

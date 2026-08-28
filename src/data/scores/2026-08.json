@@ -3902,6 +3902,246 @@
       "chartId": "song-d6cec4f5ed59-std-master"
     },
     {
+      "playedAt": "2026-08-26T03:01:58.000Z",
+      "songTitle": "ULTRA SYNERGY MATRIX",
+      "chartType": "DX",
+      "difficulty": "MASTER",
+      "level": "14",
+      "achievement": 100.1236,
+      "combo": "Clear",
+      "sync": "Sync",
+      "rating": 15245,
+      "ratingChange": 1,
+      "judgments": {
+        "criticalPerfect": 602,
+        "perfect": 275,
+        "great": 25,
+        "good": 3,
+        "miss": 1
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 82,
+          "perfect": 17,
+          "great": 0,
+          "good": 1,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 386,
+          "perfect": 246,
+          "great": 23,
+          "good": 1,
+          "miss": 1
+        },
+        "hold": {
+          "criticalPerfect": 12,
+          "perfect": 12,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 61,
+          "perfect": 0,
+          "great": 2,
+          "good": 1,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 61,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 33,
+      "slow": 12,
+      "id": "fKgeClxte8cjRwcYEl6453kMz-rK2m8ua7fgmjQ4wrs",
+      "chartId": "song-d14d96fc150e-dx-master"
+    },
+    {
+      "playedAt": "2026-08-26T04:47:09.000Z",
+      "songTitle": "ULTRA SYNERGY MATRIX",
+      "chartType": "DX",
+      "difficulty": "MASTER",
+      "level": "14",
+      "achievement": 100.337,
+      "combo": "Clear",
+      "sync": null,
+      "rating": 15246,
+      "ratingChange": 1,
+      "judgments": {
+        "criticalPerfect": 624,
+        "perfect": 267,
+        "great": 13,
+        "good": 1,
+        "miss": 1
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 85,
+          "perfect": 14,
+          "great": 0,
+          "good": 0,
+          "miss": 1
+        },
+        "tap": {
+          "criticalPerfect": 402,
+          "perfect": 243,
+          "great": 11,
+          "good": 1,
+          "miss": 0
+        },
+        "hold": {
+          "criticalPerfect": 14,
+          "perfect": 10,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 62,
+          "perfect": 0,
+          "great": 2,
+          "good": 0,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 61,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 18,
+      "slow": 10,
+      "id": "LoqQq6Mk8quyfnBia2qRjzeIxPGu75ja6k-Dli2IH6A",
+      "chartId": "song-d14d96fc150e-dx-master"
+    },
+    {
+      "playedAt": "2026-08-26T04:51:20.000Z",
+      "songTitle": "ULTRA SYNERGY MATRIX",
+      "chartType": "DX",
+      "difficulty": "MASTER",
+      "level": "14",
+      "achievement": 100.3958,
+      "combo": "Clear",
+      "sync": null,
+      "rating": 15246,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 611,
+        "perfect": 274,
+        "great": 17,
+        "good": 3,
+        "miss": 1
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 75,
+          "perfect": 24,
+          "great": 1,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 399,
+          "perfect": 241,
+          "great": 13,
+          "good": 3,
+          "miss": 1
+        },
+        "hold": {
+          "criticalPerfect": 14,
+          "perfect": 9,
+          "great": 1,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 62,
+          "perfect": 0,
+          "great": 2,
+          "good": 0,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 61,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 18,
+      "slow": 26,
+      "id": "8l5Sa3jD-0r8mCsDLj9SYGi2TuSvjztUzf9p4aXqFB8",
+      "chartId": "song-d14d96fc150e-dx-master"
+    },
+    {
+      "playedAt": "2026-08-26T05:14:58.000Z",
+      "songTitle": "ULTRA SYNERGY MATRIX",
+      "chartType": "DX",
+      "difficulty": "MASTER",
+      "level": "14",
+      "achievement": 100.4495,
+      "combo": "Clear",
+      "sync": null,
+      "rating": 15246,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 604,
+        "perfect": 283,
+        "great": 17,
+        "good": 1,
+        "miss": 1
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 81,
+          "perfect": 18,
+          "great": 1,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 383,
+          "perfect": 261,
+          "great": 11,
+          "good": 1,
+          "miss": 1
+        },
+        "hold": {
+          "criticalPerfect": 17,
+          "perfect": 4,
+          "great": 3,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 62,
+          "perfect": 0,
+          "great": 2,
+          "good": 0,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 61,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 17,
+      "slow": 19,
+      "id": "HBs_BYTxXpP-qU9hxqGoAkH-LQgFAc73G_vgGE1K1os",
+      "chartId": "song-d14d96fc150e-dx-master"
+    },
+    {
       "playedAt": "2026-08-26T05:19:47.000Z",
       "songTitle": "ULTRA SYNERGY MATRIX",
       "chartType": "DX",

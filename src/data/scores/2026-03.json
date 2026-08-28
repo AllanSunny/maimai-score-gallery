@@ -2,6 +2,366 @@
   "period": "2026-03",
   "scores": [
     {
+      "playedAt": "2026-03-04T03:04:02.000Z",
+      "songTitle": "ULTRA SYNERGY MATRIX",
+      "chartType": "DX",
+      "difficulty": "BASIC",
+      "level": "5",
+      "achievement": 100.9642,
+      "combo": "AP",
+      "sync": null,
+      "rating": 14383,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 171,
+        "perfect": 42,
+        "great": 0,
+        "good": 0,
+        "miss": 0
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 19,
+          "perfect": 2,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 137,
+          "perfect": 37,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "hold": {
+          "criticalPerfect": 3,
+          "perfect": 3,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 4,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 8,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 2,
+      "slow": 0,
+      "id": "RKH63KXVDWa4Yv3-KiWbmhvRX5JQb_iwQsXQw0n3Qbo",
+      "chartId": "song-d14d96fc150e-dx-basic"
+    },
+    {
+      "playedAt": "2026-03-04T03:06:56.000Z",
+      "songTitle": "ULTRA SYNERGY MATRIX",
+      "chartType": "DX",
+      "difficulty": "ADVANCED",
+      "level": "7",
+      "achievement": 101,
+      "combo": "AP+",
+      "sync": null,
+      "rating": 14383,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 273,
+        "perfect": 60,
+        "great": 0,
+        "good": 0,
+        "miss": 0
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 6,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 207,
+          "perfect": 53,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "hold": {
+          "criticalPerfect": 25,
+          "perfect": 7,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 6,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 29,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 0,
+      "slow": 0,
+      "id": "7rfuaAq2ktua6fXC7BmCS7qKgsKRh9rsofKC9WsZoEM",
+      "chartId": "song-d14d96fc150e-dx-advanced"
+    },
+    {
+      "playedAt": "2026-03-04T03:21:03.000Z",
+      "songTitle": "ULTRA SYNERGY MATRIX",
+      "chartType": "DX",
+      "difficulty": "EXPERT",
+      "level": "12",
+      "achievement": 100.6642,
+      "combo": "FC",
+      "sync": null,
+      "rating": 14387,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 392,
+        "perfect": 122,
+        "great": 3,
+        "good": 2,
+        "miss": 0
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 24,
+          "perfect": 10,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 239,
+          "perfect": 93,
+          "great": 3,
+          "good": 1,
+          "miss": 0
+        },
+        "hold": {
+          "criticalPerfect": 24,
+          "perfect": 19,
+          "great": 0,
+          "good": 1,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 51,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 54,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 8,
+      "slow": 7,
+      "id": "_aSyZfyOQeSsNdJgAvkNjI10jjV36QHtOBW8uBWaO-o",
+      "chartId": "song-d14d96fc150e-dx-expert"
+    },
+    {
+      "playedAt": "2026-03-04T03:25:18.000Z",
+      "songTitle": "ULTRA SYNERGY MATRIX",
+      "chartType": "DX",
+      "difficulty": "MASTER",
+      "level": "14",
+      "achievement": 98.9817,
+      "combo": "Clear",
+      "sync": null,
+      "rating": 14388,
+      "ratingChange": 1,
+      "judgments": {
+        "criticalPerfect": 570,
+        "perfect": 275,
+        "great": 45,
+        "good": 13,
+        "miss": 3
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 70,
+          "perfect": 26,
+          "great": 2,
+          "good": 1,
+          "miss": 1
+        },
+        "tap": {
+          "criticalPerfect": 364,
+          "perfect": 239,
+          "great": 40,
+          "good": 12,
+          "miss": 2
+        },
+        "hold": {
+          "criticalPerfect": 14,
+          "perfect": 10,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 61,
+          "perfect": 0,
+          "great": 3,
+          "good": 0,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 61,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 45,
+      "slow": 39,
+      "id": "uC2E7Bl7XVK3sFsxcnFumNxMxu9kbBm00mcIklvxUtY",
+      "chartId": "song-d14d96fc150e-dx-master"
+    },
+    {
+      "playedAt": "2026-03-04T03:28:01.000Z",
+      "songTitle": "ULTRA SYNERGY MATRIX",
+      "chartType": "DX",
+      "difficulty": "MASTER",
+      "level": "14",
+      "achievement": 99.2093,
+      "combo": "Clear",
+      "sync": null,
+      "rating": 14395,
+      "ratingChange": 7,
+      "judgments": {
+        "criticalPerfect": 599,
+        "perfect": 234,
+        "great": 55,
+        "good": 12,
+        "miss": 6
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 75,
+          "perfect": 24,
+          "great": 1,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 388,
+          "perfect": 200,
+          "great": 51,
+          "good": 12,
+          "miss": 6
+        },
+        "hold": {
+          "criticalPerfect": 14,
+          "perfect": 10,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 61,
+          "perfect": 0,
+          "great": 3,
+          "good": 0,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 61,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 54,
+      "slow": 37,
+      "id": "VOX6SvPuUIMbWjD10ZM2LcfOg0hFogrZ8xPcfRHRwQE",
+      "chartId": "song-d14d96fc150e-dx-master"
+    },
+    {
+      "playedAt": "2026-03-04T03:58:15.000Z",
+      "songTitle": "enchanted wanderer",
+      "chartType": "DX",
+      "difficulty": "MASTER",
+      "level": "13+",
+      "achievement": 100.1673,
+      "combo": "Clear",
+      "sync": null,
+      "rating": 14412,
+      "ratingChange": 9,
+      "judgments": {
+        "criticalPerfect": 448,
+        "perfect": 127,
+        "great": 17,
+        "good": 1,
+        "miss": 1
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 21,
+          "perfect": 6,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 179,
+          "perfect": 94,
+          "great": 11,
+          "good": 0,
+          "miss": 1
+        },
+        "hold": {
+          "criticalPerfect": 34,
+          "perfect": 26,
+          "great": 1,
+          "good": 1,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 102,
+          "perfect": 0,
+          "great": 5,
+          "good": 0,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 112,
+          "perfect": 1,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 15,
+      "slow": 9,
+      "id": "9N6zDjh05pGoGN7oJyH2rlvp89fe3PIXhJyBgcP-FqY",
+      "chartId": "song-e82460b7a2b0-dx-master"
+    },
+    {
       "playedAt": "2026-03-04T04:01:33.000Z",
       "songTitle": "IMAWANOKIWA",
       "chartType": "DX",
@@ -122,6 +482,186 @@
       "chartId": "song-5331d36bf069-dx-master"
     },
     {
+      "playedAt": "2026-03-04T04:27:32.000Z",
+      "songTitle": "raputa",
+      "chartType": "DX",
+      "difficulty": "EXPERT",
+      "level": "13+",
+      "achievement": 99.9966,
+      "combo": "Clear",
+      "sync": null,
+      "rating": 14438,
+      "ratingChange": 2,
+      "judgments": {
+        "criticalPerfect": 612,
+        "perfect": 254,
+        "great": 14,
+        "good": 6,
+        "miss": 2
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 33,
+          "perfect": 28,
+          "great": 2,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 393,
+          "perfect": 201,
+          "great": 10,
+          "good": 6,
+          "miss": 2
+        },
+        "hold": {
+          "criticalPerfect": 63,
+          "perfect": 25,
+          "great": 1,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 32,
+          "perfect": 0,
+          "great": 1,
+          "good": 0,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 91,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 25,
+      "slow": 23,
+      "id": "8uEE2X81Tr_xbWtZbbA9gsGrOivdsKvL9GjCwhdch_w",
+      "chartId": "song-804aeaf592b9-dx-expert"
+    },
+    {
+      "playedAt": "2026-03-04T04:30:48.000Z",
+      "songTitle": "raputa",
+      "chartType": "DX",
+      "difficulty": "EXPERT",
+      "level": "13+",
+      "achievement": 100.3332,
+      "combo": "Clear",
+      "sync": null,
+      "rating": 14445,
+      "ratingChange": 7,
+      "judgments": {
+        "criticalPerfect": 650,
+        "perfect": 221,
+        "great": 12,
+        "good": 4,
+        "miss": 1
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 39,
+          "perfect": 22,
+          "great": 2,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 417,
+          "perfect": 180,
+          "great": 10,
+          "good": 4,
+          "miss": 1
+        },
+        "hold": {
+          "criticalPerfect": 70,
+          "perfect": 19,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 33,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 91,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 23,
+      "slow": 15,
+      "id": "XOTZaVjGzGSc0L-wt7pNrWJjNGKU_8sd5OOXV4JwhuM",
+      "chartId": "song-804aeaf592b9-dx-expert"
+    },
+    {
+      "playedAt": "2026-03-05T18:51:02.000Z",
+      "songTitle": "ULTRA SYNERGY MATRIX",
+      "chartType": "DX",
+      "difficulty": "MASTER",
+      "level": "14",
+      "achievement": 99.4299,
+      "combo": "Clear",
+      "sync": "Sync",
+      "rating": 14494,
+      "ratingChange": 1,
+      "judgments": {
+        "criticalPerfect": 608,
+        "perfect": 248,
+        "great": 34,
+        "good": 13,
+        "miss": 3
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 79,
+          "perfect": 19,
+          "great": 1,
+          "good": 1,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 391,
+          "perfect": 220,
+          "great": 31,
+          "good": 12,
+          "miss": 3
+        },
+        "hold": {
+          "criticalPerfect": 15,
+          "perfect": 9,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 62,
+          "perfect": 0,
+          "great": 2,
+          "good": 0,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 61,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 49,
+      "slow": 17,
+      "id": "2vU00l9NP3JadUsfv33RdBqO1OBn2vjOkOdltDE5kJs",
+      "chartId": "song-d14d96fc150e-dx-master"
+    },
+    {
       "playedAt": "2026-03-11T00:05:03.000Z",
       "songTitle": "enchanted wanderer",
       "chartType": "DX",
@@ -240,6 +780,66 @@
       "slow": 26,
       "id": "m62RuzdsngOxX7uyoI__d7KY-w62oXYO9TMXg6llyyk",
       "chartId": "song-2f64638892ab-dx-master"
+    },
+    {
+      "playedAt": "2026-03-11T01:09:06.000Z",
+      "songTitle": "ULTRA SYNERGY MATRIX",
+      "chartType": "DX",
+      "difficulty": "MASTER",
+      "level": "14",
+      "achievement": 99.5782,
+      "combo": "Clear",
+      "sync": null,
+      "rating": 14528,
+      "ratingChange": 5,
+      "judgments": {
+        "criticalPerfect": 615,
+        "perfect": 241,
+        "great": 35,
+        "good": 10,
+        "miss": 5
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 83,
+          "perfect": 17,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 400,
+          "perfect": 213,
+          "great": 32,
+          "good": 8,
+          "miss": 4
+        },
+        "hold": {
+          "criticalPerfect": 12,
+          "perfect": 11,
+          "great": 1,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 60,
+          "perfect": 0,
+          "great": 2,
+          "good": 2,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 60,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 1
+        }
+      },
+      "fast": 44,
+      "slow": 18,
+      "id": "yVNWGSdyUQMPP1ZxsiBL3UjAMrViYduck-EImGSz-o0",
+      "chartId": "song-d14d96fc150e-dx-master"
     },
     {
       "playedAt": "2026-03-11T01:46:37.000Z",
@@ -480,6 +1080,246 @@
       "slow": 33,
       "id": "IoyuB6Xg5NXaGGS3i1kRUhLDx5sOqpEJ_AZnsICbObY",
       "chartId": "song-7fbb1100d70a-dx-master"
+    },
+    {
+      "playedAt": "2026-03-28T05:22:14.000Z",
+      "songTitle": "Altale",
+      "chartType": "STD",
+      "difficulty": "MASTER",
+      "level": "13+",
+      "achievement": 97.3412,
+      "combo": "Clear",
+      "sync": null,
+      "rating": 14689,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 279,
+        "perfect": 165,
+        "great": 25,
+        "good": 13,
+        "miss": 5
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 14,
+          "perfect": 13,
+          "great": 1,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 194,
+          "perfect": 148,
+          "great": 18,
+          "good": 6,
+          "miss": 5
+        },
+        "hold": {
+          "criticalPerfect": 3,
+          "perfect": 4,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 68,
+          "perfect": 0,
+          "great": 6,
+          "good": 7,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 0,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 24,
+      "slow": 27,
+      "id": "_P2S62GhDA-iJV5nOl-JZTQf6q8v5sXzMzu8L2xxwAQ",
+      "chartId": "song-5e2b531bd3e7-std-master"
+    },
+    {
+      "playedAt": "2026-03-28T05:25:15.000Z",
+      "songTitle": "Altale",
+      "chartType": "STD",
+      "difficulty": "MASTER",
+      "level": "13+",
+      "achievement": 97.5626,
+      "combo": "Clear",
+      "sync": null,
+      "rating": 14689,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 316,
+        "perfect": 140,
+        "great": 17,
+        "good": 11,
+        "miss": 3
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 15,
+          "perfect": 11,
+          "great": 1,
+          "good": 0,
+          "miss": 1
+        },
+        "tap": {
+          "criticalPerfect": 225,
+          "perfect": 125,
+          "great": 14,
+          "good": 5,
+          "miss": 2
+        },
+        "hold": {
+          "criticalPerfect": 3,
+          "perfect": 4,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 73,
+          "perfect": 0,
+          "great": 2,
+          "good": 6,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 0,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 22,
+      "slow": 17,
+      "id": "S3Whd2OFWaY9ASMPrsaPw71FrwTHn6rCYZlfdTd0ZT4",
+      "chartId": "song-5e2b531bd3e7-std-master"
+    },
+    {
+      "playedAt": "2026-03-28T05:30:11.000Z",
+      "songTitle": "Altale",
+      "chartType": "STD",
+      "difficulty": "MASTER",
+      "level": "13+",
+      "achievement": 99.5921,
+      "combo": "FC",
+      "sync": null,
+      "rating": 14690,
+      "ratingChange": 1,
+      "judgments": {
+        "criticalPerfect": 312,
+        "perfect": 161,
+        "great": 11,
+        "good": 3,
+        "miss": 0
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 14,
+          "perfect": 11,
+          "great": 2,
+          "good": 1,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 215,
+          "perfect": 148,
+          "great": 7,
+          "good": 1,
+          "miss": 0
+        },
+        "hold": {
+          "criticalPerfect": 4,
+          "perfect": 2,
+          "great": 1,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 79,
+          "perfect": 0,
+          "great": 1,
+          "good": 1,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 0,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 13,
+      "slow": 12,
+      "id": "DZd3CqGhWAocgDcrd_n4lqw2gqkN3Mb_XCv7vkflKbo",
+      "chartId": "song-5e2b531bd3e7-std-master"
+    },
+    {
+      "playedAt": "2026-03-28T05:36:11.000Z",
+      "songTitle": "Altale",
+      "chartType": "STD",
+      "difficulty": "MASTER",
+      "level": "13+",
+      "achievement": 100.3679,
+      "combo": "FC",
+      "sync": null,
+      "rating": 14700,
+      "ratingChange": 10,
+      "judgments": {
+        "criticalPerfect": 350,
+        "perfect": 128,
+        "great": 6,
+        "good": 3,
+        "miss": 0
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 17,
+          "perfect": 11,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 248,
+          "perfect": 116,
+          "great": 5,
+          "good": 2,
+          "miss": 0
+        },
+        "hold": {
+          "criticalPerfect": 6,
+          "perfect": 1,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 79,
+          "perfect": 0,
+          "great": 1,
+          "good": 1,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 0,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 8,
+      "slow": 12,
+      "id": "P0qm5bslgeHVfaTxURCW9r1ES9zFSqpWMp9gc5IrOa0",
+      "chartId": "song-5e2b531bd3e7-std-master"
     },
     {
       "playedAt": "2026-03-28T05:44:15.000Z",

@@ -302,6 +302,66 @@
       "chartId": "song-7fbb1100d70a-dx-master"
     },
     {
+      "playedAt": "2026-04-18T00:58:12.000Z",
+      "songTitle": "Altale",
+      "chartType": "STD",
+      "difficulty": "MASTER",
+      "level": "13+",
+      "achievement": 100.5714,
+      "combo": "FC+",
+      "sync": null,
+      "rating": 14746,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 324,
+        "perfect": 156,
+        "great": 7,
+        "good": 0,
+        "miss": 0
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 17,
+          "perfect": 11,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 226,
+          "perfect": 141,
+          "great": 4,
+          "good": 0,
+          "miss": 0
+        },
+        "hold": {
+          "criticalPerfect": 2,
+          "perfect": 4,
+          "great": 1,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 79,
+          "perfect": 0,
+          "great": 2,
+          "good": 0,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 0,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 6,
+      "slow": 12,
+      "id": "o7q3i-0XHl3hM1kGnI6b82Nn3iG6zu4vf9auE1pTAKM",
+      "chartId": "song-5e2b531bd3e7-std-master"
+    },
+    {
       "playedAt": "2026-04-18T01:28:53.000Z",
       "songTitle": "Baqeela",
       "chartType": "DX",
@@ -360,6 +420,66 @@
       "slow": 12,
       "id": "cC6Hs7qJmgLPXkoden9-WeRWEWlvbhkNc-MfJVhlehA",
       "chartId": "song-7fbb1100d70a-dx-master"
+    },
+    {
+      "playedAt": "2026-04-18T18:02:43.000Z",
+      "songTitle": "ULTRA SYNERGY MATRIX",
+      "chartType": "DX",
+      "difficulty": "MASTER",
+      "level": "14",
+      "achievement": 99.3772,
+      "combo": "Clear",
+      "sync": null,
+      "rating": 14792,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 592,
+        "perfect": 250,
+        "great": 54,
+        "good": 5,
+        "miss": 5
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 73,
+          "perfect": 25,
+          "great": 2,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 384,
+          "perfect": 216,
+          "great": 47,
+          "good": 5,
+          "miss": 5
+        },
+        "hold": {
+          "criticalPerfect": 13,
+          "perfect": 9,
+          "great": 2,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 61,
+          "perfect": 0,
+          "great": 3,
+          "good": 0,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 61,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 50,
+      "slow": 34,
+      "id": "PwqjwdXqlKxRBsgootCZhPez0RnDYHWOo86YfV5DwKo",
+      "chartId": "song-d14d96fc150e-dx-master"
     },
     {
       "playedAt": "2026-04-18T18:54:15.000Z",

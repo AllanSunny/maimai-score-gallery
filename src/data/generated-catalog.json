@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-28T06:18:31.789Z",
+  "generatedAt": "2026-08-28T08:27:20.100Z",
   "songs": [
     {
       "id": "song-550d332f837c",
@@ -11572,6 +11572,65 @@
         "code": "24000",
         "name": "BUDDiES"
       }
+    },
+    {
+      "id": "song-edd2f284a739",
+      "titles": {
+        "canonical": "ヒアソビ",
+        "kana": [
+          "ひあそび"
+        ],
+        "romaji": [
+          "hiasobi"
+        ],
+        "english": [
+          "playing with fire"
+        ],
+        "aliases": []
+      },
+      "artist": "かめりあ",
+      "genre": "niconico＆ボーカロイド",
+      "introducedIn": {
+        "code": "26004",
+        "name": "CiRCLE"
+      },
+      "jacketKey": "jackets/song-edd2f284a739-a05066bfa871.png",
+      "versions": [
+        {
+          "id": "song-edd2f284a739-dx",
+          "chartType": "DX",
+          "charts": [
+            {
+              "id": "song-edd2f284a739-dx-basic",
+              "difficulty": "BASIC",
+              "level": "3",
+              "chartConstant": null,
+              "charter": null
+            },
+            {
+              "id": "song-edd2f284a739-dx-advanced",
+              "difficulty": "ADVANCED",
+              "level": "7",
+              "chartConstant": null,
+              "charter": null
+            },
+            {
+              "id": "song-edd2f284a739-dx-expert",
+              "difficulty": "EXPERT",
+              "level": "10",
+              "chartConstant": null,
+              "charter": "Luxizhel"
+            },
+            {
+              "id": "song-edd2f284a739-dx-master",
+              "difficulty": "MASTER",
+              "level": "13+",
+              "chartConstant": 13.7,
+              "charter": "Jack"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "song-9028eaf59903",

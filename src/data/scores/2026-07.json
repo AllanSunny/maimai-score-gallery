@@ -480,6 +480,66 @@
       "slow": 5,
       "id": "EgvB410utrDx7wJAo1Bl3WThDAKzVTUryT-b6sFpidQ",
       "chartId": "tsunagite-dx-expert"
+    },
+    {
+      "playedAt": "2026-07-30T23:43:25.000Z",
+      "songTitle": "RE Aoharu",
+      "chartType": "DX",
+      "difficulty": "MASTER",
+      "level": "13+",
+      "achievement": 100.6742,
+      "combo": "FC+",
+      "sync": null,
+      "rating": 15174,
+      "ratingChange": 11,
+      "judgments": {
+        "criticalPerfect": 513,
+        "perfect": 207,
+        "great": 12,
+        "good": 0,
+        "miss": 0
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 29,
+          "perfect": 12,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 331,
+          "perfect": 192,
+          "great": 11,
+          "good": 0,
+          "miss": 0
+        },
+        "hold": {
+          "criticalPerfect": 13,
+          "perfect": 3,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 111,
+          "perfect": 0,
+          "great": 1,
+          "good": 0,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 29,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 18,
+      "slow": 6,
+      "id": "EHQUXp18M-BbFt0DpEITD75crxMFbqVRgdcPsZFZIl4",
+      "chartId": "song-32642cb2835b-dx-master"
     }
   ]
 }
