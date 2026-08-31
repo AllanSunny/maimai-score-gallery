@@ -1,0 +1,27 @@
+src/components/song/SongDetailFrame.css
+  h_278fafc5c28027 146
+src/styles.css
+  h_278fafc5c28027 71
+  s_a21798c8abadef::t_824c458043b762 78-84,89
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.0",
+  "base_commit_sha": "31f75df0bae62c9c9bf94d7213f6ff366bc10fc2",
+  "prompts": {},
+  "humans": {
+    "h_278fafc5c28027": {
+      "author": "Allan Sun <allansun@live.com>"
+    }
+  },
+  "sessions": {
+    "s_a21798c8abadef": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a05584-4534-7093-ae1b-e3a9bdb3846c",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Allan Sun <allansun@live.com>"
+    }
+  }
+}
