@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-28T16:43:05.779Z",
+  "generatedAt": "2026-08-31T02:03:11.011Z",
   "charts": {
     "song-00493f7d7088-dx-master": {
       "playCount": 3,
@@ -277,11 +277,11 @@
       ]
     },
     "song-0ac24dd304e4-dx-master": {
-      "playCount": 7,
+      "playCount": 8,
       "bestAchievement": {
-        "value": 98.7324,
-        "scoreId": "kaaWfOySpspgbO8dq-Q25R3Lz7IM3W1Q-Aep_XU1hkU",
-        "playedAt": "2026-01-03T22:54:48.000Z"
+        "value": 100.019,
+        "scoreId": "j7SkxUphI8ZlqMrdTpU3VEFD6DdrW4jGgYqMZAMYt5M",
+        "playedAt": "2026-08-29T03:55:06.000Z"
       },
       "bestCombo": null,
       "bestSync": {
@@ -292,7 +292,8 @@
       "historyChunks": [
         "2025-11",
         "2025-12",
-        "2026-01"
+        "2026-01",
+        "2026-08"
       ]
     },
     "song-0c18775b603e-dx-master": {
@@ -1724,14 +1725,22 @@
       ]
     },
     "song-433483d20c40-dx-master": {
-      "playCount": 2,
+      "playCount": 5,
       "bestAchievement": {
-        "value": 100.0892,
-        "scoreId": "R5A8gF4SqW6XIqQwNgqJofrdmigqHOH8tF2Jhpa1Plw",
-        "playedAt": "2026-08-22T03:38:25.000Z"
+        "value": 100.5796,
+        "scoreId": "K-IXDB-0Q1Lz7Sv7vBzpGBWWRhLwaqXM300DVtrzlZg",
+        "playedAt": "2026-08-29T02:30:53.000Z"
       },
-      "bestCombo": null,
-      "bestSync": null,
+      "bestCombo": {
+        "status": "FC+",
+        "scoreId": "w2M4rfHJ-jJ-83trgPlUzzlKO_WbSaxedXSjOLVRzMY",
+        "playedAt": "2026-08-29T02:27:59.000Z"
+      },
+      "bestSync": {
+        "status": "Sync",
+        "scoreId": "2zx2qmiPchwr0xrD779HOClb0mar2e9hndwmDh5z03M",
+        "playedAt": "2026-08-29T01:58:51.000Z"
+      },
       "historyChunks": [
         "2026-08"
       ]
@@ -3224,14 +3233,18 @@
       ]
     },
     "song-799a9c7a154c-dx-master": {
-      "playCount": 1,
+      "playCount": 2,
       "bestAchievement": {
-        "value": 93.2513,
-        "scoreId": "mBmcogI4Q2lAscq01hAESreHq9jPBd1LNK4gIzzTLZg",
-        "playedAt": "2026-08-22T04:29:58.000Z"
+        "value": 95.001,
+        "scoreId": "x5BNy_XAZoxviM24Lc6zRWZWzVUmK8F8HMPmguydwiQ",
+        "playedAt": "2026-08-29T02:08:58.000Z"
       },
       "bestCombo": null,
-      "bestSync": null,
+      "bestSync": {
+        "status": "Sync",
+        "scoreId": "x5BNy_XAZoxviM24Lc6zRWZWzVUmK8F8HMPmguydwiQ",
+        "playedAt": "2026-08-29T02:08:58.000Z"
+      },
       "historyChunks": [
         "2026-08"
       ]
@@ -5084,16 +5097,16 @@
       ]
     },
     "song-bf95733511a4-dx-master": {
-      "playCount": 6,
+      "playCount": 7,
       "bestAchievement": {
-        "value": 100.7251,
-        "scoreId": "Gstwwl_hPVvANA0A67kPx5-6rsZJx59HGUHmAZX3D5U",
-        "playedAt": "2026-06-25T01:09:17.000Z"
+        "value": 100.8125,
+        "scoreId": "9690Q5O5hGwPxkGq12ntBD-6K8_mLuvrHAk5Wy-x7V8",
+        "playedAt": "2026-08-29T02:48:16.000Z"
       },
       "bestCombo": {
         "status": "FC+",
-        "scoreId": "Gstwwl_hPVvANA0A67kPx5-6rsZJx59HGUHmAZX3D5U",
-        "playedAt": "2026-06-25T01:09:17.000Z"
+        "scoreId": "9690Q5O5hGwPxkGq12ntBD-6K8_mLuvrHAk5Wy-x7V8",
+        "playedAt": "2026-08-29T02:48:16.000Z"
       },
       "bestSync": {
         "status": "Sync",
@@ -5103,7 +5116,8 @@
       "historyChunks": [
         "2025-12",
         "2026-02",
-        "2026-06"
+        "2026-06",
+        "2026-08"
       ]
     },
     "song-c034ac69d6d8-dx-master": {
@@ -5543,13 +5557,17 @@
       ]
     },
     "song-d14d96fc150e-dx-master": {
-      "playCount": 10,
+      "playCount": 11,
       "bestAchievement": {
         "value": 100.5048,
         "scoreId": "krIXd2qatH7twhtncLaHaXiFNnjW0PLkRlZzXbVnWrE",
         "playedAt": "2026-08-26T05:19:47.000Z"
       },
-      "bestCombo": null,
+      "bestCombo": {
+        "status": "FC",
+        "scoreId": "KOHeS5VyM00WYNLRXtE91MtllDtZOSq9Ae28KsjA7H0",
+        "playedAt": "2026-08-29T03:51:46.000Z"
+      },
       "bestSync": {
         "status": "Sync",
         "scoreId": "fKgeClxte8cjRwcYEl6453kMz-rK2m8ua7fgmjQ4wrs",
@@ -5729,6 +5747,23 @@
         "scoreId": "VfGgrVRmI2FxO6_z64i7F9nGYuIzuFqKzOs7KZpFtbk",
         "playedAt": "2026-08-15T02:55:24.000Z"
       },
+      "historyChunks": [
+        "2026-08"
+      ]
+    },
+    "song-dbe1053f9d94-dx-master": {
+      "playCount": 1,
+      "bestAchievement": {
+        "value": 100.7099,
+        "scoreId": "Ixw06t8xocjc1IlO_Ere22YSV-c2wPe-fg_QJsJFbOg",
+        "playedAt": "2026-08-29T03:43:11.000Z"
+      },
+      "bestCombo": {
+        "status": "FC+",
+        "scoreId": "Ixw06t8xocjc1IlO_Ere22YSV-c2wPe-fg_QJsJFbOg",
+        "playedAt": "2026-08-29T03:43:11.000Z"
+      },
+      "bestSync": null,
       "historyChunks": [
         "2026-08"
       ]
@@ -6025,6 +6060,27 @@
       },
       "historyChunks": [
         "2025-12"
+      ]
+    },
+    "song-e7bd2dbf190a-dx-master": {
+      "playCount": 1,
+      "bestAchievement": {
+        "value": 100.8851,
+        "scoreId": "Dt1wDlzN4EK4R2VAIEmXfGYG17G6NcviIpZ9us3fACs",
+        "playedAt": "2026-08-26T02:34:55.000Z"
+      },
+      "bestCombo": {
+        "status": "FC+",
+        "scoreId": "Dt1wDlzN4EK4R2VAIEmXfGYG17G6NcviIpZ9us3fACs",
+        "playedAt": "2026-08-26T02:34:55.000Z"
+      },
+      "bestSync": {
+        "status": "FS",
+        "scoreId": "Dt1wDlzN4EK4R2VAIEmXfGYG17G6NcviIpZ9us3fACs",
+        "playedAt": "2026-08-26T02:34:55.000Z"
+      },
+      "historyChunks": [
+        "2026-08"
       ]
     },
     "song-e82460b7a2b0-dx-master": {

@@ -4022,6 +4022,66 @@
       "chartId": "song-dbe1053f9d94-dx-re-master"
     },
     {
+      "playedAt": "2026-08-26T02:34:55.000Z",
+      "songTitle": "スノーマン (Rerec)",
+      "chartType": "DX",
+      "difficulty": "MASTER",
+      "level": "13",
+      "achievement": 100.8851,
+      "combo": "FC+",
+      "sync": "FS",
+      "rating": 15244,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 505,
+        "perfect": 216,
+        "great": 4,
+        "good": 0,
+        "miss": 0
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 26,
+          "perfect": 5,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 326,
+          "perfect": 173,
+          "great": 4,
+          "good": 0,
+          "miss": 0
+        },
+        "hold": {
+          "criticalPerfect": 48,
+          "perfect": 38,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 69,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 36,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 6,
+      "slow": 3,
+      "id": "Dt1wDlzN4EK4R2VAIEmXfGYG17G6NcviIpZ9us3fACs",
+      "chartId": "song-e7bd2dbf190a-dx-master"
+    },
+    {
       "playedAt": "2026-08-26T03:01:58.000Z",
       "songTitle": "ULTRA SYNERGY MATRIX",
       "chartType": "DX",
@@ -4320,6 +4380,486 @@
       "slow": 7,
       "id": "krIXd2qatH7twhtncLaHaXiFNnjW0PLkRlZzXbVnWrE",
       "chartId": "song-d14d96fc150e-dx-master"
+    },
+    {
+      "playedAt": "2026-08-29T01:58:51.000Z",
+      "songTitle": "TECHNOPOLIS 2085",
+      "chartType": "DX",
+      "difficulty": "MASTER",
+      "level": "13+",
+      "achievement": 100.178,
+      "combo": null,
+      "sync": "Sync",
+      "rating": 15258,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 542,
+        "perfect": 193,
+        "great": 11,
+        "good": 2,
+        "miss": 2
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 33,
+          "perfect": 11,
+          "great": 2,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 255,
+          "perfect": 135,
+          "great": 7,
+          "good": 1,
+          "miss": 0
+        },
+        "hold": {
+          "criticalPerfect": 87,
+          "perfect": 47,
+          "great": 1,
+          "good": 1,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 51,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 116,
+          "perfect": 0,
+          "great": 1,
+          "good": 0,
+          "miss": 2
+        }
+      },
+      "fast": 13,
+      "slow": 11,
+      "id": "2zx2qmiPchwr0xrD779HOClb0mar2e9hndwmDh5z03M",
+      "chartId": "song-433483d20c40-dx-master"
+    },
+    {
+      "playedAt": "2026-08-29T02:08:58.000Z",
+      "songTitle": "7 Wonders",
+      "chartType": "DX",
+      "difficulty": "MASTER",
+      "level": "14+",
+      "achievement": 95.001,
+      "combo": null,
+      "sync": "Sync",
+      "rating": 15258,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 592,
+        "perfect": 477,
+        "great": 149,
+        "good": 42,
+        "miss": 25
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 32,
+          "perfect": 30,
+          "great": 12,
+          "good": 2,
+          "miss": 1
+        },
+        "tap": {
+          "criticalPerfect": 373,
+          "perfect": 409,
+          "great": 131,
+          "good": 40,
+          "miss": 24
+        },
+        "hold": {
+          "criticalPerfect": 33,
+          "perfect": 38,
+          "great": 6,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 77,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 77,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 110,
+      "slow": 111,
+      "id": "x5BNy_XAZoxviM24Lc6zRWZWzVUmK8F8HMPmguydwiQ",
+      "chartId": "song-799a9c7a154c-dx-master"
+    },
+    {
+      "playedAt": "2026-08-29T02:27:59.000Z",
+      "songTitle": "TECHNOPOLIS 2085",
+      "chartType": "DX",
+      "difficulty": "MASTER",
+      "level": "13+",
+      "achievement": 100.5757,
+      "combo": "FC+",
+      "sync": null,
+      "rating": 15270,
+      "ratingChange": 12,
+      "judgments": {
+        "criticalPerfect": 528,
+        "perfect": 214,
+        "great": 8,
+        "good": 0,
+        "miss": 0
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 33,
+          "perfect": 12,
+          "great": 1,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 239,
+          "perfect": 154,
+          "great": 5,
+          "good": 0,
+          "miss": 0
+        },
+        "hold": {
+          "criticalPerfect": 87,
+          "perfect": 47,
+          "great": 2,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 51,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 118,
+          "perfect": 1,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 11,
+      "slow": 9,
+      "id": "w2M4rfHJ-jJ-83trgPlUzzlKO_WbSaxedXSjOLVRzMY",
+      "chartId": "song-433483d20c40-dx-master"
+    },
+    {
+      "playedAt": "2026-08-29T02:30:53.000Z",
+      "songTitle": "TECHNOPOLIS 2085",
+      "chartType": "DX",
+      "difficulty": "MASTER",
+      "level": "13+",
+      "achievement": 100.5796,
+      "combo": null,
+      "sync": null,
+      "rating": 15270,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 561,
+        "perfect": 182,
+        "great": 6,
+        "good": 0,
+        "miss": 1
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 38,
+          "perfect": 7,
+          "great": 1,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 269,
+          "perfect": 126,
+          "great": 3,
+          "good": 0,
+          "miss": 0
+        },
+        "hold": {
+          "criticalPerfect": 88,
+          "perfect": 47,
+          "great": 1,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 51,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 115,
+          "perfect": 2,
+          "great": 1,
+          "good": 0,
+          "miss": 1
+        }
+      },
+      "fast": 8,
+      "slow": 5,
+      "id": "K-IXDB-0Q1Lz7Sv7vBzpGBWWRhLwaqXM300DVtrzlZg",
+      "chartId": "song-433483d20c40-dx-master"
+    },
+    {
+      "playedAt": "2026-08-29T02:48:16.000Z",
+      "songTitle": "Transcend Lights",
+      "chartType": "DX",
+      "difficulty": "MASTER",
+      "level": "13",
+      "achievement": 100.8125,
+      "combo": "FC+",
+      "sync": null,
+      "rating": 15270,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 433,
+        "perfect": 172,
+        "great": 4,
+        "good": 0,
+        "miss": 0
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 9,
+          "perfect": 6,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 272,
+          "perfect": 166,
+          "great": 4,
+          "good": 0,
+          "miss": 0
+        },
+        "hold": {
+          "criticalPerfect": 8,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 119,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 25,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 4,
+      "slow": 6,
+      "id": "9690Q5O5hGwPxkGq12ntBD-6K8_mLuvrHAk5Wy-x7V8",
+      "chartId": "song-bf95733511a4-dx-master"
+    },
+    {
+      "playedAt": "2026-08-29T03:43:11.000Z",
+      "songTitle": "シエルブルーマルシェ",
+      "chartType": "DX",
+      "difficulty": "MASTER",
+      "level": "12+",
+      "achievement": 100.7099,
+      "combo": "FC+",
+      "sync": null,
+      "rating": 15270,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 400,
+        "perfect": 156,
+        "great": 9,
+        "good": 0,
+        "miss": 0
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 14,
+          "perfect": 3,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 229,
+          "perfect": 133,
+          "great": 8,
+          "good": 0,
+          "miss": 0
+        },
+        "hold": {
+          "criticalPerfect": 49,
+          "perfect": 20,
+          "great": 1,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 81,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 27,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 3,
+      "slow": 9,
+      "id": "Ixw06t8xocjc1IlO_Ere22YSV-c2wPe-fg_QJsJFbOg",
+      "chartId": "song-dbe1053f9d94-dx-master"
+    },
+    {
+      "playedAt": "2026-08-29T03:51:46.000Z",
+      "songTitle": "ULTRA SYNERGY MATRIX",
+      "chartType": "DX",
+      "difficulty": "MASTER",
+      "level": "14",
+      "achievement": 100.1781,
+      "combo": "FC",
+      "sync": null,
+      "rating": 15270,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 589,
+        "perfect": 294,
+        "great": 19,
+        "good": 4,
+        "miss": 0
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 81,
+          "perfect": 17,
+          "great": 1,
+          "good": 1,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 374,
+          "perfect": 266,
+          "great": 15,
+          "good": 2,
+          "miss": 0
+        },
+        "hold": {
+          "criticalPerfect": 12,
+          "perfect": 11,
+          "great": 1,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 61,
+          "perfect": 0,
+          "great": 2,
+          "good": 1,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 61,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 31,
+      "slow": 9,
+      "id": "KOHeS5VyM00WYNLRXtE91MtllDtZOSq9Ae28KsjA7H0",
+      "chartId": "song-d14d96fc150e-dx-master"
+    },
+    {
+      "playedAt": "2026-08-29T03:55:06.000Z",
+      "songTitle": "Oshama Scramble!",
+      "chartType": "DX",
+      "difficulty": "MASTER",
+      "level": "13+",
+      "achievement": 100.019,
+      "combo": null,
+      "sync": null,
+      "rating": 15270,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 720,
+        "perfect": 260,
+        "great": 18,
+        "good": 0,
+        "miss": 2
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 57,
+          "perfect": 39,
+          "great": 2,
+          "good": 0,
+          "miss": 1
+        },
+        "tap": {
+          "criticalPerfect": 512,
+          "perfect": 218,
+          "great": 16,
+          "good": 0,
+          "miss": 1
+        },
+        "hold": {
+          "criticalPerfect": 18,
+          "perfect": 3,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 52,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 81,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 32,
+      "slow": 25,
+      "id": "j7SkxUphI8ZlqMrdTpU3VEFD6DdrW4jGgYqMZAMYt5M",
+      "chartId": "song-0ac24dd304e4-dx-master"
     }
   ]
 }

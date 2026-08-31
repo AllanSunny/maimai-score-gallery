@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-28T16:42:44.148Z",
+  "generatedAt": "2026-08-31T02:02:48.424Z",
   "songs": [
     {
       "id": "song-550d332f837c",
@@ -10065,6 +10065,65 @@
         "code": "24510",
         "name": "BUDDiES PLUS"
       }
+    },
+    {
+      "id": "song-e7bd2dbf190a",
+      "titles": {
+        "canonical": "スノーマン (Rerec)",
+        "kana": [
+          "すのうまん りれっく"
+        ],
+        "romaji": [
+          "sunouman rirekku"
+        ],
+        "english": [
+          "snowman (re-recorded)"
+        ],
+        "aliases": []
+      },
+      "artist": "halyosy",
+      "genre": "niconico＆ボーカロイド",
+      "introducedIn": {
+        "code": "26009",
+        "name": "CiRCLE"
+      },
+      "jacketKey": "jackets/song-e7bd2dbf190a-26d585c0e104.png",
+      "versions": [
+        {
+          "id": "song-e7bd2dbf190a-dx",
+          "chartType": "DX",
+          "charts": [
+            {
+              "id": "song-e7bd2dbf190a-dx-basic",
+              "difficulty": "BASIC",
+              "level": "2",
+              "chartConstant": null,
+              "charter": null
+            },
+            {
+              "id": "song-e7bd2dbf190a-dx-advanced",
+              "difficulty": "ADVANCED",
+              "level": "6",
+              "chartConstant": null,
+              "charter": null
+            },
+            {
+              "id": "song-e7bd2dbf190a-dx-expert",
+              "difficulty": "EXPERT",
+              "level": "9+",
+              "chartConstant": null,
+              "charter": "Luxizhel"
+            },
+            {
+              "id": "song-e7bd2dbf190a-dx-master",
+              "difficulty": "MASTER",
+              "level": "13",
+              "chartConstant": 13.1,
+              "charter": "Jack"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "song-49d8467cdee6",
