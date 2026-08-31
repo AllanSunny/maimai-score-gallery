@@ -1,0 +1,24 @@
+.github/workflows/import-new-scores.yml
+  s_55c53ae9c4f246::t_1f95d885fceb9e 10,62,69
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.0",
+  "base_commit_sha": "522a050d4373ce340f3303c715d4742e8e13f668",
+  "prompts": {},
+  "humans": {
+    "h_278fafc5c28027": {
+      "author": "Allan Sun <allansun@live.com>"
+    }
+  },
+  "sessions": {
+    "s_55c53ae9c4f246": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a05584-869c-71d0-b545-278e40531e06",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Allan Sun <allansun@live.com>"
+    }
+  }
+}
