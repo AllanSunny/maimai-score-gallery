@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import favicon from "../assets/favicon.png";
+import { appHref } from "../utils/navigation";
 
 interface SiteLayoutProps {
   children: ReactNode;
@@ -7,9 +8,9 @@ interface SiteLayoutProps {
 }
 
 const links = [
-  { href: "#/profile", label: "Profile", route: "/profile" },
-  { href: "#/top-50", label: "Top 50", route: "/top-50" },
-  { href: "#/scores", label: "Scores", route: "/scores" },
+  { href: appHref("/about"), label: "About", route: "/about" },
+  { href: appHref("/top-50"), label: "Top 50", route: "/top-50" },
+  { href: appHref("/scores"), label: "Scores", route: "/scores" },
 ];
 
 export function SiteLayout({ children, route }: SiteLayoutProps) {
@@ -17,7 +18,7 @@ export function SiteLayout({ children, route }: SiteLayoutProps) {
     <div className="mx-auto flex min-h-screen w-full max-w-5xl flex-col px-5 sm:px-8">
       <header className="flex h-20 items-center justify-between border-b border-lightest">
         <a
-          href="#/"
+          href={appHref("/")}
           aria-label="Home"
           aria-current={route === "/" ? "page" : undefined}
           className="shrink-0 rounded-xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-light"

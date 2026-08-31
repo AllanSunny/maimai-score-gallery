@@ -168,7 +168,7 @@ export function ScoreListPage() {
       </label>
 
       <div className="mt-8 grid gap-4" onClickCapture={(event) => {
-          if ((event.target as HTMLElement).closest('a[href^="#/charts/"]')) preserveListPosition();
+          if ((event.target as HTMLElement).closest('a[href*="/charts/"]')) preserveListPosition();
         }}>
           {visibleSongs.map((song) => <SongInfo key={`${song.titles.canonical}-${song.chartType}`} {...song} />)}
           {!songs.length && <p className="rounded-2xl border border-line p-10 text-center text-sm text-lightest">No matching songs.</p>}

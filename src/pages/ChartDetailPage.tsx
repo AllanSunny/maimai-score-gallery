@@ -12,12 +12,14 @@ import { displayedChartLevel } from "../utils/chart-level";
 import { calculatePlayRating } from "../utils/rating";
 import { RankDisplay } from "../components/score/RankDisplay";
 import { achievementRank } from "../utils/rank";
+import { appHref } from "../utils/navigation";
 
 interface ChartDetailPageProps {
   chartId: string;
+  scoreId?: string;
 }
 
-export function ChartDetailPage({ chartId }: ChartDetailPageProps) {
+export function ChartDetailPage({ chartId, scoreId }: ChartDetailPageProps) {
   const catalogEntry = findCatalogChart(chartId);
   const metadata = catalogEntry?.song;
   const chartMetadata = catalogEntry?.chart;
@@ -152,7 +154,7 @@ export function ChartDetailPage({ chartId }: ChartDetailPageProps) {
                 return (
                   <a
                     key={chart.id}
-                    href={`#/charts/${encodeURIComponent(chart.id)}`}
+                    href={appHref(`/charts/${encodeURIComponent(chart.id)}`)}
                     className="btn btn-primary"
                     style={buttonStyle}
                   >
@@ -167,7 +169,12 @@ export function ChartDetailPage({ chartId }: ChartDetailPageProps) {
 
       <section className="mt-10 md:mt-12">
         <h2 className="text-3xl font-semibold tracking-tight">Score History</h2>
-        <ScoreHistory scores={history} accentColor={accentColor} />
+        <ScoreHistory
+          scores={history}
+          accentColor={accentColor}
+          chartId={chartId}
+          activeScoreId={scoreId}
+        />
       </section>
     </div>
   );

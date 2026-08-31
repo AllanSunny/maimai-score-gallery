@@ -1,3 +1,4 @@
+import { useEffect, useRef } from "react";
 import { formatEasternDateTime } from "../../utils/date-time";
 import { achievementRank } from "../../utils/rank";
 import type { JudgmentSet, ScoreRecord } from "../../utils/types";
@@ -8,6 +9,8 @@ import { RankDisplay } from "./RankDisplay";
 interface ScoreHistoryEntryProps {
   score: ScoreRecord;
   accentColor: string;
+  isOpen: boolean;
+  onToggle: (isOpen: boolean) => void;
 }
 
 const judgmentLabels: Array<[keyof JudgmentSet, string]> = [
@@ -27,13 +30,28 @@ function JudgmentValues({ judgments }: { judgments: JudgmentSet }) {
   ));
 }
 
-export function ScoreHistoryEntry({ score, accentColor }: ScoreHistoryEntryProps) {
+export function ScoreHistoryEntry({ score, accentColor, isOpen, onToggle }: ScoreHistoryEntryProps) {
+  const entryRef = useRef<HTMLDetailsElement>(null);
+
+  useEffect(() => {
+    if (isOpen) entryRef.current?.scrollIntoView({ behavior: "smooth" });
+  }, [isOpen]);
+
   return (
     <details
+      ref={entryRef}
+      id={score.id}
+      open={isOpen}
       className="group border-b last:border-b-0"
       style={{ borderColor: `var(--color-${accentColor})` }}
     >
-      <summary className="flex cursor-pointer list-none items-center justify-between gap-4 p-5 text-sm [&::-webkit-details-marker]:hidden">
+      <summary
+        className="flex cursor-pointer list-none items-center justify-between gap-4 p-5 text-sm [&::-webkit-details-marker]:hidden"
+        onClick={(event) => {
+          event.preventDefault();
+          onToggle(!isOpen);
+        }}
+      >
         <div className="flex min-w-0 items-center gap-3">
           <span aria-hidden="true" className="text-light transition-transform group-open:rotate-90">›</span>
           <time className="text-lightest">{formatEasternDateTime(score.playedAt)}</time>

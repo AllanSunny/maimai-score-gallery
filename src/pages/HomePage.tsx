@@ -1,18 +1,19 @@
 import { NavigationCard } from "../components/ui/NavigationCard";
+import { appHref } from "../utils/navigation";
 
 const destinations = [
   {
-    href: "#/profile",
-    title: "Profile summary",
-    description: "A snapshot of my current player name, icon, overall rating, title, and maimai statistics.",
+    href: appHref("/about"),
+    title: "About this gallery",
+    description: "Why I made this score archive and what I hope to preserve with it.",
   },
   {
-    href: "#/top-50",
+    href: appHref("/top-50"),
     title: "Top 50",
     description: "A showcase of the fifty charts that currently make up my best rating collection.",
   },
   {
-    href: "#/scores",
+    href: appHref("/scores"),
     title: "Score list",
     description: "A searchable archive of my recorded plays, organized by song and chart.",
   },

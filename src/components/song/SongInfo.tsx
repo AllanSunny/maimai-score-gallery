@@ -1,6 +1,7 @@
 import { achievementRank } from "../../utils/rank";
 import { displayedAlternateTitles } from "../../utils/song-titles";
 import type { ChartType, Difficulty, SongTitles } from "../../utils/types";
+import { appHref } from "../../utils/navigation";
 
 export interface SongChartSummary {
   id: string;
@@ -46,7 +47,7 @@ export function SongInfo({ titles, chartType, jacketUrl, charts }: SongInfoProps
 
       <div className="divide-y divide-line">
         {charts.map((chart) => {
-          const chartRoute = `#/charts/${encodeURIComponent(chart.id)}`;
+          const chartRoute = appHref(`/charts/${encodeURIComponent(chart.id)}`);
 
           return (
             <a
