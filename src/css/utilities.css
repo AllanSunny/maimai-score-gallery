@@ -14,6 +14,7 @@
   font-weight: 600;
   transition: background-color 150ms, border-color 150ms, box-shadow 150ms;
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 
   &:focus-visible {
     outline: 2px solid var(--color-light);

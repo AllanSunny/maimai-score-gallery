@@ -44,14 +44,12 @@ export function ScoreHistoryEntry({ score, accentColor, isOpen, onToggle }: Scor
       open={isOpen}
       className="group border-b last:border-b-0"
       style={{ borderColor: `var(--color-${accentColor})` }}
+      onToggle={(event) => {
+        const nextIsOpen = event.currentTarget.open;
+        if (nextIsOpen !== isOpen) onToggle(nextIsOpen);
+      }}
     >
-      <summary
-        className="flex cursor-pointer list-none items-center justify-between gap-4 p-5 text-sm [&::-webkit-details-marker]:hidden"
-        onClick={(event) => {
-          event.preventDefault();
-          onToggle(!isOpen);
-        }}
-      >
+      <summary className="flex cursor-pointer touch-manipulation list-none items-center justify-between gap-4 p-5 text-sm [&::-webkit-details-marker]:hidden">
         <div className="flex min-w-0 items-center gap-3">
           <span aria-hidden="true" className="text-light transition-transform group-open:rotate-90">›</span>
           <time className="text-lightest">{formatEasternDateTime(score.playedAt)}</time>
