@@ -7,9 +7,7 @@ on:
         description: Optional image limit for a test run; blank processes all actionable images
         required: false
   schedule:
-    # GitHub cron is UTC; the gate below selects midnight Eastern across DST.
-    - cron: "0 4 * * 0"
-    - cron: "0 5 * * 0"
+    - cron: "0 8 * * 1"
 
 permissions:
   actions: read
@@ -25,37 +23,20 @@ jobs:
   import-images:
     runs-on: ubuntu-latest
     timeout-minutes: 150
-    outputs:
-      should-run: ${{ steps.schedule-check.outputs.should-run }}
     steps:
-      - name: Check whether this is midnight Eastern
-        id: schedule-check
-        env:
-          EVENT_NAME: ${{ github.event_name }}
-        run: |
-          if [ "$EVENT_NAME" != "schedule" ] || [ "$(TZ=America/New_York date +%u-%H)" = "7-00" ]; then
-            echo "should-run=true" >> "$GITHUB_OUTPUT"
-          else
-            echo "should-run=false" >> "$GITHUB_OUTPUT"
-          fi
-
       - uses: actions/checkout@v4
-        if: ${{ steps.schedule-check.outputs.should-run == 'true' }}
         with:
           ref: main
 
       - uses: actions/setup-node@v4
-        if: ${{ steps.schedule-check.outputs.should-run == 'true' }}
         with:
           node-version: 24.14.1
           cache: npm
 
       - run: npm ci
-        if: ${{ steps.schedule-check.outputs.should-run == 'true' }}
 
       - name: Parse incoming score images
         id: image-import
-        if: ${{ steps.schedule-check.outputs.should-run == 'true' }}
         run: |
           if [ -n "$IMAGE_LIMIT" ]; then
             npm run scores:import -- --limit "$IMAGE_LIMIT"
@@ -78,14 +59,14 @@ jobs:
 
       - name: Inspect image import report
         id: import-report
-        if: ${{ steps.schedule-check.outputs.should-run == 'true' && always() }}
+        if: ${{ always() }}
         run: |
           test -f .sync/image-import.json
           echo "rejected=$(jq '.rejectedCount' .sync/image-import.json)" >> "$GITHUB_OUTPUT"
           echo "move-pending=$(jq '.movePendingCount' .sync/image-import.json)" >> "$GITHUB_OUTPUT"
 
       - name: Upload image import report
-        if: ${{ steps.schedule-check.outputs.should-run == 'true' && always() }}
+        if: ${{ always() }}
         uses: actions/upload-artifact@v4
         with:
           name: image-import-report
@@ -112,7 +93,6 @@ jobs:
 
   archive-scores:
     needs: import-images
-    if: ${{ needs.import-images.outputs.should-run == 'true' }}
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
