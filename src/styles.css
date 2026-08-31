@@ -48,27 +48,19 @@
   --font-rodin-bold: "Rodin NTLG Pro", "Rodin Pro", sans-serif;
 }
 
-:root {
-  color: var(--color-primary);
-  font-synthesis: none;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  min-width: 320px;
-  margin: 0;
-}
-
 @layer base {
+  :root {
+    color: var(--color-primary);
+    font-synthesis: none;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
   html {
     font-family: var(--font-rodin), sans-serif;
+    scroll-behavior: smooth;
   }
 
   body {
@@ -81,7 +73,7 @@ body {
     content: "";
     position: fixed;
     inset: 0;
-    z-index: -1;
+    z-index: -10;
     background: linear-gradient(
       to bottom,
       var(--color-dark),

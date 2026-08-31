@@ -31,7 +31,7 @@
   background-color: var(--btn-background, var(--color-primary));
 
   &:not(:disabled):hover {
-    background-color: var(--btn-hover-background, var(--color-light));
+    background-color: var(--btn-hover-background, var(--color-lightest));
   }
 }
 
