@@ -78,7 +78,9 @@ function App() {
 
       event.preventDefault();
       storeScrollPosition();
-      window.history.pushState({ scrollY: 0 }, "", destination);
+      const scrollY = anchor.hasAttribute("data-preserve-scroll") ? window.scrollY : 0;
+      if (scrollY > 0) pendingScrollY.current = scrollY;
+      window.history.pushState({ scrollY }, "", destination);
       handleRouteChange();
     };
 

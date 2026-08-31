@@ -155,6 +155,7 @@ export function ChartDetailPage({ chartId, scoreId }: ChartDetailPageProps) {
                   <a
                     key={chart.id}
                     href={appHref(`/charts/${encodeURIComponent(chart.id)}`)}
+                    data-preserve-scroll
                     className="btn btn-primary"
                     style={buttonStyle}
                   >
