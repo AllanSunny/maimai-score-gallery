@@ -1,0 +1,16 @@
+docs/data-model.md
+  h_278fafc5c28027 3-7
+README.md
+  h_278fafc5c28027 19,50,63,67-68,95,100,106,137,139-143
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2",
+  "base_commit_sha": "c31df77e9a0fdce0d10e74b8adaa94feb036ff58",
+  "prompts": {},
+  "humans": {
+    "h_278fafc5c28027": {
+      "author": "Allan Sun <allansun@live.com>"
+    }
+  }
+}
