@@ -24,8 +24,8 @@ This is entirely a fan project and has no affiliation with SEGA.
 
 Maimai (typically stylized all lowercase), or its current version, maimai DX, is one of SEGA's most well-known arcade 
 rhythm games! Since its 2012 launch in Japan, it has gained popularity across southeast Asia, Australia, China, and 
-as of 2025, the US! The cabinets feature circular touchscreens with 8 buttons around the edges, appearing very much 
-like washing machines. 
+as of 2025, the US! The cabinets feature circular touchscreens with 8 buttons around the edges, [appearing very much 
+like washing machines](https://en.wikipedia.org/wiki/Maimai_%28video_game_series%29#/media/File:Maimai_DX_CiRCLE_PLUS_cabinet,_Philippines.png). 
 
 ### Core Mechanics
 
@@ -45,6 +45,9 @@ Beyond that, the input types are as follows:
 - Break: Orange variations of notes that are weighted more heavily in scoring.
 
 Yellow variations of the above notes (except break notes) mean that they happen at the same timing as other yellow notes.
+
+[Here's a video of me doing all this in action!](https://drive.google.com/file/d/1CmaGTflL799vyfBifZg_duljNs1ECwYh/view?usp=sharing) 
+Of course, I've also recorded the corresponding play [here](https://allansunny.github.io/maimai-score-gallery/charts/song-a7a461d9d280-dx-master#UyxstW7KkMmCHUym14wI8jR1NHKlU1Pc7hDBGVpuftA).
 
 Each song has at least four difficulty levels: `BASIC`, `ADVANCED`, `EXPERT`, and `MASTER`. Each difficulty has its
 own `chart`, which is the pattern of notes you tap, hold, or slide along with the music. Expert and
