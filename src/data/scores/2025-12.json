@@ -482,66 +482,6 @@
       "chartId": "song-461be4a49f43-dx-master"
     },
     {
-      "playedAt": "2025-12-06T05:05:05.000Z",
-      "songTitle": "M@GICAL☆CURE! LOVE ♥ SHOT!",
-      "chartType": "DX",
-      "difficulty": "MASTER",
-      "level": "13+",
-      "achievement": 96.9726,
-      "combo": null,
-      "sync": "Sync",
-      "rating": 13179,
-      "ratingChange": 0,
-      "judgments": {
-        "criticalPerfect": 549,
-        "perfect": 268,
-        "great": 94,
-        "good": 31,
-        "miss": 5
-      },
-      "judgmentsByType": {
-        "break": {
-          "criticalPerfect": 23,
-          "perfect": 3,
-          "great": 3,
-          "good": 0,
-          "miss": 1
-        },
-        "tap": {
-          "criticalPerfect": 320,
-          "perfect": 235,
-          "great": 80,
-          "good": 28,
-          "miss": 3
-        },
-        "hold": {
-          "criticalPerfect": 32,
-          "perfect": 29,
-          "great": 3,
-          "good": 1,
-          "miss": 0
-        },
-        "slide": {
-          "criticalPerfect": 129,
-          "perfect": 0,
-          "great": 8,
-          "good": 2,
-          "miss": 0
-        },
-        "touch": {
-          "criticalPerfect": 45,
-          "perfect": 1,
-          "great": 0,
-          "good": 0,
-          "miss": 1
-        }
-      },
-      "fast": 79,
-      "slow": 46,
-      "id": "-xFNdVGm1pAOexeAmqMnwOVgXr65q2s2E-hWEz1J6R8",
-      "chartId": "song-a7a461d9d280-dx-master"
-    },
-    {
       "playedAt": "2025-12-06T05:05:48.000Z",
       "songTitle": "少女レイ",
       "chartType": "DX",
@@ -780,66 +720,6 @@
       "slow": 65,
       "id": "VhgI14S_A8nUh0IY19xK4ujPDK8paYj4fbpXgRJg2qM",
       "chartId": "song-08f22014494d-dx-re-master"
-    },
-    {
-      "playedAt": "2025-12-06T05:23:19.000Z",
-      "songTitle": "M@GICAL☆CURE! LOVE ♥ SHOT!",
-      "chartType": "DX",
-      "difficulty": "MASTER",
-      "level": "13+",
-      "achievement": 95.6947,
-      "combo": null,
-      "sync": null,
-      "rating": 13189,
-      "ratingChange": 0,
-      "judgments": {
-        "criticalPerfect": 545,
-        "perfect": 243,
-        "great": 82,
-        "good": 66,
-        "miss": 11
-      },
-      "judgmentsByType": {
-        "break": {
-          "criticalPerfect": 25,
-          "perfect": 3,
-          "great": 1,
-          "good": 0,
-          "miss": 1
-        },
-        "tap": {
-          "criticalPerfect": 310,
-          "perfect": 214,
-          "great": 70,
-          "good": 62,
-          "miss": 10
-        },
-        "hold": {
-          "criticalPerfect": 37,
-          "perfect": 25,
-          "great": 2,
-          "good": 1,
-          "miss": 0
-        },
-        "slide": {
-          "criticalPerfect": 127,
-          "perfect": 0,
-          "great": 9,
-          "good": 3,
-          "miss": 0
-        },
-        "touch": {
-          "criticalPerfect": 46,
-          "perfect": 1,
-          "great": 0,
-          "good": 0,
-          "miss": 0
-        }
-      },
-      "fast": 83,
-      "slow": 65,
-      "id": "dG1squya4F0lxFw_XHxhQNai4sum-vnxuBXEeDEcz34",
-      "chartId": "song-a7a461d9d280-dx-master"
     },
     {
       "playedAt": "2025-12-06T05:26:24.000Z",

@@ -1562,66 +1562,6 @@
       "chartId": "song-00493f7d7088-dx-master"
     },
     {
-      "playedAt": "2026-05-21T22:34:15.000Z",
-      "songTitle": "モニタリング",
-      "chartType": "DX",
-      "difficulty": "Re:MASTER",
-      "level": "13",
-      "achievement": 100.5,
-      "combo": "FC",
-      "sync": null,
-      "rating": 15025,
-      "ratingChange": 9,
-      "judgments": {
-        "criticalPerfect": 434,
-        "perfect": 197,
-        "great": 14,
-        "good": 1,
-        "miss": 0
-      },
-      "judgmentsByType": {
-        "break": {
-          "criticalPerfect": 21,
-          "perfect": 10,
-          "great": 0,
-          "good": 0,
-          "miss": 0
-        },
-        "tap": {
-          "criticalPerfect": 252,
-          "perfect": 175,
-          "great": 11,
-          "good": 1,
-          "miss": 0
-        },
-        "hold": {
-          "criticalPerfect": 29,
-          "perfect": 12,
-          "great": 2,
-          "good": 0,
-          "miss": 0
-        },
-        "slide": {
-          "criticalPerfect": 101,
-          "perfect": 0,
-          "great": 1,
-          "good": 0,
-          "miss": 0
-        },
-        "touch": {
-          "criticalPerfect": 31,
-          "perfect": 0,
-          "great": 0,
-          "good": 0,
-          "miss": 0
-        }
-      },
-      "fast": 22,
-      "slow": 3,
-      "id": "aopYj4gzXnV1oWvlROb737NQ2CtgEW-OBRDGvm42hUA",
-      "chartId": "song-52e03f4cfc5d-dx-re-master"
-    },
-    {
       "playedAt": "2026-05-21T22:48:30.000Z",
       "songTitle": "オーバーライド",
       "chartType": "DX",
