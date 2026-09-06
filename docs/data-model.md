@@ -1,7 +1,10 @@
 # Data model
 
-This is the central reference for data stored by the score gallery. All data structures are currently modeled by JSON files for maximum flexibility,
-because changing database columns after data has already been set up is much harder than find+replace across a JSON file. I've already saved a couple headaches on foreign key rollbacks!
+This is the central reference for data stored by the score gallery. All data structures are currently stored in JSON 
+files rather than a database, which gives me extra flexibility at the project's current scale. Keeping everything in JSON 
+makes the data easy to inspect and lets me change the schema or fix entry errors as requirements evolve. 
+If this project eventually grows beyond personal use, I would move toward database-backed models with proper keys, 
+constraints, and indexing.
 
 The authoritative app definitions live in [`src/utils/types.ts`](../src/utils/types.ts).
 The index below covers every exported type; field definitions stay in that file

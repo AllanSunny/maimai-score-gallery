@@ -16,7 +16,7 @@ driving the direction of the output. Most of the source code in this repo was ge
 with me providing the requirements, context, and architectural decisions informed by my experience as a 
 developer. Notable exceptions include the page designs, maimai game assets, and of course, this README 
 you're reading right now! [During the development process, I've also generated 
-updates to a document tracking points where I made major decisions.](docs/decisions-summary.md)
+updates to a document tracking points where I made these major decisions.](docs/decisions-summary.md)
 
 This is entirely a fan project and has no affiliation with SEGA.
 
@@ -47,7 +47,7 @@ Beyond that, the input types are as follows:
 Yellow variations of the above notes (except break notes) mean that they happen at the same timing as other yellow notes.
 
 [Here's a video of me doing all this in action!](https://drive.google.com/file/d/1CmaGTflL799vyfBifZg_duljNs1ECwYh/view?usp=sharing) 
-Of course, I've also recorded the corresponding play [here](https://allansunny.github.io/maimai-score-gallery/charts/song-a7a461d9d280-dx-master#UyxstW7KkMmCHUym14wI8jR1NHKlU1Pc7hDBGVpuftA).
+Of course, I've also recorded the corresponding score results [here](https://allansunny.github.io/maimai-score-gallery/charts/song-a7a461d9d280-dx-master#UyxstW7KkMmCHUym14wI8jR1NHKlU1Pc7hDBGVpuftA).
 
 Each song has at least four difficulty levels: `BASIC`, `ADVANCED`, `EXPERT`, and `MASTER`. Each difficulty has its
 own `chart`, which is the pattern of notes you tap, hold, or slide along with the music. Expert and
@@ -60,12 +60,12 @@ Master-level difficulty, often harder than the original Master chart, but someti
 Every set of charts has one or both of a `deluxe` (written in Japanese as `でらっくす`, shown in this app as `DX`) or `standard` 
 (written in Japanese as `スタンダード`, shown in this app as `STD`) classification. This is used to identify charts that came before 
 or after the game's hardware upgrade in 2019 that also introduced touch notes, which is where the DX in maimai DX comes from. 
-Some older songs will have charts with both classifications!
+Some older songs will have chart sets with both classifications!
 
 Every chart is rated with a numerical level from 1 to 15 representing its difficulty, with 15 being the hardest. The 
 difficulty is exponential, so a 14 will be *significantly* harder than a 12. Every chart also has an internal 
-`chart constant`, a decimal rating that compares charts within the level. A value of `.6` and above is represented with 
-a + sign on the level in game, indicating its increased difficulty. The chart constants themselves are not usually 
+`chart constant`, a decimal rating that compares charts within the level. A value of `.6` to `.9` is represented with 
+a + sign on the level in game and in this app, indicating its increased difficulty. The chart constants themselves are not usually 
 exposed to the players, and are instead sourced using calculations on player rating. For this app, chart constant 
 data is graciously sourced from [zetaraku's arcade-songs-fetch repo](https://github.com/zetaraku/arcade-songs-fetch) when available.
 
@@ -92,18 +92,18 @@ Each play history record on a song shows:
 - Achievement: A 4-decimal place percentage value from 0 to 101.0000%. This is the primary score of any play.
 - Ranking: Letter values denoting the achievement bracket. SSS+ is the highest, requiring a percentage of 100.5000% and above. The brackets are defined [here](src/utils/rank.ts).
 - Judgements: Totals of each note's possible judgement values `(critical perfect, perfect, great, good, miss)`. When available, totals are also broken down by note type and fast/slow counts.
-- Combo status: Status symbols for judgement achievements as follows-
+- Combo status: Status symbols for judgement achievements as follows:
   - Full Combo (FC): No missed notes
   - Full Combo+ (FC+): No misses, and no goods
   - All Perfect (AP): All perfects and critical perfects
   - All Perfect+ (AP+): All perfects and critical perfects, as well as all critical perfects on break notes
-- Sync status: Status symbols for playing or achieving combo symbols at the same time as the other player-
+- Sync status: Status symbols for playing or achieving combo symbols at the same time as the other player:
   - Sync Play: Played the chart with someone else
   - Full Sync (FS): Both players get at least a full combo, while you play on a higher difficulty than the other player
   - Full Sync+ (FS+): Both players get at least a full combo on the same difficulty, or they full combo on a higher difficulty
   - Full Sync DX (FDX): Both players get at least a full combo + on the same difficulty
   - Full Sync DX+ (FDX+): Both players get an all perfect on the same difficulty
-- Player rating: At any given point in time, a number calculated based on your current top 50 scores according to achievement rank and chart constant
+- Player rating: At any given point in time, a number calculated based on your current top 50 scores according to achievement rank and chart constant (more details [here](https://allansunny.github.io/maimai-score-gallery/top-50))
 - Timestamp the originating photo was taken, in US Eastern Time
 
 ## The Workflow
@@ -134,7 +134,10 @@ The lifecycle of each score is as follows:
    - Chart constant and chart designer information, if available, is fetched from arcade-songs-fetch.
 6. New scores are validated and chart "best of" summaries are updated where needed.
 
-## More Info
+## More Technical Details
 
-- More detailed architecture information is [here](docs/data-model.md).
-- The deeper technical details of the workflows I've been using in this project are [here](docs/operations.md).
+I've split up the deeper details of how everything works into different documents:
+
+- **[Data Model](docs/data-model.md)** — How songs, charts, scores, and other data are structured, related, validated, and stored.
+- **[Operations](docs/operations.md)** — How the import pipeline and other workflows operate, including configuration, maintenance, recovery, and deployment.
+- **[Decision History](docs/decisions-summary.md)** — A summary of the decisions and tradeoffs that shaped the project as it evolved, including the context I provided while working with Codex.
