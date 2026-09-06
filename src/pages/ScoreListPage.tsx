@@ -1,17 +1,10 @@
 import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { scores } from "../utils/scores";
 import { findCatalogSong } from "../utils/catalog";
-import { SongInfo, type SongChartSummary } from "../components/song/SongInfo";
+import { SongInfo } from "../components/song/SongInfo";
 import { PageHeading } from "../components/ui/PageHeading";
 import { allSongTitles } from "../utils/song-titles";
-import type { ChartType, Difficulty, Score, SongTitles } from "../utils/types";
-
-interface SongSummary {
-  titles: SongTitles;
-  chartType: ChartType;
-  jacketUrl?: string | null;
-  charts: SongChartSummary[];
-}
+import type { Difficulty, Score, SongChartSummary, SongSummary } from "../utils/types";
 
 const difficultyOrder: Difficulty[] = ["BASIC", "ADVANCED", "EXPERT", "MASTER", "Re:MASTER"];
 const PAGE_SIZE = 30;

@@ -1,14 +1,4 @@
-export type AchievementRank =
-  | "SSS+"
-  | "SSS"
-  | "SS+"
-  | "SS"
-  | "S+"
-  | "S"
-  | "AAA"
-  | "AA"
-  | "A"
-  | "Failed";
+import type { AchievementRank } from "./types";
 
 /** Derives a maimai rank from an achievement stored on the 0–101 scale. */
 export function achievementRank(achievement: number): AchievementRank {

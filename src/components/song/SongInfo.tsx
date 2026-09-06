@@ -1,23 +1,7 @@
 import { achievementRank } from "../../utils/rank";
 import { displayedAlternateTitles } from "../../utils/song-titles";
-import type { ChartType, Difficulty, SongTitles } from "../../utils/types";
+import type { Difficulty, SongSummary } from "../../utils/types";
 import { appHref } from "../../utils/navigation";
-
-export interface SongChartSummary {
-  id: string;
-  difficulty: Difficulty;
-  chartType: ChartType;
-  level: string;
-  chartConstant?: number;
-  achievement?: number;
-}
-
-interface SongInfoProps {
-  titles: SongTitles;
-  chartType: ChartType;
-  jacketUrl?: string | null;
-  charts: SongChartSummary[];
-}
 
 const difficultyStyles: Record<Difficulty, string> = {
   BASIC: "border-l-emerald-500",
@@ -27,7 +11,7 @@ const difficultyStyles: Record<Difficulty, string> = {
   "Re:MASTER": "border-l-fuchsia-400",
 };
 
-export function SongInfo({ titles, chartType, jacketUrl, charts }: SongInfoProps) {
+export function SongInfo({ titles, chartType, jacketUrl, charts }: SongSummary) {
   const alternateTitles = displayedAlternateTitles(titles);
   const name = titles.canonical;
   return (

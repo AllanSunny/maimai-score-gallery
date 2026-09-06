@@ -1,10 +1,4 @@
-import type { ComboStatus } from "./types";
-
-interface PlayRatingInput {
-  achievement: number;
-  chartConstant: number | null;
-  combo?: ComboStatus | null;
-}
+import type { PlayRatingInput } from "./types";
 
 const rankCoefficients = [
   [100.5, 22.4],

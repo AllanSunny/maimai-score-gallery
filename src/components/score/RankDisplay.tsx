@@ -18,7 +18,7 @@ import smallSs from "../../assets/achievements/small/rank/ss.png";
 import smallSsPlus from "../../assets/achievements/small/rank/ss_plus.png";
 import smallSss from "../../assets/achievements/small/rank/sss.png";
 import smallSssPlus from "../../assets/achievements/small/rank/sss_plus.png";
-import type { AchievementRank } from "../../utils/rank";
+import type { AchievementRank } from "../../utils/types";
 
 type BadgeSize = "large" | "small";
 

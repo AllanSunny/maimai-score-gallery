@@ -1,7 +1,22 @@
 # Data model
 
-This is the central reference for data stored by the score gallery. The
-corresponding compile-time definitions live in `src/utils/types.ts`.
+This is the central reference for data stored by the score gallery. All data structures are currently modeled by JSON files for maximum flexibility,
+because changing database columns after data has already been set up is much harder than find+replace across a JSON file. I've already saved a couple headaches on foreign key rollbacks!
+
+The authoritative app definitions live in [`src/utils/types.ts`](../src/utils/types.ts).
+The index below covers every exported type; field definitions stay in that file
+so this document does not maintain a second copy of the schema. Import and
+maintenance instructions live in [Operations](operations.md).
+
+| Area | Types in `src/utils/types.ts` |
+| --- | --- |
+| Shared values | `Difficulty`, `ChartType`, `ComboStatus`, `SyncStatus` |
+| Stored catalog | `GeneratedCatalog`, `Song`, `SongTitles`, `MaimaiVersion`, `SongVersion`, `Chart` |
+| Stored plays | `ScoreChunk`, `ScoreRecord`, `JudgmentSet`, `JudgmentBreakdown`; `Score` aliases `ScoreRecord` |
+| Stored chart records | `ChartSummaries`, `ChartRecordSummary`, `BestAchievement`, `BestStatus` |
+| Frontend catalog views | `CatalogSongView`, `CatalogChartView` |
+| Frontend song lists | `SongSummary`, `SongChartSummary` |
+| Derived rank and rating | `AchievementRank`, `PlayRatingInput` |
 
 ```mermaid
 flowchart LR
@@ -10,75 +25,42 @@ flowchart LR
   Catalog[generated-catalog.json] --> Song
   Song --> Version[Song version: DX or STD]
   Version --> Charts[Difficulty charts]
-  Version --> Jacket[R2 jacketKey]
+  Song --> Jacket[R2 jacketKey]
 ```
 
 ## Score archive
 
 `src/data/scores/YYYY-MM.json` files form the public score archive. Plays are
-partitioned by the UTC month of `playedAt`; an unchanged month is not rewritten.
+partitioned by the UTC month of `playedAt`; an unchanged month is not rewritten. Synchronization adds new play identities,
+updates matching identities from the sheet, and collapses duplicate archived
+identities. It retains archived plays absent from the sheet; deleting a sheet
+row or changing its identity fields does not remove the old archived play.
 
 `src/data/scores/chart-summaries.json` contains the lightweight cumulative
-records used for song-list filtering and sorting. Its achievement, combo, and
+records for each played chart, keyed by `Chart.id` in `ChartSummaries.charts`. Its achievement, combo, and
 sync bests are selected independently and point back to their source plays.
 The normal import pipeline regenerates it once, after catalog synchronization
-has assigned final chart IDs. Maintenance workflows that edit archived scores
-without running catalog synchronization invoke `npm run scores:summarize`.
+has assigned final chart IDs. Archive maintenance must also invoke `npm run scores:summarize`. Local catalog
+synchronization does not regenerate summaries by itself.
 
-```ts
-interface ScoreChunk {
-  period: string; // UTC YYYY-MM, matching the filename
-  scores: ScoreRecord[];
-}
+`bestAchievement` is always present for a summarized chart. `bestCombo` and
+`bestSync` are nullable when no play has a corresponding status. Their
+`BestStatus` values use `ComboStatus` and `SyncStatus`, respectively.
+`historyChunks` is a sorted, unique list of UTC archive months. Charts without
+plays have no summary entry. The file's `generatedAt` changes only when its
+chart records change.
 
-interface ChartRecordSummary {
-  playCount: number;
-  bestAchievement: { value: number; scoreId: string; playedAt: string };
-  bestCombo: { status: string; scoreId: string; playedAt: string };
-  bestSync: {
-    status: "Sync" | "FS" | "FS+" | "FDX" | "FDX+";
-    scoreId: string;
-    playedAt: string;
-  } | null;
-  historyChunks: string[]; // UTC YYYY-MM files containing this chart's plays
-}
+Bests are selected independently by achievement, combo order
+(`FC` < `FC+` < `AP` < `AP+`), or sync order
+(`Sync` < `FS` < `FS+` < `FDX` < `FDX+`). Ties prefer higher achievement,
+then later `playedAt`, then lexicographically greater score ID.
 
-interface ScoreRecord {
-  id: string;                  // Stable play identifier
-  chartId: string;             // Stable Chart ID assigned before commit
-  playedAt: string;            // ISO 8601 capture time
-  songTitle: string;           // Title reported by OCR / spreadsheet
-  chartType: "DX" | "STD";
-  difficulty: "BASIC" | "ADVANCED" | "EXPERT" | "MASTER" | "Re:MASTER";
-  level: string;               // Display level, e.g. "13+"
-  chartConstant?: number;
-  achievement: number;         // Percentage on a 0–101 scale
-  combo: string | null; // null when no full combo or all perfect was achieved
-  sync: "Sync" | "FS" | "FS+" | "FDX" | "FDX+" | null;
-  rating: number;
-  ratingChange: number;
-  fast: number | null;         // null when timing counts are unavailable
-  slow: number | null;
-  judgments: JudgmentSet | null; // null when no overall counts are known
-  judgmentsByType: JudgmentBreakdown | null;
-}
-
-interface JudgmentSet {
-  criticalPerfect: number | null;
-  perfect: number;
-  great: number;
-  good: number;
-  miss: number;
-}
-
-interface JudgmentBreakdown {
-  break: JudgmentSet;
-  tap: JudgmentSet;
-  hold: JudgmentSet;
-  slide: JudgmentSet;
-  touch: JudgmentSet;
-}
-```
+`ScoreRecord.achievement` is a percentage on the 0–101 scale. `rating` records
+the player's rating at capture time, and `ratingChange` records its change;
+neither is the calculated rating contribution of that chart. The optional
+score `chartConstant` is separate from the nullable catalog chart constant.
+`fast`, `slow`, overall `judgments`, and `judgmentsByType` can be null when
+unavailable. Missing timing counts are not assumed to be zero.
 
 `criticalPerfect: null` means that the value was not separately displayed or
 could not be read. Older result layouts combine CRITICAL PERFECT and PERFECT
@@ -87,7 +69,23 @@ count in `perfect` and store `criticalPerfect: null`. BREAK continues to store
 its separately displayed critical-perfect count. A numeric zero is reserved
 for a count that was actually shown as zero.
 
+Combo is stored as `FC`, `FC+`, `AP`, `AP+`, or null. The importer derives it
+from achievement and judgments: 101% gives AP+; otherwise a miss prevents full
+combo, all perfect judgments give AP, no goods gives FC+, and other plays with
+no misses give FC. Without judgments, a non-101% imported play cannot establish
+a combo. Sync is `Sync`, `FS`, `FS+`, `FDX`, `FDX+`, or null; full-sync import
+statuses require a derived full combo. When reading existing main-sheet rows,
+the loader can fall back to the stored Combo Status if judgments are unavailable;
+new image and manual imports have no such fallback.
+
 Rank is derived in the frontend from `achievement`; it is not stored on each score record.
+The gallery groups all achievement values below 80% under `Failed`.
+
+The current history UI displays overall judgments and Fast/Slow counts, not
+`judgmentsByType`. Timestamps are stored in UTC and displayed in US Eastern Time. Image imports
+prefer embedded EXIF, then Drive image metadata, but fall back to Drive
+`createdTime` (upload time) when neither is available. A review correction can
+override the selected time; the public archive does not retain its source.
 
 Notes/Location is intentionally excluded from the public archive.
 
@@ -95,54 +93,18 @@ Notes/Location is intentionally excluded from the public archive.
 
 `src/data/generated-catalog.json` stores normalized song metadata. Each song
 owns one or more DX/STD versions, and each version owns its difficulty charts.
-
-```ts
-interface GeneratedCatalog {
-  generatedAt: string;
-  songs: Song[];
-}
-
-interface Song {
-  id: string;                   // e.g. "magical-flavor"
-  titles: SongTitles;
-  artist: string;               // Artist credit from the SEGA catalog
-  genre: string;                // SEGA catcode, e.g. "maimai"
-  introducedIn: MaimaiVersion | null;
-  jacketKey: string | null;     // R2 object key, never credentials or a full URL
-  versions: SongVersion[];
-}
-
-interface MaimaiVersion {
-  code: string | null;          // Raw SEGA value, or null for a named standalone release
-  name: string;                 // Release family, e.g. "BUDDiES"
-}
-
-interface SongTitles {
-  canonical: string;
-  kana: string[];
-  romaji: string[];
-  english: string[];
-  aliases: string[];
-}
-
-interface SongVersion {
-  id: string;                   // e.g. "magical-flavor-dx"
-  chartType: "DX" | "STD";
-  charts: Chart[];
-}
-
-interface Chart {
-  id: string;                   // e.g. "magical-flavor-dx-master"
-  difficulty: "BASIC" | "ADVANCED" | "EXPERT" | "MASTER" | "Re:MASTER";
-  level: string;
-  chartConstant: number | null;
-}
-```
+`Song` owns the shared `jacketKey`, artist, genre, introduction, and search titles.
+`Chart` includes both nullable `chartConstant` and nullable `charter` fields.
+Supplemental metadata refreshes constants and charter names for existing charts;
+non-null manual overrides take precedence, and existing values are retained
+when supplemental values are unavailable. See [song overrides](operations.md#song-overrides)
+for the editable override format, which differs from the generated catalog.
 
 `introducedIn` deliberately differs from `versions`: `introducedIn` is the
 named game release in which SEGA associates the song, while `versions` contains
 the song's playable DX/STD chart variants. The numeric code is retained because
 its trailing digits identify SEGA content batches within a release family.
+A standalone song can have `introducedIn: null` when its release is unknown.
 
 The importer maps the observed SEGA ranges as follows:
 
@@ -170,16 +132,45 @@ An unknown future range fails validation so it cannot be silently assigned to
 the wrong release. A standalone override can provide a verified release name
 with `code: null` when its exact historical SEGA batch code is unavailable.
 
-The browser derives `jacketUrl` at build time from `VITE_JACKET_BASE_URL` and
+The browser derives `jacketUrl` using the build-time configuration from `VITE_JACKET_BASE_URL` and
 the stored `jacketKey`. It is not part of the persisted catalog schema.
+
+## Frontend structures
+
+`CatalogSongView` combines parent song metadata with one `SongVersion`; its `id`
+is the version ID and its `charts` belong to that DX/STD version. It adds
+`jacketUrl`, which is null when the base URL or object key is missing.
+`CatalogChartView` pairs that song view with a `Chart` for chart-ID lookup.
+
+`SongSummary` groups titles, chart type, optional jacket URL, and
+`SongChartSummary` entries for the score list. Each chart summary has a chart
+ID, difficulty, chart type, and level, with optional constant and achievement.
+Missing achievement means the chart has no recorded result in that view.
+These list summaries are constructed from eagerly loaded scores and catalog
+metadata matched by title and chart type, rather than from the persisted chart
+summaries. Chart detail pages instead look up catalog metadata by `chartId`
+and read cumulative bests from chart summaries. The list structures are distinct from the persisted `ChartRecordSummary` best-status records.
+
+`AchievementRank` describes the display rank returned by
+[`achievementRank`](../src/utils/rank.ts). `PlayRatingInput` contains achievement,
+a nullable chart constant, and optional combo for
+[`calculatePlayRating`](../src/utils/rating.ts). That function calculates a
+CiRCLE/CiRCLE PLUS chart contribution, returning null without a constant.
+Chart details combine best achievement and best combo, including the AP/AP+
+bonus; the calculated value currently appears in the desktop information card.
+This does not recalculate captured player ratings or implement the Top 50 page.
+These views and calculated values are not additional archive files.
 
 ## Rejected song names
 
 Scores whose song titles remain unmatched are quarantined before commit. The
 metadata workflow uploads `.sync/rejected-scores.json` as a temporary GitHub
 Actions artifact containing the rejected title and affected score IDs/times.
-They are not stored in either generated data file. Correct the spreadsheet title
-or add an override, then rerun the score archive workflow to retry them.
+The report contains `generatedAt`, `rejectedSongs` (each with `title` and
+`scores` containing `id` and `playedAt`).
+Rejected plays are excluded from committed score archives. Correct the
+spreadsheet title or add an override, then rerun **Import New Scores** to retry
+them. This temporary report is produced by the catalog script, not an app type.
 
 ## Matching and identity rules
 
@@ -187,15 +178,28 @@ or add an override, then rerun the score archive workflow to retry them.
   remain as readable source data.
 - Song-version IDs end in `-dx` or `-std`.
 - Chart IDs append the normalized difficulty to the song-version ID.
-- DX and STD versions share their parent song's immutable `jacketKey`.
+- DX and STD versions share their parent song's `jacketKey`.
 - Search titles exist only in `Song.titles`, never on score records.
 - Kana, romaji, English titles, and aliases are trimmed and normalized to
   lowercase during catalog import.
-- `chartConstant: null` means the source has no constant and no override exists.
+- `Chart.chartConstant: null` means no constant is available from overrides,
+  supplemental metadata, or a retained existing value.
 
 ## Enforcement
 
-`src/utils/data-validation.ts` validates the generated catalog and every monthly score file at runtime. The
-same validation runs in catalog synchronization and GitHub Pages deployment
-through `npm run data:validate`; invalid data stops the workflow before commit
-or deployment.
+[`src/utils/data-validation.ts`](../src/utils/data-validation.ts) parses the
+generated catalog, monthly score chunks, and chart summaries for the app.
+[`scripts/validate-data.mjs`](../scripts/validate-data.mjs) uses those parsers and
+also checks release-code/name consistency and that chart summaries exactly
+match records rebuilt from the archive.
+
+The import workflow runs `npm run data:validate:source` after catalog sync,
+then regenerates summaries and runs `npm run data:validate` before committing.
+Deployment runs full validation before building. TypeScript describes the
+compile-time shapes; these runtime checks enforce data constraints.
+
+Validation is not exhaustive: the archive parsers do not check that every
+`chartId` exists in the catalog, enforce all numeric ranges/count integrality,
+or repeat import-time judgment arithmetic and combo derivation. Catalog linking
+and score import perform additional checks, so a passing `data:validate` alone
+is not proof that arbitrary hand-edited records satisfy every semantic rule.
