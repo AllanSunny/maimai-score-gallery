@@ -1,0 +1,24 @@
+src/data/scores/chart-summaries.json
+  s_99a45efb7e2da8::t_963780bca505c2 2,2294,4631
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2",
+  "base_commit_sha": "6e702bddf02f55c30453f8fe945a85cde6772e92",
+  "prompts": {},
+  "humans": {
+    "h_278fafc5c28027": {
+      "author": "Allan Sun <allansun@live.com>"
+    }
+  },
+  "sessions": {
+    "s_99a45efb7e2da8": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0762d-b6fe-7ae0-9273-e85974fe0b92",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "Allan Sun <allansun@live.com>"
+    }
+  }
+}
