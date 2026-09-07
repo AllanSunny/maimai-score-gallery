@@ -1,0 +1,51 @@
+src/components/song/ExpandedSongDetails.tsx
+  h_278fafc5c28027 19
+src/components/song/SongJacket.tsx
+  h_278fafc5c28027 22,34,36
+src/components/song/SongInfo.tsx
+  s_d838a275e3448f::t_7d1b16efc583b9 17,20-21
+  s_d838a275e3448f::t_45dcee236dc73a 19
+  s_d838a275e3448f::t_b0ac0157c11a8a 25
+src/hooks/useExpandableSongGrid.ts
+  s_d838a275e3448f::t_64921fc1f60ab4 8-14,16,50-51,67-68,99-102,115-116,118-119,190-191
+  s_98dd1e57a79089::t_ff63d24539dc0b 15,137,147
+  s_d838a275e3448f::t_b52471c1876b9a 54
+  s_d838a275e3448f::t_341ecef8f7bc1b 20,47-49,52,107-114,117,120-121,128-129,187-189,192
+  s_d838a275e3448f::t_9a637c29c84d2b 21,69-71
+  s_d838a275e3448f::t_f23174a13707e8 56-58,60-65,73-78,82-88,90-97,126-127,133,172
+  s_d838a275e3448f::t_b0ac0157c11a8a 55,134-135
+  s_d838a275e3448f::t_d974a4b43c5555 104-106
+  s_d838a275e3448f::t_155d66cca04c70 59,79-81,89
+  s_d838a275e3448f::t_81ff7436c742c4 53
+  s_d838a275e3448f::t_45dcee236dc73a 66,72,122-125,130-132
+  s_d838a275e3448f::t_c9eafdf4e8b11b 98,103
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2",
+  "base_commit_sha": "ded59222d5f38ab90897ad848abfac0162b5c097",
+  "prompts": {},
+  "humans": {
+    "h_278fafc5c28027": {
+      "author": "Allan Sun <allansun@live.com>"
+    }
+  },
+  "sessions": {
+    "s_98dd1e57a79089": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a07b39-ac8a-7c62-8b7d-c039e51568c0",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Allan Sun <allansun@live.com>"
+    },
+    "s_d838a275e3448f": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a07b29-7a85-7861-ab9e-a14b5c7ea1a3",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Allan Sun <allansun@live.com>"
+    }
+  }
+}
