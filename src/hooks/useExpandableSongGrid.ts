@@ -238,6 +238,12 @@ export function useExpandableSongGrid() {
 
       const changingSongKeys = expandedSongKey ? [expandedSongKey, songKey] : [songKey];
       await runCardTransition(() => setExpandedSongKey(songKey), changingSongKeys);
+      if (!window.matchMedia("(min-width: 768px)").matches) {
+        cardRects().get(songKey)?.element.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }
     } finally {
       isChangingSelection.current = false;
     }
