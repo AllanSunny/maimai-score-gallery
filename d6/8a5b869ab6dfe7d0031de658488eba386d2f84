@@ -1,0 +1,78 @@
+src/components/song/SongInfo.tsx
+  s_4f4fdfef6eec74::t_0308388199ee8f 48,66
+  h_278fafc5c28027 52,68,83-84,89,96,114-115,119-120,125-126,130-131
+  s_4f4fdfef6eec74::t_45474a62742b05 92-95,97-99
+  s_4f4fdfef6eec74::t_b6a0ba45b1fb69 4,25,36,42
+  s_4f4fdfef6eec74::t_00c18d9f2a0f6b 5,7-8,16-20,46-47,49-50,54,69,71,101,138
+  s_4f4fdfef6eec74::t_80a9766d67588d 73-76,78-81
+  s_4f4fdfef6eec74::t_674e95863fbdeb 23-24,26-27
+  s_4f4fdfef6eec74::t_cdc0787e8c1b3f 28
+  s_4f4fdfef6eec74::t_e5d2c9d0533afe 44,82,102
+  s_4f4fdfef6eec74::t_e53000d6033279 11,55-65,67
+  s_4f4fdfef6eec74::t_3e5b95c7cd7972 77
+  s_4f4fdfef6eec74::t_02ce7356e84e5d 86
+  s_4f4fdfef6eec74::t_2612c5d46b261b 29,41
+  s_4f4fdfef6eec74::t_5767c5a6656b52 85,88
+  s_4f4fdfef6eec74::t_c1c07332532c75 35,37-38,40,45,51,137
+  s_4f4fdfef6eec74::t_908ad744b13830 87,90-91
+  s_4f4fdfef6eec74::t_50e8d6d30492e8 113,118
+  s_4f4fdfef6eec74::t_6ed714c84a0734 105,111,129,132-133
+  s_4f4fdfef6eec74::t_14adaa55fd6731 43,53
+  s_4f4fdfef6eec74::t_b06ba13bb47922 9-10,13,30-32,34,100,103
+  s_4f4fdfef6eec74::t_c36c73468ddae3 6,122-124
+  s_4f4fdfef6eec74::t_5d755fa1df96c3 12
+src/utils/types.ts
+  s_4f4fdfef6eec74::t_00c18d9f2a0f6b 151-152
+  s_4f4fdfef6eec74::t_b06ba13bb47922 155-157,163
+  s_4f4fdfef6eec74::t_1f144fc3a3bcad 153-154
+src/pages/ScoreListPage.tsx
+  s_4f4fdfef6eec74::t_00c18d9f2a0f6b 2,71-73,106-108
+  s_4f4fdfef6eec74::t_55694fb13c6009 35-36,41-43,130,144-154,157-162
+  s_4f4fdfef6eec74::t_cdc0787e8c1b3f 324,330,335,362
+  s_4f4fdfef6eec74::t_dc8c10de5b826d 357-360,363-364
+  s_4f4fdfef6eec74::t_b06ba13bb47922 7,57,61-67,75-76,92-94,112-114,117,122
+  s_4f4fdfef6eec74::t_135d83e12d653a 221-242,258,320
+  s_4f4fdfef6eec74::t_6da59fabef5d79 37-40,353
+  s_4f4fdfef6eec74::t_edb735edf561f4 8,133,259,322-323,325-329,331-333,336-340
+  s_4f4fdfef6eec74::t_674e95863fbdeb 129,198
+  s_4f4fdfef6eec74::t_f2df7bc1169916 143
+  s_4f4fdfef6eec74::t_57ff244c9f15d6 209-219,243-257,260-314,316,318-319,334
+  s_4f4fdfef6eec74::t_14adaa55fd6731 220,315,317,321
+  h_278fafc5c28027 345
+  s_4f4fdfef6eec74::t_c1c07332532c75 3,77-91
+  s_4f4fdfef6eec74::t_afbd6e558ced56 356
+  s_4f4fdfef6eec74::t_bf9e1f91216b84 361
+  s_4f4fdfef6eec74::t_66eca977cb183e 365
+  s_5ccb732f068aed::t_cbb14c466e8f86 367
+src/css/utilities.css
+  s_4f4fdfef6eec74::t_3e5b95c7cd7972 56-69
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2",
+  "base_commit_sha": "d68a5b869ab6dfe7d0031de658488eba386d2f84",
+  "prompts": {},
+  "humans": {
+    "h_278fafc5c28027": {
+      "author": "Allan Sun <allansun@live.com>"
+    }
+  },
+  "sessions": {
+    "s_4f4fdfef6eec74": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a07a4a-f277-7871-af4c-3d522e31b253",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Allan Sun <allansun@live.com>"
+    },
+    "s_5ccb732f068aed": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a07a81-071e-76c2-8517-b081fb2511b2",
+        "model": "unknown"
+      },
+      "human_author": "Allan Sun <allansun@live.com>"
+    }
+  }
+}
