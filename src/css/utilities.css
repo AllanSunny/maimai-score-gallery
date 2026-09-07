@@ -15,9 +15,6 @@
   text-decoration: none;
   transition: color 150ms, background-color 150ms, border-color 150ms, box-shadow 150ms;
   cursor: pointer;
-  user-select: none;
-  -webkit-user-select: none;
-  -webkit-tap-highlight-color: transparent;
 
   &:focus-visible {
     outline: 2px solid var(--color-light);
@@ -36,6 +33,7 @@
 
   &:not(:disabled):hover {
     background-color: var(--btn-hover-background, var(--color-lightest));
+    -webkit-tap-highlight-color: var(--btn-hover-background, var(--color-lightest));
   }
 }
 
@@ -51,6 +49,7 @@
     color: var(--color-darker);
     border-color: var(--color-lightest);
     background-color: var(--color-lightest);
+    -webkit-tap-highlight-color: var(--btn-hover-background, var(--color-lightest));
   }
 }
 
