@@ -1,10 +1,9 @@
 import { useEffect, useRef } from "react";
 import { formatEasternDateTime } from "../../utils/date-time";
-import { achievementRank } from "../../utils/rank";
 import type { JudgmentSet, ScoreRecord } from "../../utils/types";
 import { ComboDisplay } from "./ComboDisplay";
+import { MiniScoreBreakdown } from "./MiniScoreBreakdown";
 import { SyncDisplay } from "./SyncDisplay";
-import { RankDisplay } from "./RankDisplay";
 
 interface ScoreHistoryEntryProps {
   score: ScoreRecord;
@@ -54,14 +53,7 @@ export function ScoreHistoryEntry({ score, accentColor, isOpen, onToggle }: Scor
           <span aria-hidden="true" className="text-light transition-transform group-open:rotate-90">›</span>
           <time className="text-lightest">{formatEasternDateTime(score.playedAt)}</time>
         </div>
-        <span className="shrink-0 text-right">
-          <span className="block font-semibold tabular-nums">{score.achievement.toFixed(4)}%</span>
-          <RankDisplay
-            className="ml-auto mt-1 h-5 max-w-full object-contain object-right"
-            status={achievementRank(score.achievement)}
-            size="large"
-          />
-        </span>
+        <MiniScoreBreakdown achievement={score.achievement} combo={score.combo} sync={score.sync} />
       </summary>
 
       <div className="border-t px-5 py-5 text-sm" style={{ borderColor: `var(--color-${accentColor})` }}>
