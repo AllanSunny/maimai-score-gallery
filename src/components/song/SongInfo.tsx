@@ -14,12 +14,15 @@ export function SongInfo({ titles, jacketUrl, versions, expanded, onToggle }: So
     <article
       data-song-key={name}
       data-song-expanded={expanded}
-      className={`group relative overflow-hidden rounded-xl border border-primary ${expanded ? "z-30 p-3 col-span-full bg-dark shadow-[0_0px_5px_var(--color-primary)] md:grid md:grid-cols-[15rem_minmax(0,1fr)]" : "bg-darker"}`}
+      className={`group relative overflow-hidden rounded-xl border border-primary ${expanded ? "z-30 col-span-full bg-dark shadow-[0_0px_5px_var(--color-primary)] md:grid md:grid-cols-[15rem_minmax(0,1fr)]" : "bg-darker"}`}
     >
-      <SongJacket expanded={expanded} jacketUrl={jacketUrl} name={name} onToggle={onToggle} />
+      <div className={expanded ? "p-3 content-center md:py-0 md:pr-0" : ""} data-song-jacket-container>
+        <SongJacket expanded={expanded} jacketUrl={jacketUrl} name={name} onToggle={onToggle} />
+      </div>
 
       {expanded && <button
         type="button"
+        data-song-dismiss
         aria-label={`Dismiss ${name} chart summaries`}
         onClick={onToggle}
         className="btn btn-tertiary absolute top-2 right-2 z-10 size-8 !rounded-full !p-0 text-lg leading-none backdrop-blur-sm"
