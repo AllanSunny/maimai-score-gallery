@@ -47,6 +47,7 @@ export function groupScoresBySong(
       titles,
       jacketUrl: metadata?.jacketUrl,
       versions: [],
+      lastPlayedAt: null,
     };
     let version = song.versions.find((candidate) => candidate.chartType === score.chartType);
 
@@ -97,6 +98,18 @@ export function groupScoresBySong(
     songs.set(songKey, song);
   });
 
-  return [...songs.values()].sort((a, b) =>
-    a.titles.canonical.localeCompare(b.titles.canonical));
+  return [...songs.values()]
+    .map((song) => ({
+      ...song,
+      lastPlayedAt: song.versions
+        .flatMap((version) => version.charts)
+        .map((chart) => chartSummaries[chart.id]?.lastPlayedAt ?? null)
+        .reduce<string | null>((latest, playedAt) =>
+          playedAt !== null && (latest === null || playedAt.localeCompare(latest) > 0)
+            ? playedAt
+            : latest, null),
+    }))
+    .sort((a, b) =>
+      (b.lastPlayedAt ?? "").localeCompare(a.lastPlayedAt ?? "")
+      || a.titles.canonical.localeCompare(b.titles.canonical));
 }

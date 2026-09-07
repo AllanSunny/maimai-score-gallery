@@ -128,6 +128,8 @@ export interface BestStatus<T extends string> {
 /** Cumulative records with achievement, combo, and sync bests selected independently. */
 export interface ChartRecordSummary {
   playCount: number;
+  /** Most recent play across the chart's complete history. */
+  lastPlayedAt: string | null;
   bestAchievement: BestAchievement;
   bestCombo: BestStatus<ComboStatus> | null;
   bestSync: BestStatus<SyncStatus> | null;
@@ -161,6 +163,8 @@ export interface SongSummary {
   titles: SongTitles;
   jacketUrl?: string | null;
   versions: SongVersionSummary[];
+  /** Most recent play across every chart version of the song. */
+  lastPlayedAt: string | null;
 }
 
 /** Rank derived from achievement, never stored on a score record. */

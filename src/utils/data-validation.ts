@@ -158,6 +158,7 @@ export function parseChartSummaries(value: unknown): ChartSummaries {
     const path = `chartSummaries.charts.${chartId}`;
     const chart = object(summaryValue, path);
     number(chart.playCount, `${path}.playCount`);
+    nullableString(chart.lastPlayedAt, `${path}.lastPlayedAt`);
     const achievement = object(chart.bestAchievement, `${path}.bestAchievement`);
     number(achievement.value, `${path}.bestAchievement.value`);
     ["scoreId", "playedAt"].forEach((field) => nonemptyString(achievement[field], `${path}.bestAchievement.${field}`));

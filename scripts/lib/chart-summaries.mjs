@@ -50,6 +50,8 @@ export function buildChartSummaries(scores) {
 
   const charts = {};
   [...byChart].sort(([a], [b]) => a.localeCompare(b)).forEach(([chartId, entries]) => {
+    const lastPlayedAt = entries.reduce((latest, score) =>
+      latest === null || score.playedAt.localeCompare(latest) > 0 ? score.playedAt : latest, null);
     const bestAchievementScore = bestScore(entries, (left, right) =>
       Number(left.achievement) - Number(right.achievement));
     const comboScores = entries.filter((score) => score.combo !== null);
@@ -61,6 +63,7 @@ export function buildChartSummaries(scores) {
 
     charts[chartId] = {
       playCount: entries.length,
+      lastPlayedAt,
       bestAchievement: {
         value: Number(bestAchievementScore.achievement),
         ...scoreReference(bestAchievementScore),

@@ -53,3 +53,12 @@ test("charts without a combo achievement have no best combo", () => {
 
   assert.equal(charts["song-dx-expert"].bestCombo, null);
 });
+
+test("chart summaries retain the most recent play time", () => {
+  const charts = buildChartSummaries([
+    score({ id: "newer", playedAt: "2026-02-01T00:00:00.000Z" }),
+    score({ id: "older", playedAt: "2026-01-01T00:00:00.000Z" }),
+  ]);
+
+  assert.equal(charts["song-dx-expert"].lastPlayedAt, "2026-02-01T00:00:00.000Z");
+});
