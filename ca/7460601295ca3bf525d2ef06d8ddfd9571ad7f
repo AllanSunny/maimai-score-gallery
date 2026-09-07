@@ -1,0 +1,24 @@
+src/hooks/useExpandableSongGrid.ts
+  s_cbb20a73c39f02::t_03cbff4dd189cc 241-246
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2",
+  "base_commit_sha": "ca7460601295ca3bf525d2ef06d8ddfd9571ad7f",
+  "prompts": {},
+  "humans": {
+    "h_278fafc5c28027": {
+      "author": "Allan Sun <allansun@live.com>"
+    }
+  },
+  "sessions": {
+    "s_cbb20a73c39f02": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a07d04-88b4-7cc3-97da-90395a8dfb98",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Allan Sun <allansun@live.com>"
+    }
+  }
+}
