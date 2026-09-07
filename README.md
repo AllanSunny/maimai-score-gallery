@@ -59,7 +59,7 @@ Each score page represents a specific chart for a song. At the top is its summar
 - Difficulty and corresponding level rating
 - Summary of the best achievement percentage, rank, combo status, and sync status across all play history records.
   - Each value can be from independent plays, but rank will always follow percentage.
-- When available, amount of player rating the best achievement percentage is worth [calculation here](src/utils/rating.ts).
+- When available, amount of player rating the best achievement percentage is worth (calculation [here](src/utils/rating.ts)).
 
 Each play history record on a song shows:
 - **Achievement:** A 4-decimal place percentage value from 0 to 101.0000%. This is the primary score of any play.
