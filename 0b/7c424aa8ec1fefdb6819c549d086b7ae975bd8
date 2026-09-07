@@ -1,0 +1,14 @@
+src/components/score/MiniScoreBreakdown.tsx
+  h_278fafc5c28027 16,29-30,32-33
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2",
+  "base_commit_sha": "0b7c424aa8ec1fefdb6819c549d086b7ae975bd8",
+  "prompts": {},
+  "humans": {
+    "h_278fafc5c28027": {
+      "author": "Allan Sun <allansun@live.com>"
+    }
+  }
+}
