@@ -18,7 +18,7 @@ export function OverflowMarquee({
   centerWhenFit = false,
 }: OverflowMarqueeProps) {
   const containerRef = useRef<HTMLDivElement>(null);
-  const textRef = useRef<HTMLSpanElement>(null);
+  const textRef = useRef<HTMLDivElement>(null);
   const [overflow, setOverflow] = useState(0);
 
   useEffect(() => {
@@ -49,7 +49,7 @@ export function OverflowMarquee({
       style={style}
       title={children}
     >
-      <span ref={textRef} className="overflow-marquee__text">{children}</span>
+      <div ref={textRef} className="overflow-marquee__text">{children}</div>
     </div>
   );
 }

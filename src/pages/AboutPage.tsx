@@ -252,7 +252,7 @@ export function AboutPage() {
             <dl className="mt-5 grid grid-cols-[max-content_1fr] items-center gap-x-5 gap-y-4">
               {comboStatuses.map(({ status, label }) => (
                 <Fragment key={status}>
-                  <dt><ComboDisplay className="h-7 object-contain" status={status} size="large" /></dt>
+                  <dt><ComboDisplay className="max-h-7 object-contain" status={status} size="large" /></dt>
                   <dd className="text-sm leading-6 text-lightest">{label}</dd>
                 </Fragment>
               ))}
@@ -267,7 +267,7 @@ export function AboutPage() {
               <dl key={index} className="grid grid-cols-[max-content_1fr] items-center gap-x-5 gap-y-5">
                 {column.map(({ status, label }) => (
                   <Fragment key={status}>
-                    <dt><SyncDisplay className="h-7 object-contain" status={status} size="large" /></dt>
+                    <dt><SyncDisplay className="max-h-7 object-contain" status={status} size="large" /></dt>
                     <dd className="text-sm leading-6 text-lightest">{label}</dd>
                   </Fragment>
                 ))}

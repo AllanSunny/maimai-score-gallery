@@ -111,7 +111,7 @@
 .song-detail-frame__level-value sup {
   position: absolute;
   top: -0.2em;
-  left: calc(100% + 0.1em);
+  left: calc(100% + 0.2em);
   font-size: 0.52em;
   line-height: 1;
 }

@@ -78,39 +78,39 @@ export function ChartDetailPage({ chartId, scoreId }: ChartDetailPageProps) {
                 {metadata.artist}
               </div>
 
-              <div className={"ml-1 mt-3 text-[1.2rem] sm:text-[1.5rem]"}>
-                <span
-                  className="text-darker text-stroke"
+              <div className={"ml-1 mt-3 flex flex-row gap-2 text-[1.2rem] sm:text-[1.5rem]"}>
+                <div
+                  className="flex text-darker text-stroke"
                   style={{
                     "--text-stroke-color": `var(--color-${accentColor})`,
                   } as CSSProperties}
                 >
                   {chartMetadata.difficulty} {displayedChartLevel(chartMetadata.level, chartMetadata.chartConstant)}
-                </span>
+                </div>
                 {playRating != null && (
-                  <span
-                    className="text-darker text-stroke whitespace-nowrap"
+                  <div
+                    className="flex text-darker text-stroke whitespace-nowrap"
                     style={{
                       "--text-stroke-color": `var(--color-${accentColor})`,
                     } as CSSProperties}
                   >
-                    {` · Rating: ${playRating}`}
-                  </span>
+                    {`· Rating: ${playRating}`}
+                  </div>
                 )}
               </div>
 
               <div className={"mt-8"}>
-                <p className={"ml-1 text-darkest"}>Achievement</p>
+                <div className={"ml-1 text-darkest"}>Achievement</div>
                 {achievement != null && (
                   <div className={"flex flex-row gap-4 sm:gap-6 items-center"}>
-                    <span
+                    <div
                       className={[
                         "flex text-[1.6rem] sm:text-[2rem] lg:text-[2.3rem] achievement-value text-stroke font-bold",
                         isBelowS && "achievement-value--below-s",
                       ].filter(Boolean).join(" ")}
                     >
                       {`${achievement.toFixed(4)}%`}
-                    </span>
+                    </div>
                     <RankDisplay
                       className="flex h-6 lg:h-7"
                       status={achievementRank(achievement)}
