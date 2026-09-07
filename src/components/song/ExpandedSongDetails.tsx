@@ -22,8 +22,20 @@ export function ExpandedSongDetails({ name, versions }: ExpandedSongDetailsProps
           <ChartTypeIcon chartType={selectedVersion.chartType} className="hidden h-4 w-auto shrink-0 md:block" />
           <OverflowMarquee className="font-semibold text-lightest text-xl md:!text-left" centerWhenFit>{name}</OverflowMarquee>
         </div>
-        <div className="flex w-full shrink-0 items-center justify-center gap-3 md:w-auto" aria-label="Chart version">
-          <ChartTypeIcon chartType={selectedVersion.chartType} className="h-4 w-auto md:hidden" />
+        <div className="flex w-full shrink-0 items-center justify-center gap-3 md:hidden" aria-label="Chart version">
+          {versions.map((version) => version.chartType === selectedVersion.chartType
+            ? <ChartTypeIcon key={version.chartType} chartType={version.chartType} className="h-4 w-auto" />
+            : <button
+                key={version.chartType}
+                type="button"
+                aria-label={`Show ${version.chartType} charts`}
+                onClick={() => setSelectedChartType(version.chartType)}
+                className="btn btn-tertiary !rounded-lg !px-2 !py-1"
+              >
+                <ChartTypeIcon chartType={version.chartType} className="h-4 w-auto" />
+              </button>)}
+        </div>
+        <div className="hidden shrink-0 items-center justify-center gap-3 md:flex md:w-auto" aria-label="Chart version">
           {versions.filter((version) => version.chartType !== selectedVersion.chartType).map((version) =>
             <button
               key={version.chartType}
