@@ -1,0 +1,14 @@
+README.md
+  h_278fafc5c28027 62
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2",
+  "base_commit_sha": "295259cda4a894a7cf188e6727935a48eced3815",
+  "prompts": {},
+  "humans": {
+    "h_278fafc5c28027": {
+      "author": "Allan Sun <allansun@live.com>"
+    }
+  }
+}
