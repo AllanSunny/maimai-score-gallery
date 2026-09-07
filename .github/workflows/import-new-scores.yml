@@ -7,7 +7,7 @@ on:
         description: Optional image limit for a test run; blank processes all actionable images
         required: false
   schedule:
-    - cron: "0 8 * * 1"
+    - cron: "22 8 * * 1"
 
 permissions:
   actions: read

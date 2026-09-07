@@ -77,6 +77,7 @@ This ledger stays near the top as decisions are appended below. Links point to s
 - **Scroll behavior by action** ([47](#decision-47)): The owner wanted new chart pages to begin at the top without visibly scrolling up from the song list, score deep links to retain smooth scrolling, and Back/Forward to remember prior positions. These are distinct interactions, so one global smooth-scroll rule was insufficient (“Add score history anchors,” 2026-08-31).
 - **Chart rating and incomplete B50** ([48](#decision-48)): Implementation rationale: deriving a contribution from an exact constant avoids storing another value that can drift; leaving it unavailable without a constant avoids presenting an estimate as exact. The reviewed history does not establish an additional owner-stated motivation for the formula or a completed B50 implementation.
 - **OCR tuning and configuration cleanup** ([49](#decision-49)): The owner encountered incomplete OCR output, asked to inspect token use, and confirmed that increasing the limit worked (2026-08-15). The later cleanup requested removing unused environment options. That supports documenting the settings actually consumed; it does not establish that each hard-coded timeout/retry value was personally selected by the owner.
+- **Off-minute import scheduling** ([50](#decision-50)): After the minute-0 schedule was delayed on consecutive Mondays, the owner moved the weekly import to minute 22 to avoid GitHub Actions' higher-load start-of-hour window (“Set import schedule to minute 22,” 2026-09-07).
 
 <a id="decision-1"></a>
 
@@ -855,3 +856,13 @@ This ledger stays near the top as decisions are appended below. Links point to s
 - Send score OCR requests with `store: false`; retain the application's successful OCR cache in the private import log as described in section 20.
 - Fixed request options make the active OCR behavior inspectable in one place. No claim about other provider retention policies is implied by `store: false`.
 - Source: `scripts/lib/openai-score-ocr.mjs`.
+
+<a id="decision-50"></a>
+
+## 50. Off-minute weekly import schedule
+
+- Move the scheduled import from Monday at 08:00 UTC to 08:22 UTC (`22 8 * * 1`).
+- This is Monday 04:22 Eastern during daylight time and 03:22 during standard time.
+- GitHub Actions substantially delayed the minute-0 scheduled event on consecutive Mondays. Using minute 22 avoids the higher-load start-of-hour window while retaining the fixed UTC schedule selected in decision 45.
+- Manual dispatch and the optional image limit remain unchanged.
+- Source: `.github/workflows/import-new-scores.yml`.

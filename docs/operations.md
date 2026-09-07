@@ -279,7 +279,7 @@ summaries.
 
 Run **Import New Scores** from the Actions tab for a real-data import. The
 optional `image_limit` input limits actionable images. Scheduled runs are
-Monday at 08:00 UTC (04:00 Eastern during daylight saving time, 03:00 during
+Monday at 08:22 UTC (04:22 Eastern during daylight saving time, 03:22 during
 standard time).
 
 The jobs import images, archive the spreadsheet, synchronize catalog metadata,
