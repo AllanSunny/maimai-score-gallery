@@ -1,0 +1,30 @@
+config/tsconfig.app.json
+  s_597c07a22703f6::t_78efc06d6a5839 19
+docs/operations.md
+  s_597c07a22703f6::t_78efc06d6a5839 307
+docs/decisions-summary.md
+  s_597c07a22703f6::t_78efc06d6a5839 822
+package.json
+  s_597c07a22703f6::t_78efc06d6a5839 10-12,14
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2",
+  "base_commit_sha": "e190f5a064975c3be478f84f297c68a91a012a43",
+  "prompts": {},
+  "humans": {
+    "h_278fafc5c28027": {
+      "author": "Allan Sun <allansun@live.com>"
+    }
+  },
+  "sessions": {
+    "s_597c07a22703f6": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a07d39-2df0-7c50-8a06-170fb9a4759d",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Allan Sun <allansun@live.com>"
+    }
+  }
+}
