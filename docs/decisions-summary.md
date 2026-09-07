@@ -819,7 +819,7 @@ This ledger stays near the top as decisions are appended below. Links point to s
 - This reduces stale application-shell behavior, but means offline navigation is not promised.
 - Provide static Open Graph metadata for the public gallery and emit the favicon at a stable asset path for the sharing image. Other bundled assets retain hashed filenames.
 - Sharing metadata is gallery-wide; chart-specific server-rendered previews are not implemented.
-- Sources: `vite.config.ts`, `index.html`; commits `a5f03f1`, `a73bb32`.
+- Sources: `config/vite.config.ts`, `index.html`; commits `a5f03f1`, `a73bb32`.
 
 <a id="decision-47"></a>
 

@@ -304,7 +304,7 @@ Cache First runtime cache scoped to `VITE_JACKET_BASE_URL`, limited to 300
 images and 90 days; browser quota pressure may evict entries sooner. Service
 workers are not enabled by the normal Vite development server.
 
-Caching is configured in [`vite.config.ts`](../vite.config.ts). Page
+Caching is configured in [`vite.config.ts`](../config/vite.config.ts). Page
 navigations use the network; the service worker does not provide an offline
 HTML fallback. The jacket runtime cache is enabled only when
 `VITE_JACKET_BASE_URL` is configured.
