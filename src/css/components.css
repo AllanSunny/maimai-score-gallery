@@ -39,35 +39,6 @@
     animation: overflow-marquee-pan calc(var(--marquee-duration) * 1.0192) linear infinite;
   }
 
-  .achievement-value {
-    --achievement-top: #fffeea;
-    --achievement-middle: #fff75f;
-    --achievement-bottom: #ff600a;
-    --achievement-outline: #d34500;
-    --text-stroke-color: var(--achievement-outline);
-    --text-stroke-width: 0.03em;
-
-    background: linear-gradient(
-      to bottom,
-      var(--achievement-top),
-      var(--achievement-middle) 42%,
-      var(--achievement-bottom)
-    );
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
-    -webkit-text-fill-color: transparent;
-    letter-spacing: 0.024em;
-    filter: drop-shadow(0 0.06em 0 var(--color-darkest));
-  }
-
-  .achievement-value--below-s {
-    --achievement-top: #fffdf0;
-    --achievement-middle: #ffc2c2;
-    --achievement-bottom: #ff362b;
-    --achievement-outline: #aa001f;
-  }
-
   @keyframes overflow-marquee-pan {
     0%, 33.909% {
       transform: translateX(0);
@@ -118,5 +89,36 @@
       animation: none;
       --marquee-edge: 0px;
     }
+  }
+}
+
+@layer components {
+  .achievement-value {
+    --achievement-top: #fffeea;
+    --achievement-middle: #fff75f;
+    --achievement-bottom: #ff600a;
+    --achievement-outline: #d34500;
+    --text-stroke-color: var(--achievement-outline);
+    --text-stroke-width: 0.03em;
+
+    background: linear-gradient(
+      to bottom,
+      var(--achievement-top),
+      var(--achievement-middle) 42%,
+      var(--achievement-bottom)
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 0.024em;
+    filter: drop-shadow(0 0.06em 0 var(--color-darkest));
+  }
+
+  .achievement-value--below-s {
+    --achievement-top: #fffdf0;
+    --achievement-middle: #ffc2c2;
+    --achievement-bottom: #ff362b;
+    --achievement-outline: #aa001f;
   }
 }
