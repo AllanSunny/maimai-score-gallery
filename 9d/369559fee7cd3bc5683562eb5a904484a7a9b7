@@ -1,0 +1,32 @@
+src/components/chart/ChartDetailFrame.tsx
+  s_890c1f1e6f6a73::t_602752d6960d77 40
+  s_890c1f1e6f6a73::t_7067b285737421 12,72
+src/utils/fallback-image.ts
+  s_890c1f1e6f6a73::t_7067b285737421 2,4-9
+src/components/song/SongJacket.tsx
+  s_890c1f1e6f6a73::t_7067b285737421 2
+  s_890c1f1e6f6a73::t_450cd49d935f22 23
+src/pages/ChartDetailPage.tsx
+  s_890c1f1e6f6a73::t_602752d6960d77 49
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2",
+  "base_commit_sha": "9d369559fee7cd3bc5683562eb5a904484a7a9b7",
+  "prompts": {},
+  "humans": {
+    "h_278fafc5c28027": {
+      "author": "Allan Sun <allansun@live.com>"
+    }
+  },
+  "sessions": {
+    "s_890c1f1e6f6a73": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a07d1c-ed8e-7c11-b2f9-24d7af658f94",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": null
+    }
+  }
+}
