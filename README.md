@@ -22,7 +22,7 @@ This is entirely a fan project and has no affiliation with SEGA.
 
 ## So what is a maimai, anyway?
 
-Maimai (typically stylized all lowercase), or its current version, maimai DX, is one of SEGA's most well-known arcade 
+Maimai (typically stylized all lowercase), better known as its current version, maimai DX, is one of SEGA's most well-known arcade 
 rhythm games! Since its 2012 launch in Japan, it has gained popularity across southeast Asia, Australia, China, and 
 as of 2025, the US! The cabinets feature circular touchscreens with 8 buttons around the edges, [appearing very much 
 like washing machines](https://en.wikipedia.org/wiki/Maimai_%28video_game_series%29#/media/File:Maimai_DX_CiRCLE_PLUS_cabinet,_Philippines.png). 
@@ -35,10 +35,10 @@ The objective is like any other rhythm game: tap the buttons to the beat when th
 What makes maimai especially unique for new and veteran rhythm game players alike is the `slide` note, a trail 
 of arrows going across the screen that the player must trace with their hand in varying formations and timing.
 
-Beyond that, the main input types you'll see throughout the gallery are:
+Beyond that, the main input types you'll see referenced throughout the gallery are:
 
 - **Tap / Hold:** Notes you tap or hold at one of the eight buttons.
-- **Slide:** Star-shaped notes followed by a path you trace across the touchscreen.
+- **Slide:** Star-shaped notes following a path of arrows you trace across the touchscreen.
 - **Touch:** Notes you tap or hold directly on different areas of the touchscreen.
 - **Break:** Orange variations of other notes that are weighted more heavily in scoring.
 
@@ -50,7 +50,7 @@ Of course, I've also recorded the corresponding score results [here](https://all
 ### What does this gallery show?
 
 With those mechanics in mind, here are the important parts of a score breakdown you'll see throughout the gallery. 
-Further organizational details can be found [here](https://allansunny.github.io/maimai-score-gallery/about).
+Further organizational details can be found [here](https://allansunny.github.io/maimai-score-gallery/about#songs-charts-and-scores).
 
 Each score page represents a specific chart for a song. At the top is its summary, which shows:
 - Song title
@@ -65,7 +65,7 @@ Each play history record on a song shows:
 - **Achievement:** A 4-decimal place percentage value from 0 to 101.0000%. This is the primary score of any play.
 - **Ranking:** Letter values denoting the achievement bracket. SSS+ is the highest, requiring a percentage of 100.5000% and above. The brackets are defined [here](src/utils/rank.ts).
 - **Judgements:** Totals of each note's possible judgement values `(critical perfect, perfect, great, good, miss)`. When available, totals are also broken down by note type and fast/slow counts.
-- **Combo and sync status:** Status symbols for judgement achievements between one and/or two players, further explained [here](https://allansunny.github.io/maimai-score-gallery/about).
+- **Combo and sync status:** Status symbols for judgement achievements between one and/or two players, further explained [here](https://allansunny.github.io/maimai-score-gallery/about#combo-achievements).
 - **Player rating:** At any given point in time, a number calculated based on your current top 50 scores according to achievement rank and chart constant (more details [here](https://allansunny.github.io/maimai-score-gallery/top-50)).
 - Timestamp the originating photo was taken, in US Eastern Time.
 

@@ -150,7 +150,6 @@ export function ScoreListPage() {
   return (
     <div>
       <PageHeading
-        eyebrow="Score list"
         title="All records"
         description="Browse every recorded song. Select any difficulty to see its complete record and score history."
       />
@@ -164,10 +163,10 @@ export function ScoreListPage() {
           if ((event.target as HTMLElement).closest('a[href*="/charts/"]')) preserveListPosition();
         }}>
           {visibleSongs.map((song) => <SongInfo key={`${song.titles.canonical}-${song.chartType}`} {...song} />)}
-          {!songs.length && <p className="rounded-2xl border border-line p-10 text-center text-sm text-lightest">No matching songs.</p>}
+          {!songs.length && <p className="rounded-2xl border border-line p-10 text-center text-lightest">No matching songs.</p>}
           {songs.length > 0 && (
             <div ref={loadMoreRef} className="py-4 text-center">
-              <p className="mb-3 text-xs text-lightest">
+              <p className="mb-3 text-lightest">
                 Showing {visibleSongs.length} of {songs.length} songs
               </p>
               {hasMoreSongs && (

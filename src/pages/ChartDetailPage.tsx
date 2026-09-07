@@ -100,7 +100,7 @@ export function ChartDetailPage({ chartId, scoreId }: ChartDetailPageProps) {
               </div>
 
               <div className={"mt-8"}>
-                <p className={"ml-1 text-[1rem] sm:text-[1.25rem] text-darkest"}>Achievement</p>
+                <p className={"ml-1 text-darkest"}>Achievement</p>
                 {achievement != null && (
                   <div className={"flex flex-row gap-4 sm:gap-6 items-center"}>
                     <span

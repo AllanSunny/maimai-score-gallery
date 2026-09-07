@@ -21,7 +21,7 @@ export function SongInfo({ titles, chartType, jacketUrl, charts }: SongSummary) 
         <div className="min-w-0 flex-1">
           <h2 className="text-lg font-semibold tracking-tight">{name}</h2>
           {alternateTitles.length > 0 && (
-            <p className="mt-1 text-sm text-lightest">{alternateTitles.join(" · ")}</p>
+            <p className="mt-1 text-lightest">{alternateTitles.join(" · ")}</p>
           )}
         </div>
         <span className="shrink-0 rounded-full border border-line bg-cream px-3 py-1 text-xs font-semibold tracking-wider text-lightest">
@@ -37,14 +37,14 @@ export function SongInfo({ titles, chartType, jacketUrl, charts }: SongSummary) 
             <a
               key={`${chart.chartType}-${chart.difficulty}`}
               href={chartRoute}
-              className={`group grid grid-cols-[1fr_auto] items-center gap-4 border-l-4 px-4 py-4 transition hover:bg-cream sm:grid-cols-[minmax(9rem,1fr)_8rem_9rem_auto] sm:px-5 ${difficultyStyles[chart.difficulty]}`}
+              className={`grid grid-cols-[1fr_auto] items-center gap-4 border-l-4 px-4 py-4 transition hover:bg-cream sm:grid-cols-[minmax(9rem,1fr)_8rem_9rem] sm:px-5 ${difficultyStyles[chart.difficulty]}`}
             >
               <div>
-                <p className="text-sm font-semibold">{chart.difficulty}</p>
+                <p className="font-semibold">{chart.difficulty}</p>
               </div>
 
               <div className="hidden sm:block">
-                <p className="text-xs uppercase tracking-wider text-lightest">Level</p>
+                <p className="uppercase tracking-wider text-lightest">Level</p>
                 <p className="mt-0.5 font-semibold tabular-nums">
                   {chart.level}
                   <span className="ml-2 text-xs font-normal text-lightest">
@@ -54,21 +54,19 @@ export function SongInfo({ titles, chartType, jacketUrl, charts }: SongSummary) 
               </div>
 
               <div className="text-right sm:text-left">
-                <p className="text-xs uppercase tracking-wider text-lightest sm:block">Record</p>
+                <p className="uppercase tracking-wider text-lightest sm:block">Record</p>
                 <p className="mt-0.5 font-semibold tabular-nums">
                   {chart.achievement == null ? "—" : `${chart.achievement.toFixed(4)}%`}
                 </p>
                 {chart.achievement != null && (
-                  <p className="mt-1 text-xs font-semibold text-lightest">
+                  <p className="mt-1 font-semibold text-lightest">
                     {achievementRank(chart.achievement)}
                   </p>
                 )}
-                <p className="mt-1 text-xs text-lightest sm:hidden">
+                <p className="mt-1 text-lightest sm:hidden">
                   {chart.chartConstant && chart.chartConstant.toFixed(1)}
                 </p>
               </div>
-
-              <span aria-hidden="true" className="hidden text-lightest transition-transform group-hover:translate-x-1 group-hover:text-ink sm:block">→</span>
             </a>
           );
         })}

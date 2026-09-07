@@ -44,8 +44,8 @@ export function SiteLayout({ children, route }: SiteLayoutProps) {
 
       <footer className="flex flex-col gap-2 border-t border-lightest py-8 text-xs sm:flex-row sm:justify-between">
         <span>Unofficial fan project—not affiliated with SEGA.</span>
-        <a className="hover:text-ink" href="https://github.com/AllanSunny/maimai-score-gallery">
-          View source on GitHub ↗
+        <a className="font-semibold underline underline-offset-4 hover:text-ink" href="https://github.com/AllanSunny/maimai-score-gallery">
+          View source on GitHub
         </a>
       </footer>
     </div>

@@ -28,7 +28,7 @@ export function ScoreHistory({ scores, accentColor, chartId, activeScoreId }: Sc
           }}
         />
       ))}
-      {!scores.length && <p className="p-10 text-center text-sm text-lightest">No plays recorded for this chart yet.</p>}
+      {!scores.length && <p className="p-10 text-center text-lightest">No plays recorded for this chart yet.</p>}
     </ContentCard>
   );
 }

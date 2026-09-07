@@ -29,8 +29,8 @@
 @theme {
   --color-lightest: #e3f6ff;
   --color-light: #b0edff;
-  --color-primary: #5bcbfb;
-  --color-dark: #0e5078;
+  --color-primary: #5fd4ff;
+  --color-dark: #0e4e75;
   --color-darker: #0e2939;
   --color-darkest: #131e29;
   --color-basic: #34b17a;
@@ -38,11 +38,6 @@
   --color-expert: #d54856;
   --color-master: #885def;
   --color-remaster: #d584d4;
-
-  --color-coral: #e85d45;
-  --color-ink: #3a3a3a;
-  --color-line: #ae7b34;
-  --color-cream: #faf8f4;
   --font-sans: "Rodin Pro", sans-serif;
   --font-rodin: "Rodin Pro", sans-serif;
   --font-rodin-bold: "Rodin NTLG Pro", "Rodin Pro", sans-serif;
@@ -68,6 +63,11 @@
     margin: 0;
   }
 
+  p, span {
+    font-size: 0.875rem; /* text-sm */
+    line-height: 1.5rem; /* leading-6 */
+  }
+
   body::before {
     content: "";
     position: fixed;
@@ -75,8 +75,8 @@
     z-index: -10;
     background: linear-gradient(
       to bottom,
-      var(--color-dark),
-      var(--color-darkest)
+      #142d45,
+      #0b0f16
     );
   }
 

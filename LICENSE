@@ -1,3 +1,26 @@
+License Scope
+
+The MIT License below applies only to original source code and documentation
+created for this project, except where otherwise noted.
+
+It does not apply to assets derived or reproduced from maimai or related SEGA
+web properties, including achievement badges, rating graphics, DX and STD
+icons, note graphics, song jacket artwork, or similar game material. Those
+assets remain the property of SEGA or their respective copyright holders, and
+no rights to reuse them are granted by this license.
+
+The jacket frames in this repository are project-created imitations inspired
+by maimai's interface. They are excluded from the MIT License and are not
+offered for reuse under its terms.
+
+Bundled third-party fonts and any other third-party assets remain subject to
+the rights and licensing terms of their respective owners. Their inclusion in
+this repository does not grant permission to copy, redistribute, or sublicense
+them.
+
+This is an unofficial, noncommercial fan project and is not affiliated with or
+endorsed by SEGA.
+
 MIT License
 
 Copyright (c) 2026 Allan Sun

@@ -76,6 +76,18 @@ function App() {
       const baseUrl = new URL(import.meta.env.BASE_URL, window.location.origin);
       if (destination.origin !== window.location.origin || !destination.pathname.startsWith(baseUrl.pathname)) return;
 
+      if (destination.pathname === window.location.pathname && destination.hash) {
+        event.preventDefault();
+        storeScrollPosition();
+        window.history.pushState({ scrollY: window.scrollY }, "", destination);
+        handleRouteChange();
+        document.getElementById(decodeURIComponent(destination.hash.slice(1)))?.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+        return;
+      }
+
       event.preventDefault();
       storeScrollPosition();
       const scrollY = anchor.hasAttribute("data-preserve-scroll") ? window.scrollY : 0;

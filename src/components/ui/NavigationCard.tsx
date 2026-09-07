@@ -12,10 +12,10 @@ export function NavigationCard({ href, title, description }: NavigationCardProps
     >
       <div>
         <h2 className="text-lg font-semibold tracking-tight">{title}</h2>
-        <p className="mt-3 max-w-sm text-sm leading-6 text-lightest">{description}</p>
+        <p className="mt-3 max-w-sm text-lightest">{description}</p>
       </div>
-      <span className="mt-8 text-sm font-medium text-coral group-hover:translate-x-1 transition-transform">
-        View {title.toLowerCase()} →
+      <span className="mt-8 text-sm font-semibold text-coral underline underline-offset-4">
+        View {title.toLowerCase()}
       </span>
     </a>
   );

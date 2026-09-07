@@ -86,7 +86,7 @@ export function ScoreHistoryEntry({ score, accentColor, isOpen, onToggle }: Scor
         )}
 
         {!score.judgments && score.fast == null && score.slow == null && (
-          <p className="mt-5 border-t pt-5 text-xs text-light" style={{ borderColor: `var(--color-${accentColor})` }}>
+          <p className="mt-5 border-t pt-5 text-light" style={{ borderColor: `var(--color-${accentColor})` }}>
             Judgment details are unavailable for this play.
           </p>
         )}

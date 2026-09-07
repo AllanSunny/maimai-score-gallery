@@ -15,8 +15,8 @@ const variantClasses: Record<ContentCardVariant, string> = {
 };
 
 const variantBackgrounds: Record<ContentCardVariant, string> = {
-  primary: "color-mix(in srgb, color-mix(in srgb, var(--card-accent) 40%, var(--color-light)) 70%, transparent)",
-  secondary: "color-mix(in srgb, color-mix(in srgb, var(--card-accent) 30%, var(--color-darkest)) 40%, transparent)",
+  primary: "color-mix(in srgb, color-mix(in srgb, var(--card-accent) 40%, var(--color-light)) 80%, transparent)",
+  secondary: "color-mix(in srgb, color-mix(in srgb, var(--card-accent) 30%, var(--color-darkest)) 50%, transparent)",
 };
 
 export function ContentCard({ children, accentColor, variant = "primary", className = "" }: ContentCardProps) {
