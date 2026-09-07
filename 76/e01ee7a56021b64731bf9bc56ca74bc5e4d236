@@ -1,0 +1,78 @@
+src/App.tsx
+  s_cfc40c71ab2940::t_7206abfff01fd8 79-90
+src/components/score/ScoreHistoryEntry.tsx
+  s_cfc40c71ab2940::t_4a3c339a027d77 89
+src/components/ui/NavigationCard.tsx
+  s_cfc40c71ab2940::t_4a3c339a027d77 15
+  s_cfc40c71ab2940::t_7173a51a1d49a1 17-18
+src/css/utilities.css
+  s_cfc40c71ab2940::t_c3e1f3b5aa76dd 39
+  s_cfc40c71ab2940::t_aa42b775f27d81 15,40-50
+  s_cfc40c71ab2940::t_29b30106e97a31 51-53
+src/components/ui/ContentCard.tsx
+  h_278fafc5c28027 18-19
+src/components/song/SongInfo.tsx
+  s_cfc40c71ab2940::t_7173a51a1d49a1 40
+  s_cfc40c71ab2940::t_4a3c339a027d77 24,43,47,57,62,66
+src/components/ui/PageHeading.tsx
+  s_cfc40c71ab2940::t_57ebdc372a4873 2,7,9-10
+  s_cfc40c71ab2940::t_4a3c339a027d77 11
+src/pages/ScoreListPage.tsx
+  s_cfc40c71ab2940::t_4a3c339a027d77 166,169
+LICENSE
+  s_cfc40c71ab2940::t_3ae3528cef7c92 1-23
+src/components/SiteLayout.tsx
+  s_cfc40c71ab2940::t_7173a51a1d49a1 47-48
+src/styles.css
+  s_cfc40c71ab2940::t_cd4c21004d0d4b 78
+  s_cfc40c71ab2940::t_4a3c339a027d77 69-70
+  h_278fafc5c28027 32-33,66-68,79
+src/pages/ChartDetailPage.tsx
+  s_cfc40c71ab2940::t_4a3c339a027d77 103
+README.md
+  s_cfc40c71ab2940::t_57ebdc372a4873 53,68
+  h_278fafc5c28027 25,38,41
+src/pages/AboutPage.tsx
+  s_cfc40c71ab2940::t_0b9ad72c690b0d 2-7,39-43,46-49,51-63,65-67,126-127,136,139,142,144-151,153
+  s_cfc40c71ab2940::t_57ebdc372a4873 68-76,92,96-101,104-108,111,176,190,201,211,219,230,244,247,257
+  s_cfc40c71ab2940::t_c3e1f3b5aa76dd 102
+  s_cfc40c71ab2940::t_5e3c658684b7cc 8-10,14,20-36,77-78,109-110,112,130,171-175,182-184,188,192,196-200,207-209,214-216,218,227-229,237-243,246,253-256,259,262,264-268,281,283-286,289-292,294-296
+  s_cfc40c71ab2940::t_59f15e9958ee95 138
+  h_278fafc5c28027 18-19,44-45,50,64,94,113,128-129,132,137,140-141,143,162,167,169,185-186,189,193-194,204-206,217,222,225,234,245,248,251,269-270
+  s_cfc40c71ab2940::t_98ebb61b542f9d 210,213
+  s_cfc40c71ab2940::t_2d84cb0e636a08 15-17,131,133,170,178-181,203,232-233,235-236,249-250,252
+  s_cfc40c71ab2940::t_17c6b29ba1b73f 37-38,258,260-261,263,271-280,282
+  s_cfc40c71ab2940::t_fe97bbb8b37729 288
+  s_cfc40c71ab2940::t_178b26bda3277a 221,223-224,226
+  s_cfc40c71ab2940::t_f8ad61559c1cb6 114-125
+  s_cfc40c71ab2940::t_4a3c339a027d77 177,187,191,195,202,212,220,231,287
+  s_cfc40c71ab2940::t_ed1f5b6808ac44 1,12,79-86,103
+  s_cfc40c71ab2940::t_7173a51a1d49a1 160,293
+  s_cfc40c71ab2940::t_e608dc7a61865e 134-135,152,154-159,161,163-166,168
+  s_cfc40c71ab2940::t_02657666e91288 13
+src/pages/HomePage.tsx
+  s_cfc40c71ab2940::t_4a3c339a027d77 27
+src/components/score/ScoreHistory.tsx
+  s_cfc40c71ab2940::t_4a3c339a027d77 31
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2",
+  "base_commit_sha": "76e01ee7a56021b64731bf9bc56ca74bc5e4d236",
+  "prompts": {},
+  "humans": {
+    "h_278fafc5c28027": {
+      "author": "Allan Sun <allansun@live.com>"
+    }
+  },
+  "sessions": {
+    "s_cfc40c71ab2940": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0791d-748d-7342-b8f6-715b34cdfd14",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Allan Sun <allansun@live.com>"
+    }
+  }
+}
