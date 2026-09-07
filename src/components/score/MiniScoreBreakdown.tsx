@@ -13,7 +13,7 @@ interface MiniScoreBreakdownProps {
 
 export function MiniScoreBreakdown({ achievement, combo, sync, className }: MiniScoreBreakdownProps) {
   return (
-    <div className={`flex shrink-0 items-center justify-end gap-2 md:gap-3 ${className ?? ""}`}>
+    <div className={`flex shrink-0 items-center justify-end gap-2 sm:gap-3 ${className ?? ""}`}>
       <div className="text-right">
         <p className="text-xs font-semibold leading-5 tabular-nums text-lightest md:text-sm md:leading-6">
           {achievement == null ? "" : `${achievement.toFixed(4)}%`}
@@ -26,11 +26,11 @@ export function MiniScoreBreakdown({ achievement, combo, sync, className }: Mini
       </div>
 
       <div className="flex items-center justify-end">
-        <span className="flex w-10 justify-center">
-          <ComboDisplay status={combo} size="small" className="h-8 max-w-10 object-contain md:h-10" />
+        <span className="flex justify-center">
+          <ComboDisplay status={combo} size="small" className="h-8 object-contain sm:h-10" />
         </span>
-        <span className="flex w-10 justify-center">
-          <SyncDisplay status={sync} size="small" className="h-8 max-w-10 object-contain md:h-10" />
+        <span className="flex justify-center">
+          <SyncDisplay status={sync} size="small" className="h-8 object-contain sm:h-10" />
         </span>
       </div>
     </div>
