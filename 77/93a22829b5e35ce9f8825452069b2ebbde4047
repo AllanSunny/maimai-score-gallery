@@ -1,0 +1,24 @@
+src/components/song/ExpandedSongDetails.tsx
+  s_f4581d74ffd9fb::t_b76ef8475a96a5 25-38
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2",
+  "base_commit_sha": "7793a22829b5e35ce9f8825452069b2ebbde4047",
+  "prompts": {},
+  "humans": {
+    "h_278fafc5c28027": {
+      "author": "Allan Sun <allansun@live.com>"
+    }
+  },
+  "sessions": {
+    "s_f4581d74ffd9fb": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a07d34-f7b1-7be0-9880-b9629f3aec4e",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Allan Sun <allansun@live.com>"
+    }
+  }
+}
