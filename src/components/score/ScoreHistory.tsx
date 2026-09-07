@@ -1,5 +1,6 @@
 import type { ScoreRecord } from "../../utils/types";
 import { ContentCard } from "../ui/ContentCard";
+import { EmptyState } from "../ui/EmptyState";
 import { ScoreHistoryEntry } from "./ScoreHistoryEntry";
 import { navigate } from "../../utils/navigation";
 
@@ -28,7 +29,7 @@ export function ScoreHistory({ scores, accentColor, chartId, activeScoreId }: Sc
           }}
         />
       ))}
-      {!scores.length && <p className="p-10 text-center text-lightest">No plays recorded for this chart yet.</p>}
+      {!scores.length && <EmptyState>No plays recorded for this chart yet.</EmptyState>}
     </ContentCard>
   );
 }

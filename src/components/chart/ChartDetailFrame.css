@@ -1,4 +1,4 @@
-.song-detail-frame {
+.chart-detail-frame {
   position: relative;
   container-type: inline-size;
   display: block;
@@ -9,15 +9,15 @@
   isolation: isolate;
 }
 
-.song-detail-frame__jacket,
-.song-detail-frame__frame {
+.chart-detail-frame__jacket,
+.chart-detail-frame__frame {
   position: absolute;
   display: block;
   user-select: none;
   pointer-events: none;
 }
 
-.song-detail-frame__jacket {
+.chart-detail-frame__jacket {
   z-index: 0;
   top: 14.1%;
   left: 9.6%;
@@ -26,17 +26,17 @@
   object-fit: cover;
 }
 
-.song-detail-frame__frame {
+.chart-detail-frame__frame {
   z-index: 1;
   inset: 0;
   width: 100%;
   height: 100%;
 }
 
-.song-detail-frame__difficulty,
-.song-detail-frame__level,
-.song-detail-frame__title,
-.song-detail-frame__artist {
+.chart-detail-frame__difficulty,
+.chart-detail-frame__level,
+.chart-detail-frame__title,
+.chart-detail-frame__artist {
   position: absolute;
   z-index: 2;
   display: flex;
@@ -46,7 +46,7 @@
   line-height: 1;
 }
 
-.song-detail-frame__difficulty {
+.chart-detail-frame__difficulty {
   top: 64.7%;
   left: 3%;
   width: 55.5%;
@@ -60,7 +60,7 @@
   filter: drop-shadow(0 0.045em 0.045em rgb(255 255 255 / 80%));
 }
 
-.song-detail-frame__level {
+.chart-detail-frame__level {
   top: 63.3%;
   left: 67%;
   width: 26.5%;
@@ -72,7 +72,7 @@
   letter-spacing: -0.075em;
 }
 
-.song-detail-frame__level-layer {
+.chart-detail-frame__level-layer {
   position: absolute;
   inset: 0;
   display: flex;
@@ -82,25 +82,25 @@
   white-space: nowrap;
 }
 
-.song-detail-frame__level-glow {
+.chart-detail-frame__level-glow {
   color: transparent;
   -webkit-text-stroke: 0;
   text-shadow: 0 0 0.2em var(--difficulty-color), 0 0 0.3em var(--difficulty-color);
 }
 
-.song-detail-frame__level-text {
+.chart-detail-frame__level-text {
   -webkit-text-stroke: 0.1em var(--difficulty-color);
   paint-order: stroke fill;
 }
 
-.song-detail-frame__level-prefix {
+.chart-detail-frame__level-prefix {
   align-self: flex-end;
   margin: 0 0 0.3em;
   font-size: 0.45em;
   letter-spacing: -0.08em;
 }
 
-.song-detail-frame__level-value {
+.chart-detail-frame__level-value {
   position: relative;
   display: flex;
   align-items: center;
@@ -108,7 +108,7 @@
   margin: 0;
 }
 
-.song-detail-frame__level-value sup {
+.chart-detail-frame__level-value sup {
   position: absolute;
   top: -0.2em;
   left: calc(100% + 0.2em);
@@ -116,7 +116,7 @@
   line-height: 1;
 }
 
-.song-detail-frame__title {
+.chart-detail-frame__title {
   top: 73.6%;
   left: 1%;
   width: 98%;
@@ -127,7 +127,7 @@
   text-shadow: 0 0.06em 0.08em rgb(0 0 0 / 45%);
 }
 
-.song-detail-frame__achievement.achievement-value {
+.chart-detail-frame__achievement.achievement-value {
   position: absolute;
   z-index: 2;
   top: 88.2%;
@@ -146,42 +146,42 @@
   filter: drop-shadow(0 0 1px var(--color-dark));
 }
 
-.song-detail-frame__achievement span {
+.chart-detail-frame__achievement span {
   margin-left: 0.03em;
   font-size: 0.75em;
 }
 
-.song-detail-frame__rank,
-.song-detail-frame__combo,
-.song-detail-frame__sync {
+.chart-detail-frame__rank,
+.chart-detail-frame__combo,
+.chart-detail-frame__sync {
   position: absolute;
   z-index: 2;
   display: block;
   object-fit: contain;
 }
 
-.song-detail-frame__rank {
+.chart-detail-frame__rank {
   top: 88%;
   left: 44.8%;
   width: 19.4%;
   height: 5.2%;
 }
 
-.song-detail-frame__combo,
-.song-detail-frame__sync {
+.chart-detail-frame__combo,
+.chart-detail-frame__sync {
   top: 87.1%;
   width: 20.8%;
 }
 
-.song-detail-frame__combo {
+.chart-detail-frame__combo {
   left: 62.9%;
 }
 
-.song-detail-frame__sync {
+.chart-detail-frame__sync {
   left: 80.1%;
 }
 
-.song-detail-frame__artist {
+.chart-detail-frame__artist {
   top: 81.5%;
   left: 1%;
   width: 98%;
@@ -192,22 +192,22 @@
   text-shadow: 0 0.06em 0.08em rgb(0 0 0 / 45%);
 }
 
-.song-detail-frame[data-difficulty="BASIC"] {
+.chart-detail-frame[data-difficulty="BASIC"] {
   --difficulty-color: var(--color-basic);
 }
 
-.song-detail-frame[data-difficulty="ADVANCED"] {
+.chart-detail-frame[data-difficulty="ADVANCED"] {
   --difficulty-color: var(--color-advanced);
 }
 
-.song-detail-frame[data-difficulty="EXPERT"] {
+.chart-detail-frame[data-difficulty="EXPERT"] {
   --difficulty-color: var(--color-expert);
 }
 
-.song-detail-frame[data-difficulty="MASTER"] {
+.chart-detail-frame[data-difficulty="MASTER"] {
   --difficulty-color: var(--color-master);
 }
 
-.song-detail-frame[data-difficulty="Re:MASTER"] {
+.chart-detail-frame[data-difficulty="Re:MASTER"] {
   --difficulty-color: var(--color-remaster);
 }

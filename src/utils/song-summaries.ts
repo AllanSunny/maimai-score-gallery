@@ -1,0 +1,102 @@
+import { findAlternateCatalogChart, findCatalogSong } from "./catalog";
+import type {
+  ChartRecordSummary,
+  ChartType,
+  Difficulty,
+  Score,
+  SongChartSummary,
+  SongSummary,
+} from "./types";
+
+const difficultyOrder: Difficulty[] = ["BASIC", "ADVANCED", "EXPERT", "MASTER", "Re:MASTER"];
+const chartTypeOrder = { DX: 0, STD: 1 } satisfies Record<ChartType, number>;
+
+function summarizeCatalogChart(
+  chart: { id: string; difficulty: Difficulty; level: string; chartConstant: number | null },
+  chartType: ChartType,
+  chartSummaries: Record<string, ChartRecordSummary>,
+): SongChartSummary {
+  const summary = chartSummaries[chart.id];
+  return {
+    ...chart,
+    chartType,
+    chartConstant: chart.chartConstant ?? undefined,
+    achievement: summary?.bestAchievement.value,
+    bestCombo: summary?.bestCombo?.status,
+    bestSync: summary?.bestSync?.status,
+  };
+}
+
+export function groupScoresBySong(
+  scores: Score[],
+  chartSummaries: Record<string, ChartRecordSummary>,
+): SongSummary[] {
+  const songs = new Map<string, SongSummary>();
+
+  scores.forEach((score) => {
+    const metadata = findCatalogSong(score.songTitle, score.chartType);
+    const titles = metadata?.titles ?? {
+      canonical: score.songTitle,
+      kana: [],
+      romaji: [],
+      english: [],
+      aliases: [],
+    };
+    const songKey = titles.canonical;
+    const song = songs.get(songKey) ?? {
+      titles,
+      jacketUrl: metadata?.jacketUrl,
+      versions: [],
+    };
+    let version = song.versions.find((candidate) => candidate.chartType === score.chartType);
+
+    if (!version) {
+      version = {
+        chartType: score.chartType,
+        charts: (metadata?.charts ?? []).map((chart) =>
+          summarizeCatalogChart(chart, score.chartType, chartSummaries)),
+      };
+      song.versions.push(version);
+
+      const alternate = metadata?.charts[0] && findAlternateCatalogChart(metadata.charts[0].id)?.song;
+      if (alternate && !song.versions.some((candidate) => candidate.chartType === alternate.chartType)) {
+        song.versions.push({
+          chartType: alternate.chartType,
+          charts: alternate.charts.map((chart) =>
+            summarizeCatalogChart(chart, alternate.chartType, chartSummaries)),
+        });
+      }
+      song.versions.sort((a, b) => chartTypeOrder[a.chartType] - chartTypeOrder[b.chartType]);
+    }
+
+    const chartIndex = version.charts.findIndex(
+      (chart) => chart.difficulty === score.difficulty && chart.chartType === score.chartType,
+    );
+    const metadataChart = metadata?.charts.find((chart) => chart.difficulty === score.difficulty);
+    const chartId = metadataChart?.id ?? score.chartId;
+    const summary = chartSummaries[chartId];
+    const chart: SongChartSummary = {
+      id: chartId,
+      difficulty: score.difficulty,
+      chartType: score.chartType,
+      level: metadataChart?.level ?? score.level,
+      chartConstant: metadataChart?.chartConstant ?? score.chartConstant,
+      achievement: summary?.bestAchievement.value ?? score.achievement,
+      bestCombo: summary?.bestCombo?.status,
+      bestSync: summary?.bestSync?.status,
+    };
+
+    if (chartIndex === -1) {
+      version.charts.push(chart);
+    } else if ((version.charts[chartIndex].achievement ?? 0) < score.achievement) {
+      version.charts[chartIndex] = chart;
+    }
+
+    version.charts.sort((a, b) =>
+      difficultyOrder.indexOf(a.difficulty) - difficultyOrder.indexOf(b.difficulty));
+    songs.set(songKey, song);
+  });
+
+  return [...songs.values()].sort((a, b) =>
+    a.titles.canonical.localeCompare(b.titles.canonical));
+}

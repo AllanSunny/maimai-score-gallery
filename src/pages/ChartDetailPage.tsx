@@ -1,7 +1,7 @@
 import type { CSSProperties } from "react";
 import { chartSummaries, scores } from "../utils/scores";
 import { findAlternateCatalogChart, findCatalogChart } from "../utils/catalog";
-import { SongDetailFrame } from "../components/song/SongDetailFrame";
+import { ChartDetailFrame } from "../components/chart/ChartDetailFrame";
 import { ContentCard } from "../components/ui/ContentCard";
 import { OverflowMarquee } from "../components/ui/OverflowMarquee";
 import { ScoreHistory } from "../components/score/ScoreHistory";
@@ -48,7 +48,7 @@ export function ChartDetailPage({ chartId, scoreId }: ChartDetailPageProps) {
       <section className="grid items-center gap-2 sm:gap-4 lg:grid-cols-[minmax(0,20rem)_minmax(0,1fr)] lg:gap-8">
         {metadata?.jacketUrl && chartMetadata && (
           <div className="mx-auto w-[250px] lg:mx-0 lg:w-full lg:max-w-73">
-            <SongDetailFrame
+            <ChartDetailFrame
               title={metadata.titles.canonical}
               artist={metadata.artist}
               jacketUrl={metadata.jacketUrl}

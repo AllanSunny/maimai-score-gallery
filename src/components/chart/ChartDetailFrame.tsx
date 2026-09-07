@@ -9,12 +9,14 @@ import expertStdFrame from "../../assets/jacket_frames/std/expert.png";
 import masterStdFrame from "../../assets/jacket_frames/std/master.png";
 import remasterStdFrame from "../../assets/jacket_frames/std/remaster.png";
 import { achievementRank } from "../../utils/rank";
+import { useFallbackImage } from "../../hooks/useFallbackImage";
 import type { ChartType, ComboStatus, Difficulty, SyncStatus } from "../../utils/types";
+import favicon from "../../assets/favicon.png";
 import { OverflowMarquee } from "../ui/OverflowMarquee";
 import { ComboDisplay } from "../score/ComboDisplay";
 import { SyncDisplay } from "../score/SyncDisplay";
 import { RankDisplay } from "../score/RankDisplay";
-import "./SongDetailFrame.css";
+import "./ChartDetailFrame.css";
 
 const frames: Record<ChartType, Record<Difficulty, string>> = {
   DX: {
@@ -33,7 +35,7 @@ const frames: Record<ChartType, Record<Difficulty, string>> = {
   },
 };
 
-interface SongDetailFrameProps {
+interface ChartDetailFrameProps {
   title: string;
   artist: string;
   jacketUrl: string;
@@ -46,7 +48,7 @@ interface SongDetailFrameProps {
   className?: string;
 }
 
-export function SongDetailFrame({
+export function ChartDetailFrame({
   title,
   artist,
   jacketUrl,
@@ -57,50 +59,51 @@ export function SongDetailFrame({
   combo,
   sync,
   className = "",
-}: SongDetailFrameProps) {
+}: ChartDetailFrameProps) {
+  const handleImageError = useFallbackImage(favicon);
   const normalizedLevel = level.trim();
   const hasPlus = normalizedLevel.endsWith("+");
   const levelNumber = hasPlus ? normalizedLevel.slice(0, -1) : normalizedLevel;
 
   return (
     <article
-      className={`song-detail-frame ${className}`.trim()}
+      className={`chart-detail-frame ${className}`.trim()}
       data-difficulty={difficulty}
       aria-label={`${title}, ${difficulty} level ${normalizedLevel}, ${chartType}`}
     >
-      <img className="song-detail-frame__jacket" src={jacketUrl} alt="" />
-      <img className="song-detail-frame__frame" src={frames[chartType][difficulty]} alt="" />
+      <img className="chart-detail-frame__jacket" src={jacketUrl} alt="" onError={handleImageError} />
+      <img className="chart-detail-frame__frame" src={frames[chartType][difficulty]} alt="" />
 
-      <div className="song-detail-frame__difficulty">{difficulty}</div>
-      <div className="song-detail-frame__level" aria-label={`Level ${normalizedLevel}`}>
-        <div className="song-detail-frame__level-layer song-detail-frame__level-glow" aria-hidden="true">
-          <div className="song-detail-frame__level-prefix">LV</div>
-          <div className="song-detail-frame__level-value">
+      <div className="chart-detail-frame__difficulty">{difficulty}</div>
+      <div className="chart-detail-frame__level" aria-label={`Level ${normalizedLevel}`}>
+        <div className="chart-detail-frame__level-layer chart-detail-frame__level-glow" aria-hidden="true">
+          <div className="chart-detail-frame__level-prefix">LV</div>
+          <div className="chart-detail-frame__level-value">
             <div>{levelNumber}</div>
             {hasPlus && <sup>+</sup>}
           </div>
         </div>
 
-        <div className="song-detail-frame__level-layer song-detail-frame__level-text" aria-hidden="true">
-          <div className="song-detail-frame__level-prefix">LV</div>
-          <div className="song-detail-frame__level-value">
+        <div className="chart-detail-frame__level-layer chart-detail-frame__level-text" aria-hidden="true">
+          <div className="chart-detail-frame__level-prefix">LV</div>
+          <div className="chart-detail-frame__level-value">
             <div>{levelNumber}</div>
             {hasPlus && <sup>+</sup>}
           </div>
         </div>
       </div>
 
-      <header className="song-detail-frame__title">
+      <header className="chart-detail-frame__title">
         <OverflowMarquee centerWhenFit>{title}</OverflowMarquee>
       </header>
-      <div className="song-detail-frame__artist">
+      <div className="chart-detail-frame__artist">
         <OverflowMarquee centerWhenFit>{artist}</OverflowMarquee>
       </div>
 
       {achievement != null && (
         <div
           className={[
-            "song-detail-frame__achievement achievement-value text-stroke",
+            "chart-detail-frame__achievement achievement-value text-stroke",
             achievement < 97 && "achievement-value--below-s",
           ].filter(Boolean).join(" ")}
         >
@@ -108,12 +111,12 @@ export function SongDetailFrame({
         </div>
       )}
       <RankDisplay
-        className="song-detail-frame__rank"
+        className="chart-detail-frame__rank"
         status={achievement == null ? null : achievementRank(achievement)}
         size="small"
       />
-      <ComboDisplay className="song-detail-frame__combo" status={combo} size="small" />
-      <SyncDisplay className="song-detail-frame__sync" status={sync} size="small" />
+      <ComboDisplay className="chart-detail-frame__combo" status={combo} size="small" />
+      <SyncDisplay className="chart-detail-frame__sync" status={sync} size="small" />
     </article>
   );
 }
