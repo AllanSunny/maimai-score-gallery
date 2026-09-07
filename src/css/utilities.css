@@ -15,6 +15,8 @@
   text-decoration: none;
   transition: color 150ms, background-color 150ms, border-color 150ms, box-shadow 150ms;
   cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
   -webkit-tap-highlight-color: transparent;
 
   &:focus-visible {
