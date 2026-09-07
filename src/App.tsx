@@ -46,7 +46,7 @@ function App() {
   }, [pathname, route]);
 
   useEffect(() => {
-    let scrollFrame: number | undefined;
+    let scrollTimeout: number | undefined;
     const storeScrollPosition = () => {
       window.history.replaceState({
         ...window.history.state,
@@ -54,11 +54,11 @@ function App() {
       }, "");
     };
     const handleScroll = () => {
-      if (scrollFrame != null) return;
-      scrollFrame = requestAnimationFrame(() => {
-        scrollFrame = undefined;
+      if (scrollTimeout != null) window.clearTimeout(scrollTimeout);
+      scrollTimeout = window.setTimeout(() => {
+        scrollTimeout = undefined;
         storeScrollPosition();
-      });
+      }, 150);
     };
     const handleRouteChange = (event?: PopStateEvent) => {
       if (event?.isTrusted && typeof event.state?.scrollY === "number") {
@@ -102,7 +102,7 @@ function App() {
     window.addEventListener("scroll", handleScroll, { passive: true });
     document.addEventListener("click", handleNavigation);
     return () => {
-      if (scrollFrame != null) cancelAnimationFrame(scrollFrame);
+      if (scrollTimeout != null) window.clearTimeout(scrollTimeout);
       window.removeEventListener("popstate", handleRouteChange);
       window.removeEventListener("scroll", handleScroll);
       document.removeEventListener("click", handleNavigation);
