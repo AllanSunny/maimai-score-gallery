@@ -1,0 +1,24 @@
+src/App.tsx
+  s_6daee6d377c87e::t_fa3202866c4b6c 49,57-59,61,105
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2",
+  "base_commit_sha": "5e28baa404807d97be3e99573631496bfc7b5c1c",
+  "prompts": {},
+  "humans": {
+    "h_278fafc5c28027": {
+      "author": "Allan Sun <allansun@live.com>"
+    }
+  },
+  "sessions": {
+    "s_6daee6d377c87e": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a079a2-6044-7a52-8b32-3f49f45a0b8d",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Allan Sun <allansun@live.com>"
+    }
+  }
+}
