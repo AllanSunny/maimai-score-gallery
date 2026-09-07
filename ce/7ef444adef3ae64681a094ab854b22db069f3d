@@ -1,0 +1,28 @@
+docs/decisions-summary.md
+  s_ac0ee0d7ad8e76::t_509dcdaf7ca44a 80,859-868
+.github/workflows/import-new-scores.yml
+  s_ac0ee0d7ad8e76::t_7755bf4bc7df60 10
+docs/operations.md
+  s_ac0ee0d7ad8e76::t_38013281367e9e 282
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2",
+  "base_commit_sha": "ce7ef444adef3ae64681a094ab854b22db069f3d",
+  "prompts": {},
+  "humans": {
+    "h_278fafc5c28027": {
+      "author": "Allan Sun <allansun@live.com>"
+    }
+  },
+  "sessions": {
+    "s_ac0ee0d7ad8e76": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a07b14-e795-7713-a7a3-432c9ab573d5",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Allan Sun <allansun@live.com>"
+    }
+  }
+}
