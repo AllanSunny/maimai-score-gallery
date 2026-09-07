@@ -1,5 +1,5 @@
 # Allan's maimai score gallery
-Welcome to a result of my latest rhythm game obsession! 
+Welcome to a result of my latest rhythm game obsession! [View the gallery here.](https://allansunny.github.io/maimai-score-gallery/)
 
 This project is meant to be a way for me to showcase my score progressions to friends when I 
 say "here's this one chart I've been playing over the course of several months and finally aced 
