@@ -148,13 +148,19 @@ export interface SongChartSummary {
   level: string;
   chartConstant?: number;
   achievement?: number;
+  bestCombo?: ComboStatus | null;
+  bestSync?: SyncStatus | null;
+}
+
+export interface SongVersionSummary {
+  chartType: ChartType;
+  charts: SongChartSummary[];
 }
 
 export interface SongSummary {
   titles: SongTitles;
-  chartType: ChartType;
   jacketUrl?: string | null;
-  charts: SongChartSummary[];
+  versions: SongVersionSummary[];
 }
 
 /** Rank derived from achievement, never stored on a score record. */
