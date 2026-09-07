@@ -1,0 +1,22 @@
+src/pages/AboutPage.tsx
+  h_278fafc5c28027 255,270
+src/components/song/SongDetailFrame.tsx
+  h_278fafc5c28027 76-79,81-87,89-90
+src/components/song/SongDetailFrame.css
+  h_278fafc5c28027 114
+src/components/ui/OverflowMarquee.tsx
+  h_278fafc5c28027 21,52
+src/pages/ChartDetailPage.tsx
+  h_278fafc5c28027 81-83,89,91-92,97-98,103,106,113
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2",
+  "base_commit_sha": "d96199826a4893259eaca8d72ebe0a7ea7d96d60",
+  "prompts": {},
+  "humans": {
+    "h_278fafc5c28027": {
+      "author": "Allan Sun <allansun@live.com>"
+    }
+  }
+}
