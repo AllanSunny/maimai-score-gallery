@@ -1,6 +1,5 @@
 import { OverflowMarquee } from "../ui/OverflowMarquee";
-import favicon from "../../assets/favicon.png";
-import { useFallbackImage } from "../../hooks/useFallbackImage";
+import { fallbackImage, handleImageError } from "../../utils/fallback-image";
 
 interface SongJacketProps {
   expanded: boolean;
@@ -10,8 +9,6 @@ interface SongJacketProps {
 }
 
 export function SongJacket({ expanded, jacketUrl, name, onToggle }: SongJacketProps) {
-  const handleImageError = useFallbackImage(favicon);
-
   return (
     <button
       type="button"
@@ -23,7 +20,7 @@ export function SongJacket({ expanded, jacketUrl, name, onToggle }: SongJacketPr
       data-song-jacket
     >
       <img
-        src={jacketUrl ?? favicon}
+        src={jacketUrl ?? fallbackImage}
         alt=""
         width="240"
         height="240"

@@ -9,9 +9,8 @@ import expertStdFrame from "../../assets/jacket_frames/std/expert.png";
 import masterStdFrame from "../../assets/jacket_frames/std/master.png";
 import remasterStdFrame from "../../assets/jacket_frames/std/remaster.png";
 import { achievementRank } from "../../utils/rank";
-import { useFallbackImage } from "../../hooks/useFallbackImage";
+import { fallbackImage, handleImageError } from "../../utils/fallback-image";
 import type { ChartType, ComboStatus, Difficulty, SyncStatus } from "../../utils/types";
-import favicon from "../../assets/favicon.png";
 import { OverflowMarquee } from "../ui/OverflowMarquee";
 import { ComboDisplay } from "../score/ComboDisplay";
 import { SyncDisplay } from "../score/SyncDisplay";
@@ -38,7 +37,7 @@ const frames: Record<ChartType, Record<Difficulty, string>> = {
 interface ChartDetailFrameProps {
   title: string;
   artist: string;
-  jacketUrl: string;
+  jacketUrl?: string | null;
   chartType: ChartType;
   difficulty: Difficulty;
   level: string;
@@ -60,7 +59,6 @@ export function ChartDetailFrame({
   sync,
   className = "",
 }: ChartDetailFrameProps) {
-  const handleImageError = useFallbackImage(favicon);
   const normalizedLevel = level.trim();
   const hasPlus = normalizedLevel.endsWith("+");
   const levelNumber = hasPlus ? normalizedLevel.slice(0, -1) : normalizedLevel;
@@ -71,7 +69,7 @@ export function ChartDetailFrame({
       data-difficulty={difficulty}
       aria-label={`${title}, ${difficulty} level ${normalizedLevel}, ${chartType}`}
     >
-      <img className="chart-detail-frame__jacket" src={jacketUrl} alt="" onError={handleImageError} />
+      <img className="chart-detail-frame__jacket" src={jacketUrl ?? fallbackImage} alt="" onError={handleImageError} />
       <img className="chart-detail-frame__frame" src={frames[chartType][difficulty]} alt="" />
 
       <div className="chart-detail-frame__difficulty">{difficulty}</div>

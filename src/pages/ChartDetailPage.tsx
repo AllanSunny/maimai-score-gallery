@@ -46,7 +46,7 @@ export function ChartDetailPage({ chartId, scoreId }: ChartDetailPageProps) {
   return (
     <div>
       <section className="grid items-center gap-2 sm:gap-4 lg:grid-cols-[minmax(0,20rem)_minmax(0,1fr)] lg:gap-8">
-        {metadata?.jacketUrl && chartMetadata && (
+        {metadata && chartMetadata && (
           <div className="mx-auto w-[250px] lg:mx-0 lg:w-full lg:max-w-73">
             <ChartDetailFrame
               title={metadata.titles.canonical}
