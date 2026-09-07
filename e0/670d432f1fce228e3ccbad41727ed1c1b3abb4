@@ -1,0 +1,37 @@
+src/components/SiteLayout.tsx
+  s_cfc40c71ab2940::t_a581e2cb84bcd9 47
+src/styles.css
+  s_cfc40c71ab2940::t_a581e2cb84bcd9 83-86,89-93
+  s_cfc40c71ab2940::t_2e9945688620bd 88
+  s_cfc40c71ab2940::t_3fb178a1ada98f 87
+src/pages/AboutPage.tsx
+  h_278fafc5c28027 156,160,283-284,286
+src/components/ui/NavigationCard.tsx
+  s_cfc40c71ab2940::t_3fb178a1ada98f 11
+  s_cfc40c71ab2940::t_2e9945688620bd 17
+src/css/utilities.css
+  s_cfc40c71ab2940::t_3fb178a1ada98f 15
+src/components/song/SongInfo.tsx
+  s_cfc40c71ab2940::t_3fb178a1ada98f 40
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2",
+  "base_commit_sha": "e0670d432f1fce228e3ccbad41727ed1c1b3abb4",
+  "prompts": {},
+  "humans": {
+    "h_278fafc5c28027": {
+      "author": "Allan Sun <allansun@live.com>"
+    }
+  },
+  "sessions": {
+    "s_cfc40c71ab2940": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0791d-748d-7342-b8f6-715b34cdfd14",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Allan Sun <allansun@live.com>"
+    }
+  }
+}
