@@ -1,0 +1,29 @@
+src/components/song/SongChartSummaryRow.tsx
+  s_6bd0d4fd4028a7::t_87cf37f94fa3d7 3,22,29-35
+src/components/score/MiniScoreBreakdown.tsx
+  s_6bd0d4fd4028a7::t_87cf37f94fa3d7 1-25,35-38
+  s_6bd0d4fd4028a7::t_d3b2fccaae9e0b 26-34
+src/components/score/ScoreHistoryEntry.tsx
+  s_6bd0d4fd4028a7::t_87cf37f94fa3d7 5,56
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2",
+  "base_commit_sha": "fdd3a9091970673a15ec0bf9f4aea1d0bf1ccbba",
+  "prompts": {},
+  "humans": {
+    "h_278fafc5c28027": {
+      "author": "Allan Sun <allansun@live.com>"
+    }
+  },
+  "sessions": {
+    "s_6bd0d4fd4028a7": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a07d1d-4ada-7593-870f-135d75dcc3eb",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Allan Sun <allansun@live.com>"
+    }
+  }
+}
