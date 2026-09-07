@@ -1,6 +1,6 @@
 import type { CSSProperties } from "react";
 import { chartSummaries, scores } from "../utils/scores";
-import { findCatalogChart } from "../utils/catalog";
+import { findAlternateCatalogChart, findCatalogChart } from "../utils/catalog";
 import { SongDetailFrame } from "../components/song/SongDetailFrame";
 import { ContentCard } from "../components/ui/ContentCard";
 import { OverflowMarquee } from "../components/ui/OverflowMarquee";
@@ -23,6 +23,7 @@ export function ChartDetailPage({ chartId, scoreId }: ChartDetailPageProps) {
   const catalogEntry = findCatalogChart(chartId);
   const metadata = catalogEntry?.song;
   const chartMetadata = catalogEntry?.chart;
+  const alternateCatalogEntry = findAlternateCatalogChart(chartId);
   const chartSummary = chartSummaries[chartId];
   const achievement = chartSummary?.bestAchievement.value;
   const bestCombo = chartSummary?.bestCombo?.status ?? null;
@@ -163,6 +164,15 @@ export function ChartDetailPage({ chartId, scoreId }: ChartDetailPageProps) {
                   </a>
                 );
               })}
+              {alternateCatalogEntry && (
+                <a
+                  href={appHref(`/charts/${encodeURIComponent(alternateCatalogEntry.chart.id)}`)}
+                  data-preserve-scroll
+                  className="btn btn-primary"
+                >
+                  {alternateCatalogEntry.song.chartType === "STD" ? "Standard" : "Deluxe"}
+                </a>
+              )}
             </nav>
           )}
         </div>}
