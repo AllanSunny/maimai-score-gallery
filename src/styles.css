@@ -80,8 +80,16 @@
     );
   }
 
-  a {
-    color: inherit;
-    text-decoration: none;
+  a,
+  a:visited {
+    color: var(--color-primary);
+    font-weight: 600;
+    text-decoration-line: underline;
+    text-decoration-color: color-mix(in srgb, currentColor 50%, transparent);
+    text-underline-offset: 2px;
+  }
+
+  a:hover {
+    color: var(--color-lightest);
   }
 }

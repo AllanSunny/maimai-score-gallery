@@ -153,17 +153,11 @@ export function AboutPage() {
 
             <p>Yellow notes indicate multiple inputs that happen at the same time.</p>
             <p>
-              <a
-                className="font-semibold text-primary underline decoration-primary/50 underline-offset-4 hover:text-light"
-                href="https://drive.google.com/file/d/1CmaGTflL799vyfBifZg_duljNs1ECwYh/view?usp=sharing"
-              >
+              <a href="https://drive.google.com/file/d/1CmaGTflL799vyfBifZg_duljNs1ECwYh/view?usp=sharing">
                 Here's a video of me doing all this in action!
               </a>{" "}
               Of course, I've also recorded the corresponding score results{" "}
-              <a
-                className="font-semibold text-primary underline decoration-primary/50 underline-offset-4 hover:text-light"
-                href="https://allansunny.github.io/maimai-score-gallery/charts/song-a7a461d9d280-dx-master#UyxstW7KkMmCHUym14wI8jR1NHKlU1Pc7hDBGVpuftA"
-              >
+              <a href="https://allansunny.github.io/maimai-score-gallery/charts/song-a7a461d9d280-dx-master#UyxstW7KkMmCHUym14wI8jR1NHKlU1Pc7hDBGVpuftA">
                 here
               </a>
               .
@@ -286,12 +280,10 @@ export function AboutPage() {
       <section className="mt-12 border-t border-lightest pt-8">
         <p className="text-lightest">
           More technical details about this gallery's setup can be found on the{" "}
-          <a
-            className="font-semibold text-primary underline decoration-primary/50 underline-offset-4 hover:text-light"
-            href="https://github.com/AllanSunny/maimai-score-gallery#readme"
-          >
-            README.
+          <a href="https://github.com/AllanSunny/maimai-score-gallery#readme">
+            README
           </a>
+          .
         </p>
       </section>
     </div>

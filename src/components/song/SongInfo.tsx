@@ -37,7 +37,7 @@ export function SongInfo({ titles, chartType, jacketUrl, charts }: SongSummary) 
             <a
               key={`${chart.chartType}-${chart.difficulty}`}
               href={chartRoute}
-              className={`grid grid-cols-[1fr_auto] items-center gap-4 border-l-4 px-4 py-4 transition hover:bg-cream sm:grid-cols-[minmax(9rem,1fr)_8rem_9rem] sm:px-5 ${difficultyStyles[chart.difficulty]}`}
+              className={`grid grid-cols-[1fr_auto] items-center gap-4 border-l-4 px-4 py-4 no-underline transition hover:bg-cream sm:grid-cols-[minmax(9rem,1fr)_8rem_9rem] sm:px-5 ${difficultyStyles[chart.difficulty]}`}
             >
               <div>
                 <p className="font-semibold">{chart.difficulty}</p>
