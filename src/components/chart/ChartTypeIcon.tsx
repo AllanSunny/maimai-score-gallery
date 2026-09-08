@@ -1,6 +1,6 @@
-import type { ChartType } from "../../utils/types";
 import dxIcon from "../../assets/icons/dx.png";
 import stdIcon from "../../assets/icons/std.png";
+import type { ChartType } from "../../utils/types";
 
 const chartTypeIcons = { DX: dxIcon, STD: stdIcon } satisfies Record<ChartType, string>;
 

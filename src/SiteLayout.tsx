@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState, type ReactNode } from "react";
-import favicon from "../assets/favicon.png";
-import { appHref } from "../utils/navigation";
+import favicon from "./assets/favicon.png";
+import { appHref } from "./utils/navigation";
+import { classNames } from "./utils/class-names";
 
 interface SiteLayoutProps {
   children: ReactNode;
@@ -17,6 +18,7 @@ export function SiteLayout({ children, route }: SiteLayoutProps) {
   const headerRef = useRef<HTMLElement>(null);
   const [isHeaderVisible, setIsHeaderVisible] = useState(true);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const showCollapsedNavigation = !isHeaderVisible && !isMenuOpen;
 
   useEffect(() => {
     const header = headerRef.current;
@@ -67,8 +69,11 @@ export function SiteLayout({ children, route }: SiteLayoutProps) {
       </header>
 
       <div
-        className={`pointer-events-none fixed inset-x-0 top-4 z-[1100] mx-auto w-full max-w-5xl px-5 transition-opacity duration-150 sm:px-8 ${isHeaderVisible || isMenuOpen ? "opacity-0" : "opacity-100"}`}
-        aria-hidden={isHeaderVisible || isMenuOpen}
+        className={classNames(
+          "pointer-events-none fixed inset-x-0 top-4 z-[1100] mx-auto w-full max-w-5xl px-5 transition-opacity duration-150 sm:px-8",
+          { when: showCollapsedNavigation, then: "opacity-100", else: "opacity-0" },
+        )}
+        aria-hidden={!showCollapsedNavigation}
       >
         <button
           type="button"
@@ -76,7 +81,7 @@ export function SiteLayout({ children, route }: SiteLayoutProps) {
           aria-label="Open navigation"
           aria-expanded={isMenuOpen}
           aria-controls="collapsed-navigation"
-          tabIndex={isHeaderVisible || isMenuOpen ? -1 : 0}
+          tabIndex={showCollapsedNavigation ? 0 : -1}
           onClick={() => setIsMenuOpen(true)}
         >
           <svg aria-hidden="true" viewBox="0 0 24 24" className="size-5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
@@ -87,7 +92,10 @@ export function SiteLayout({ children, route }: SiteLayoutProps) {
 
       <div
         id="collapsed-navigation"
-        className={`fixed inset-x-0 top-0 z-[1200] border-b border-lightest bg-darkest/95 shadow-lg backdrop-blur-md transition-transform duration-200 ease-out ${isMenuOpen ? "translate-y-0" : "-translate-y-full"}`}
+        className={classNames(
+          "fixed inset-x-0 top-0 z-[1200] border-b border-lightest bg-darkest/95 shadow-lg backdrop-blur-md transition-transform duration-200 ease-out",
+          { when: isMenuOpen, then: "translate-y-0", else: "-translate-y-full" },
+        )}
         aria-hidden={!isMenuOpen}
         inert={!isMenuOpen}
       >

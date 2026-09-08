@@ -1,7 +1,7 @@
 import { useState } from "react";
 import type { ChartType, SongVersionSummary } from "../../utils/types";
+import { ChartTypeIcon } from "../chart/ChartTypeIcon";
 import { OverflowMarquee } from "../ui/OverflowMarquee";
-import { ChartTypeIcon } from "./ChartTypeIcon";
 import { SongChartSummaryRow } from "./SongChartSummaryRow";
 
 interface ExpandedSongDetailsProps {

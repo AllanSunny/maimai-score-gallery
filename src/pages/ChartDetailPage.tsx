@@ -13,6 +13,7 @@ import { calculatePlayRating } from "../utils/rating";
 import { RankDisplay } from "../components/score/RankDisplay";
 import { achievementRank } from "../utils/rank";
 import { appHref } from "../utils/navigation";
+import { classNames } from "../utils/class-names";
 
 interface ChartDetailPageProps {
   chartId: string;
@@ -51,7 +52,7 @@ function BackToSongsButton() {
       <div ref={positionRef} className="float-right ml-4 h-10">
         <a
           href={appHref("/scores")}
-          className={`${backButtonClassName} ${isPinned ? "invisible" : ""}`}
+          className={classNames(backButtonClassName, { when: isPinned, then: "invisible" })}
           aria-hidden={isPinned}
           tabIndex={isPinned ? -1 : 0}
         >
@@ -156,10 +157,10 @@ export function ChartDetailPage({ chartId, scoreId }: ChartDetailPageProps) {
                 {achievement != null && (
                   <div className={"flex flex-row gap-4 sm:gap-6 items-center"}>
                     <div
-                      className={[
+                      className={classNames(
                         "flex text-[1.6rem] sm:text-[2rem] lg:text-[2.3rem] achievement-value text-stroke font-bold",
-                        isBelowS && "achievement-value--below-s",
-                      ].filter(Boolean).join(" ")}
+                        { when: isBelowS, then: "achievement-value--below-s" },
+                      )}
                     >
                       {`${achievement.toFixed(4)}%`}
                     </div>

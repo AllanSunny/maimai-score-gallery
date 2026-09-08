@@ -44,13 +44,33 @@ export function ScoreListPage() {
       <div className="mt-10 max-w-lg">
         <label htmlFor="song-search" className="sr-only">Search by song title</label>
         <span className="relative block">
-          <svg aria-hidden="true" viewBox="0 0 24 24" className="pointer-events-none absolute top-1/2 left-4 size-4 -translate-y-1/2 text-darker" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+          <svg
+            aria-hidden="true"
+            viewBox="0 0 24 24"
+            className="pointer-events-none absolute top-1/2 left-4 size-4 -translate-y-1/2 text-darker"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+          >
             <circle cx="11" cy="11" r="7" />
             <path d="m20 20-4-4" />
           </svg>
-          <input id="song-search" type="search" value={pagination.query} onChange={(event) => handleSearch(event.target.value)} placeholder="Search titles by romaji, english, or kana..." className="w-full rounded-xl border border-line bg-white/85 py-3 pr-11 pl-11 text-sm text-dark outline-none transition placeholder:text-darker/60 focus:border-dark focus:ring-3 focus:ring-dark/10 [&::-webkit-search-cancel-button]:appearance-none" />
+          <input
+            id="song-search"
+            type="search"
+            value={pagination.query}
+            onChange={(event) => handleSearch(event.target.value)}
+            placeholder="Search titles by romaji, english, or kana..."
+            className="w-full rounded-xl border border-line bg-white/85 py-3 pr-11 pl-11 text-sm text-dark outline-none transition placeholder:text-darker/60 focus:border-dark focus:ring-3 focus:ring-dark/10 [&::-webkit-search-cancel-button]:appearance-none"
+          />
           {pagination.query && (
-            <button type="button" onClick={() => handleSearch("")} aria-label="Clear search" className="absolute top-1/2 right-3 flex size-6 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full text-dark transition hover:bg-dark/10 focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-dark">
+            <button
+              type="button"
+              onClick={() => handleSearch("")}
+              aria-label="Clear search"
+              className="absolute top-1/2 right-3 flex size-6 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full text-dark transition hover:bg-dark/10 focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-dark"
+            >
               <svg aria-hidden="true" viewBox="0 0 24 24" className="size-3.5" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
                 <path d="m6 6 12 12" />
                 <path d="m18 6-12 12" />

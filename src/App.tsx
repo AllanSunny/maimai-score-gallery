@@ -1,5 +1,5 @@
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
-import { SiteLayout } from "./components/SiteLayout";
+import { SiteLayout } from "./SiteLayout";
 import { HomePage } from "./pages/HomePage";
 import { ChartDetailPage } from "./pages/ChartDetailPage";
 import { AboutPage } from "./pages/AboutPage";

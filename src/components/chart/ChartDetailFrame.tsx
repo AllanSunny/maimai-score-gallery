@@ -16,6 +16,7 @@ import { ComboDisplay } from "../score/ComboDisplay";
 import { SyncDisplay } from "../score/SyncDisplay";
 import { RankDisplay } from "../score/RankDisplay";
 import "./ChartDetailFrame.css";
+import { classNames } from "../../utils/class-names";
 
 const frames: Record<ChartType, Record<Difficulty, string>> = {
   DX: {
@@ -100,10 +101,10 @@ export function ChartDetailFrame({
 
       {achievement != null && (
         <div
-          className={[
+          className={classNames(
             "chart-detail-frame__achievement achievement-value text-stroke",
-            achievement < 97 && "achievement-value--below-s",
-          ].filter(Boolean).join(" ")}
+            { when: achievement < 97, then: "achievement-value--below-s" },
+          )}
         >
           {`${achievement.toFixed(4)}%`}
         </div>
