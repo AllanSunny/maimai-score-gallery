@@ -1,0 +1,31 @@
+src/SiteLayout.tsx
+  s_452e5e326489d5::t_71242a86625386 1-2,12
+src/components/ui/SiteNavigation.tsx
+  s_452e5e326489d5::t_7aa94f0cd515cb 4
+  s_452e5e326489d5::t_274152e2fe05fb 10-15
+  s_452e5e326489d5::t_71242a86625386 1-3,5-9,16-68
+src/components/ui/CollapsedNavigation.tsx
+  s_452e5e326489d5::t_274152e2fe05fb 3
+  s_452e5e326489d5::t_7aa94f0cd515cb 1-2,4-125
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2",
+  "base_commit_sha": "fcaecf38edc18c1cd00be7c8d066470875daba6c",
+  "prompts": {},
+  "humans": {
+    "h_278fafc5c28027": {
+      "author": "Allan Sun <allansun@live.com>"
+    }
+  },
+  "sessions": {
+    "s_452e5e326489d5": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a082d1-38bb-7072-b603-22da8a2d4f5d",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Allan Sun <allansun@live.com>"
+    }
+  }
+}
