@@ -5,8 +5,6 @@ import { SongInfo } from "./SongInfo";
 
 interface SongGridProps {
   expandedSongKey: string | null;
-  gridColumnCount: number;
-  gridRef: RefObject<HTMLDivElement | null>;
   hasMoreSongs: boolean;
   loadMoreRef: RefObject<HTMLDivElement | null>;
   onLoadMore: () => void;
@@ -19,8 +17,6 @@ interface SongGridProps {
 
 export function SongGrid({
   expandedSongKey,
-  gridColumnCount,
-  gridRef,
   hasMoreSongs,
   loadMoreRef,
   onLoadMore,
@@ -30,28 +26,14 @@ export function SongGrid({
   totalCount,
   visibleCount,
 }: SongGridProps) {
-  const selectedSong = songs.find((song) => song.titles.canonical === expandedSongKey);
-  const selectedSongIndex = selectedSong ? songs.indexOf(selectedSong) : -1;
-  const selectedRowStart = selectedSongIndex < 0
-    ? -1
-    : Math.floor(selectedSongIndex / gridColumnCount) * gridColumnCount;
-  const arrangedSongs = selectedSong
-    ? [
-        ...songs.slice(0, selectedRowStart),
-        selectedSong,
-        ...songs.slice(selectedRowStart).filter((song) => song !== selectedSong),
-      ]
-    : songs;
-
   return (
     <div
-      ref={gridRef}
       className="mt-8 grid grid-cols-[repeat(2,minmax(0,150px))] items-start justify-between gap-y-3 min-[528px]:grid-cols-[repeat(3,minmax(0,150px))] min-[528px]:gap-y-4 min-[688px]:grid-cols-[repeat(4,minmax(0,150px))] min-[848px]:grid-cols-[repeat(5,minmax(0,150px))] min-[1024px]:grid-cols-[repeat(6,minmax(0,150px))]"
       onClickCapture={(event) => {
         if ((event.target as HTMLElement).closest('a[href*="/charts/"]')) onPreservePosition();
       }}
     >
-      {arrangedSongs.map((song) => {
+      {songs.map((song) => {
         const songKey = song.titles.canonical;
         return <SongInfo
           key={songKey}

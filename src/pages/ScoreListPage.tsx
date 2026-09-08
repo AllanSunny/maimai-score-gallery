@@ -15,8 +15,6 @@ const matchesSongQuery = (song: (typeof groupedSongs)[number], normalizedQuery: 
 export function ScoreListPage() {
   const {
     expandedSongKey,
-    gridColumnCount,
-    gridRef,
     selectSong,
     collapseSong,
   } = useExpandableSongGrid();
@@ -49,8 +47,6 @@ export function ScoreListPage() {
 
       <SongGrid
         expandedSongKey={expandedSongKey}
-        gridColumnCount={gridColumnCount}
-        gridRef={gridRef}
         hasMoreSongs={pagination.visibleCount < songs.length}
         loadMoreRef={pagination.loadMoreRef}
         onLoadMore={pagination.loadMore}

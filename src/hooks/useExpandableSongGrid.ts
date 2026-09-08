@@ -1,6 +1,5 @@
 import { useRef, useState } from "react";
 import { flushSync } from "react-dom";
-import { useResponsiveGridColumns } from "./useResponsiveGridColumns";
 
 const transitionDuration = 480;
 const transitionEasing = "ease-in-out";
@@ -223,7 +222,6 @@ async function runCardTransition(update: () => void, changingSongKeys: string[])
 
 export function useExpandableSongGrid() {
   const [expandedSongKey, setExpandedSongKey] = useState<string | null>(null);
-  const { gridRef, gridColumnCount } = useResponsiveGridColumns(2);
   const isChangingSelection = useRef(false);
 
   async function selectSong(songKey: string) {
@@ -251,8 +249,6 @@ export function useExpandableSongGrid() {
 
   return {
     expandedSongKey,
-    gridRef,
-    gridColumnCount,
     selectSong,
     collapseSong: () => setExpandedSongKey(null),
   };
