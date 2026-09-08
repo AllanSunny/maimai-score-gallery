@@ -1,0 +1,14 @@
+src/components/song/ExpandedSongDetails.tsx
+  h_278fafc5c28027 20
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2",
+  "base_commit_sha": "5697bf9a09392da558c6fa0e864d06ed29eff097",
+  "prompts": {},
+  "humans": {
+    "h_278fafc5c28027": {
+      "author": "Allan Sun <allansun@live.com>"
+    }
+  }
+}
