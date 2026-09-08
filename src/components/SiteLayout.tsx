@@ -1,4 +1,4 @@
-import type { ReactNode } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 import favicon from "../assets/favicon.png";
 import { appHref } from "../utils/navigation";
 
@@ -10,13 +10,39 @@ interface SiteLayoutProps {
 const links = [
   { href: appHref("/about"), label: "About", route: "/about" },
   { href: appHref("/top-50"), label: "Top 50", route: "/top-50" },
-  { href: appHref("/scores"), label: "Scores", route: "/scores" },
+  { href: appHref("/scores"), label: "Songs", route: "/scores" },
 ];
 
 export function SiteLayout({ children, route }: SiteLayoutProps) {
+  const headerRef = useRef<HTMLElement>(null);
+  const [isHeaderVisible, setIsHeaderVisible] = useState(true);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const header = headerRef.current;
+    if (!header) return;
+
+    const observer = new IntersectionObserver(([entry]) => {
+      setIsHeaderVisible(entry.isIntersecting);
+      if (entry.isIntersecting) setIsMenuOpen(false);
+    });
+    observer.observe(header);
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (!isMenuOpen) return;
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setIsMenuOpen(false);
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [isMenuOpen]);
+
   return (
     <div className="mx-auto flex min-h-screen w-full max-w-5xl flex-col px-5 sm:px-8">
-      <header className="flex h-20 items-center justify-between border-b border-lightest">
+      <header ref={headerRef} className="flex h-20 items-center justify-between border-b border-lightest">
         <a
           href={appHref("/")}
           aria-label="Home"
@@ -39,6 +65,59 @@ export function SiteLayout({ children, route }: SiteLayoutProps) {
           ))}
         </nav>
       </header>
+
+      <div
+        className={`pointer-events-none fixed inset-x-0 top-4 z-[1100] mx-auto w-full max-w-5xl px-5 transition-opacity duration-150 sm:px-8 ${isHeaderVisible || isMenuOpen ? "opacity-0" : "opacity-100"}`}
+        aria-hidden={isHeaderVisible || isMenuOpen}
+      >
+        <button
+          type="button"
+          className="btn btn-primary pointer-events-auto size-10 !rounded-2xl border !border-dark !p-0"
+          aria-label="Open navigation"
+          aria-expanded={isMenuOpen}
+          aria-controls="collapsed-navigation"
+          tabIndex={isHeaderVisible || isMenuOpen ? -1 : 0}
+          onClick={() => setIsMenuOpen(true)}
+        >
+          <svg aria-hidden="true" viewBox="0 0 24 24" className="size-5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+            <path d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+
+      <div
+        id="collapsed-navigation"
+        className={`fixed inset-x-0 top-0 z-[1200] border-b border-lightest bg-darkest/95 shadow-lg backdrop-blur-md transition-transform duration-200 ease-out ${isMenuOpen ? "translate-y-0" : "-translate-y-full"}`}
+        aria-hidden={!isMenuOpen}
+        inert={!isMenuOpen}
+      >
+        <div className="mx-auto flex h-20 w-full max-w-5xl items-center gap-2 px-5 sm:gap-3 sm:px-8">
+          <nav aria-label="Collapsed navigation" className="flex flex-1 justify-center gap-2 sm:gap-3 md:gap-5">
+            {links.map((link) => (
+              <a
+                key={link.route}
+                href={link.href}
+                aria-current={route === link.route || (link.route === "/scores" && route.startsWith("/charts/")) ? "page" : undefined}
+                className="btn btn-primary"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {link.label}
+              </a>
+            ))}
+          </nav>
+
+          <button
+            type="button"
+            className="btn btn-tertiary size-10 shrink-0 !rounded-2xl !p-0"
+            aria-label="Close navigation"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            <svg aria-hidden="true" viewBox="0 0 24 24" className="size-5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+              <path d="m6 6 12 12M18 6 6 18" />
+            </svg>
+          </button>
+        </div>
+      </div>
 
       <main className="flex-1 py-6 sm:py-12">{children}</main>
 

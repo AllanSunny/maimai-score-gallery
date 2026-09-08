@@ -1,4 +1,4 @@
-import type { CSSProperties } from "react";
+import { useEffect, useRef, useState, type CSSProperties } from "react";
 import { chartSummaries, scores } from "../utils/scores";
 import { findAlternateCatalogChart, findCatalogChart } from "../utils/catalog";
 import { ChartDetailFrame } from "../components/chart/ChartDetailFrame";
@@ -17,6 +17,57 @@ import { appHref } from "../utils/navigation";
 interface ChartDetailPageProps {
   chartId: string;
   scoreId?: string;
+}
+
+const backButtonClassName = "btn btn-secondary h-10 !rounded-2xl !bg-darker hover:!bg-lightest";
+
+function BackToSongsButton() {
+  const positionRef = useRef<HTMLDivElement>(null);
+  const [isPinned, setIsPinned] = useState(false);
+
+  useEffect(() => {
+    let animationFrame = 0;
+    const updatePosition = () => {
+      const position = positionRef.current;
+      if (position) setIsPinned(position.getBoundingClientRect().top <= 16);
+    };
+    const scheduleUpdate = () => {
+      window.cancelAnimationFrame(animationFrame);
+      animationFrame = window.requestAnimationFrame(updatePosition);
+    };
+
+    scheduleUpdate();
+    window.addEventListener("scroll", scheduleUpdate, { passive: true });
+    window.addEventListener("resize", scheduleUpdate);
+    return () => {
+      window.cancelAnimationFrame(animationFrame);
+      window.removeEventListener("scroll", scheduleUpdate);
+      window.removeEventListener("resize", scheduleUpdate);
+    };
+  }, []);
+
+  return (
+    <>
+      <div ref={positionRef} className="float-right ml-4 h-10">
+        <a
+          href={appHref("/scores")}
+          className={`${backButtonClassName} ${isPinned ? "invisible" : ""}`}
+          aria-hidden={isPinned}
+          tabIndex={isPinned ? -1 : 0}
+        >
+          Back to Songs
+        </a>
+      </div>
+
+      {isPinned && (
+        <div className="pointer-events-none fixed inset-x-0 top-4 z-[1100] mx-auto flex w-full max-w-5xl justify-end px-5 sm:px-8">
+          <a href={appHref("/scores")} className={`${backButtonClassName} pointer-events-auto`}>
+            Back to Songs
+          </a>
+        </div>
+      )}
+    </>
+  );
 }
 
 export function ChartDetailPage({ chartId, scoreId }: ChartDetailPageProps) {
@@ -179,13 +230,16 @@ export function ChartDetailPage({ chartId, scoreId }: ChartDetailPageProps) {
       </section>
 
       <section className="mt-10 md:mt-12">
+        <BackToSongsButton />
         <h2 className="text-3xl font-semibold tracking-tight">Score History</h2>
-        <ScoreHistory
-          scores={history}
-          accentColor={accentColor}
-          chartId={chartId}
-          activeScoreId={scoreId}
-        />
+        <div className="clear-both">
+          <ScoreHistory
+            scores={history}
+            accentColor={accentColor}
+            chartId={chartId}
+            activeScoreId={scoreId}
+          />
+        </div>
       </section>
     </div>
   );
