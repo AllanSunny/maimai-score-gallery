@@ -1,7 +1,7 @@
 # maimai-score-gallery decision history
 
 Original summary generated: 2026-08-15  
-Repository review: 2026-09-06 (current working tree, including uncommitted changes)
+Repository review: 2026-09-08 (current working tree, including uncommitted changes)
 
 This is a curated, human-readable history of the owner’s key architectural, functional, behavioral, and operational decisions, adapted from a personal conversation summary. It intentionally emphasizes decisions over implementation chatter. When a later decision superseded an earlier one, both are recorded and the current decision is marked clearly.
 
@@ -16,14 +16,14 @@ For current schemas, see [Data model](data-model.md). For setup and operational 
 - Public, view-only React/Vite app on GitHub Pages; private import operations use Drive, Sheets, OpenAI, and GitHub Actions.
 - Monthly score archives and derived chart summaries are implemented; frontend history loading remains eager (sections 31–38).
 - UTAGE, owner authentication/private notes, and the Top 50 implementation remain deferred.
-- Recent additions: fixed UTC scheduling (45), network-only HTML navigation (46), path routing and scroll restoration (47), chart rating (48), and fixed OCR options (49).
-- Start with the [rationale ledger](#rationale-ledger) for the reasons behind the decisions; jump to the [latest decision](#decision-49) for the newest addition.
+- Recent additions: path routing and scroll restoration (47), chart rating (48), fixed OCR options (49), off-minute scheduling (50), the expandable song grid (51), and cross-version chart navigation (52).
+- Start with the [rationale ledger](#rationale-ledger) for the reasons behind the decisions; jump to the [latest decision](#decision-52) for the newest addition.
 
 <a id="rationale-ledger"></a>
 
 ## Rationale ledger
 
-[Jump to the decision history](#decision-1) · [Latest decision](#decision-49)
+[Jump to the decision history](#decision-1) · [Latest decision](#decision-52)
 
 This ledger stays near the top as decisions are appended below. Links point to stable decision IDs. Section 44 was the ledger's former location; that number remains reserved and its old link still resolves here.
 
@@ -78,6 +78,8 @@ This ledger stays near the top as decisions are appended below. Links point to s
 - **Chart rating and incomplete B50** ([48](#decision-48)): Implementation rationale: deriving a contribution from an exact constant avoids storing another value that can drift; leaving it unavailable without a constant avoids presenting an estimate as exact. The reviewed history does not establish an additional owner-stated motivation for the formula or a completed B50 implementation.
 - **OCR tuning and configuration cleanup** ([49](#decision-49)): The owner encountered incomplete OCR output, asked to inspect token use, and confirmed that increasing the limit worked (2026-08-15). The later cleanup requested removing unused environment options. That supports documenting the settings actually consumed; it does not establish that each hard-coded timeout/retry value was personally selected by the owner.
 - **Off-minute import scheduling** ([50](#decision-50)): After the minute-0 schedule was delayed on consecutive Mondays, the owner moved the weekly import to minute 22 to avoid GitHub Actions' higher-load start-of-hour window (“Set import schedule to minute 22,” 2026-09-07).
+- **Expandable song grid** ([51](#decision-51)): The score list became a song-first browsing surface: one recency-sorted card per canonical song, inline chart summaries, and DX/STD switching without leaving the list. Several expansion strategies were tried before settling on stable card order and breakpoint-specific scroll behavior (2026-09-07–08).
+- **Cross-version chart navigation** ([52](#decision-52)): Matching DX and STD difficulties belong to the same logical song, so chart detail pages provide a direct version switch while preserving the reader's position (2026-09-07).
 
 <a id="decision-1"></a>
 
@@ -723,7 +725,7 @@ This ledger stays near the top as decisions are appended below. Links point to s
 ## 38. Frontend catalog, summary, and history ownership
 
 - Chart detail pages resolve title, artist, jacket, DX/STD type, difficulty, level, chart constant, and charter from the catalog by stable `chartId`, and read cumulative best achievement, combo, and sync from chart summaries.
-- The score list still matches catalog metadata by title and chart type and derives best achievement from eagerly loaded score records. Applying the chart-ID/summary ownership boundary to the list remains future work.
+- The score list groups eagerly loaded scores by canonical song, but reads per-chart cumulative bests and recency from chart summaries. Removing the eager score import remains future work.
 - Derive rank from achievement rather than storing rank independently.
 - Load monthly score chunks for detailed play records and judgments; summaries are not the source of full history. History currently shows overall judgments and Fast/Slow counts. Note-type breakdown display and a progression timeline remain unimplemented.
 - Best achievement, combo, and sync displayed together are explicitly independent and need not originate from one play.
@@ -866,3 +868,36 @@ This ledger stays near the top as decisions are appended below. Links point to s
 - GitHub Actions substantially delayed the minute-0 scheduled event on consecutive Mondays. Using minute 22 avoids the higher-load start-of-hour window while retaining the fixed UTC schedule selected in decision 45.
 - Manual dispatch and the optional image limit remain unchanged.
 - Source: `.github/workflows/import-new-scores.yml`.
+
+<a id="decision-51"></a>
+
+## 51. Song-first expandable score grid
+
+- Replace the former record-oriented score list with one card per canonical song. A card combines the song's recorded charts and, when available, both its DX and STD versions.
+- Keep the search vocabulary from section 4: canonical, kana, romaji, English, and legacy aliases remain searchable even though the visual unit is now the grouped song.
+- Sort songs by their most recent recorded play, with canonical title as the deterministic tie-breaker. Store `lastPlayedAt` in each chart summary and derive the song's recency from the latest chart value rather than scanning history for sorting alone.
+- Use chart summaries for the compact per-difficulty achievement, combo, and sync display. Detailed score history still belongs on the chart page, and the frontend still eagerly imports monthly scores to discover recorded songs; the lazy-loading work deferred in section 35 is therefore not complete.
+- Open a song inline from its jacket, showing its difficulty rows and a DX/STD switch where both versions exist. Preserve the existing paginated search state and browsing position when the user follows a chart link and later returns.
+
+### Expansion behavior and iterations
+
+- The first redesign expanded a selected card within the responsive grid and animated the affected layout. This exposed competing goals: keep the selected jacket visually continuous, keep nearby cards understandable, and avoid surprising document jumps.
+- An early implementation moved the selected card to the start of its row before expansion. That reordering was removed because clicking a card should not change the list's logical or visual order.
+- The next stable-order implementation initially allowed neighboring cards to move around the expanded card. It was revised to leave the other cards in the selected row in place, using placeholders and animated layout changes for later rows.
+- Jacket growth and card movement use one coordinated transition. Interaction is temporarily blocked during the transition so wheel, touch, keyboard, or repeated clicks cannot leave the grid between layout states.
+- On viewports below `md`, always expand downward. This keeps mobile behavior predictable and avoids inserting expanded content above the jacket the user just selected.
+- Autoscrolling was first added for the intermediate `md`-to-`lg` layout and then generalized to every viewport below `lg`, keeping the selected card usefully framed after expansion. At `lg` and above, the denser grid can choose the expansion direction based on available viewport space without forced autoscrolling.
+- Opening a different song collapses the previous card as part of the same coordinated transition. Searching collapses the open card so a stale expansion cannot remain attached to a filtered result set.
+- These rules are behavioral decisions; exact durations, easing, spacing, and card dimensions remain implementation details.
+- Sources: `src/pages/ScoreListPage.tsx`, `src/components/song/SongGrid.tsx`, `src/components/song/ExpandedSongDetails.tsx`, `src/hooks/useExpandableSongGrid.ts`, `src/hooks/usePersistentPaginatedList.ts`, `src/utils/song-summaries.ts`; commits `d68a5b8`, `b9ff585`, `1a6804a`, `ca74606`, `16ec14e`, `ad63769`, `e9071e2`, `6cdc7d0`.
+
+<a id="decision-52"></a>
+
+## 52. Direct DX/STD navigation for matching charts
+
+- Treat DX and STD versions connected by the catalog's stable parent song identity as alternate versions of the same logical song, rather than matching them only by display title.
+- On a chart detail page, offer a direct Standard/Deluxe link only when the alternate version contains the same difficulty.
+- Preserve the current scroll position when using this version switch, matching the difficulty-navigation behavior in section 47 so comparison does not return the reader to the top of the page.
+- The song card uses the same catalog relationship for its inline DX/STD switch, keeping list and detail navigation consistent.
+- Do not guess a fallback difficulty when there is no exact counterpart; omit the version link instead.
+- Sources: `src/utils/catalog.ts`, `src/pages/ChartDetailPage.tsx`, `src/utils/song-summaries.ts`, `src/components/song/ExpandedSongDetails.tsx`; commit `86d3458`.
