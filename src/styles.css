@@ -47,6 +47,7 @@
 @layer base {
   :root {
     --medium-viewport: 0;
+    --large-viewport: 0;
     color: var(--color-primary);
     font-synthesis: none;
   }
@@ -54,6 +55,12 @@
   @variant md {
     :root {
       --medium-viewport: 1;
+    }
+  }
+
+  @variant lg {
+    :root {
+      --large-viewport: 1;
     }
   }
 

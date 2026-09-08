@@ -8,6 +8,10 @@ function isMediumViewport() {
   return getComputedStyle(document.documentElement).getPropertyValue("--medium-viewport").trim() === "1";
 }
 
+function isLargeViewport() {
+  return getComputedStyle(document.documentElement).getPropertyValue("--large-viewport").trim() === "1";
+}
+
 interface CardLayout {
   element: HTMLElement;
   rect: DOMRect;
@@ -272,7 +276,7 @@ export function useExpandableSongGrid() {
         setExpansionDirection(nextExpansionDirection);
         setExpandedSongKey(songKey);
       }, changingSongKeys, !expandedSongKey && nextExpansionDirection === "up" ? songKey : undefined);
-      if (!isMediumViewport()) {
+      if (!isLargeViewport()) {
         cardRects().get(songKey)?.element.scrollIntoView({
           behavior: "smooth",
           block: "start",
