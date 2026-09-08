@@ -1,0 +1,27 @@
+src/styles.css
+  s_254989aba2f7a4::t_13972676c64745 50,61-63
+  s_254989aba2f7a4::t_f75c8bc5e4c1be 64-66
+src/hooks/useExpandableSongGrid.ts
+  s_254989aba2f7a4::t_13972676c64745 11-14,279
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2",
+  "base_commit_sha": "e9071e2ae5c1c879f4d0476c7df6bb0acdab9a69",
+  "prompts": {},
+  "humans": {
+    "h_278fafc5c28027": {
+      "author": "Allan Sun <allansun@live.com>"
+    }
+  },
+  "sessions": {
+    "s_254989aba2f7a4": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a081cf-9608-7c50-9327-988acb081977",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Allan Sun <allansun@live.com>"
+    }
+  }
+}
