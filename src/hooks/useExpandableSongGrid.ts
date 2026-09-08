@@ -4,6 +4,10 @@ import { flushSync } from "react-dom";
 const transitionDuration = 480;
 const transitionEasing = "ease-in-out";
 
+function isMediumViewport() {
+  return getComputedStyle(document.documentElement).getPropertyValue("--medium-viewport").trim() === "1";
+}
+
 interface CardLayout {
   element: HTMLElement;
   rect: DOMRect;
@@ -100,7 +104,7 @@ function animateJacketLayout(
   const expandedJacketHeight = collapsing ? previous.jacketRect?.height : next.jacketRect?.height;
   const collapsedCardHeight = collapsing ? next.rect.height : previous.rect.height;
   const requiredGrowth = Math.max(0, (expandedJacketHeight ?? 0) - collapsedCardHeight);
-  const spacingOffset = window.matchMedia("(min-width: 768px)").matches
+  const spacingOffset = isMediumViewport()
     ? 0
     : growingHeight > 0
     ? Math.min(0.8, Math.max(0, requiredGrowth / growingHeight))
@@ -132,7 +136,11 @@ function animateJacketLayout(
   ];
 }
 
-async function runCardTransition(update: () => void, changingSongKeys: string[]) {
+async function runCardTransition(
+  update: () => void,
+  changingSongKeys: string[],
+  upwardExpansionSongKey?: string,
+) {
   const before = cardRects();
   const oldCopies = new Map(changingSongKeys.flatMap((songKey) => {
     const card = before.get(songKey)?.element;
@@ -141,7 +149,25 @@ async function runCardTransition(update: () => void, changingSongKeys: string[])
       : [];
   }));
 
-  flushSync(update);
+  const previousOverflowAnchor = document.documentElement.style.overflowAnchor;
+  document.documentElement.style.overflowAnchor = "none";
+
+  try {
+    flushSync(update);
+  } catch (error) {
+    document.documentElement.style.overflowAnchor = previousOverflowAnchor;
+    throw error;
+  }
+
+  if (upwardExpansionSongKey) {
+    const previous = before.get(upwardExpansionSongKey);
+    const placeholder = document.querySelector<HTMLElement>(
+      `[data-song-placeholder-key="${CSS.escape(upwardExpansionSongKey)}"]`,
+    );
+    if (previous && placeholder) {
+      window.scrollBy(0, placeholder.getBoundingClientRect().top - previous.rect.top);
+    }
+  }
 
   const after = cardRects();
   const animations: Animation[] = [];
@@ -216,12 +242,14 @@ async function runCardTransition(update: () => void, changingSongKeys: string[])
   } finally {
     copies.forEach((copy) => copy.remove());
     hiddenCards.forEach((card) => card.style.removeProperty("visibility"));
+    document.documentElement.style.overflowAnchor = previousOverflowAnchor;
     unlockPageInteraction();
   }
 }
 
 export function useExpandableSongGrid() {
   const [expandedSongKey, setExpandedSongKey] = useState<string | null>(null);
+  const [expansionDirection, setExpansionDirection] = useState<"up" | "down">("down");
   const isChangingSelection = useRef(false);
 
   async function selectSong(songKey: string) {
@@ -235,8 +263,16 @@ export function useExpandableSongGrid() {
       }
 
       const changingSongKeys = expandedSongKey ? [expandedSongKey, songKey] : [songKey];
-      await runCardTransition(() => setExpandedSongKey(songKey), changingSongKeys);
-      if (!window.matchMedia("(min-width: 768px)").matches) {
+      const selectedCardRect = cardRects().get(songKey)?.rect;
+      const nextExpansionDirection = selectedCardRect
+        && selectedCardRect.top + selectedCardRect.height / 2 > window.innerHeight / 2
+        ? "up"
+        : "down";
+      await runCardTransition(() => {
+        setExpansionDirection(nextExpansionDirection);
+        setExpandedSongKey(songKey);
+      }, changingSongKeys, !expandedSongKey && nextExpansionDirection === "up" ? songKey : undefined);
+      if (!isMediumViewport()) {
         cardRects().get(songKey)?.element.scrollIntoView({
           behavior: "smooth",
           block: "start",
@@ -249,6 +285,7 @@ export function useExpandableSongGrid() {
 
   return {
     expandedSongKey,
+    expansionDirection,
     selectSong,
     collapseSong: () => setExpandedSongKey(null),
   };

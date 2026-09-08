@@ -1,10 +1,11 @@
-import type { RefObject } from "react";
+import { Fragment, useLayoutEffect, useRef, useState, type RefObject } from "react";
 import type { SongSummary } from "../../utils/types";
 import { EmptyState } from "../ui/EmptyState";
 import { SongInfo } from "./SongInfo";
 
 interface SongGridProps {
   expandedSongKey: string | null;
+  expansionDirection: "up" | "down";
   hasMoreSongs: boolean;
   loadMoreRef: RefObject<HTMLDivElement | null>;
   onLoadMore: () => void;
@@ -15,8 +16,30 @@ interface SongGridProps {
   visibleCount: number;
 }
 
+function useColumnCount(gridRef: RefObject<HTMLDivElement | null>) {
+  const [count, setCount] = useState(2);
+
+  useLayoutEffect(() => {
+    const grid = gridRef.current;
+    if (!grid) return;
+
+    const updateCount = () => {
+      const nextCount = getComputedStyle(grid).gridTemplateColumns.split(" ").length;
+      setCount((currentCount) => currentCount === nextCount ? currentCount : nextCount);
+    };
+    const observer = new ResizeObserver(updateCount);
+    observer.observe(grid);
+    updateCount();
+
+    return () => observer.disconnect();
+  }, [gridRef]);
+
+  return count;
+}
+
 export function SongGrid({
   expandedSongKey,
+  expansionDirection,
   hasMoreSongs,
   loadMoreRef,
   onLoadMore,
@@ -26,21 +49,55 @@ export function SongGrid({
   totalCount,
   visibleCount,
 }: SongGridProps) {
+  const gridRef = useRef<HTMLDivElement>(null);
+  const columns = useColumnCount(gridRef);
+  const expandedSongIndex = songs.findIndex(({ titles }) => titles.canonical === expandedSongKey);
+  const expandedRowStart = expandedSongIndex < 0
+    ? -1
+    : expandedSongIndex - (expandedSongIndex % columns);
+  const expandedRowEnd = expandedSongIndex < 0
+    ? -1
+    : Math.min(songs.length - 1, expandedSongIndex + columns - 1 - (expandedSongIndex % columns));
+
   return (
     <div
-      className="mt-8 grid grid-cols-[repeat(2,minmax(0,150px))] items-start justify-between gap-y-3 min-[528px]:grid-cols-[repeat(3,minmax(0,150px))] min-[528px]:gap-y-4 min-[688px]:grid-cols-[repeat(4,minmax(0,150px))] min-[848px]:grid-cols-[repeat(5,minmax(0,150px))] min-[1024px]:grid-cols-[repeat(6,minmax(0,150px))]"
+      ref={gridRef}
+      className="song-grid mt-8"
       onClickCapture={(event) => {
         if ((event.target as HTMLElement).closest('a[href*="/charts/"]')) onPreservePosition();
       }}
     >
-      {songs.map((song) => {
+      {songs.map((song, index) => {
         const songKey = song.titles.canonical;
-        return <SongInfo
-          key={songKey}
-          {...song}
-          expanded={expandedSongKey === songKey}
-          onToggle={() => onSelectSong(songKey)}
-        />;
+        const expanded = expandedSongKey === songKey;
+
+        return <Fragment key={songKey}>
+          {expansionDirection === "up" && index === expandedRowStart && expandedSongIndex >= 0 && (
+            <SongInfo
+              {...songs[expandedSongIndex]}
+              expanded
+              onToggle={() => onSelectSong(expandedSongKey!)}
+            />
+          )}
+          {expanded
+            ? <div
+                aria-hidden="true"
+                className="aspect-square"
+                data-song-placeholder-key={songKey}
+              />
+            : <SongInfo
+                {...song}
+                expanded={false}
+                onToggle={() => onSelectSong(songKey)}
+              />}
+          {expansionDirection === "down" && index === expandedRowEnd && expandedSongIndex >= 0 && (
+            <SongInfo
+              {...songs[expandedSongIndex]}
+              expanded
+              onToggle={() => onSelectSong(expandedSongKey!)}
+            />
+          )}
+        </Fragment>;
       })}
       {!totalCount && <EmptyState className="col-span-full rounded-2xl border border-line">No matching songs.</EmptyState>}
       {totalCount > 0 && (

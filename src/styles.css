@@ -46,8 +46,15 @@
 
 @layer base {
   :root {
+    --medium-viewport: 0;
     color: var(--color-primary);
     font-synthesis: none;
+  }
+
+  @variant md {
+    :root {
+      --medium-viewport: 1;
+    }
   }
 
   * {
