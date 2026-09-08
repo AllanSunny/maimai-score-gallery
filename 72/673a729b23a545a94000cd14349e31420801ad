@@ -1,0 +1,57 @@
+src/components/chart/ChartTypeIcon.tsx
+  s_e2768f7cd60f6d::t_0348cd3cc1ec58 3
+src/components/song/ExpandedSongDetails.tsx
+  s_e2768f7cd60f6d::t_0348cd3cc1ec58 3
+src/components/song/SongJacket.tsx
+  s_7ea13aebe036aa::t_e536a825345474 3-8,25-26,28,40-41,46,48-50,55-56
+  s_7ea13aebe036aa::t_f6c4b6c9258bce 27,42-45,51-54
+src/components/song/SongInfo.tsx
+  s_7ea13aebe036aa::t_f6c4b6c9258bce 25,28-31
+  s_7ea13aebe036aa::t_e536a825345474 4-9,23-24,26
+src/components/chart/ChartDetailFrame.tsx
+  s_7ea13aebe036aa::t_e536a825345474 19,104,107
+  s_7ea13aebe036aa::t_f6c4b6c9258bce 106
+src/utils/class-names.ts
+  s_7ea13aebe036aa::t_f6c4b6c9258bce 1-5,7-8,10-19
+  s_7ea13aebe036aa::t_e536a825345474 6,9,20
+src/SiteLayout.tsx
+  s_e2768f7cd60f6d::t_0348cd3cc1ec58 2-4,21,72-76,84,95-98
+src/App.tsx
+  s_e2768f7cd60f6d::t_0348cd3cc1ec58 2
+src/pages/ScoreListPage.tsx
+  s_7ea13aebe036aa::t_e536a825345474 47-55,59-66,68-73
+src/components/song/SongChartSummaryRow.tsx
+  s_7ea13aebe036aa::t_e536a825345474 4-12,31
+src/pages/ChartDetailPage.tsx
+  s_7ea13aebe036aa::t_f6c4b6c9258bce 55,162
+  s_7ea13aebe036aa::t_e536a825345474 16,160,163
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2",
+  "base_commit_sha": "72673a729b23a545a94000cd14349e31420801ad",
+  "prompts": {},
+  "humans": {
+    "h_278fafc5c28027": {
+      "author": "Allan Sun <allansun@live.com>"
+    }
+  },
+  "sessions": {
+    "s_7ea13aebe036aa": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a081a5-a0bb-7560-b097-c47ac63da0e7",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Allan Sun <allansun@live.com>"
+    },
+    "s_e2768f7cd60f6d": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a081b0-3256-79b3-bf1b-98d13d8b0958",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Allan Sun <allansun@live.com>"
+    }
+  }
+}
