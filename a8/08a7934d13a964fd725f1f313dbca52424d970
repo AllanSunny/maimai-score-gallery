@@ -1,0 +1,26 @@
+docs/decisions-summary.md
+  s_9f34b8500e102f::t_541350a7646962 887,889
+  s_9f34b8500e102f::t_14e6a28d8024da 871-886,888,890-903
+  s_9f34b8500e102f::t_78814ecf7259ed 4,19-20,26,81-82,728
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2",
+  "base_commit_sha": "a808a7934d13a964fd725f1f313dbca52424d970",
+  "prompts": {},
+  "humans": {
+    "h_278fafc5c28027": {
+      "author": "Allan Sun <allansun@live.com>"
+    }
+  },
+  "sessions": {
+    "s_9f34b8500e102f": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a082e7-9d60-75f1-ae7e-7328b7b30493",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Allan Sun <allansun@live.com>"
+    }
+  }
+}
