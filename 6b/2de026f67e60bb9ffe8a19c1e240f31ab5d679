@@ -1,0 +1,27 @@
+src/components/song/SongChartSummaryRow.tsx
+  h_278fafc5c28027 22,25-26
+src/components/score/MiniScoreBreakdown.tsx
+  h_278fafc5c28027 16,18
+  s_6bd0d4fd4028a7::t_a9528ea3319a12 28-30,32-33
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2",
+  "base_commit_sha": "6b2de026f67e60bb9ffe8a19c1e240f31ab5d679",
+  "prompts": {},
+  "humans": {
+    "h_278fafc5c28027": {
+      "author": "Allan Sun <allansun@live.com>"
+    }
+  },
+  "sessions": {
+    "s_6bd0d4fd4028a7": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a07d1d-4ada-7593-870f-135d75dcc3eb",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Allan Sun <allansun@live.com>"
+    }
+  }
+}
