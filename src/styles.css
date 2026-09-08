@@ -38,6 +38,7 @@
   --color-expert: #d54856;
   --color-master: #885def;
   --color-remaster: #d584d4;
+  --color-background-base: #0b0f16;
   --font-sans: "Rodin Pro", sans-serif;
   --font-rodin: "Rodin Pro", sans-serif;
   --font-rodin-bold: "Rodin NTLG Pro", "Rodin Pro", sans-serif;
@@ -55,12 +56,19 @@
 
   html {
     font-family: var(--font-rodin), sans-serif;
+    /*background-color: var(--color-background-base);*/
   }
 
   body {
     min-width: 320px;
     min-height: 100vh;
+    min-height: 100dvh;
     margin: 0;
+    background-color: var(--color-background-base);
+  }
+
+  #root {
+    min-height: 100dvh;
   }
 
   p, span {
@@ -76,7 +84,7 @@
     background: linear-gradient(
       to bottom,
       #142d45,
-      #0b0f16
+      var(--color-background-base)
     );
   }
 

@@ -41,7 +41,7 @@ export function SiteLayout({ children, route }: SiteLayoutProps) {
   }, [isMenuOpen]);
 
   return (
-    <div className="mx-auto flex min-h-screen w-full max-w-5xl flex-col px-5 sm:px-8">
+    <div className="mx-auto flex min-h-dvh w-full max-w-5xl flex-col px-5 sm:px-8">
       <header ref={headerRef} className="flex h-20 items-center justify-between border-b border-lightest">
         <a
           href={appHref("/")}

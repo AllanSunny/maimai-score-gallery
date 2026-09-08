@@ -17,7 +17,7 @@ export function ExpandedSongDetails({ name, versions }: ExpandedSongDetailsProps
 
   return (
     <div className="p-3 pt-0 md:pt-3 rounded-lg md:flex md:flex-col" aria-label={`${name} chart summaries`}>
-      <div className="mb-4 md:mb-2 flex flex-col items-center gap-2 px-10 md:flex-row md:justify-between md:pl-1">
+      <div className="mb-4 md:mb-2 flex flex-col items-center gap-2 px-4 md:flex-row md:justify-between md:pl-1">
         <div className="flex min-w-0 w-full flex-1 items-center md:items-left justify-center gap-4 md:justify-start">
           <ChartTypeIcon chartType={selectedVersion.chartType} className="hidden h-4 w-auto shrink-0 md:block" />
           <OverflowMarquee className="font-semibold text-lightest text-xl md:!text-left" centerWhenFit>{name}</OverflowMarquee>
