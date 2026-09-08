@@ -5,6 +5,7 @@ import slideArrow from "../assets/notes/slide-arrow.png";
 import slideStar from "../assets/notes/slide-star.png";
 import tapNote from "../assets/notes/tap.png";
 import touchNote from "../assets/notes/touch.png";
+import { ChartTypeIcon } from "../components/chart/ChartTypeIcon";
 import { ComboDisplay } from "../components/score/ComboDisplay";
 import { SyncDisplay } from "../components/score/SyncDisplay";
 import { ContentCard } from "../components/ui/ContentCard";
@@ -114,8 +115,12 @@ export function AboutPage() {
             <p>
               <span className="font-semibold text-primary">maimai</span> (typically stylized all lowercase), better known as its
               current version, <span className="font-semibold text-primary">maimai DX</span>, is one of SEGA's best-known arcade
-              rhythm games! Its cabinets feature circular touchscreens with eight buttons around the edges, making them look quite
-              a bit like washing machines.
+              rhythm games! Its cabinets feature circular touchscreens with eight buttons around the edges,{" "}
+              <a
+                href="https://en.wikipedia.org/wiki/Maimai_%28video_game_series%29#/media/File:Maimai_DX_CiRCLE_PLUS_cabinet,_Philippines.png"
+              >
+                making them look quite a bit like washing machines
+              </a>.
             </p>
             <p>
               You may have noticed that the cabinet has two screens attached to each other. That's intentional, and it's the other
@@ -212,12 +217,13 @@ export function AboutPage() {
             <div>
               <h3 id="deluxe-and-standard-charts" className="scroll-mt-6 font-semibold text-primary">Deluxe and Standard Charts</h3>
               <p className="mt-2">
-                Every chart set is classified as <span className="font-semibold text-primary">Deluxe</span> (でらっくす, shown in
-                this gallery as <span className="font-semibold text-primary">DX</span>) or
-                <span className="font-semibold text-primary"> Standard</span> (スタンダード, shown as
-                <span className="font-semibold text-primary"> STD</span>). スタンダード charts identify sets from before
-                the game's 2019 hardware upgrade, while でらっくす charts use the newer format that introduced Touch notes, and is
-                where the DX in maimai DX comes from. Some older songs have both STD and DX chart sets!
+                Every chart set is classified as <span className="font-semibold text-primary">Deluxe</span> (
+                <span className="font-semibold text-primary">DX</span>, shown in this gallery as{" "}
+                <ChartTypeIcon chartType="DX" className="inline-block h-4 mx-1 w-auto align-text-bottom" />) or
+                <span className="font-semibold text-primary"> Standard</span> (<span className="font-semibold text-primary">STD</span>,
+                shown as{" "} <ChartTypeIcon chartType="STD" className="inline-block h-4 mx-1 w-auto align-text-bottom" />).
+                スタンダード charts identify sets from before the game's 2019 hardware upgrade, while でらっくす charts use the newer
+                format that introduced Touch notes, and is where the DX in maimai DX comes from. Some older songs have both STD and DX chart sets!
               </p>
             </div>
             <div>
