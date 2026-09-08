@@ -18,6 +18,8 @@ export function SiteLayout({ children, route }: SiteLayoutProps) {
   const headerRef = useRef<HTMLElement>(null);
   const [isHeaderVisible, setIsHeaderVisible] = useState(true);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isCollapsedNavigationMounted, setIsCollapsedNavigationMounted] = useState(false);
+  const [isCollapsedNavigationVisible, setIsCollapsedNavigationVisible] = useState(false);
   const showCollapsedNavigation = !isHeaderVisible && !isMenuOpen;
 
   useEffect(() => {
@@ -41,6 +43,24 @@ export function SiteLayout({ children, route }: SiteLayoutProps) {
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [isMenuOpen]);
+
+  useEffect(() => {
+    let visibilityFrame: number | undefined;
+    const mountFrame = requestAnimationFrame(() => {
+      if (!showCollapsedNavigation) {
+        setIsCollapsedNavigationVisible(false);
+        return;
+      }
+
+      setIsCollapsedNavigationMounted(true);
+      visibilityFrame = requestAnimationFrame(() => setIsCollapsedNavigationVisible(true));
+    });
+
+    return () => {
+      cancelAnimationFrame(mountFrame);
+      if (visibilityFrame !== undefined) cancelAnimationFrame(visibilityFrame);
+    };
+  }, [showCollapsedNavigation]);
 
   return (
     <div className="mx-auto flex min-h-dvh w-full max-w-5xl flex-col px-5 sm:px-8">
@@ -68,27 +88,36 @@ export function SiteLayout({ children, route }: SiteLayoutProps) {
         </nav>
       </header>
 
-      <div
-        className={classNames(
-          "pointer-events-none fixed inset-x-0 top-4 z-[1100] mx-auto w-full max-w-5xl px-5 transition-opacity duration-150 sm:px-8",
-          { when: showCollapsedNavigation, then: "opacity-100", else: "opacity-0" },
-        )}
-        aria-hidden={!showCollapsedNavigation}
-      >
-        <button
-          type="button"
-          className="btn btn-primary pointer-events-auto size-10 !rounded-2xl border !border-dark !p-0"
-          aria-label="Open navigation"
-          aria-expanded={isMenuOpen}
-          aria-controls="collapsed-navigation"
-          tabIndex={showCollapsedNavigation ? 0 : -1}
-          onClick={() => setIsMenuOpen(true)}
+      {isCollapsedNavigationMounted && (
+        <div
+          className={classNames(
+            "pointer-events-none fixed inset-x-0 top-4 z-[1100] mx-auto w-full max-w-5xl px-5 transition-opacity duration-150 sm:px-8",
+            { when: isCollapsedNavigationVisible, then: "opacity-100", else: "opacity-0" },
+          )}
+          aria-hidden={!showCollapsedNavigation}
+          onTransitionEnd={(event) => {
+            if (event.propertyName === "opacity" && !showCollapsedNavigation) {
+              setIsCollapsedNavigationMounted(false);
+            }
+          }}
         >
-          <svg aria-hidden="true" viewBox="0 0 24 24" className="size-5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
-            <path d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-        </button>
-      </div>
+          <button
+            type="button"
+            className={classNames(
+              "btn btn-primary size-10 !rounded-2xl border !border-dark !p-0",
+              { when: showCollapsedNavigation, then: "pointer-events-auto", else: "pointer-events-none" },
+            )}
+            aria-label="Open navigation"
+            aria-expanded={isMenuOpen}
+            aria-controls="collapsed-navigation"
+            onClick={() => setIsMenuOpen(true)}
+          >
+            <svg aria-hidden="true" viewBox="0 0 24 24" className="size-5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+              <path d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+      )}
 
       <div
         id="collapsed-navigation"
