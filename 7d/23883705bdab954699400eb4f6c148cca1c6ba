@@ -1,0 +1,26 @@
+src/SiteLayout.tsx
+  s_452e5e326489d5::t_9931a0a7c56309 21-22,47,54,63-64,91-102,106-109
+  s_452e5e326489d5::t_778de458908de4 48-53,55-62
+  s_452e5e326489d5::t_4a6d8102e91422 104-105,110-120
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2",
+  "base_commit_sha": "7d23883705bdab954699400eb4f6c148cca1c6ba",
+  "prompts": {},
+  "humans": {
+    "h_278fafc5c28027": {
+      "author": "Allan Sun <allansun@live.com>"
+    }
+  },
+  "sessions": {
+    "s_452e5e326489d5": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a082d1-38bb-7072-b603-22da8a2d4f5d",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Allan Sun <allansun@live.com>"
+    }
+  }
+}
