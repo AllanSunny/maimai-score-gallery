@@ -1,0 +1,42 @@
+src/pages/ScoreListPage.tsx
+  s_7a9a0b7d8fd6be::t_57955fb2d7f3b9 43-44,60
+  s_7a9a0b7d8fd6be::t_6f62e180cc1f5d 45,47-49,51,53-59
+  s_7a9a0b7d8fd6be::t_bc21dd17c40a0d 46
+  h_278fafc5c28027 50,52
+src/styles.css
+  h_278fafc5c28027 41,59,67,87
+  s_64dfa07b0b9a2f::t_5fc70e657a1949 65,68-71
+src/components/SiteLayout.tsx
+  s_64dfa07b0b9a2f::t_5fc70e657a1949 44
+src/components/song/ExpandedSongDetails.tsx
+  h_278fafc5c28027 20
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2",
+  "base_commit_sha": "602d6066bbabb75301133c68800aeef7e8e94b67",
+  "prompts": {},
+  "humans": {
+    "h_278fafc5c28027": {
+      "author": "Allan Sun <allansun@live.com>"
+    }
+  },
+  "sessions": {
+    "s_64dfa07b0b9a2f": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a07ec5-2472-70d2-a8bc-dc5b7d28e8af",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Allan Sun <allansun@live.com>"
+    },
+    "s_7a9a0b7d8fd6be": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a07ec7-ba18-7313-87e2-726af73e8f0a",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Allan Sun <allansun@live.com>"
+    }
+  }
+}
