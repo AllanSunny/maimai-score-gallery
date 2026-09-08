@@ -1,0 +1,41 @@
+src/pages/ScoreListPage.tsx
+  s_1e005e6ee74ef3::t_42ce54d4225bc7 18,65
+src/components/song/SongGrid.tsx
+  s_1e005e6ee74ef3::t_a4295cc3cea3d7 83-87
+  s_1e005e6ee74ef3::t_42ce54d4225bc7 8,42,55-57,75-81,93
+  s_1e005e6ee74ef3::t_0a1c9e30e4017e 21,25,33,36-39,54,58-61,70,72-74,82,88-92,94-100
+  s_1e005e6ee74ef3::t_21a26ff9b910e7 1,19-20,22-24,26-32,34-35,52-53,64-65
+src/css/components.css
+  s_1e005e6ee74ef3::t_21a26ff9b910e7 8-41
+  s_1e005e6ee74ef3::t_b49ded3e58a891 7
+src/styles.css
+  s_1e005e6ee74ef3::t_21a26ff9b910e7 49,54-57
+  s_1e005e6ee74ef3::t_7c7cbb13a96ab0 58-59
+src/hooks/useExpandableSongGrid.ts
+  s_1e005e6ee74ef3::t_4d04c898ea69e3 152-161,245
+  s_1e005e6ee74ef3::t_a4295cc3cea3d7 139-143,162-170,274
+  s_1e005e6ee74ef3::t_42ce54d4225bc7 252,266-273,288
+  s_1e005e6ee74ef3::t_3a464ce657f75c 8
+  s_1e005e6ee74ef3::t_21a26ff9b910e7 7,9-10,107,275
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2",
+  "base_commit_sha": "ad637699c9b0ca36fee2b8ba06a16186076d5799",
+  "prompts": {},
+  "humans": {
+    "h_278fafc5c28027": {
+      "author": "Allan Sun <allansun@live.com>"
+    }
+  },
+  "sessions": {
+    "s_1e005e6ee74ef3": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a08189-6104-7bb3-812b-4757238265b9",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Allan Sun <allansun@live.com>"
+    }
+  }
+}
