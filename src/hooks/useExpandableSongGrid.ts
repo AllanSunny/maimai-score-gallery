@@ -268,7 +268,7 @@ export function useExpandableSongGrid() {
 
       const changingSongKeys = expandedSongKey ? [expandedSongKey, songKey] : [songKey];
       const selectedCardRect = cardRects().get(songKey)?.rect;
-      const nextExpansionDirection = selectedCardRect
+      const nextExpansionDirection = isLargeViewport() && selectedCardRect
         && selectedCardRect.top + selectedCardRect.height / 2 > window.innerHeight / 2
         ? "up"
         : "down";
