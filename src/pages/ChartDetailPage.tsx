@@ -14,6 +14,8 @@ import { RankDisplay } from "../components/score/RankDisplay";
 import { achievementRank } from "../utils/rank";
 import { appHref } from "../utils/navigation";
 import { classNames } from "../utils/class-names";
+import { youtubeChartSearchUrl } from "../utils/youtube";
+import youtubeIcon from "../assets/icons/youtube.svg";
 
 interface ChartDetailPageProps {
   chartId: string;
@@ -222,9 +224,23 @@ export function ChartDetailPage({ chartId, scoreId }: ChartDetailPageProps) {
                   data-preserve-scroll
                   className="btn btn-primary"
                 >
-                  {alternateCatalogEntry.song.chartType === "STD" ? "Standard" : "Deluxe"}
+                  {alternateCatalogEntry.song.chartType}
                 </a>
               )}
+              <a
+                href={youtubeChartSearchUrl({
+                  title: metadata.titles.canonical,
+                  chartType: metadata.chartType,
+                  difficulty: chartMetadata.difficulty,
+                  hasMultipleVersions: alternateCatalogEntry != null,
+                })}
+                className="btn btn-youtube"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img className="mr-2 h-4 w-5" src={youtubeIcon} alt="" />
+                Find on YouTube
+              </a>
             </nav>
           )}
         </div>}

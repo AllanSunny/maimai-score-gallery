@@ -67,6 +67,17 @@
   }
 }
 
+@utility btn-youtube {
+  color: white;
+  background-color: #d10000;
+
+  &:hover {
+    color: var(--color-darker);
+    background-color: var(--color-lightest);
+    /*-webkit-tap-highlight-color: #c00;*/
+  }
+}
+
 @utility text-stroke {
   -webkit-text-stroke: var(--text-stroke-width, 0.08em)
     var(--text-stroke-color, currentColor);
