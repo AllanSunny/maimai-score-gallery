@@ -1,0 +1,14 @@
+src/css/components/chart-detail-frame.css
+  h_278fafc5c28027 60
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2",
+  "base_commit_sha": "b30f50487b1ad800532deebfc70bb3209c136f85",
+  "prompts": {},
+  "humans": {
+    "h_278fafc5c28027": {
+      "author": "Allan Sun <allansun@live.com>"
+    }
+  }
+}
