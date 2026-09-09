@@ -1,6 +1,5 @@
 @import "tailwindcss";
 @import "./css/utilities.css";
-@import "./css/components.css";
 
 @font-face {
   font-family: "Rodin Pro";
@@ -70,7 +69,6 @@
 
   html {
     font-family: var(--font-rodin), sans-serif;
-    /*background-color: var(--color-background-base);*/
   }
 
   body {

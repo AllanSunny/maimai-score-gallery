@@ -15,7 +15,6 @@ import { OverflowMarquee } from "../ui/OverflowMarquee";
 import { ComboDisplay } from "../score/ComboDisplay";
 import { SyncDisplay } from "../score/SyncDisplay";
 import { RankDisplay } from "../score/RankDisplay";
-import "./ChartDetailFrame.css";
 import { classNames } from "../../utils/class-names";
 
 const frames: Record<ChartType, Record<Difficulty, string>> = {

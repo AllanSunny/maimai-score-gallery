@@ -5,47 +5,12 @@
 }
 
 @layer components {
-  .song-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 150px));
-    align-items: start;
-    justify-content: space-between;
-    row-gap: 0.75rem;
-  }
-
-  @media (width >= 528px) {
-    .song-grid {
-      grid-template-columns: repeat(3, minmax(0, 150px));
-      row-gap: 1rem;
-    }
-  }
-
-  @media (width >= 688px) {
-    .song-grid {
-      grid-template-columns: repeat(4, minmax(0, 150px));
-    }
-  }
-
-  @media (width >= 848px) {
-    .song-grid {
-      grid-template-columns: repeat(5, minmax(0, 150px));
-    }
-  }
-
-  @variant lg {
-    .song-grid {
-      grid-template-columns: repeat(6, minmax(0, 150px));
-    }
-  }
-}
-
-@layer components {
   .overflow-marquee {
     position: relative;
     width: 100%;
     min-width: 0;
     max-width: 100%;
-    overflow: hidden;
+    overflow-x: clip;
     white-space: nowrap;
     text-align: left;
   }
@@ -124,36 +89,5 @@
       animation: none;
       --marquee-edge: 0px;
     }
-  }
-}
-
-@layer components {
-  .achievement-value {
-    --achievement-top: #fffeea;
-    --achievement-middle: #fff75f;
-    --achievement-bottom: #ff600a;
-    --achievement-outline: #d34500;
-    --text-stroke-color: var(--achievement-outline);
-    --text-stroke-width: 0.03em;
-
-    background: linear-gradient(
-      to bottom,
-      var(--achievement-top),
-      var(--achievement-middle) 42%,
-      var(--achievement-bottom)
-    );
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
-    -webkit-text-fill-color: transparent;
-    letter-spacing: 0.024em;
-    filter: drop-shadow(0 0.06em 0 var(--color-darkest));
-  }
-
-  .achievement-value--below-s {
-    --achievement-top: #fffdf0;
-    --achievement-middle: #ffc2c2;
-    --achievement-bottom: #ff362b;
-    --achievement-outline: #aa001f;
   }
 }
