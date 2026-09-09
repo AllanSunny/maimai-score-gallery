@@ -58,7 +58,7 @@ export function CollapsedNavigation({ isHeaderVisible, links, route }: Collapsed
       {isHamburgerMounted && (
         <div
           className={classNames(
-            "pointer-events-none fixed inset-x-0 top-4 z-[1100] mx-auto w-full max-w-5xl px-5 transition-opacity duration-150 sm:px-8",
+            "pointer-events-none fixed inset-x-0 top-4 z-[1100] mx-auto w-full max-w-5xl px-5 transition-opacity duration-150 sm:px-8 lg:hidden",
             { when: isHamburgerVisible, then: "opacity-100", else: "opacity-0" },
           )}
           inert={!showHamburger}
@@ -87,7 +87,7 @@ export function CollapsedNavigation({ isHeaderVisible, links, route }: Collapsed
       <div
         id="collapsed-navigation"
         className={classNames(
-          "fixed inset-x-0 top-0 z-[1200] border-b border-lightest bg-darkest/95 shadow-lg backdrop-blur-md transition-transform duration-200 ease-out",
+          "fixed inset-x-0 top-0 z-[1200] border-b border-lightest bg-darkest/95 shadow-lg backdrop-blur-md transition-transform duration-200 ease-out lg:hidden",
           { when: isMenuOpen, then: "translate-y-0", else: "-translate-y-full" },
         )}
         aria-hidden={!isMenuOpen}
