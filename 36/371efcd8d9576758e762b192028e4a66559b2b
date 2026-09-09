@@ -1,0 +1,26 @@
+src/components/chart/ChartNavigation.tsx
+  s_e328e342e468e9::t_6ce96b2de5cebd 70
+src/css/utilities.css
+  s_e328e342e468e9::t_6ce96b2de5cebd 74-77,81-84
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2",
+  "base_commit_sha": "36371efcd8d9576758e762b192028e4a66559b2b",
+  "prompts": {},
+  "humans": {
+    "h_278fafc5c28027": {
+      "author": "Allan Sun <allansun@live.com>"
+    }
+  },
+  "sessions": {
+    "s_e328e342e468e9": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a084e0-f953-7c80-b36f-dfec12159737",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Allan Sun <allansun@live.com>"
+    }
+  }
+}
