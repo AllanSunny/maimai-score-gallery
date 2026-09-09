@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import { formatEasternDateTime } from "../../utils/date-time";
+import { formatEasternDate, formatEasternTime } from "../../utils/date-time";
 import type { JudgmentSet, ScoreRecord } from "../../utils/types";
 import { ComboDisplay } from "./ComboDisplay";
 import { MiniScoreBreakdown } from "./MiniScoreBreakdown";
@@ -48,10 +48,13 @@ export function ScoreHistoryEntry({ score, accentColor, isOpen, onToggle }: Scor
         if (nextIsOpen !== isOpen) onToggle(nextIsOpen);
       }}
     >
-      <summary className="flex cursor-pointer touch-manipulation list-none items-center justify-between gap-4 p-5 text-sm [&::-webkit-details-marker]:hidden">
+      <summary className="flex cursor-pointer touch-manipulation list-none items-center justify-between gap-8 p-3 sm:p-5 text-sm [&::-webkit-details-marker]:hidden">
         <div className="flex min-w-0 items-center gap-3">
-          <span aria-hidden="true" className="text-light transition-transform group-open:rotate-90">›</span>
-          <time className="text-lightest">{formatEasternDateTime(score.playedAt)}</time>
+          <span aria-hidden="true" className="text-primary transition-transform group-open:rotate-90">›</span>
+          <time className=" text-lightest" dateTime={score.playedAt}>
+            <span className="text-xs md:text-sm whitespace-nowrap">{formatEasternDate(score.playedAt)}</span>{", "}
+            <span className="text-xs md:text-sm whitespace-nowrap">{formatEasternTime(score.playedAt)}</span>
+          </time>
         </div>
         <MiniScoreBreakdown achievement={score.achievement} combo={score.combo} sync={score.sync} />
       </summary>
