@@ -1,0 +1,33 @@
+src/css/components/song-grid.css
+  s_608208bf000da5::t_1a8eb3d2f48a37 3-36
+  s_608208bf000da5::t_6f5f270b7c29af 1-2
+src/css/components/achievement-value.css
+  s_608208bf000da5::t_1a8eb3d2f48a37 1-30
+src/css/components/index.ts
+  s_608208bf000da5::t_53d87bb63697aa 1
+src/css/components/overflow-marquee.css
+  h_278fafc5c28027 13
+src/main.tsx
+  s_608208bf000da5::t_53d87bb63697aa 5
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2",
+  "base_commit_sha": "8cfd1c775208c0db1b3c2bf9181cb575bccc3952",
+  "prompts": {},
+  "humans": {
+    "h_278fafc5c28027": {
+      "author": "Allan Sun <allansun@live.com>"
+    }
+  },
+  "sessions": {
+    "s_608208bf000da5": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0844a-0e44-7961-80e5-2b02c98dab7f",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Allan Sun <allansun@live.com>"
+    }
+  }
+}
