@@ -57,7 +57,7 @@
   letter-spacing: -0.055em;
   -webkit-text-stroke: 0.12em var(--difficulty-color);
   paint-order: stroke fill;
-  filter: drop-shadow(0 0.045em 0.045em rgb(255 255 255 / 80%));
+  filter: drop-shadow(0 1px 1px rgb(255 255 255 / 85%));
 }
 
 .chart-detail-frame__level {
