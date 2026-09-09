@@ -1,21 +1,13 @@
-import { useEffect, useRef, useState, type CSSProperties } from "react";
+import { useEffect, useRef, useState } from "react";
 import { chartSummaries, scores } from "../utils/scores";
 import { findAlternateCatalogChart, findCatalogChart } from "../utils/catalog";
 import { ChartDetailFrame } from "../components/chart/ChartDetailFrame";
-import { ContentCard } from "../components/ui/ContentCard";
-import { OverflowMarquee } from "../components/ui/OverflowMarquee";
 import { ScoreHistory } from "../components/score/ScoreHistory";
-import { displayedAlternateTitles } from "../utils/song-titles";
-import { ComboDisplay } from "../components/score/ComboDisplay";
-import { SyncDisplay } from "../components/score/SyncDisplay";
-import { displayedChartLevel } from "../utils/chart-level";
 import { calculatePlayRating } from "../utils/rating";
-import { RankDisplay } from "../components/score/RankDisplay";
-import { achievementRank } from "../utils/rank";
 import { appHref } from "../utils/navigation";
 import { classNames } from "../utils/class-names";
-import { youtubeChartSearchUrl } from "../utils/youtube";
-import youtubeIcon from "../assets/icons/youtube.svg";
+import { ChartNavigation } from "../components/chart/ChartNavigation";
+import { DetailedChartInfoCard } from "../components/chart/DetailedChartInfoCard";
 
 interface ChartDetailPageProps {
   chartId: string;
@@ -75,40 +67,31 @@ function BackToSongsButton() {
 
 export function ChartDetailPage({ chartId, scoreId }: ChartDetailPageProps) {
   const catalogEntry = findCatalogChart(chartId);
-  const metadata = catalogEntry?.song;
-  const chartMetadata = catalogEntry?.chart;
   const alternateCatalogEntry = findAlternateCatalogChart(chartId);
+  const chart = catalogEntry?.chart;
   const chartSummary = chartSummaries[chartId];
   const achievement = chartSummary?.bestAchievement.value;
   const bestCombo = chartSummary?.bestCombo?.status ?? null;
   const bestSync = chartSummary?.bestSync?.status ?? null;
-  const isBelowS = achievement != null && achievement < 97;
-  const alternateTitles = metadata ? displayedAlternateTitles(metadata.titles) : [];
-  const difficultyCharts = metadata?.charts ?? [];
 
   const history = scores
     .filter((score) => score.chartId === chartId)
     .sort((a, b) => b.playedAt.localeCompare(a.playedAt));
 
-  const accentColor = chartMetadata
-    ? chartMetadata.difficulty.replace(":", "").toLowerCase()
+  const accentColor = chart
+    ? chart.difficulty.replace(":", "").toLowerCase()
     : "primary";
-  const playRating = achievement != null && chartMetadata?.chartConstant != null
-    ? calculatePlayRating({ achievement, chartConstant: chartMetadata.chartConstant, combo: bestCombo })
+  const playRating = achievement != null && chart?.chartConstant != null
+    ? calculatePlayRating({ achievement, chartConstant: chart.chartConstant, combo: bestCombo })
     : null;
 
   return (
     <div>
       <section className="grid items-center gap-2 sm:gap-4 lg:grid-cols-[minmax(0,20rem)_minmax(0,1fr)] lg:gap-8">
-        {metadata && chartMetadata && (
+        {catalogEntry && (
           <div className="mx-auto w-[250px] lg:mx-0 lg:w-full lg:max-w-73">
             <ChartDetailFrame
-              title={metadata.titles.canonical}
-              artist={metadata.artist}
-              jacketUrl={metadata.jacketUrl}
-              chartType={metadata.chartType}
-              difficulty={chartMetadata.difficulty}
-              level={chartMetadata.level}
+              catalogEntry={catalogEntry}
               achievement={achievement}
               combo={bestCombo}
               sync={bestSync}
@@ -116,133 +99,19 @@ export function ChartDetailPage({ chartId, scoreId }: ChartDetailPageProps) {
           </div>
         )}
 
-        {metadata && chartMetadata && <div className={"min-w-0 self-center"}>
-          <ContentCard accentColor={accentColor} className="hidden lg:block">
-            <div className={"flex min-w-0 flex-col"}>
-              <h1 className={"flex min-w-0 text-lightest text-stroke [--text-stroke-color:var(--color-primary)]"}>
-                <OverflowMarquee className="w-full px-1 font-semibold text-[1.8rem] sm:text-[2rem] lg:text-[2.5rem]">
-                  {metadata.titles.canonical}
-                </OverflowMarquee>
-              </h1>
-              {alternateTitles.length > 0 && (
-                <div className="ml-1 text-[1rem] text-darkest/50">
-                  {alternateTitles.join(" · ")}
-                </div>
-              )}
-              <div className={"ml-1 mt-1 text-[1rem] sm:text-[1.2rem] text-dark"}>
-                {metadata.artist}
-              </div>
-
-              <div className={"ml-1 mt-3 flex flex-row gap-2 text-[1.2rem] sm:text-[1.5rem]"}>
-                <div
-                  className="flex text-darker text-stroke"
-                  style={{
-                    "--text-stroke-color": `var(--color-${accentColor})`,
-                  } as CSSProperties}
-                >
-                  {chartMetadata.difficulty} {displayedChartLevel(chartMetadata.level, chartMetadata.chartConstant)}
-                </div>
-                {playRating != null && (
-                  <div
-                    className="flex text-darker text-stroke whitespace-nowrap"
-                    style={{
-                      "--text-stroke-color": `var(--color-${accentColor})`,
-                    } as CSSProperties}
-                  >
-                    {`· Rating: ${playRating}`}
-                  </div>
-                )}
-              </div>
-
-              <div className={"mt-8"}>
-                <div className={"ml-1 text-darkest"}>Achievement</div>
-                {achievement != null && (
-                  <div className={"flex flex-row gap-4 sm:gap-6 items-center"}>
-                    <div
-                      className={classNames(
-                        "flex text-[1.6rem] sm:text-[2rem] lg:text-[2.3rem] achievement-value text-stroke font-bold",
-                        { when: isBelowS, then: "achievement-value--below-s" },
-                      )}
-                    >
-                      {`${achievement.toFixed(4)}%`}
-                    </div>
-                    <RankDisplay
-                      className="flex h-6 lg:h-7"
-                      status={achievementRank(achievement)}
-                      size="large"
-                    />
-                  </div>
-                )}
-                {achievement == null && (<div className={"ml-1 mt-2 text-dark"}>{'—'}</div>)}
-
-                <div className={"ml-1 flex flex-row gap-6"}>
-                  <ComboDisplay className="h-8 sm:h-9 lg:h-10" status={bestCombo} size="large" />
-                  <SyncDisplay className="h-8 sm:h-9 lg:h-10" status={bestSync} size="large" />
-                </div>
-              </div>
-            </div>
-          </ContentCard>
-
-          {difficultyCharts.length > 0 && (
-            <nav className="mt-2 lg:mt-6 justify-center flex flex-wrap gap-2 sm:gap-3 md:gap-5" aria-label="Chart difficulties">
-              {difficultyCharts.map((chart) => {
-                const difficultyColor = chart.difficulty.replace(":", "").toLowerCase();
-                const buttonStyle = {
-                  "--btn-background": `var(--color-${difficultyColor})`,
-                } as CSSProperties;
-
-                if (chart.id === chartId) {
-                  return (
-                    <button
-                      key={chart.id}
-                      type="button"
-                      className="btn btn-primary"
-                      style={buttonStyle}
-                      disabled
-                      aria-current="page"
-                    >
-                      {chart.difficulty}
-                    </button>
-                  );
-                }
-
-                return (
-                  <a
-                    key={chart.id}
-                    href={appHref(`/charts/${encodeURIComponent(chart.id)}`)}
-                    data-preserve-scroll
-                    className="btn btn-primary"
-                    style={buttonStyle}
-                  >
-                    {chart.difficulty}
-                  </a>
-                );
-              })}
-              {alternateCatalogEntry && (
-                <a
-                  href={appHref(`/charts/${encodeURIComponent(alternateCatalogEntry.chart.id)}`)}
-                  data-preserve-scroll
-                  className="btn btn-primary"
-                >
-                  {alternateCatalogEntry.song.chartType}
-                </a>
-              )}
-              <a
-                href={youtubeChartSearchUrl({
-                  title: metadata.titles.canonical,
-                  chartType: metadata.chartType,
-                  difficulty: chartMetadata.difficulty,
-                  hasMultipleVersions: alternateCatalogEntry != null,
-                })}
-                className="btn btn-youtube"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <img className="mr-2 h-4 w-5" src={youtubeIcon} alt="" />
-                Find on YouTube
-              </a>
-            </nav>
-          )}
+        {catalogEntry && <div className={"min-w-0 self-center"}>
+          <DetailedChartInfoCard
+            catalogEntry={catalogEntry}
+            accentColor={accentColor}
+            achievement={achievement}
+            bestCombo={bestCombo}
+            bestSync={bestSync}
+            playRating={playRating}
+          />
+          <ChartNavigation
+            catalogEntry={catalogEntry}
+            alternateCatalogEntry={alternateCatalogEntry}
+          />
         </div>}
       </section>
 

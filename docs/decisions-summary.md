@@ -1,7 +1,7 @@
 # maimai-score-gallery decision history
 
 Original summary generated: 2026-08-15  
-Repository review: 2026-09-08 (current working tree, including uncommitted changes)
+Repository review: 2026-09-09 (current working tree, including uncommitted changes)
 
 This is a curated, human-readable history of the owner’s key architectural, functional, behavioral, and operational decisions, adapted from a personal conversation summary. It intentionally emphasizes decisions over implementation chatter. When a later decision superseded an earlier one, both are recorded and the current decision is marked clearly.
 
@@ -16,14 +16,14 @@ For current schemas, see [Data model](data-model.md). For setup and operational 
 - Public, view-only React/Vite app on GitHub Pages; private import operations use Drive, Sheets, OpenAI, and GitHub Actions.
 - Monthly score archives and derived chart summaries are implemented; frontend history loading remains eager (sections 31–38).
 - UTAGE, owner authentication/private notes, and the Top 50 implementation remain deferred.
-- Recent additions: path routing and scroll restoration (47), chart rating (48), fixed OCR options (49), off-minute scheduling (50), the expandable song grid (51), and cross-version chart navigation (52).
-- Start with the [rationale ledger](#rationale-ledger) for the reasons behind the decisions; jump to the [latest decision](#decision-52) for the newest addition.
+- Recent additions: path routing and scroll restoration (47), chart rating (48), fixed OCR options (49), off-minute scheduling (50), the expandable song grid (51), cross-version chart navigation (52), and centralized song jackets without duplicated catalog objects (53).
+- Start with the [rationale ledger](#rationale-ledger) for the reasons behind the decisions; jump to the [latest decision](#decision-53) for the newest addition.
 
 <a id="rationale-ledger"></a>
 
 ## Rationale ledger
 
-[Jump to the decision history](#decision-1) · [Latest decision](#decision-52)
+[Jump to the decision history](#decision-1) · [Latest decision](#decision-53)
 
 This ledger stays near the top as decisions are appended below. Links point to stable decision IDs. Section 44 was the ledger's former location; that number remains reserved and its old link still resolves here.
 
@@ -80,6 +80,7 @@ This ledger stays near the top as decisions are appended below. Links point to s
 - **Off-minute import scheduling** ([50](#decision-50)): After the minute-0 schedule was delayed on consecutive Mondays, the owner moved the weekly import to minute 22 to avoid GitHub Actions' higher-load start-of-hour window (“Set import schedule to minute 22,” 2026-09-07).
 - **Expandable song grid** ([51](#decision-51)): The score list became a song-first browsing surface: one recency-sorted card per canonical song, inline chart summaries, and DX/STD switching without leaving the list. Several expansion strategies were tried before settling on stable card order and breakpoint-specific scroll behavior (2026-09-07–08).
 - **Cross-version chart navigation** ([52](#decision-52)): Matching DX and STD difficulties belong to the same logical song, so chart detail pages provide a direct version switch while preserving the reader's position (2026-09-07).
+- **Canonical catalog objects and centralized jackets** ([53](#decision-53)): The owner preferred one parsed object graph and one jacket URL resolver over hydrated or catalog-specific copies. Lightweight lookup results supply parent context without duplicating songs, versions, or charts (2026-09-09).
 
 <a id="decision-1"></a>
 
@@ -724,7 +725,7 @@ This ledger stays near the top as decisions are appended below. Links point to s
 
 ## 38. Frontend catalog, summary, and history ownership
 
-- Chart detail pages resolve title, artist, jacket, DX/STD type, difficulty, level, chart constant, and charter from the catalog by stable `chartId`, and read cumulative best achievement, combo, and sync from chart summaries.
+- Chart detail pages resolve a relationship entry from the catalog by stable `chartId`. The entry references the original chart, version, and song objects without cloning them. Jacket URLs are derived centrally from the song's `jacketKey`. Cumulative best achievement, combo, and sync come from chart summaries.
 - The score list groups eagerly loaded scores by canonical song, but reads per-chart cumulative bests and recency from chart summaries. Removing the eager score import remains future work.
 - Derive rank from achievement rather than storing rank independently.
 - Load monthly score chunks for detailed play records and judgments; summaries are not the source of full history. History currently shows overall judgments and Fast/Slow counts. Note-type breakdown display and a progression timeline remain unimplemented.
@@ -901,3 +902,15 @@ This ledger stays near the top as decisions are appended below. Links point to s
 - The song card uses the same catalog relationship for its inline DX/STD switch, keeping list and detail navigation consistent.
 - Do not guess a fallback difficulty when there is no exact counterpart; omit the version link instead.
 - Sources: `src/utils/catalog.ts`, `src/pages/ChartDetailPage.tsx`, `src/utils/song-summaries.ts`, `src/components/song/ExpandedSongDetails.tsx`; commit `86d3458`.
+
+<a id="decision-53"></a>
+
+## 53. Canonical catalog objects and centralized song jackets
+
+- Keep the parsed `Song`, `SongVersion`, and `Chart` instances as the only catalog domain objects in browser memory. Do not hydrate them into copied frontend variants or maintain parallel stored/catalog interfaces.
+- Keep the persisted JSON hierarchy unchanged: a song owns its versions, and a version owns its charts. Do not add circular parent references to the stored shapes.
+- Build lookup indexes that return lightweight relationship results referencing the canonical objects. `SongCatalogEntry` contains the matched song and version; `ChartCatalogEntry` adds the chart.
+- Treat these entries like joined query results rather than additional domain entities. They let chart views access `chart`, `version`, and `song` together while preserving a single source object for each.
+- Store only `Song.jacketKey` in the catalog and construct the public URL exclusively through the shared `jacketUrl(song)` helper. Do not copy derived jacket URLs into charts, summaries, or catalog-specific song objects.
+- Pass catalog relationship entries into chart-detail UI so the song needed for its jacket and shared metadata is available without separately passing or duplicating it.
+- Sources: `src/utils/types.ts`, `src/utils/catalog.ts`, `src/utils/jackets.ts`, `src/utils/song-summaries.ts`, `src/components/song/SongJacketImage.tsx`, `src/pages/ChartDetailPage.tsx`.

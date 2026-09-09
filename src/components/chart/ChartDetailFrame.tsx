@@ -9,13 +9,13 @@ import expertStdFrame from "../../assets/jacket_frames/std/expert.png";
 import masterStdFrame from "../../assets/jacket_frames/std/master.png";
 import remasterStdFrame from "../../assets/jacket_frames/std/remaster.png";
 import { achievementRank } from "../../utils/rank";
-import { fallbackImage, handleImageError } from "../../utils/fallback-image";
-import type { ChartType, ComboStatus, Difficulty, SyncStatus } from "../../utils/types";
+import type { ChartCatalogEntry, ChartType, ComboStatus, Difficulty, SyncStatus } from "../../utils/types";
 import { OverflowMarquee } from "../ui/OverflowMarquee";
 import { ComboDisplay } from "../score/ComboDisplay";
 import { SyncDisplay } from "../score/SyncDisplay";
 import { RankDisplay } from "../score/RankDisplay";
 import { classNames } from "../../utils/class-names";
+import { SongJacketImage } from "../song/SongJacketImage";
 
 const frames: Record<ChartType, Record<Difficulty, string>> = {
   DX: {
@@ -35,12 +35,7 @@ const frames: Record<ChartType, Record<Difficulty, string>> = {
 };
 
 interface ChartDetailFrameProps {
-  title: string;
-  artist: string;
-  jacketUrl?: string | null;
-  chartType: ChartType;
-  difficulty: Difficulty;
-  level: string;
+  catalogEntry: ChartCatalogEntry;
   achievement?: number;
   combo?: ComboStatus | null;
   sync?: SyncStatus | null;
@@ -48,31 +43,29 @@ interface ChartDetailFrameProps {
 }
 
 export function ChartDetailFrame({
-  title,
-  artist,
-  jacketUrl,
-  chartType,
-  difficulty,
-  level,
+  catalogEntry,
   achievement,
   combo,
   sync,
   className = "",
 }: ChartDetailFrameProps) {
-  const normalizedLevel = level.trim();
+  const { chart, song, version } = catalogEntry;
+  const chartType = version.chartType;
+  const title = song.titles.canonical;
+  const normalizedLevel = chart.level.trim();
   const hasPlus = normalizedLevel.endsWith("+");
   const levelNumber = hasPlus ? normalizedLevel.slice(0, -1) : normalizedLevel;
 
   return (
     <article
       className={`chart-detail-frame ${className}`.trim()}
-      data-difficulty={difficulty}
-      aria-label={`${title}, ${difficulty} level ${normalizedLevel}, ${chartType}`}
+      data-difficulty={chart.difficulty}
+      aria-label={`${title}, ${chart.difficulty} level ${normalizedLevel}, ${chartType}`}
     >
-      <img className="chart-detail-frame__jacket" src={jacketUrl ?? fallbackImage} alt="" onError={handleImageError} />
-      <img className="chart-detail-frame__frame" src={frames[chartType][difficulty]} alt="" />
+      <SongJacketImage className="chart-detail-frame__jacket" song={song} />
+      <img className="chart-detail-frame__frame" src={frames[chartType][chart.difficulty]} alt="" />
 
-      <div className="chart-detail-frame__difficulty">{difficulty}</div>
+      <div className="chart-detail-frame__difficulty">{chart.difficulty}</div>
       <div className="chart-detail-frame__level" aria-label={`Level ${normalizedLevel}`}>
         <div className="chart-detail-frame__level-layer chart-detail-frame__level-glow" aria-hidden="true">
           <div className="chart-detail-frame__level-prefix">LV</div>
@@ -95,7 +88,7 @@ export function ChartDetailFrame({
         <OverflowMarquee centerWhenFit>{title}</OverflowMarquee>
       </header>
       <div className="chart-detail-frame__artist">
-        <OverflowMarquee centerWhenFit>{artist}</OverflowMarquee>
+        <OverflowMarquee centerWhenFit>{song.artist}</OverflowMarquee>
       </div>
 
       {achievement != null && (

@@ -1,6 +1,7 @@
 import { OverflowMarquee } from "../ui/OverflowMarquee";
-import { fallbackImage, handleImageError } from "../../utils/fallback-image";
 import { classNames } from "../../utils/class-names";
+import type { SongSummary } from "../../utils/types";
+import { SongJacketImage } from "./SongJacketImage";
 
 const jacketClassNames = {
   collapsed: "aspect-square cursor-pointer",
@@ -9,12 +10,13 @@ const jacketClassNames = {
 
 interface SongJacketProps {
   expanded: boolean;
-  jacketUrl?: string | null;
-  name: string;
+  song: SongSummary;
   onToggle: () => void;
 }
 
-export function SongJacket({ expanded, jacketUrl, name, onToggle }: SongJacketProps) {
+export function SongJacket({ expanded, song, onToggle }: SongJacketProps) {
+  const name = song.titles.canonical;
+
   return (
     <button
       type="button"
@@ -28,15 +30,13 @@ export function SongJacket({ expanded, jacketUrl, name, onToggle }: SongJacketPr
       )}
       data-song-jacket
     >
-      <img
-        src={jacketUrl ?? fallbackImage}
-        alt=""
+      <SongJacketImage
+        song={song.catalogSong}
         width="240"
         height="240"
         loading="lazy"
         decoding="async"
         referrerPolicy="no-referrer"
-        onError={handleImageError}
         className={classNames(
           "size-full object-cover",
           {

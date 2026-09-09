@@ -35,7 +35,7 @@ export function groupScoresBySong(
 
   scores.forEach((score) => {
     const metadata = findCatalogSong(score.songTitle, score.chartType);
-    const titles = metadata?.titles ?? {
+    const titles = metadata?.song.titles ?? {
       canonical: score.songTitle,
       kana: [],
       romaji: [],
@@ -45,7 +45,7 @@ export function groupScoresBySong(
     const songKey = titles.canonical;
     const song = songs.get(songKey) ?? {
       titles,
-      jacketUrl: metadata?.jacketUrl,
+      catalogSong: metadata?.song,
       versions: [],
       lastPlayedAt: null,
     };
@@ -54,12 +54,16 @@ export function groupScoresBySong(
     if (!version) {
       version = {
         chartType: score.chartType,
-        charts: (metadata?.charts ?? []).map((chart) =>
+        charts: (metadata?.version.charts ?? []).map((chart) =>
           summarizeCatalogChart(chart, score.chartType, chartSummaries)),
       };
       song.versions.push(version);
 
-      const alternate = metadata?.charts[0] && findAlternateCatalogChart(metadata.charts[0].id)?.song;
+      const alternateChart = metadata?.version.charts[0]
+        && findAlternateCatalogChart(metadata.version.charts[0].id);
+      const alternate = alternateChart?.song.versions.find(
+        (candidate) => candidate.chartType === alternateChart.version.chartType,
+      );
       if (alternate && !song.versions.some((candidate) => candidate.chartType === alternate.chartType)) {
         song.versions.push({
           chartType: alternate.chartType,
@@ -73,7 +77,9 @@ export function groupScoresBySong(
     const chartIndex = version.charts.findIndex(
       (chart) => chart.difficulty === score.difficulty && chart.chartType === score.chartType,
     );
-    const metadataChart = metadata?.charts.find((chart) => chart.difficulty === score.difficulty);
+    const metadataChart = metadata?.version.charts.find(
+      (chart) => chart.difficulty === score.difficulty,
+    );
     const chartId = metadataChart?.id ?? score.chartId;
     const summary = chartSummaries[chartId];
     const chart: SongChartSummary = {

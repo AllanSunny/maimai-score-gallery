@@ -17,7 +17,7 @@ maintenance instructions live in [Operations](operations.md).
 | Stored catalog | `GeneratedCatalog`, `Song`, `SongTitles`, `MaimaiVersion`, `SongVersion`, `Chart` |
 | Stored plays | `ScoreChunk`, `ScoreRecord`, `JudgmentSet`, `JudgmentBreakdown`; `Score` aliases `ScoreRecord` |
 | Stored chart records | `ChartSummaries`, `ChartRecordSummary`, `BestAchievement`, `BestStatus` |
-| Frontend catalog views | `CatalogSongView`, `CatalogChartView` |
+| Frontend catalog indexes | `ChartCatalogEntry`, `SongCatalogEntry` |
 | Frontend song lists | `SongSummary`, `SongChartSummary` |
 | Derived rank and rating | `AchievementRank`, `PlayRatingInput` |
 
@@ -135,17 +135,29 @@ An unknown future range fails validation so it cannot be silently assigned to
 the wrong release. A standalone override can provide a verified release name
 with `code: null` when its exact historical SEGA batch code is unavailable.
 
-The browser derives `jacketUrl` using the build-time configuration from `VITE_JACKET_BASE_URL` and
-the stored `jacketKey`. It is not part of the persisted catalog schema.
+The browser derives jacket URLs in one `jacketUrl(song)` helper using the
+build-time `VITE_JACKET_BASE_URL` and the song's stored `jacketKey`. Derived
+URLs are not part of the persisted catalog schema.
 
 ## Frontend structures
 
-`CatalogSongView` combines parent song metadata with one `SongVersion`; its `id`
-is the version ID and its `charts` belong to that DX/STD version. It adds
-`jacketUrl`, which is null when the base URL or object key is missing.
-`CatalogChartView` pairs that song view with a `Chart` for chart-ID lookup.
+The browser retains the parsed `Song`, `SongVersion`, and `Chart` objects
+without cloning or adding circular associations. Lookup indexes return small
+relationship entries containing references to the original objects:
 
-`SongSummary` groups titles, chart type, optional jacket URL, and
+- `SongCatalogEntry` pairs a `SongVersion` with its owning `Song`. The
+  title-and-chart-type index returns this entry when matching score data to the
+  catalog.
+- `ChartCatalogEntry` extends that relationship with a `Chart`. The chart-ID
+  index returns the chart together with its owning version and song.
+
+These entries are query results, not stored or duplicated domain objects. They
+provide parent context without adding back-references to `Chart` or
+`SongVersion`. Chart UI can therefore receive one `ChartCatalogEntry`, read its
+chart metadata directly, and pass its referenced song to the shared jacket URL
+helper.
+
+`SongSummary` groups titles, an optional catalog-song reference, chart type, and
 `SongChartSummary` entries for the score list. Each chart summary has a chart
 ID, difficulty, chart type, and level, with optional constant and achievement.
 Missing achievement means the chart has no recorded result in that view.

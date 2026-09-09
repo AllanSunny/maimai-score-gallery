@@ -46,13 +46,12 @@ export interface MaimaiVersion {
   name: string;
 }
 
-/** A DX/STD song version with a browser-derived jacket URL; not persisted. */
-export interface CatalogSongView extends Omit<Song, "versions">, SongVersion {
-  jacketUrl: string | null;
+export interface SongCatalogEntry {
+  song: Song;
+  version: SongVersion;
 }
 
-export interface CatalogChartView {
-  song: CatalogSongView;
+export interface ChartCatalogEntry extends SongCatalogEntry {
   chart: Chart;
 }
 
@@ -161,7 +160,7 @@ export interface SongVersionSummary {
 
 export interface SongSummary {
   titles: SongTitles;
-  jacketUrl?: string | null;
+  catalogSong?: Song;
   versions: SongVersionSummary[];
   /** Most recent play across every chart version of the song. */
   lastPlayedAt: string | null;

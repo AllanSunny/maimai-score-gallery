@@ -8,13 +8,14 @@ const songClassNames = {
   expanded: "z-30 col-span-full bg-dark shadow-[0_0px_5px_var(--color-primary)] md:grid md:grid-cols-[15rem_minmax(0,1fr)]",
 };
 
-interface SongInfoProps extends SongSummary {
+interface SongInfoProps {
+  song: SongSummary;
   expanded: boolean;
   onToggle: () => void;
 }
 
-export function SongInfo({ titles, jacketUrl, versions, expanded, onToggle }: SongInfoProps) {
-  const name = titles.canonical;
+export function SongInfo({ song, expanded, onToggle }: SongInfoProps) {
+  const name = song.titles.canonical;
 
   return (
     <article
@@ -29,7 +30,7 @@ export function SongInfo({ titles, jacketUrl, versions, expanded, onToggle }: So
         className={classNames({ when: expanded, then: "p-3 content-center md:py-0 md:pr-0" })}
         data-song-jacket-container
       >
-        <SongJacket expanded={expanded} jacketUrl={jacketUrl} name={name} onToggle={onToggle} />
+        <SongJacket expanded={expanded} song={song} onToggle={onToggle} />
       </div>
 
       {expanded && <button
@@ -42,7 +43,7 @@ export function SongInfo({ titles, jacketUrl, versions, expanded, onToggle }: So
         <span aria-hidden="true">×</span>
       </button>}
 
-      {expanded && <ExpandedSongDetails name={name} versions={versions} />}
+      {expanded && <ExpandedSongDetails name={name} versions={song.versions} />}
     </article>
   );
 }

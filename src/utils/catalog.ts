@@ -1,47 +1,34 @@
 import generatedCatalog from "../data/generated-catalog.json";
 import { parseGeneratedCatalog } from "./data-validation";
 import { allSongTitles } from "./song-titles";
-import type { CatalogChartView, CatalogSongView } from "./types";
-
-const jacketBaseUrl = import.meta.env.VITE_JACKET_BASE_URL?.replace(/\/$/, "");
+import type { ChartCatalogEntry, ChartType, SongCatalogEntry } from "./types";
 
 const storedCatalog = parseGeneratedCatalog(generatedCatalog);
-const songIdByVersionId = new Map(storedCatalog.songs.flatMap((song) =>
-  song.versions.map((version) => [version.id, song.id] as const)));
-
-const catalogSongs: CatalogSongView[] = storedCatalog.songs.flatMap((song) =>
-  song.versions.map((version) => ({
-    ...song,
-    ...version,
-    jacketUrl: jacketBaseUrl && song.jacketKey
-      ? `${jacketBaseUrl}/${song.jacketKey}`
-      : null,
-  })));
 
 function normalizeTitle(value: string) {
   return value.normalize("NFKC").replace(/\s+/g, " ").trim().toLocaleLowerCase();
 }
 
-const catalogByTitleAndType = new Map<string, CatalogSongView>();
-const catalogByChartId = new Map<string, CatalogChartView>();
-const catalogBySongIdAndType = new Map<string, CatalogSongView>();
+const catalogByTitleAndType = new Map<string, SongCatalogEntry>();
+const catalogByChartId = new Map<string, ChartCatalogEntry>();
 
-function catalogKey(title: string, chartType: CatalogSongView["chartType"]) {
+function catalogKey(title: string, chartType: ChartType) {
   return `${normalizeTitle(title)}\u0000${chartType}`;
 }
 
-catalogSongs.forEach((song) => {
-  const songId = songIdByVersionId.get(song.id);
-  if (songId) catalogBySongIdAndType.set(catalogKey(songId, song.chartType), song);
-  allSongTitles(song.titles).forEach((title) => {
-    catalogByTitleAndType.set(catalogKey(title, song.chartType), song);
-  });
-  song.charts.forEach((chart) => {
-    catalogByChartId.set(chart.id, { song, chart });
+storedCatalog.songs.forEach((song) => {
+  song.versions.forEach((version) => {
+    const songEntry = { song, version };
+    allSongTitles(song.titles).forEach((title) => {
+      catalogByTitleAndType.set(catalogKey(title, version.chartType), songEntry);
+    });
+    version.charts.forEach((chart) => {
+      catalogByChartId.set(chart.id, { ...songEntry, chart });
+    });
   });
 });
 
-export function findCatalogSong(title: string, chartType: CatalogSongView["chartType"]) {
+export function findCatalogSong(title: string, chartType: ChartType) {
   return catalogByTitleAndType.get(catalogKey(title, chartType));
 }
 
@@ -53,16 +40,15 @@ export function findAlternateCatalogChart(chartId: string) {
   const catalogEntry = findCatalogChart(chartId);
   if (!catalogEntry) return undefined;
 
-  const alternateChartType = catalogEntry.song.chartType === "DX" ? "STD" : "DX";
-  const songId = songIdByVersionId.get(catalogEntry.song.id);
-  if (!songId) return undefined;
+  const alternateChartType = catalogEntry.version.chartType === "DX" ? "STD" : "DX";
+  const alternateVersion = catalogEntry.song.versions.find(
+    (version) => version.chartType === alternateChartType,
+  );
+  if (!alternateVersion) return undefined;
 
-  const alternateSong = catalogBySongIdAndType.get(catalogKey(songId, alternateChartType));
-  if (!alternateSong) return undefined;
-
-  const alternateChart = alternateSong.charts.find(
+  const alternateChart = alternateVersion.charts.find(
     (chart) => chart.difficulty === catalogEntry.chart.difficulty,
   );
 
-  return alternateChart ? { song: alternateSong, chart: alternateChart } : undefined;
+  return alternateChart ? findCatalogChart(alternateChart.id) : undefined;
 }

@@ -74,7 +74,7 @@ export function SongGrid({
         return <Fragment key={songKey}>
           {expansionDirection === "up" && index === expandedRowStart && expandedSongIndex >= 0 && (
             <SongInfo
-              {...songs[expandedSongIndex]}
+              song={songs[expandedSongIndex]}
               expanded
               onToggle={() => onSelectSong(expandedSongKey!)}
             />
@@ -86,13 +86,13 @@ export function SongGrid({
                 data-song-placeholder-key={songKey}
               />
             : <SongInfo
-                {...song}
+                song={song}
                 expanded={false}
                 onToggle={() => onSelectSong(songKey)}
               />}
           {expansionDirection === "down" && index === expandedRowEnd && expandedSongIndex >= 0 && (
             <SongInfo
-              {...songs[expandedSongIndex]}
+              song={songs[expandedSongIndex]}
               expanded
               onToggle={() => onSelectSong(expandedSongKey!)}
             />
