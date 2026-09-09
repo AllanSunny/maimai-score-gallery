@@ -61,7 +61,7 @@ export function CollapsedNavigation({ isHeaderVisible, links, route }: Collapsed
             "pointer-events-none fixed inset-x-0 top-4 z-[1100] mx-auto w-full max-w-5xl px-5 transition-opacity duration-150 sm:px-8",
             { when: isHamburgerVisible, then: "opacity-100", else: "opacity-0" },
           )}
-          aria-hidden={!showHamburger}
+          inert={!showHamburger}
           onTransitionEnd={(event) => {
             if (event.propertyName === "opacity" && !showHamburger) setIsHamburgerMounted(false);
           }}
