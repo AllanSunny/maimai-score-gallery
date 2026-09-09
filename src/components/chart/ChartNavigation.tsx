@@ -67,7 +67,7 @@ export function ChartNavigation({ catalogEntry, alternateCatalogEntry }: ChartNa
         target="_blank"
         rel="noreferrer"
       >
-        <img className="mr-2 h-4 w-5" src={youtubeIcon} alt="" />
+        <img className="youtube-icon mr-2 h-4 w-5" src={youtubeIcon} alt="" />
         Find on YouTube
       </a>
     </nav>
