@@ -1,0 +1,27 @@
+docs/decisions-summary.md
+  h_278fafc5c28027 19
+  s_a5bfc6d26494d3::t_f883262e6699ce 20,26,84-95
+  s_a5bfc6d26494d3::t_b7273eeb4349a4 932,935-942,945,950,952,956-962,972,974,984,986,996,998,1007,1009,1011-1012,1018,1020,1022-1030,1034-1040,1049,1051
+  s_a5bfc6d26494d3::t_6a9ba1f250e486 929-931,933-934,943-944,946-949,951,953-955,963-971,973,975-983,985,987-995,997,999-1006,1008,1010,1013-1017,1019,1021,1031-1033,1041-1048,1050,1052-1060
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "360f63244544ef2efa8ea27271f392437830f3d0",
+  "prompts": {},
+  "humans": {
+    "h_278fafc5c28027": {
+      "author": "Allan Sun <allansun@live.com>"
+    }
+  },
+  "sessions": {
+    "s_a5bfc6d26494d3": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a08973-a789-7530-83c1-0ac373349b7f",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Allan Sun <allansun@live.com>"
+    }
+  }
+}
