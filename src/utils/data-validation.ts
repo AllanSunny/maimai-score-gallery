@@ -6,12 +6,12 @@ import type {
   GeneratedCatalog,
   ScoreChunk,
   SyncStatus,
-} from "./types";
+} from "./types.ts";
 import {
   comboStatuses as comboStatusValues,
   difficulties as difficultyValues,
   syncStatuses as syncStatusValues,
-} from "./types";
+} from "./types.ts";
 
 const chartTypes = new Set<ChartType>(["DX", "STD"]);
 const comboStatuses = new Set<ComboStatus>(comboStatusValues);
