@@ -1,9 +1,9 @@
-import generatedCatalog from "../data/generated-catalog.json";
+import songCatalog from "../data/song-catalog.json";
 import { parseGeneratedCatalog } from "./data-validation";
 import { allSongTitles } from "./song-titles";
 import type { ChartCatalogEntry, ChartType, SongCatalogEntry } from "./types";
 
-const storedCatalog = parseGeneratedCatalog(generatedCatalog);
+const storedCatalog = parseGeneratedCatalog(songCatalog);
 
 function normalizeTitle(value: string) {
   return value.normalize("NFKC").replace(/\s+/g, " ").trim().toLocaleLowerCase();

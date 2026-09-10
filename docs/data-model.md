@@ -25,7 +25,7 @@ maintenance instructions live in [Operations](operations.md).
 flowchart LR
   Sheet[Google Sheet] --> ScoreArchive[Monthly score archives]
   ScoreArchive -->|chartId| Charts
-  Catalog[generated-catalog.json] --> Song
+  Catalog[song-catalog.json] --> Song
   Song --> Version[Song version: DX or STD]
   Version --> Charts[Difficulty charts]
   Song --> Jacket[R2 jacketKey]
@@ -39,7 +39,7 @@ updates matching identities from the sheet, and collapses duplicate archived
 identities. It retains archived plays absent from the sheet; deleting a sheet
 row or changing its identity fields does not remove the old archived play.
 
-`src/data/scores/chart-summaries.json` contains the lightweight cumulative
+`src/data/chart-summaries.json` contains the lightweight cumulative
 records for each played chart, keyed by `Chart.id` in `ChartSummaries.charts`. Its achievement, combo, and
 sync bests are selected independently and point back to their source plays.
 The normal import pipeline regenerates it once, after catalog synchronization
@@ -94,7 +94,7 @@ Notes/Location is intentionally excluded from the public archive.
 
 ## Song catalog
 
-`src/data/generated-catalog.json` stores normalized song metadata. Each song
+`src/data/song-catalog.json` stores normalized song metadata. Each song
 owns one or more DX/STD versions, and each version owns its difficulty charts.
 `Song` owns the shared `jacketKey`, artist, genre, introduction, and search titles.
 `Chart` includes both nullable `chartConstant` and nullable `charter` fields.

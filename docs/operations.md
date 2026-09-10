@@ -90,7 +90,7 @@ Temporary Actions artifacts are reports, not the OCR cache.
 Titles that cannot be matched are excluded from the committed score archive and
 reported through Discord. Correct image-import failures in the visible
 `Score Import Review` sheet and check `Retry`, or add catalog corrections to
-`src/data/overrides.json`, then rerun **Import New Scores**. Judgment correction
+`src/data/song-overrides.json`, then rerun **Import New Scores**. Judgment correction
 columns override only the populated overall or note-type counts; blank cells
 continue using OCR. Unmatched names are retried and are never written to the
 public catalog. Set Status to `Ignored` to leave an image out of the retry queue.
@@ -137,7 +137,7 @@ a derived full combo, so supply the judgment counts needed to establish it.
 ## Song overrides
 
 Songs removed from SEGA's current catalog can be defined as standalone entries
-in `src/data/overrides.json`. Standalone entries require an explicit stable ID,
+in `src/data/song-overrides.json`. Standalone entries require an explicit stable ID,
 artist, genre, and at least one chart level. Jacket, chart constant, and charter data
 may be unavailable:
 
@@ -261,7 +261,7 @@ that SEGA release codes agree with their mapped names. It skips chart-summary
 validation because the summaries have not yet been rebuilt.
 
 Summary generation reads all monthly archives and rebuilds
-`src/data/scores/chart-summaries.json`. Each chart records its play count,
+`src/data/chart-summaries.json`. Each chart records its play count,
 history months, and independent best achievement, combo, and sync with source
 play references. Ties prefer higher achievement, later capture time, then the
 lexicographically greater score ID. The file and its `generatedAt` timestamp

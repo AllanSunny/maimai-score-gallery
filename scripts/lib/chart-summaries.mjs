@@ -3,7 +3,7 @@ import path from "node:path";
 import { scoreMonth } from "./monthly-score-archive.mjs";
 
 export const CHART_SUMMARIES_PATH = path.join(
-  process.cwd(), "src", "data", "scores", "chart-summaries.json",
+  process.cwd(), "src", "data", "chart-summaries.json",
 );
 
 const comboRanks = new Map([

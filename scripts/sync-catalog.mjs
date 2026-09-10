@@ -14,8 +14,8 @@ import { indexZetarakuChartMetadata } from "./lib/zetaraku-chart-metadata.mjs";
 const execFileAsync = promisify(execFile);
 
 const ROOT = process.cwd();
-const OVERRIDES_PATH = path.join(ROOT, "src", "data", "overrides.json");
-const GENERATED_PATH = path.join(ROOT, "src", "data", "generated-catalog.json");
+const SONG_OVERRIDES_PATH = path.join(ROOT, "src", "data", "song-overrides.json");
+const SONG_CATALOG_PATH = path.join(ROOT, "src", "data", "song-catalog.json");
 const REJECTED_SCORES_PATH = path.join(ROOT, ".sync", "rejected-scores.json");
 
 function requiredEnvironment(name) {
@@ -342,8 +342,8 @@ async function uploadJacket(songId, sourceUrl) {
 
 async function main() {
   const [overrides, previous, requested] = await Promise.all([
-    readJson(OVERRIDES_PATH),
-    readJson(GENERATED_PATH),
+    readJson(SONG_OVERRIDES_PATH),
+    readJson(SONG_CATALOG_PATH),
     requestedSongs(),
   ]);
   const standaloneSongs = standaloneCatalogSongs(overrides);
@@ -435,11 +435,11 @@ async function main() {
 
   const { catalog, changed: catalogChanged } = catalogOutput(previous, songs);
   if (catalogChanged) {
-    await writeFile(GENERATED_PATH, `${JSON.stringify(catalog, null, 2)}\n`);
+    await writeFile(SONG_CATALOG_PATH, `${JSON.stringify(catalog, null, 2)}\n`);
   }
   await linkArchivedScores(catalog.songs, unmatchedSongs);
   if (catalogChanged) {
-    console.log(`Wrote ${songs.length} song(s) to ${path.relative(ROOT, GENERATED_PATH)}.`);
+    console.log(`Wrote ${songs.length} song(s) to ${path.relative(ROOT, SONG_CATALOG_PATH)}.`);
   }
 }
 

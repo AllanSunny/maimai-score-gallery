@@ -74,7 +74,7 @@ export function standaloneCatalogSongs(overrides) {
 }
 
 export function createCatalogOverridesLoader({
-  filePath = path.join(process.cwd(), "src", "data", "overrides.json"),
+  filePath = path.join(process.cwd(), "src", "data", "song-overrides.json"),
   read = readFile,
 } = {}) {
   let overridesPromise;

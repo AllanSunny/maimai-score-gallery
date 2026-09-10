@@ -4,7 +4,7 @@ import { readMonthlyScoreArchive, writeMonthlyScoreArchive } from "./lib/monthly
 import { reconcileScoreArchive } from "./lib/score-archive.mjs";
 import { readScoreSheet } from "./lib/sheet-scores.mjs";
 
-const CATALOG_PATH = path.join(process.cwd(), "src", "data", "generated-catalog.json");
+const CATALOG_PATH = path.join(process.cwd(), "src", "data", "song-catalog.json");
 
 function normalizeTitle(value) {
   return String(value ?? "").normalize("NFKC").replace(/\s+/g, " ").trim().toLocaleLowerCase();

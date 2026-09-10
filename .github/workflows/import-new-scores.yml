@@ -193,7 +193,7 @@ jobs:
           name: generated-data
           path: |
             src/data/scores/
-            src/data/generated-catalog.json
+            src/data/song-catalog.json
             .sync/rejected-scores.json
           if-no-files-found: ignore
           retention-days: 1
@@ -224,14 +224,14 @@ jobs:
       - name: Commit score and catalog data once
         id: commit
         run: |
-          if git diff --quiet -- src/data/scores src/data/generated-catalog.json; then
+          if git diff --quiet -- src/data/scores src/data/chart-summaries.json src/data/song-catalog.json; then
             echo "Score and song data are already current."
             echo "changed=false" >> "$GITHUB_OUTPUT"
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add src/data/scores src/data/generated-catalog.json
+          git add src/data/scores src/data/chart-summaries.json src/data/song-catalog.json
           git commit -m "Add new score data"
           git pull --rebase origin main
           git push

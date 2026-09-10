@@ -235,7 +235,7 @@ This ledger stays near the top as decisions are appended below. Links point to s
 
 - Initial proof-of-concept sample data used Tsunagite, but all hardcoded sample/seed data was later removed.
 - `seed-titles.json` became obsolete and was deleted along with every reference.
-- `overrides.json` was moved into `src/data`.
+- `song-overrides.json` was moved into `src/data`.
 - Initially, catalog sync processed only net-new song identities. Sections 34 and 39 extend synchronization to refresh release and supplemental chart metadata for existing songs; existing jackets are still reused.
 - Unknown songs should not be committed to the score archive.
 - Unknown names should be retained in an artifact/review mechanism so they can be corrected and resynced.
@@ -563,7 +563,7 @@ This ledger stays near the top as decisions are appended below. Links point to s
 
 ## 26. Standalone catalog overrides
 
-- Extend `src/data/overrides.json` rather than introduce a separate retired-song metadata file.
+- Extend `src/data/song-overrides.json` rather than introduce a separate retired-song metadata file.
 - Overrides without `standalone: true` retain their previous behavior: they patch a matching SEGA entry's stable ID, categorized titles, artist, chart constants, or charter metadata.
 - A standalone override represents a complete song missing from SEGA's current JP catalog.
 - Standalone entries require:
@@ -654,7 +654,7 @@ This ledger stays near the top as decisions are appended below. Links point to s
 
 ## 32. Derived chart summaries
 
-- Store `src/data/scores/chart-summaries.json` as a lightweight index keyed by stable `chartId`.
+- Store `src/data/chart-summaries.json` as a lightweight index keyed by stable `chartId`.
 - Each played chart stores play count, relevant UTC history chunks, and independent source references for best achievement, combo, and sync.
 - Best achievement, combo, and sync are cumulative properties and may come from different plays.
 - Combo order among achieved statuses: `FC < FC+ < AP < AP+`. A null combo is omitted when selecting the best combo; if every play is null, the chart summary stores `bestCombo: null`.

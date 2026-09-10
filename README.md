@@ -93,7 +93,7 @@ The lifecycle of each score is as follows:
    - All successfully processed images have their parsed JSON information stored in a Google sheet (`GOOGLE_SPREADSHEET_ID`), uniquely identified by file IDs to avoid future duplicate OCR calls. The files are then renamed by the Google service account to the timestamp associated with the image and the determined title of the song and moved into a subfolder (`GOOGLE_PROCESSED_FOLDER_ID`).
    - Any failures are also tracked in a separate tab on the same Google sheet for manual review, and retried later once marked corrected. Notifications about failures are sent to a Discord webhook (`DISCORD_WEBHOOK_URL`) in a private server of mine, since I check notifications there most frequently.
 5. From that same sheet, score records are archived into [JSON files](src/data/scores) that are read by the app.
-   - For songs that do not yet exist in the [generated catalog](src/data/generated-catalog.json) or any [manual overrides](src/data/overrides.json), their information is retrieved and archived from a SEGA endpoint (set on `SEGA_CATALOG_URL`, currently points to https://maimai.sega.jp/data/maimai_songs.json).
+   - For songs that do not yet exist in the [song catalog](src/data/song-catalog.json) or any [manual overrides](src/data/song-overrides.json), their information is retrieved and archived from a SEGA endpoint (set on `SEGA_CATALOG_URL`, currently points to https://maimai.sega.jp/data/maimai_songs.json).
    - Chart constant and chart designer information, if available, is fetched from arcade-songs-fetch.
 6. New scores are validated and chart "best of" summaries are updated where needed.
 

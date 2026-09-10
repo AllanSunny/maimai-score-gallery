@@ -1,4 +1,4 @@
-import storedChartSummaries from "../data/scores/chart-summaries.json";
+import storedChartSummaries from "../data/chart-summaries.json";
 import { parseChartSummaries, parseScoreChunk } from "./data-validation";
 import type { ScoreChunk } from "./types";
 
