@@ -1,0 +1,40 @@
+test/utils/song-titles.test.mjs
+  s_a5bfc6d26494d3::t_1e11f48e2efd0b 1-21
+src/utils/song-titles.ts
+  s_a5bfc6d26494d3::t_d638ed497fdece 13-16
+src/utils/data-validation.ts
+  s_a5bfc6d26494d3::t_a287d34d8c02df 10-13,17-19
+  s_a5bfc6d26494d3::t_1e5e532486a00c 8,127
+  s_a5bfc6d26494d3::t_1471717e903afc 9
+src/utils/song-summaries.ts
+  s_a5bfc6d26494d3::t_aa09a2873c2f7c 28,98
+  s_a5bfc6d26494d3::t_d638ed497fdece 2,51
+  s_a5bfc6d26494d3::t_25212027616aab 29,99
+  s_a5bfc6d26494d3::t_1aa787080c80fd 3,109
+src/utils/types.ts
+  s_a5bfc6d26494d3::t_aa09a2873c2f7c 157-158
+  s_a5bfc6d26494d3::t_25212027616aab 159
+  s_a5bfc6d26494d3::t_d638ed497fdece 169-170
+  s_a5bfc6d26494d3::t_e1cc6c47915575 3-4,6-9
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "b8dccca18c7a993cf181228575cce804102d23f1",
+  "prompts": {},
+  "humans": {
+    "h_278fafc5c28027": {
+      "author": "Allan Sun <allansun@live.com>"
+    }
+  },
+  "sessions": {
+    "s_a5bfc6d26494d3": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a08973-a789-7530-83c1-0ac373349b7f",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Allan Sun <allansun@live.com>"
+    }
+  }
+}
