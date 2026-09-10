@@ -1,0 +1,43 @@
+src/components/song/SongInfo.tsx
+  s_77043618ac8667::t_e9766754d30d7f 44-47,56-57
+  s_77043618ac8667::t_1b90bdd91db906 1
+  s_77043618ac8667::t_8d1ff7f28d7eba 48-55
+src/assets/icons/sort-arrow.svg
+  s_77043618ac8667::t_e9766754d30d7f 1
+src/components/song/SongListControls.tsx
+  h_278fafc5c28027 50
+src/components/ui/DropdownSelector.tsx
+  h_278fafc5c28027 57
+src/pages/ScoreListPage.tsx
+  h_278fafc5c28027 55
+src/assets/icons/close.svg
+  s_77043618ac8667::t_e9766754d30d7f 1-3
+src/components/song/SongSearchInput.tsx
+  h_278fafc5c28027 4,25
+src/components/song/SongSortControls.tsx
+  s_77043618ac8667::t_e9766754d30d7f 1,40,42-43,52-53
+  s_77043618ac8667::t_8d1ff7f28d7eba 44-51
+  h_278fafc5c28027 35
+  s_77043618ac8667::t_1cc25912d5a720 41
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "c6b5ad73563912da32c44a59230102965c1f5a0f",
+  "prompts": {},
+  "humans": {
+    "h_278fafc5c28027": {
+      "author": "Allan Sun <allansun@live.com>"
+    }
+  },
+  "sessions": {
+    "s_77043618ac8667": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a08ac9-6f65-7de2-b110-8dce98ea9d4a",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Allan Sun <allansun@live.com>"
+    }
+  }
+}
