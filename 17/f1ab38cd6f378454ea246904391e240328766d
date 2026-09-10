@@ -1,0 +1,29 @@
+src/pages/ScoreListPage.tsx
+  h_278fafc5c28027 64
+src/css/utilities.css
+  s_3fc08b526e9294::t_119bf65a560b87 16,19-23
+  s_3fc08b526e9294::t_26eb55d32c3717 24
+src/components/song/SongGrid.tsx
+  s_3fc08b526e9294::t_d6e4f86da84d1b 109
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2",
+  "base_commit_sha": "17f1ab38cd6f378454ea246904391e240328766d",
+  "prompts": {},
+  "humans": {
+    "h_278fafc5c28027": {
+      "author": "Allan Sun <allansun@live.com>"
+    }
+  },
+  "sessions": {
+    "s_3fc08b526e9294": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a08933-6dc8-7b71-843c-a09e1beb0cd8",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": null
+    }
+  }
+}
