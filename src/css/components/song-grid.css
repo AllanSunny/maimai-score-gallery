@@ -3,7 +3,7 @@
 @layer components {
   .song-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(146px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
     align-items: start;
     gap: 1rem;
   }

@@ -62,7 +62,7 @@ export function SongGrid({
   return (
     <div
       ref={gridRef}
-      className="song-grid mt-8"
+      className="song-grid mt-10"
       onClickCapture={(event) => {
         if ((event.target as HTMLElement).closest('a[href*="/charts/"]')) onPreservePosition();
       }}
