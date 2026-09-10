@@ -1,6 +1,8 @@
 @import "tailwindcss";
 @import "./css/utilities.css";
 
+@custom-variant song-controls-wide (@media (width >= 51.875rem));
+
 @font-face {
   font-family: "Rodin Pro";
   src: url("./assets/fonts/Rodin Pro DB.otf") format("opentype");
