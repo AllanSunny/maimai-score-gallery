@@ -1,5 +1,7 @@
-import searchIcon from "../../assets/icons/search.svg";
+import closeIcon from "../../assets/icons/svg/close.svg";
+import searchIcon from "../../assets/icons/svg/search.svg";
 import { classNames } from "../../utils/class-names";
+import { SvgIcon } from "../ui/SvgIcon";
 
 const searchPlaceholder = "Search titles...";
 
@@ -14,7 +16,7 @@ export function SongSearchInput({ query, onChange, onClear }: SongSearchInputPro
     <div className="min-w-0 flex-1 song-controls-wide:min-w-[330px] song-controls-wide:basis-[400px]">
       <label htmlFor="song-search" className="sr-only">Search by song title</label>
       <span className="relative block">
-        <img src={searchIcon} alt="" className="pointer-events-none absolute top-1/2 left-4 size-4 -translate-y-1/2" />
+        <SvgIcon icon={searchIcon} className="pointer-events-none absolute top-1/2 left-4 size-4 -translate-y-1/2 text-dark" />
         <input
           id="song-search"
           type="search"
@@ -33,10 +35,7 @@ export function SongSearchInput({ query, onChange, onClear }: SongSearchInputPro
             aria-label="Clear search"
             className="absolute top-1/2 right-2 flex size-6 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full text-dark transition hover:bg-primary/50 focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-dark"
           >
-            <svg aria-hidden="true" viewBox="0 0 24 24" className="size-3.5" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
-              <path d="m6 6 12 12" />
-              <path d="m18 6-12 12" />
-            </svg>
+            <SvgIcon icon={closeIcon} className="size-3.5" />
           </button>
         )}
       </span>

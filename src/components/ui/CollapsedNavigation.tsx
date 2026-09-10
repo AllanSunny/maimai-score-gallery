@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
+import closeIcon from "../../assets/icons/svg/close.svg";
+import menuIcon from "../../assets/icons/svg/menu.svg";
 import { classNames } from "../../utils/class-names";
 import type { NavigationLink } from "./SiteNavigation";
+import { SvgIcon } from "./SvgIcon";
 
 interface CollapsedNavigationProps {
   isHeaderVisible: boolean;
@@ -77,9 +80,7 @@ export function CollapsedNavigation({ isHeaderVisible, links, route }: Collapsed
             aria-controls="collapsed-navigation"
             onClick={() => setIsMenuOpen(true)}
           >
-            <svg aria-hidden="true" viewBox="0 0 24 24" className="size-5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
-              <path d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
+            <SvgIcon icon={menuIcon} className="size-5" />
           </button>
         </div>
       )}
@@ -114,9 +115,7 @@ export function CollapsedNavigation({ isHeaderVisible, links, route }: Collapsed
             aria-label="Close navigation"
             onClick={() => setIsMenuOpen(false)}
           >
-            <svg aria-hidden="true" viewBox="0 0 24 24" className="size-5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
-              <path d="m6 6 12 12M18 6 6 18" />
-            </svg>
+            <SvgIcon icon={closeIcon} className="size-5" />
           </button>
         </div>
       </div>

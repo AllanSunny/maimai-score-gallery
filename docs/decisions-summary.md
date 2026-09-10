@@ -1,7 +1,7 @@
 # maimai-score-gallery decision history
 
 Original summary generated: 2026-08-15  
-Repository review: 2026-09-09 (current working tree, including uncommitted changes)
+Repository review: 2026-09-10 (current working tree, including uncommitted changes)
 
 This is a curated, human-readable history of the owner’s key architectural, functional, behavioral, and operational decisions, adapted from a personal conversation summary. It intentionally emphasizes decisions over implementation chatter. When a later decision superseded an earlier one, both are recorded and the current decision is marked clearly.
 
@@ -16,14 +16,14 @@ For current schemas, see [Data model](data-model.md). For setup and operational 
 - Public, view-only React/Vite app on GitHub Pages; private import operations use Drive, Sheets, OpenAI, and GitHub Actions.
 - Monthly score archives and derived chart summaries are implemented; frontend history loading remains eager (sections 31–38).
 - UTAGE, owner authentication/private notes, and the Top 50 implementation remain deferred.
-- Recent additions: the expandable song grid (51), cross-version chart navigation (52), centralized song jackets without duplicated catalog objects (53), and the iterative song-list controls work (54–65).
-- Start with the [rationale ledger](#rationale-ledger) for the reasons behind the decisions; jump to the [latest decision](#decision-65) for the newest addition.
+- Recent additions: the expandable song grid (51), cross-version chart navigation (52), centralized song jackets without duplicated catalog objects (53), and the iterative song-list controls and icon work (54–66).
+- Start with the [rationale ledger](#rationale-ledger) for the reasons behind the decisions; jump to the [latest decision](#decision-66) for the newest addition.
 
 <a id="rationale-ledger"></a>
 
 ## Rationale ledger
 
-[Jump to the decision history](#decision-1) · [Latest decision](#decision-65)
+[Jump to the decision history](#decision-1) · [Latest decision](#decision-66)
 
 This ledger stays near the top as decisions are appended below. Links point to stable decision IDs. Section 44 was the ledger's former location; that number remains reserved and its old link still resolves here.
 
@@ -93,6 +93,7 @@ This ledger stays near the top as decisions are appended below. Links point to s
 - **Initial collapsible filter row** ([63](#decision-63)): Move filters into an animated row and resolve dropdown clipping without removing the panel from the DOM.
 - **Final responsive control layout** ([64](#decision-64)): Preserve control grouping and ordering across the centralized wide-layout breakpoint.
 - **Control ownership and runtime types** ([65](#decision-65)): Focused components and runtime value lists keep UI ownership, validation, and TypeScript types aligned.
+- **CSS-colorable SVG assets** ([66](#decision-66)): One mask-based renderer lets file-backed icons inherit control colors, keeps SVG geometry out of components, and removes direction-specific artwork.
 
 <a id="decision-1"></a>
 
@@ -1058,3 +1059,14 @@ This ledger stays near the top as decisions are appended below. Links point to s
 - Keep `score-list.ts` focused on pure filter, metric, and sorting functions so behavior can be tested without rendering React components.
 - Focused tests use one assertion per example and cover same-chart matching, contextual Played only, option order, matching-subset sorting, directions, tie-breakers, null status, and normalized search.
 - Sources: `src/components/song`, `src/utils/score-list.ts`, `src/utils/types.ts`, `src/utils/data-validation.ts`, `src/utils/song-summaries.ts`, `test/utils/score-list.test.mjs`, `test/utils/song-titles.test.mjs`.
+
+<a id="decision-66"></a>
+
+## 66. Centralize CSS-colorable SVG asset rendering
+
+- Store file-backed SVG icons together under `src/assets/icons/svg` rather than mixing icon files with other asset types or embedding repeated SVG markup in components.
+- Render these assets through `SvgIcon`, which applies the SVG as a CSS mask and paints it with `currentColor`. Buttons and other controls can therefore change icon color through their normal text-color and hover styles without icon-specific filters.
+- Keep mask setup, including the WebKit-prefixed properties, in the shared renderer so individual consumers specify only the asset, size, and ordinary CSS classes.
+- Reuse one close asset across search, expanded-song, and collapsed-navigation controls. Use one upward sort arrow and rotate the rendered icon for descending order instead of maintaining separate ascending and descending files.
+- Move the search, filter, hamburger-menu, close, sort, and YouTube artwork to the shared path and renderer. This also removes the YouTube button's one-off image-filter rule.
+- Sources: `src/components/ui/SvgIcon.tsx`, `src/assets/icons/svg`, `src/components/ui/CollapsedNavigation.tsx`, `src/components/song/SongSearchInput.tsx`, `src/components/song/SongInfo.tsx`, `src/components/song/SongSortControls.tsx`, `src/components/song/SongListControls.tsx`, `src/components/chart/ChartNavigation.tsx`, `src/css/utilities.css`.

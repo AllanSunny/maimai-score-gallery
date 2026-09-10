@@ -1,5 +1,6 @@
 import type { CSSProperties } from "react";
-import youtubeIcon from "../../assets/icons/youtube.svg";
+import youtubeIcon from "../../assets/icons/svg/youtube.svg";
+import { SvgIcon } from "../ui/SvgIcon";
 import type { ChartCatalogEntry } from "../../utils/types";
 import { appHref } from "../../utils/navigation";
 import { youtubeChartSearchUrl } from "../../utils/youtube";
@@ -67,7 +68,7 @@ export function ChartNavigation({ catalogEntry, alternateCatalogEntry }: ChartNa
         target="_blank"
         rel="noreferrer"
       >
-        <img className="youtube-icon mr-2 h-4 w-5" src={youtubeIcon} alt="" />
+        <SvgIcon icon={youtubeIcon} className="mr-2 h-4 w-5" />
         Find on YouTube
       </a>
     </nav>

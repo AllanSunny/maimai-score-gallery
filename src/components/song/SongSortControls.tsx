@@ -1,10 +1,11 @@
-import sortArrowIcon from "../../assets/icons/sort-arrow.svg";
+import sortArrowIcon from "../../assets/icons/svg/sort-arrow.svg";
 import {
   scoreListSortOptions,
   type ScoreListSort,
   type SortDirection,
 } from "../../utils/score-list";
 import { DropdownSelector } from "../ui/DropdownSelector";
+import { SvgIcon } from "../ui/SvgIcon";
 
 interface SongSortControlsProps {
   direction: SortDirection;
@@ -37,19 +38,9 @@ export function SongSortControls({
         title={`Sort ${direction === "asc" ? "ascending" : "descending"}`}
         onClick={() => onDirectionChange(direction === "asc" ? "desc" : "asc")}
       >
-        <span
-          aria-hidden="true"
-          className={`size-5 bg-current transition-transform ${direction === "desc" ? "rotate-180" : ""}`}
-          style={{
-            maskImage: `url("${sortArrowIcon}")`,
-            maskPosition: "center",
-            maskRepeat: "no-repeat",
-            maskSize: "contain",
-            WebkitMaskImage: `url("${sortArrowIcon}")`,
-            WebkitMaskPosition: "center",
-            WebkitMaskRepeat: "no-repeat",
-            WebkitMaskSize: "contain",
-          }}
+        <SvgIcon
+          icon={sortArrowIcon}
+          className={`size-5 transition-transform ${direction === "desc" ? "rotate-180" : ""}`}
         />
       </button>
     </div>

@@ -77,17 +77,9 @@
   color: white;
   background-color: #d10000;
 
-  & .youtube-icon {
-    transition: filter 150ms ease;
-  }
-
   &:hover {
     color: var(--color-darker);
     background-color: var(--color-lightest);
-
-    & .youtube-icon {
-      filter: brightness(0) saturate(100%);
-    }
   }
 }
 

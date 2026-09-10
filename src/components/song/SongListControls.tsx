@@ -1,5 +1,5 @@
 import { useState } from "react";
-import filterIcon from "../../assets/icons/filter.svg";
+import filterIcon from "../../assets/icons/svg/filter.svg";
 import {
   type ScoreListFilters,
   type ScoreListSort,
@@ -8,6 +8,7 @@ import {
 import { SongFilterPanel } from "./SongFilterPanel";
 import { SongSearchInput } from "./SongSearchInput";
 import { SongSortControls } from "./SongSortControls";
+import { SvgIcon } from "../ui/SvgIcon";
 
 interface SongListControlsProps {
   filters: ScoreListFilters;
@@ -52,7 +53,7 @@ export function SongListControls({
           aria-controls="score-list-filters"
           onClick={() => setAreFiltersOpen((open) => !open)}
         >
-          <img src={filterIcon} alt="" className="size-4" />
+          <SvgIcon icon={filterIcon} className="size-4" />
           <p>Filters{activeFilterCount > 0 && ` (${activeFilterCount})`}</p>
         </button>
       </div>
