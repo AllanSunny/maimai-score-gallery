@@ -1,0 +1,47 @@
+docs/decisions-summary.md
+  s_77043618ac8667::t_ce71d5a9239b3c 4,19-20,26,96,1062-1072
+src/assets/icons/svg/menu.svg
+  s_77043618ac8667::t_ee493f79aa7316 1-3
+src/components/song/SongSortControls.tsx
+  s_77043618ac8667::t_756c72161d6317 1,8,41-43
+src/components/song/SongListControls.tsx
+  s_77043618ac8667::t_756c72161d6317 2,11,56
+src/assets/icons/svg/filter.svg
+  s_77043618ac8667::t_756c72161d6317 1
+src/components/song/SongSearchInput.tsx
+  s_77043618ac8667::t_756c72161d6317 1-2,4,19,38
+src/assets/icons/svg/search.svg
+  s_77043618ac8667::t_756c72161d6317 1
+src/components/song/SongInfo.tsx
+  s_77043618ac8667::t_756c72161d6317 1,3,45
+src/assets/icons/svg/youtube.svg
+  s_77043618ac8667::t_4fa14a5de73dc3 2
+src/components/ui/CollapsedNavigation.tsx
+  s_77043618ac8667::t_ee493f79aa7316 2-3,6,83,118
+src/components/chart/ChartNavigation.tsx
+  s_77043618ac8667::t_756c72161d6317 2-3,71
+src/components/ui/SvgIcon.tsx
+  s_77043618ac8667::t_e3b8d3f266958f 3-4,8
+  s_77043618ac8667::t_756c72161d6317 1-2,5-7,9-27
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "5c6b793191190400c41b3e33b291442d628c97b7",
+  "prompts": {},
+  "humans": {
+    "h_278fafc5c28027": {
+      "author": "Allan Sun <allansun@live.com>"
+    }
+  },
+  "sessions": {
+    "s_77043618ac8667": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a08ac9-6f65-7de2-b110-8dce98ea9d4a",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": null
+    }
+  }
+}
