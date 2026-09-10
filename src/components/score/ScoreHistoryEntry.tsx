@@ -4,6 +4,7 @@ import type { JudgmentSet, ScoreRecord } from "../../utils/types";
 import { ComboDisplay } from "./ComboDisplay";
 import { MiniScoreBreakdown } from "./MiniScoreBreakdown";
 import { SyncDisplay } from "./SyncDisplay";
+import { ChevronIcon } from "../ui/ChevronIcon";
 
 interface ScoreHistoryEntryProps {
   score: ScoreRecord;
@@ -50,7 +51,7 @@ export function ScoreHistoryEntry({ score, accentColor, isOpen, onToggle }: Scor
     >
       <summary className="flex cursor-pointer touch-manipulation list-none items-center justify-between gap-8 p-3 sm:p-5 text-sm [&::-webkit-details-marker]:hidden">
         <div className="flex min-w-0 items-center gap-3">
-          <span aria-hidden="true" className="text-primary transition-transform group-open:rotate-90">›</span>
+          <ChevronIcon direction={isOpen ? "down" : "right"} className="text-primary" />
           <time className=" text-lightest" dateTime={score.playedAt}>
             <span className="text-xs md:text-sm whitespace-nowrap">{formatEasternDate(score.playedAt)}</span>{", "}
             <span className="text-xs md:text-sm whitespace-nowrap">{formatEasternTime(score.playedAt)}</span>

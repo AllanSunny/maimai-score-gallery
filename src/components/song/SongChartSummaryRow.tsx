@@ -2,6 +2,7 @@ import { appHref } from "../../utils/navigation";
 import type { Difficulty, SongChartSummary } from "../../utils/types";
 import { MiniScoreBreakdown } from "../score/MiniScoreBreakdown";
 import { classNames } from "../../utils/class-names";
+import { ChevronIcon } from "../ui/ChevronIcon";
 
 const chartRowClassName = [
   "grid min-h-12 grid-cols-[minmax(0,1fr)_auto_auto] grid-rows-2 items-center gap-x-2",
@@ -41,7 +42,7 @@ export function SongChartSummaryRow({ chart }: SongChartSummaryRowProps) {
         sync={chart.bestSync}
         className="col-start-2 row-span-2 row-start-1"
       />
-      <span aria-hidden="true" className="col-start-3 row-span-2 row-start-1 text-sm leading-none text-lightest/60">›</span>
+      <ChevronIcon className="col-start-3 row-span-2 row-start-1 text-lightest" />
     </a>
   );
 }
