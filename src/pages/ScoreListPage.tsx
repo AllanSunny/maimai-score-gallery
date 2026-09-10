@@ -61,7 +61,7 @@ export function ScoreListPage() {
             type="search"
             value={pagination.query}
             onChange={(event) => handleSearch(event.target.value)}
-            placeholder="Search titles by romaji, english, or kana..."
+            placeholder="Search titles in Japanese or English translations..."
             className="w-full rounded-xl border border-line bg-white/85 py-3 pr-11 pl-11 text-sm text-dark outline-none transition placeholder:text-darker/60 focus:border-dark focus:ring-3 focus:ring-dark/10 [&::-webkit-search-cancel-button]:appearance-none"
           />
           {pagination.query && (

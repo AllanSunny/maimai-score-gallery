@@ -106,7 +106,7 @@ export function SongGrid({
             Showing {visibleCount} of {totalCount} songs
           </p>
           {hasMoreSongs && (
-            <button type="button" onClick={onLoadMore} className="rounded-xl border border-line bg-white px-5 py-2.5 text-sm font-semibold transition hover:border-coral hover:bg-cream">
+            <button type="button" onClick={onLoadMore} className="btn btn-primary">
               Load more
             </button>
           )}
