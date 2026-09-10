@@ -1,7 +1,6 @@
 import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 
 interface StoredListState {
-  query: string;
   visibleCount: number;
   scrollY: number;
 }
@@ -10,6 +9,7 @@ interface PersistentPaginatedListOptions<T> {
   items: T[];
   matchesQuery: (item: T, normalizedQuery: string) => boolean;
   pageSize: number;
+  query: string;
   storageKey: string;
 }
 
@@ -17,14 +17,13 @@ function readListState(storageKey: string, pageSize: number): StoredListState {
   try {
     const value = JSON.parse(sessionStorage.getItem(storageKey) ?? "null");
     return {
-      query: typeof value?.query === "string" ? value.query : "",
       visibleCount: typeof value?.visibleCount === "number"
         ? Math.max(pageSize, value.visibleCount)
         : pageSize,
       scrollY: typeof value?.scrollY === "number" ? value.scrollY : 0,
     };
   } catch {
-    return { query: "", visibleCount: pageSize, scrollY: 0 };
+    return { visibleCount: pageSize, scrollY: 0 };
   }
 }
 
@@ -32,10 +31,10 @@ export function usePersistentPaginatedList<T>({
   items,
   matchesQuery,
   pageSize,
+  query,
   storageKey,
 }: PersistentPaginatedListOptions<T>) {
   const [initialState] = useState(() => readListState(storageKey, pageSize));
-  const [query, setQuery] = useState(initialState.query);
   const [visibleCount, setVisibleCount] = useState(initialState.visibleCount);
   const loadMoreRef = useRef<HTMLDivElement>(null);
   const hasRestoredScroll = useRef(false);
@@ -78,8 +77,7 @@ export function usePersistentPaginatedList<T>({
     return () => cancelAnimationFrame(frame);
   }, [initialState.scrollY, visibleCount]);
 
-  function search(queryValue: string) {
-    setQuery(queryValue);
+  function resetVisibleCount() {
     setVisibleCount(pageSize);
   }
 
@@ -89,19 +87,17 @@ export function usePersistentPaginatedList<T>({
 
   function preservePosition() {
     sessionStorage.setItem(storageKey, JSON.stringify({
-      query,
       visibleCount,
       scrollY: window.scrollY,
     } satisfies StoredListState));
   }
 
   return {
-    query,
     filteredItems,
     visibleCount,
     loadMoreRef,
     hasMoreItems,
-    search,
+    resetVisibleCount,
     loadMore,
     preservePosition,
   };
