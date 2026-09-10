@@ -1,3 +1,4 @@
+import closeIcon from "../../assets/icons/close.svg";
 import type { SongSummary } from "../../utils/types";
 import { ExpandedSongDetails } from "./ExpandedSongDetails";
 import { SongJacket } from "./SongJacket";
@@ -40,7 +41,20 @@ export function SongInfo({ song, expanded, onToggle }: SongInfoProps) {
         onClick={onToggle}
         className="btn btn-tertiary absolute top-2 right-2 z-10 size-8 !rounded-full !p-0 text-lg leading-none backdrop-blur-sm"
       >
-        <span aria-hidden="true">×</span>
+        <span
+          aria-hidden="true"
+          className="size-4 bg-current"
+          style={{
+            maskImage: `url("${closeIcon}")`,
+            maskPosition: "center",
+            maskRepeat: "no-repeat",
+            maskSize: "contain",
+            WebkitMaskImage: `url("${closeIcon}")`,
+            WebkitMaskPosition: "center",
+            WebkitMaskRepeat: "no-repeat",
+            WebkitMaskSize: "contain",
+          }}
+        />
       </button>}
 
       {expanded && <ExpandedSongDetails name={name} versions={song.versions} />}

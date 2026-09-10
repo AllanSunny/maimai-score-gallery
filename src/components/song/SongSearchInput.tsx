@@ -1,7 +1,7 @@
 import searchIcon from "../../assets/icons/search.svg";
 import { classNames } from "../../utils/class-names";
 
-const searchPlaceholder = "Search titles in Japanese or English...";
+const searchPlaceholder = "Search titles...";
 
 interface SongSearchInputProps {
   query: string;
@@ -22,7 +22,7 @@ export function SongSearchInput({ query, onChange, onClear }: SongSearchInputPro
           onChange={(event) => onChange(event.target.value)}
           placeholder={searchPlaceholder}
           className={classNames(
-            "w-full rounded-xl border border-line bg-white/95 py-3 pl-11 text-sm text-dark outline-none transition placeholder:text-darker/60 focus:border-dark focus:ring-3 focus:ring-dark/10 [&::-webkit-search-cancel-button]:appearance-none",
+            "w-full rounded-xl border border-line bg-white/95 py-2 sm:py-2.5 pl-11 text-sm text-dark outline-none transition placeholder:text-darker/60 focus:border-dark focus:ring-3 focus:ring-dark/10 [&::-webkit-search-cancel-button]:appearance-none",
             { when: Boolean(query), then: "pr-8", else: "pr-2" },
           )}
         />

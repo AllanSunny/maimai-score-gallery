@@ -52,7 +52,7 @@ export function ScoreListPage() {
     <div>
       <PageHeading
         title="All records"
-        description="Browse every recorded song. Open a jacket to view its charts, then select a difficulty for its complete score history. DX and STD versions can be toggled on the same card."
+        description={`Browse every recorded song. Open a jacket to view its charts, then select a difficulty for its complete score history. Toggle between DX and STD versions on the same card. Titles can be looked up by their Japanese or English names!`}
       />
 
       <SongListControls

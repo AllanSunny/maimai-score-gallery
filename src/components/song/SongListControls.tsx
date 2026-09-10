@@ -47,7 +47,7 @@ export function SongListControls({
         <SongSearchInput query={query} onChange={onSearch} onClear={onClearSearch} />
         <button
           type="button"
-          className="btn btn-primary shrink-0 gap-2"
+          className="btn btn-primary gap-2"
           aria-expanded={areFiltersOpen}
           aria-controls="score-list-filters"
           onClick={() => setAreFiltersOpen((open) => !open)}

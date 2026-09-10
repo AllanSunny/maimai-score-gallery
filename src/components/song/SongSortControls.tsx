@@ -1,5 +1,4 @@
-import sortAscendingIcon from "../../assets/icons/sort-ascending.svg";
-import sortDescendingIcon from "../../assets/icons/sort-descending.svg";
+import sortArrowIcon from "../../assets/icons/sort-arrow.svg";
 import {
   scoreListSortOptions,
   type ScoreListSort,
@@ -33,12 +32,25 @@ export function SongSortControls({
       />
       <button
         type="button"
-        className="btn btn-primary size-9 shrink-0 !rounded-xl !px-2 sm:size-10"
+        className="btn btn-tertiary h-9 !px-2 !rounded-2xl"
         aria-label={`Sort ${direction === "asc" ? "ascending" : "descending"}`}
         title={`Sort ${direction === "asc" ? "ascending" : "descending"}`}
         onClick={() => onDirectionChange(direction === "asc" ? "desc" : "asc")}
       >
-        <img src={direction === "asc" ? sortAscendingIcon : sortDescendingIcon} alt="" className="size-5" />
+        <span
+          aria-hidden="true"
+          className={`size-5 bg-current transition-transform ${direction === "desc" ? "rotate-180" : ""}`}
+          style={{
+            maskImage: `url("${sortArrowIcon}")`,
+            maskPosition: "center",
+            maskRepeat: "no-repeat",
+            maskSize: "contain",
+            WebkitMaskImage: `url("${sortArrowIcon}")`,
+            WebkitMaskPosition: "center",
+            WebkitMaskRepeat: "no-repeat",
+            WebkitMaskSize: "contain",
+          }}
+        />
       </button>
     </div>
   );

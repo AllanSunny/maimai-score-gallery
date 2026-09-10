@@ -54,7 +54,7 @@ export function DropdownSelector<T extends string | null>(props: DropdownSelecto
   return (
     <details ref={detailsRef} className="relative">
       <summary className={classNames(
-        "inline-flex cursor-pointer list-none items-center gap-2 rounded-lg border border-line bg-white/95 px-3 py-2 text-sm text-dark marker:hidden",
+        "inline-flex cursor-pointer list-none items-center gap-2 rounded-lg border border-line bg-white/95 px-3 py-1.5 text-sm text-dark marker:hidden",
         triggerClassName,
       )}>
         {allowMultiple
