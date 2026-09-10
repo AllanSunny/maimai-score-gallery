@@ -1,0 +1,26 @@
+config/tsconfig.app.json
+  s_7407a944278b9f::t_25a194eaa8b25f 14
+src/utils/data-validation.ts
+  s_7407a944278b9f::t_b5e5af69ed3c3b 9,14
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "fd1e62fd8b48591da66db3931ffe19fa169f5adf",
+  "prompts": {},
+  "humans": {
+    "h_278fafc5c28027": {
+      "author": "Allan Sun <allansun@live.com>"
+    }
+  },
+  "sessions": {
+    "s_7407a944278b9f": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a08a83-5cf7-7f93-9e36-763e257f57e9",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Allan Sun <allansun@live.com>"
+    }
+  }
+}
