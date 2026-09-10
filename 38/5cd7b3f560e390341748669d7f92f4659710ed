@@ -1,0 +1,49 @@
+docs/operations.md
+  s_a5bfc6d26494d3::t_9ee1e29a33138e 93,140
+  s_a5bfc6d26494d3::t_090306c35830ec 264
+README.md
+  s_a5bfc6d26494d3::t_9ee1e29a33138e 96
+scripts/validate-data.mjs
+  s_a5bfc6d26494d3::t_090306c35830ec 7,23
+scripts/lib/chart-summaries.mjs
+  s_a5bfc6d26494d3::t_090306c35830ec 6
+scripts/sync-scores.mjs
+  s_a5bfc6d26494d3::t_090306c35830ec 7
+scripts/lib/catalog-overrides.mjs
+  s_a5bfc6d26494d3::t_9ee1e29a33138e 77
+src/utils/catalog.ts
+  s_a5bfc6d26494d3::t_090306c35830ec 1,6
+docs/data-model.md
+  s_a5bfc6d26494d3::t_090306c35830ec 28,42,97
+docs/decisions-summary.md
+  s_a5bfc6d26494d3::t_9ee1e29a33138e 238,566
+  s_a5bfc6d26494d3::t_090306c35830ec 657
+.github/workflows/import-new-scores.yml
+  s_a5bfc6d26494d3::t_090306c35830ec 196,227,234
+src/utils/scores.ts
+  s_a5bfc6d26494d3::t_090306c35830ec 1
+scripts/sync-catalog.mjs
+  s_a5bfc6d26494d3::t_4f8639467c10eb 17,345
+  s_a5bfc6d26494d3::t_090306c35830ec 18,346,438,442
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "385cd7b3f560e390341748669d7f92f4659710ed",
+  "prompts": {},
+  "humans": {
+    "h_278fafc5c28027": {
+      "author": "Allan Sun <allansun@live.com>"
+    }
+  },
+  "sessions": {
+    "s_a5bfc6d26494d3": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a08973-a789-7530-83c1-0ac373349b7f",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Allan Sun <allansun@live.com>"
+    }
+  }
+}
