@@ -16,14 +16,14 @@ For current schemas, see [Data model](data-model.md). For setup and operational 
 - Public, view-only React/Vite app on GitHub Pages; private import operations use Drive, Sheets, OpenAI, and GitHub Actions.
 - Monthly score archives and derived chart summaries are implemented; frontend history loading remains eager (sections 31–38).
 - UTAGE, owner authentication/private notes, and the Top 50 implementation remain deferred.
-- Recent additions: path routing and scroll restoration (47), chart rating (48), fixed OCR options (49), off-minute scheduling (50), the expandable song grid (51), cross-version chart navigation (52), and centralized song jackets without duplicated catalog objects (53).
-- Start with the [rationale ledger](#rationale-ledger) for the reasons behind the decisions; jump to the [latest decision](#decision-53) for the newest addition.
+- Recent additions: the expandable song grid (51), cross-version chart navigation (52), centralized song jackets without duplicated catalog objects (53), and the iterative song-list controls work (54–65).
+- Start with the [rationale ledger](#rationale-ledger) for the reasons behind the decisions; jump to the [latest decision](#decision-65) for the newest addition.
 
 <a id="rationale-ledger"></a>
 
 ## Rationale ledger
 
-[Jump to the decision history](#decision-1) · [Latest decision](#decision-53)
+[Jump to the decision history](#decision-1) · [Latest decision](#decision-65)
 
 This ledger stays near the top as decisions are appended below. Links point to stable decision IDs. Section 44 was the ledger's former location; that number remains reserved and its old link still resolves here.
 
@@ -81,6 +81,18 @@ This ledger stays near the top as decisions are appended below. Links point to s
 - **Expandable song grid** ([51](#decision-51)): The score list became a song-first browsing surface: one recency-sorted card per canonical song, inline chart summaries, and DX/STD switching without leaving the list. Several expansion strategies were tried before settling on stable card order and breakpoint-specific scroll behavior (2026-09-07–08).
 - **Cross-version chart navigation** ([52](#decision-52)): Matching DX and STD difficulties belong to the same logical song, so chart detail pages provide a direct version switch while preserving the reader's position (2026-09-07).
 - **Canonical catalog objects and centralized jackets** ([53](#decision-53)): The owner preferred one parsed object graph and one jacket URL resolver over hydrated or catalog-specific copies. Lightweight lookup results supply parent context without duplicating songs, versions, or charts (2026-09-09).
+- **Initial song filters** ([54](#decision-54)): Add multi-select combo, sync, genre, difficulty, and level filters plus an independent Played only toggle.
+- **Contextual filter refinement** ([55](#decision-55)): Require chart filters to match the same chart and show Played only only when difficulty or level supplies context.
+- **Initial broad sorting model** ([56](#decision-56)): Start with a broad candidate set and one reusable ascending/descending direction control.
+- **Final sort criteria and tie-breakers** ([57](#decision-57)): Remove low-value criteria and define deterministic achievement-based and level-based tie-breakers.
+- **Filter → metrics → sort pipeline** ([58](#decision-58)): Calculate aggregate sort metrics from only the charts retained by active filters.
+- **Normalized multilingual search** ([59](#decision-59)): Cache one derived search string per grouped song without adding frontend search data to the catalog.
+- **Persistent control state** ([60](#decision-60)): Persist controls independently from pagination and make explicit clear actions replace saved values.
+- **First dropdown extraction** ([61](#decision-61)): Give filtering and sorting dedicated selectors with shared visual and dismissal conventions.
+- **Generic dropdown consolidation** ([62](#decision-62)): Replace the parallel selectors with one single- or multi-select UI primitive.
+- **Initial collapsible filter row** ([63](#decision-63)): Move filters into an animated row and resolve dropdown clipping without removing the panel from the DOM.
+- **Final responsive control layout** ([64](#decision-64)): Preserve control grouping and ordering across the centralized wide-layout breakpoint.
+- **Control ownership and runtime types** ([65](#decision-65)): Focused components and runtime value lists keep UI ownership, validation, and TypeScript types aligned.
 
 <a id="decision-1"></a>
 
@@ -914,3 +926,135 @@ This ledger stays near the top as decisions are appended below. Links point to s
 - Store only `Song.jacketKey` in the catalog and construct the public URL exclusively through the shared `jacketUrl(song)` helper. Do not copy derived jacket URLs into charts, summaries, or catalog-specific song objects.
 - Pass catalog relationship entries into chart-detail UI so the song needed for its jacket and shared metadata is available without separately passing or duplicating it.
 - Sources: `src/utils/types.ts`, `src/utils/catalog.ts`, `src/utils/jackets.ts`, `src/utils/song-summaries.ts`, `src/components/song/SongJacketImage.tsx`, `src/pages/ChartDetailPage.tsx`.
+
+<a id="decision-54"></a>
+
+## 54. Initial multi-select song filters
+
+- Filter the song-first score list by combo status, sync status, genre, difficulty, and level. Each menu accepts multiple values.
+- Add Played only as a separate, independent toggle.
+- Reverse combo and sync choices so stronger statuses appear first. List levels in descending numeric order, including plus levels.
+- Sources: `src/components/song/SongFilterPanel.tsx`, `src/utils/score-list.ts`.
+
+<a id="decision-55"></a>
+
+## 55. Refine filters around a matching chart subset
+
+- Treat genre as a song condition and the remaining choices as chart conditions. All active chart conditions must be satisfied by the same chart; unrelated charts from one song cannot collectively satisfy a filter combination.
+- Represent an unavailable combo or sync status as `null` and label only that value “None.” Do not introduce a display-only string sentinel into filter state.
+- Replace the independent Played only toggle with a contextual filter shown only when difficulty or level has selected a chart subset where played state is useful.
+- Automatically clear Played only when the final difficulty and level selections are removed, preventing an active condition from becoming invisible.
+- Count every selected value plus Played only once. `SongFilterPanel` owns this total and reports it to the Filters button; Clear filters does not repeat the count.
+- Sources: `src/components/song/SongFilterPanel.tsx`, `src/components/song/SongListControls.tsx`, `src/utils/score-list.ts`.
+
+<a id="decision-56"></a>
+
+## 56. Initial broad sorting model
+
+- Initial candidates included most/least recently played, English and Japanese title order, difficulty, level, best achievement, play count, and player-rating contribution.
+- Use one separate direction button for ascending/descending behavior instead of duplicating direction-specific options. The direction applies to the selected criterion and its numeric tie-breaker.
+- Give the sort selector a fixed width and use the shared arrow visual for its chevron and direction button.
+- Sources: `src/components/song/SongSortControls.tsx`, `src/utils/score-list.ts`.
+
+<a id="decision-57"></a>
+
+## 57. Narrow sort criteria and define tie-breakers
+
+- The final criteria are recently played, English title order, Japanese title order, level, best achievement, and play count.
+- Remove difficulty sorting after retaining difficulty as a filter. Remove player-rating-contribution sorting while keeping chart rating available elsewhere in the application.
+- Break level and play-count ties with best achievement. Break achievement ties with level.
+- Compare level with an exact chart constant when available. Otherwise use the displayed whole-number level with `+` ranked above the equivalent plain level.
+- Resolve remaining ties by canonical title so output is deterministic.
+- English title order prefers English, then romaji, then canonical title. Japanese title order prefers kana, then canonical title.
+- The selector options are the runtime source of valid persisted sort values; validation does not maintain a parallel list.
+- Sources: `src/components/song/SongSortControls.tsx`, `src/utils/score-list.ts`, `src/hooks/useSongListState.ts`.
+
+<a id="decision-58"></a>
+
+## 58. Filter first, derive sort metrics second, sort last
+
+- An early question was whether active filters should influence sorting. The final answer is yes: sorting describes only the chart subset that matched the filters.
+- Process the list in three explicit phases: retain each song's matching charts, calculate song-level metrics once from those charts, then sort by the cached metrics.
+- This prevents an unmatched BASIC play from influencing recent-play or play-count sorting while the list is filtered to MASTER, for example.
+- Calculate maximum level, maximum achievement, total play count, and most-recent play time from the matching subset. Calculate the applicable English and Japanese title keys once in the same metric phase.
+- Keep raw facts in catalog and chart-summary data, but do not store these filtered aggregates there. Their values depend on transient UI filters and are therefore list-view projections.
+- Computing metrics once per filtered song also avoids repeating reductions during each invocation of the JavaScript sort comparator.
+- Sources: `src/utils/score-list.ts`, `src/utils/song-summaries.ts`, `src/utils/types.ts`.
+
+<a id="decision-59"></a>
+
+## 59. Precomputed multilingual song search
+
+- Search canonical, kana, romaji, English, and legacy alias titles with partial, case-insensitive matching.
+- Build `SongSummary.searchText` once while grouping frontend song summaries, before chart summarization in the same phase. Join all title forms and lowercase the result.
+- Trim and lowercase each query, then perform a direct substring check against the cached search string. Do not repeatedly join and normalize every song's title arrays on each keystroke.
+- Keep the search string out of `song-catalog.json`. It is cheap derived frontend data, duplicates existing catalog fields, and would otherwise couple the persisted catalog schema to one search implementation.
+- Extract search into `SongSearchInput` with an SVG search icon and an explicit X action that clears persisted query state.
+- A measured custom placeholder with three literal periods was explored because the browser ellipsis glyph appeared vertically centered. The overlay introduced visual/background and overlap complexity and was removed; the final control uses its native placeholder.
+- Sources: `src/components/song/SongSearchInput.tsx`, `src/utils/song-titles.ts`, `src/utils/song-summaries.ts`, `src/pages/ScoreListPage.tsx`.
+
+<a id="decision-60"></a>
+
+## 60. Persistent controls separate from pagination state
+
+- `useSongListState` owns and session-persistently stores query, filters, sort criterion, and sort direction.
+- Keep pagination's visible count and scroll position in a separate storage record. The pagination hook accepts a controlled query rather than owning a competing query state.
+- Any query, filter, sort, or direction change resets visible pagination and collapses the expanded song so stale list position or inline detail does not remain attached to changed results.
+- Explicit Search X and Clear filters actions must write the empty values to storage, not only clear their visible components. Reload and navigation-back behavior were manually verified for both paths.
+- Validate restored combo, sync, and difficulty choices against their runtime domain values. Accept `null` for missing combo/sync; obsolete local-only sentinel values require no compatibility branch.
+- Sources: `src/hooks/useSongListState.ts`, `src/hooks/usePersistentPaginatedList.ts`, `src/pages/ScoreListPage.tsx`.
+
+<a id="decision-61"></a>
+
+## 61. Extract consistent song-list selectors
+
+- Extract the initially separate sorting and filtering menus into dedicated selector components.
+- Match their trigger, menu, chevron, sizing, layering, and click-outside behavior even though filtering shows checkmarks and sorting permits one value.
+- Constrain menu height, prevent scroll chaining, and layer menus above surrounding controls. Allow left- or right-edge anchoring so wide menus remain inside the layout.
+- Centralize outside/Escape behavior in `useOutsideDismissal`, with one document listener pair and registered elements rather than independent global listeners for every selector.
+- Move filter, search, and sort-direction artwork into the shared icon assets. Replace one-off chevrons with a directional, stylable `ChevronIcon` shared with related score UI.
+- Sources: `src/components/ui/DropdownSelector.tsx`, `src/components/ui/ChevronIcon.tsx`, `src/hooks/useOutsideDismissal.ts`, `src/assets/icons`.
+
+<a id="decision-62"></a>
+
+## 62. Consolidate selectors into one generic dropdown
+
+- Replace the parallel selectors with `DropdownSelector`, a generic UI component whose `allowMultiple` option controls checkbox and selection behavior.
+- Keep single- and multi-select triggers and menus visually identical. Close a single-select menu after selection; keep a multi-select menu open until dismissal.
+- Let menus grow only as wide as their content requires while remaining at least as wide as their trigger; retain a fixed-width sort trigger.
+- Sources: `src/components/ui/DropdownSelector.tsx`, `src/components/song/SongFilterPanel.tsx`, `src/components/song/SongSortControls.tsx`.
+
+<a id="decision-63"></a>
+
+## 63. Introduce and stabilize the collapsible filter row
+
+- Move filters from the primary controls row into a separate panel opened by a Filters button. Animate the panel from zero grid-row height to its content height.
+- Hide overflow while the height transition runs, then allow visible overflow so an open dropdown is not clipped by the panel.
+- An attempt to unmount the panel after collapse removed an empty grid track but made the animation ending feel unstable. Remove that mount lifecycle; the final panel remains mounted and transitions directly between row sizes.
+- Attempts to eliminate reserved grid space altered the animation and were reverted; final spacing is controlled by the panel's own margins.
+- Sources: `src/styles.css`, `src/components/song/SongListControls.tsx`, `src/components/song/SongFilterPanel.tsx`.
+
+<a id="decision-64"></a>
+
+## 64. Finalize responsive song-list control layout
+
+- Group search with the Filters button and group sorting with its direction button. Keep a wider separation between those groups on desktop and prevent a filter-count change from shrinking the search input unexpectedly.
+- Keep sorting content-sized and right-aligned. When horizontal space is insufficient, order controls as search/filter, filter panel, then sorting so expanded filters remain adjacent to their button.
+- Centralize the former repeated 830px media query as the `song-controls-wide` Tailwind variant. At that breakpoint, controls use two columns and the filter panel spans below them.
+- Let the wide-layout search field prefer 400px and shrink to 330px before changing to the stacked layout. Below the breakpoint, search/filter fill their row and sorting remains right-aligned.
+- Let song-grid jacket columns shrink to 120px before dropping a column. Expand lower-viewport cards upward sooner than a symmetrical halfway split to reduce avoidable scrolling.
+- Exact margins, gaps, and icon padding were tuned iteratively after the structural decisions; they remain presentation details rather than data contracts.
+- Sources: `src/styles.css`, `src/components/song/SongListControls.tsx`, `src/components/song/SongFilterPanel.tsx`, `src/components/song/SongSearchInput.tsx`, `src/components/song/SongSortControls.tsx`, `src/css/components/song-grid.css`, `src/hooks/useExpandableSongGrid.ts`.
+
+<a id="decision-65"></a>
+
+## 65. Focused control components and shared runtime values
+
+- Extract `SongListControls`, search, filtering, and sorting from `ScoreListPage`; keep the page responsible for data flow and list rendering rather than control markup.
+- Further split the coordinator into `SongSearchInput`, `SongFilterPanel`, and `SongSortControls`. The filter panel owns its derived active count and reports it upward for the Filters button.
+- Define combo statuses, sync statuses, and difficulties as runtime constant tuples and derive their TypeScript union types from those tuples. Reuse the same values for filter options and data validation.
+- Reuse the shared difficulty tuple when ordering summarized charts rather than maintaining another difficulty list in `song-summaries.ts`.
+- Define static filter and sort options at module scope. Memoize genre and level option objects because those collections are derived from song data.
+- Keep `score-list.ts` focused on pure filter, metric, and sorting functions so behavior can be tested without rendering React components.
+- Focused tests use one assertion per example and cover same-chart matching, contextual Played only, option order, matching-subset sorting, directions, tie-breakers, null status, and normalized search.
+- Sources: `src/components/song`, `src/utils/score-list.ts`, `src/utils/types.ts`, `src/utils/data-validation.ts`, `src/utils/song-summaries.ts`, `test/utils/score-list.test.mjs`, `test/utils/song-titles.test.mjs`.
