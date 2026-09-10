@@ -1,4 +1,6 @@
 import { findAlternateCatalogChart, findCatalogSong } from "./catalog";
+import { songSearchText } from "./song-titles";
+import { difficulties } from "./types";
 import type {
   ChartRecordSummary,
   ChartType,
@@ -8,7 +10,6 @@ import type {
   SongSummary,
 } from "./types";
 
-const difficultyOrder: Difficulty[] = ["BASIC", "ADVANCED", "EXPERT", "MASTER", "Re:MASTER"];
 const chartTypeOrder = { DX: 0, STD: 1 } satisfies Record<ChartType, number>;
 
 function summarizeCatalogChart(
@@ -24,6 +25,8 @@ function summarizeCatalogChart(
     achievement: summary?.bestAchievement.value,
     bestCombo: summary?.bestCombo?.status,
     bestSync: summary?.bestSync?.status,
+    lastPlayedAt: summary?.lastPlayedAt ?? null,
+    playCount: summary?.playCount ?? 0,
   };
 }
 
@@ -45,6 +48,7 @@ export function groupScoresBySong(
     const songKey = titles.canonical;
     const song = songs.get(songKey) ?? {
       titles,
+      searchText: songSearchText(titles),
       catalogSong: metadata?.song,
       versions: [],
       lastPlayedAt: null,
@@ -91,6 +95,8 @@ export function groupScoresBySong(
       achievement: summary?.bestAchievement.value ?? score.achievement,
       bestCombo: summary?.bestCombo?.status,
       bestSync: summary?.bestSync?.status,
+      lastPlayedAt: summary?.lastPlayedAt ?? null,
+      playCount: summary?.playCount ?? 0,
     };
 
     if (chartIndex === -1) {
@@ -100,7 +106,7 @@ export function groupScoresBySong(
     }
 
     version.charts.sort((a, b) =>
-      difficultyOrder.indexOf(a.difficulty) - difficultyOrder.indexOf(b.difficulty));
+      difficulties.indexOf(a.difficulty) - difficulties.indexOf(b.difficulty));
     songs.set(songKey, song);
   });
 

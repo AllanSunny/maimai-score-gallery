@@ -5,12 +5,18 @@ import type {
   Difficulty,
   GeneratedCatalog,
   ScoreChunk,
+  SyncStatus,
+} from "./types";
+import {
+  comboStatuses as comboStatusValues,
+  difficulties as difficultyValues,
+  syncStatuses as syncStatusValues,
 } from "./types";
 
 const chartTypes = new Set<ChartType>(["DX", "STD"]);
-const comboStatuses = new Set<ComboStatus>(["FC", "FC+", "AP", "AP+"]);
-const syncStatuses = new Set(["Sync", "FS", "FS+", "FDX", "FDX+"]);
-const difficulties = new Set<Difficulty>(["BASIC", "ADVANCED", "EXPERT", "MASTER", "Re:MASTER"]);
+const comboStatuses = new Set<ComboStatus>(comboStatusValues);
+const syncStatuses = new Set(syncStatusValues);
+const difficulties = new Set<Difficulty>(difficultyValues);
 
 function object(value: unknown, path: string): Record<string, unknown> {
   if (!value || typeof value !== "object" || Array.isArray(value)) throw new Error(`${path} must be an object.`);
@@ -118,7 +124,7 @@ function validateScores(value: unknown, path: string) {
     if (score.combo !== null && !comboStatuses.has(score.combo as ComboStatus)) {
       throw new Error(`${scorePath}.combo is invalid.`);
     }
-    if (score.sync !== null && !syncStatuses.has(score.sync as string)) throw new Error(`${scorePath}.sync is invalid.`);
+    if (score.sync !== null && !syncStatuses.has(score.sync as SyncStatus)) throw new Error(`${scorePath}.sync is invalid.`);
     nonemptyString(score.chartId, `${scorePath}.chartId`);
     if (!chartTypes.has(score.chartType as ChartType)) throw new Error(`${scorePath}.chartType is invalid.`);
     if (!difficulties.has(score.difficulty as Difficulty)) throw new Error(`${scorePath}.difficulty is invalid.`);

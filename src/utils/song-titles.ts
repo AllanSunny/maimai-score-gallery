@@ -10,6 +10,10 @@ export function allSongTitles(titles: SongTitles): string[] {
   ];
 }
 
+export function songSearchText(titles: SongTitles): string {
+  return allSongTitles(titles).join(" ").toLocaleLowerCase();
+}
+
 export function displayedAlternateTitles(titles: SongTitles): string[] {
   return [...new Set([...titles.romaji, ...titles.english, ...titles.aliases])];
 }

@@ -1,9 +1,12 @@
 /** Shared catalog, score archive, and derived frontend data structures. */
 
-export type Difficulty = "BASIC" | "ADVANCED" | "EXPERT" | "MASTER" | "Re:MASTER";
+export const difficulties = ["BASIC", "ADVANCED", "EXPERT", "MASTER", "Re:MASTER"] as const;
+export type Difficulty = typeof difficulties[number];
 export type ChartType = "DX" | "STD";
-export type ComboStatus = "FC" | "FC+" | "AP" | "AP+";
-export type SyncStatus = "Sync" | "FS" | "FS+" | "FDX" | "FDX+";
+export const comboStatuses = ["FC", "FC+", "AP", "AP+"] as const;
+export type ComboStatus = typeof comboStatuses[number];
+export const syncStatuses = ["Sync", "FS", "FS+", "FDX", "FDX+"] as const;
+export type SyncStatus = typeof syncStatuses[number];
 
 export interface Chart {
   id: string;
@@ -151,6 +154,9 @@ export interface SongChartSummary {
   achievement?: number;
   bestCombo?: ComboStatus | null;
   bestSync?: SyncStatus | null;
+  /** Most recent play for this chart, or null when it has not been played. */
+  lastPlayedAt: string | null;
+  playCount: number;
 }
 
 export interface SongVersionSummary {
@@ -160,6 +166,8 @@ export interface SongVersionSummary {
 
 export interface SongSummary {
   titles: SongTitles;
+  /** Pre-normalized title variants used by song-list search. */
+  searchText: string;
   catalogSong?: Song;
   versions: SongVersionSummary[];
   /** Most recent play across every chart version of the song. */
