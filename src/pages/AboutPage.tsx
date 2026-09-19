@@ -233,7 +233,8 @@ export function AboutPage() {
                 <em> significantly</em> harder than a 12. Each chart also has an internal decimal
                 <span className="font-semibold text-primary"> chart constant</span> that compares charts within the same level.
                 Constants ending in .6 through .9 display with a <span className="font-semibold text-primary">+</span>, so a 12.7
-                appears in the game and this gallery as 12+.
+                appears in the game and this gallery as 12+. Thank you to <a href="https://github.com/zetaraku/arcade-songs-fetch">zetaraku</a> for 
+				compiling crowdsourced constant data!
               </p>
             </div>
           </div>
