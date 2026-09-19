@@ -94,7 +94,7 @@ The lifecycle of each score is as follows:
    - Any failures are also tracked in a separate tab on the same Google sheet for manual review, and retried later once marked corrected. Notifications about failures are sent to a Discord webhook (`DISCORD_WEBHOOK_URL`) in a private server of mine, since I check notifications there most frequently.
 5. From that same sheet, score records are archived into [JSON files](src/data/scores) that are read by the app.
    - For songs that do not yet exist in the [song catalog](src/data/song-catalog.json) or any [manual overrides](src/data/song-overrides.json), their information is retrieved and archived from a SEGA endpoint (set on `SEGA_CATALOG_URL`, currently points to https://maimai.sega.jp/data/maimai_songs.json).
-   - Chart constant and chart designer information, if available, is fetched from arcade-songs-fetch.
+   - Chart constant and chart designer information, if available, is fetched from [arcade-songs-fetch](https://github.com/zetaraku/arcade-songs-fetch) (thank you zetaraku!).
 6. New scores are validated and chart "best of" summaries are updated where needed.
 
 ## More Technical Details
