@@ -47,7 +47,7 @@
 }
 
 .chart-detail-frame__difficulty {
-  top: 64.7%;
+  top: 64.5%;
   left: 3%;
   width: 55.5%;
   height: 8.7%;
@@ -61,7 +61,7 @@
 }
 
 .chart-detail-frame__level {
-  top: 63.3%;
+  top: 63%;
   left: 67%;
   width: 26.5%;
   height: 8.7%;
@@ -95,7 +95,7 @@
 
 .chart-detail-frame__level-prefix {
   align-self: flex-end;
-  margin: 0 0 0.3em;
+  margin: 0 0 0.2em;
   font-size: 0.45em;
   letter-spacing: -0.08em;
 }
@@ -130,7 +130,7 @@
 .chart-detail-frame__achievement.achievement-value {
   position: absolute;
   z-index: 2;
-  top: 88.2%;
+  top: 88.1%;
   left: 3.5%;
   width: 39.2%;
   height: 5.1%;
@@ -143,7 +143,7 @@
   white-space: nowrap;
   --text-stroke-width: 0.05em;
   letter-spacing: 0.01em;
-  filter: drop-shadow(0 0 1px var(--color-dark));
+  filter: drop-shadow(0 1px 0 rgba(0, 0, 0, 0.5));
 }
 
 .chart-detail-frame__achievement span {
@@ -161,7 +161,7 @@
 }
 
 .chart-detail-frame__rank {
-  top: 88.85%;
+  top: 88.7%;
   left: 44.7%;
   width: 19.4%;
   height: 3.8%;

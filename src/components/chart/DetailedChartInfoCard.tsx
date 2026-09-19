@@ -75,7 +75,7 @@ export function DetailedChartInfoCard({
                 {`${achievement.toFixed(4)}%`}
               </div>
               <RankDisplay
-                className="flex h-6 lg:h-7"
+                className="flex h-6 lg:h-7 mt-2"
                 status={achievementRank(achievement)}
                 size="large"
               />
