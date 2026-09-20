@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { classNames } from "../../utils/class-names";
 import {
   activeScoreListFilterCount,
@@ -42,7 +42,7 @@ export function SongFilterPanel({
   onClear,
   open,
 }: SongFilterPanelProps) {
-  const [isOverflowVisible, setIsOverflowVisible] = useState(false);
+  const [isOverflowVisible, setIsOverflowVisible] = useState(open);
   const panelRef = useRef<HTMLDivElement>(null);
   const activeFilterCount = activeScoreListFilterCount(filters);
   const genreOptions = useMemo(() => genres.map((value) => ({ value, label: value })), [genres]);
@@ -51,6 +51,10 @@ export function SongFilterPanel({
   useEffect(() => {
     onActiveCountChange(activeFilterCount);
   }, [activeFilterCount, onActiveCountChange]);
+
+  useLayoutEffect(() => {
+    if (!open) setIsOverflowVisible(false);
+  }, [open]);
 
   useEffect(() => {
     if (open) return;
@@ -71,10 +75,10 @@ export function SongFilterPanel({
       inert={!open}
       onTransitionEnd={(event) => {
         if (event.propertyName !== "grid-template-rows") return;
-        setIsOverflowVisible(open);
+        if (open) setIsOverflowVisible(true);
       }}
     >
-      <div className={open && isOverflowVisible ? "overflow-visible" : "overflow-hidden"}>
+      <div className={isOverflowVisible ? "overflow-visible" : "overflow-hidden"}>
         <div className="flex flex-wrap items-center gap-2 rounded-xl border border-primary/60 bg-darker p-3" aria-label="Score list filters">
           <DropdownSelector allowMultiple label="Combo" options={comboOptions} values={filters.combos} onChange={(values) => onChange(updateScoreListFilter(filters, "combos", values))} />
           <DropdownSelector allowMultiple label="Sync" options={syncOptions} values={filters.syncs} onChange={(values) => onChange(updateScoreListFilter(filters, "syncs", values))} />
