@@ -1,23 +1,27 @@
+import type { ReactNode } from "react";
+import { classNames } from "../../utils/class-names";
+
+export const navigationCardClassName = [
+  "group rounded-lg border-l-4 bg-darker no-underline ring-1 ring-inset ring-primary/50",
+  "transition duration-150",
+  "hover:-translate-y-0.5 hover:bg-dark/90 hover:ring-primary/70 hover:shadow-[0_2px_6px_var(--color-darkest)]",
+  "focus-visible:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary",
+].join(" ");
+
 interface NavigationCardProps {
   href: string;
-  title: string;
-  description: string;
   accentClassName: string;
+  children: ReactNode;
+  className?: string;
 }
 
-export function NavigationCard({ href, title, description, accentClassName }: NavigationCardProps) {
+export function NavigationCard({ href, accentClassName, children, className }: NavigationCardProps) {
   return (
     <a
       href={href}
-      className={`group flex min-h-48 flex-col justify-between rounded-lg border-l-4 ${accentClassName} bg-darker/60 p-6 no-underline ring-1 ring-inset ring-primary/50 transition duration-150 hover:-translate-y-0.5 hover:bg-dark/90 hover:ring-primary/70 hover:shadow-[0_2px_6px_var(--color-darkest)] focus-visible:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary`}
+      className={classNames(navigationCardClassName, accentClassName, className)}
     >
-      <div>
-        <h2 className="text-lg text-primary font-semibold tracking-tight">{title}</h2>
-        <p className="mt-3 max-w-sm text-lightest">{description}</p>
-      </div>
-      <span className="mt-8 text-sm text-primary underline decoration-primary/50">
-        View {title.toLowerCase()}
-      </span>
+      {children}
     </a>
   );
 }

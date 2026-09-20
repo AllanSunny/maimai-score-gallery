@@ -34,7 +34,22 @@ export function HomePage() {
       </section>
 
       <section aria-label="Explore the gallery" className="mt-16 grid gap-4 md:grid-cols-3">
-        {destinations.map((destination) => <NavigationCard key={destination.href} {...destination} />)}
+        {destinations.map((destination) => (
+          <NavigationCard
+            key={destination.href}
+            href={destination.href}
+            accentClassName={destination.accentClassName}
+            className="flex min-h-48 flex-col justify-between p-6"
+          >
+            <div>
+              <h2 className="text-lg font-semibold tracking-tight text-primary">{destination.title}</h2>
+              <p className="mt-3 max-w-sm text-lightest">{destination.description}</p>
+            </div>
+            <span className="mt-8 text-sm text-primary underline decoration-primary/50">
+              View {destination.title.toLowerCase()}
+            </span>
+          </NavigationCard>
+        ))}
       </section>
     </div>
   );
