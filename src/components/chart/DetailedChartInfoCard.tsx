@@ -68,7 +68,7 @@ export function DetailedChartInfoCard({
             <div className="flex flex-row gap-4 sm:gap-6 items-center">
               <div
                 className={classNames(
-                  "flex text-[1.6rem] sm:text-[2rem] lg:text-[2.3rem] achievement-value text-stroke font-bold",
+                  "flex text-[1.6rem] sm:text-[2rem] lg:text-[2.3rem] achievement-value text-stroke font-rodin-bold",
                   { when: isBelowS, then: "achievement-value--below-s" },
                 )}
               >
