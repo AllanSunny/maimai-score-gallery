@@ -1088,6 +1088,7 @@ This ledger stays near the top as decisions are appended below. Links point to s
 
 - Do not service-worker-cache remote jacket images. Cross-origin image responses can be opaque in Cache Storage and consume disproportionate quota, producing rejected cache writes in the production PWA.
 - Keep the content-addressed R2 object keys and the `public, max-age=31536000, immutable` headers written by catalog synchronization. Normal browser HTTP caching reuses a jacket on later page loads and evicts it according to browser storage pressure.
+- Request remote jackets with anonymous CORS. The public endpoint must return `Access-Control-Allow-Origin`, preventing opaque image responses from carrying opaque-cache quota behavior.
 - Publish modified jacket artwork at a new content-addressed key; never depend on replacing content at an immutable URL.
 - This supersedes Decision 22's bounded Cache First jacket runtime cache and Decision 46's retention of that cache. The service worker continues to precache bundled assets and use NetworkOnly for navigations.
 - Sources: `config/vite.config.ts`, `scripts/sync-catalog.mjs`, `docs/operations.md`.

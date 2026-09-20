@@ -8,5 +8,13 @@ interface SongJacketImageProps extends Omit<ImgHTMLAttributes<HTMLImageElement>,
 }
 
 export function SongJacketImage({ song, ...imageProps }: SongJacketImageProps) {
-  return <img {...imageProps} src={jacketUrl(song) ?? fallbackImage} alt="" onError={handleImageError} />;
+  const source = jacketUrl(song);
+
+  return <img
+    {...imageProps}
+    src={source ?? fallbackImage}
+    crossOrigin={source ? "anonymous" : undefined}
+    alt=""
+    onError={handleImageError}
+  />;
 }

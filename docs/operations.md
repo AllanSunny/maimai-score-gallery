@@ -309,6 +309,9 @@ Caching is configured in [`vite.config.ts`](../config/vite.config.ts). Page
 navigations use the network; the service worker does not provide an offline
 HTML fallback. Jacket URLs are served only when `VITE_JACKET_BASE_URL` is
 configured, and are otherwise replaced with the in-app fallback image.
+The public jacket endpoint must send `Access-Control-Allow-Origin`; the gallery
+loads remote jackets with anonymous CORS so their browser-cache responses are
+not opaque.
 
 To inspect production caching locally, run `npm run build` followed by
 `npm run preview`. Replacing an image at the same jacket URL may leave a cached
