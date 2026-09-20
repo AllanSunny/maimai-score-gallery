@@ -65,28 +65,31 @@ export function DetailedChartInfoCard({
         <div className="mt-8">
           <div className="ml-1 text-darkest">Achievement</div>
           {achievement != null && (
-            <div className="flex flex-row gap-4 sm:gap-6 items-center">
-              <div
-                className={classNames(
-                  "flex text-[1.6rem] sm:text-[2rem] lg:text-[2.3rem] achievement-value text-stroke font-rodin-bold",
-                  { when: isBelowS, then: "achievement-value--below-s" },
-                )}
-              >
-                {`${achievement.toFixed(4)}%`}
+            <>
+              <div className="flex flex-row gap-4 sm:gap-6 items-center">
+                <div
+                  className={classNames(
+                    "flex text-[1.6rem] sm:text-[2rem] lg:text-[2.3rem] achievement-value text-stroke font-rodin-bold",
+                    { when: isBelowS, then: "achievement-value--below-s" },
+                  )}
+                >
+                  {`${achievement.toFixed(4)}%`}
+                </div>
+                <RankDisplay
+                  className="flex h-6 lg:h-7 mt-2"
+                  status={achievementRank(achievement)}
+                  size="large"
+                />
               </div>
-              <RankDisplay
-                className="flex h-6 lg:h-7 mt-2"
-                status={achievementRank(achievement)}
-                size="large"
-              />
-            </div>
-          )}
-          {achievement == null && <div className="ml-1 mt-2 text-dark">—</div>}
 
-          <div className="ml-1 flex flex-row gap-6">
-            <ComboDisplay className="h-8 sm:h-9 lg:h-10" status={bestCombo} size="large" />
-            <SyncDisplay className="h-8 sm:h-9 lg:h-10" status={bestSync} size="large" />
-          </div>
+              <div className="ml-1 flex flex-row gap-6">
+                <ComboDisplay className="h-8 sm:h-9 lg:h-10" status={bestCombo} size="large" />
+                <SyncDisplay className="h-8 sm:h-9 lg:h-10" status={bestSync} size="large" />
+              </div>
+            </>
+          )}
+          
+          {achievement == null && <div className="ml-1 mt-2 text-dark">—</div>}
         </div>
       </div>
     </ContentCard>
