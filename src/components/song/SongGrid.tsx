@@ -1,6 +1,5 @@
 import { Fragment, useLayoutEffect, useRef, useState, type RefObject } from "react";
 import type { SongSummary } from "../../utils/types";
-import { EmptyState } from "../ui/EmptyState";
 import { SongInfo } from "./SongInfo";
 
 interface SongGridProps {
@@ -99,19 +98,22 @@ export function SongGrid({
           )}
         </Fragment>;
       })}
-      {!totalCount && <EmptyState className="col-span-full rounded-2xl border border-line">No matching songs.</EmptyState>}
-      {totalCount > 0 && (
-        <div ref={loadMoreRef} className="col-span-full py-4 text-center">
-          <p className="mb-3 text-lightest">
-            Showing {visibleCount} of {totalCount} songs
-          </p>
-          {hasMoreSongs && (
-            <button type="button" onClick={onLoadMore} className="btn btn-primary">
-              Load more
-            </button>
-          )}
-        </div>
-      )}
+      <div ref={loadMoreRef} className="col-span-full py-4 text-center">
+        {!totalCount ? (
+          <p className="text-light">No matching songs.</p>
+        ) : (
+          <>
+            <p className="text-light">
+              Showing {visibleCount} of {totalCount} songs
+            </p>
+            {hasMoreSongs && (
+              <button type="button" onClick={onLoadMore} className="btn btn-primary mt-3">
+                Load more
+              </button>
+            )}
+          </>
+        )}
+      </div>
     </div>
   );
 }
