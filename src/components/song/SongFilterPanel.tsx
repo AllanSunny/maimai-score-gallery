@@ -5,7 +5,7 @@ import {
   supportsPlayedOnlyFilter,
   type ScoreListFilters,
   updateScoreListFilter,
-} from "../../utils/score-list";
+} from "../../utils/song-list-filter";
 import {
   comboStatuses,
   difficulties,

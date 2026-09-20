@@ -5,10 +5,8 @@ import { PageHeading } from "../components/ui/PageHeading";
 import { useExpandableSongGrid } from "../hooks/useExpandableSongGrid";
 import { usePersistentPaginatedList } from "../hooks/usePersistentPaginatedList";
 import { useSongListState } from "../hooks/useSongListState";
-import {
-  filterAndSortSongs,
-  scoreListFilterOptions,
-} from "../utils/score-list";
+import { scoreListFilterOptions } from "../utils/song-list-filter";
+import { filterAndSortSongs } from "../utils/song-list-sort";
 import { groupScoresBySong } from "../utils/song-summaries";
 import { chartSummaries, scores } from "../utils/scores";
 

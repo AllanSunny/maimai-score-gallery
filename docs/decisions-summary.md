@@ -935,7 +935,7 @@ This ledger stays near the top as decisions are appended below. Links point to s
 - Filter the song-first score list by combo status, sync status, genre, difficulty, and level. Each menu accepts multiple values.
 - Add Played only as a separate, independent toggle.
 - Reverse combo and sync choices so stronger statuses appear first. List levels in descending numeric order, including plus levels.
-- Sources: `src/components/song/SongFilterPanel.tsx`, `src/utils/score-list.ts`.
+- Sources: `src/components/song/SongFilterPanel.tsx`, `src/utils/song-list-filter.ts`.
 
 <a id="decision-55"></a>
 
@@ -946,7 +946,7 @@ This ledger stays near the top as decisions are appended below. Links point to s
 - Replace the independent Played only toggle with a contextual filter shown only when difficulty or level has selected a chart subset where played state is useful.
 - Automatically clear Played only when the final difficulty and level selections are removed, preventing an active condition from becoming invisible.
 - Count every selected value plus Played only once. `SongFilterPanel` owns this total and reports it to the Filters button; Clear filters does not repeat the count.
-- Sources: `src/components/song/SongFilterPanel.tsx`, `src/components/song/SongListControls.tsx`, `src/utils/score-list.ts`.
+- Sources: `src/components/song/SongFilterPanel.tsx`, `src/components/song/SongListControls.tsx`, `src/utils/song-list-filter.ts`.
 
 <a id="decision-56"></a>
 
@@ -955,7 +955,7 @@ This ledger stays near the top as decisions are appended below. Links point to s
 - Initial candidates included most/least recently played, English and Japanese title order, difficulty, level, best achievement, play count, and player-rating contribution.
 - Use one separate direction button for ascending/descending behavior instead of duplicating direction-specific options. The direction applies to the selected criterion and its numeric tie-breaker.
 - Give the sort selector a fixed width and use the shared arrow visual for its chevron and direction button.
-- Sources: `src/components/song/SongSortControls.tsx`, `src/utils/score-list.ts`.
+- Sources: `src/components/song/SongSortControls.tsx`, `src/utils/song-list-sort.ts`.
 
 <a id="decision-57"></a>
 
@@ -968,7 +968,7 @@ This ledger stays near the top as decisions are appended below. Links point to s
 - Resolve remaining ties by canonical title so output is deterministic.
 - English title order prefers English, then romaji, then canonical title. Japanese title order prefers kana, then canonical title.
 - The selector options are the runtime source of valid persisted sort values; validation does not maintain a parallel list.
-- Sources: `src/components/song/SongSortControls.tsx`, `src/utils/score-list.ts`, `src/hooks/useSongListState.ts`.
+- Sources: `src/components/song/SongSortControls.tsx`, `src/utils/song-list-sort.ts`, `src/hooks/useSongListState.ts`, `test/utils/song-list-sort.test.mjs`.
 
 <a id="decision-58"></a>
 
@@ -980,7 +980,7 @@ This ledger stays near the top as decisions are appended below. Links point to s
 - Calculate maximum level, maximum achievement, total play count, and most-recent play time from the matching subset. Calculate the applicable English and Japanese title keys once in the same metric phase.
 - Keep raw facts in catalog and chart-summary data, but do not store these filtered aggregates there. Their values depend on transient UI filters and are therefore list-view projections.
 - Computing metrics once per filtered song also avoids repeating reductions during each invocation of the JavaScript sort comparator.
-- Sources: `src/utils/score-list.ts`, `src/utils/song-summaries.ts`, `src/utils/types.ts`.
+- Sources: `src/utils/song-list-filter.ts`, `src/utils/song-list-sort.ts`, `src/utils/song-summaries.ts`, `src/utils/types.ts`.
 
 <a id="decision-59"></a>
 
@@ -1056,9 +1056,9 @@ This ledger stays near the top as decisions are appended below. Links point to s
 - Define combo statuses, sync statuses, and difficulties as runtime constant tuples and derive their TypeScript union types from those tuples. Reuse the same values for filter options and data validation.
 - Reuse the shared difficulty tuple when ordering summarized charts rather than maintaining another difficulty list in `song-summaries.ts`.
 - Define static filter and sort options at module scope. Memoize genre and level option objects because those collections are derived from song data.
-- Keep `score-list.ts` focused on pure filter, metric, and sorting functions so behavior can be tested without rendering React components.
+- Keep score-list filter and sort utilities pure so behavior can be tested without rendering React components.
 - Focused tests use one assertion per example and cover same-chart matching, contextual Played only, option order, matching-subset sorting, directions, tie-breakers, null status, and normalized search.
-- Sources: `src/components/song`, `src/utils/score-list.ts`, `src/utils/types.ts`, `src/utils/data-validation.ts`, `src/utils/song-summaries.ts`, `test/utils/score-list.test.mjs`, `test/utils/song-titles.test.mjs`.
+- Sources: `src/components/song`, `src/utils/song-list-filter.ts`, `src/utils/song-list-sort.ts`, `src/utils/types.ts`, `src/utils/data-validation.ts`, `src/utils/song-summaries.ts`, `test/utils/song-list-filter.test.mjs`, `test/utils/song-list-sort.test.mjs`, `test/utils/song-titles.test.mjs`.
 
 <a id="decision-66"></a>
 
@@ -1080,7 +1080,7 @@ This ledger stays near the top as decisions are appended below. Links point to s
 - Show the concrete outcome in the direction button's tooltip and accessible label (`A–Z`, `Newest first`, `Highest first`, and their inverses), rather than “ascending” or “descending.”
 - Preserve the arrow's visible orientation when switching between title and non-title criteria. Because title and non-title modes assign opposite internal directions to the same arrow orientation, translate the stored direction at that boundary; do not override a user's explicit reverse-order choice.
 - This supersedes the generic arrow-orientation implication in decisions 56 and 66, while retaining their single direction control and shared upward SVG asset.
-- Sources: `src/components/song/SongSortControls.tsx`, `src/utils/score-list.ts`, `src/hooks/useSongListState.ts`.
+- Sources: `src/components/song/SongSortControls.tsx`, `src/utils/song-list-sort.ts`, `src/hooks/useSongListState.ts`, `test/utils/song-list-sort.test.mjs`.
 
 <a id="decision-68"></a>
 
@@ -1101,3 +1101,14 @@ This ledger stays near the top as decisions are appended below. Links point to s
 - Continue precaching the fonts so the established offline app-shell behavior remains available, but reduce the service-worker precache from roughly 7.40 MiB to 5.75 MiB.
 - This supersedes Decision 22's acceptance of large OTF fonts as the initial caching tradeoff. Font subsetting remains a possible later optimization if the cache footprint needs to shrink further.
 - Sources: `src/assets/fonts`, `src/styles.css`, `config/vite.config.ts`.
+
+<a id="decision-70"></a>
+
+## 70. Split score-list filtering from sorting
+
+- Replace the unified `score-list.ts` utility with `song-list-filter.ts` and `song-list-sort.ts`. Filters own their state, UI option values, and matching-chart selection; sorting owns criteria, sort-direction presentation semantics, metric derivation, and comparators.
+- Sorting imports the matching-chart selector so the established filter → metrics → sort pipeline continues to calculate metrics solely from charts retained by active filters.
+- Keep the direction-label and arrow-orientation helpers with sort criteria rather than in a separate utility, because their behavior is defined by the selected sort.
+- Preserve public behavior and persisted `ScoreListFilters`, `ScoreListSort`, and `SortDirection` value shapes while moving their source modules.
+- This supersedes decision 65's unified utility placement, not its requirement for pure, focused, directly testable helpers.
+- Sources: `src/utils/song-list-filter.ts`, `src/utils/song-list-sort.ts`, `src/components/song/SongFilterPanel.tsx`, `src/components/song/SongSortControls.tsx`, `src/hooks/useSongListState.ts`, `src/pages/ScoreListPage.tsx`, `test/utils/song-list-filter.test.mjs`, `test/utils/song-list-sort.test.mjs`.

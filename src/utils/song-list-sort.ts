@@ -1,4 +1,5 @@
-import type { ComboStatus, Difficulty, SongChartSummary, SongSummary, SyncStatus } from "./types";
+import { matchingSongCharts, type ScoreListFilters } from "./song-list-filter";
+import type { SongChartSummary, SongSummary } from "./types";
 
 export type ScoreListSort =
   | "recent"
@@ -18,60 +19,41 @@ export const scoreListSortOptions = [
   { value: "play-count", label: "Play count" },
 ] as const satisfies ReadonlyArray<{ value: ScoreListSort; label: string }>;
 
-export interface ScoreListFilters {
-  combos: Array<ComboStatus | null>;
-  syncs: Array<SyncStatus | null>;
-  difficulties: Difficulty[];
-  genres: string[];
-  levels: string[];
-  playedOnly: boolean;
+export function isTitleSort(sort: ScoreListSort) {
+  return sort === "title-english" || sort === "title-japanese";
 }
 
-export type MultiSelectFilterKey = "combos" | "syncs" | "difficulties" | "genres" | "levels";
+export function sortDirectionLabel(sort: ScoreListSort, direction: SortDirection) {
+  const ascending = direction === "asc";
+
+  switch (sort) {
+    case "title-english":
+      return ascending ? "A–Z" : "Z–A";
+    case "title-japanese":
+      return ascending ? "あ–ん" : "ん–あ";
+    case "recent":
+      return ascending ? "Oldest first" : "Newest first";
+    default:
+      return ascending ? "Lowest first" : "Highest first";
+  }
+}
+
+export function sortArrowPointsDown(sort: ScoreListSort, direction: SortDirection) {
+  return isTitleSort(sort) ? direction === "asc" : direction === "desc";
+}
+
+export function directionForSortChange(
+  currentSort: ScoreListSort,
+  nextSort: ScoreListSort,
+  direction: SortDirection,
+): SortDirection {
+  return isTitleSort(currentSort) === isTitleSort(nextSort)
+    ? direction
+    : direction === "asc" ? "desc" : "asc";
+}
 
 const collator = new Intl.Collator(undefined, { numeric: true, sensitivity: "base" });
 const japaneseCollator = new Intl.Collator("ja", { numeric: true, sensitivity: "base" });
-
-export const emptyScoreListFilters: ScoreListFilters = {
-  combos: [],
-  syncs: [],
-  difficulties: [],
-  genres: [],
-  levels: [],
-  playedOnly: false,
-};
-
-export function updateScoreListFilter<K extends MultiSelectFilterKey>(
-  filters: ScoreListFilters,
-  key: K,
-  values: ScoreListFilters[K],
-): ScoreListFilters {
-  const next = { ...filters, [key]: values } as ScoreListFilters;
-  return next.difficulties.length || next.levels.length
-    ? next
-    : { ...next, playedOnly: false };
-}
-
-export function activeScoreListFilterCount(filters: ScoreListFilters): number {
-  return filters.combos.length + filters.syncs.length + filters.difficulties.length
-    + filters.genres.length + filters.levels.length + Number(filters.playedOnly);
-}
-
-export function supportsPlayedOnlyFilter(filters: ScoreListFilters): boolean {
-  return filters.difficulties.length > 0 || filters.levels.length > 0;
-}
-
-export function scoreListFilterOptions(songs: SongSummary[]) {
-  return {
-    genres: [...new Set(songs.flatMap((song) => song.catalogSong?.genre ?? []))].sort(),
-    levels: [...new Set(songs.flatMap((song) => charts(song).map((chart) => chart.level)))]
-      .sort((a, b) => b.localeCompare(a, undefined, { numeric: true })),
-  };
-}
-
-function charts(song: SongSummary): SongChartSummary[] {
-  return song.versions.flatMap((version) => version.charts);
-}
 
 function levelValue(level: string): number {
   const match = level.match(/\d+(?:\.\d+)?/);
@@ -97,15 +79,6 @@ function lastPlayedAt(songCharts: SongChartSummary[]): string {
   );
 }
 
-function matchingCharts(song: SongSummary, filters: ScoreListFilters): SongChartSummary[] {
-  return charts(song).filter((chart) =>
-    (!filters.playedOnly || chart.lastPlayedAt !== null)
-    && (!filters.difficulties.length || filters.difficulties.includes(chart.difficulty))
-    && (!filters.levels.length || filters.levels.includes(chart.level))
-    && (!filters.combos.length || filters.combos.includes(chart.bestCombo ?? null))
-    && (!filters.syncs.length || filters.syncs.includes(chart.bestSync ?? null)));
-}
-
 function englishTitle(song: SongSummary): string {
   return song.titles.english[0] ?? song.titles.romaji[0] ?? song.titles.canonical;
 }
@@ -122,7 +95,7 @@ export function filterAndSortSongs(
 ): SongSummary[] {
   const filteredSongs = songs.flatMap((song) => {
     if (filters.genres.length && (!song.catalogSong || !filters.genres.includes(song.catalogSong.genre))) return [];
-    const matchedCharts = matchingCharts(song, filters);
+    const matchedCharts = matchingSongCharts(song, filters);
     return matchedCharts.length ? [{ song, matchedCharts }] : [];
   });
   const songsWithSortMetrics = filteredSongs.map(({ song, matchedCharts }) => ({

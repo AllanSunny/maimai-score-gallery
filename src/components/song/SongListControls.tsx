@@ -1,10 +1,7 @@
 import { useState } from "react";
 import filterIcon from "../../assets/icons/svg/filter.svg";
-import {
-  type ScoreListFilters,
-  type ScoreListSort,
-  type SortDirection,
-} from "../../utils/score-list";
+import type { ScoreListFilters } from "../../utils/song-list-filter";
+import type { ScoreListSort, SortDirection } from "../../utils/song-list-sort";
 import { SongFilterPanel } from "./SongFilterPanel";
 import { SongSearchInput } from "./SongSearchInput";
 import { SongSortControls } from "./SongSortControls";

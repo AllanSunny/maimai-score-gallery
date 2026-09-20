@@ -1,11 +1,6 @@
 import { useEffect, useState } from "react";
-import {
-  emptyScoreListFilters,
-  scoreListSortOptions,
-  type ScoreListFilters,
-  type ScoreListSort,
-  type SortDirection,
-} from "../utils/score-list";
+import { emptyScoreListFilters, type ScoreListFilters } from "../utils/song-list-filter";
+import { scoreListSortOptions, type ScoreListSort, type SortDirection } from "../utils/song-list-sort";
 import { comboStatuses, difficulties, syncStatuses } from "../utils/types";
 
 interface StoredSongListState {

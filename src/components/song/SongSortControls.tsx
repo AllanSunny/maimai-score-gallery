@@ -1,9 +1,12 @@
 import sortArrowIcon from "../../assets/icons/svg/sort-arrow.svg";
 import {
+  directionForSortChange,
   scoreListSortOptions,
+  sortArrowPointsDown,
+  sortDirectionLabel,
   type ScoreListSort,
   type SortDirection,
-} from "../../utils/score-list";
+} from "../../utils/song-list-sort";
 import { DropdownSelector } from "../ui/DropdownSelector";
 import { SvgIcon } from "../ui/SvgIcon";
 
@@ -14,38 +17,14 @@ interface SongSortControlsProps {
   sort: ScoreListSort;
 }
 
-function directionLabel(sort: ScoreListSort, direction: SortDirection) {
-  const ascending = direction === "asc";
-
-  switch (sort) {
-    case "title-english":
-      return ascending ? "A–Z" : "Z–A";
-    case "title-japanese":
-      return ascending ? "あ–ん" : "ん–あ";
-    case "recent":
-      return ascending ? "Oldest first" : "Newest first";
-    default:
-      return ascending ? "Lowest first" : "Highest first";
-  }
-}
-
-function arrowPointsDown(sort: ScoreListSort, direction: SortDirection) {
-  const titleSort = sort === "title-english" || sort === "title-japanese";
-  return titleSort ? direction === "asc" : direction === "desc";
-}
-
-function isTitleSort(sort: ScoreListSort) {
-  return sort === "title-english" || sort === "title-japanese";
-}
-
 export function SongSortControls({
   direction,
   onDirectionChange,
   onSortChange,
   sort,
 }: SongSortControlsProps) {
-  const currentDirectionLabel = directionLabel(sort, direction);
-  const pointsDown = arrowPointsDown(sort, direction);
+  const currentDirectionLabel = sortDirectionLabel(sort, direction);
+  const pointsDown = sortArrowPointsDown(sort, direction);
 
   return (
     <div className="flex w-fit items-center justify-self-end gap-3 song-controls-wide:col-start-2 song-controls-wide:row-start-1">
@@ -58,9 +37,8 @@ export function SongSortControls({
         triggerClassName="w-48 justify-between"
         onChange={(nextSort) => {
           onSortChange(nextSort);
-          if (isTitleSort(sort) !== isTitleSort(nextSort)) {
-            onDirectionChange(direction === "asc" ? "desc" : "asc");
-          }
+          const nextDirection = directionForSortChange(sort, nextSort, direction);
+          if (nextDirection !== direction) onDirectionChange(nextDirection);
         }}
       />
       <button
