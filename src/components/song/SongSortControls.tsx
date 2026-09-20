@@ -14,12 +14,39 @@ interface SongSortControlsProps {
   sort: ScoreListSort;
 }
 
+function directionLabel(sort: ScoreListSort, direction: SortDirection) {
+  const ascending = direction === "asc";
+
+  switch (sort) {
+    case "title-english":
+      return ascending ? "A–Z" : "Z–A";
+    case "title-japanese":
+      return ascending ? "あ–ん" : "ん–あ";
+    case "recent":
+      return ascending ? "Oldest first" : "Newest first";
+    default:
+      return ascending ? "Lowest first" : "Highest first";
+  }
+}
+
+function arrowPointsDown(sort: ScoreListSort, direction: SortDirection) {
+  const titleSort = sort === "title-english" || sort === "title-japanese";
+  return titleSort ? direction === "asc" : direction === "desc";
+}
+
+function isTitleSort(sort: ScoreListSort) {
+  return sort === "title-english" || sort === "title-japanese";
+}
+
 export function SongSortControls({
   direction,
   onDirectionChange,
   onSortChange,
   sort,
 }: SongSortControlsProps) {
+  const currentDirectionLabel = directionLabel(sort, direction);
+  const pointsDown = arrowPointsDown(sort, direction);
+
   return (
     <div className="flex w-fit items-center justify-self-end gap-3 song-controls-wide:col-start-2 song-controls-wide:row-start-1">
       <span className="text-light">Sort by</span>
@@ -29,18 +56,23 @@ export function SongSortControls({
         options={scoreListSortOptions}
         value={sort}
         triggerClassName="w-48 justify-between"
-        onChange={onSortChange}
+        onChange={(nextSort) => {
+          onSortChange(nextSort);
+          if (isTitleSort(sort) !== isTitleSort(nextSort)) {
+            onDirectionChange(direction === "asc" ? "desc" : "asc");
+          }
+        }}
       />
       <button
         type="button"
         className="btn btn-tertiary h-9 !px-2 !rounded-2xl"
-        aria-label={`Sort ${direction === "asc" ? "ascending" : "descending"}`}
-        title={`Sort ${direction === "asc" ? "ascending" : "descending"}`}
+        aria-label={`Sort: ${currentDirectionLabel}`}
+        title={`Sort: ${currentDirectionLabel}`}
         onClick={() => onDirectionChange(direction === "asc" ? "desc" : "asc")}
       >
         <SvgIcon
           icon={sortArrowIcon}
-          className={`size-5 transition-transform ${direction === "desc" ? "rotate-180" : ""}`}
+          className={`size-5 transition-transform ${pointsDown ? "rotate-180" : ""}`}
         />
       </button>
     </div>

@@ -1070,3 +1070,14 @@ This ledger stays near the top as decisions are appended below. Links point to s
 - Reuse one close asset across search, expanded-song, and collapsed-navigation controls. Use one upward sort arrow and rotate the rendered icon for descending order instead of maintaining separate ascending and descending files.
 - Move the search, filter, hamburger-menu, close, sort, and YouTube artwork to the shared path and renderer. This also removes the YouTube button's one-off image-filter rule.
 - Sources: `src/components/ui/SvgIcon.tsx`, `src/assets/icons/svg`, `src/components/ui/CollapsedNavigation.tsx`, `src/components/song/SongSearchInput.tsx`, `src/components/song/SongInfo.tsx`, `src/components/song/SongSortControls.tsx`, `src/components/song/SongListControls.tsx`, `src/components/chart/ChartNavigation.tsx`, `src/css/utilities.css`.
+
+<a id="decision-67"></a>
+
+## 67. Criterion-specific sort-arrow semantics
+
+- Keep `"asc"` and `"desc"` as the internal comparator and persisted-state values; they are criterion-neutral and continue to describe the actual ordering.
+- The visible arrow describes the gallery's reading order instead of exposing those generic terms. A down arrow means `A–Z` for English titles and `あ–ん` for Japanese titles, but means Newest first for recency and Highest first for level, achievement, and play count. The up arrow is the inverse in each case.
+- Show the concrete outcome in the direction button's tooltip and accessible label (`A–Z`, `Newest first`, `Highest first`, and their inverses), rather than “ascending” or “descending.”
+- Preserve the arrow's visible orientation when switching between title and non-title criteria. Because title and non-title modes assign opposite internal directions to the same arrow orientation, translate the stored direction at that boundary; do not override a user's explicit reverse-order choice.
+- This supersedes the generic arrow-orientation implication in decisions 56 and 66, while retaining their single direction control and shared upward SVG asset.
+- Sources: `src/components/song/SongSortControls.tsx`, `src/utils/score-list.ts`, `src/hooks/useSongListState.ts`.
