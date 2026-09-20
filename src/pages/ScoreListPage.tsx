@@ -54,6 +54,7 @@ export function ScoreListPage() {
       />
 
       <SongListControls
+        areFiltersOpen={listState.areFiltersOpen}
         filters={listState.filters}
         genres={genres}
         levels={levels}
@@ -61,6 +62,7 @@ export function ScoreListPage() {
         sort={listState.sort}
         sortDirection={listState.sortDirection}
         onFiltersChange={(filters) => updateControls(() => listState.setFilters(filters))}
+        onFiltersOpenChange={listState.setAreFiltersOpen}
         onClearFilters={() => updateControls(listState.clearFilters)}
         onSearch={(query) => updateControls(() => listState.setQuery(query))}
         onClearSearch={() => updateControls(listState.clearQuery)}

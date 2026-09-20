@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
-import { emptyScoreListFilters, type ScoreListFilters } from "../utils/song-list-filter";
+import { activeScoreListFilterCount, emptyScoreListFilters, type ScoreListFilters } from "../utils/song-list-filter";
 import { scoreListSortOptions, type ScoreListSort, type SortDirection } from "../utils/song-list-sort";
 import { comboStatuses, difficulties, syncStatuses } from "../utils/types";
 
 interface StoredSongListState {
+  areFiltersOpen: boolean;
   filters: ScoreListFilters;
   query: string;
   sort: ScoreListSort;
@@ -11,6 +12,7 @@ interface StoredSongListState {
 }
 
 const defaultState: StoredSongListState = {
+  areFiltersOpen: false,
   filters: emptyScoreListFilters,
   query: "",
   sort: "recent",
@@ -40,15 +42,18 @@ function nullableSelectedValues<T extends string>(value: unknown, allowedValues:
 function readState(storageKey: string): StoredSongListState {
   try {
     const value = JSON.parse(sessionStorage.getItem(storageKey) ?? "null");
+    const filters: ScoreListFilters = {
+      combos: nullableSelectedValues(value?.filters?.combos, comboStatuses),
+      syncs: nullableSelectedValues(value?.filters?.syncs, syncStatuses),
+      difficulties: selectedValues(value?.filters?.difficulties, difficulties),
+      genres: stringArray(value?.filters?.genres),
+      levels: stringArray(value?.filters?.levels),
+      playedOnly: value?.filters?.playedOnly === true,
+    };
+
     return {
-      filters: {
-        combos: nullableSelectedValues(value?.filters?.combos, comboStatuses),
-        syncs: nullableSelectedValues(value?.filters?.syncs, syncStatuses),
-        difficulties: selectedValues(value?.filters?.difficulties, difficulties),
-        genres: stringArray(value?.filters?.genres),
-        levels: stringArray(value?.filters?.levels),
-        playedOnly: value?.filters?.playedOnly === true,
-      },
+      areFiltersOpen: value?.areFiltersOpen === true && activeScoreListFilterCount(filters) > 0,
+      filters,
       query: typeof value?.query === "string" ? value.query : "",
       sort: sorts.has(value?.sort) ? value.sort : defaultState.sort,
       sortDirection: value?.sortDirection === "asc" ? "asc" : "desc",
@@ -67,8 +72,9 @@ export function useSongListState(storageKey: string) {
 
   return {
     ...state,
+    setAreFiltersOpen: (areFiltersOpen: boolean) => setState((current) => ({ ...current, areFiltersOpen })),
     setFilters: (filters: ScoreListFilters) => setState((current) => ({ ...current, filters })),
-    clearFilters: () => setState((current) => ({ ...current, filters: emptyScoreListFilters })),
+    clearFilters: () => setState((current) => ({ ...current, areFiltersOpen: false, filters: emptyScoreListFilters })),
     setQuery: (query: string) => setState((current) => ({ ...current, query })),
     clearQuery: () => setState((current) => ({ ...current, query: "" })),
     setSort: (sort: ScoreListSort) => setState((current) => ({ ...current, sort })),

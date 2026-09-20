@@ -8,6 +8,7 @@ import { SongSortControls } from "./SongSortControls";
 import { SvgIcon } from "../ui/SvgIcon";
 
 interface SongListControlsProps {
+  areFiltersOpen: boolean;
   filters: ScoreListFilters;
   genres: string[];
   levels: string[];
@@ -15,6 +16,7 @@ interface SongListControlsProps {
   sort: ScoreListSort;
   sortDirection: SortDirection;
   onFiltersChange: (filters: ScoreListFilters) => void;
+  onFiltersOpenChange: (open: boolean) => void;
   onClearFilters: () => void;
   onClearSearch: () => void;
   onSearch: (query: string) => void;
@@ -23,6 +25,7 @@ interface SongListControlsProps {
 }
 
 export function SongListControls({
+  areFiltersOpen,
   filters,
   genres,
   levels,
@@ -30,13 +33,13 @@ export function SongListControls({
   sort,
   sortDirection,
   onFiltersChange,
+  onFiltersOpenChange,
   onClearFilters,
   onClearSearch,
   onSearch,
   onSortChange,
   onSortDirectionChange,
 }: SongListControlsProps) {
-  const [areFiltersOpen, setAreFiltersOpen] = useState(false);
   const [activeFilterCount, setActiveFilterCount] = useState(0);
 
   return (
@@ -48,7 +51,7 @@ export function SongListControls({
           className="btn btn-primary gap-2"
           aria-expanded={areFiltersOpen}
           aria-controls="score-list-filters"
-          onClick={() => setAreFiltersOpen((open) => !open)}
+          onClick={() => onFiltersOpenChange(!areFiltersOpen)}
         >
           <SvgIcon icon={filterIcon} className="size-4" />
           <p>Filters{activeFilterCount > 0 && ` (${activeFilterCount})`}</p>
