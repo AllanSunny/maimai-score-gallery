@@ -54,7 +54,7 @@ export function DropdownSelector<T extends string | null>(props: DropdownSelecto
   return (
     <details ref={detailsRef} className="relative">
       <summary className={classNames(
-        "inline-flex cursor-pointer list-none items-center gap-2 rounded-lg border border-line bg-white/95 px-3 py-1.5 text-sm text-dark marker:hidden",
+        "inline-flex cursor-pointer list-none items-center gap-2 rounded-lg border bg-white/95 px-3 py-1.5 text-sm text-dark marker:hidden",
         triggerClassName,
       )}>
         {allowMultiple
@@ -66,7 +66,7 @@ export function DropdownSelector<T extends string | null>(props: DropdownSelecto
         <ChevronIcon direction="down" className="-mr-1 shrink-0" />
       </summary>
       <div className={classNames(
-        "absolute z-40 max-h-72 w-max min-w-full overflow-y-auto overscroll-none rounded-xl border border-t-0 border-line bg-white/95 p-2 shadow-lg",
+        "absolute z-40 max-h-72 w-max min-w-full overflow-y-auto overscroll-none rounded-xl border border-t-0 bg-white/95 p-2 shadow-lg",
         align === "right" ? "right-0" : "left-0",
       )}>
         {options.map((option) => allowMultiple
