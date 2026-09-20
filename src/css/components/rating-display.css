@@ -1,0 +1,59 @@
+@layer components {
+  .rating-display {
+    container-type: inline-size;
+    position: relative;
+    display: inline-block;
+    width: 18rem;
+    max-width: 100%;
+    aspect-ratio: 288 / 73;
+    line-height: 1;
+  }
+
+  .rating-display__plate {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+  }
+
+  .rating-display__digits {
+    --rating-digit-top: #fffeea;
+    --rating-digit-middle: #fff75f;
+    --rating-digit-bottom: #ff600a;
+    --rating-digit-outline: #d34500;
+
+    position: absolute;
+    top: 19%;
+    right: 4.1%;
+    bottom: 18%;
+    left: 41.7%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    align-items: center;
+
+    background: linear-gradient(
+      to bottom,
+      var(--rating-digit-top),
+      var(--rating-digit-middle) 42%,
+      var(--rating-digit-bottom)
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0.06em 0 var(--color-darkest));
+    font-family: var(--font-rodin-bold);
+    font-size: 10.5cqi;
+    font-variant-numeric: tabular-nums;
+    font-weight: 800;
+    letter-spacing: 0;
+    paint-order: stroke fill;
+    -webkit-text-stroke: 0.035em var(--rating-digit-outline);
+  }
+
+  .rating-display__digit {
+    min-width: 0;
+    text-align: center;
+  }
+}
