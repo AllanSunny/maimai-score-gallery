@@ -5,7 +5,7 @@ import { SongJacketImage } from "./SongJacketImage";
 
 const jacketClassNames = {
   collapsed: "aspect-square cursor-pointer",
-  expanded: "mx-auto mt-1 !h-[180px] !w-[180px] aspect-square max-h-60 max-w-60 border border-lightest cursor-default md:mt-0 md:!h-full md:!w-full md:aspect-auto md:self-center",
+  expanded: "mx-auto mt-1 !h-[180px] !w-[180px] aspect-square max-h-60 max-w-60 border border-lightest cursor-default md:mt-0 md:!h-auto md:!w-full md:aspect-auto md:self-center",
 };
 
 interface SongJacketProps {
@@ -32,8 +32,6 @@ export function SongJacket({ expanded, song, onToggle }: SongJacketProps) {
     >
       <SongJacketImage
         song={song.catalogSong}
-        width="240"
-        height="240"
         loading="lazy"
         decoding="async"
         referrerPolicy="no-referrer"

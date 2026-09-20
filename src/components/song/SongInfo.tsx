@@ -7,7 +7,7 @@ import { classNames } from "../../utils/class-names";
 
 const songClassNames = {
   collapsed: "bg-darker",
-  expanded: "z-30 col-span-full bg-dark shadow-[0_0px_5px_var(--color-primary)] md:grid md:grid-cols-[15rem_minmax(0,1fr)]",
+  expanded: "z-30 col-span-full bg-dark shadow-[0_0px_5px_var(--color-primary)] md:grid md:grid-cols-[16rem_minmax(0,1fr)]",
 };
 
 interface SongInfoProps {
