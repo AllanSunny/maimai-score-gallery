@@ -49,7 +49,7 @@ export function SongSortControls({
 
   return (
     <div className="flex w-fit items-center justify-self-end gap-3 song-controls-wide:col-start-2 song-controls-wide:row-start-1">
-      <span className="text-light">Sort by</span>
+      <span className="text-light leading-4">Sort by</span>
       <DropdownSelector
         align="right"
         label="Sort songs"
