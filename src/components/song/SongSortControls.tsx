@@ -34,7 +34,7 @@ export function SongSortControls({
         label="Sort songs"
         options={scoreListSortOptions}
         value={sort}
-        triggerClassName="w-48 justify-between"
+        triggerClassName="w-40 justify-between"
         onChange={(nextSort) => {
           onSortChange(nextSort);
           const nextDirection = directionForSortChange(sort, nextSort, direction);

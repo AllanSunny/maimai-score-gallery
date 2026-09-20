@@ -12,8 +12,8 @@ export type SortDirection = "asc" | "desc";
 
 export const scoreListSortOptions = [
   { value: "recent", label: "Recently played" },
-  { value: "title-english", label: "Title (English order)" },
-  { value: "title-japanese", label: "Title (Japanese order)" },
+  { value: "title-english", label: "Title (A–Z)" },
+  { value: "title-japanese", label: "Title (あ–ん)" },
   { value: "level", label: "Level" },
   { value: "achievement", label: "Achievement %" },
   { value: "play-count", label: "Play count" },
@@ -80,11 +80,23 @@ function lastPlayedAt(songCharts: SongChartSummary[]): string {
 }
 
 function englishTitle(song: SongSummary): string {
-  return song.titles.english[0] ?? song.titles.romaji[0] ?? song.titles.canonical;
+  return song.titles.romaji[0] ?? song.titles.english[0] ?? song.titles.canonical;
 }
 
-function japaneseTitle(song: SongSummary): string {
-  return song.titles.kana[0] ?? song.titles.canonical;
+function beginsWithSpecialCharacter(title: string): boolean {
+  return /^[\p{P}\p{S}]/u.test(title.trimStart());
+}
+
+function japaneseSortKey(song: SongSummary) {
+  const kana = song.titles.kana[0];
+  if (kana) return { group: 0, value: kana };
+
+  const source = song.titles.romaji[0] ?? song.titles.english[0] ?? song.titles.canonical;
+  if (beginsWithSpecialCharacter(source)) return { group: 3, value: source };
+
+  const value = source.replace(/[^A-Za-z0-9]/gu, "");
+  if (!value) return { group: 3, value: source };
+  return { group: /^\d/u.test(value) ? 1 : 2, value };
 }
 
 export function filterAndSortSongs(
@@ -103,7 +115,7 @@ export function filterAndSortSongs(
     metrics: {
       achievement: maximumAchievement(matchedCharts),
       englishTitle: englishTitle(song),
-      japaneseTitle: japaneseTitle(song),
+      japaneseTitle: japaneseSortKey(song),
       lastPlayedAt: lastPlayedAt(matchedCharts),
       level: maximumLevel(matchedCharts),
       playCount: playCount(matchedCharts),
@@ -113,12 +125,16 @@ export function filterAndSortSongs(
   return songsWithSortMetrics.sort((a, b) => {
     const canonicalFallback = () => collator.compare(a.song.titles.canonical, b.song.titles.canonical);
     let comparison: number;
+    let specialCharacterComparison = 0;
     switch (sort) {
       case "title-english":
+        specialCharacterComparison = Number(beginsWithSpecialCharacter(a.metrics.englishTitle))
+          - Number(beginsWithSpecialCharacter(b.metrics.englishTitle));
         comparison = collator.compare(a.metrics.englishTitle, b.metrics.englishTitle);
         break;
       case "title-japanese":
-        comparison = japaneseCollator.compare(a.metrics.japaneseTitle, b.metrics.japaneseTitle);
+        specialCharacterComparison = a.metrics.japaneseTitle.group - b.metrics.japaneseTitle.group;
+        comparison = japaneseCollator.compare(a.metrics.japaneseTitle.value, b.metrics.japaneseTitle.value);
         break;
       case "level":
         comparison = a.metrics.level - b.metrics.level
@@ -137,6 +153,10 @@ export function filterAndSortSongs(
         comparison = a.metrics.lastPlayedAt.localeCompare(b.metrics.lastPlayedAt);
         break;
     }
-    return comparison * (direction === "asc" ? 1 : -1) || canonicalFallback();
+    const directionMultiplier = direction === "asc" ? 1 : -1;
+    return (sort === "title-japanese"
+      ? (specialCharacterComparison || comparison) * directionMultiplier
+      : specialCharacterComparison || comparison * directionMultiplier)
+      || canonicalFallback();
   }).map(({ song }) => song);
 }

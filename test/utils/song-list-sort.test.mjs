@@ -39,6 +39,16 @@ const filters = (overrides = {}) => ({ combos: [], syncs: [], difficulties: [], 
 const sortedNames = (songs, sort, direction = "desc", activeFilters = filters()) =>
   scoreListSort.filterAndSortSongs(songs, activeFilters, sort, direction).map(({ titles }) => titles.canonical);
 
+test("title sort labels describe their visible order", () => {
+  assert.deepEqual(
+    scoreListSort.scoreListSortOptions.filter(({ value }) => value.startsWith("title-")),
+    [
+      { value: "title-english", label: "Title (A–Z)" },
+      { value: "title-japanese", label: "Title (あ–ん)" },
+    ],
+  );
+});
+
 test("recent sorting uses only matching charts", () => {
   const a = song("A", [chart({ difficulty: "MASTER", lastPlayedAt: "2025-01-01" }), chart({ difficulty: "BASIC", lastPlayedAt: "2026-01-01" })]);
   const b = song("B", [chart({ difficulty: "MASTER", lastPlayedAt: "2025-06-01" })]);
@@ -51,10 +61,46 @@ test("English title sorting uses translated titles", () => {
   assert.deepEqual(sortedNames([englishSecond, englishFirst], "title-english", "asc"), ["Z", "A"]);
 });
 
+test("English title sorting prefers romaji over an English translation", () => {
+  const romajiFirst = song("Z", [chart()], { titles: { romaji: ["Alpha"], english: ["Zulu"] } });
+  const romajiSecond = song("A", [chart()], { titles: { romaji: ["Beta"], english: ["Alpha"] } });
+  assert.deepEqual(sortedNames([romajiSecond, romajiFirst], "title-english", "asc"), ["Z", "A"]);
+});
+
 test("Japanese title sorting uses kana readings", () => {
   const japaneseFirst = song("Z", [chart()], { titles: { kana: ["あ"] } });
   const japaneseSecond = song("A", [chart()], { titles: { kana: ["か"] } });
   assert.deepEqual(sortedNames([japaneseSecond, japaneseFirst], "title-japanese", "asc"), ["Z", "A"]);
+});
+
+test("Japanese title sorting falls back to romaji when kana is unavailable", () => {
+  const romajiFirst = song("Z", [chart()], { titles: { romaji: ["alpha"] } });
+  const romajiSecond = song("A", [chart()], { titles: { romaji: ["beta"] } });
+  assert.deepEqual(sortedNames([romajiSecond, romajiFirst], "title-japanese", "asc"), ["Z", "A"]);
+});
+
+test("Japanese title sorting prioritizes kana over a romaji fallback", () => {
+  const kana = song("Kana", [chart()], { titles: { kana: ["け"] } });
+  const romaji = song("Romaji", [chart()], { titles: { romaji: ["ku"] } });
+  assert.deepEqual(sortedNames([romaji, kana], "title-japanese", "asc"), ["Kana", "Romaji"]);
+});
+
+test("Japanese title sorting puts numeric Latin keys before alphabetic Latin keys", () => {
+  const numeric = song("7 Wonders", [chart()]);
+  const alphabetic = song("Altale", [chart()]);
+  assert.deepEqual(sortedNames([alphabetic, numeric], "title-japanese", "asc"), ["7 Wonders", "Altale"]);
+});
+
+test("English title sorting sends symbol-prefixed titles to the end", () => {
+  const symbol = song("+", [chart()]);
+  const alpha = song("Alpha", [chart()]);
+  assert.deepEqual(sortedNames([symbol, alpha], "title-english", "asc"), ["Alpha", "+"]);
+});
+
+test("Japanese title sorting puts symbol-prefixed titles first when reversed", () => {
+  const symbol = song("+", [chart()]);
+  const kana = song("あ", [chart()], { titles: { kana: ["あ"] } });
+  assert.deepEqual(sortedNames([symbol, kana], "title-japanese", "desc"), ["+", "あ"]);
 });
 
 test("level sorting uses only matching charts", () => {
