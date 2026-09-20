@@ -298,7 +298,7 @@ intermediate score archives and generated data are retained for one day.
 ## Asset caching
 
 The production build generates a service worker with `vite-plugin-pwa`.
-Vite-built JavaScript, CSS, fonts, frames, and icons are precached and updated
+Vite-built JavaScript, CSS, WOFF2 fonts, frames, and icons are precached and updated
 automatically when their content hashes change. Jacket images are deliberately
 excluded from service-worker runtime caching: their content-addressed R2 keys
 and `public, max-age=31536000, immutable` upload header let the browser's normal

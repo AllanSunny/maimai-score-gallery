@@ -5,7 +5,7 @@
 
 @font-face {
   font-family: "Rodin Pro";
-  src: url("./assets/fonts/Rodin Pro DB.otf") format("opentype");
+  src: url("./assets/fonts/Rodin Pro DB.woff2") format("woff2");
   font-weight: 600;
   font-style: normal;
   font-display: swap;
@@ -13,16 +13,8 @@
 
 @font-face {
   font-family: "Rodin NTLG Pro";
-  src: url("./assets/fonts/RodinNTLG Pro EB.otf") format("opentype");
+  src: url("./assets/fonts/RodinNTLG Pro EB.woff2") format("woff2");
   font-weight: 800;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Rodin Pro";
-  src: url("./assets/fonts/RodinNTLG Pro EB.otf") format("opentype");
-  font-weight: 700;
   font-style: normal;
   font-display: swap;
 }

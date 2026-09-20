@@ -14,7 +14,7 @@ export default defineConfig(() => {
         manifest: false,
         workbox: {
           cleanupOutdatedCaches: true,
-          globPatterns: ["**/*.{js,css,ico,png,svg,webp,woff,woff2,otf}"],
+          globPatterns: ["**/*.{js,css,ico,png,svg,webp,woff,woff2}"],
           maximumFileSizeToCacheInBytes: 4 * 1024 * 1024,
           navigateFallback: null,
         },

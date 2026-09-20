@@ -1092,3 +1092,12 @@ This ledger stays near the top as decisions are appended below. Links point to s
 - Publish modified jacket artwork at a new content-addressed key; never depend on replacing content at an immutable URL.
 - This supersedes Decision 22's bounded Cache First jacket runtime cache and Decision 46's retention of that cache. The service worker continues to precache bundled assets and use NetworkOnly for navigations.
 - Sources: `config/vite.config.ts`, `scripts/sync-catalog.mjs`, `docs/operations.md`.
+
+<a id="decision-69"></a>
+
+## 69. WOFF2 fonts to reduce the PWA cache footprint
+
+- Replace the bundled Rodin OTF fonts with equivalent WOFF2 files and update `@font-face` declarations accordingly.
+- Continue precaching the fonts so the established offline app-shell behavior remains available, but reduce the service-worker precache from roughly 7.40 MiB to 5.75 MiB.
+- This supersedes Decision 22's acceptance of large OTF fonts as the initial caching tradeoff. Font subsetting remains a possible later optimization if the cache footprint needs to shrink further.
+- Sources: `src/assets/fonts`, `src/styles.css`, `config/vite.config.ts`.
