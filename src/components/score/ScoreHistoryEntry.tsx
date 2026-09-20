@@ -42,7 +42,7 @@ export function ScoreHistoryEntry({ score, accentColor, isOpen, onToggle }: Scor
       ref={entryRef}
       id={score.id}
       open={isOpen}
-      className="group border-b last:border-b-0"
+      className="scroll-mt-16 group border-b last:border-b-0"
       style={{ borderColor: `var(--color-${accentColor})` }}
       onToggle={(event) => {
         const nextIsOpen = event.currentTarget.open;

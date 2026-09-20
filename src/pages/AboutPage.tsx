@@ -74,7 +74,7 @@ const sectionLinks = [
 ];
 
 function SectionHeading({ id, children }: { id: string; children: string }) {
-  return <h2 id={id} className="scroll-mt-6 text-2xl font-semibold tracking-tight sm:text-3xl">{children}</h2>;
+  return <h2 id={id} className="scroll-mt-16 text-2xl font-semibold tracking-tight sm:text-3xl">{children}</h2>;
 }
 
 function navigateToSection(event: MouseEvent<HTMLAnchorElement>, href: string) {
@@ -182,15 +182,15 @@ export function AboutPage() {
 
         <div className="mt-5 grid gap-4 md:grid-cols-3">
           <ContentCard accentColor="advanced" variant="secondary" className="p-5">
-            <h3 id="songs" className="scroll-mt-6 font-semibold text-advanced">Song</h3>
+            <h3 id="songs" className="scroll-mt-16 font-semibold text-advanced">Song</h3>
             <p className="mt-2 text-lightest">The title, artist, cover art, and every available difficulty are all grouped together.</p>
           </ContentCard>
           <ContentCard accentColor="master" variant="secondary" className="p-5">
-            <h3 id="charts" className="scroll-mt-6 font-semibold text-master">Chart</h3>
+            <h3 id="charts" className="scroll-mt-16 font-semibold text-master">Chart</h3>
             <p className="mt-2 text-lightest">You'll see its difficulty, level, chart type, and the best achievement, rating, combo, and sync status I've recorded.</p>
           </ContentCard>
           <ContentCard accentColor="expert" variant="secondary" className="p-5">
-            <h3 id="scores" className="scroll-mt-6 font-semibold text-expert">Score</h3>
+            <h3 id="scores" className="scroll-mt-16 font-semibold text-expert">Score</h3>
             <p className="mt-2 text-lightest">Each play shows when it happened, its achievement and rank, rating gain, combo and sync badges, and judgment breakdown.</p>
           </ContentCard>
         </div>
@@ -207,7 +207,7 @@ export function AboutPage() {
         <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
           {difficulties.map((difficulty) => (
             <ContentCard key={difficulty.name} accentColor={difficulty.color} variant="secondary" className="p-4">
-              <h3 id={`difficulty-${difficulty.color}`} className="scroll-mt-6 font-semibold" style={{ color: `var(--color-${difficulty.color})` }}>{difficulty.name}</h3>
+              <h3 id={`difficulty-${difficulty.color}`} className="scroll-mt-16 font-semibold" style={{ color: `var(--color-${difficulty.color})` }}>{difficulty.name}</h3>
               <p className="mt-2 text-lightest">{difficulty.description}</p>
             </ContentCard>
           ))}
@@ -215,7 +215,7 @@ export function AboutPage() {
         <ContentCard accentColor="primary" variant="secondary" className="mt-5 p-5 sm:p-7">
           <div className="grid gap-12 text-lightest md:grid-cols-2">
             <div>
-              <h3 id="deluxe-and-standard-charts" className="scroll-mt-6 font-semibold text-primary">Deluxe and Standard Charts</h3>
+              <h3 id="deluxe-and-standard-charts" className="scroll-mt-16 font-semibold text-primary">Deluxe and Standard Charts</h3>
               <p className="mt-2">
                 Every chart set is classified as <span className="font-semibold text-primary">Deluxe</span> (
                 <span className="font-semibold text-primary">DX</span>, shown in this gallery as{" "}
@@ -227,7 +227,7 @@ export function AboutPage() {
               </p>
             </div>
             <div>
-              <h3 id="levels-and-chart-constants" className="scroll-mt-6 font-semibold text-primary">Levels and chart constants</h3>
+              <h3 id="levels-and-chart-constants" className="scroll-mt-16 font-semibold text-primary">Levels and chart constants</h3>
               <p className="mt-2">
                 Every chart is rated from 1 to 15, with 15 being the hardest. The difficulty is exponential, so a 14 will be
                 <em> significantly</em> harder than a 12. Each chart also has an internal decimal
@@ -245,7 +245,7 @@ export function AboutPage() {
         <SectionHeading id="scoring-and-achievements">Scoring and achievements</SectionHeading>
         <div className="mt-5 grid gap-5 lg:grid-cols-2">
           <ContentCard accentColor="advanced" variant="secondary" className="p-5 sm:p-7">
-            <h3 id="score-values" className="scroll-mt-6 text-xl font-semibold text-advanced">What the numbers mean</h3>
+            <h3 id="score-values" className="scroll-mt-16 text-xl font-semibold text-advanced">What the numbers mean</h3>
             <div className="mt-4 space-y-3 text-lightest">
               <p><span className="font-semibold text-primary">Achievement</span> is the main score for a play, shown to four decimal places from 0 to 101.0000%.</p>
               <p><span className="font-semibold text-primary">Rank</span> is the letter grade that goes along with that percentage. SSS+ is the highest, requiring 100.5000% or above.</p>
@@ -255,7 +255,7 @@ export function AboutPage() {
           </ContentCard>
 
           <ContentCard accentColor="expert" variant="secondary" className="p-5 sm:p-7">
-            <h3 id="combo-achievements" className="scroll-mt-6 text-xl font-semibold text-expert">Combo achievements</h3>
+            <h3 id="combo-achievements" className="scroll-mt-16 text-xl font-semibold text-expert">Combo achievements</h3>
             <dl className="mt-5 grid grid-cols-[max-content_1fr] items-center gap-x-5 gap-y-4">
               {comboStatuses.map(({ status, label }) => (
                 <Fragment key={status}>
@@ -268,7 +268,7 @@ export function AboutPage() {
         </div>
 
         <ContentCard accentColor="basic" variant="secondary" className="mt-5 p-5 sm:p-7">
-          <h3 id="sync-achievements" className="scroll-mt-6 text-xl font-semibold text-basic">Two-player sync achievements</h3>
+          <h3 id="sync-achievements" className="scroll-mt-16 text-xl font-semibold text-basic">Two-player sync achievements</h3>
           <div className="mt-5 grid gap-y-5 md:grid-cols-2 md:gap-x-12">
             {syncStatusColumns.map((column, index) => (
               <dl key={index} className="grid grid-cols-[max-content_1fr] items-center gap-x-5 gap-y-5">
