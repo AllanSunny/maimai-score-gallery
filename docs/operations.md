@@ -299,20 +299,21 @@ intermediate score archives and generated data are retained for one day.
 
 The production build generates a service worker with `vite-plugin-pwa`.
 Vite-built JavaScript, CSS, fonts, frames, and icons are precached and updated
-automatically when their content hashes change. Jacket images use a separate
-Cache First runtime cache scoped to `VITE_JACKET_BASE_URL`, limited to 300
-images and 90 days; browser quota pressure may evict entries sooner. Service
-workers are not enabled by the normal Vite development server.
+automatically when their content hashes change. Jacket images are deliberately
+excluded from service-worker runtime caching: their content-addressed R2 keys
+and `public, max-age=31536000, immutable` upload header let the browser's normal
+HTTP cache reuse them across page loads and evict them under storage pressure.
+Service workers are not enabled by the normal Vite development server.
 
 Caching is configured in [`vite.config.ts`](../config/vite.config.ts). Page
 navigations use the network; the service worker does not provide an offline
-HTML fallback. The jacket runtime cache is enabled only when
-`VITE_JACKET_BASE_URL` is configured.
+HTML fallback. Jacket URLs are served only when `VITE_JACKET_BASE_URL` is
+configured, and are otherwise replaced with the in-app fallback image.
 
 To inspect production caching locally, run `npm run build` followed by
 `npm run preview`. Replacing an image at the same jacket URL may leave a cached
-copy visible until expiration or eviction; use a new object key for a new URL,
-or clear the site's browser cache when checking a replacement.
+copy visible until expiration or eviction; publish changed artwork with a new
+content-addressed object key instead.
 
 ## Implementation references
 

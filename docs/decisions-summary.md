@@ -48,7 +48,7 @@ This ledger stays near the top as decisions are appended below. Links point to s
 - **Review sheet as manual entry** ([19](#decision-19), [25](#decision-25)): Some captures cannot be recovered reliably by OCR; a validated human-authored row is cheaper and more accurate than repeatedly asking the model.
 - **Retained OCR cache** ([20](#decision-20)): OCR is the expensive/non-deterministic step, so retaining successful structured output enables correction and retry without repeated model cost.
 - **Separate duplicate folder** ([21](#decision-21)): Keeping duplicates away from successful captures makes cleanup obvious without risking a second score insertion.
-- **PWA/runtime caching split** ([22](#decision-22)): Bundled assets are immutable and safe to precache; remote jackets are numerous and need a bounded, evictable runtime cache.
+- **PWA/HTTP caching split** ([68](#decision-68)): Bundled assets are immutable and safe to precache; remote jackets use their immutable HTTP-cache headers rather than service-worker storage.
 - **Configuration/redaction boundary** ([23](#decision-23)): Deployment-specific endpoints and model choices must remain configurable, while credentials and private identifiers never belong in public data or personal exports.
 - **Serialized workflow with bounded workers** ([24](#decision-24)): OCR benefits from limited parallelism, but Drive/Sheets/data mutations need one ordered owner to avoid races and quota bursts.
 - **Standalone overrides** ([26](#decision-26)): Removed songs still need stable catalog identity, but should not be forced onto unrelated current SEGA entries or maintained in a second competing metadata system.
@@ -1081,3 +1081,13 @@ This ledger stays near the top as decisions are appended below. Links point to s
 - Preserve the arrow's visible orientation when switching between title and non-title criteria. Because title and non-title modes assign opposite internal directions to the same arrow orientation, translate the stored direction at that boundary; do not override a user's explicit reverse-order choice.
 - This supersedes the generic arrow-orientation implication in decisions 56 and 66, while retaining their single direction control and shared upward SVG asset.
 - Sources: `src/components/song/SongSortControls.tsx`, `src/utils/score-list.ts`, `src/hooks/useSongListState.ts`.
+
+<a id="decision-68"></a>
+
+## 68. Jacket delivery through the browser HTTP cache
+
+- Do not service-worker-cache remote jacket images. Cross-origin image responses can be opaque in Cache Storage and consume disproportionate quota, producing rejected cache writes in the production PWA.
+- Keep the content-addressed R2 object keys and the `public, max-age=31536000, immutable` headers written by catalog synchronization. Normal browser HTTP caching reuses a jacket on later page loads and evicts it according to browser storage pressure.
+- Publish modified jacket artwork at a new content-addressed key; never depend on replacing content at an immutable URL.
+- This supersedes Decision 22's bounded Cache First jacket runtime cache and Decision 46's retention of that cache. The service worker continues to precache bundled assets and use NetworkOnly for navigations.
+- Sources: `config/vite.config.ts`, `scripts/sync-catalog.mjs`, `docs/operations.md`.
