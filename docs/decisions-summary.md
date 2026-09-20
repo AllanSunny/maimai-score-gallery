@@ -16,20 +16,20 @@ For current schemas, see [Data model](data-model.md). For setup and operational 
 - Public, view-only React/Vite app on GitHub Pages; private import operations use Drive, Sheets, OpenAI, and GitHub Actions.
 - Monthly score archives and derived chart summaries are implemented; frontend history loading remains eager (sections 31–38).
 - UTAGE, owner authentication/private notes, and the Top 50 implementation remain deferred.
-- Recent additions: the expandable song grid (51), cross-version chart navigation (52), centralized song jackets without duplicated catalog objects (53), and the iterative song-list controls and icon work (54–66).
-- Start with the [rationale ledger](#rationale-ledger) for the reasons behind the decisions; jump to the [latest decision](#decision-66) for the newest addition.
+- Recent additions: the expandable song grid (51), cross-version chart navigation (52), centralized song jackets without duplicated catalog objects (53), iterative song-list controls and sorting behavior (54–67, 70–73), HTTP-cached jackets (68), and WOFF2 fonts (69).
+- Start with the [rationale ledger](#rationale-ledger) for the reasons behind the decisions; jump to the [latest decision](#decision-73) for the newest addition.
 
 <a id="rationale-ledger"></a>
 
 ## Rationale ledger
 
-[Jump to the decision history](#decision-1) · [Latest decision](#decision-66)
+[Jump to the decision history](#decision-1) · [Latest decision](#decision-73)
 
 This ledger stays near the top as decisions are appended below. Links point to stable decision IDs. Section 44 was the ledger's former location; that number remains reserved and its old link still resolves here.
 
 **Evidence:** Earlier entries draw on the sanitized conversation export through 2026-08-28. This update also reviewed relevant recent tasks and this conversation. Dates and task titles identify supporting discussions without publishing private transcript links. Entries explicitly labeled “Implementation rationale” describe the code's tradeoffs where the reviewed history does not establish the owner's personal reason. These are paraphrases, not quotations or a claim to have reviewed every conversation.
 
-**Maintenance:** Append new numbered decisions at the end, add a stable `decision-N` anchor and a linked rationale here, and update the latest-decision link. Keep existing IDs; mark superseded choices rather than renumbering them. Record the motivating request or incident when known, and label inference when it is not.
+**Maintenance:** Append new numbered decisions at the end, add a stable `decision-N` anchor and a linked rationale here, and update the latest-decision link. Each new or materially revised decision must include a concise in-section `Rationale` item when owner-provided context is available or can be responsibly inferred from the relevant task history; label implementation inference as such. Keep existing IDs; mark superseded choices rather than renumbering them. Record the motivating request or incident when known.
 
 - **Spreadsheet and UTC rules** ([1](#decision-1)): EXIF is closer to the real play time than Drive creation time, and UTC prevents travel/DST ambiguity while Eastern remains a presentation preference.
 - **View-only public scope** ([2](#decision-2)): The owner wanted a personal tracker that friends could browse and a project to show on GitHub, with view-only access for other users (2026-08-05). Keeping administration separate supports that scope.
@@ -94,6 +94,11 @@ This ledger stays near the top as decisions are appended below. Links point to s
 - **Final responsive control layout** ([64](#decision-64)): Preserve control grouping and ordering across the centralized wide-layout breakpoint.
 - **Control ownership and runtime types** ([65](#decision-65)): Focused components and runtime value lists keep UI ownership, validation, and TypeScript types aligned.
 - **CSS-colorable SVG assets** ([66](#decision-66)): One mask-based renderer lets file-backed icons inherit control colors, keeps SVG geometry out of components, and removes direction-specific artwork.
+- **Criterion-specific sort direction** ([67](#decision-67)): The owner reads a down arrow as “the list goes downward,” so it should mean the familiar first/highest/newest outcome for the active criterion rather than one global implementation direction. Retaining generic internal `asc`/`desc` values prevents that presentation choice from leaking into comparator logic, and preserving the visible arrow during criterion changes respects an explicit reverse-order choice.
+- **Jacket delivery through the browser HTTP cache** ([68](#decision-68)): Offline jacket browsing is a nice-to-have, not a requirement. Browser caching gives repeat online visitors fast reuse and may retain previously viewed jackets offline, without proactively storing the catalog in application-managed cache.
+- **WOFF2 font delivery** ([69](#decision-69)): Equivalent web-font files retain offline app-shell behavior while cutting the precache by about 1.65 MiB (roughly 22%), a meaningful reduction with no intended visual tradeoff.
+- **Split song-list utilities** ([70](#decision-70)): The owner identified that filtering and sorting had become distinct concerns. Separating them makes each utility and its tests match the responsibility it owns, while sorting still derives its metrics from filter-matched charts.
+- **Title ordering semantics** ([71](#decision-71), [72](#decision-72), [73](#decision-73)): The owner wanted labels that describe the expected order (`A–Z` and `あ–ん`), romaji as a practical authoritative Latin key, and punctuation away from ordinary titles. Japanese order follows the game's kana-first presentation when a reading exists, then gives titles without kana a predictable numeric/Latin fallback instead of guessing readings for stylized Latin names.
 
 <a id="decision-1"></a>
 
@@ -1075,10 +1080,12 @@ This ledger stays near the top as decisions are appended below. Links point to s
 
 ## 67. Criterion-specific sort-arrow semantics
 
+- Rationale: The owner interprets a down arrow as the list reading downward. For titles that is `A–Z`/`あ–ん`; for recency and performance measures it is Newest first/Highest first. A criterion-neutral arrow direction would make one of those meanings feel reversed.
 - Keep `"asc"` and `"desc"` as the internal comparator and persisted-state values; they are criterion-neutral and continue to describe the actual ordering.
 - The visible arrow describes the gallery's reading order instead of exposing those generic terms. A down arrow means `A–Z` for English titles and `あ–ん` for Japanese titles, but means Newest first for recency and Highest first for level, achievement, and play count. The up arrow is the inverse in each case.
 - Show the concrete outcome in the direction button's tooltip and accessible label (`A–Z`, `Newest first`, `Highest first`, and their inverses), rather than “ascending” or “descending.”
 - Preserve the arrow's visible orientation when switching between title and non-title criteria. Because title and non-title modes assign opposite internal directions to the same arrow orientation, translate the stored direction at that boundary; do not override a user's explicit reverse-order choice.
+- For `Title (あ–ん)`, the label describes the primary kana direction; decision 73 defines the accompanying numeric, Latin, and symbol buckets.
 - This supersedes the generic arrow-orientation implication in decisions 56 and 66, while retaining their single direction control and shared upward SVG asset.
 - Sources: `src/components/song/SongSortControls.tsx`, `src/utils/song-list-sort.ts`, `src/hooks/useSongListState.ts`, `test/utils/song-list-sort.test.mjs`.
 
@@ -1086,7 +1093,8 @@ This ledger stays near the top as decisions are appended below. Links point to s
 
 ## 68. Jacket delivery through the browser HTTP cache
 
-- Do not service-worker-cache remote jacket images. Cross-origin image responses can be opaque in Cache Storage and consume disproportionate quota, producing rejected cache writes in the production PWA.
+- Rationale: Offline browsing of jackets is a nice-to-have. It only helps for jackets the visitor has already loaded, and browser HTTP caching already provides that opportunistically while avoiding an application-managed image cache. The observed quota-console issue was later isolated to a browser extension, so it is not evidence that the gallery's current cache writes fail.
+- Do not service-worker-cache remote jacket images. The public endpoint supports normal browser HTTP caching, which is sufficient for fast repeat online views and best-effort offline reuse of previously viewed jackets.
 - Keep the content-addressed R2 object keys and the `public, max-age=31536000, immutable` headers written by catalog synchronization. Normal browser HTTP caching reuses a jacket on later page loads and evicts it according to browser storage pressure.
 - Request remote jackets with anonymous CORS. The public endpoint must return `Access-Control-Allow-Origin`, preventing opaque image responses from carrying opaque-cache quota behavior.
 - Publish modified jacket artwork at a new content-addressed key; never depend on replacing content at an immutable URL.
@@ -1097,6 +1105,7 @@ This ledger stays near the top as decisions are appended below. Links point to s
 
 ## 69. WOFF2 fonts to reduce the PWA cache footprint
 
+- Rationale: The app shell should remain available offline, but the original OTF files were consuming avoidable precache space. Equivalent WOFF2 assets reduce that footprint substantially without changing the intended typography or offline behavior.
 - Replace the bundled Rodin OTF fonts with equivalent WOFF2 files and update `@font-face` declarations accordingly.
 - Continue precaching the fonts so the established offline app-shell behavior remains available, but reduce the service-worker precache from roughly 7.40 MiB to 5.75 MiB.
 - This supersedes Decision 22's acceptance of large OTF fonts as the initial caching tradeoff. Font subsetting remains a possible later optimization if the cache footprint needs to shrink further.
@@ -1106,9 +1115,44 @@ This ledger stays near the top as decisions are appended below. Links point to s
 
 ## 70. Split score-list filtering from sorting
 
+- Rationale: The original unified utility mixed two independently evolving responsibilities. The owner specifically identified the resulting structure as better expressed as song-list filtering and song-list sorting, so source and test layout should make that boundary explicit.
 - Replace the unified `score-list.ts` utility with `song-list-filter.ts` and `song-list-sort.ts`. Filters own their state, UI option values, and matching-chart selection; sorting owns criteria, sort-direction presentation semantics, metric derivation, and comparators.
 - Sorting imports the matching-chart selector so the established filter → metrics → sort pipeline continues to calculate metrics solely from charts retained by active filters.
 - Keep the direction-label and arrow-orientation helpers with sort criteria rather than in a separate utility, because their behavior is defined by the selected sort.
 - Preserve public behavior and persisted `ScoreListFilters`, `ScoreListSort`, and `SortDirection` value shapes while moving their source modules.
 - This supersedes decision 65's unified utility placement, not its requirement for pure, focused, directly testable helpers.
 - Sources: `src/utils/song-list-filter.ts`, `src/utils/song-list-sort.ts`, `src/components/song/SongFilterPanel.tsx`, `src/components/song/SongSortControls.tsx`, `src/hooks/useSongListState.ts`, `src/pages/ScoreListPage.tsx`, `test/utils/song-list-filter.test.mjs`, `test/utils/song-list-sort.test.mjs`.
+
+<a id="decision-71"></a>
+
+## 71. Romaji-first title sorting with kana priority in Japanese order
+
+- Rationale: A title's translation is not a dependable alphabetization key. The owner chose romaji as the authoritative practical reading for `A–Z`, while retaining kana priority for `あ–ん` where the catalog provides a real reading.
+- English title order uses romaji as its authoritative key, then falls back to English and canonical titles. This gives Japanese songs a stable Latin-alphabet order based on their practical romaji reading rather than an arbitrary translation.
+- Japanese title order uses kana when available, then romaji, then the canonical title. Romaji is therefore a fallback for Japanese songs with no kana reading, not a replacement for gojūon order.
+- Use the first value in a title category as the deterministic sorting key. The catalog preserves any additional title values for search and display.
+- This supersedes decision 57's previous English → romaji → canonical and kana → canonical fallback chains.
+- Sources: `src/utils/song-list-sort.ts`, `test/utils/song-list-sort.test.mjs`, `src/utils/types.ts`.
+
+<a id="decision-72"></a>
+
+## 72. Place symbol-prefixed titles after ordinary title keys
+
+- Rationale: The owner expects ordinary names to be browsable together and symbol-led stylized titles not to interrupt that sequence. Symbols therefore form a separate terminal bucket where this decision remains in effect.
+- In both English and Japanese title sorting, place a key beginning with Unicode punctuation or a symbol after ordinary title keys. Ignore leading whitespace when classifying the key.
+- Keep that special-character bucket last even in reverse title order; only the ordering within each bucket reverses.
+- Numbers and letters remain ordinary keys. Classification applies to the effective title key after the established romaji, English, kana, and canonical fallbacks.
+- Decision 73 supersedes this behavior for Japanese title sorting: its symbol bucket is last ascending and first descending as part of the reversed bucket sequence. These rules remain current for `Title (A–Z)`.
+- Sources: `src/utils/song-list-sort.ts`, `test/utils/song-list-sort.test.mjs`.
+
+<a id="decision-73"></a>
+
+## 73. Japanese sorting uses kana-first and Latin fallback buckets
+
+- Rationale: The desired behavior is to mimic the game's kana-first presentation, not to infer Japanese readings from arbitrary Latin spellings. Catalog kana is authoritative when available; otherwise numeric and A–Z ordering remains predictable. In reverse order, the owner explicitly expects the complete bucket sequence to reverse (`symbols → Z–A → numbers → kana`), rather than holding special characters last.
+- Japanese title order places songs with a kana reading first. Their keys use Japanese collation.
+- Songs without kana use a Latin-only key: numeric keys come next, followed by alphabetic keys. This mirrors the game's kana-first presentation while retaining predictable A–Z fallback ordering for Latin titles and romaji.
+- Symbol-prefixed and otherwise unkeyed titles come last in ascending order and first in descending order. Direction reverses the entire bucket sequence as well as the order within a bucket.
+- Label the title options `Title (A–Z)` and `Title (あ–ん)` so the selector describes the displayed order rather than the underlying title-language categories.
+- This supersedes decision 71's raw-romaji fallback behavior, the prior kana-conversion approach, and decision 72's Japanese special-character placement.
+- Sources: `src/utils/song-list-sort.ts`, `test/utils/song-list-sort.test.mjs`.
