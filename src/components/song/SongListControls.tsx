@@ -41,6 +41,14 @@ export function SongListControls({
   onSortDirectionChange,
 }: SongListControlsProps) {
   const [activeFilterCount, setActiveFilterCount] = useState(0);
+  const [isOverflowVisible, setIsOverflowVisible] = useState(areFiltersOpen);
+
+  function toggleFilters() {
+    const nextOpen = !areFiltersOpen;
+
+    if (!nextOpen) setIsOverflowVisible(false);
+    onFiltersOpenChange(nextOpen);
+  }
 
   return (
     <div className="mt-10 grid items-center gap-x-8 gap-y-3 lg:gap-x-20 song-controls-wide:grid-cols-[minmax(0,1fr)_auto]">
@@ -51,7 +59,7 @@ export function SongListControls({
           className="btn btn-primary gap-2"
           aria-expanded={areFiltersOpen}
           aria-controls="score-list-filters"
-          onClick={() => onFiltersOpenChange(!areFiltersOpen)}
+          onClick={toggleFilters}
         >
           <SvgIcon icon={filterIcon} className="size-4" />
           <p>Filters{activeFilterCount > 0 && ` (${activeFilterCount})`}</p>
@@ -61,10 +69,12 @@ export function SongListControls({
       <SongFilterPanel
         filters={filters}
         genres={genres}
+        isOverflowVisible={isOverflowVisible}
         levels={levels}
         onActiveCountChange={setActiveFilterCount}
         onChange={onFiltersChange}
         onClear={onClearFilters}
+        onOpenTransitionEnd={() => setIsOverflowVisible(true)}
         open={areFiltersOpen}
       />
 

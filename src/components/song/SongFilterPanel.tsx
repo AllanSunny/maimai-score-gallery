@@ -1,4 +1,4 @@
-import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef } from "react";
 import { classNames } from "../../utils/class-names";
 import {
   activeScoreListFilterCount,
@@ -26,23 +26,26 @@ const difficultyOptions = difficulties.map((value) => ({ value, label: value }))
 interface SongFilterPanelProps {
   filters: ScoreListFilters;
   genres: string[];
+  isOverflowVisible: boolean;
   levels: string[];
   onActiveCountChange: (count: number) => void;
   onChange: (filters: ScoreListFilters) => void;
   onClear: () => void;
+  onOpenTransitionEnd: () => void;
   open: boolean;
 }
 
 export function SongFilterPanel({
   filters,
   genres,
+  isOverflowVisible,
   levels,
   onActiveCountChange,
   onChange,
   onClear,
+  onOpenTransitionEnd,
   open,
 }: SongFilterPanelProps) {
-  const [isOverflowVisible, setIsOverflowVisible] = useState(open);
   const panelRef = useRef<HTMLDivElement>(null);
   const activeFilterCount = activeScoreListFilterCount(filters);
   const genreOptions = useMemo(() => genres.map((value) => ({ value, label: value })), [genres]);
@@ -51,10 +54,6 @@ export function SongFilterPanel({
   useEffect(() => {
     onActiveCountChange(activeFilterCount);
   }, [activeFilterCount, onActiveCountChange]);
-
-  useLayoutEffect(() => {
-    if (!open) setIsOverflowVisible(false);
-  }, [open]);
 
   useEffect(() => {
     if (open) return;
@@ -75,7 +74,7 @@ export function SongFilterPanel({
       inert={!open}
       onTransitionEnd={(event) => {
         if (event.propertyName !== "grid-template-rows") return;
-        if (open) setIsOverflowVisible(true);
+        if (open) onOpenTransitionEnd();
       }}
     >
       <div className={isOverflowVisible ? "overflow-visible" : "overflow-hidden"}>
