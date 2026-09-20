@@ -1,7 +1,6 @@
 import largeA from "../../assets/achievements/large/rank/a.png";
 import largeAa from "../../assets/achievements/large/rank/aa.png";
 import largeAaa from "../../assets/achievements/large/rank/aaa.png";
-import largeClear from "../../assets/achievements/large/rank/clear.png";
 import largeS from "../../assets/achievements/large/rank/s.png";
 import largeSPlus from "../../assets/achievements/large/rank/s_plus.png";
 import largeSs from "../../assets/achievements/large/rank/ss.png";
@@ -11,7 +10,6 @@ import largeSssPlus from "../../assets/achievements/large/rank/sss_plus.png";
 import smallA from "../../assets/achievements/small/rank/a.png";
 import smallAa from "../../assets/achievements/small/rank/aa.png";
 import smallAaa from "../../assets/achievements/small/rank/aaa.png";
-import smallClear from "../../assets/achievements/small/rank/clear.png";
 import smallS from "../../assets/achievements/small/rank/s.png";
 import smallSPlus from "../../assets/achievements/small/rank/s_plus.png";
 import smallSs from "../../assets/achievements/small/rank/ss.png";
@@ -21,6 +19,7 @@ import smallSssPlus from "../../assets/achievements/small/rank/sss_plus.png";
 import type { AchievementRank } from "../../utils/types";
 
 type BadgeSize = "large" | "small";
+type DisplayedAchievementRank = Exclude<AchievementRank, "Failed">;
 
 interface RankDisplayProps {
   status: AchievementRank | null | undefined;
@@ -28,9 +27,8 @@ interface RankDisplayProps {
   className?: string;
 }
 
-const icons: Record<BadgeSize, Record<AchievementRank, string>> = {
+const icons: Record<BadgeSize, Record<DisplayedAchievementRank, string>> = {
   large: {
-    Failed: largeClear,
     A: largeA,
     AA: largeAa,
     AAA: largeAaa,
@@ -42,7 +40,6 @@ const icons: Record<BadgeSize, Record<AchievementRank, string>> = {
     "SSS+": largeSssPlus,
   },
   small: {
-    Failed: smallClear,
     A: smallA,
     AA: smallAa,
     AAA: smallAaa,
@@ -56,7 +53,7 @@ const icons: Record<BadgeSize, Record<AchievementRank, string>> = {
 };
 
 export function RankDisplay({ status, size, className }: RankDisplayProps) {
-  if (!status) return null;
+  if (!status || status === "Failed") return null;
 
   return <img className={className} src={icons[size][status]} alt={`${status} rank`} />;
 }
