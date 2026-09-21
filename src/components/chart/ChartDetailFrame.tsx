@@ -106,8 +106,8 @@ export function ChartDetailFrame({
         status={achievement == null ? null : achievementRank(achievement)}
         size="small"
       />
-      <ComboDisplay className="chart-detail-frame__combo" status={combo} size="small" />
-      <SyncDisplay className="chart-detail-frame__sync" status={sync} size="small" />
+      <ComboDisplay className="chart-detail-frame__combo" status={combo} size="small" showNone={false} />
+      <SyncDisplay className="chart-detail-frame__sync" status={sync} size="small" showNone={false} />
     </article>
   );
 }

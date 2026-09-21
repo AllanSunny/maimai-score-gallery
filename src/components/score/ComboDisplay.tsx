@@ -16,6 +16,7 @@ interface ComboDisplayProps {
   status: ComboStatus | null | undefined;
   size: BadgeSize;
   className?: string;
+  showNone?: boolean;
 }
 
 const icons: Record<BadgeSize, Partial<Record<ComboStatus, string>>> = {
@@ -35,9 +36,9 @@ const labels: Partial<Record<ComboStatus, string>> = {
   "AP+": "All perfect plus",
 };
 
-export function ComboDisplay({ status, size, className }: ComboDisplayProps) {
+export function ComboDisplay({ status, size, className, showNone = true }: ComboDisplayProps) {
   if (!status) {
-    return <img className={className} src={noneIcons[size]} alt="No combo" />;
+    return showNone ? <img className={className} src={noneIcons[size]} alt="No combo" /> : null;
   }
 
   const src = icons[size][status];

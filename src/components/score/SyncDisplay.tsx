@@ -18,6 +18,7 @@ interface SyncDisplayProps {
   status: SyncStatus | null | undefined;
   size: BadgeSize;
   className?: string;
+  showNone?: boolean;
 }
 
 const icons: Record<BadgeSize, Record<SyncStatus, string>> = {
@@ -38,9 +39,9 @@ const labels: Record<SyncStatus, string> = {
   "FDX+": "Full sync DX plus",
 };
 
-export function SyncDisplay({ status, size, className }: SyncDisplayProps) {
+export function SyncDisplay({ status, size, className, showNone = true }: SyncDisplayProps) {
   if (!status) {
-    return <img className={className} src={noneIcons[size]} alt="No sync" />;
+    return showNone ? <img className={className} src={noneIcons[size]} alt="No sync" /> : null;
   }
 
   return <img className={className} src={icons[size][status]} alt={labels[status]} />;
