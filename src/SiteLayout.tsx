@@ -11,7 +11,7 @@ export function SiteLayout({ children, route }: SiteLayoutProps) {
     <div className="mx-auto flex min-h-dvh w-full max-w-5xl flex-col px-5 sm:px-8">
       <SiteNavigation route={route} />
 
-      <main className="flex-1 py-6 sm:py-12">{children}</main>
+      <main className="flex-1 py-8 sm:py-12">{children}</main>
 
       <footer className="flex flex-col gap-2 border-t border-lightest py-8 text-xs sm:flex-row sm:justify-between">
         <span>Unofficial fan project—not affiliated with SEGA.</span>

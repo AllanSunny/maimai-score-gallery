@@ -1,4 +1,5 @@
 import { NavigationCard } from "../components/ui/NavigationCard";
+import { PageHeading } from "../components/ui/PageHeading";
 import { appHref } from "../utils/navigation";
 
 const destinations = [
@@ -25,25 +26,22 @@ const destinations = [
 export function HomePage() {
   return (
     <div>
-      <section className="">
-        <h1 className="text-4xl font-semibold leading-tight tracking-tight sm:text-5xl">Allan's maimai score gallery</h1>
-        <p className="mt-4 text-base text-lightest">
-          Welcome to a result of my latest rhythm game obsession! This is a showcase of my maimai score milestones and the progress behind them,
-          from my current B50 to every recorded play.
-        </p>
-      </section>
+      <PageHeading
+        title="Allan's maimai score gallery"
+        description="Welcome to a result of my latest rhythm game obsession! This is a showcase of my maimai score milestones and the progress behind them, from my current B50 to every recorded play."
+      />
 
-      <section aria-label="Explore the gallery" className="mt-16 grid gap-4 md:grid-cols-3">
+      <section aria-label="Explore the gallery" className="mt-9 md:mt-14 grid gap-4 md:grid-cols-3">
         {destinations.map((destination) => (
           <NavigationCard
             key={destination.href}
             href={destination.href}
             accentClassName={destination.accentClassName}
-            className="flex min-h-48 flex-col justify-between p-6"
+            className="flex flex-col justify-between p-6"
           >
             <div>
               <h2 className="text-lg font-semibold tracking-tight text-primary">{destination.title}</h2>
-              <p className="mt-3 max-w-sm text-lightest">{destination.description}</p>
+              <p className="mt-3 text-lightest">{destination.description}</p>
             </div>
             <span className="mt-8 text-sm text-primary underline decoration-primary/50">
               View {destination.title.toLowerCase()}

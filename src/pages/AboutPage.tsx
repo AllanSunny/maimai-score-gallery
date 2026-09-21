@@ -92,10 +92,18 @@ export function AboutPage() {
       <PageHeading
         id="about-this-gallery"
         title="About this gallery"
-        description="Never heard of maimai before? Here's a quick guide to the game, how its songs and charts are organized, and what you'll find in this gallery."
+        description="Never heard of maimai before? Here's a quick guide to the game, how its songs are organized, and what you'll find in this gallery."
       />
 
-      <nav aria-label="On this page" className="mt-6 flex flex-wrap gap-2">
+      <p className="mt-3 text-light">
+        More technical details about this gallery's setup can be found on the{" "}
+        <a href="https://github.com/AllanSunny/maimai-score-gallery#readme">
+          README
+        </a>
+        .
+      </p>
+
+      <nav aria-label="On this page" className="mt-8 flex flex-wrap gap-2">
         {sectionLinks.map((link) => (
           <a
             key={link.href}
@@ -212,7 +220,7 @@ export function AboutPage() {
             </ContentCard>
           ))}
         </div>
-        <ContentCard accentColor="primary" variant="secondary" className="mt-5 p-5 sm:p-7">
+        <ContentCard accentColor="primary" variant="secondary" className="mt-7 p-5 sm:p-7">
           <div className="grid gap-12 text-lightest md:grid-cols-2">
             <div>
               <h3 id="deluxe-and-standard-charts" className="scroll-mt-16 font-semibold text-primary">Deluxe and Standard Charts</h3>
@@ -282,16 +290,6 @@ export function AboutPage() {
             ))}
           </div>
         </ContentCard>
-      </section>
-
-      <section className="mt-12 border-t border-lightest pt-8">
-        <p className="text-lightest">
-          More technical details about this gallery's setup can be found on the{" "}
-          <a href="https://github.com/AllanSunny/maimai-score-gallery#readme">
-            README
-          </a>
-          .
-        </p>
       </section>
     </div>
   );
