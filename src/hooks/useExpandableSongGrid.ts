@@ -1,9 +1,14 @@
 import { useRef, useState } from "react";
 import { flushSync } from "react-dom";
+import {
+  animateLayoutBounds,
+  animateLayoutMovement,
+  finishLayoutAnimations,
+  layoutTransitionTiming,
+} from "../utils/layout-transitions";
+import { lockPageInteraction } from "../utils/interaction-lock";
 import { scrollToExpandableItem } from "../utils/scroll";
 import { isLargeViewport, isMediumViewport } from "../utils/responsive";
-const transitionDuration = 480;
-const transitionEasing = "ease-in-out";
 const upwardExpansionViewportThreshold = 0.6;
 
 interface CardLayout {
@@ -21,28 +26,6 @@ function cardRects() {
       jacketRect: card.querySelector<HTMLElement>("[data-song-jacket]")?.getBoundingClientRect(),
       jacketContainerRect: card.querySelector<HTMLElement>("[data-song-jacket-container]")?.getBoundingClientRect(),
     }]));
-}
-
-function lockPageInteraction() {
-  const shield = document.createElement("div");
-  Object.assign(shield.style, {
-    position: "fixed",
-    inset: "0",
-    zIndex: "2147483647",
-    touchAction: "none",
-  });
-  shield.setAttribute("aria-hidden", "true");
-
-  const preventInteraction = (event: Event) => event.preventDefault();
-  shield.addEventListener("wheel", preventInteraction, { passive: false });
-  shield.addEventListener("touchmove", preventInteraction, { passive: false });
-  document.addEventListener("keydown", preventInteraction, true);
-  document.body.append(shield);
-
-  return () => {
-    shield.remove();
-    document.removeEventListener("keydown", preventInteraction, true);
-  };
 }
 
 function animateJacketLayout(
@@ -92,8 +75,7 @@ function animateJacketLayout(
     marginBottom: "0",
   };
   const options: KeyframeAnimationOptions = {
-    duration: transitionDuration,
-    easing: transitionEasing,
+    ...layoutTransitionTiming,
     fill: "forwards",
   };
   const growingHeight = collapsing
@@ -177,14 +159,8 @@ async function runCardTransition(
     const previous = before.get(songKey);
     if (!previous || changingSongKeys.includes(songKey)) return;
 
-    const x = previous.rect.left - rect.left;
-    const y = previous.rect.top - rect.top;
-    if (x === 0 && y === 0) return;
-
-    animations.push(element.animate(
-      [{ transform: `translate(${x}px, ${y}px)` }, { transform: "translate(0, 0)" }],
-      { duration: transitionDuration, easing: transitionEasing },
-    ));
+    const animation = animateLayoutMovement(element, previous.rect, rect);
+    if (animation) animations.push(animation);
   });
 
   changingSongKeys.forEach((songKey, index) => {
@@ -216,27 +192,11 @@ async function runCardTransition(
 
     next.element.style.visibility = "hidden";
     hiddenCards.push(next.element);
-    animations.push(copy.animate(
-      [
-        {
-          top: `${previous.rect.top}px`,
-          left: `${previous.rect.left}px`,
-          width: `${previous.rect.width}px`,
-          height: `${previous.rect.height}px`,
-        },
-        {
-          top: `${next.rect.top}px`,
-          left: `${next.rect.left}px`,
-          width: `${next.rect.width}px`,
-          height: `${next.rect.height}px`,
-        },
-      ],
-      { duration: transitionDuration, easing: transitionEasing, fill: "forwards" },
-    ));
+    animations.push(animateLayoutBounds(copy, previous.rect, next.rect));
   });
 
   try {
-    await Promise.all(animations.map((animation) => animation.finished.catch(() => undefined)));
+    await finishLayoutAnimations(animations);
   } finally {
     copies.forEach((copy) => copy.remove());
     hiddenCards.forEach((card) => card.style.removeProperty("visibility"));

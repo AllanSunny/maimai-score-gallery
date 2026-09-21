@@ -16,14 +16,14 @@ For current schemas, see [Data model](data-model.md). For setup and operational 
 - Public, view-only React/Vite app on GitHub Pages; private import operations use Drive, Sheets, OpenAI, and GitHub Actions.
 - Monthly score archives and derived chart summaries are implemented; frontend history loading remains eager (sections 31–38).
 - UTAGE, owner authentication/private notes, and the Top 50 implementation remain deferred.
-- Recent additions: the expandable song grid (51), cross-version chart navigation (52), centralized song jackets without duplicated catalog objects (53), iterative song-list controls and sorting behavior (54–67, 70–73), HTTP-cached jackets (68), and WOFF2 fonts (69).
-- Start with the [rationale ledger](#rationale-ledger) for the reasons behind the decisions; jump to the [latest decision](#decision-74) for the newest addition.
+- Recent additions: the expandable song grid (51), cross-version chart navigation (52), centralized song jackets without duplicated catalog objects (53), iterative song-list controls and sorting behavior (54–67, 70–73), HTTP-cached jackets (68), WOFF2 fonts (69), and animated score-history expansion (75).
+- Start with the [rationale ledger](#rationale-ledger) for the reasons behind the decisions; jump to the [latest decision](#decision-75) for the newest addition.
 
 <a id="rationale-ledger"></a>
 
 ## Rationale ledger
 
-[Jump to the decision history](#decision-1) · [Latest decision](#decision-73)
+[Jump to the decision history](#decision-1) · [Latest decision](#decision-75)
 
 This ledger stays near the top as decisions are appended below. Links point to stable decision IDs. Section 44 was the ledger's former location; that number remains reserved and its old link still resolves here.
 
@@ -100,6 +100,7 @@ This ledger stays near the top as decisions are appended below. Links point to s
 - **Split song-list utilities** ([70](#decision-70)): The owner identified that filtering and sorting had become distinct concerns. Separating them makes each utility and its tests match the responsibility it owns, while sorting still derives its metrics from filter-matched charts.
 - **Title ordering semantics** ([71](#decision-71), [72](#decision-72), [73](#decision-73)): The owner wanted labels that describe the expected order (`A–Z` and `あ–ん`), romaji as a practical authoritative Latin key, and punctuation away from ordinary titles. Japanese order follows the game's kana-first presentation when a reading exists, then gives titles without kana a predictable numeric/Latin fallback instead of guessing readings for stylized Latin names.
 - **Sparse catalog overrides** ([74](#decision-74)): Existing catalog entries accept only the locally corrected metadata fields, including search aliases, instead of requiring empty placeholder objects or treating chart constants and charters as the sole overrideable data.
+- **Animated score-history expansion** ([75](#decision-75)): The owner wanted score details to use the song grid's spatial transition language, including background fading and an unambiguous collapse-then-expand sequence when changing selections.
 
 <a id="decision-1"></a>
 
@@ -1168,3 +1169,15 @@ This ledger stays near the top as decisions are appended below. Links point to s
 - Keep established identity guarantees: a standalone entry remains complete, and an already cataloged song's stable ID cannot change because score archives reference it.
 - This extends decision 39's “local overrides last” rule from chart supplemental metadata to every locally maintained catalog metadata field.
 - Sources: `src/data/song-overrides.json`, `scripts/sync-catalog.mjs`, `docs/operations.md`, `docs/data-model.md`.
+
+<a id="decision-75"></a>
+
+## 75. Animate score-history expansion as a layout transition
+
+- Rationale: The owner wanted expanded score entries to feel spatially connected to their collapsed rows and to match the established song-card interaction. Moving surrounding rows while the selected entry changes size makes the layout change legible; fading the panel background softens the transition between row and detail states.
+- Animate score-history expansion and collapse with the same persistent `0fr`/`1fr` grid-row pattern as the filter panel. This lets surrounding rows and the document height move continuously with the entry while interaction remains temporarily blocked.
+- Fade the selected entry's background color while its bounds animate. Preserve the existing shareable score fragment by replacing, rather than appending to, browser history.
+- When a different score is selected, finish collapsing the current entry before expanding the next one. This intentionally uses two sequential transitions so only one detailed score occupies the live layout at a time.
+- Reuse the shared interaction lock, but keep the score-history grid-row transition separate from the song grid's FLIP animation. Score entries do not need cloned elements or captured bounds because their one-column layout can animate its real content directly.
+- Keep score-history transition timing in its hook and coordinate selection changes from the actual grid-row transition completion, with a timeout only as a safety fallback.
+- Sources: `src/utils/layout-transitions.ts`, `src/utils/interaction-lock.ts`, `src/utils/scroll.ts`, `src/utils/responsive.ts`, `src/hooks/useExpandableSongGrid.ts`, `src/hooks/useExpandableScoreHistory.ts`, `src/components/score/ScoreHistory.tsx`, `src/components/score/ScoreHistoryEntry.tsx`.
