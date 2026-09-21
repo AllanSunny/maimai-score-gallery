@@ -6,6 +6,7 @@ import { AboutPage } from "./pages/AboutPage";
 import { ScoreListPage } from "./pages/ScoreListPage";
 import { Top50Page } from "./pages/Top50Page";
 import { currentAppRoute } from "./utils/navigation";
+import { scrollToElement } from "./utils/scroll";
 type Route = "/" | "/about" | "/top-50" | "/scores" | `/charts/${string}`;
 
 function currentRoute(): Route {
@@ -81,10 +82,8 @@ function App() {
         storeScrollPosition();
         window.history.pushState({ scrollY: window.scrollY }, "", destination);
         handleRouteChange();
-        document.getElementById(decodeURIComponent(destination.hash.slice(1)))?.scrollIntoView({
-          behavior: "smooth",
-          block: "start",
-        });
+        const target = document.getElementById(decodeURIComponent(destination.hash.slice(1)));
+        if (target) scrollToElement(target);
         return;
       }
 

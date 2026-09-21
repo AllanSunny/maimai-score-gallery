@@ -11,6 +11,7 @@ import { SyncDisplay } from "../components/score/SyncDisplay";
 import { ContentCard } from "../components/ui/ContentCard";
 import { PageHeading } from "../components/ui/PageHeading";
 import { navigate } from "../utils/navigation";
+import { scrollToElement } from "../utils/scroll";
 
 const difficulties = [
   { name: "BASIC", color: "basic", description: "A friendly introduction to the song for newer players." },
@@ -80,10 +81,8 @@ function SectionHeading({ id, children }: { id: string; children: string }) {
 function navigateToSection(event: MouseEvent<HTMLAnchorElement>, href: string) {
   event.preventDefault();
   navigate(`/about${href}`);
-  document.getElementById(href.slice(1))?.scrollIntoView({
-    behavior: "smooth",
-    block: "start",
-  });
+  const section = document.getElementById(href.slice(1));
+  if (section) scrollToElement(section);
 }
 
 export function AboutPage() {

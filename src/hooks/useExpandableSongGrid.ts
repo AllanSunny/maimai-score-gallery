@@ -1,34 +1,10 @@
 import { useRef, useState } from "react";
 import { flushSync } from "react-dom";
-
+import { scrollToExpandableItem } from "../utils/scroll";
+import { isLargeViewport, isMediumViewport } from "../utils/responsive";
 const transitionDuration = 480;
 const transitionEasing = "ease-in-out";
 const upwardExpansionViewportThreshold = 0.6;
-const largeViewportCardTop = 0.25;
-const cardScrollDuration = 650;
-
-function scrollToCard(card: HTMLElement, viewportTop = 0) {
-  const start = window.scrollY;
-  const distance = card.getBoundingClientRect().top - window.innerHeight * viewportTop;
-  const startedAt = performance.now();
-
-  function scrollFrame(timestamp: number) {
-    const progress = Math.min(1, (timestamp - startedAt) / cardScrollDuration);
-    const easedProgress = 1 - (1 - progress) ** 3;
-    window.scrollTo(0, start + distance * easedProgress);
-    if (progress < 1) window.requestAnimationFrame(scrollFrame);
-  }
-
-  window.requestAnimationFrame(scrollFrame);
-}
-
-function isMediumViewport() {
-  return getComputedStyle(document.documentElement).getPropertyValue("--medium-viewport").trim() === "1";
-}
-
-function isLargeViewport() {
-  return getComputedStyle(document.documentElement).getPropertyValue("--large-viewport").trim() === "1";
-}
 
 interface CardLayout {
   element: HTMLElement;
@@ -296,7 +272,7 @@ export function useExpandableSongGrid() {
         setExpandedSongKey(songKey);
       }, changingSongKeys, !expandedSongKey && nextExpansionDirection === "up" ? songKey : undefined);
       const selectedCard = cardRects().get(songKey)?.element;
-      if (selectedCard) scrollToCard(selectedCard, isLargeViewport() ? largeViewportCardTop : 0);
+      if (selectedCard) scrollToExpandableItem(selectedCard);
     } finally {
       isChangingSelection.current = false;
     }
