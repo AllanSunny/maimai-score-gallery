@@ -1,5 +1,5 @@
 import { createSegaCatalogLoader } from "./sega-catalog.mjs";
-import { createCatalogOverridesLoader, standaloneCatalogSongs } from "./catalog-overrides.mjs";
+import { catalogSongsWithOverrides, createCatalogOverridesLoader, standaloneCatalogSongs } from "./catalog-overrides.mjs";
 
 const chartFields = {
   DX: {
@@ -257,7 +257,7 @@ function defaultCatalogLoader() {
   const loadOverrides = createCatalogOverridesLoader();
   return async function loadCatalog() {
     const [officialSongs, overrides] = await Promise.all([loadOfficialCatalog(), loadOverrides()]);
-    return [...officialSongs, ...standaloneCatalogSongs(overrides)];
+    return [...catalogSongsWithOverrides(officialSongs, overrides), ...standaloneCatalogSongs(overrides)];
   };
 }
 

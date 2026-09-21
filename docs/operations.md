@@ -175,10 +175,35 @@ recognized release `name` and nullable `code`; omitting it leaves a standalone
 song's introduction unknown. A jacket key must be an R2 object key, not a URL.
 The override jacket key is used when the standalone song is first cataloged.
 
-For existing catalog charts, overrides keyed by canonical song title and
-`DX:DIFFICULTY` or `STD:DIFFICULTY` can correct `chartConstant` and `charter`.
-Non-null override values take precedence over supplemental metadata. A null
-value falls through to supplemental or existing data; it does not clear it.
+For a song already supplied by SEGA, an override is a sparse patch keyed by its
+canonical title. Every field is optional: supply only the title categories,
+artist, genre, `version`, `jacketKey`, or chart properties that need correcting.
+`titles` may likewise contain only the categories being added; supplied values
+are normalized and added to the catalog's existing search titles. For example,
+an acronym needs only:
+
+```json
+{
+  "ULTRA SYNERGY MATRIX": {
+    "titles": { "aliases": ["USM"] }
+  }
+}
+```
+
+These title variants are also available to score import before catalog sync, so
+an OCR result using the alias resolves to the canonical song instead of creating
+a duplicate or being rejected.
+
+The optional `charts` object is keyed by `DX:DIFFICULTY` or
+`STD:DIFFICULTY`; its optional `level`, `chartConstant`, and `charter` fields
+override their catalog/supplemental values when non-null. Omit `charts` when no
+chart property needs correction. `jacketKey` is either an R2 object key or
+`null`; an override jacket takes precedence over downloading SEGA artwork.
+An `id`, when initializing a new catalog song, must be non-empty. Existing song
+IDs cannot be changed because archived scores reference them. A null chart
+constant or charter falls through to supplemental or existing data rather than
+clearing it.
+
 Run catalog sync, summary regeneration, and validation after changing overrides.
 
 ## GitHub configuration

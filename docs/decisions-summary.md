@@ -17,7 +17,7 @@ For current schemas, see [Data model](data-model.md). For setup and operational 
 - Monthly score archives and derived chart summaries are implemented; frontend history loading remains eager (sections 31–38).
 - UTAGE, owner authentication/private notes, and the Top 50 implementation remain deferred.
 - Recent additions: the expandable song grid (51), cross-version chart navigation (52), centralized song jackets without duplicated catalog objects (53), iterative song-list controls and sorting behavior (54–67, 70–73), HTTP-cached jackets (68), and WOFF2 fonts (69).
-- Start with the [rationale ledger](#rationale-ledger) for the reasons behind the decisions; jump to the [latest decision](#decision-73) for the newest addition.
+- Start with the [rationale ledger](#rationale-ledger) for the reasons behind the decisions; jump to the [latest decision](#decision-74) for the newest addition.
 
 <a id="rationale-ledger"></a>
 
@@ -99,6 +99,7 @@ This ledger stays near the top as decisions are appended below. Links point to s
 - **WOFF2 font delivery** ([69](#decision-69)): Equivalent web-font files retain offline app-shell behavior while cutting the precache by about 1.65 MiB (roughly 22%), a meaningful reduction with no intended visual tradeoff.
 - **Split song-list utilities** ([70](#decision-70)): The owner identified that filtering and sorting had become distinct concerns. Separating them makes each utility and its tests match the responsibility it owns, while sorting still derives its metrics from filter-matched charts.
 - **Title ordering semantics** ([71](#decision-71), [72](#decision-72), [73](#decision-73)): The owner wanted labels that describe the expected order (`A–Z` and `あ–ん`), romaji as a practical authoritative Latin key, and punctuation away from ordinary titles. Japanese order follows the game's kana-first presentation when a reading exists, then gives titles without kana a predictable numeric/Latin fallback instead of guessing readings for stylized Latin names.
+- **Sparse catalog overrides** ([74](#decision-74)): Existing catalog entries accept only the locally corrected metadata fields, including search aliases, instead of requiring empty placeholder objects or treating chart constants and charters as the sole overrideable data.
 
 <a id="decision-1"></a>
 
@@ -1156,3 +1157,14 @@ This ledger stays near the top as decisions are appended below. Links point to s
 - Label the title options `Title (A–Z)` and `Title (あ–ん)` so the selector describes the displayed order rather than the underlying title-language categories.
 - This supersedes decision 71's raw-romaji fallback behavior, the prior kana-conversion approach, and decision 72's Japanese special-character placement.
 - Sources: `src/utils/song-list-sort.ts`, `test/utils/song-list-sort.test.mjs`.
+
+<a id="decision-74"></a>
+
+## 74. Sparse local catalog metadata patches
+
+- Rationale: Local corrections should be concise and auditable. Requiring empty `charts` or title-category placeholders obscures which source data is actually being corrected, while aliases, artist, release, jacket, and chart metadata can all legitimately need a local exception.
+- Treat an existing-song entry in `song-overrides.json` as a sparse patch. Its title categories, artist, genre, version, jacket key, and per-chart level, constant, or charter may be supplied independently; omitted fields retain catalog data.
+- Merge supplied title variants with existing catalog search titles so an alias can resolve archived scores without creating a duplicate song. Apply an override jacket instead of downloading SEGA artwork.
+- Keep established identity guarantees: a standalone entry remains complete, and an already cataloged song's stable ID cannot change because score archives reference it.
+- This extends decision 39's “local overrides last” rule from chart supplemental metadata to every locally maintained catalog metadata field.
+- Sources: `src/data/song-overrides.json`, `scripts/sync-catalog.mjs`, `docs/operations.md`, `docs/data-model.md`.

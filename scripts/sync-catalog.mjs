@@ -49,6 +49,10 @@ function unique(values) {
   return [...new Set(values.filter(Boolean))];
 }
 
+function hasOwn(object, key) {
+  return Object.prototype.hasOwnProperty.call(object, key);
+}
+
 function normalizedTitles(values, canonicalTitle = "") {
   const canonical = normalizeTitle(canonicalTitle);
   return unique(values
@@ -85,6 +89,18 @@ function createSongTitles(canonical, override) {
     english: normalizedTitles(titles.english ?? [], canonical),
     aliases: normalizedTitles(titles.aliases ?? [], canonical),
   };
+}
+
+function mergeSongTitles(existing, canonical, override) {
+  const overrideTitles = override.titles;
+  if (!overrideTitles) return existing;
+  const merged = { canonical };
+  ["kana", "romaji", "english", "aliases"].forEach((category) => {
+    const additions = hasOwn(overrideTitles, category) ? overrideTitles[category] : [];
+    if (!Array.isArray(additions)) throw new Error(`${canonical}.titles.${category} must be an array.`);
+    merged[category] = normalizedTitles([...(existing[category] ?? []), ...additions], canonical);
+  });
+  return merged;
 }
 
 function fallbackId(title) {
@@ -176,6 +192,36 @@ function songIntroduction(source, override = {}) {
   return maimaiVersion(code);
 }
 
+function overrideJacketKey(canonical, override) {
+  if (!hasOwn(override, "jacketKey")) return undefined;
+  if (override.jacketKey === null) return null;
+  const jacketKey = String(override.jacketKey ?? "").trim();
+  if (!jacketKey) throw new Error(`${canonical}.jacketKey must be a non-empty R2 object key or null.`);
+  if (/^[a-z][a-z\d+.-]*:\/\//i.test(jacketKey)) {
+    throw new Error(`${canonical}.jacketKey must be an R2 object key, not a public URL.`);
+  }
+  return jacketKey;
+}
+
+function applyExistingOverrides(songs, overrides) {
+  songs.forEach((song) => {
+    const canonicalTitle = song.titles.canonical;
+    const override = overrides[canonicalTitle];
+    if (!override) return;
+    if (hasOwn(override, "id") && override.id !== undefined && override.id !== song.id) {
+      throw new Error(`${canonicalTitle}.id cannot change an existing catalog song's stable ID.`);
+    }
+    song.titles = mergeSongTitles(song.titles, canonicalTitle, override);
+    if (hasOwn(override, "artist")) song.artist = songArtist(song, override);
+    if (hasOwn(override, "genre")) song.genre = songGenre(song, override);
+    if (hasOwn(override, "version")) {
+      song.introducedIn = songIntroduction({ title: canonicalTitle, image_url: null }, override);
+    }
+    const jacketKey = overrideJacketKey(canonicalTitle, override);
+    if (jacketKey !== undefined) song.jacketKey = jacketKey;
+  });
+}
+
 function refreshStandaloneMetadata(songs, standaloneSongs) {
   standaloneSongs.forEach((sourceSong) => {
     const song = songs.find((candidate) => isAlreadyCataloged(sourceSong.title, [candidate]));
@@ -198,7 +244,7 @@ function extractChartVersions(song, override, supplementalCharts) {
     const metadata = supplementalCharts.metadata(song.title, song.artist, chartType, difficulty);
     charts.push({
       difficulty,
-      level: String(level),
+      level: String(correction.level ?? level),
       chartConstant: correction.chartConstant ?? metadata.chartConstant ?? null,
       charter: correction.charter ?? metadata.charter ?? null,
     });
@@ -217,9 +263,11 @@ function enrichExistingCharts(songs, supplementalCharts, overrides) {
       version.charts.forEach((chart) => {
         const correction = override.charts?.[`${version.chartType}:${chart.difficulty}`] ?? {};
         const metadata = supplementalCharts.metadata(canonicalTitle, song.artist, version.chartType, chart.difficulty);
+        const level = String(correction.level ?? chart.level);
         const chartConstant = correction.chartConstant ?? metadata.chartConstant ?? chart.chartConstant ?? null;
         const charter = correction.charter ?? metadata.charter ?? chart.charter ?? null;
-        if (chart.chartConstant !== chartConstant || chart.charter !== charter) {
+        if (chart.level !== level || chart.chartConstant !== chartConstant || chart.charter !== charter) {
+          chart.level = level;
           chart.chartConstant = chartConstant;
           chart.charter = charter;
           changed = true;
@@ -228,6 +276,14 @@ function enrichExistingCharts(songs, supplementalCharts, overrides) {
     });
   });
   return changed;
+}
+
+function isCatalogedByOverride(title, songs, overrides) {
+  const target = normalizeTitle(title);
+  return songs.some((song) => {
+    const override = overrides[song.titles.canonical] ?? {};
+    return overrideTitleValues(override).some((name) => normalizeTitle(name) === target);
+  });
 }
 
 function chartSlug(difficulty) {
@@ -349,7 +405,8 @@ async function main() {
   const standaloneSongs = standaloneCatalogSongs(overrides);
   const titles = requested.map((entry) => entry.title);
   const unmatchedSongs = new Map();
-  const newTitles = titles.filter((title) => !isAlreadyCataloged(title, previous.songs));
+  const newTitles = titles.filter((title) =>
+    !isAlreadyCataloged(title, previous.songs) && !isCatalogedByOverride(title, previous.songs, overrides));
   const missingArtistSongs = previous.songs.filter((song) =>
     typeof song.artist !== "string" || !song.artist.trim());
   const missingSourceMetadataSongs = previous.songs.filter((song) =>
@@ -367,6 +424,7 @@ async function main() {
   const supplementalCharts = indexZetarakuChartMetadata(chartMetadataSongs);
   console.log(`Validated supplemental chart metadata updated ${supplementalCharts.updateTime}.`);
   const songs = structuredClone(previous.songs);
+  applyExistingOverrides(songs, overrides);
   enrichExistingCharts(songs, supplementalCharts, overrides);
   refreshStandaloneMetadata(songs, standaloneSongs);
 
@@ -401,10 +459,14 @@ async function main() {
     unmatchedSongs.delete(normalizeTitle(requestedTitle));
 
     const override = official ? (overrides[official.title] ?? {}) : standalone.standaloneOverride;
-    const baseId = override.id ?? fallbackId(sourceSong.title);
-    const jacketKey = official
-      ? await uploadJacket(baseId, new URL(sourceSong.image_url, SEGA_JACKET_BASE_URL).toString())
-      : (override.jacketKey ?? null);
+    const baseId = override.id === undefined ? fallbackId(sourceSong.title) : String(override.id).trim();
+    if (!baseId) throw new Error(`${sourceSong.title}.id must be a non-empty stable ID when supplied.`);
+    const overriddenJacketKey = overrideJacketKey(sourceSong.title, override);
+    const jacketKey = overriddenJacketKey !== undefined
+      ? overriddenJacketKey
+      : official
+        ? await uploadJacket(baseId, new URL(sourceSong.image_url, SEGA_JACKET_BASE_URL).toString())
+        : null;
     const versions = extractChartVersions(sourceSong, override, supplementalCharts).map(({ chartType, charts }) => {
       const versionId = `${baseId}-${chartType.toLowerCase()}`;
       return {

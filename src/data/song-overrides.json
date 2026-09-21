@@ -48,14 +48,7 @@
     }
   },
   "Magical Flavor": {
-    "id": "magical-flavor",
-    "titles": {
-      "kana": [],
-      "romaji": [],
-      "english": [],
-      "aliases": []
-    },
-    "charts": {}
+    "id": "magical-flavor"
   },
   "YA･DA･YO [Reborn]": {
     "charts": {
@@ -67,13 +60,19 @@
   "系ぎて": {
     "id": "tsunagite",
     "titles": {
-      "kana": [],
       "romaji": [
         "tsunagite"
-      ],
-      "english": [],
-      "aliases": []
-    },
-    "charts": {}
+      ]
+    }
+  },
+  "ULTRA SYNERGY MATRIX": {
+    "titles": {
+      "aliases": ["USM"]
+    }
+  },
+  "ENERGY SYNERGY MATRIX": {
+    "titles": {
+      "aliases": ["ESM"]
+    }
   }
 }

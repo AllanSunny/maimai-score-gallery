@@ -98,9 +98,11 @@ Notes/Location is intentionally excluded from the public archive.
 owns one or more DX/STD versions, and each version owns its difficulty charts.
 `Song` owns the shared `jacketKey`, artist, genre, introduction, and search titles.
 `Chart` includes both nullable `chartConstant` and nullable `charter` fields.
-Supplemental metadata refreshes constants and charter names for existing charts;
-non-null manual overrides take precedence, and existing values are retained
-when supplemental values are unavailable. See [song overrides](operations.md#song-overrides)
+Supplemental metadata refreshes constants and charter names for existing charts.
+Sparse manual overrides can additionally supply title variants, artist, genre,
+introduction, jacket key, or individual chart fields; supplied non-null values
+take precedence, and existing values are retained when no override or
+supplemental value is available. See [song overrides](operations.md#song-overrides)
 for the editable override format, which differs from the generated catalog.
 
 `introducedIn` deliberately differs from `versions`: `introducedIn` is the

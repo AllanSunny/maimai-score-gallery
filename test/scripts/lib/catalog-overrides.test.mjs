@@ -1,6 +1,19 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { standaloneCatalogSongs } from "../../../scripts/lib/catalog-overrides.mjs";
+import { catalogSongsWithOverrides, standaloneCatalogSongs } from "../../../scripts/lib/catalog-overrides.mjs";
+
+test("sparse title overrides make existing SEGA songs resolver-compatible", () => {
+  const [song] = catalogSongsWithOverrides([{
+    title: "ULTRA SYNERGY MATRIX",
+    artist: "Tanchiky",
+    dx_lev_mas: "14",
+  }], {
+    "ULTRA SYNERGY MATRIX": { titles: { aliases: ["USM"] } },
+  });
+
+  assert.deepEqual(song.matchTitles, ["ULTRA SYNERGY MATRIX", "USM"]);
+  assert.equal(song.dx_lev_mas, "14");
+});
 
 test("standalone overrides become resolver-compatible catalog songs", () => {
   const songs = standaloneCatalogSongs({

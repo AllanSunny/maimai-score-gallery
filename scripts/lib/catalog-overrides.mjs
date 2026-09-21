@@ -36,6 +36,15 @@ function titleValues(canonical, override) {
   return [...new Set(values.map((value) => String(value).trim()).filter(Boolean))];
 }
 
+/** Adds sparse title overrides to SEGA entries so OCR can resolve them before catalog sync. */
+export function catalogSongsWithOverrides(officialSongs, overrides) {
+  return officialSongs.map((song) => {
+    const override = overrides[song.title];
+    if (!override || override.standalone) return song;
+    return { ...song, matchTitles: titleValues(song.title, override) };
+  });
+}
+
 export function standaloneCatalogSongs(overrides) {
   return Object.entries(overrides).flatMap(([canonicalTitle, override]) => {
     if (!override?.standalone) return [];
