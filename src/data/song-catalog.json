@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-14T15:06:28.124Z",
+  "generatedAt": "2026-09-21T05:23:32.600Z",
   "songs": [
     {
       "id": "song-550d332f837c",
@@ -28,7 +28,7 @@
               "id": "song-550d332f837c-std-advanced",
               "difficulty": "ADVANCED",
               "level": "8",
-              "chartConstant": 8.3,
+              "chartConstant": 9,
               "charter": null
             },
             {
@@ -352,7 +352,7 @@
               "id": "song-5e2b531bd3e7-std-advanced",
               "difficulty": "ADVANCED",
               "level": "8",
-              "chartConstant": 8.5,
+              "chartConstant": 9.2,
               "charter": null
             },
             {
@@ -511,7 +511,7 @@
               "id": "song-be125cab7681-std-advanced",
               "difficulty": "ADVANCED",
               "level": "8+",
-              "chartConstant": 8.8,
+              "chartConstant": 9.5,
               "charter": null
             },
             {
@@ -564,7 +564,7 @@
               "id": "song-bc39c978dd14-std-advanced",
               "difficulty": "ADVANCED",
               "level": "7+",
-              "chartConstant": 7.8,
+              "chartConstant": 8.5,
               "charter": null
             },
             {
@@ -782,7 +782,7 @@
               "id": "song-66d5f29c249e-std-advanced",
               "difficulty": "ADVANCED",
               "level": "9",
-              "chartConstant": 9.3,
+              "chartConstant": 9.9,
               "charter": null
             },
             {
@@ -876,7 +876,7 @@
               "id": "song-1e31758513df-std-advanced",
               "difficulty": "ADVANCED",
               "level": "8+",
-              "chartConstant": 8.6,
+              "chartConstant": 9.3,
               "charter": null
             },
             {
@@ -989,7 +989,7 @@
               "id": "song-80f1e1dfff6a-std-advanced",
               "difficulty": "ADVANCED",
               "level": "8+",
-              "chartConstant": 8.7,
+              "chartConstant": 9.4,
               "charter": null
             },
             {
@@ -1076,7 +1076,7 @@
               "id": "song-6be6e1b4aabb-std-advanced",
               "difficulty": "ADVANCED",
               "level": "9",
-              "chartConstant": 9.3,
+              "chartConstant": 9.9,
               "charter": null
             },
             {
@@ -1129,7 +1129,7 @@
               "id": "song-7a8b00a7d2e1-std-advanced",
               "difficulty": "ADVANCED",
               "level": "9",
-              "chartConstant": 9.4,
+              "chartConstant": 9.9,
               "charter": null
             },
             {
@@ -1375,7 +1375,7 @@
               "id": "song-fa9e1d22205a-std-advanced",
               "difficulty": "ADVANCED",
               "level": "8",
-              "chartConstant": 8,
+              "chartConstant": 8.7,
               "charter": null
             },
             {
@@ -1428,7 +1428,7 @@
               "id": "song-cb6762dadd83-std-advanced",
               "difficulty": "ADVANCED",
               "level": "9",
-              "chartConstant": 9.5,
+              "chartConstant": 9.9,
               "charter": null
             },
             {
@@ -1481,7 +1481,7 @@
               "id": "song-2a6b24ad2872-std-advanced",
               "difficulty": "ADVANCED",
               "level": "9",
-              "chartConstant": 9,
+              "chartConstant": 9.7,
               "charter": null
             },
             {
@@ -1799,7 +1799,7 @@
               "id": "song-dde93d54b099-std-advanced",
               "difficulty": "ADVANCED",
               "level": "8+",
-              "chartConstant": 8.6,
+              "chartConstant": 9.3,
               "charter": null
             },
             {
@@ -2044,7 +2044,9 @@
         "kana": [],
         "romaji": [],
         "english": [],
-        "aliases": []
+        "aliases": [
+          "esm"
+        ]
       },
       "artist": "Tanchiky",
       "jacketKey": "jackets/song-b9490351376f-37565dab90af.png",
@@ -2098,7 +2100,7 @@
               "id": "song-b9490351376f-std-advanced",
               "difficulty": "ADVANCED",
               "level": "7+",
-              "chartConstant": 7.8,
+              "chartConstant": 8.5,
               "charter": null
             },
             {
@@ -2363,7 +2365,7 @@
               "id": "song-2fefafbb3dcb-std-advanced",
               "difficulty": "ADVANCED",
               "level": "9",
-              "chartConstant": 9.5,
+              "chartConstant": 9.9,
               "charter": null
             },
             {
@@ -2416,7 +2418,7 @@
               "id": "song-561fa39d3376-std-advanced",
               "difficulty": "ADVANCED",
               "level": "8+",
-              "chartConstant": 8.6,
+              "chartConstant": 9.3,
               "charter": null
             },
             {
@@ -2469,7 +2471,7 @@
               "id": "song-75803e67ee31-std-advanced",
               "difficulty": "ADVANCED",
               "level": "9",
-              "chartConstant": 9,
+              "chartConstant": 9.7,
               "charter": null
             },
             {
@@ -2582,7 +2584,7 @@
               "id": "song-4ffbb20786b9-std-advanced",
               "difficulty": "ADVANCED",
               "level": "10",
-              "chartConstant": 10.5,
+              "chartConstant": 11.1,
               "charter": null
             },
             {
@@ -2688,7 +2690,7 @@
               "id": "song-e36fa439473a-std-advanced",
               "difficulty": "ADVANCED",
               "level": "9",
-              "chartConstant": 9,
+              "chartConstant": 9.7,
               "charter": null
             },
             {
@@ -3095,7 +3097,7 @@
               "id": "song-7211e50abce8-std-advanced",
               "difficulty": "ADVANCED",
               "level": "9",
-              "chartConstant": 9,
+              "chartConstant": 9.7,
               "charter": null
             },
             {
@@ -3254,7 +3256,7 @@
               "id": "song-9e98bf4fc074-std-advanced",
               "difficulty": "ADVANCED",
               "level": "9",
-              "chartConstant": 9.3,
+              "chartConstant": 9.9,
               "charter": null
             },
             {
@@ -3466,7 +3468,7 @@
               "id": "song-9d4fa1b44975-std-advanced",
               "difficulty": "ADVANCED",
               "level": "7+",
-              "chartConstant": 7.8,
+              "chartConstant": 8.5,
               "charter": null
             },
             {
@@ -3480,7 +3482,7 @@
               "id": "song-9d4fa1b44975-std-master",
               "difficulty": "MASTER",
               "level": "12+",
-              "chartConstant": 12.8,
+              "chartConstant": 12.9,
               "charter": "チャン@DP皆伝"
             }
           ]
@@ -3773,7 +3775,7 @@
               "id": "magical-flavor-std-advanced",
               "difficulty": "ADVANCED",
               "level": "8",
-              "chartConstant": 8.3,
+              "chartConstant": 9,
               "charter": null
             },
             {
@@ -3913,7 +3915,7 @@
               "id": "song-8342d656fdb5-std-advanced",
               "difficulty": "ADVANCED",
               "level": "9",
-              "chartConstant": 9.3,
+              "chartConstant": 9.9,
               "charter": null
             },
             {
@@ -4125,7 +4127,7 @@
               "id": "song-9125d2108267-std-advanced",
               "difficulty": "ADVANCED",
               "level": "8+",
-              "chartConstant": 8.6,
+              "chartConstant": 9.3,
               "charter": null
             },
             {
@@ -4450,7 +4452,7 @@
               "id": "song-4d6db4f3afe0-std-advanced",
               "difficulty": "ADVANCED",
               "level": "7",
-              "chartConstant": 7.3,
+              "chartConstant": 8,
               "charter": null
             },
             {
@@ -4696,7 +4698,7 @@
               "id": "song-0ac24dd304e4-std-advanced",
               "difficulty": "ADVANCED",
               "level": "8+",
-              "chartConstant": 8.6,
+              "chartConstant": 9.3,
               "charter": null
             },
             {
@@ -4802,7 +4804,7 @@
               "id": "song-7e974c926826-std-advanced",
               "difficulty": "ADVANCED",
               "level": "9+",
-              "chartConstant": 9.8,
+              "chartConstant": 10.4,
               "charter": null
             },
             {
@@ -5286,7 +5288,7 @@
               "id": "song-c12dd6c10af2-std-advanced",
               "difficulty": "ADVANCED",
               "level": "10+",
-              "chartConstant": 10.7,
+              "chartConstant": 11.3,
               "charter": null
             },
             {
@@ -5563,7 +5565,7 @@
               "id": "song-93e1dbb9bcec-std-advanced",
               "difficulty": "ADVANCED",
               "level": "7",
-              "chartConstant": 7.3,
+              "chartConstant": 8,
               "charter": null
             },
             {
@@ -5731,7 +5733,7 @@
               "id": "song-98cf509c9323-dx-master",
               "difficulty": "MASTER",
               "level": "12+",
-              "chartConstant": 12.7,
+              "chartConstant": 12.6,
               "charter": "すきやき奉行"
             }
           ]
@@ -5770,7 +5772,7 @@
               "id": "song-8c64261afe55-std-advanced",
               "difficulty": "ADVANCED",
               "level": "9",
-              "chartConstant": 9.3,
+              "chartConstant": 9.9,
               "charter": null
             },
             {
@@ -5829,7 +5831,7 @@
               "id": "song-bcdd634d7a4b-std-advanced",
               "difficulty": "ADVANCED",
               "level": "7+",
-              "chartConstant": 7.6,
+              "chartConstant": 8.3,
               "charter": null
             },
             {
@@ -6426,7 +6428,7 @@
               "id": "song-ee631b95b7c2-std-advanced",
               "difficulty": "ADVANCED",
               "level": "7",
-              "chartConstant": 7.5,
+              "chartConstant": 8.2,
               "charter": null
             },
             {
@@ -6486,7 +6488,7 @@
               "id": "song-7fa77704b857-std-advanced",
               "difficulty": "ADVANCED",
               "level": "10+",
-              "chartConstant": 10.6,
+              "chartConstant": 11.2,
               "charter": null
             },
             {
@@ -6546,7 +6548,7 @@
               "id": "song-6729a76da051-std-advanced",
               "difficulty": "ADVANCED",
               "level": "8+",
-              "chartConstant": 8.9,
+              "chartConstant": 9.6,
               "charter": null
             },
             {
@@ -6599,7 +6601,7 @@
               "id": "song-39393f382fcd-std-advanced",
               "difficulty": "ADVANCED",
               "level": "10",
-              "chartConstant": 10.3,
+              "chartConstant": 10.9,
               "charter": null
             },
             {
@@ -6844,7 +6846,9 @@
         "kana": [],
         "romaji": [],
         "english": [],
-        "aliases": []
+        "aliases": [
+          "usm"
+        ]
       },
       "artist": "Tanchiky",
       "genre": "ゲーム＆バラエティ",
@@ -7117,7 +7121,7 @@
               "id": "song-2739c333bc92-std-advanced",
               "difficulty": "ADVANCED",
               "level": "7+",
-              "chartConstant": 7.8,
+              "chartConstant": 8.5,
               "charter": null
             },
             {
@@ -7276,7 +7280,7 @@
               "id": "song-c7c48540b093-std-advanced",
               "difficulty": "ADVANCED",
               "level": "8+",
-              "chartConstant": 8.7,
+              "chartConstant": 9.4,
               "charter": null
             },
             {
@@ -7802,7 +7806,7 @@
               "id": "song-9484ecffb2df-std-advanced",
               "difficulty": "ADVANCED",
               "level": "7+",
-              "chartConstant": 7.6,
+              "chartConstant": 8.3,
               "charter": null
             },
             {
@@ -7861,7 +7865,7 @@
               "id": "song-5b756cf5e565-std-advanced",
               "difficulty": "ADVANCED",
               "level": "7",
-              "chartConstant": 7.5,
+              "chartConstant": 8.2,
               "charter": null
             },
             {
@@ -7920,7 +7924,7 @@
               "id": "song-f5211ec10f40-std-advanced",
               "difficulty": "ADVANCED",
               "level": "8",
-              "chartConstant": 8.3,
+              "chartConstant": 9,
               "charter": null
             },
             {
@@ -8352,7 +8356,7 @@
               "id": "song-9a2f2ad520e2-std-advanced",
               "difficulty": "ADVANCED",
               "level": "7",
-              "chartConstant": 7.5,
+              "chartConstant": 8.2,
               "charter": null
             },
             {
@@ -8529,7 +8533,7 @@
               "id": "song-260908208d43-std-advanced",
               "difficulty": "ADVANCED",
               "level": "8",
-              "chartConstant": 8,
+              "chartConstant": 8.7,
               "charter": null
             },
             {
@@ -8709,7 +8713,7 @@
               "id": "song-14f005171f81-std-advanced",
               "difficulty": "ADVANCED",
               "level": "9+",
-              "chartConstant": 9.6,
+              "chartConstant": 10.2,
               "charter": null
             },
             {
@@ -8944,7 +8948,7 @@
               "id": "song-6c1b87c59c13-std-advanced",
               "difficulty": "ADVANCED",
               "level": "8",
-              "chartConstant": 8.1,
+              "chartConstant": 8.8,
               "charter": null
             },
             {
@@ -9062,7 +9066,7 @@
               "id": "song-1b7dee6afd62-std-advanced",
               "difficulty": "ADVANCED",
               "level": "7",
-              "chartConstant": 7,
+              "chartConstant": 7.7,
               "charter": null
             },
             {
@@ -9128,7 +9132,7 @@
               "id": "song-88fd49fe9b34-std-advanced",
               "difficulty": "ADVANCED",
               "level": "6",
-              "chartConstant": 6.6,
+              "chartConstant": 7.3,
               "charter": null
             },
             {
@@ -9199,7 +9203,7 @@
               "id": "song-5836d24bd19a-std-advanced",
               "difficulty": "ADVANCED",
               "level": "8+",
-              "chartConstant": 8.8,
+              "chartConstant": 9.5,
               "charter": null
             },
             {
@@ -9412,7 +9416,8 @@
           "kyubibibibizumu"
         ],
         "english": [
-          "cubibibibism"
+          "cubibibibism",
+          "cubibibibibism"
         ],
         "aliases": []
       },
@@ -9586,7 +9591,7 @@
               "id": "song-677cae4fdf5b-std-advanced",
               "difficulty": "ADVANCED",
               "level": "7",
-              "chartConstant": 7.3,
+              "chartConstant": 8,
               "charter": null
             },
             {
@@ -9723,7 +9728,7 @@
               "id": "song-553e96cd15c3-dx-master",
               "difficulty": "MASTER",
               "level": "13",
-              "chartConstant": 13,
+              "chartConstant": 12.9,
               "charter": "サファ太"
             }
           ]
@@ -10217,7 +10222,7 @@
               "id": "song-f1d8c4af8108-std-advanced",
               "difficulty": "ADVANCED",
               "level": "9+",
-              "chartConstant": 9.6,
+              "chartConstant": 10.2,
               "charter": null
             },
             {
@@ -10293,7 +10298,7 @@
               "id": "song-7b0f372bbf9c-dx-master",
               "difficulty": "MASTER",
               "level": "14",
-              "chartConstant": 14.1,
+              "chartConstant": 14,
               "charter": "サファ太"
             }
           ]
@@ -10494,7 +10499,7 @@
               "id": "song-236effa17b4a-std-advanced",
               "difficulty": "ADVANCED",
               "level": "8",
-              "chartConstant": 8,
+              "chartConstant": 8.7,
               "charter": null
             },
             {
@@ -10553,7 +10558,7 @@
               "id": "song-f992266c9245-std-advanced",
               "difficulty": "ADVANCED",
               "level": "8",
-              "chartConstant": 8.3,
+              "chartConstant": 9,
               "charter": null
             },
             {
@@ -10658,7 +10663,7 @@
               "id": "song-3a859319aa19-std-advanced",
               "difficulty": "ADVANCED",
               "level": "7",
-              "chartConstant": 7.2,
+              "chartConstant": 7.9,
               "charter": null
             },
             {
@@ -11081,7 +11086,7 @@
               "id": "song-5d05418c5b12-std-advanced",
               "difficulty": "ADVANCED",
               "level": "7+",
-              "chartConstant": 7.8,
+              "chartConstant": 8.5,
               "charter": null
             },
             {
@@ -11290,7 +11295,7 @@
               "id": "song-e8be0960fb5f-std-advanced",
               "difficulty": "ADVANCED",
               "level": "8",
-              "chartConstant": 8,
+              "chartConstant": 8.7,
               "charter": null
             },
             {
@@ -11361,7 +11366,7 @@
               "id": "song-d6cec4f5ed59-std-advanced",
               "difficulty": "ADVANCED",
               "level": "7+",
-              "chartConstant": 7.8,
+              "chartConstant": 8.5,
               "charter": null
             },
             {
@@ -11449,7 +11454,7 @@
               "id": "song-6e4d367df787-std-advanced",
               "difficulty": "ADVANCED",
               "level": "7+",
-              "chartConstant": 7.9,
+              "chartConstant": 8.6,
               "charter": null
             },
             {
@@ -11949,7 +11954,7 @@
               "id": "song-d1db5684d205-std-advanced",
               "difficulty": "ADVANCED",
               "level": "7",
-              "chartConstant": 7,
+              "chartConstant": 7.7,
               "charter": null
             },
             {
@@ -12067,7 +12072,7 @@
               "id": "song-ef3aa6605987-std-advanced",
               "difficulty": "ADVANCED",
               "level": "7",
-              "chartConstant": 7,
+              "chartConstant": 7.7,
               "charter": null
             },
             {
@@ -12461,7 +12466,7 @@
               "id": "song-759a718763cf-std-advanced",
               "difficulty": "ADVANCED",
               "level": "7+",
-              "chartConstant": 7.7,
+              "chartConstant": 8.4,
               "charter": null
             },
             {
@@ -12943,7 +12948,7 @@
               "id": "song-48ebdafbb49f-std-advanced",
               "difficulty": "ADVANCED",
               "level": "7+",
-              "chartConstant": 7.6,
+              "chartConstant": 8.3,
               "charter": null
             },
             {
@@ -13002,7 +13007,7 @@
               "id": "song-c172dfbe2a87-std-advanced",
               "difficulty": "ADVANCED",
               "level": "7",
-              "chartConstant": 7.5,
+              "chartConstant": 8.2,
               "charter": null
             },
             {
@@ -13154,7 +13159,7 @@
               "id": "song-3ce7f814ff96-std-advanced",
               "difficulty": "ADVANCED",
               "level": "7",
-              "chartConstant": 7.4,
+              "chartConstant": 8.1,
               "charter": null
             },
             {
@@ -13213,7 +13218,7 @@
               "id": "song-4bac2beaa7db-std-advanced",
               "difficulty": "ADVANCED",
               "level": "6",
-              "chartConstant": 6.8,
+              "chartConstant": 7.5,
               "charter": null
             },
             {
@@ -13279,7 +13284,7 @@
               "id": "song-86b237cecc19-std-advanced",
               "difficulty": "ADVANCED",
               "level": "8",
-              "chartConstant": 8.4,
+              "chartConstant": 9.1,
               "charter": null
             },
             {
@@ -13586,7 +13591,7 @@
               "id": "song-ce34e49b7932-std-advanced",
               "difficulty": "ADVANCED",
               "level": "9",
-              "chartConstant": 9,
+              "chartConstant": 9.7,
               "charter": null
             },
             {
@@ -13943,7 +13948,7 @@
               "id": "song-3ec83d57c6cb-std-advanced",
               "difficulty": "ADVANCED",
               "level": "8",
-              "chartConstant": 8.3,
+              "chartConstant": 9,
               "charter": null
             },
             {
@@ -14036,7 +14041,7 @@
               "id": "song-438eaed9a234-std-advanced",
               "difficulty": "ADVANCED",
               "level": "8+",
-              "chartConstant": 8.8,
+              "chartConstant": 9.5,
               "charter": null
             },
             {
@@ -14095,7 +14100,7 @@
               "id": "song-21c8a54c340b-std-advanced",
               "difficulty": "ADVANCED",
               "level": "8+",
-              "chartConstant": 8.8,
+              "chartConstant": 9.5,
               "charter": null
             },
             {
@@ -14554,7 +14559,7 @@
               "id": "song-2462fcdbebad-std-advanced",
               "difficulty": "ADVANCED",
               "level": "8",
-              "chartConstant": 8.4,
+              "chartConstant": 9.1,
               "charter": null
             },
             {
@@ -14844,7 +14849,7 @@
               "id": "song-c852acb4e2c8-std-advanced",
               "difficulty": "ADVANCED",
               "level": "9",
-              "chartConstant": 9.3,
+              "chartConstant": 9.9,
               "charter": null
             },
             {
@@ -15109,7 +15114,7 @@
               "id": "song-00493f7d7088-dx-master",
               "difficulty": "MASTER",
               "level": "13",
-              "chartConstant": 13,
+              "chartConstant": 13.2,
               "charter": "Jack"
             }
           ]
@@ -15306,7 +15311,7 @@
               "id": "song-fe04643bda33-std-advanced",
               "difficulty": "ADVANCED",
               "level": "7",
-              "chartConstant": 7.3,
+              "chartConstant": 8,
               "charter": null
             },
             {
@@ -15544,7 +15549,7 @@
               "id": "song-00dec12931e6-std-advanced",
               "difficulty": "ADVANCED",
               "level": "9",
-              "chartConstant": 9.5,
+              "chartConstant": 9.9,
               "charter": null
             },
             {
@@ -15660,7 +15665,7 @@
               "id": "song-5a12f15226f2-std-advanced",
               "difficulty": "ADVANCED",
               "level": "8+",
-              "chartConstant": 8.6,
+              "chartConstant": 9.3,
               "charter": null
             },
             {
@@ -16089,7 +16094,7 @@
               "id": "song-7d1aab6a161f-std-advanced",
               "difficulty": "ADVANCED",
               "level": "8",
-              "chartConstant": 8.5,
+              "chartConstant": 9.2,
               "charter": null
             },
             {
@@ -16167,7 +16172,7 @@
               "id": "song-b99c9e9718b2-dx-master",
               "difficulty": "MASTER",
               "level": "12+",
-              "chartConstant": 12.9,
+              "chartConstant": 13,
               "charter": "じゃこレモン"
             }
           ]
@@ -16359,7 +16364,7 @@
               "id": "song-fed6fb43603f-std-advanced",
               "difficulty": "ADVANCED",
               "level": "7",
-              "chartConstant": 7.1,
+              "chartConstant": 7.8,
               "charter": null
             },
             {
@@ -16477,7 +16482,7 @@
               "id": "song-5958b78766c8-std-advanced",
               "difficulty": "ADVANCED",
               "level": "8",
-              "chartConstant": 8.2,
+              "chartConstant": 8.9,
               "charter": null
             },
             {
@@ -16536,7 +16541,7 @@
               "id": "song-71b522a20088-std-advanced",
               "difficulty": "ADVANCED",
               "level": "7",
-              "chartConstant": 7.5,
+              "chartConstant": 8.2,
               "charter": null
             },
             {
@@ -16970,7 +16975,7 @@
               "id": "song-5619c275b593-std-advanced",
               "difficulty": "ADVANCED",
               "level": "7+",
-              "chartConstant": 7.6,
+              "chartConstant": 8.3,
               "charter": null
             },
             {
