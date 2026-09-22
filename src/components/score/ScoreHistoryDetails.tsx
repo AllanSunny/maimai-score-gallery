@@ -69,7 +69,7 @@ export function ScoreHistoryDetails({
 
               <div className="flex items-center gap-4 tabular-nums text-lightest">
                 <RatingDisplay rating={score.rating} className={"w-40 sm:w-48"} />
-                {score.ratingChange === 0 && (
+                {score.ratingChange > 0 && (
                   <span
                     className="text-lightest text-base sm:text-lg font-bold"
                     aria-label={`Rating change +${score.ratingChange}`}
