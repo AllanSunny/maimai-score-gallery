@@ -1,6 +1,6 @@
 import { classNames } from "../../utils/class-names";
-import type { JudgmentBreakdown, JudgmentSet } from "../../utils/types";
-import { NoteImageDisplay, type NoteType } from "../ui/NoteImageDisplay";
+import { noteTypes, type JudgmentBreakdown, type JudgmentSet, type NoteType } from "../../utils/types";
+import { NoteImageDisplay } from "../ui/NoteImageDisplay";
 
 interface JudgmentBreakdownTableProps {
   judgments: JudgmentSet | null;
@@ -29,13 +29,18 @@ const judgmentColumns: Array<{
   { key: "miss", label: "Miss", className: "bg-light/17 text-lightest/60" },
 ];
 
-const judgmentRows: Array<{ key: keyof JudgmentBreakdown; label: string; noteType: NoteType }> = [
-  { key: "tap", label: "Tap", noteType: "tap" },
-  { key: "hold", label: "Hold", noteType: "hold" },
-  { key: "slide", label: "Slide", noteType: "slide" },
-  { key: "touch", label: "Touch", noteType: "touch" },
-  { key: "break", label: "Break", noteType: "break" },
-];
+const noteTypeLabels: Record<NoteType, string> = {
+  tap: "Tap",
+  hold: "Hold",
+  slide: "Slide",
+  touch: "Touch",
+  break: "Break",
+};
+
+const judgmentRows = noteTypes.map((noteType) => ({
+  label: noteTypeLabels[noteType],
+  noteType,
+}));
 
 function hasJudgmentValues(judgments: JudgmentSet) {
   return Object.values(judgments).some((value) => value != null);
@@ -51,7 +56,7 @@ export function JudgmentBreakdownTable({
 
   const rows: JudgmentTableRow[] = [
     ...(judgmentsByType
-      ? judgmentRows.map(({ key, label, noteType }) => ({ label, noteType, values: judgmentsByType[key] }))
+      ? judgmentRows.map(({ label, noteType }) => ({ label, noteType, values: judgmentsByType[noteType] }))
       : []),
     { label: "Total", values: judgments },
   ].filter(({ values }) => hasJudgmentValues(values));

@@ -7,6 +7,8 @@ export const comboStatuses = ["FC", "FC+", "AP", "AP+"] as const;
 export type ComboStatus = typeof comboStatuses[number];
 export const syncStatuses = ["Sync", "FS", "FS+", "FDX", "FDX+"] as const;
 export type SyncStatus = typeof syncStatuses[number];
+export const noteTypes = ["tap", "hold", "slide", "touch", "break"] as const;
+export type NoteType = typeof noteTypes[number];
 
 export interface Chart {
   id: string;
@@ -72,13 +74,7 @@ export interface JudgmentSet {
   miss: number;
 }
 
-export interface JudgmentBreakdown {
-  break: JudgmentSet;
-  tap: JudgmentSet;
-  hold: JudgmentSet;
-  slide: JudgmentSet;
-  touch: JudgmentSet;
-}
+export type JudgmentBreakdown = Record<NoteType, JudgmentSet>;
 
 export interface ScoreRecord {
   /** Stable play identifier. */

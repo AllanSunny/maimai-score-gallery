@@ -3,10 +3,11 @@ import { ChartTypeIcon } from "../components/chart/ChartTypeIcon";
 import { ComboDisplay } from "../components/score/ComboDisplay";
 import { SyncDisplay } from "../components/score/SyncDisplay";
 import { ContentCard } from "../components/ui/ContentCard";
-import { NoteImageDisplay, type NoteType } from "../components/ui/NoteImageDisplay";
+import { NoteImageDisplay } from "../components/ui/NoteImageDisplay";
 import { PageHeading } from "../components/ui/PageHeading";
 import { navigate } from "../utils/navigation";
 import { scrollToElement } from "../utils/scroll";
+import type { NoteType } from "../utils/types";
 
 const difficulties = [
   { name: "BASIC", color: "basic", description: "A friendly introduction to the song for newer players." },
@@ -38,7 +39,7 @@ interface NoteTypeExample {
   className: string;
 }
 
-const noteTypes: Array<{
+const noteTypeExamples: Array<{
   name: string;
   description: string;
   images: NoteTypeExample[];
@@ -149,7 +150,7 @@ export function AboutPage() {
 
             <p>The main input types you'll see referenced throughout the gallery are:</p>
             <ul className="grid gap-y-5 md:grid-cols-2 md:gap-x-12">
-              {noteTypes.map((noteType) => (
+              {noteTypeExamples.map((noteType) => (
                 <li key={noteType.name} className="flex items-center gap-6">
                   <span aria-hidden="true" className="flex w-22 shrink-0 items-center justify-center gap-2">
                     {noteType.images.map((image) => (

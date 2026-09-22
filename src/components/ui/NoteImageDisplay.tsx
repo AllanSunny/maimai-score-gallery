@@ -4,8 +4,7 @@ import slideNote from "../../assets/notes/slide.png";
 import tapNote from "../../assets/notes/tap.png";
 import touchNote from "../../assets/notes/touch.png";
 import { classNames } from "../../utils/class-names";
-
-export type NoteType = "tap" | "hold" | "slide" | "touch" | "break";
+import type { NoteType } from "../../utils/types";
 
 interface NoteImageDisplayProps {
   noteType: NoteType;
