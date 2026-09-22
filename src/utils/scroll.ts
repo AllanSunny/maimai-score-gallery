@@ -3,6 +3,7 @@ import { isLargeViewport } from "./responsive";
 
 const smoothScrollDuration = 400;
 const largeViewportExpandableItemTop = 0.25;
+const largeViewportScoreHistoryItemTop = 0.15;
 let activeScrollFrame = 0;
 let unlockScrollInteraction: (() => void) | null = null;
 
@@ -52,5 +53,11 @@ export function scrollToElement(element: HTMLElement, { viewportTop = 0 }: Scrol
 export function scrollToExpandableItem(element: HTMLElement) {
   scrollToElement(element, {
     viewportTop: isLargeViewport() ? largeViewportExpandableItemTop : 0,
+  });
+}
+
+export function scrollToScoreHistoryItem(element: HTMLElement) {
+  scrollToElement(element, {
+    viewportTop: isLargeViewport() ? largeViewportScoreHistoryItemTop : 0,
   });
 }

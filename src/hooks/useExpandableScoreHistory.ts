@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import { flushSync } from "react-dom";
 import { navigate } from "../utils/navigation";
-import { scrollToExpandableItem } from "../utils/scroll";
+import { scrollToScoreHistoryItem } from "../utils/scroll";
 import { lockPageInteraction } from "../utils/interaction-lock";
 
 const scoreHistoryTransitionDuration = 360;
@@ -75,7 +75,7 @@ export function useExpandableScoreHistory(
 
     const animationFrame = window.requestAnimationFrame(() => {
       const activeEntry = findScoreEntry(activeScoreId);
-      if (activeEntry) scrollToExpandableItem(activeEntry);
+      if (activeEntry) scrollToScoreHistoryItem(activeEntry);
     });
     return () => window.cancelAnimationFrame(animationFrame);
   }, [activeScoreId]);
@@ -97,7 +97,7 @@ export function useExpandableScoreHistory(
         navigate(`${chartRoute}#${encodeURIComponent(scoreId)}`, { replace: true });
       }, scoreId);
       const selectedEntry = findScoreEntry(scoreId);
-      if (selectedEntry) scrollToExpandableItem(selectedEntry);
+      if (selectedEntry) scrollToScoreHistoryItem(selectedEntry);
     } finally {
       isChangingSelection.current = false;
     }
