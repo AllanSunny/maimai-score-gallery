@@ -180,6 +180,306 @@
       "slow": 0,
       "id": "5d3lykUqDDmWJWo6r8Lfba-bAGUu71jKz7ctXivWIeI",
       "chartId": "song-762c136d5001-dx-expert"
+    },
+    {
+      "playedAt": "2026-09-22T04:57:50.000Z",
+      "songTitle": "華鳥風月",
+      "chartType": "STD",
+      "difficulty": "MASTER",
+      "level": "12+",
+      "achievement": 100.2995,
+      "combo": "FC",
+      "sync": null,
+      "rating": 15363,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 344,
+        "perfect": 264,
+        "great": 17,
+        "good": 2,
+        "miss": 0
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 9,
+          "perfect": 9,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 223,
+          "perfect": 238,
+          "great": 14,
+          "good": 2,
+          "miss": 0
+        },
+        "hold": {
+          "criticalPerfect": 18,
+          "perfect": 17,
+          "great": 2,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 94,
+          "perfect": 0,
+          "great": 1,
+          "good": 0,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 0,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 17,
+      "slow": 2,
+      "id": "swpAq4mhieY35nOtZz_2971q7zyyZx5BouK3S6hZk74",
+      "chartId": "song-ed64cdea90c7-std-master"
+    },
+    {
+      "playedAt": "2026-09-22T05:03:35.000Z",
+      "songTitle": "華鳥風月",
+      "chartType": "STD",
+      "difficulty": "MASTER",
+      "level": "12+",
+      "achievement": 100.3396,
+      "combo": "FC+",
+      "sync": "FS+",
+      "rating": 15363,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 304,
+        "perfect": 305,
+        "great": 18,
+        "good": 0,
+        "miss": 0
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 5,
+          "perfect": 13,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 191,
+          "perfect": 269,
+          "great": 17,
+          "good": 0,
+          "miss": 0
+        },
+        "hold": {
+          "criticalPerfect": 13,
+          "perfect": 23,
+          "great": 1,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 95,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 0,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 16,
+      "slow": 2,
+      "id": "8MzSDZL0zLFl5Bynjj3osKFZ98vEZyn-DnWUBdhOs3Y",
+      "chartId": "song-ed64cdea90c7-std-master"
+    },
+    {
+      "playedAt": "2026-09-22T05:07:44.000Z",
+      "songTitle": "華鳥風月",
+      "chartType": "STD",
+      "difficulty": "MASTER",
+      "level": "12+",
+      "achievement": 100.551,
+      "combo": "FC+",
+      "sync": null,
+      "rating": 15363,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 326,
+        "perfect": 286,
+        "great": 15,
+        "good": 0,
+        "miss": 0
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 13,
+          "perfect": 5,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 201,
+          "perfect": 261,
+          "great": 15,
+          "good": 0,
+          "miss": 0
+        },
+        "hold": {
+          "criticalPerfect": 17,
+          "perfect": 20,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 95,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 0,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 15,
+      "slow": 0,
+      "id": "MUOGLtNSu4xDn29vuW0uAEsu6MI1vYk650GOtRsO4VY",
+      "chartId": "song-ed64cdea90c7-std-master"
+    },
+    {
+      "playedAt": "2026-09-22T05:18:00.000Z",
+      "songTitle": "STARTLINER",
+      "chartType": "DX",
+      "difficulty": "MASTER",
+      "level": "11+",
+      "achievement": 100.8148,
+      "combo": "FC+",
+      "sync": "FS+",
+      "rating": 15363,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 407,
+        "perfect": 111,
+        "great": 3,
+        "good": 0,
+        "miss": 0
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 8,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 203,
+          "perfect": 89,
+          "great": 1,
+          "good": 0,
+          "miss": 0
+        },
+        "hold": {
+          "criticalPerfect": 31,
+          "perfect": 22,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 73,
+          "perfect": 0,
+          "great": 2,
+          "good": 0,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 92,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 3,
+      "slow": 0,
+      "id": "1mnEv_7a8JuHn4LHK1YM7l7AX-EiWU6yfEypY_jLgvA",
+      "chartId": "song-abf7a8f529b4-dx-master"
+    },
+    {
+      "playedAt": "2026-09-22T05:20:56.000Z",
+      "songTitle": "乙女解剖",
+      "chartType": "DX",
+      "difficulty": "MASTER",
+      "level": "12",
+      "achievement": 100.8689,
+      "combo": "FC+",
+      "sync": "FS+",
+      "rating": 15363,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 505,
+        "perfect": 146,
+        "great": 2,
+        "good": 0,
+        "miss": 0
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 21,
+          "perfect": 5,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 315,
+          "perfect": 120,
+          "great": 1,
+          "good": 0,
+          "miss": 0
+        },
+        "hold": {
+          "criticalPerfect": 48,
+          "perfect": 21,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 68,
+          "perfect": 0,
+          "great": 1,
+          "good": 0,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 53,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 2,
+      "slow": 0,
+      "id": "nxqAIAi-qFiNW7lbEGiqznwQYN-wV3ev48M_lbyzO3Q",
+      "chartId": "song-82cbf0e19945-dx-master"
     }
   ]
 }

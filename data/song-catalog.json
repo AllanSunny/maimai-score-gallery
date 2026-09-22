@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-22T22:39:16.128Z",
+  "generatedAt": "2026-09-22T23:26:00.507Z",
   "songs": [
     {
       "id": "song-550d332f837c",
@@ -10993,7 +10993,8 @@
         "english": [
           "gleaming",
           "show off",
-          "glistening"
+          "glistening",
+          "shimmering"
         ],
         "aliases": []
       },
@@ -16502,6 +16503,65 @@
         "code": "23505",
         "name": "FESTiVAL PLUS"
       }
+    },
+    {
+      "id": "song-ed64cdea90c7",
+      "titles": {
+        "canonical": "華鳥風月",
+        "kana": [
+          "かちょう ふうげつ"
+        ],
+        "romaji": [
+          "kachou fuugetsu"
+        ],
+        "english": [
+          "flowers, birds, wind, and moon"
+        ],
+        "aliases": []
+      },
+      "artist": "幽閉サテライト(Produce:嵯峨飛鳥 Arranged:Iceon)",
+      "genre": "東方Project",
+      "introducedIn": {
+        "code": "18500",
+        "name": "MURASAKi PLUS"
+      },
+      "jacketKey": "jackets/song-ed64cdea90c7-3af503e850b8.png",
+      "versions": [
+        {
+          "id": "song-ed64cdea90c7-std",
+          "chartType": "STD",
+          "charts": [
+            {
+              "id": "song-ed64cdea90c7-std-basic",
+              "difficulty": "BASIC",
+              "level": "2",
+              "chartConstant": null,
+              "charter": null
+            },
+            {
+              "id": "song-ed64cdea90c7-std-advanced",
+              "difficulty": "ADVANCED",
+              "level": "7",
+              "chartConstant": 7.3,
+              "charter": null
+            },
+            {
+              "id": "song-ed64cdea90c7-std-expert",
+              "difficulty": "EXPERT",
+              "level": "9+",
+              "chartConstant": 9.7,
+              "charter": "某S氏"
+            },
+            {
+              "id": "song-ed64cdea90c7-std-master",
+              "difficulty": "MASTER",
+              "level": "12+",
+              "chartConstant": 12.8,
+              "charter": "rioN"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "song-5958b78766c8",
