@@ -35,7 +35,7 @@ export function ExpandedSongDetails({ name, versions }: ExpandedSongDetailsProps
                 <ChartTypeIcon chartType={version.chartType} className="h-4 w-auto" />
               </button>)}
         </div>
-        <div className="hidden shrink-0 items-center justify-center gap-3 md:flex md:w-auto" aria-label="Chart version">
+        <div className="hidden shrink-0 items-center justify-center gap-3 md:flex" aria-label="Chart version">
           {versions.filter((version) => version.chartType !== selectedVersion.chartType).map((version) =>
             <button
               key={version.chartType}

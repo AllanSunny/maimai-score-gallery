@@ -27,10 +27,10 @@ export function MiniScoreBreakdown({ achievement, combo, sync, className }: Mini
 
       <div className="flex shrink-0 items-center justify-end">
         <span className="flex w-8 -mr-1 shrink-0 justify-center sm:w-10">
-          <ComboDisplay status={combo} size="small" className="h-8 max-w-full object-contain sm:h-10" />
+          <ComboDisplay status={combo} size="small" className="h-8 object-contain sm:h-10" />
         </span>
         <span className="flex w-8 -mr-1 shrink-0 justify-center sm:w-10">
-          <SyncDisplay status={sync} size="small" className="h-8 max-w-full object-contain sm:h-10" />
+          <SyncDisplay status={sync} size="small" className="h-8 object-contain sm:h-10" />
         </span>
       </div>
     </div>

@@ -35,5 +35,5 @@ export function NoteImageDisplay({
 }: NoteImageDisplayProps) {
   const alt = decorative ? "" : noteLabels[noteType];
 
-  return <img src={noteImages[noteType]} alt={alt} title={alt} className={classNames("max-w-full object-contain", className)} />;
+  return <img src={noteImages[noteType]} alt={alt} title={alt} className={classNames("object-contain", className)} />;
 }

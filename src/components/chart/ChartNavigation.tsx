@@ -15,7 +15,7 @@ export function ChartNavigation({ catalogEntry, alternateCatalogEntry }: ChartNa
   const { chart, song, version } = catalogEntry;
 
   return (
-    <nav className="mt-2 lg:mt-6 justify-center flex flex-wrap gap-2 gap-3" aria-label="Chart navigation">
+    <nav className="mt-2 lg:mt-6 justify-center flex flex-wrap gap-2" aria-label="Chart navigation">
       {version.charts.map((difficultyChart) => {
         const difficultyColor = difficultyChart.difficulty.replace(":", "").toLowerCase();
         const buttonStyle = {

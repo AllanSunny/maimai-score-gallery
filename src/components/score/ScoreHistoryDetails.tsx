@@ -56,12 +56,12 @@ export function ScoreHistoryDetails({
             <div className="flex flex-col items-center gap-3 md:gap-6 mt-5">
               <div className="flex flex-wrap gap-12 text-lightest">
                 <ComboDisplay
-                  className="h-8 sm:h-9 max-w-full object-contain object-left"
+                  className="h-8 object-contain object-left sm:h-9"
                   status={score.combo}
                   size="large"
                 />
                 <SyncDisplay
-                  className="h-8 sm:h-9 max-w-full object-contain object-left"
+                  className="h-8 object-contain object-left sm:h-9"
                   status={score.sync}
                   size="large"
                 />
