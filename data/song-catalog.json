@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-21T15:11:51.617Z",
+  "generatedAt": "2026-09-22T22:39:16.128Z",
   "songs": [
     {
       "id": "song-550d332f837c",
@@ -4995,6 +4995,59 @@
         "code": "19998",
         "name": "FiNALE"
       }
+    },
+    {
+      "id": "song-762c136d5001",
+      "titles": {
+        "canonical": "Paradoxical Empress",
+        "kana": [],
+        "romaji": [],
+        "english": [],
+        "aliases": []
+      },
+      "artist": "polysha",
+      "genre": "maimai",
+      "introducedIn": {
+        "code": "26508",
+        "name": "CiRCLE PLUS"
+      },
+      "jacketKey": "jackets/song-762c136d5001-dd5678452875.png",
+      "versions": [
+        {
+          "id": "song-762c136d5001-dx",
+          "chartType": "DX",
+          "charts": [
+            {
+              "id": "song-762c136d5001-dx-basic",
+              "difficulty": "BASIC",
+              "level": "4",
+              "chartConstant": null,
+              "charter": null
+            },
+            {
+              "id": "song-762c136d5001-dx-advanced",
+              "difficulty": "ADVANCED",
+              "level": "7",
+              "chartConstant": 7.2,
+              "charter": null
+            },
+            {
+              "id": "song-762c136d5001-dx-expert",
+              "difficulty": "EXPERT",
+              "level": "11",
+              "chartConstant": 11.5,
+              "charter": "はっぴー"
+            },
+            {
+              "id": "song-762c136d5001-dx-master",
+              "difficulty": "MASTER",
+              "level": "13+",
+              "chartConstant": 13.9,
+              "charter": "サファ太"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "song-3d08dd4bc3b8",

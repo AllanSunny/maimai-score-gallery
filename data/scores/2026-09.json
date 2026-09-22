@@ -1,0 +1,185 @@
+{
+  "period": "2026-09",
+  "scores": [
+    {
+      "playedAt": "2026-09-18T03:36:26.000Z",
+      "songTitle": "INFiNiTE ENERZY -Overdoze-",
+      "chartType": "DX",
+      "difficulty": "MASTER",
+      "level": "14",
+      "achievement": 100.6126,
+      "combo": "FC",
+      "sync": null,
+      "rating": 15363,
+      "ratingChange": 9,
+      "judgments": {
+        "criticalPerfect": 566,
+        "perfect": 267,
+        "great": 14,
+        "good": 2,
+        "miss": 0
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 47,
+          "perfect": 15,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 441,
+          "perfect": 236,
+          "great": 13,
+          "good": 2,
+          "miss": 0
+        },
+        "hold": {
+          "criticalPerfect": 23,
+          "perfect": 16,
+          "great": 1,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 51,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 4,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 15,
+      "slow": 1,
+      "id": "BDLQabmLQ95c_HbYSnBg6vAfPBQJv2EkwGwEQd4qzNI",
+      "chartId": "song-22be81272e5f-dx-master"
+    },
+    {
+      "playedAt": "2026-09-22T00:59:48.000Z",
+      "songTitle": "ULTRA SYNERGY MATRIX",
+      "chartType": "DX",
+      "difficulty": "EXPERT",
+      "level": "12",
+      "achievement": 100.9632,
+      "combo": "AP",
+      "sync": "FS+",
+      "rating": 15363,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 441,
+        "perfect": 78,
+        "great": 0,
+        "good": 0,
+        "miss": 0
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 30,
+          "perfect": 4,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 278,
+          "perfect": 58,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "hold": {
+          "criticalPerfect": 28,
+          "perfect": 16,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 51,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 54,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 0,
+      "slow": 0,
+      "id": "BHbhVVOwSO1FHZDeKouq6XRovWHJ36_gDmGXptGIA0I",
+      "chartId": "song-d14d96fc150e-dx-expert"
+    },
+    {
+      "playedAt": "2026-09-22T02:11:30.000Z",
+      "songTitle": "Paradoxical Empress",
+      "chartType": "DX",
+      "difficulty": "EXPERT",
+      "level": "11",
+      "achievement": 100.9523,
+      "combo": "AP",
+      "sync": "FS+",
+      "rating": 15363,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 427,
+        "perfect": 193,
+        "great": 0,
+        "good": 0,
+        "miss": 0
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 17,
+          "perfect": 4,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 274,
+          "perfect": 152,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "hold": {
+          "criticalPerfect": 65,
+          "perfect": 37,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 58,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 13,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 0,
+      "slow": 0,
+      "id": "5d3lykUqDDmWJWo6r8Lfba-bAGUu71jKz7ctXivWIeI",
+      "chartId": "song-762c136d5001-dx-expert"
+    }
+  ]
+}
