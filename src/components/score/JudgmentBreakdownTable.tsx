@@ -63,9 +63,10 @@ export function JudgmentBreakdownTable({
 
   return (
     <div>
-      <div className="w-fit overflow-hidden rounded-lg border border-primary">
+      <div className="overflow-hidden rounded-lg border border-primary">
         <table className="w-full max-w-[34rem] table-fixed border-collapse bg-darkest text-center text-[10px] sm:text-sm">
-          <thead className="text-light">
+          <caption className="sr-only">Judgment counts</caption>
+          <thead className="text-lightest">
             <tr>
               <th scope="col" className="border-r border-lightest/20 py-2 font-normal sm:px-1">
                 Type

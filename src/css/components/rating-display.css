@@ -21,7 +21,6 @@
     --rating-digit-top: #fffeea;
     --rating-digit-middle: #fff75f;
     --rating-digit-bottom: #ff600a;
-    --rating-digit-outline: #d34500;
 
     position: absolute;
     top: 19%;
@@ -49,7 +48,6 @@
     font-weight: 800;
     letter-spacing: 0;
     paint-order: stroke fill;
-    -webkit-text-stroke: 0.035em var(--rating-digit-outline);
   }
 
   .rating-display__digit {
