@@ -1181,3 +1181,12 @@ This ledger stays near the top as decisions are appended below. Links point to s
 - Reuse the shared interaction lock, but keep the score-history grid-row transition separate from the song grid's FLIP animation. Score entries do not need cloned elements or captured bounds because their one-column layout can animate its real content directly.
 - Keep score-history transition timing in its hook and coordinate selection changes from the actual grid-row transition completion, with a timeout only as a safety fallback.
 - Sources: `src/utils/layout-transitions.ts`, `src/utils/interaction-lock.ts`, `src/utils/scroll.ts`, `src/utils/responsive.ts`, `src/hooks/useExpandableSongGrid.ts`, `src/hooks/useExpandableScoreHistory.ts`, `src/components/score/ScoreHistory.tsx`, `src/components/score/ScoreHistoryEntry.tsx`, `src/components/score/ScoreHistoryDetails.tsx`.
+
+<a id="decision-76"></a>
+
+## 76. Preserve zero-valued note-type judgment rows
+
+- Rationale: While building the expandable score-history judgment breakdown table, we considered filtering rows whose individual judgment counts were all zero. That would incorrectly conflate unavailable data with a valid zero count: all Standard charts legitimately contain no TAP notes, so their TAP row is a real all-zero result.
+- Keep `JudgmentBreakdown` as the existing complete per-note-type record shape. A numeric zero remains an observed count, while unavailable judgment data remains `null` at the breakdown level; legacy critical-perfect omissions continue to use `criticalPerfect: null`.
+- Render available zero-valued rows in the judgment breakdown table. Filter only rows whose individual counts are all unavailable if such partial data is ever represented; do not reinterpret zeros as unavailable.
+- Sources: `src/utils/types.ts`, `src/components/score/JudgmentBreakdownTable.tsx`, `docs/data-model.md`.
