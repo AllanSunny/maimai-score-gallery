@@ -1,7 +1,7 @@
 import { Fragment, type MouseEvent } from "react";
-import { ChartTypeIcon } from "../components/chart/ChartTypeIcon";
-import { ComboDisplay } from "../components/score/ComboDisplay";
-import { SyncDisplay } from "../components/score/SyncDisplay";
+import { ChartTypeIcon } from "../components/ui/game/ChartTypeIcon";
+import { ComboDisplay } from "../components/ui/game/ComboDisplay";
+import { SyncDisplay } from "../components/ui/game/SyncDisplay";
 import { ContentCard } from "../components/ui/ContentCard";
 import { NoteImageDisplay } from "../components/ui/NoteImageDisplay";
 import { PageHeading } from "../components/ui/PageHeading";

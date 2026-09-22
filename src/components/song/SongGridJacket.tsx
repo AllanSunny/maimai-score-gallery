@@ -1,20 +1,20 @@
-import { OverflowMarquee } from "../ui/OverflowMarquee";
 import { classNames } from "../../utils/class-names";
 import type { SongSummary } from "../../utils/types";
-import { SongJacketImage } from "./SongJacketImage";
+import { OverflowMarquee } from "../ui/OverflowMarquee";
+import { SongJacketImage } from "../ui/game/SongJacketImage";
 
 const jacketClassNames = {
   collapsed: "aspect-square cursor-pointer",
   expanded: "mx-auto mt-1 !h-[180px] !w-[180px] aspect-square max-h-60 max-w-60 border border-lightest cursor-default md:mt-0 md:!h-auto md:!w-full md:aspect-auto md:self-center",
 };
 
-interface SongJacketProps {
+interface SongGridJacketProps {
   expanded: boolean;
   song: SongSummary;
   onToggle: () => void;
 }
 
-export function SongJacket({ expanded, song, onToggle }: SongJacketProps) {
+export function SongGridJacket({ expanded, song, onToggle }: SongGridJacketProps) {
   const name = song.titles.canonical;
 
   return (

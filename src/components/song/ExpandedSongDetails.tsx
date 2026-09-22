@@ -1,8 +1,8 @@
 import { useState } from "react";
 import type { ChartType, SongVersionSummary } from "../../utils/types";
-import { ChartTypeIcon } from "../chart/ChartTypeIcon";
+import { ChartTypeIcon } from "../ui/game/ChartTypeIcon";
 import { OverflowMarquee } from "../ui/OverflowMarquee";
-import { SongChartSummaryRow } from "./SongChartSummaryRow";
+import { ExpandedSongDetailsChart } from "./ExpandedSongDetailsChart";
 
 interface ExpandedSongDetailsProps {
   name: string;
@@ -50,7 +50,7 @@ export function ExpandedSongDetails({ name, versions }: ExpandedSongDetailsProps
       </div>
       <div className="flex flex-col gap-1.5">
         {selectedVersion.charts.map((chart) =>
-          <SongChartSummaryRow key={`${chart.chartType}-${chart.difficulty}`} chart={chart} />)}
+          <ExpandedSongDetailsChart key={`${chart.chartType}-${chart.difficulty}`} chart={chart} />)}
       </div>
     </div>
   );

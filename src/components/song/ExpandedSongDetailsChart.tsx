@@ -12,11 +12,11 @@ const difficultyStyles: Record<Difficulty, string> = {
   "Re:MASTER": "border-remaster",
 };
 
-interface SongChartSummaryRowProps {
+interface ExpandedSongDetailsChartProps {
   chart: SongChartSummary;
 }
 
-export function SongChartSummaryRow({ chart }: SongChartSummaryRowProps) {
+export function ExpandedSongDetailsChart({ chart }: ExpandedSongDetailsChartProps) {
   const chartRoute = appHref(`/charts/${encodeURIComponent(chart.id)}`);
   return (
     <NavigationCard

@@ -1,16 +1,16 @@
-import largeFdx from "../../assets/achievements/large/sync/fdx.png";
-import largeFdxPlus from "../../assets/achievements/large/sync/fdx_plus.png";
-import largeFs from "../../assets/achievements/large/sync/fs.png";
-import largeFsPlus from "../../assets/achievements/large/sync/fs_plus.png";
-import largeNone from "../../assets/achievements/large/sync/none.png";
-import largeSync from "../../assets/achievements/large/sync/sync.png";
-import smallFdx from "../../assets/achievements/small/sync/fdx.png";
-import smallFdxPlus from "../../assets/achievements/small/sync/fdx_plus.png";
-import smallFs from "../../assets/achievements/small/sync/fs.png";
-import smallFsPlus from "../../assets/achievements/small/sync/fs_plus.png";
-import smallNone from "../../assets/achievements/small/sync/none.png";
-import smallSync from "../../assets/achievements/small/sync/sync.png";
-import type { SyncStatus } from "../../utils/types";
+import largeFdx from "../../../assets/achievements/large/sync/fdx.png";
+import largeFdxPlus from "../../../assets/achievements/large/sync/fdx_plus.png";
+import largeFs from "../../../assets/achievements/large/sync/fs.png";
+import largeFsPlus from "../../../assets/achievements/large/sync/fs_plus.png";
+import largeNone from "../../../assets/achievements/large/sync/none.png";
+import largeSync from "../../../assets/achievements/large/sync/sync.png";
+import smallFdx from "../../../assets/achievements/small/sync/fdx.png";
+import smallFdxPlus from "../../../assets/achievements/small/sync/fdx_plus.png";
+import smallFs from "../../../assets/achievements/small/sync/fs.png";
+import smallFsPlus from "../../../assets/achievements/small/sync/fs_plus.png";
+import smallNone from "../../../assets/achievements/small/sync/none.png";
+import smallSync from "../../../assets/achievements/small/sync/sync.png";
+import type { SyncStatus } from "../../../utils/types";
 
 type BadgeSize = "large" | "small";
 

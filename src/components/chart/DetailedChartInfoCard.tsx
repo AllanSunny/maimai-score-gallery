@@ -6,9 +6,9 @@ import { achievementRank } from "../../utils/rank";
 import { classNames } from "../../utils/class-names";
 import { ContentCard } from "../ui/ContentCard";
 import { OverflowMarquee } from "../ui/OverflowMarquee";
-import { RankDisplay } from "../score/RankDisplay";
-import { ComboDisplay } from "../score/ComboDisplay";
-import { SyncDisplay } from "../score/SyncDisplay";
+import { ComboDisplay } from "../ui/game/ComboDisplay";
+import { RankDisplay } from "../ui/game/RankDisplay";
+import { SyncDisplay } from "../ui/game/SyncDisplay";
 
 interface DetailedChartInfoCardProps {
   catalogEntry: ChartCatalogEntry;

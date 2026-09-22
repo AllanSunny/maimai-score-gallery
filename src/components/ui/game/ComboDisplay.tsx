@@ -1,14 +1,14 @@
-import largeAp from "../../assets/achievements/large/combo/ap.png";
-import largeApPlus from "../../assets/achievements/large/combo/ap_plus.png";
-import largeFc from "../../assets/achievements/large/combo/fc.png";
-import largeFcPlus from "../../assets/achievements/large/combo/fc_plus.png";
-import largeNone from "../../assets/achievements/large/combo/none.png";
-import smallAp from "../../assets/achievements/small/combo/ap.png";
-import smallApPlus from "../../assets/achievements/small/combo/ap_plus.png";
-import smallFc from "../../assets/achievements/small/combo/fc.png";
-import smallFcPlus from "../../assets/achievements/small/combo/fc_plus.png";
-import smallNone from "../../assets/achievements/small/combo/none.png";
-import type { ComboStatus } from "../../utils/types";
+import largeAp from "../../../assets/achievements/large/combo/ap.png";
+import largeApPlus from "../../../assets/achievements/large/combo/ap_plus.png";
+import largeFc from "../../../assets/achievements/large/combo/fc.png";
+import largeFcPlus from "../../../assets/achievements/large/combo/fc_plus.png";
+import largeNone from "../../../assets/achievements/large/combo/none.png";
+import smallAp from "../../../assets/achievements/small/combo/ap.png";
+import smallApPlus from "../../../assets/achievements/small/combo/ap_plus.png";
+import smallFc from "../../../assets/achievements/small/combo/fc.png";
+import smallFcPlus from "../../../assets/achievements/small/combo/fc_plus.png";
+import smallNone from "../../../assets/achievements/small/combo/none.png";
+import type { ComboStatus } from "../../../utils/types";
 
 type BadgeSize = "large" | "small";
 

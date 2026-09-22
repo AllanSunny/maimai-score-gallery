@@ -2,10 +2,10 @@ import type { CSSProperties } from "react";
 import type { ScoreHistoryTransitionTiming } from "../../hooks/useExpandableScoreHistory";
 import { classNames } from "../../utils/class-names";
 import type { ScoreRecord } from "../../utils/types";
-import { ComboDisplay } from "./ComboDisplay";
+import { ComboDisplay } from "../ui/game/ComboDisplay";
 import { JudgmentBreakdownTable } from "./JudgmentBreakdownTable";
-import { RatingDisplay } from "./RatingDisplay";
-import { SyncDisplay } from "./SyncDisplay";
+import { RatingDisplay } from "../ui/game/RatingDisplay";
+import { SyncDisplay } from "../ui/game/SyncDisplay";
 
 interface ScoreHistoryDetailsProps {
   accentColor: string;

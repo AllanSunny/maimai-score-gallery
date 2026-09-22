@@ -1,22 +1,22 @@
 import closeIcon from "../../assets/icons/svg/close.svg";
+import { classNames } from "../../utils/class-names";
 import type { SongSummary } from "../../utils/types";
 import { SvgIcon } from "../ui/SvgIcon";
 import { ExpandedSongDetails } from "./ExpandedSongDetails";
-import { SongJacket } from "./SongJacket";
-import { classNames } from "../../utils/class-names";
+import { SongGridJacket } from "./SongGridJacket";
 
 const songClassNames = {
   collapsed: "bg-darker",
   expanded: "z-30 col-span-full bg-dark shadow-[0_0px_5px_var(--color-primary)] md:grid md:grid-cols-[16rem_minmax(0,1fr)]",
 };
 
-interface SongInfoProps {
+interface SongGridItemProps {
   song: SongSummary;
   expanded: boolean;
   onToggle: () => void;
 }
 
-export function SongInfo({ song, expanded, onToggle }: SongInfoProps) {
+export function SongGridItem({ song, expanded, onToggle }: SongGridItemProps) {
   const name = song.titles.canonical;
 
   return (
@@ -32,7 +32,7 @@ export function SongInfo({ song, expanded, onToggle }: SongInfoProps) {
         className={classNames({ when: expanded, then: "p-3 content-center md:py-0 md:pr-0" })}
         data-song-jacket-container
       >
-        <SongJacket expanded={expanded} song={song} onToggle={onToggle} />
+        <SongGridJacket expanded={expanded} song={song} onToggle={onToggle} />
       </div>
 
       {expanded && <button

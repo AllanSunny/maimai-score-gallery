@@ -1,6 +1,6 @@
 import { Fragment, useLayoutEffect, useRef, useState, type RefObject } from "react";
 import type { SongSummary } from "../../utils/types";
-import { SongInfo } from "./SongInfo";
+import { SongGridItem } from "./SongGridItem";
 
 interface SongGridProps {
   expandedSongKey: string | null;
@@ -72,7 +72,7 @@ export function SongGrid({
 
         return <Fragment key={songKey}>
           {expansionDirection === "up" && index === expandedRowStart && expandedSongIndex >= 0 && (
-            <SongInfo
+            <SongGridItem
               song={songs[expandedSongIndex]}
               expanded
               onToggle={() => onSelectSong(expandedSongKey!)}
@@ -84,13 +84,13 @@ export function SongGrid({
                 className="aspect-square"
                 data-song-placeholder-key={songKey}
               />
-            : <SongInfo
+            : <SongGridItem
                 song={song}
                 expanded={false}
                 onToggle={() => onSelectSong(songKey)}
               />}
           {expansionDirection === "down" && index === expandedRowEnd && expandedSongIndex >= 0 && (
-            <SongInfo
+            <SongGridItem
               song={songs[expandedSongIndex]}
               expanded
               onToggle={() => onSelectSong(expandedSongKey!)}

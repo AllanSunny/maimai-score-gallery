@@ -11,11 +11,11 @@ import remasterStdFrame from "../../assets/jacket_frames/std/remaster.png";
 import { achievementRank } from "../../utils/rank";
 import type { ChartCatalogEntry, ChartType, ComboStatus, Difficulty, SyncStatus } from "../../utils/types";
 import { OverflowMarquee } from "../ui/OverflowMarquee";
-import { ComboDisplay } from "../score/ComboDisplay";
-import { SyncDisplay } from "../score/SyncDisplay";
-import { RankDisplay } from "../score/RankDisplay";
+import { ComboDisplay } from "../ui/game/ComboDisplay";
+import { RankDisplay } from "../ui/game/RankDisplay";
+import { SongJacketImage } from "../ui/game/SongJacketImage";
+import { SyncDisplay } from "../ui/game/SyncDisplay";
 import { classNames } from "../../utils/class-names";
-import { SongJacketImage } from "../song/SongJacketImage";
 
 const frames: Record<ChartType, Record<Difficulty, string>> = {
   DX: {

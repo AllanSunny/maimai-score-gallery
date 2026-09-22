@@ -1,8 +1,8 @@
 import { achievementRank } from "../../utils/rank";
 import type { ComboStatus, SyncStatus } from "../../utils/types";
-import { ComboDisplay } from "./ComboDisplay";
-import { RankDisplay } from "./RankDisplay";
-import { SyncDisplay } from "./SyncDisplay";
+import { ComboDisplay } from "../ui/game/ComboDisplay";
+import { RankDisplay } from "../ui/game/RankDisplay";
+import { SyncDisplay } from "../ui/game/SyncDisplay";
 
 interface MiniScoreBreakdownProps {
   achievement: number | null | undefined;

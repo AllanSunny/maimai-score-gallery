@@ -1,17 +1,17 @@
-import basePlate from "../../assets/ratings/base.png";
-import bluePlate from "../../assets/ratings/blue.png";
-import bronzePlate from "../../assets/ratings/bronze.png";
-import goldPlate from "../../assets/ratings/gold.png";
-import greenPlate from "../../assets/ratings/green.png";
-import kiwamiPlate from "../../assets/ratings/kiwami.png";
-import orangePlate from "../../assets/ratings/orange.png";
-import platinumPlate from "../../assets/ratings/platinum.png";
-import purplePlate from "../../assets/ratings/purple.png";
-import rainbowPlate from "../../assets/ratings/rainbow.png";
-import redPlate from "../../assets/ratings/red.png";
-import silverPlate from "../../assets/ratings/silver.png";
-import { classNames } from "../../utils/class-names";
-import { ratingPlateFor, type RatingPlate } from "../../utils/rating";
+import basePlate from "../../../assets/ratings/base.png";
+import bluePlate from "../../../assets/ratings/blue.png";
+import bronzePlate from "../../../assets/ratings/bronze.png";
+import goldPlate from "../../../assets/ratings/gold.png";
+import greenPlate from "../../../assets/ratings/green.png";
+import kiwamiPlate from "../../../assets/ratings/kiwami.png";
+import orangePlate from "../../../assets/ratings/orange.png";
+import platinumPlate from "../../../assets/ratings/platinum.png";
+import purplePlate from "../../../assets/ratings/purple.png";
+import rainbowPlate from "../../../assets/ratings/rainbow.png";
+import redPlate from "../../../assets/ratings/red.png";
+import silverPlate from "../../../assets/ratings/silver.png";
+import { classNames } from "../../../utils/class-names";
+import { ratingPlateFor, type RatingPlate } from "../../../utils/rating";
 
 interface RatingDisplayProps {
   rating: number;

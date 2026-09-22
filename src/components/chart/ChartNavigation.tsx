@@ -1,6 +1,6 @@
 import type { CSSProperties } from "react";
 import youtubeIcon from "../../assets/icons/svg/youtube.svg";
-import { ChartTypeIcon } from "./ChartTypeIcon";
+import { ChartTypeIcon } from "../ui/game/ChartTypeIcon";
 import { SvgIcon } from "../ui/SvgIcon";
 import type { ChartCatalogEntry } from "../../utils/types";
 import { appHref } from "../../utils/navigation";
