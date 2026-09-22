@@ -36,7 +36,7 @@ export function ScoreHistoryEntry({
         "group scroll-mt-16 border-b transition-[box-shadow,border-color] last:border-b-0",
         {
           when: isExpanded,
-          then: "overflow-hidden shadow-[0_-5px_5px_-5px_var(--color-lightest),0_5px_5px_-5px_var(--color-lightest)]",
+          then: "overflow-hidden border-t first:border-t-0 shadow-[0_-5px_5px_-5px_var(--color-lightest),0_5px_5px_-5px_var(--color-lightest)]",
         },
       )}
       style={{
