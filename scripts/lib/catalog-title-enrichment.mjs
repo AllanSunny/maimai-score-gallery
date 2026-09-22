@@ -2,6 +2,8 @@ import OpenAI from "openai";
 import { toHiragana, toRomaji } from "wanakana";
 
 const JAPANESE_TEXT = /[ぁ-んァ-ヶ一-龯々〆ヵヶ]/u;
+const HIRAGANA_TEXT = /\p{Script=Hiragana}/u;
+const KANA_READING_CHARACTERS = /[\p{Script=Hiragana}\p{P}\p{S}\p{N}\s]/gu;
 const BATCH_SIZE = 10;
 const MAX_OUTPUT_TOKENS = 5000;
 
@@ -54,9 +56,15 @@ function appendUniqueTitles(titles, category, values) {
   });
 }
 
+function canonicalIsKanaReading(canonical) {
+  const value = String(canonical ?? "").normalize("NFKC");
+  return HIRAGANA_TEXT.test(value) && value.replace(KANA_READING_CHARACTERS, "").length === 0;
+}
+
 function needsEnrichment(song) {
   return JAPANESE_TEXT.test(song.titles.canonical)
-    && (song.titles.kana.length === 0 || song.titles.romaji.length === 0);
+    && ((!canonicalIsKanaReading(song.titles.canonical) && song.titles.kana.length === 0)
+      || song.titles.romaji.length === 0);
 }
 
 function enrichmentPrompt(songs) {

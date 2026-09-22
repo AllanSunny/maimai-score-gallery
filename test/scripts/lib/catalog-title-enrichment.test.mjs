@@ -54,3 +54,15 @@ test("title enrichment skips Latin titles and complete Japanese titles", async (
   const client = { responses: { create: () => assert.fail("OpenAI should not be called") } };
   assert.equal(await enrichMissingSongTitles(songs, { client }), 0);
 });
+
+test("title enrichment treats an all-hiragana canonical title as its kana reading", async () => {
+  const songs = [
+    song("きゅびずむ", { romaji: ["kyubizumu"] }),
+    song("きゅびびびびずむ", { romaji: ["kyubibibibizumu"] }),
+    song("てらてら", { romaji: ["teratera"] }),
+    song("もぺもぺ", { romaji: ["mopemope"] }),
+  ];
+  const client = { responses: { create: () => assert.fail("OpenAI should not be called") } };
+
+  assert.equal(await enrichMissingSongTitles(songs, { client }), 0);
+});
