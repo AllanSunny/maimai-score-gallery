@@ -10,8 +10,10 @@ interface JudgmentBreakdownTableProps {
 interface JudgmentTableRow {
   label: string;
   noteType?: NoteType;
-  values: JudgmentSet;
+  values: NullableJudgmentSet;
 }
+
+type NullableJudgmentSet = Record<keyof JudgmentSet, number | null>;
 
 const judgmentColumns: Array<{
   key: keyof JudgmentSet;
@@ -42,6 +44,14 @@ const judgmentRows = noteTypes.map((noteType) => ({
   noteType,
 }));
 
+const unavailableJudgments: NullableJudgmentSet = {
+  criticalPerfect: null,
+  perfect: null,
+  great: null,
+  good: null,
+  miss: null,
+};
+
 function hasJudgmentValues(judgments: JudgmentSet) {
   return Object.values(judgments).some((value) => value != null);
 }
@@ -55,11 +65,13 @@ export function JudgmentBreakdownTable({
   }
 
   const rows: JudgmentTableRow[] = [
-    ...(judgmentsByType
-      ? judgmentRows.map(({ label, noteType }) => ({ label, noteType, values: judgmentsByType[noteType] }))
-      : []),
+    ...judgmentRows.map(({ label, noteType }) => ({
+      label,
+      noteType,
+      values: judgmentsByType?.[noteType] ?? unavailableJudgments,
+    })),
     { label: "Total", values: judgments },
-  ].filter(({ values }) => hasJudgmentValues(values));
+  ];
 
   return (
     <div>
@@ -110,7 +122,6 @@ export function JudgmentBreakdownTable({
           </tbody>
         </table>
       </div>
-
     </div>
   );
 }

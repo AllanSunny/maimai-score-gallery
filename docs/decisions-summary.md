@@ -16,14 +16,14 @@ For current schemas, see [Data model](data-model.md). For setup and operational 
 - Public, view-only React/Vite app on GitHub Pages; private import operations use Drive, Sheets, OpenAI, and GitHub Actions.
 - Monthly score archives and derived chart summaries are implemented; frontend history loading remains eager (sections 31–38).
 - UTAGE, owner authentication/private notes, and the Top 50 implementation remain deferred.
-- Recent additions: the expandable song grid (51), cross-version chart navigation (52), centralized song jackets without duplicated catalog objects (53), iterative song-list controls and sorting behavior (54–67, 70–73), HTTP-cached jackets (68), WOFF2 fonts (69), and animated score-history expansion (75).
-- Start with the [rationale ledger](#rationale-ledger) for the reasons behind the decisions; jump to the [latest decision](#decision-75) for the newest addition.
+- Recent additions: the expandable song grid (51), cross-version chart navigation (52), centralized song jackets without duplicated catalog objects (53), iterative song-list controls and sorting behavior (54–67, 70–73), HTTP-cached jackets (68), WOFF2 fonts (69), animated score-history expansion (75), and stable judgment-table row counts (77).
+- Start with the [rationale ledger](#rationale-ledger) for the reasons behind the decisions; jump to the [latest decision](#decision-77) for the newest addition.
 
 <a id="rationale-ledger"></a>
 
 ## Rationale ledger
 
-[Jump to the decision history](#decision-1) · [Latest decision](#decision-75)
+[Jump to the decision history](#decision-1) · [Latest decision](#decision-77)
 
 This ledger stays near the top as decisions are appended below. Links point to stable decision IDs. Section 44 was the ledger's former location; that number remains reserved and its old link still resolves here.
 
@@ -101,6 +101,7 @@ This ledger stays near the top as decisions are appended below. Links point to s
 - **Title ordering semantics** ([71](#decision-71), [72](#decision-72), [73](#decision-73)): The owner wanted labels that describe the expected order (`A–Z` and `あ–ん`), romaji as a practical authoritative Latin key, and punctuation away from ordinary titles. Japanese order follows the game's kana-first presentation when a reading exists, then gives titles without kana a predictable numeric/Latin fallback instead of guessing readings for stylized Latin names.
 - **Sparse catalog overrides** ([74](#decision-74)): Existing catalog entries accept only the locally corrected metadata fields, including search aliases, instead of requiring empty placeholder objects or treating chart constants and charters as the sole overrideable data.
 - **Animated score-history expansion** ([75](#decision-75)): The owner wanted score details to use the song grid's spatial transition language, including background fading and an unambiguous collapse-then-expand sequence when changing selections.
+- **Stable judgment-table rows** ([77](#decision-77)): Showing every note type, including unavailable per-type results as em dashes, keeps the score-detail layout consistent without representing missing values as zero.
 
 <a id="decision-1"></a>
 
@@ -1190,3 +1191,12 @@ This ledger stays near the top as decisions are appended below. Links point to s
 - Keep `JudgmentBreakdown` as the existing complete per-note-type record shape. A numeric zero remains an observed count, while unavailable judgment data remains `null` at the breakdown level; legacy critical-perfect omissions continue to use `criticalPerfect: null`.
 - Render available zero-valued rows in the judgment breakdown table. Filter only rows whose individual counts are all unavailable if such partial data is ever represented; do not reinterpret zeros as unavailable.
 - Sources: `src/utils/types.ts`, `src/components/score/JudgmentBreakdownTable.tsx`, `docs/data-model.md`.
+
+<a id="decision-77"></a>
+
+## 77. Keep score-history judgment tables at a stable height
+
+- Rationale: The score-detail side content has intentionally tuned spacing beside the judgment table. Omitting note-type rows whenever per-type data is absent makes the table height depend on archival completeness and destabilizes that layout. Displaying unavailable values as em dashes preserves the distinction from observed zero counts.
+- Whenever aggregate judgments are available, render every expected note-type row plus the total row. If `judgmentsByType` is unavailable, render each note-type value as an em dash.
+- This supersedes decision 76's rule to filter rows whose individual counts are all unavailable. Its zero-versus-unavailable data distinction remains in effect.
+- Sources: `src/components/score/JudgmentBreakdownTable.tsx`, `src/components/score/ScoreHistoryDetails.tsx`, `src/utils/types.ts`.

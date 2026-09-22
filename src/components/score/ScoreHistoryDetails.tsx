@@ -45,7 +45,7 @@ export function ScoreHistoryDetails({
               : `var(--color-${accentColor})`,
           }}
         >
-          <div className="flex flex-wrap items-baseline justify-center gap-x-14 gap-y-7">
+          <div className="flex flex-wrap justify-center gap-x-14 gap-y-2">
             <section className="w-fit self-center" aria-label="Judgment counts">
               <JudgmentBreakdownTable
                 judgments={score.judgments}
@@ -53,7 +53,7 @@ export function ScoreHistoryDetails({
               />
             </section>
 
-            <div className="flex flex-col items-center gap-6">
+            <div className="flex flex-col items-center gap-6 mt-6">
               <div className="flex flex-wrap gap-12 text-lightest">
                 <ComboDisplay
                   className="h-8 sm:h-9 max-w-full object-contain object-left"
