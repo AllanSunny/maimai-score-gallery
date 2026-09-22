@@ -33,10 +33,10 @@ export function ScoreHistoryEntry({
       data-score-id={score.id}
       data-score-expanded={isExpanded}
       className={classNames(
-        "group scroll-mt-16 border-b transition-[background-color,box-shadow,border-color] last:border-b-0",
+        "group scroll-mt-16 border-b transition-[box-shadow,border-color] last:border-b-0",
         {
           when: isExpanded,
-          then: "overflow-hidden bg-dark/80 shadow-[0_-5px_5px_-5px_var(--color-lightest),0_5px_5px_-5px_var(--color-lightest)]",
+          then: "overflow-hidden shadow-[0_-5px_5px_-5px_var(--color-lightest),0_5px_5px_-5px_var(--color-lightest)]",
         },
       )}
       style={{
@@ -48,21 +48,24 @@ export function ScoreHistoryEntry({
     >
       <button
         type="button"
-        className="flex w-full cursor-pointer touch-manipulation items-center justify-between gap-8 p-3 text-left sm:p-5"
+        className={classNames(
+          "flex w-full cursor-pointer touch-manipulation items-center justify-between gap-8 px-2 py-3 sm:p-5 text-left transition-[background-color]",
+          { when: isExpanded, then: "bg-dark" },
+        )}
         aria-expanded={isExpanded}
         onClick={onToggle}
+        style={transitionStyle}
       >
-        <div className="flex min-w-0 items-center gap-3">
+        <div className="flex min-w-0 items-center gap-2 sm:gap-3">
           <ChevronIcon
             direction={isExpanded ? "down" : "right"}
-            className="text-primary"
+            className="text-primary shrink-0"
           />
-          <time className="text-lightest" dateTime={score.playedAt}>
-            <span className="whitespace-nowrap text-xs md:text-sm">
-              {formatEasternDate(score.playedAt)}
+          <time className="flex flex-wrap items-center text-lightest" dateTime={score.playedAt}>
+            <span className="mr-1 whitespace-nowrap text-xs leading-4 sm:text-sm">
+              {formatEasternDate(score.playedAt)},
             </span>
-            {", "}
-            <span className="whitespace-nowrap text-xs md:text-sm">
+            <span className="whitespace-nowrap text-xs leading-4 sm:text-sm">
               {formatEasternTime(score.playedAt)}
             </span>
           </time>

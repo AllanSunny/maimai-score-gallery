@@ -35,7 +35,7 @@ export function SongChartSummaryRow({ chart }: SongChartSummaryRowProps) {
         sync={chart.bestSync}
         className="col-start-2 row-span-2 row-start-1"
       />
-      <ChevronIcon className="col-start-3 row-span-2 row-start-1 text-lightest" />
+      <ChevronIcon className="col-start-3 row-span-2 row-start-1 text-primary" />
     </NavigationCard>
   );
 }

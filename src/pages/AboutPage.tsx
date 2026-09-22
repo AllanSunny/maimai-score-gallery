@@ -1,14 +1,9 @@
 import { Fragment, type MouseEvent } from "react";
-import breakNote from "../assets/notes/break.png";
-import holdNote from "../assets/notes/hold.png";
-import slideArrow from "../assets/notes/slide-arrow.png";
-import slideStar from "../assets/notes/slide-star.png";
-import tapNote from "../assets/notes/tap.png";
-import touchNote from "../assets/notes/touch.png";
 import { ChartTypeIcon } from "../components/chart/ChartTypeIcon";
 import { ComboDisplay } from "../components/score/ComboDisplay";
 import { SyncDisplay } from "../components/score/SyncDisplay";
 import { ContentCard } from "../components/ui/ContentCard";
+import { NoteImageDisplay, type NoteType } from "../components/ui/NoteImageDisplay";
 import { PageHeading } from "../components/ui/PageHeading";
 import { navigate } from "../utils/navigation";
 import { scrollToElement } from "../utils/scroll";
@@ -38,32 +33,38 @@ const syncStatuses = [
 
 const syncStatusColumns = [syncStatuses.slice(0, 3), syncStatuses.slice(3)];
 
-const noteTypes = [
+interface NoteTypeExample {
+  noteType: NoteType;
+  className: string;
+}
+
+const noteTypes: Array<{
+  name: string;
+  description: string;
+  images: NoteTypeExample[];
+}> = [
   {
     name: "Tap / Hold",
     description: "Notes you tap or hold at one of the eight buttons.",
     images: [
-      { src: tapNote, className: "h-13" },
-      { src: holdNote, className: "h-15" },
+      { noteType: "tap" as const, className: "h-13" },
+      { noteType: "hold" as const, className: "h-15" },
     ],
   },
   {
     name: "Slide",
     description: "Star-shaped notes following a path of arrows you trace across the touchscreen.",
-    images: [
-      { src: slideStar, className: "h-14" },
-      { src: slideArrow, className: "h-10" },
-    ],
+    images: [{ noteType: "slide" as const, className: "h-14" }],
   },
   {
     name: "Touch",
     description: "Notes you tap or hold directly on different areas of the touchscreen.",
-    images: [{ src: touchNote, className: "h-12" }],
+    images: [{ noteType: "touch" as const, className: "h-12" }],
   },
   {
     name: "Break",
     description: "Orange variations of other notes that are weighted more heavily in scoring.",
-    images: [{ src: breakNote, className: "h-13" }],
+    images: [{ noteType: "break" as const, className: "h-13" }],
   },
 ];
 
@@ -152,7 +153,12 @@ export function AboutPage() {
                 <li key={noteType.name} className="flex items-center gap-6">
                   <span aria-hidden="true" className="flex w-22 shrink-0 items-center justify-center gap-2">
                     {noteType.images.map((image) => (
-                      <img key={image.src} src={image.src} alt="" className={`${image.className} max-w-16 object-contain`} />
+                      <NoteImageDisplay
+                        key={image.noteType}
+                        noteType={image.noteType}
+                        decorative
+                        className={`${image.className} max-w-16`}
+                      />
                     ))}
                   </span>
                   <span>

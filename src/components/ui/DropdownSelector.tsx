@@ -63,7 +63,7 @@ export function DropdownSelector<T extends string | null>(props: DropdownSelecto
               <span className="inline-block min-w-5">{selected.length > 0 ? `(${selected.length})` : null}</span>
             </span>
           : <span className="min-w-0 flex-1 truncate">{selectedLabel}</span>}
-        <ChevronIcon direction="down" className="-mr-1 shrink-0" />
+        <ChevronIcon direction="down" className="-mr-1 flex-none" />
       </summary>
       <div className={classNames(
         "absolute z-40 max-h-72 w-max min-w-full overflow-y-auto overscroll-none rounded-xl border border-t-0 bg-white/95 p-2 shadow-lg",

@@ -1,8 +1,9 @@
 import type { CSSProperties } from "react";
 import type { ScoreHistoryTransitionTiming } from "../../hooks/useExpandableScoreHistory";
 import { classNames } from "../../utils/class-names";
-import type { JudgmentSet, ScoreRecord } from "../../utils/types";
+import type { ScoreRecord } from "../../utils/types";
 import { ComboDisplay } from "./ComboDisplay";
+import { JudgmentBreakdownTable } from "./JudgmentBreakdownTable";
 import { SyncDisplay } from "./SyncDisplay";
 
 interface ScoreHistoryDetailsProps {
@@ -10,23 +11,6 @@ interface ScoreHistoryDetailsProps {
   isExpanded: boolean;
   score: ScoreRecord;
   transitionTiming: ScoreHistoryTransitionTiming;
-}
-
-const judgmentLabels: Array<[keyof JudgmentSet, string]> = [
-  ["criticalPerfect", "Critical Perfect"],
-  ["perfect", "Perfect"],
-  ["great", "Great"],
-  ["good", "Good"],
-  ["miss", "Miss"],
-];
-
-function JudgmentValues({ judgments }: { judgments: JudgmentSet }) {
-  return judgmentLabels.map(([key, label]) => (
-    <div key={key}>
-      <dt className="text-xs text-light">{label}</dt>
-      <dd className="mt-1 tabular-nums text-lightest">{judgments[key] ?? "—"}</dd>
-    </div>
-  ));
 }
 
 export function ScoreHistoryDetails({
@@ -53,7 +37,7 @@ export function ScoreHistoryDetails({
     >
       <div className="min-h-0 overflow-hidden">
         <div
-          className="border-t px-5 py-5 text-sm"
+          className="bg-darker/90 p-4 sm:p-5 text-sm"
           style={{
             borderColor: isExpanded
               ? "var(--color-lightest)"
@@ -96,11 +80,12 @@ export function ScoreHistoryDetails({
             </div>
           </dl>
 
-          {score.judgments && (
-            <dl className="mt-5 grid grid-cols-2 gap-4 border-t border-lightest pt-5 sm:grid-cols-5">
-              <JudgmentValues judgments={score.judgments} />
-            </dl>
-          )}
+          <section className="mt-5 border-t border-lightest pt-5" aria-label="Judgment counts">
+            <JudgmentBreakdownTable
+              judgments={score.judgments}
+              judgmentsByType={score.judgmentsByType}
+            />
+          </section>
 
           {(score.fast != null || score.slow != null) && (
             <dl className="mt-5 flex gap-8 border-t border-lightest pt-5">
@@ -115,11 +100,6 @@ export function ScoreHistoryDetails({
             </dl>
           )}
 
-          {!score.judgments && score.fast == null && score.slow == null && (
-            <p className="mt-5 border-t border-lightest pt-5 text-light">
-              Judgment details are unavailable for this play.
-            </p>
-          )}
         </div>
       </div>
     </div>
