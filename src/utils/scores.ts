@@ -1,8 +1,8 @@
-import storedChartSummaries from "../data/chart-summaries.json";
+import storedChartSummaries from "../../data/chart-summaries.json";
 import { parseChartSummaries, parseScoreChunk } from "./data-validation";
 import type { ScoreChunk } from "./types";
 
-const modules = import.meta.glob<ScoreChunk>("../data/scores/????-??.json", {
+const modules = import.meta.glob<ScoreChunk>("../../data/scores/????-??.json", {
   eager: true,
   import: "default",
 });

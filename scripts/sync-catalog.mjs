@@ -14,8 +14,8 @@ import { indexZetarakuChartMetadata } from "./lib/zetaraku-chart-metadata.mjs";
 const execFileAsync = promisify(execFile);
 
 const ROOT = process.cwd();
-const SONG_OVERRIDES_PATH = path.join(ROOT, "src", "data", "song-overrides.json");
-const SONG_CATALOG_PATH = path.join(ROOT, "src", "data", "song-catalog.json");
+const SONG_OVERRIDES_PATH = path.join(ROOT, "data", "song-overrides.json");
+const SONG_CATALOG_PATH = path.join(ROOT, "data", "song-catalog.json");
 const REJECTED_SCORES_PATH = path.join(ROOT, ".sync", "rejected-scores.json");
 
 function requiredEnvironment(name) {

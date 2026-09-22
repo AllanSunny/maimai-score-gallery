@@ -4,7 +4,7 @@ import { maimaiVersionName } from "./lib/maimai-version.mjs";
 import { readMonthlyScoreArchive } from "./lib/monthly-score-archive.mjs";
 import { parseChartSummaries, parseGeneratedCatalog, parseScoreChunk } from "../src/utils/data-validation.ts";
 
-const catalog = JSON.parse(await readFile("src/data/song-catalog.json", "utf8"));
+const catalog = JSON.parse(await readFile("data/song-catalog.json", "utf8"));
 const archive = await readMonthlyScoreArchive();
 const shouldValidateChartSummaries = !process.argv.includes("--skip-chart-summaries");
 
@@ -16,11 +16,11 @@ catalog.songs.forEach((song) => {
   }
 });
 for (const name of archive.files) {
-  parseScoreChunk(JSON.parse(await readFile(`src/data/scores/${name}`, "utf8")));
+  parseScoreChunk(JSON.parse(await readFile(`data/scores/${name}`, "utf8")));
 }
 let summaryCount = null;
 if (shouldValidateChartSummaries) {
-  const summaries = JSON.parse(await readFile("src/data/chart-summaries.json", "utf8"));
+  const summaries = JSON.parse(await readFile("data/chart-summaries.json", "utf8"));
   parseChartSummaries(summaries);
   if (JSON.stringify(summaries.charts) !== JSON.stringify(buildChartSummaries(archive.scores))) {
     throw new Error("Chart summaries do not match the monthly score archive.");

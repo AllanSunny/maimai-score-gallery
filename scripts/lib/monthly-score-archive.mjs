@@ -1,7 +1,7 @@
 import { mkdir, readFile, readdir, unlink, writeFile } from "node:fs/promises";
 import path from "node:path";
 
-export const SCORE_DIRECTORY = path.join(process.cwd(), "src", "data", "scores");
+export const SCORE_DIRECTORY = path.join(process.cwd(), "data", "scores");
 
 const SCORE_FILE_PATTERN = /^\d{4}-\d{2}\.json$/;
 

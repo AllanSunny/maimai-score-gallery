@@ -1,4 +1,4 @@
-import songCatalog from "../data/song-catalog.json";
+import songCatalog from "../../data/song-catalog.json";
 import { parseGeneratedCatalog } from "./data-validation";
 import { allSongTitles } from "./song-titles";
 import type { ChartCatalogEntry, ChartType, SongCatalogEntry } from "./types";

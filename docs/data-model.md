@@ -33,13 +33,13 @@ flowchart LR
 
 ## Score archive
 
-`src/data/scores/YYYY-MM.json` files form the public score archive. Plays are
+`data/scores/YYYY-MM.json` files form the public score archive. Plays are
 partitioned by the UTC month of `playedAt`; an unchanged month is not rewritten. Synchronization adds new play identities,
 updates matching identities from the sheet, and collapses duplicate archived
 identities. It retains archived plays absent from the sheet; deleting a sheet
 row or changing its identity fields does not remove the old archived play.
 
-`src/data/chart-summaries.json` contains the lightweight cumulative
+`data/chart-summaries.json` contains the lightweight cumulative
 records for each played chart, keyed by `Chart.id` in `ChartSummaries.charts`. Its achievement, combo, and
 sync bests are selected independently and point back to their source plays.
 The normal import pipeline regenerates it once, after catalog synchronization
@@ -94,7 +94,7 @@ Notes/Location is intentionally excluded from the public archive.
 
 ## Song catalog
 
-`src/data/song-catalog.json` stores normalized song metadata. Each song
+`data/song-catalog.json` stores normalized song metadata. Each song
 owns one or more DX/STD versions, and each version owns its difficulty charts.
 `Song` owns the shared `jacketKey`, artist, genre, introduction, and search titles.
 `Chart` includes both nullable `chartConstant` and nullable `charter` fields.

@@ -584,7 +584,7 @@ This ledger stays near the top as decisions are appended below. Links point to s
 
 ## 26. Standalone catalog overrides
 
-- Extend `src/data/song-overrides.json` rather than introduce a separate retired-song metadata file.
+- Extend `data/song-overrides.json` rather than introduce a separate retired-song metadata file.
 - Overrides without `standalone: true` retain their previous behavior: they patch a matching SEGA entry's stable ID, categorized titles, artist, chart constants, or charter metadata.
 - A standalone override represents a complete song missing from SEGA's current JP catalog.
 - Standalone entries require:
@@ -663,7 +663,7 @@ This ledger stays near the top as decisions are appended below. Links point to s
 
 ## 31. Monthly score archive architecture
 
-- Replace the monolithic generated score archive with `src/data/scores/YYYY-MM.json` files.
+- Replace the monolithic generated score archive with `data/scores/YYYY-MM.json` files.
 - Partition strictly by UTC month from `playedAt`.
 - Automatically create a file for each newly encountered month.
 - Rewrite only months whose contents changed.
@@ -675,7 +675,7 @@ This ledger stays near the top as decisions are appended below. Links point to s
 
 ## 32. Derived chart summaries
 
-- Store `src/data/chart-summaries.json` as a lightweight index keyed by stable `chartId`.
+- Store `data/chart-summaries.json` as a lightweight index keyed by stable `chartId`.
 - Each played chart stores play count, relevant UTC history chunks, and independent source references for best achievement, combo, and sync.
 - Best achievement, combo, and sync are cumulative properties and may come from different plays.
 - Combo order among achieved statuses: `FC < FC+ < AP < AP+`. A null combo is omitted when selecting the best combo; if every play is null, the chart summary stores `bestCombo: null`.
@@ -1169,7 +1169,7 @@ This ledger stays near the top as decisions are appended below. Links point to s
 - Merge supplied title variants with existing catalog search titles so an alias can resolve archived scores without creating a duplicate song. Apply an override jacket instead of downloading SEGA artwork.
 - Keep established identity guarantees: a standalone entry remains complete, and an already cataloged song's stable ID cannot change because score archives reference it.
 - This extends decision 39's “local overrides last” rule from chart supplemental metadata to every locally maintained catalog metadata field.
-- Sources: `src/data/song-overrides.json`, `scripts/sync-catalog.mjs`, `docs/operations.md`, `docs/data-model.md`.
+- Sources: `data/song-overrides.json`, `scripts/sync-catalog.mjs`, `docs/operations.md`, `docs/data-model.md`.
 
 <a id="decision-75"></a>
 
@@ -1200,3 +1200,13 @@ This ledger stays near the top as decisions are appended below. Links point to s
 - Whenever aggregate judgments are available, render every expected note-type row plus the total row. If `judgmentsByType` is unavailable, render each note-type value as an em dash.
 - This supersedes decision 76's rule to filter rows whose individual counts are all unavailable. Its zero-versus-unavailable data distinction remains in effect.
 - Sources: `src/components/score/JudgmentBreakdownTable.tsx`, `src/components/score/ScoreHistoryDetails.tsx`, `src/utils/types.ts`.
+
+<a id="decision-78"></a>
+
+## 78. Keep persisted data outside the frontend source tree
+
+- Rationale: Catalogs, score archives, summaries, and manual metadata overrides are domain data rather than application or layout source. Keeping them in a top-level `data` directory makes that boundary explicit and leaves `src` focused on frontend implementation concerns.
+- Store all committed JSON data in `data`, including `song-catalog.json`, `song-overrides.json`, `chart-summaries.json`, and monthly files under `data/scores`.
+- Frontend modules may import these files as build inputs from outside `src`; synchronization, validation, and workflow paths must use the same top-level location.
+- This supersedes only the `src/data` storage locations in decisions 6, 12, 26, 31, 32, and 74. Their data ownership, generation, validation, and runtime behavior remain unchanged.
+- Sources: `data`, `src/utils/catalog.ts`, `src/utils/scores.ts`, `scripts`, `.github/workflows`, `docs/data-model.md`, `docs/operations.md`.

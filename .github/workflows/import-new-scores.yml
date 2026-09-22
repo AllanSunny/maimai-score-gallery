@@ -113,7 +113,7 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: score-archive
-          path: src/data/scores/
+          path: data/scores/
           if-no-files-found: error
           retention-days: 1
 
@@ -126,15 +126,15 @@ jobs:
         with:
           ref: main
       - name: Clear the checked-out score archive
-        run: find src/data/scores -type f -name '*.json' -delete
+        run: find data/scores -type f -name '*.json' -delete
       - uses: actions/download-artifact@v4
         with:
           name: score-archive
-          path: src/data/scores
+          path: data/scores
       - name: Verify archived scores were restored
         run: |
-          test -n "$(find src/data/scores -name '*.json' -print -quit)"
-          echo "Catalog sync received $(jq -s '[.[].scores[]] | length' src/data/scores/????-??.json) archived scores."
+          test -n "$(find data/scores -name '*.json' -print -quit)"
+          echo "Catalog sync received $(jq -s '[.[].scores[]] | length' data/scores/????-??.json) archived scores."
       - uses: actions/setup-node@v4
         with:
           node-version: 24.14.1
@@ -192,8 +192,8 @@ jobs:
         with:
           name: generated-data
           path: |
-            src/data/scores/
-            src/data/song-catalog.json
+            data/scores/
+            data/song-catalog.json
             .sync/rejected-scores.json
           if-no-files-found: ignore
           retention-days: 1
@@ -208,7 +208,7 @@ jobs:
         with:
           ref: main
       - name: Clear the checked-out score archive
-        run: find src/data/scores -type f -name '*.json' -delete
+        run: find data/scores -type f -name '*.json' -delete
       - uses: actions/download-artifact@v4
         with:
           name: generated-data
@@ -224,14 +224,14 @@ jobs:
       - name: Commit score and catalog data once
         id: commit
         run: |
-          if git diff --quiet -- src/data/scores src/data/chart-summaries.json src/data/song-catalog.json; then
+          if git diff --quiet -- data/scores data/chart-summaries.json data/song-catalog.json; then
             echo "Score and song data are already current."
             echo "changed=false" >> "$GITHUB_OUTPUT"
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add src/data/scores src/data/chart-summaries.json src/data/song-catalog.json
+          git add data/scores data/chart-summaries.json data/song-catalog.json
           git commit -m "Add new score data"
           git pull --rebase origin main
           git push
