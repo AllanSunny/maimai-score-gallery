@@ -4142,30 +4142,6 @@
       "chartId": "song-6d47ffabb20e-dx-expert"
     },
     {
-      "playedAt": "2025-11-12T01:03:33.000Z",
-      "songTitle": "初音ミクの激唱",
-      "chartType": "STD",
-      "difficulty": "EXPERT",
-      "level": "12",
-      "achievement": 100.4022,
-      "combo": "FC+",
-      "sync": null,
-      "rating": 10098,
-      "ratingChange": 0,
-      "judgments": {
-        "criticalPerfect": 546,
-        "perfect": 546,
-        "great": 17,
-        "good": 0,
-        "miss": 0
-      },
-      "judgmentsByType": null,
-      "fast": 17,
-      "slow": 0,
-      "id": "yzLHlfx636HYfyVHh4yyPINh3lAo5pl-kNfIhrBZGWo",
-      "chartId": "song-21c8a54c340b-std-expert"
-    },
-    {
       "playedAt": "2025-11-13T22:10:25.000Z",
       "songTitle": "イガク",
       "chartType": "DX",
