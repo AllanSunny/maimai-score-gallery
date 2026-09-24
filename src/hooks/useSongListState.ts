@@ -74,7 +74,7 @@ export function useSongListState(storageKey: string) {
     ...state,
     setAreFiltersOpen: (areFiltersOpen: boolean) => setState((current) => ({ ...current, areFiltersOpen })),
     setFilters: (filters: ScoreListFilters) => setState((current) => ({ ...current, filters })),
-    clearFilters: () => setState((current) => ({ ...current, areFiltersOpen: false, filters: emptyScoreListFilters })),
+    clearFilters: () => setState((current) => ({ ...current, filters: emptyScoreListFilters })),
     setQuery: (query: string) => setState((current) => ({ ...current, query })),
     clearQuery: () => setState((current) => ({ ...current, query: "" })),
     setSort: (sort: ScoreListSort) => setState((current) => ({ ...current, sort })),
