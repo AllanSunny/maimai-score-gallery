@@ -11,6 +11,8 @@ function payload(overrides = {}) {
       sheets: [{
         type: "dx",
         difficulty: "master",
+        level: "13",
+        levelValue: 13,
         internalLevel: "13.2",
         noteDesigner: "Jack",
       }],
@@ -23,9 +25,9 @@ function index(value = payload()) {
   return indexZetarakuChartMetadata(value, { minimumSongs: 1, minimumCharts: 1 });
 }
 
-test("maps an exact internal level to a numeric chart constant", () => {
+test("maps the international chart level to a numeric chart constant", () => {
   const metadata = index().metadata("Magical Flavor", "曲：大国奏音/歌：烏屋茶房・黒魔", "DX", "MASTER");
-  assert.equal(metadata.chartConstant, 13.2);
+  assert.equal(metadata.chartConstant, 13);
 });
 
 test("maps the note designer to the charter", () => {
@@ -37,20 +39,21 @@ test("falls back to a unique title and chart when the supplemental artist is emp
   const value = payload();
   value.songs[0].artist = "";
   const metadata = index(value).metadata("Magical Flavor", "Authoritative artist", "DX", "MASTER");
-  assert.equal(metadata.chartConstant, 13.2);
+  assert.equal(metadata.chartConstant, 13);
 });
 
-test("does not treat a display-derived internal level value as an exact constant", () => {
+test("uses an international level override when present", () => {
   const value = payload();
-  value.songs[0].sheets[0].internalLevel = null;
-  value.songs[0].sheets[0].internalLevelValue = 13;
-  assert.equal(index(value).metadata("Magical Flavor", "曲：大国奏音/歌：烏屋茶房・黒魔", "DX", "MASTER").chartConstant, null);
+  value.songs[0].sheets[0].regionOverrides = { intl: { level: "13+", levelValue: 13.6 } };
+  const metadata = index(value).metadata("Magical Flavor", "曲：大国奏音/歌：烏屋茶房・黒魔", "DX", "MASTER");
+  assert.equal(metadata.level, "13+");
+  assert.equal(metadata.chartConstant, 13.6);
 });
 
 test("ignores UTAGE sheets", () => {
   const value = payload();
   value.songs[0].sheets.push({ type: "utage", difficulty: "【宴】", internalLevel: null, noteDesigner: "-" });
-  assert.equal(index(value).metadata("Magical Flavor", "曲：大国奏音/歌：烏屋茶房・黒魔", "DX", "MASTER").chartConstant, 13.2);
+  assert.equal(index(value).metadata("Magical Flavor", "曲：大国奏音/歌：烏屋茶房・黒魔", "DX", "MASTER").chartConstant, 13);
 });
 
 test("rejects a missing songs collection", () => {

@@ -244,7 +244,7 @@ function extractChartVersions(song, override, supplementalCharts) {
     const metadata = supplementalCharts.metadata(song.title, song.artist, chartType, difficulty);
     charts.push({
       difficulty,
-      level: String(correction.level ?? level),
+      level: String(correction.level ?? metadata.level ?? level),
       chartConstant: correction.chartConstant ?? metadata.chartConstant ?? null,
       charter: correction.charter ?? metadata.charter ?? null,
     });
@@ -263,7 +263,7 @@ function enrichExistingCharts(songs, supplementalCharts, overrides) {
       version.charts.forEach((chart) => {
         const correction = override.charts?.[`${version.chartType}:${chart.difficulty}`] ?? {};
         const metadata = supplementalCharts.metadata(canonicalTitle, song.artist, version.chartType, chart.difficulty);
-        const level = String(correction.level ?? chart.level);
+        const level = String(correction.level ?? metadata.level ?? chart.level);
         const chartConstant = correction.chartConstant ?? metadata.chartConstant ?? chart.chartConstant ?? null;
         const charter = correction.charter ?? metadata.charter ?? chart.charter ?? null;
         if (chart.level !== level || chart.chartConstant !== chartConstant || chart.charter !== charter) {

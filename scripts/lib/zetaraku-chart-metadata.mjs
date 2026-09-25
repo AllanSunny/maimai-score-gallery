@@ -27,16 +27,23 @@ function titleChartKey(title, chartType, difficulty) {
   return `${normalize(title)}|${chartType}|${difficulty}`;
 }
 
-function exactConstant(value, context) {
+function chartLevelValue(value, context) {
   if (value === null) return null;
   if (typeof value !== "string" && typeof value !== "number") {
-    throw new Error(`Supplemental chart metadata schema changed: ${context}.internalLevel must be a number, numeric string, or null.`);
+    throw new Error(`Supplemental chart metadata schema changed: ${context}.levelValue must be a number, numeric string, or null.`);
   }
   const parsed = Number(value);
   if (!Number.isFinite(parsed) || parsed <= 0 || parsed >= 20) {
-    throw new Error(`Supplemental chart metadata schema changed: ${context}.internalLevel is invalid.`);
+    throw new Error(`Supplemental chart metadata schema changed: ${context}.levelValue is invalid.`);
   }
   return parsed;
+}
+
+function chartLevel(value, context) {
+  if (typeof value !== "string" || !value.trim()) {
+    throw new Error(`Supplemental chart metadata schema changed: ${context}.level must be a non-empty string.`);
+  }
+  return value;
 }
 
 export function indexZetarakuChartMetadata(payload, { minimumSongs = 1_000, minimumCharts = 4_000 } = {}) {
@@ -80,8 +87,10 @@ export function indexZetarakuChartMetadata(payload, { minimumSongs = 1_000, mini
         throw new Error(`Supplemental chart metadata schema changed: unsupported chart type or difficulty at ${sheetContext}.`);
       }
       const rawCharter = String(sheet.noteDesigner ?? "").trim();
+      const internationalOverride = sheet.regionOverrides?.intl;
       const metadata = {
-        chartConstant: exactConstant(sheet.internalLevel, sheetContext),
+        level: chartLevel(internationalOverride?.level ?? sheet.level, sheetContext),
+        chartConstant: chartLevelValue(internationalOverride?.levelValue ?? sheet.levelValue, sheetContext),
         charter: rawCharter && rawCharter !== "-" ? rawCharter : null,
       };
       const key = chartKey(song.title, song.artist, chartType, difficulty);
