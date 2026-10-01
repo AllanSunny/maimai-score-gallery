@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-01T17:32:12.385Z",
+  "generatedAt": "2026-10-01T17:42:52.742Z",
   "charts": {
     "song-00493f7d7088-dx-master": {
       "playCount": 3,
@@ -3937,11 +3937,7 @@
         "scoreId": "nxqAIAi-qFiNW7lbEGiqznwQYN-wV3ev48M_lbyzO3Q",
         "playedAt": "2026-09-22T05:20:56.000Z"
       },
-      "bestSync": {
-        "status": "FS+",
-        "scoreId": "nxqAIAi-qFiNW7lbEGiqznwQYN-wV3ev48M_lbyzO3Q",
-        "playedAt": "2026-09-22T05:20:56.000Z"
-      },
+      "bestSync": null,
       "historyChunks": [
         "2025-12",
         "2026-09"
@@ -6803,11 +6799,7 @@
         "scoreId": "MUOGLtNSu4xDn29vuW0uAEsu6MI1vYk650GOtRsO4VY",
         "playedAt": "2026-09-22T05:07:44.000Z"
       },
-      "bestSync": {
-        "status": "FS+",
-        "scoreId": "8MzSDZL0zLFl5Bynjj3osKFZ98vEZyn-DnWUBdhOs3Y",
-        "playedAt": "2026-09-22T05:03:35.000Z"
-      },
+      "bestSync": null,
       "historyChunks": [
         "2026-09"
       ]

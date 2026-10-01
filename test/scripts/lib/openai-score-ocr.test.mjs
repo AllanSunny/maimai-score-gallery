@@ -56,6 +56,8 @@ test("score OCR loads the maimai score prompt and exposes structured output and 
   assert.match(request.input[0].content[0].text, /expert OCR parser/);
   assert.match(request.input[0].content[0].text, /lower circular touchscreen shows the played song/);
   assert.match(request.input[0].content[0].text, /`ALLANTHE` in older photos and `AllanThe` in newer photos/);
+  assert.match(request.input[0].content[0].text, /`FC`, `FC\+`, `AP`, or `AP\+` does not imply any sync status/);
+  assert.match(request.input[0].content[0].text, /never guess a sync status/);
   assert.deepEqual(result.score, expected);
   assert.equal(result.usage.total_tokens, 120);
   assert.equal(result.responseId, "resp_test");

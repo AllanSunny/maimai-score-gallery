@@ -249,7 +249,7 @@
       "level": "12+",
       "achievement": 100.3396,
       "combo": "FC+",
-      "sync": "FS+",
+      "sync": null,
       "rating": 15363,
       "ratingChange": 0,
       "judgments": {
@@ -429,7 +429,7 @@
       "level": "12",
       "achievement": 100.8689,
       "combo": "FC+",
-      "sync": "FS+",
+      "sync": null,
       "rating": 15363,
       "ratingChange": 0,
       "judgments": {

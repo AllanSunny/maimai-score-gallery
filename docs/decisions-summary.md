@@ -16,14 +16,14 @@ For current schemas, see [Data model](data-model.md). For setup and operational 
 - Public, view-only React/Vite app on GitHub Pages; private import operations use Drive, Sheets, OpenAI, and GitHub Actions.
 - Monthly score archives and derived chart summaries are implemented; frontend history loading remains eager (sections 31–38).
 - UTAGE, owner authentication/private notes, and the Top 50 implementation remain deferred.
-- Recent additions: the expandable song grid (51), cross-version chart navigation (52), centralized song jackets without duplicated catalog objects (53), iterative song-list controls and sorting behavior (54–67, 70–73), HTTP-cached jackets (68), WOFF2 fonts (69), animated score-history expansion (75), stable judgment-table row counts (77), and version-pinned International chart metadata (80).
-- Start with the [rationale ledger](#rationale-ledger) for the reasons behind the decisions; jump to the [latest decision](#decision-80) for the newest addition.
+- Recent additions: the expandable song grid (51), cross-version chart navigation (52), centralized song jackets without duplicated catalog objects (53), iterative song-list controls and sorting behavior (54–67, 70–73), HTTP-cached jackets (68), WOFF2 fonts (69), animated score-history expansion (75), stable judgment-table row counts (77), version-pinned International chart metadata (80), and sync-position OCR safeguards (81).
+- Start with the [rationale ledger](#rationale-ledger) for the reasons behind the decisions; jump to the [latest decision](#decision-81) for the newest addition.
 
 <a id="rationale-ledger"></a>
 
 ## Rationale ledger
 
-[Jump to the decision history](#decision-1) · [Latest decision](#decision-80)
+[Jump to the decision history](#decision-1) · [Latest decision](#decision-81)
 
 This ledger stays near the top as decisions are appended below. Links point to stable decision IDs. Section 44 was the ledger's former location; that number remains reserved and its old link still resolves here.
 
@@ -77,6 +77,7 @@ This ledger stays near the top as decisions are appended below. Links point to s
 - **Scroll behavior by action** ([47](#decision-47)): The owner wanted new chart pages to begin at the top without visibly scrolling up from the song list, score deep links to retain smooth scrolling, and Back/Forward to remember prior positions. These are distinct interactions, so one global smooth-scroll rule was insufficient (“Add score history anchors,” 2026-08-31).
 - **Chart rating and incomplete B50** ([48](#decision-48)): Implementation rationale: deriving a contribution from an exact constant avoids storing another value that can drift; leaving it unavailable without a constant avoids presenting an estimate as exact. The reviewed history does not establish an additional owner-stated motivation for the formula or a completed B50 implementation.
 - **OCR tuning and configuration cleanup** ([49](#decision-49)): The owner encountered incomplete OCR output, asked to inspect token use, and confirmed that increasing the limit worked (2026-08-15). The later cleanup requested removing unused environment options. That supports documenting the settings actually consumed; it does not establish that each hard-coded timeout/retry value was personally selected by the owner.
+- **Sync-position OCR safeguards** ([81](#decision-81)): Recent false-positive `FS+` reads on FC/AP results showed that combo status and nearby result elements can be mistaken for a sync badge. Require visual confirmation from the dedicated sync position and prefer no-sync when that badge is unclear (2026-10-01).
 - **Off-minute import scheduling** ([50](#decision-50)): After the minute-0 schedule was delayed on consecutive Mondays, the owner moved the weekly import to minute 22 to avoid GitHub Actions' higher-load start-of-hour window (“Set import schedule to minute 22,” 2026-09-07).
 - **Expandable song grid** ([51](#decision-51)): The score list became a song-first browsing surface: one recency-sorted card per canonical song, inline chart summaries, and DX/STD switching without leaving the list. Several expansion strategies were tried before settling on stable card order and breakpoint-specific scroll behavior (2026-09-07–08).
 - **Cross-version chart navigation** ([52](#decision-52)): Matching DX and STD difficulties belong to the same logical song, so chart detail pages provide a direct version switch while preserving the reader's position (2026-09-07).
@@ -1237,3 +1238,13 @@ prompted the later version-pinned design.
 - Local chart overrides remain first priority. If pinned data is unavailable or lacks a chart, retain the already-fetched SEGA display level, store a null constant, continue the import, and send a grouped Discord warning. Never estimate a constant or mix sources within a level/constant pair.
 - Retain version-resolution and warning details as a 30-day workflow artifact. This supersedes decisions 39, 40, and 79 where they require live supplemental refreshes, rewriting existing charts, or failing the entire import for supplemental-source errors.
 - Sources: `config/chart-metadata-versions.json`, `scripts/lib/dxrating-chart-metadata.mjs`, `scripts/lib/chart-metadata-version.mjs`, `scripts/sync-catalog.mjs`, `.github/workflows/import-new-scores.yml`, [DXRating](https://github.com/gekichumai/dxrating).
+
+<a id="decision-81"></a>
+
+## 81. Require visual confirmation for sync-result OCR
+
+- Rationale: Recent imports falsely reported `FS+` for FC/AP plays even though no sync badge was present. The failure was intermittent—other similar plays parsed correctly—so combo or achievement status cannot be treated as a reliable proxy for sync. Avoiding a false public sync record is more important than inferring one from nearby UI.
+- Read sync only from its dedicated badge position beneath the lower touchscreen's achievement/rank. Combo badges, judgment totals, achievement, and other result elements are explicitly unrelated evidence.
+- Emit a non-null sync status only when the exact matching badge is visibly present. Treat an empty, obscured, blurred, or uncertain sync position as no sync rather than guessing.
+- Bump the score-OCR prompt version whenever this instruction changes so actionable retries do not reuse cached results parsed under older guidance. This supplements decision 30's targeted legacy audit; it reduces future false positives but does not replace image-position re-auditing of already imported scores.
+- Sources: `scripts/lib/maimai-score-prompt.md`, `scripts/lib/openai-score-ocr.mjs`, `test/scripts/lib/openai-score-ocr.test.mjs`, `scripts/one-off/legacy-sync-status/audit.mjs`.
