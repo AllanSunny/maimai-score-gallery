@@ -232,7 +232,7 @@ The workflows reference the following **Actions variables**:
 | `SCORE_CAPTURE_TIME_ZONE` | Zone used only for capture timestamps that lack an explicit offset |
 | `SEGA_CATALOG_URL` | Authoritative SEGA song catalog endpoint |
 | `SEGA_JACKET_BASE_URL` | Base URL for authoritative SEGA jacket images |
-| `CHART_SUPPLEMENT_METADATA_URL` | Zetaraku supplemental chart constants and charter names dataset |
+| `CHART_SUPPLEMENT_METADATA_URL` | SaltMeta region-aware International chart constants and charter names dataset |
 | `R2_BUCKET_NAME` | Jacket object-storage bucket |
 | `R2_PUBLIC_URL` | Public jacket Worker base URL used by the frontend build |
 
@@ -246,17 +246,20 @@ R2 credentials are available only to the metadata workflow.
 
 ## Supplemental catalog information
 
-`npm run catalog:sync` downloads the Zetaraku dataset configured by
+`npm run catalog:sync` downloads the [SaltMeta](https://github.com/realtvop/SaltMeta)
+region-aware dataset configured by
 `CHART_SUPPLEMENT_METADATA_URL` once per run. It matches song title, artist,
 DX/STD chart type, and difficulty; title-only matching is allowed only when
 there is one candidate. UTAGE charts are excluded.
 
-For both new and existing catalog charts, it reads exact constants from
-`internalLevel` and chart designer names into `charter`. Display-derived
-`internalLevelValue` is not accepted as an exact constant. Non-null local
-overrides take precedence over supplemental values; when neither supplies a
-value, an existing last-known value is retained. Missing information remains
-unavailable rather than being estimated from the displayed level.
+For both new and existing catalog charts, it selects SaltMeta's `intl` region
+record and reads its exact `internalLevel` and chart designer name into
+`charter`. The source's Japanese or other regional values are not used as an
+International fallback. Non-null local overrides take precedence over
+supplemental values; when neither supplies a value, an existing last-known
+value is retained. Missing information remains unavailable rather than being
+estimated from the displayed level. SEGA remains the authoritative source for
+song, artist, genre, release, and jacket catalog data.
 
 An unavailable source, unexpected schema, ambiguous chart, or major coverage
 regression stops synchronization before generated data is written. The normal

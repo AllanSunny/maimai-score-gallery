@@ -9,7 +9,7 @@ import { standaloneCatalogSongs } from "./lib/catalog-overrides.mjs";
 import { catalogOutput } from "./lib/catalog-output.mjs";
 import { readMonthlyScoreArchive, writeMonthlyScoreArchive } from "./lib/monthly-score-archive.mjs";
 import { maimaiVersion, standaloneMaimaiVersion } from "./lib/maimai-version.mjs";
-import { indexZetarakuChartMetadata } from "./lib/zetaraku-chart-metadata.mjs";
+import { indexSaltMetaChartMetadata } from "./lib/saltmeta-chart-metadata.mjs";
 
 const execFileAsync = promisify(execFile);
 
@@ -421,8 +421,8 @@ async function main() {
       : Promise.resolve([]),
     fetchJson(CHART_SUPPLEMENT_METADATA_URL, "supplemental chart metadata"),
   ]);
-  const supplementalCharts = indexZetarakuChartMetadata(chartMetadataSongs);
-  console.log(`Validated supplemental chart metadata updated ${supplementalCharts.updateTime}.`);
+  const supplementalCharts = indexSaltMetaChartMetadata(chartMetadataSongs);
+  console.log("Validated SaltMeta International chart metadata.");
   const songs = structuredClone(previous.songs);
   applyExistingOverrides(songs, overrides);
   enrichExistingCharts(songs, supplementalCharts, overrides);

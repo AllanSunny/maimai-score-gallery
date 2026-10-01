@@ -16,8 +16,8 @@ For current schemas, see [Data model](data-model.md). For setup and operational 
 - Public, view-only React/Vite app on GitHub Pages; private import operations use Drive, Sheets, OpenAI, and GitHub Actions.
 - Monthly score archives and derived chart summaries are implemented; frontend history loading remains eager (sections 31–38).
 - UTAGE, owner authentication/private notes, and the Top 50 implementation remain deferred.
-- Recent additions: the expandable song grid (51), cross-version chart navigation (52), centralized song jackets without duplicated catalog objects (53), iterative song-list controls and sorting behavior (54–67, 70–73), HTTP-cached jackets (68), WOFF2 fonts (69), animated score-history expansion (75), and stable judgment-table row counts (77).
-- Start with the [rationale ledger](#rationale-ledger) for the reasons behind the decisions; jump to the [latest decision](#decision-77) for the newest addition.
+- Recent additions: the expandable song grid (51), cross-version chart navigation (52), centralized song jackets without duplicated catalog objects (53), iterative song-list controls and sorting behavior (54–67, 70–73), HTTP-cached jackets (68), WOFF2 fonts (69), animated score-history expansion (75), stable judgment-table row counts (77), and SaltMeta International chart supplements (79).
+- Start with the [rationale ledger](#rationale-ledger) for the reasons behind the decisions; jump to the [latest decision](#decision-79) for the newest addition.
 
 <a id="rationale-ledger"></a>
 
@@ -63,8 +63,8 @@ This ledger stays near the top as decisions are appended below. Links point to s
 - **Compact summary references** ([36](#decision-36)): Object keys already provide chart identity, while per-best score IDs and timestamps preserve independent provenance without duplicating full play data.
 - **Commit summaries before deploy** ([37](#decision-37)): Generated data must be durable in the repository before deployment; an ephemeral build-time rewrite can silently publish stale or unreproducible state.
 - **Frontend ownership boundary** ([38](#decision-38)): Catalog metadata, cumulative bests, and detailed histories have different size and update characteristics, so keeping their responsibilities separate supports fast browsing and future lazy loading.
-- **One supplemental source** ([39](#decision-39)): An audit found genuine gaps in Diving-Fish and broader coverage in Zetaraku. The owner chose one live supplemental source instead of merging providers on every run (2026-08-23); retained values protect historical metadata where the replacement has gaps.
-- **Exact constants only** ([39](#decision-39)): A displayed level range is not a chart constant; accepting only explicit internal levels avoids turning an estimate into authoritative data.
+- **One supplemental source** ([39](#decision-39), [79](#decision-79)): The owner keeps one live supplemental source instead of merging providers on every run; SaltMeta supersedes Zetaraku because it supplies exact International region constants.
+- **Exact constants only** ([39](#decision-39), [79](#decision-79)): A displayed level range is not a chart constant; use SaltMeta's explicit International `internalLevel` rather than a display-derived estimate.
 - **One supplemental fetch** ([39](#decision-39)): A weekly CDN download is simpler and gentler than per-song requests and makes validation atomic.
 - **Fail-fast supplemental validation** ([40](#decision-40)): External schemas can drift or return partial data, so the importer must reject the complete run before overwriting trustworthy generated metadata.
 - **Override exceptional omissions** ([40](#decision-40)): A documented local exception is safer and more auditable than fabricating a provider value or manually editing generated JSON.
@@ -1210,3 +1210,13 @@ This ledger stays near the top as decisions are appended below. Links point to s
 - Frontend modules may import these files as build inputs from outside `src`; synchronization, validation, and workflow paths must use the same top-level location.
 - This supersedes only the `src/data` storage locations in decisions 6, 12, 26, 31, 32, and 74. Their data ownership, generation, validation, and runtime behavior remain unchanged.
 - Sources: `data`, `src/utils/catalog.ts`, `src/utils/scores.ts`, `scripts`, `.github/workflows`, `docs/data-model.md`, `docs/operations.md`.
+
+<a id="decision-79"></a>
+
+## 79. SaltMeta for International chart supplements; SEGA for catalog metadata
+
+- Rationale: Zetaraku exposes International displayed levels but not independent International exact constants. SaltMeta's region-aware records provide both values, preventing current Japanese updates from being paired with stale International labels.
+- Use SaltMeta's `intl` chart record for International displayed levels, exact constants, and chart designers. Reject missing or invalid International exact constants rather than estimating them from a displayed level.
+- Continue using SEGA's catalog as the authoritative source for song identity, titles, artist, genre, release, and jacket data. SaltMeta's broader song metadata is deliberately not imported.
+- This supersedes decision 39's selection of Zetaraku as the supplemental chart source, while retaining its one-source, exact-constant, validation, fallback, and local-override principles.
+- Sources: `scripts/lib/saltmeta-chart-metadata.mjs`, `scripts/sync-catalog.mjs`, `data/song-catalog.json`, [SaltMeta](https://github.com/realtvop/SaltMeta).

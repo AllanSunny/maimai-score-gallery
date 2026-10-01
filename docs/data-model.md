@@ -98,10 +98,11 @@ Notes/Location is intentionally excluded from the public archive.
 owns one or more DX/STD versions, and each version owns its difficulty charts.
 `Song` owns the shared `jacketKey`, artist, genre, introduction, and search titles.
 `Chart` includes both nullable `chartConstant` and nullable `charter` fields.
-Supplemental metadata refreshes levels, constants, and charter names for existing
-charts. Chart levels and constants use the supplemental source's international
-values (including an explicit international override), so they remain consistent
-with the gallery's international chart data rather than Japanese internal levels.
+SaltMeta supplemental metadata refreshes levels, exact constants, and charter names
+for existing charts. The synchronizer selects SaltMeta's `intl` region record for
+each chart, so both displayed levels and constants remain consistent with the
+gallery's international chart data. SEGA remains the source for song/catalog
+metadata, stable identity, releases, and jackets.
 Sparse manual overrides can additionally supply title variants, artist, genre,
 introduction, jacket key, or individual chart fields; supplied non-null values
 take precedence, and existing values are retained when no override or
