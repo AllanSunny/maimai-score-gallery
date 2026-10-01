@@ -4382,6 +4382,66 @@
       "chartId": "song-a7a461d9d280-dx-master"
     },
     {
+      "playedAt": "2026-01-15T03:22:27.000Z",
+      "songTitle": "STARTLINER",
+      "chartType": "DX",
+      "difficulty": "Re:MASTER",
+      "level": "12",
+      "achievement": 100.93,
+      "combo": "AP",
+      "sync": null,
+      "rating": 13859,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 433,
+        "perfect": 134,
+        "great": 0,
+        "good": 0,
+        "miss": 0
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 25,
+          "perfect": 8,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 220,
+          "perfect": 114,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "hold": {
+          "criticalPerfect": 21,
+          "perfect": 12,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 36,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 131,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 8,
+      "slow": 0,
+      "id": "qApvsHS0w4Vj_VgBzO1kHqNF-pb7DdFUl6qHMKPRh98",
+      "chartId": "song-abf7a8f529b4-dx-re-master"
+    },
+    {
       "playedAt": "2026-01-15T05:23:00.000Z",
       "songTitle": "トンデモワンダーズ",
       "chartType": "DX",
