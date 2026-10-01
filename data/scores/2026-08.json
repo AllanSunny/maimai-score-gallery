@@ -2522,6 +2522,66 @@
       "chartId": "song-93e1dbb9bcec-std-master"
     },
     {
+      "playedAt": "2026-08-22T02:14:07.000Z",
+      "songTitle": "天ノ弱",
+      "chartType": "DX",
+      "difficulty": "MASTER",
+      "level": "12+",
+      "achievement": 100.2152,
+      "combo": null,
+      "sync": null,
+      "rating": 15216,
+      "ratingChange": 0,
+      "judgments": {
+        "criticalPerfect": 509,
+        "perfect": 156,
+        "great": 6,
+        "good": 2,
+        "miss": 2
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 14,
+          "perfect": 7,
+          "great": 1,
+          "good": 0,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 304,
+          "perfect": 133,
+          "great": 4,
+          "good": 1,
+          "miss": 2
+        },
+        "hold": {
+          "criticalPerfect": 46,
+          "perfect": 16,
+          "great": 1,
+          "good": 0,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 117,
+          "perfect": 0,
+          "great": 0,
+          "good": 1,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 28,
+          "perfect": 0,
+          "great": 0,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 7,
+      "slow": 8,
+      "id": "LE6brn78iJthVshMsLHpf3eroCtT4Q1YoAKa_hUaCJM",
+      "chartId": "song-2462fcdbebad-dx-master"
+    },
+    {
       "playedAt": "2026-08-22T02:21:10.000Z",
       "songTitle": "Operation☆DOTABATA!",
       "chartType": "DX",

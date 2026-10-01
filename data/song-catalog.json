@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-01T00:48:41.978Z",
+  "generatedAt": "2026-10-01T17:19:43.258Z",
   "songs": [
     {
       "id": "song-550d332f837c",
@@ -1260,6 +1260,59 @@
         "code": "25000",
         "name": "PRiSM"
       }
+    },
+    {
+      "id": "song-d95ad088655d",
+      "titles": {
+        "canonical": "CiRCLE CAMPAiGN",
+        "kana": [],
+        "romaji": [],
+        "english": [],
+        "aliases": []
+      },
+      "artist": "サツキ feat.天音かなた",
+      "genre": "maimai",
+      "introducedIn": {
+        "code": "26000",
+        "name": "CiRCLE"
+      },
+      "jacketKey": "jackets/song-d95ad088655d-132b3a75911f.png",
+      "versions": [
+        {
+          "id": "song-d95ad088655d-dx",
+          "chartType": "DX",
+          "charts": [
+            {
+              "id": "song-d95ad088655d-dx-basic",
+              "difficulty": "BASIC",
+              "level": "4",
+              "chartConstant": 4,
+              "charter": null
+            },
+            {
+              "id": "song-d95ad088655d-dx-advanced",
+              "difficulty": "ADVANCED",
+              "level": "7+",
+              "chartConstant": 7.8,
+              "charter": null
+            },
+            {
+              "id": "song-d95ad088655d-dx-expert",
+              "difficulty": "EXPERT",
+              "level": "11",
+              "chartConstant": 11,
+              "charter": "サファ太"
+            },
+            {
+              "id": "song-d95ad088655d-dx-master",
+              "difficulty": "MASTER",
+              "level": "13+",
+              "chartConstant": 13.7,
+              "charter": "はっぴー"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "song-6686d9819edf",

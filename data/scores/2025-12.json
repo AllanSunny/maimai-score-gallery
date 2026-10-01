@@ -1682,6 +1682,66 @@
       "chartId": "song-d13162a1691c-dx-expert"
     },
     {
+      "playedAt": "2025-12-14T04:48:06.000Z",
+      "songTitle": "系ぎて",
+      "chartType": "DX",
+      "difficulty": "EXPERT",
+      "level": "13+",
+      "achievement": 95.423,
+      "combo": null,
+      "sync": "Sync",
+      "rating": 13240,
+      "ratingChange": 1694,
+      "judgments": {
+        "criticalPerfect": 392,
+        "perfect": 221,
+        "great": 76,
+        "good": 48,
+        "miss": 5
+      },
+      "judgmentsByType": {
+        "break": {
+          "criticalPerfect": 22,
+          "perfect": 14,
+          "great": 2,
+          "good": 1,
+          "miss": 0
+        },
+        "tap": {
+          "criticalPerfect": 230,
+          "perfect": 192,
+          "great": 58,
+          "good": 40,
+          "miss": 5
+        },
+        "hold": {
+          "criticalPerfect": 23,
+          "perfect": 15,
+          "great": 4,
+          "good": 1,
+          "miss": 0
+        },
+        "slide": {
+          "criticalPerfect": 66,
+          "perfect": 0,
+          "great": 10,
+          "good": 6,
+          "miss": 0
+        },
+        "touch": {
+          "criticalPerfect": 51,
+          "perfect": 0,
+          "great": 2,
+          "good": 0,
+          "miss": 0
+        }
+      },
+      "fast": 81,
+      "slow": 43,
+      "id": "izXIvHkTXkrG8IiY0AMq9pA9cqIhA6RBFo22KJOS0qY",
+      "chartId": "tsunagite-dx-expert"
+    },
+    {
       "playedAt": "2025-12-21T04:28:10.000Z",
       "songTitle": "最強STRONGER",
       "chartType": "DX",
