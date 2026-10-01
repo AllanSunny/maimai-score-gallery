@@ -7,9 +7,11 @@ import { promisify } from "node:util";
 import { enrichMissingSongTitles } from "./lib/catalog-title-enrichment.mjs";
 import { standaloneCatalogSongs } from "./lib/catalog-overrides.mjs";
 import { catalogOutput } from "./lib/catalog-output.mjs";
+import { activeVersionEntry, parseInternationalVersion, parseJapaneseVersion } from "./lib/chart-metadata-version.mjs";
+import { indexDxRatingChartMetadata } from "./lib/dxrating-chart-metadata.mjs";
 import { readMonthlyScoreArchive, writeMonthlyScoreArchive } from "./lib/monthly-score-archive.mjs";
 import { maimaiVersion, standaloneMaimaiVersion } from "./lib/maimai-version.mjs";
-import { indexSaltMetaChartMetadata } from "./lib/saltmeta-chart-metadata.mjs";
+import { createSegaCatalogLoader } from "./lib/sega-catalog.mjs";
 
 const execFileAsync = promisify(execFile);
 
@@ -17,6 +19,11 @@ const ROOT = process.cwd();
 const SONG_OVERRIDES_PATH = path.join(ROOT, "data", "song-overrides.json");
 const SONG_CATALOG_PATH = path.join(ROOT, "data", "song-catalog.json");
 const REJECTED_SCORES_PATH = path.join(ROOT, ".sync", "rejected-scores.json");
+const CHART_METADATA_WARNINGS_PATH = path.join(ROOT, ".sync", "chart-metadata-warnings.json");
+const VERSION_RESOLUTION_PATH = path.join(ROOT, ".sync", "version-resolution.json");
+const VERSION_LEDGER_PATH = path.join(ROOT, "config", "chart-metadata-versions.json");
+const INTERNATIONAL_NEWS_URL = "https://maimai.sega.com/";
+const JAPANESE_NEWS_URL = "https://info-maimai.sega.jp/";
 
 function requiredEnvironment(name) {
   const value = process.env[name]?.trim();
@@ -26,7 +33,6 @@ function requiredEnvironment(name) {
 
 const SEGA_CATALOG_URL = requiredEnvironment("SEGA_CATALOG_URL");
 const SEGA_JACKET_BASE_URL = requiredEnvironment("SEGA_JACKET_BASE_URL");
-const CHART_SUPPLEMENT_METADATA_URL = requiredEnvironment("CHART_SUPPLEMENT_METADATA_URL");
 
 const chartFields = [
   ["DX", "BASIC", "dx_lev_bas"],
@@ -192,6 +198,66 @@ function songIntroduction(source, override = {}) {
   return maimaiVersion(code);
 }
 
+async function fetchText(url, label) {
+  console.log(`Fetching ${label}: ${url}`);
+  return (await download(url, label)).toString("utf8");
+}
+
+const loadSegaCatalog = createSegaCatalogLoader({ url: SEGA_CATALOG_URL, download: fetchJson });
+
+async function writeSyncJson(filePath, value) {
+  await mkdir(path.dirname(filePath), { recursive: true });
+  await writeFile(filePath, `${JSON.stringify(value, null, 2)}\n`);
+}
+
+async function loadVersionedChartMetadata() {
+  const ledger = await readJson(VERSION_LEDGER_PATH);
+  const active = activeVersionEntry(ledger);
+  const resolution = {
+    checkedAt: new Date().toISOString(),
+    activeInternationalVersion: active.version,
+    ledgerStatus: active.status,
+    dxRatingRef: active.ref,
+    dxRatingSha256: active.sha256,
+    sourcePath: ledger.source.path,
+    internationalNewsUrl: INTERNATIONAL_NEWS_URL,
+    japaneseNewsUrl: JAPANESE_NEWS_URL,
+  };
+
+  let internationalVersion;
+  try {
+    const [internationalHtml, japaneseHtml] = await Promise.all([
+      fetchText(INTERNATIONAL_NEWS_URL, "International maimai version marker"),
+      fetchText(JAPANESE_NEWS_URL, "Japanese maimai version marker"),
+    ]);
+    internationalVersion = parseInternationalVersion(internationalHtml);
+    resolution.observedInternationalVersion = internationalVersion;
+    resolution.observedJapaneseVersion = parseJapaneseVersion(japaneseHtml);
+  } catch (error) {
+    resolution.warning = `Version marker check failed: ${error.message}`;
+    await writeSyncJson(VERSION_RESOLUTION_PATH, resolution);
+    return { active, metadata: null, warning: resolution.warning };
+  }
+
+  await writeSyncJson(VERSION_RESOLUTION_PATH, resolution);
+  if (internationalVersion !== active.version) {
+    throw new Error(`International maimai is ${internationalVersion}, but the chart metadata ledger is pinned to ${active.version}. Create a version-promotion change before importing new songs.`);
+  }
+
+  try {
+    console.log(`Fetching DXRating ${active.version} chart metadata at ${active.ref}.`);
+    const body = await download(active.url, "DXRating chart metadata");
+    const actualHash = createHash("sha256").update(body).digest("hex");
+    if (actualHash !== active.sha256) {
+      throw new Error(`content hash mismatch: expected ${active.sha256}, received ${actualHash}`);
+    }
+    const payload = JSON.parse(body.toString("utf8"));
+    return { active, metadata: indexDxRatingChartMetadata(payload), warning: null };
+  } catch (error) {
+    return { active, metadata: null, warning: `DXRating chart metadata unavailable: ${error.message}` };
+  }
+}
+
 function overrideJacketKey(canonical, override) {
   if (!hasOwn(override, "jacketKey")) return undefined;
   if (override.jacketKey === null) return null;
@@ -233,7 +299,7 @@ function refreshStandaloneMetadata(songs, standaloneSongs) {
   });
 }
 
-function extractChartVersions(song, override, supplementalCharts) {
+function extractChartVersions(song, override, supplementalCharts, unresolvedCharts) {
   const versions = new Map();
 
   chartFields.forEach(([chartType, difficulty, field]) => {
@@ -241,7 +307,23 @@ function extractChartVersions(song, override, supplementalCharts) {
     if (!level) return;
     const correction = override.charts?.[`${chartType}:${difficulty}`] ?? {};
     const charts = versions.get(chartType) ?? [];
-    const metadata = supplementalCharts.metadata(song.title, song.artist, chartType, difficulty);
+    let metadata = {};
+    try {
+      metadata = supplementalCharts?.metadata(song.title, song.artist, chartType, difficulty) ?? {};
+    } catch (error) {
+      unresolvedCharts.push({
+        title: song.title,
+        chartType,
+        difficulty,
+        segaLevel: String(level),
+        reason: error.message,
+      });
+    }
+    if (correction.chartConstant == null && metadata.chartConstant == null) {
+      const alreadyReported = unresolvedCharts.some((chart) => chart.title === song.title
+        && chart.chartType === chartType && chart.difficulty === difficulty);
+      if (!alreadyReported) unresolvedCharts.push({ title: song.title, chartType, difficulty, segaLevel: String(level) });
+    }
     charts.push({
       difficulty,
       level: String(correction.level ?? metadata.level ?? level),
@@ -254,28 +336,20 @@ function extractChartVersions(song, override, supplementalCharts) {
   return [...versions].map(([chartType, charts]) => ({ chartType, charts }));
 }
 
-function enrichExistingCharts(songs, supplementalCharts, overrides) {
-  let changed = false;
+function applyExistingChartOverrides(songs, overrides) {
   songs.forEach((song) => {
-    const canonicalTitle = song.titles.canonical;
-    const override = overrides[canonicalTitle] ?? {};
+    const chartOverrides = overrides[song.titles.canonical]?.charts;
+    if (!chartOverrides) return;
     song.versions.forEach((version) => {
       version.charts.forEach((chart) => {
-        const correction = override.charts?.[`${version.chartType}:${chart.difficulty}`] ?? {};
-        const metadata = supplementalCharts.metadata(canonicalTitle, song.artist, version.chartType, chart.difficulty);
-        const level = String(correction.level ?? metadata.level ?? chart.level);
-        const chartConstant = correction.chartConstant ?? metadata.chartConstant ?? chart.chartConstant ?? null;
-        const charter = correction.charter ?? metadata.charter ?? chart.charter ?? null;
-        if (chart.level !== level || chart.chartConstant !== chartConstant || chart.charter !== charter) {
-          chart.level = level;
-          chart.chartConstant = chartConstant;
-          chart.charter = charter;
-          changed = true;
-        }
+        const correction = chartOverrides[`${version.chartType}:${chart.difficulty}`];
+        if (!correction) return;
+        if (correction.level != null) chart.level = String(correction.level);
+        if (correction.chartConstant != null) chart.chartConstant = correction.chartConstant;
+        if (correction.charter != null) chart.charter = correction.charter;
       });
     });
   });
-  return changed;
 }
 
 function isCatalogedByOverride(title, songs, overrides) {
@@ -415,17 +489,19 @@ async function main() {
     [...missingArtistSongs, ...missingSourceMetadataSongs].map((song) => [song.id, song]),
   ).values()];
   console.log(`Found ${newTitles.length} new song(s) and ${backfillSongs.length} catalog metadata record(s) to backfill.`);
-  const [officialSongs, chartMetadataSongs] = await Promise.all([
+  const officialSongs = await (
     newTitles.length || backfillSongs.length
-      ? fetchJson(SEGA_CATALOG_URL, "SEGA song catalog")
-      : Promise.resolve([]),
-    fetchJson(CHART_SUPPLEMENT_METADATA_URL, "supplemental chart metadata"),
-  ]);
-  const supplementalCharts = indexSaltMetaChartMetadata(chartMetadataSongs);
-  console.log("Validated SaltMeta International chart metadata.");
+      ? loadSegaCatalog()
+      : Promise.resolve([])
+  );
+  const chartMetadata = newTitles.length
+    ? await loadVersionedChartMetadata()
+    : { active: activeVersionEntry(await readJson(VERSION_LEDGER_PATH)), metadata: null, warning: null };
+  const supplementalCharts = chartMetadata.metadata;
+  const unresolvedCharts = [];
   const songs = structuredClone(previous.songs);
   applyExistingOverrides(songs, overrides);
-  enrichExistingCharts(songs, supplementalCharts, overrides);
+  applyExistingChartOverrides(songs, overrides);
   refreshStandaloneMetadata(songs, standaloneSongs);
 
   backfillSongs.forEach((backfillSong) => {
@@ -467,7 +543,7 @@ async function main() {
       : official
         ? await uploadJacket(baseId, new URL(sourceSong.image_url, SEGA_JACKET_BASE_URL).toString())
         : null;
-    const versions = extractChartVersions(sourceSong, override, supplementalCharts).map(({ chartType, charts }) => {
+    const versions = extractChartVersions(sourceSong, override, supplementalCharts, unresolvedCharts).map(({ chartType, charts }) => {
       const versionId = `${baseId}-${chartType.toLowerCase()}`;
       return {
         id: versionId,
@@ -494,6 +570,14 @@ async function main() {
   }
 
   await enrichMissingSongTitles(songs);
+
+  await writeSyncJson(CHART_METADATA_WARNINGS_PATH, {
+    generatedAt: new Date().toISOString(),
+    internationalVersion: chartMetadata.active.version,
+    dxRatingRef: chartMetadata.active.ref,
+    sourceWarning: chartMetadata.warning,
+    unresolvedCharts,
+  });
 
   const { catalog, changed: catalogChanged } = catalogOutput(previous, songs);
   if (catalogChanged) {

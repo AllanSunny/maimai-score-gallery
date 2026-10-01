@@ -16,14 +16,14 @@ For current schemas, see [Data model](data-model.md). For setup and operational 
 - Public, view-only React/Vite app on GitHub Pages; private import operations use Drive, Sheets, OpenAI, and GitHub Actions.
 - Monthly score archives and derived chart summaries are implemented; frontend history loading remains eager (sections 31–38).
 - UTAGE, owner authentication/private notes, and the Top 50 implementation remain deferred.
-- Recent additions: the expandable song grid (51), cross-version chart navigation (52), centralized song jackets without duplicated catalog objects (53), iterative song-list controls and sorting behavior (54–67, 70–73), HTTP-cached jackets (68), WOFF2 fonts (69), animated score-history expansion (75), stable judgment-table row counts (77), and SaltMeta International chart supplements (79).
-- Start with the [rationale ledger](#rationale-ledger) for the reasons behind the decisions; jump to the [latest decision](#decision-79) for the newest addition.
+- Recent additions: the expandable song grid (51), cross-version chart navigation (52), centralized song jackets without duplicated catalog objects (53), iterative song-list controls and sorting behavior (54–67, 70–73), HTTP-cached jackets (68), WOFF2 fonts (69), animated score-history expansion (75), stable judgment-table row counts (77), and version-pinned International chart metadata (80).
+- Start with the [rationale ledger](#rationale-ledger) for the reasons behind the decisions; jump to the [latest decision](#decision-80) for the newest addition.
 
 <a id="rationale-ledger"></a>
 
 ## Rationale ledger
 
-[Jump to the decision history](#decision-1) · [Latest decision](#decision-77)
+[Jump to the decision history](#decision-1) · [Latest decision](#decision-80)
 
 This ledger stays near the top as decisions are appended below. Links point to stable decision IDs. Section 44 was the ledger's former location; that number remains reserved and its old link still resolves here.
 
@@ -63,10 +63,10 @@ This ledger stays near the top as decisions are appended below. Links point to s
 - **Compact summary references** ([36](#decision-36)): Object keys already provide chart identity, while per-best score IDs and timestamps preserve independent provenance without duplicating full play data.
 - **Commit summaries before deploy** ([37](#decision-37)): Generated data must be durable in the repository before deployment; an ephemeral build-time rewrite can silently publish stale or unreproducible state.
 - **Frontend ownership boundary** ([38](#decision-38)): Catalog metadata, cumulative bests, and detailed histories have different size and update characteristics, so keeping their responsibilities separate supports fast browsing and future lazy loading.
-- **One supplemental source** ([39](#decision-39), [79](#decision-79)): The owner keeps one live supplemental source instead of merging providers on every run; SaltMeta supersedes Zetaraku because it supplies exact International region constants.
-- **Exact constants only** ([39](#decision-39), [79](#decision-79)): A displayed level range is not a chart constant; use SaltMeta's explicit International `internalLevel` rather than a display-derived estimate.
-- **One supplemental fetch** ([39](#decision-39)): A weekly CDN download is simpler and gentler than per-song requests and makes validation atomic.
-- **Fail-fast supplemental validation** ([40](#decision-40)): External schemas can drift or return partial data, so the importer must reject the complete run before overwriting trustworthy generated metadata.
+- **One version-pinned supplemental source** ([39](#decision-39), [79](#decision-79), [80](#decision-80)): DXRating supersedes the live SaltMeta feed; an immutable commit represents each International release.
+- **Exact, coherent chart pairs** ([39](#decision-39), [79](#decision-79), [80](#decision-80)): A displayed level range is not a chart constant, and a level from one release must not be paired with a constant from another.
+- **One supplemental fetch** ([39](#decision-39), [80](#decision-80)): One pinned dataset download per new-song sync is simpler and gentler than per-song requests and makes validation atomic.
+- **Graceful enrichment failure** ([40](#decision-40), [80](#decision-80)): External chart metadata failure falls back to the memoized SEGA display level and a null constant, while a detected International version transition still requires an explicit promotion.
 - **Override exceptional omissions** ([40](#decision-40)): A documented local exception is safer and more auditable than fabricating a provider value or manually editing generated JSON.
 - **Responsive chart details** ([41](#decision-41)): The owner rejected a tiny two-column mobile frame because its decoration and text lost presence and readability (2026-08-24). Keeping a readable frame and hiding the duplicate information card brings history closer to the fold without that compromise.
 - **Capture-timestamp preflight** ([42](#decision-42)): An exact EXIF instant is available before score OCR and is strong evidence of an accidental re-upload, so checking it first avoids needless download or OCR work while retaining hash and score-identity checks as independent safeguards.
@@ -1220,3 +1220,20 @@ This ledger stays near the top as decisions are appended below. Links point to s
 - Continue using SEGA's catalog as the authoritative source for song identity, titles, artist, genre, release, and jacket data. SaltMeta's broader song metadata is deliberately not imported.
 - This supersedes decision 39's selection of Zetaraku as the supplemental chart source, while retaining its one-source, exact-constant, validation, fallback, and local-override principles.
 - Sources: `scripts/lib/saltmeta-chart-metadata.mjs`, `scripts/sync-catalog.mjs`, `data/song-catalog.json`, [SaltMeta](https://github.com/realtvop/SaltMeta).
+
+This source choice and refresh behavior are superseded by decision 80. The
+historical rationale is retained because it explains the regional mismatch that
+prompted the later version-pinned design.
+
+<a id="decision-80"></a>
+
+## 80. Version-pinned International chart metadata
+
+- Rationale: Live community feeds can combine a current Japanese exact constant with an older International display level. The gallery needs a reproducible level/constant pair for the International release, while retaining SEGA's more current and authoritative song catalog.
+- Keep song identity, titles, artist, genre, releases, jackets, availability, and fallback display levels sourced from SEGA. Memoize the SEGA catalog promise so every consumer and fallback path in one sync shares one request.
+- Pin each International release to an immutable DXRating commit and content hash in `config/chart-metadata-versions.json`. Import its displayed level and `internalLevelValue` together, plus its chart designer, only when materializing new charts.
+- Ordinary imports append missing catalog songs and do not rewrite existing chart levels or constants. A later, explicit version-promotion change updates the active release and rebases existing chart pairs together.
+- Check official Japanese and International version markers lazily when a new song is imported. A detected International transition stops sync until the ledger is promoted. A provisional ref may advance during same-version overlap; freeze the last validated data commit before Japan's next-version launch as the final ref.
+- Local chart overrides remain first priority. If pinned data is unavailable or lacks a chart, retain the already-fetched SEGA display level, store a null constant, continue the import, and send a grouped Discord warning. Never estimate a constant or mix sources within a level/constant pair.
+- Retain version-resolution and warning details as a 30-day workflow artifact. This supersedes decisions 39, 40, and 79 where they require live supplemental refreshes, rewriting existing charts, or failing the entire import for supplemental-source errors.
+- Sources: `config/chart-metadata-versions.json`, `scripts/lib/dxrating-chart-metadata.mjs`, `scripts/lib/chart-metadata-version.mjs`, `scripts/sync-catalog.mjs`, `.github/workflows/import-new-scores.yml`, [DXRating](https://github.com/gekichumai/dxrating).

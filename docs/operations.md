@@ -39,8 +39,8 @@ the sheet. It also collapses duplicate archived identities, but retains plays
 absent from the sheet. Deleting a sheet row or changing timestamp, title, chart
 type, difficulty, or achievement does not remove the old archived identity;
 those corrections require reconciling the archive as well.
-`catalog:sync` imports missing songs and jackets, refreshes supplemental chart
-constants and charter names for existing charts, and links score chart IDs.
+`catalog:sync` imports missing songs and jackets, enriches newly materialized
+charts from the pinned International-version metadata, and links score chart IDs.
 Run `scores:summarize` afterward to regenerate cumulative chart records, then
 `data:validate` before committing. The Google check commands inspect access and
 sheet structure without importing scores.
@@ -196,12 +196,12 @@ a duplicate or being rejected.
 
 The optional `charts` object is keyed by `DX:DIFFICULTY` or
 `STD:DIFFICULTY`; its optional `level`, `chartConstant`, and `charter` fields
-override their catalog/supplemental values when non-null. Omit `charts` when no
+override their catalog or pinned-source values when non-null. Omit `charts` when no
 chart property needs correction. `jacketKey` is either an R2 object key or
 `null`; an override jacket takes precedence over downloading SEGA artwork.
 An `id`, when initializing a new catalog song, must be non-empty. Existing song
 IDs cannot be changed because archived scores reference them. A null chart
-constant or charter falls through to supplemental or existing data rather than
+constant or charter falls through to pinned or existing data rather than
 clearing it.
 
 Run catalog sync, summary regeneration, and validation after changing overrides.
@@ -232,7 +232,6 @@ The workflows reference the following **Actions variables**:
 | `SCORE_CAPTURE_TIME_ZONE` | Zone used only for capture timestamps that lack an explicit offset |
 | `SEGA_CATALOG_URL` | Authoritative SEGA song catalog endpoint |
 | `SEGA_JACKET_BASE_URL` | Base URL for authoritative SEGA jacket images |
-| `CHART_SUPPLEMENT_METADATA_URL` | SaltMeta region-aware International chart constants and charter names dataset |
 | `R2_BUCKET_NAME` | Jacket object-storage bucket |
 | `R2_PUBLIC_URL` | Public jacket Worker base URL used by the frontend build |
 
@@ -244,28 +243,38 @@ Generated catalog metadata stores only each jacket's R2 object key. The public
 R2 base URL is supplied to Vite at deployment time through `R2_PUBLIC_URL`;
 R2 credentials are available only to the metadata workflow.
 
-## Supplemental catalog information
+## Versioned chart information
 
-`npm run catalog:sync` downloads the [SaltMeta](https://github.com/realtvop/SaltMeta)
-region-aware dataset configured by
-`CHART_SUPPLEMENT_METADATA_URL` once per run. It matches song title, artist,
-DX/STD chart type, and difficulty; title-only matching is allowed only when
-there is one candidate. UTAGE charts are excluded.
+`config/chart-metadata-versions.json` records the active International release
+and an immutable [DXRating](https://github.com/gekichumai/dxrating) Git commit
+for that release. Its content hash is verified before use. Catalog sync checks
+the official Japanese and International SEGA version markers only when a new
+song needs to be materialized, then downloads the pinned `dxdata.json` once and
+indexes it in memory. It matches title, artist, DX/STD chart type, and
+difficulty; title-only matching is allowed only for a unique candidate. UTAGE
+and charts unavailable Internationally are excluded.
 
-For both new and existing catalog charts, it selects SaltMeta's `intl` region
-record and reads its exact `internalLevel` and chart designer name into
-`charter`. The source's Japanese or other regional values are not used as an
-International fallback. Non-null local overrides take precedence over
-supplemental values; when neither supplies a value, an existing last-known
-value is retained. Missing information remains unavailable rather than being
-estimated from the displayed level. SEGA remains the authoritative source for
-song, artist, genre, release, and jacket catalog data.
+For a new chart, a non-null local override has first priority. Otherwise the
+pinned DXRating displayed level, exact `internalLevelValue`, and chart designer
+are used. The displayed level and constant are a single versioned pair: a live
+SEGA level is never combined with a constant from another release. If DXRating
+or the official version markers cannot be fetched or validated, or a chart
+cannot be matched, sync continues with the display level already present in the
+memoized SEGA catalog response, a null constant, and a grouped Discord warning.
+Existing charts are not rewritten during ordinary syncs.
 
-An unavailable source, unexpected schema, ambiguous chart, or major coverage
-regression stops synchronization before generated data is written. The normal
-workflow-failure Discord notification reports the failure. Check the job logs
-and source response before retrying; use a verified song override for a specific
-omission rather than editing the generated catalog directly.
+The SEGA catalog loader memoizes its promise, so all consumers in one process
+share one request, including fallback paths. Version-resolution details and
+constant warnings are retained as a 30-day workflow artifact. If the observed
+International version differs from the committed active version, synchronization
+stops and requires a reviewed version-promotion change. That change updates the
+ledger and rebases existing level/constant pairs together. A provisional ref may
+advance while Japan remains on the same release; after Japan advances, pin the
+last validated data commit before the next Japanese launch and mark it final.
+
+The normal override mechanism remains available for exceptional historical
+charts. Do not estimate a missing exact constant from a displayed level or edit
+the generated catalog directly.
 
 Catalog sync also enriches Japanese canonical titles missing kana or romaji.
 It makes separate structured OpenAI requests in batches of up to ten songs,

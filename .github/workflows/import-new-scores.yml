@@ -163,7 +163,6 @@ jobs:
           OPENAI_OCR_MODEL: ${{ vars.OPENAI_OCR_MODEL }}
           SEGA_CATALOG_URL: ${{ vars.SEGA_CATALOG_URL }}
           SEGA_JACKET_BASE_URL: ${{ vars.SEGA_JACKET_BASE_URL }}
-          CHART_SUPPLEMENT_METADATA_URL: ${{ vars.CHART_SUPPLEMENT_METADATA_URL }}
           R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
           R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
           R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
@@ -187,7 +186,35 @@ jobs:
             "\n\nCorrect the review/spreadsheet data, then rerun **Import New Scores**.")[0:1900],
             allowed_mentions: {parse: []}}' .sync/rejected-scores.json | curl --fail --silent --show-error \
             --header "Content-Type: application/json" --data-binary @- "$DISCORD_WEBHOOK_URL"
+      - name: Inspect chart metadata warnings
+        id: chart-metadata-warnings
+        run: |
+          count=0
+          if [ -f .sync/chart-metadata-warnings.json ]; then
+            count="$(jq '(.unresolvedCharts | length) + (if .sourceWarning then 1 else 0 end)' .sync/chart-metadata-warnings.json)"
+          fi
+          echo "count=$count" >> "$GITHUB_OUTPUT"
+      - name: Notify Discord about unavailable chart constants
+        if: ${{ steps.chart-metadata-warnings.outputs.count != '0' }}
+        continue-on-error: true
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        run: |
+          jq '{content: ("⚠️ **Some chart constants were unavailable**\n\n" +
+            (if .sourceWarning then "• " + .sourceWarning + "\n" else "" end) +
+            (.unresolvedCharts | map("• **\(.title)** — \(.chartType) \(.difficulty), SEGA Lv \(.segaLevel)") | join("\n")) +
+            "\n\nThe import continued with SEGA display levels and null constants. Version: **\(.internationalVersion)**; ref: `\(.dxRatingRef[0:12])`.")[0:1900],
+            allowed_mentions: {parse: []}}' .sync/chart-metadata-warnings.json | curl --fail --silent --show-error \
+            --header "Content-Type: application/json" --data-binary @- "$DISCORD_WEBHOOK_URL"
       - run: npm run data:validate:source
+      - uses: actions/upload-artifact@v4
+        with:
+          name: catalog-source-resolution
+          path: |
+            .sync/version-resolution.json
+            .sync/chart-metadata-warnings.json
+          if-no-files-found: ignore
+          retention-days: 30
       - uses: actions/upload-artifact@v4
         with:
           name: generated-data

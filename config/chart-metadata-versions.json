@@ -1,0 +1,15 @@
+{
+  "activeInternationalVersion": "CiRCLE PLUS",
+  "source": {
+    "repository": "https://github.com/gekichumai/dxrating",
+    "path": "packages/dxdata/dxdata.json",
+    "rawUrlTemplate": "https://raw.githubusercontent.com/gekichumai/dxrating/{ref}/{path}"
+  },
+  "versions": {
+    "CiRCLE PLUS": {
+      "status": "final",
+      "ref": "323ec2b953605b5974c483cf302b5dd071f03573",
+      "sha256": "9c6e5d5b53e1bb7c135cd2cd396293a73b6be568077ad3a2d902cc7a2cff9a8f"
+    }
+  }
+}

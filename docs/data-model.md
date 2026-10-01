@@ -98,15 +98,17 @@ Notes/Location is intentionally excluded from the public archive.
 owns one or more DX/STD versions, and each version owns its difficulty charts.
 `Song` owns the shared `jacketKey`, artist, genre, introduction, and search titles.
 `Chart` includes both nullable `chartConstant` and nullable `charter` fields.
-SaltMeta supplemental metadata refreshes levels, exact constants, and charter names
-for existing charts. The synchronizer selects SaltMeta's `intl` region record for
-each chart, so both displayed levels and constants remain consistent with the
-gallery's international chart data. SEGA remains the source for song/catalog
-metadata, stable identity, releases, and jackets.
+New charts take their displayed level, exact constant, and charter name from the
+DXRating commit pinned for the active International release. The level and
+constant are imported as one version-coherent pair. Existing chart metadata is
+not refreshed during ordinary catalog synchronization; release-wide corrections
+are handled by a separate version-promotion change. SEGA remains the source for
+song/catalog metadata, stable identity, releases, and jackets, and supplies the
+displayed-level fallback when pinned chart metadata is unavailable.
 Sparse manual overrides can additionally supply title variants, artist, genre,
 introduction, jacket key, or individual chart fields; supplied non-null values
 take precedence, and existing values are retained when no override or
-supplemental value is available. See [song overrides](operations.md#song-overrides)
+pinned-source value is available. See [song overrides](operations.md#song-overrides)
 for the editable override format, which differs from the generated catalog.
 
 `introducedIn` deliberately differs from `versions`: `introducedIn` is the
@@ -203,8 +205,8 @@ them. This temporary report is produced by the catalog script, not an app type.
 - Search titles exist only in `Song.titles`, never on score records.
 - Kana, romaji, English titles, and aliases are trimmed and normalized to
   lowercase during catalog import.
-- `Chart.chartConstant: null` means no constant is available from overrides,
-  supplemental metadata, or a retained existing value.
+- `Chart.chartConstant: null` means no exact constant was available from an
+  override or the pinned DXRating release data when the chart was materialized.
 
 ## Enforcement
 
